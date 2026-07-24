@@ -133,3 +133,26 @@ describe('resolve — Lane-Sicherheit + inArbeit (Sweep)', () => {
     expect(b.readyNow).toEqual(['B']);
   });
 });
+
+// GEÄNDERTE SEMANTIK 24.7.2026 (deklarierter Tooling-Schritt): @queue-Rang vor
+// pos-Ordnung + Querschnitt-Band-Einheiten laufen «begleitend» statt als oberste.
+describe('resolve — @queue-Rang + Querschnitt-Filter', () => {
+  it('gequeuete IDs führen in Queue-Reihenfolge, auch gegen die pos-Ordnung', () => {
+    const b = resolve([einheit('A'), einheit('B')], ['B', 'A']);
+    expect(b.readyNow).toEqual(['B', 'A']);
+  });
+  it('nicht-gequeuete IDs behalten ihre pos-Ordnung hinter der Queue (stabiler Sort)', () => {
+    const b = resolve([einheit('X'), einheit('Y'), einheit('Z')], ['Z']);
+    expect(b.readyNow).toEqual(['Z', 'X', 'Y']);
+  });
+  it('Querschnitt-Band-ready landet in begleitend, nie als oberster', () => {
+    const qs: Einheit = { ...einheit('QS'), sektion: 'Querschnitt-Band (läuft begleitend' };
+    const b = resolve([qs, einheit('W')]);
+    expect(b.begleitend).toEqual(['QS']);
+    expect(b.readyNow).toEqual(['W']);
+  });
+  it('ohne Queue bleibt die pos-Ordnung unverändert (Rückwärtskompatibilität)', () => {
+    const b = resolve([einheit('E1'), einheit('E2')]);
+    expect(b.readyNow).toEqual(['E1', 'E2']);
+  });
+});
