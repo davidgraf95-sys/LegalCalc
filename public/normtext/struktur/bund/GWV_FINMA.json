@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-24",
  "kopf": {
   "srNummer": "955.033.0",
   "titel": "Verordnung der Eidgenössischen Finanzmarktaufsicht über die Bekämpfung von Geldwäscherei und Terrorismusfinanzierung im Finanzsektor",
@@ -1092,7 +1092,7 @@
     }
    ],
    "marginalie": [
-    "Verwalter von Kollektivvermögen von ausländischen kollektivenKapitalanlagen"
+    "Verwalter von Kollektivvermögen von ausländischen kollektiven Kapitalanlagen"
    ],
    "fussnoten": [
     {
@@ -1867,11 +1867,11 @@
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Erneute Identifizierung der Vertragspartei oder Feststellungder wirtschaftlich berechtigten Person (Art. 5 GwG)"
+     "label": "3. Kapitel: Erneute Identifizierung der Vertragspartei oder Feststellung der wirtschaftlich berechtigten Person (Art. 5 GwG)"
     }
    ],
    "marginalie": [
-    "Erneute Identifizierung oder Feststellung der Kontrollinhaberin,des Kontrollinhabers und der an Vermögenswerten wirtschaftlichberechtigten Person"
+    "Erneute Identifizierung oder Feststellung der Kontrollinhaberin, des Kontrollinhabers und der an Vermögenswerten wirtschaftlich berechtigten Person"
    ]
   },
   "70": {
@@ -1882,7 +1882,7 @@
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Erneute Identifizierung der Vertragspartei oder Feststellungder wirtschaftlich berechtigten Person (Art. 5 GwG)"
+     "label": "3. Kapitel: Erneute Identifizierung der Vertragspartei oder Feststellung der wirtschaftlich berechtigten Person (Art. 5 GwG)"
     }
    ],
    "marginalie": [
@@ -1926,11 +1926,11 @@
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Erneute Identifizierung der Vertragspartei oder Feststellungder wirtschaftlich berechtigten Person (Art. 5 GwG)"
+     "label": "3. Kapitel: Erneute Identifizierung der Vertragspartei oder Feststellung der wirtschaftlich berechtigten Person (Art. 5 GwG)"
     }
    ],
    "marginalie": [
-    "Identifizierung der Vertragspartei und Feststellungder Kontrollinhaberin, des Kontrollinhabers und der anVermögenswerten wirtschaftlich berechtigten Person im Konzern"
+    "Identifizierung der Vertragspartei und Feststellung der Kontrollinhaberin, des Kontrollinhabers und der an Vermögenswerten wirtschaftlich berechtigten Person im Konzern"
    ]
   },
   "72": {
@@ -2380,7 +2380,7 @@
     }
    ],
    "marginalie": [
-    "Lebensversicherung mit separater Konto- oder Depotführung ()"
+    "Lebensversicherung mit separater Konto- oder Depotführung (Insurance Wrapper)"
    ],
    "fussnoten": [
     {

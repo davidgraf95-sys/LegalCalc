@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-16",
+ "erzeugt": "2026-07-24",
  "kopf": {
   "srNummer": "211.432.11",
   "titel": "Technische Verordnung des EJPD und des VBS über das Grundbuch",
@@ -373,7 +373,7 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Das Datenmodell für den Datenaustausch zwischen der amtlichenVermessung und dem Grundbuch"
+     "label": "5. Abschnitt: Das Datenmodell für den Datenaustausch zwischen der amtlichen Vermessung und dem Grundbuch"
     }
    ],
    "marginalie": []
@@ -417,7 +417,7 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Die Schnittstelle für den Datenaustausch zwischen der amtlichenVermessung und dem Grundbuch"
+     "label": "7. Abschnitt: Die Schnittstelle für den Datenaustausch zwischen der amtlichen Vermessung und dem Grundbuch"
     }
    ],
    "marginalie": [
@@ -438,7 +438,7 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Die Schnittstelle für den Datenaustausch zwischen der amtlichenVermessung und dem Grundbuch"
+     "label": "7. Abschnitt: Die Schnittstelle für den Datenaustausch zwischen der amtlichen Vermessung und dem Grundbuch"
     }
    ],
    "marginalie": [

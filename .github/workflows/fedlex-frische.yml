@@ -92,6 +92,7 @@ jobs:
           set -euo pipefail
           npm run check:normtext
           npm run check:struktur-konsistenz
+          npm run check:verklebung
           npm run golden:vergleich
           npm run check:verfall
           npm run check:paritaet
