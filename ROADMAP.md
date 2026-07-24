@@ -519,7 +519,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 > Reihenfolge nach Praxis-Hebel × Machbarkeit ohne Fachzeit × Abhängigkeiten. Alles `[OF]`, sofern
 > nicht vermerkt. Details + Bau-Auflagen je Werkzeug: «Funktions-Katalog» unten + jeweilige `FAHRPLAN-*.md`.
 
-<!-- @queue: QS-TOK, W2·5b, W2·5d, W2·5h-GESETZ-UI, W2·5i-HIST-ANSICHT, W2·13-KANTONE, W2·7-BEZUG, W2·6b-MAT-FINMA -->
+<!-- @queue: QS-TOK, W2·5d, W2·5h-GESETZ-UI, W2·5i-HIST-ANSICHT, W2·13-KANTONE, W2·7-BEZUG, W2·6b-MAT-FINMA -->
 <!-- ^ SSoT der Bau-Reihenfolge (Einbau 24.7.2026): plan:next wertet die @queue VOR der
      Dokumentreihenfolge aus; Integrität erzwingt check:plan Regel 8 (tote/erledigte IDs rot,
      Prosa-«OBERSTER» muss dem Queue-Kopf entsprechen). Priorität ändern = NUR diese Zeile
@@ -653,8 +653,14 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   **Zur Klarstellung (Befund 20.7.):** `W2·5b`/`5c`/`5d`/`5g`/`5h` sind **keine Kinder** dieses Schritts —
   `scripts/plan/*` kennt kein Eltern-/Kind-Konzept, jeder trägt eigenes `@meta` mit eigenem Status. Es ist
   eine **Nummern-Familie, keine Hierarchie**; W2·5 ist selbsttragend und wird eigenständig abgeschlossen.
-- [ ] **5b · Reader-Darstellung Bund** *(GESETZESDARSTELLUNG-BUND, `[OF]`, eigener Worktree)* —
-  <!-- @meta id: W2·5b · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/inhalt.tsx, src/pages/gesetz-leser/parts.tsx, src/components/normtext/ArtikelBody.tsx, scripts/normtext, public/normtext/struktur, scripts/such-index-generieren.ts] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZESDARSTELLUNG-BUND.md -->
+- [x] **5b · Reader-Darstellung Bund** *(GESETZESDARSTELLUNG-BUND, `[OF]`)* —
+  <!-- @meta id: W2·5b · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZESDARSTELLUNG-BUND.md -->
+  **ABGESCHLOSSEN 25.7.2026** — alle Einheiten M1–M12 des QA-Sweeps ✅ (zuletzt in dieser
+  Kampagne: **M12** Randtitel-Naht-Fix + Tor `check:verklebung`, PR #340 · **M11 + M6-D**
+  Verweis-Popover mit Artikel-Bezeichnung + Chapeau-Item-Auflösung, PR #342 · **HAENGEND-
+  Folge-Härtung**, PR #343 · Batch C M4/M5/M7/M8 per Nachmessung als durch W2·5d faktisch
+  erledigt belegt). Je Risikopfad-Einheit adversariale Gegenprüfung (2–3 Runden, zwei davon
+  widerlegten zunächst → Nachfixe). Status-Log je Einheit: `FAHRPLAN-GESETZESDARSTELLUNG-BUND.md`.
   **Status-Korrektur 20.7.2026: `wip(reader-wt)` → `ready`.** Der Marker zeigte auf einen Worktree, den es
   **nicht mehr gibt** (`git worktree list` kennt nur LexMetrik/lm-ci/lm-fundament/lm-planintake; kein Branch
   `*w25b*`/`*reader*`). Der Restblock ist gelandet: **PR #156, Merge-Commit `9b0f9e48` (5.7.2026)**.
@@ -734,10 +740,12 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
     **✅ GEBAUT 12.7.2026 (`feat/v2-fn3`, PR #212).** Detail §10.8.
   - [ ] **A21** (FN-4): Absatz-Zuordnung Alt-Form (bündelt mit A19-Regen). V2 §2 F1.
     **Bau-Go David ausstehend.**
-  - [~] **A22** (K-1+K-2): Kopf nützlicher + Fussnoten-Anwahl (koordinierter Kopf-PR
-    mit U-PDF, nach U-VERWEIS). V2 §2 F2. **K-2 ✅ GEBAUT 11.7.2026 (`feat/v2-kopf-pr`,
-    PR #194) — Fussnoten-Chip. K-1 («in Kraft seit» / SPARQL-Datenteil) weiterhin offen.**
-    Detail §10.8.
+  - [x] **A22** (K-1+K-2): Kopf nützlicher + Fussnoten-Anwahl. V2 §2 F2. **K-2 ✅ GEBAUT
+    11.7.2026 (`feat/v2-kopf-pr`, PR #194) — Fussnoten-Chip. K-1 ✅ GEBAUT 12.7.2026
+    (`feat/v2-k1`, PR #213, `9e7e505b`): «in Kraft seit» im Erlass-Kopf, build-time SPARQL
+    `jolux:dateEntryInForce` → `public/normtext/inkrafttreten.json` + `inkraftSeit` in
+    browse-typen.** *(Plan-Korrektur 25.7.2026: der «weiterhin offen»-Vermerk war stale —
+    Git-Abgleich fand den gemergten PR; live im OR-Kopf sichtbar.)* Detail §10.8.
   - [x] **A23** (B-1+B-2): BGE Ab-/Anwahl + Zeitfilter in Rubrik-Ansicht, Kappung
     `LEITFAELLE_SICHTBAR` 5→10 (überstimmt §3.1-«3 Toggles»; nach U-VERWEIS).
     V2 §2 F3. **✅ GEBAUT 11.7.2026 (`feat/v2-kopf-pr`, PR #194).** Detail §10.8.
