@@ -206,6 +206,24 @@ Abweichungen nur (a) inhaltsgetrieben und (b) generations-/jahrgangsbedingt.
   z. B. **«Art. 113 SchKG – Nachträge»** (Sachtitel aus `<h6>`/Section). **Datei:** Popover-Pfad +
   Resolver (teilt M6). **Gate:** Test (Popup entsteht; Titel enthält Sachüberschrift).
 
+### M12 · Randtitel-Leerzeichen-Verklebung (Struktur-Generator) — Batch A *(§14-Intake 24.7.2026)*
+- [ ] **Befund (verifiziert 24.7.2026, live + Daten):** `/gesetze/bund/OR#art-10` zeigt «III. Beginn
+  der Wirkung**eneines** unter**Abwesenden**geschlossenen Vertrages» statt «… Wirkungen eines unter
+  Abwesenden geschlossenen …». Der Defekt liegt in den **Daten, nicht im Render**:
+  `public/normtext/struktur/bund/OR.json` enthält den verklebten Titel wörtlich; die
+  Artikel-`bloecke` (`public/normtext/bund/OR.json`) sind sauber; `public/such-index/artikel-bund.json`
+  **erbt** den Defekt (Suche betroffen). Grob-Heuristik (klein-GROSS-Naht) findet weitere Treffer in
+  mindestens 7 weiteren Bund-Struktur-Dateien (FMG, IVV, KKV, TGBV ×2, AVO, MSTG, FINFRAG);
+  Verklebungen zweier Kleinwörter («Wirkungen+eines») sind davon NICHT erfasst ⇒ Dunkelziffer,
+  korpusweit messen (auch Kanton). **Ursache (Hypothese, am Code verifizieren):** mehrzeilig/inline
+  segmentierte Randtitel der Fedlex-Quelle werden im Struktur-Generator ohne Trenn-Leerzeichen
+  gejoint — nach L0 strukturerhaltend am Join härten, nicht pro Gesetz patchen.
+  **Bau:** (1) Generator-Fix am Join · (2) Regeneration Struktur-Snapshots + Such-Index (alle
+  Ebenen) · (3) Tor gegen die Verklebungs-Klasse (klein-GROSS-Naht-Scan + Titel-Vergleich gegen
+  Quelle mit Wortgrenzen), einmal rot gezeigt (§6 Ziff. 7) · (4) Extraktion ⇒ `check:gegenpruefung`.
+  Die Snapshot-Abweichung ist hier GEWOLLT und wird als fachliche Korrektur deklariert (§6.3),
+  nicht als Refactoring.
+
 ---
 
 ## Ausführungs-Reihenfolge (Batches — Hebel × Sicherheit, konfliktfrei zuerst)

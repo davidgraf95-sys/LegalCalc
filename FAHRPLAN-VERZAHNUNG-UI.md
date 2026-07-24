@@ -391,3 +391,33 @@ Generator **deterministisch** (2 Läufe byte-gleich) · `check:gegenpruefung` be
 (Daten-Derivation = Risikopfad) · golden byte-gleich · Tore grün.
 Trailer `Roadmap: W2·6-ZNETZ` + `Gegenpruefung: <Verdikt>`.
 Feasibility-Beleg: `bibliothek/recherche/zitationsnetz-feasibility.md`.
+
+## 9. Bezüge am Artikel — Facetten-Fundament alle Instanzen (`W2·7-BEZUG`, §14-Intake 24.7.2026)
+
+**Auftrag David (Anm. 1–4 der Session 24.7.2026, prioritär):** Die Verzahnung Gesetz ↔
+Gerichtsentscheide ist Kern-Differenzierung («sehr gutes Feature, das ich mit Priorität einbauen
+will»). Das Fundament wird von «BGE-Leitfälle an Bundesnormen» auf **alle Instanzen und
+Entscheidkategorien** erweitert — alles über Filter an- und abwählbar (Kanton, Instanz usw.).
+
+- **B1 · Facetten-Datenmodell (Datenschicht, §3).** Jede Kante Norm ↔ Dokument trägt filterbare
+  Facetten: `quelltyp` (rechtsprechung | materialien | …) · `ebene` (bund | kanton) · `kanton` ·
+  `gericht`/Instanz · Leitentscheid-Status (BGE amtlich publiziert | übriges BGer-Urteil |
+  kantonaler Entscheid). **EINE generische Bezugs-Schicht** — die Materialien-Kanten (W2·6a-MAT,
+  künftig FINMA `W2·6b-MAT-FINMA`) docken an derselben Schicht an, kein Parallelmodell (§5).
+  Leitentscheid vs. übriges Urteil wird **nie stillschweigend gleichgestellt** (§8) — die Facette
+  trägt den Status sichtbar.
+- **B2 · Kantonale Entscheide in den norm-index.** Start: BS-Korpus (3765 Snapshots aus W2·6-BS);
+  Voraussetzung ist der kantonale Norm-Resolver (P0-Fix aus W2·6): kantonale Erlass-Referenzen
+  (SG-/BGS-Nummern, kantonale Kürzel), nicht nur SR-Nummern. Zitat-Extraktion = Risiko-Pfad ⇒
+  `check:gegenpruefung`; Generator deterministisch, 2 Läufe byte-gleich.
+- **B3 · BGer-Nicht-Leitentscheide** aus dem kuratierten Korpus in den norm-index (Facette
+  unterscheidet sie von BGE). **Abgrenzung (§14.3):** der Long-Tail über die 195k
+  Massen-Entscheide bleibt `W2·6-DATA` E3/E4 — hier ausschliesslich der kuratierte Korpus.
+- **B4 · Filter-UI (Darstellungsschicht, §3).** Im Gesetz-Leser an-/abwählbar nach Instanz/Ebene,
+  Kanton, Leitentscheid-Status; **Default konservativ** (Leitentscheide an, Rest zuschaltbar);
+  Persistenz im «Ansicht ▾»-Menü (`LeserAnsichtMenu.tsx`; UI-Heimat: `FAHRPLAN-GESETZES-UX.md`
+  §15 K7). Trefferzahlen je Facette mit ehrlicher Grundgesamtheit ausweisen (§8). Die
+  Interaktions-Grammatik aus §1 (KantenChip, KontextGruppe) gilt unverändert — B4 erweitert sie
+  um Facetten-Schalter, ersetzt sie nicht.
+- **Sequenz:** B1 → B2/B3 (parallel möglich) → B4. Kollisions-Abgleich mit `W2·7-VZUI`
+  (KontextPanel) und `W2·5h-GESETZ-UI` (LeserAnsichtMenu) — Worktree-Pflicht §12.

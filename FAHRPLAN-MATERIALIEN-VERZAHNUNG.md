@@ -454,3 +454,27 @@ minimaler, höflicher Crawl (Concurrency 1–2, Delay, identifizierender User-Ag
 1 GET/Ziffer, Drift-Läufe klein) einer amtlichen Publikationsplattform — das ist ein
 Governance-Entscheid, kein technischer (§0/B8). **M1 startet erst nach Davids Ja**; M0 und M2–M4
 sind davon unabhängig und sofort baubar.
+
+## §9 · Stufe 2 — FINMA prioritär (`W2·6b-MAT-FINMA`, §14-Intake 24.7.2026)
+
+**Kontext (David, 24.7.2026):** David hat sich bei der **FINMA beworben** und in der Bewerbung auf
+LexMetrik verwiesen — der FINMA-Bereich soll vorzeigbar stark sein; FINMA-Materialien werden
+prioritär behandelt.
+
+- **F1 · FINMA als nächste Quelle der Stufe-1-Pipeline.** Rundschreiben, Wegleitungen,
+  Aufsichtsmitteilungen, Leitlinien (amtliche, urheberrechtsfreie Quellen, Art. 5 URG) über einen
+  browserlosen Adapter nach dem §3-Muster; Provenienz §7 a–d (Quelle-URL, Stand, Drift-Token);
+  Register + Kanten wie SECO/EDÖB/ESTV. **Quell-Wahl zuerst (§7):** empirisch erheben, ob
+  finma.ch strukturierte Endpunkte bietet (Listen-API/JSON vs. gerendertes HTML vs. PDF) —
+  Probe-Fetch je Kandidat, an der höchsten verfügbaren Struktur andocken.
+- **F2 · Direkte Verzahnung FINMA-Schreiben ↔ Erlass-Artikel** *(David: «evtl. auch wenn
+  möglich»)*: Referenz-Extraktion aus den FINMA-Dokumenten (welche Normen zitiert ein
+  Rundschreiben — FINMAG/FIDLEG/FINIG/KAG/BankG/GwG/VAG …), damit FINMA-Schreiben direkt am
+  Artikel in der Gesetzesansicht erscheinen. **VOR dem Bau H0-Machbarkeits-Messung** (Zitierweise
+  strukturiert genug? Präzision/Recall an einer Stichprobe, Verdikt mit Zahlen — fällt es
+  schlecht aus, bleibt es bei F1-Registerebene, kein unsauberer Resolver). Extraktion =
+  Risiko-Pfad ⇒ `check:gegenpruefung`. Die Kanten tragen die Facetten aus `W2·7-BEZUG` B1
+  (`quelltyp: materialien`; Anzeige über die Filter aus `FAHRPLAN-VERZAHNUNG-UI.md` §9 B4).
+- **Abgrenzung:** kein LLM-Ranking, keine Zusammenfassungen (§2); Anzeige-Grammatik bleibt
+  `FAHRPLAN-VERZAHNUNG-UI.md` (V3 Soft-Law); Stufe-1-Scope-Grenzen (§7 dieses Fahrplans) gelten
+  weiter, soweit hier nicht ausdrücklich erweitert.
