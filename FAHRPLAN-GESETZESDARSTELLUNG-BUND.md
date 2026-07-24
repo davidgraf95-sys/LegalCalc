@@ -217,7 +217,30 @@ Abweichungen nur (a) inhaltsgetrieben und (b) generations-/jahrgangsbedingt.
   Resolver (teilt M6). **Gate:** Test (Popup entsteht; Titel enthält Sachüberschrift).
 
 ### M12 · Randtitel-Leerzeichen-Verklebung (Struktur-Generator) — Batch A *(§14-Intake 24.7.2026)*
-- [ ] **Befund (verifiziert 24.7.2026, live + Daten):** `/gesetze/bund/OR#art-10` zeigt «III. Beginn
+- [x] **GEBAUT + GEGENGEPRÜFT + GEMERGT 24.7.2026** (Worktree `lm-m12`, **PR #340**, Squash
+  `c872e4a9`). Umfang grösser als der Intake-Befund: DREI Naht-Mechanismen derselben Klasse
+  (`<br>`-Umbruch · `<b>/<i>`-Whitespace-Spacer · Zeilenumbruch-Trennstrich) plus der
+  vorbestehende `<b>/<i>`-**Inhalts**-Strip in `artikelSachtitel()` (frass echten Titeltext:
+  «(Insurance Wrapper)» → «( )», «Cyberspezialistinnen» → «Cyber pezialistinnen»). Fix L0 am
+  Join: `loeseTrennung()` (Silbentrennung zusammenfügen · hängendes Divis vor Konjunktion/
+  Präposition erhalten · Kompositum vor Grossbuchstabe mit Divis) + `biErsetzung()`
+  (Nummer/Bereich/Ordinal/Ziffern-Suffix/Spacer strippen, echten Inhalt behalten). Neues Tor
+  **`check:verklebung`** (Klassen A klein-GROSS-Naht · B Divis-Riss · C leeres Klammerpaar;
+  in `check:seriell` + `fedlex-frische.yml`; Sabotage-Proben 64/21 rot gezeigt, danach 1416
+  Sidecars/145 632 Titel grün). 231 Bund-Sidecars + `daten-manifest.json` regeneriert
+  (deklarierte §6.3-Korrektur; Differ-Beweis: nur Leerzeichen-Einfügung/Silbentrennungs-
+  Zusammenfügung/Titeltext-Wiederherstellung). **Gegenprüfung: 2 unabhängige Opus-Durchgänge**
+  — R1 widerlegte (Silbentrennungs-Riss + Inhaltsverlust ⇒ Nachfix mit voller Korpus-
+  Enumeration), R2 bestanden (eigene Enumeration 0 Fehlmerge, 10+ Soll-vor-Ist-Stichproben,
+  bis/ter-Randfälle, Tor-Sabotage); Register-Quittung Hash `ce06aa72`, `check:merge-schutz`
+  grün. Der Such-Index zieht als gitignorierte Build-Projektion automatisch nach.
+- [ ] **OFFEN (Folge-Härtung, klein):** `HAENGEND`-Liste (struktur-extrahiere.ts +
+  check-verklebung.ts, synchron halten!) um weitere Konjunktionen/Präpositionen erweitern
+  (wie · samt · je · pro · per · statt · trotz · ab …) — latenter Blindfleck des R2-Prüfers:
+  eine FEHLENDE Konjunktion erzeugte einen still kleingeschriebenen Fehl-Merge, den keine
+  Tor-Klasse sieht. Korpusweit aktuell **0 Treffer** (verifiziert R2), also reine
+  Zukunfts-Robustheit für neue Erlasse; Risikopfad ⇒ eigener kleiner Durchgang mit
+  Gegenprüfung. *Ursprünglicher Befund-Wortlaut (Intake):* `/gesetze/bund/OR#art-10` zeigte «III. Beginn
   der Wirkung**eneines** unter**Abwesenden**geschlossenen Vertrages» statt «… Wirkungen eines unter
   Abwesenden geschlossenen …». Der Defekt liegt in den **Daten, nicht im Render**:
   `public/normtext/struktur/bund/OR.json` enthält den verklebten Titel wörtlich; die
