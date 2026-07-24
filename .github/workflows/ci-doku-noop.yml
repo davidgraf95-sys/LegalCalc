@@ -59,3 +59,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Reine Doku-Änderung — Perf-Budget nicht betroffen, Zwilling meldet grün."
+
+  # Zwilling des dedizierten «Merge-Schutz (Required-Kontext)»-Jobs aus ci.yml.
+  # BEWUSST ein ECHTER Lauf, kein echo-No-op: md-only-Diffs können den Risikopfad
+  # `daten/**` treffen (istRisikoPfad matcht das Präfix, nicht die Endung) und
+  # das Register selbst ist eine .md — der Zwilling darf diese Klasse nicht
+  # stillschweigend grün melden (§6.7b: nie still grün).
+  merge-schutz:
+    name: Merge-Schutz (Required-Kontext)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)
+        run: npm run check:merge-schutz

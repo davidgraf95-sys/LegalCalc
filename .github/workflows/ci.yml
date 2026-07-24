@@ -247,3 +247,25 @@ jobs:
         run: npm run check:perf-budget
       - name: Perf-Budget — Lighthouse-Metriken (4× CPU + langsames 4G)
         run: npm run check:perf-lighthouse
+
+  # ── Dedizierter Required-Kontext «Merge-Schutz» (25.7.2026, Blanko-Go David) ──
+  # Das Tor läuft ZUSÄTZLICH als Step im «Tore»-Job (Belt+Suspenders). Der eigene
+  # Job existiert, damit der Required-Kontext UNABHÄNGIG ist: würde der Step im
+  # Tore-Job entfernt, bliebe «Tore» grün — ein entfernter DEDIZIERTER Job dagegen
+  # hinterlässt einen «expected»-Block (GitHub wartet ewig auf den Kontext). Erst
+  # damit ist §9/F1 (Vorfall #309) maschinenunabhängig hart. Branch-Regel-Eintrag
+  # erfolgt nach dem ersten grünen Lauf dieses Jobs (gh api PATCH).
+  merge-schutz:
+    name: Merge-Schutz (Required-Kontext)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)
+        run: npm run check:merge-schutz
