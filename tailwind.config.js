@@ -129,6 +129,19 @@ export default {
       // Platz, versteckt/kürzt nichts (§15/2); Artikel ohne Historie-Eintrag
       // (und Erlasse ganz ohne Shard) gewinnen etwas Weissraum am Fuss.
       minHeight: { 'modul-news': '12.5rem', 'modul-zuletzt': '4.5rem', 'titel-2z': '2.35em', 'hist-zeile': '1.5rem' },
+      // E4/A32: fest reservierter Slot des Kontext-Panels UNTERHALB der
+      // Gliederung in der TOC-Spalte des Gesetz-Readers (feste Höhe ab dem
+      // ersten Render, §15.2 «reservierter Platz»): der async-Resolve füllt
+      // reservierten Platz, statt Platz zu schaffen — der Gliederungsbaum
+      // (flex-1) über dem Slot behält von Anfang an seine Endhöhe, nichts
+      // rückt nach (CLS 0). Die sticky Spalte ist an
+      // die Viewport-Höhe gebunden (maxHeight ≈ 100vh − Kopfzeilen) — 33vh
+      // lässt dem Panel gut ein Drittel und der Gliederung IMMER die Mehrheit
+      // der Spalte («Gliederung bleibt primär», Auftrag David 16.7.2026). vh
+      // statt %, weil Prozente gegen die auto-hohe, nur max-height-gedeckelte
+      // <aside> nicht auflösen. Das Panel scrollt intern (overflow-y-auto) —
+      // kein Inhalt gekürzt (§15/2); wenig Kontext gewinnt etwas Weissraum.
+      height: { 'toc-kontext': '33vh' },
     },
   },
   // Container-Queries (Split-View B-0b, Entscheid David 29.6.2026): erlaubt
