@@ -102,7 +102,7 @@ function DanebenKnopf({ ziel, label, oeffneDaneben, className = 'ml-1' }: {
   );
 }
 
-export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false, artikelZitate }: {
+export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false, artikelZitate, variante = 'lesespalte' }: {
   typ: KontextTyp;
   normKeys: readonly string[];
   /** Reader-eigene Gruppen (KontextGruppe), VOR den Standard-Gruppen gerendert —
@@ -114,6 +114,17 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
   /** V1 (W2·10-UI-NAV): zitierte Norm-Strings des Entscheids — schaltet die
    *  «Passende Werkzeuge» artikelscharf (Rausch-Filter, #28). */
   artikelZitate?: readonly string[];
+  /** E4/A32 (David 16.7.2026): 'seitenleiste' = kompakte Darstellung unterhalb
+   *  der Gliederung in der TOC-Spalte des Gesetz-Readers. Zwei Unterschiede zur
+   *  Standard-Lesespalten-Form (Markup dort byte-gleich unverändert):
+   *  (a) enge Aussenmasse (der Spalten-Wrapper trägt Trenner/Abstand selbst);
+   *  (b) §15.2-CLS-Gating: solange noch EINE async-Gruppe lädt, steht ein
+   *  stabiler «wird geladen»-Platzhalter und die Gruppen erscheinen dann ALLE
+   *  AUF EINMAL — unter dem Panel steht in der Spalte nichts, also verschiebt
+   *  der Wechsel kein sichtbares Element (kein Layout-Springen in der sticky
+   *  Gliederungsspalte). In der Lesespalte bleibt das bisherige gruppenweise
+   *  Einwachsen (dort sitzt das Panel am Leseende, unterhalb des Folds). */
+  variante?: 'lesespalte' | 'seitenleiste';
 }) {
   // Synchron (in-Bundle) — billig + deterministisch, daher pro Render berechnet
   // statt memoisiert (kleine Register, kein O(n²); §6.4).
@@ -275,14 +286,23 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
     && !vernehmlassungenLaden && !vernehmlassungenFehler && vernehmlassungen.length === 0
     && (entscheide?.length ?? 0) === 0;
 
+  // E4/A32: Seitenleisten-CLS-Gating (§15.2) — erst rendern, wenn ALLE async-
+  // Gruppen aufgelöst sind (eine Einblendung statt gruppenweisem Nachrücken).
+  const seitenleiste = variante === 'seitenleiste';
+  const laedtNoch = entscheideLaden || softLawLaden || botschaftenLaden
+    || revLaden || vernehmlassungenLaden;
+
   return (
-    <section aria-labelledby="kontext-titel" className="mt-12 border-t border-line pt-6 space-y-5 max-w-reading">
+    <section aria-labelledby="kontext-titel"
+      className={seitenleiste ? 'space-y-4' : 'mt-12 border-t border-line pt-6 space-y-5 max-w-reading'}>
       <div className="flex items-baseline gap-3">
         <h2 id="kontext-titel" className="lc-overline text-brass-700">Kontext</h2>
         <span aria-hidden className="h-px flex-1 bg-line" />
       </div>
 
-      {istLeer ? (
+      {seitenleiste && laedtNoch ? (
+        <p className="text-body-s text-ink-500">Kontext wird geladen …</p>
+      ) : istLeer ? (
         <p className="text-body-s text-ink-500">
           Noch keine Querverweise zu Entscheiden, Materialien oder Werkzeugen erfasst.
         </p>

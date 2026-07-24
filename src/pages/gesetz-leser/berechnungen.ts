@@ -106,6 +106,29 @@ export function berechneSekLabelById(sektionen: Sektion[]): Map<string, string> 
   return map;
 }
 
+// ─── E4/A36 (David 16.7.2026): TOC-Kuration — Anhangs-Wortlaute aus der Gliederung ───
+//
+// Der ZGB-Schlusstitel-Anhang «Wortlaut der früheren Bestimmungen des sechsten
+// Titels» (M13-disp-Division, Token `disp_u2_art_*`) bläht den TOC-Baum mit dem
+// AUFGEHOBENEN Alt-Güterrecht auf, obwohl er nur historisches Übergangsrecht
+// dokumentiert. Er wird NUR aus der GLIEDERUNG (SektionBaumTOC) genommen —
+// render-seitiger Filter in der Darstellungsschicht (§3), Sidecar/Generator
+// unberührt. §15-Treue: die Lesespalte rendert weiterhin den UNGEFILTERTEN Baum
+// (renderSektion in inhalt.tsx) — Inhalt, `#art-disp_*`-Anker, Ctrl+F und Print
+// bleiben vollständig; reine TOC-Kuration, kein Substanz-Drop.
+//
+// Kriterium: Identitäts-Treffer auf das EXAKTE Top-Level-Label (§7, keine
+// Substring-/Heuristik-Erkennung) — deterministisch, eng, kommentiert. Weitere
+// Kurations-Kandidaten kommen nur nach ausdrücklichem Auftrag in diese Liste.
+const TOC_KURATIERTE_LABELS = new Set([
+  'Wortlaut der früheren Bestimmungen des sechsten Titels', // ZGB (A36)
+]);
+export function kuratiereTocSektionen(sektionen: Sektion[]): Sektion[] {
+  const toc = sektionen.filter((s) => !TOC_KURATIERTE_LABELS.has(s.label));
+  // Ohne Treffer DIESELBE Referenz zurück (memo-/React.memo-stabil, §15/4).
+  return toc.length === sektionen.length ? sektionen : toc;
+}
+
 // ─── W2·5d U-POSITION (A2): per-Artikel-Höhenschätzung ──────────────────────
 //
 // Wurzel des Scrollbalken-Bugs (David 5.7.2026): die Artikel-Knoten tragen

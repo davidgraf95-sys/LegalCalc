@@ -83,6 +83,17 @@ export function LeserVolltextInhalt({
   const fn = (tok: string) => struktur?.[tok]?.fussnoten;
   const bestimmungsWort = meta.bestimmungsEtikett === 'paragraf' ? 'Paragraphen' : 'Artikel';
 
+  // E4/A32 (David 16.7.2026): das Kontext-Panel sass am Gesetzes-ENDE der Lese-
+  // spalte und war «schwer sichtbar/auffindbar». Neuer Platz: unterhalb der
+  // GLIEDERUNG in der TOC-Spalte — überall dort, wo die 2-Spalten-Gliederung
+  // steht (istXl: Desktop/xl UND breites Split-View-Pane, beide Pfade laufen
+  // über dasselbe `istXl`) und die Spalte offen ist. Sonst (Mobil/schmales
+  // Pane: Gliederung ist Drawer — dort NICHT verstecken; Spalte eingeklappt)
+  // bleibt der ehrlich sichtbare Platz das LESEENDE wie bisher. Es rendert
+  // stets genau EIN Panel (nie doppelt, nie eines in einem hidden-Container).
+  const kontextImToc = istXl && sektionen.length > 0 && tocOffen;
+  const kontextPanelLesespalte = kontextImToc ? null : <KontextPanel typ="norm" normKeys={[erlass.key]} />;
+
   // N13 (BS-Audit 23.6.2026): die Reader-Overline zeigte für JEDEN kantonalen
   // Erlass stur das Einheits-Rechtsgebiet («Öffentliches Recht»). Stattdessen das
   // echte Sachgebiet aus der amtlichen Kanton-Systematik (sachgruppe→topTitel).
@@ -291,6 +302,21 @@ export function LeserVolltextInhalt({
             <div data-toc className="flex-1 min-h-0 overflow-y-auto overscroll-contain pr-2 [scrollbar-width:thin]">
               {tocBaumEl}
             </div>
+            {/* A32: Kontext-Panel UNTERHALB der Gliederung. Die Gliederung bleibt
+                primär: der Baum behält flex-1 (allen Restplatz), der Panel-Slot ist
+                auf h-toc-kontext (33vh-Token, tailwind.config.js) FIXIERT und
+                scrollt intern — er kann die Gliederung nie verdrängen. §15.2: die
+                feste Slot-Höhe steht ab dem ersten Render (reservierter Platz) und
+                das Panel blendet erst NACH vollständiger Ladung ein
+                (variante="seitenleiste", KontextPanel-Gating) → der async-Resolve
+                füllt reservierten Platz, nichts rückt nach (CLS 0, Beweis
+                e2e/leser-kontext-e4.e2e.ts). */}
+            {kontextImToc && (
+              <div data-toc-kontext
+                className="shrink-0 h-toc-kontext mt-3 border-t border-line pt-3 overflow-y-auto overscroll-contain pr-2 [scrollbar-width:thin]">
+                <KontextPanel typ="norm" normKeys={[erlass.key]} variante="seitenleiste" />
+              </div>
+            )}
           </aside>
         )}
 
@@ -330,9 +356,12 @@ export function LeserVolltextInhalt({
           )}
 
           {/* Einheitliches Kontext-Panel (B3): Entscheide/Materialien/Werkzeuge zu
-              diesem Erlass am Leseende — Norm ↔ Entscheid ↔ Material ↔ Werkzeug an
-              einer Stelle (Burggraben). Lädt die Entscheide selbst (Single Source, §5). */}
-          <KontextPanel typ="norm" normKeys={[erlass.key]} />
+              diesem Erlass — Norm ↔ Entscheid ↔ Material ↔ Werkzeug an einer Stelle
+              (Burggraben). Lädt die Entscheide selbst (Single Source, §5). A32: in
+              der 2-Spalten-Ansicht sitzt es unterhalb der Gliederung (oben, TOC-
+              Spalte); HIER am Leseende nur noch als Mobil-/Rückfall-Platz
+              (kontextImToc=false — Drawer-Layouts und eingeklappte Spalte). */}
+          {kontextPanelLesespalte}
 
           <nav className="mt-12 border-t border-line pt-5 flex justify-between gap-4 text-body-s" aria-label="Weitere Erlasse">
             {vorher ? <Link to={`/gesetze/${vorher.ebene}/${encodeURIComponent(vorher.key)}`} className="text-brass-700 hover:underline">‹ {vorher.kuerzel}</Link> : <span />}
