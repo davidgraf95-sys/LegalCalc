@@ -187,6 +187,14 @@ Startseiten-Kachel; kuratierter Nachtrag als in-Bundle-Artikel-Anker STATT DB-Mi
 Art. 24 DSG, KS 6a→Art. 65 DBG, DSFA §2.4-Downgrade — 3/3 gegen Live-Fedlex CONFIRMED]; 10 Unit + 3
 e2e grün, CLS 0 auf OR/Startseite). **6a-MAT komplett (M0–M5).**
 
+## W2·7-VZUI — Verzahnung sichtbar machen: V1a/V1c/V1b *(offener Schritt; ✅-Prosa wörtlich verschoben 24.7.2026)*
+
+Ursprünglicher ROADMAP-Wortlaut (Schritt-Kopfzeile, Stand 24.7.2026):
+
+- [ ] **6-VZUI · Verzahnung sichtbar machen** *(David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)* — **V1a ✅ GEBAUT 3.7.2026** (PRs #118/#121/#122 + e2e/Doku-PR; Fundament + Vereinheitlichung + Entscheid beide Richtungen + alle 4 Zusatzaufträge; 13 Verzahnungs-e2e grün, Referenzfall ZGB 684→BGE 151 III 377 = E. 2.3.1) · **V1c ✅ GEBAUT 4.7.2026** (Normrevisions-Ehrlichkeit: Build-Extrakt `public/verzahnung/artikel-revisionen/` 201 Erlasse/12702 Artikel + `klassifiziereFassungsBezug` in LeitfallZeile/KontextPanel/EntscheidLeser + `StatusBadge revidiert` ↻ mit Revisionsdatum+AS; Gegenprüfung bestanden — 3 reale Parser-Bugs gefixt, 0 Rest über 12702 Belege + 10 Artikel gegen Fedlex; 22 Unit + e2e AIG Art. 5/34); **V1b ✅ GEBAUT 4.7.2026** (Branch `feat/vzui-v1b-rangliste`; E4-Rangliste in die 19 Leitfall-Shards eingebacken: `norm_rangliste`-`gewicht` ersetzt build-time das kuratierte, Provenienz NIE gemischt — `gewichtQuelle:'e4'|'alt'` je Shard, 5 e4 [AHVG/AVIG/BVG/ELG/VVG] / 14 alt [vintage-absent Band-152-BGE oder Recall-Lücke]; masse.db-Rebuild deterministisch [195 342 Entscheide, Resolve-Quote 0,8245], Oracle-Tor GRÜN 931 Tripel/0 UNERKLÄRT, `check:entscheide` prüft Membership+Monotonie masse-frei; **727a-Vorbestands-Bug gefixt** [`normArtikelToken` strippt `_`, Reader-Query `727_a`→Shard `727a`]; Gegenprüfung bestanden) · **offen: V2 (E3-Serving) · V2 (E3-Serving) · V3 (E6a)**:
+
+---
+
 ## W2·7 — Verzahnungs-Klingen *(done)*
 
 **GEBAUT 5.7.2026** (Worktree `feat/w27-verzahnungs-klingen`, Dossier
@@ -664,3 +672,54 @@ Schritt 14** → **im selben Worktree wie Strang B, nie als paralleler Strang** 
 >   ausrollen + auf EINE SSoT ziehen (`seo.ts` Quelle, `index.html` daraus). Doks-Wording
 >   (ROADMAP/PROJEKTBESCHRIEB «deterministisch statt KI-geschätzt») **✅ nachgezogen (5.7.2026,
 >   W2·5c-Rest):** `Methodik.tsx`-Abschnittstitel umgestellt, Erinnerungs-Marker aufgelöst.
+
+## Steuerungs-Prosa — abgelöste Dekret-/Essay-Passagen des Abarbeitungs-Kopfs *(wörtlich verschoben 24.7.2026, @queue-Einbau)*
+
+Kontext: Mit dem `@queue`-Einbau (24.7.2026) trägt die Queue-Zeile die Bau-Reihenfolge; die
+folgenden Passagen verloren ihre Steuer-Funktion bzw. sind vollständig in ihren
+FAHRPLAN-Detailquellen enthalten (Verifikation 24.7.2026) und wurden hierher rotiert.
+
+**Aus dem QS-TOK-Dekret (10.7.2026), abgelöster Schlusssatz:**
+
+> Die Reader-Kette **W2·5d U-POSITION → U-PDF** ist danach der nächste
+> Feature-Schritt.
+
+**Quell-Architektur-Entscheid (Council 30.6.2026), ROADMAP-Wortlaut** (Vollinhalt weiterhin in
+`FAHRPLAN-NORMTEXT-DARSTELLUNG.md §Quell-Architektur-Entscheid`):
+
+> **Quell-Architektur-Entscheid (Council 30.6.2026) → Detail `FAHRPLAN-NORMTEXT-DARSTELLUNG.md
+> §Quell-Architektur-Entscheid`, Memory `lexmetrik-akn-xml-architektur-entscheid`.** N1/N2 sind **Phase 0**
+> (jetzt, variantenunabhängig) zusammen mit einem **asymmetrischen Verifikations-Tor** (Containment: jedes
+> Quell-Wort verbucht → fängt stille Drops + Struktur-Invarianten) + **Status-Marker** (in Kraft/aufgehoben/
+> noch-nicht-in-Kraft). Der **HTML→AKN-XML-Wechsel ist Phase 1** — inkrementell über den Drift-Zyklus, **nie
+> Big-Bang** (B «XML direkt rendern» verworfen); empirisch freigegeben (eId 99,7 % stabil über Konsolidierungen,
+> DE/FR/IT ~95–99 % ausgerichtet) → schaltet `#art`-genaue Chips, ELI-Zitations-Graph, M15 (DE/FR/IT) und
+> M16 (Point-in-Time) frei. **M16 ist seit dem Ideen-Intake 20.7.2026 als eigene Bau-Einheit
+> `W2·5g-ZEIT` getrackt** (Norm-Zeitmaschine + Fassungs-Diff, `blocked` auf `zeit-historik-poc`) —
+> diese Stelle hier bleibt die *Architektur*-Begründung, die *Bau*-Planung steht dort und wird hier
+> nicht doppelt geführt (§14.3).
+
+**Intake «Informations-Nutzung der Gesetze» (David 17.7.2026), ROADMAP-Wortlaut** (Vollinhalt
+weiterhin in `FAHRPLAN-NORMTEXT-DARSTELLUNG.md §Intake`):
+
+> **Intake «Informations-Nutzung der Gesetze» (David 17.7.2026) → hierher:** Recherche-Verdikt
+> = Normtext-KÖRPER nahezu erschöpfend genutzt; die handlungsreifen Lücken sind **G-REF** (externe
+> amtliche ELI-Verweise, verworfen via `entferneTags` — konkretisiert N2/Phase-1-ELI-Graph) und
+> **G-HIST** (artikel-genaue Historie liegt nur als Fussnoten-Prosa — Daten-Unterbau von M16, und
+> damit ausdrücklich Vorbedingung des Blockers `zeit-historik-poc` in `W2·5g-ZEIT`). Beide
+> = **Extraktions-Risikopfad** (`QS-GP`, golden byte-gleich; **Bau-GO je Kandidat ausstehend, David**),
+> verortet in `FAHRPLAN-NORMTEXT-DARSTELLUNG.md §Intake`. Der **Suchindex** (G-SUCH, Fussnoten/Tabellen
+> nicht indexiert, kein Risikopfad) liegt getrennt in `FAHRPLAN-UI-NAVIGATION.md §7b`, **G-PRERENDER**
+> (SEO/§15) in `FAHRPLAN-SEO-A11Y-GOVERNANCE.md §11`. **Detailquelle (§11):**
+> `bibliothek/normen/informations-nutzung-gesetze-2026-07-17.md`.
+
+**«Einzeln»-Posten + Startseiten-Merker (30.6.-Eingang), ROADMAP-Wortlaut:**
+
+> **Einzeln:**
+> - **I1 Seitenleisten-Reihenfolge** + **I2 Branding-Neuausrichtung** → **✅ beide gebündelt in
+>   W2·5c (3.7.2026) und dort gebaut** (SSoT `navigation.ts` bzw. Messaging-SSoT `seo.ts` +
+>   Tor `check:seo-index`; Doks-Wording ✅ 5.7.). Wortlaut → `ROADMAP-CHRONIK.md` → Eingang-30.6.
+>
+> **Merker Startseiten-Überarbeitung: ✅ entparkt 3.7.2026 → Schritt W2·5c** (Ultracode-Recherche
+> + bindendes Council-Verdikt liegen vor; Redesign-zurückgestellt 16.6. + FUNDAMENT-Startseitenrahmen
+> dort abgeglichen).

@@ -68,3 +68,19 @@ describe('parseRoadmap — Robustheit', () => {
     expect(parseRoadmap(md).einheiten[0].checkbox).toBe('[x]');
   });
 });
+
+// @queue-Direktive (Einbau 24.7.2026): die EINE maschinenlesbare Prioritäts-Quelle.
+describe('parseRoadmap — @queue', () => {
+  it('liest die @queue-Direktive als ID-Liste', () => {
+    const md = FIXTURE.replace('<!-- @blockers', '<!-- @queue: W2·6, QS-PERF -->\n<!-- @blockers');
+    expect(parseRoadmap(md).queue).toEqual(['W2·6', 'QS-PERF']);
+  });
+  it('ohne Direktive: leere Queue', () => {
+    expect(parseRoadmap(FIXTURE).queue).toEqual([]);
+  });
+  it('pinnt die Sektions-Ableitung der Querschnitt-Überschrift (next.ts-Filter hängt am Präfix)', () => {
+    const md = FIXTURE.replace('## Querschnitt-Band', '## Querschnitt-Band (läuft begleitend — kein Reihenfolge-Slot)');
+    const qs = parseRoadmap(md).einheiten.find((e) => e.id === 'QS-PERF')!;
+    expect(qs.sektion.startsWith('Querschnitt-Band')).toBe(true);
+  });
+});
