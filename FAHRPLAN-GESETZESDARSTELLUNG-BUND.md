@@ -134,15 +134,20 @@ Abweichungen nur (a) inhaltsgetrieben und (b) generations-/jahrgangsbedingt.
   `ArtikelBody.tsx`/Reader. **Gate:** visuell (ZGB/OR-Parität) + Toggle-Test.
 
 ### M4 · Suche + Gliederung responsiv überarbeiten — Batch C
-- [ ] **Root-Cause:** auf schmalem Viewport verdeckt die Gliederung das Suchfeld / die gefundenen
-  Artikel. **Soll:** Zusammenspiel **Suche ↔ Gliederung ↔ Normtext je Breakpoint** neu durchdenken
-  (Overlay/Drawer-Verhalten mobil). **Datei:** Reader-Shell / Such-/Gliederungs-Komponenten.
-  **Gate:** Playwright-Breakpoints (Bash, nicht MCP). *Symptom-Beleg:* Screenshot 10:14:31.
+- [x] **FAKTISCH ERLEDIGT durch W2·5d — Nachmessung 24.7.2026 (ROADMAP-Auflage «erst verifizieren»):**
+  am heutigen Reader (Dev-Server, OR) mobil 375×812 empirisch geprüft: Gliederung öffnet als
+  **Drawer mit explizitem «✕ schliessen»**, Suche kollabiert zum Lupe-Icon in der Kopfzeile und
+  expandiert auf Klick zum **vollbreiten Feld** — kein Überdecken von Suchfeld oder Treffern mehr.
+  Ursprüngliches Symptom (Screenshot 10:14:31) nicht mehr reproduzierbar. *(Ursprünglicher
+  Root-Cause: auf schmalem Viewport verdeckte die Gliederung das Suchfeld / die gefundenen
+  Artikel; Soll war Overlay/Drawer-Verhalten mobil.)*
 
 ### M5 · Gliederung + Suche kompakt zum Header — Batch C
-- [ ] **Root-Cause:** Abstand/Ausrichtung lose, schliessen nicht kompakt an den Header an.
-  **Soll:** bündig/kompakt zum Header. **Datei:** Reader-Layout. **Gate:** visuell. (Regel →
-  `DESIGN-REGLEMENT-NORMTEXT.md`.)
+- [x] **FAKTISCH ERLEDIGT durch W2·5d (PR #284 A35 + PR #301 Suchfeld in Kopfzeile) — Nachmessung
+  24.7.2026:** e2e `leser-suche-a35-a40-a41.e2e.ts` («Suchfeld sitzt OBEN im Inhalts-Kopf, NICHT in
+  einer eigenen Leiste oder der Gliederungsspalte») grün im 29/29-Lauf der B24-Verifikation;
+  Sichtprüfung Desktop bestätigt Suchfeld + Gliederungs-/Ansicht-Kontrollen in der Kopfzeile.
+  *(Ursprünglicher Root-Cause: Abstand/Ausrichtung lose, nicht kompakt zum Header.)*
 
 ### M6 · Verweis Art. 89a Abs. 6 ZGB → BVG korrekt auflösen — Batch A + D
 - [x] **Batch-A-Teil ERLEDIGT + GEGATED 30.6.2026** (Branch `feat/normtext-tabellen-kanonisch`). **Befund
@@ -161,13 +166,18 @@ Abweichungen nur (a) inhaltsgetrieben und (b) generations-/jahrgangsbedingt.
   Batch D.
 
 ### M7 · Nach Suche abgeschnittenes Gesetz — Batch C
-- [ ] **Root-Cause:** Sprung-/Scroll-Position nach Suche; Sticky-Header verdeckt den Treffer, Text
-  wirkt oben abgeschnitten (Geistertext). **Soll:** korrektes Scroll-Offset unter den Sticky-Header.
-  **Datei:** Reader-Scroll/Such-Logik. **Gate:** Repro-Test (Screenshot 10:14:31).
+- [x] **FAKTISCH ERLEDIGT durch W2·5d-Sprunglogik — Nachmessung 24.7.2026:** Scroll-Offset ist
+  gebaut und getestet: `.nt-anker`-scroll-margin **5rem unter dem Sticky-Header** (`index.css`,
+  dokumentiert in `scrollAnker.ts` + Sprung-Kommentar R1 in `gesetz-leser/inhalt.tsx`), Sprünge
+  via `block:'start'` + scroll-margin; e2e-Deckung über `leser-suche-a35-a40-a41` +
+  `leser-position-u` (grün). Kein Geistertext/Abschneiden am heutigen Reader reproduzierbar.
+  *(Ursprünglicher Root-Cause: Sticky-Header verdeckte den Treffer nach dem Such-Sprung.)*
 
 ### M8 · Suchbegriff im Normtext hervorheben — Batch C
-- [ ] **Root-Cause:** Treffer wird nicht markiert. **Soll:** gesuchtes Wort im Normtext hervorheben.
-  **Datei:** Such-/Reader-Render. **Gate:** Test (Markup-Highlight bei Suche).
+- [x] **FAKTISCH ERLEDIGT durch W2·5d (PR #284 A40 Treffer-Highlight) — Nachmessung 24.7.2026:**
+  `gesetz-leser/suchHighlight.ts` (CSS Custom Highlight API) + e2e «‹Vertrag› im OR wird im
+  Treffertext gehighlighted» grün (29/29-Lauf B24); Sichtprüfung: Suche «Kündigung» im OR zeigt
+  69 Treffer mit markiertem Begriff. *(Ursprünglicher Root-Cause: Treffer wurde nicht markiert.)*
 
 ### M9 · Aufgehobene Artikel auf gleicher Ebene — Batch B (Render)
 - [x] **GEBAUT + GEGATED 30.6.2026** (Branch `feat/normtext-tabellen-kanonisch`): in `gesetz-leser/parts.tsx`

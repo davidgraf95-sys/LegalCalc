@@ -21,6 +21,19 @@ token verbrauch zu minimieren.»** Damit P0–P5 freigegeben; Start = **P0/T2 To
 Tok ≈ Bytes÷4; Zahlen = Schätzung bis T2 misst; Umsetzung Opus, gate-grün, je PR.
 Notation: M Mechanik · E Ersparnis+Herleitung · R Risiko→Gegenmittel · **K adversariale Korrektur (Spec-Pflicht)** · DoD messbar.
 
+### Stand 24.7.2026 — autonomer Bau-Rest LEER (Nachmessung Session «run till dry»)
+
+Repo-Nachmessung (Session 24.7. III): **gebaut und verifiziert** sind T1 · T2 · T3 · T5 · T6 ·
+T7 · T9 (Permissions `.claude/settings.json:20f.` + Template-Verankerung) · T15/T18 (im
+Dispatch-Template `docs/token-oekonomie/dispatch-template.md` verankert) · T17 (`test:kurz` in
+`package.json:22`) · T19 sowie `npm run map`/`zeige`/`fahrplan`. **Verbleibend NUR mit separatem
+Go David (§8 Ziff. 4):** T10 · T12-Stufe-2 · T14 · T16 · T20 (je Einsatz). **T13-Rest bewusst
+zurückgestellt:** die genannten Config-Dateien sind inzwischen Barrel-Splits (< 25 Z.,
+`startseiteKarten.ts`/`startseiteVorlagen.ts`), der Rest läge auf Risikopfaden
+(`zustaendigkeit.ts`, `normtext/register.ts`) — Gegenprüfungs-Zeremoniell für reine
+Navigations-Kommentare ist QS-TOK-widrig (Kosten > Ersparnis). Eine Bau-Session ohne
+David-Go nimmt direkt den nächsten `@queue`-Schritt der ROADMAP.
+
 ### Stand P4 — Werkzeuge+Output gebaut (10.7.2026, PR QS-TOK/P4)
 
 Umgesetzt **T8** (`npm run map` = `scripts/repo-map.ts`: deterministische Repo-/Symbol-Map

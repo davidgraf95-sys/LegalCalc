@@ -623,3 +623,22 @@
   wird NICHT von T8 ersetzt → H-14 bleibt eine echte Doku-Einheit, kein Doppelbau. **Beweis:**
   read-only-Doku; `npm run gate` (voll) GRÜN (inkl. `check:bibliothek` S1–S10). Gegenprüfung n/a —
   reine Register-Doku, kein Norm-/Tarif-/Rechenwert. Trailer `Roadmap: W2·12-HYGIENE`.
+- **24.7.2026: H-3 ✅ als No-op geschlossen** (frische Erhebung am Bau-Tag, §0 Regel 6):
+  `git branch --merged main` = **0** gemergte Feature-Branches, `git worktree list` = nur der
+  Haupt-Checkout. Die 16 Branches/26 Worktrees des Audits sind zwischenzeitlich durch die
+  regulären Landungen (Skill `landung`, Worktree-Removal je Einheit) abgebaut worden — nichts
+  mehr zu entfernen, nichts zu inventarisieren. Kein Code, kein Commit nötig.
+- **24.7.2026: B24 ✅** (Branch `chore/b24-inhalt-split`, **PR #338**, Squash `b56b9193`).
+  §6.6-Fassaden-Split `src/pages/gesetz-leser/inhalt.tsx` **1494 → 781 Z.** nach Merge der
+  Blocker-PRs #240/#267 (Verschiebe-Deklaration H-13 damit eingelöst). Geschwister:
+  `inhalt-ansichten.tsx` (119 Z., Lade-/PDF-/Live-Verweis-Ansichten) · `inhalt-volltext.tsx`
+  (346 Z., Volltext-Innen-Render, `renderSektion` als Prop) · `inhalt-hooks.tsx` (556 Z.,
+  drei Effekt-Cluster als Custom-Hooks, Effekt-Reihenfolge byte-äquivalent, React-Compiler-
+  aus-Leitplanke §15.4 eingehalten). `renderSektion` + reader-root bewusst in `inhalt.tsx`
+  (`check:linien-kanon` prüft genau diese Datei). **Beweis (G1 UI-Split):** tsc grün ·
+  `npm run gate` voll grün (check 36/36) · golden **249/249 byte-gleich** · Build 63 Routen/
+  1458 Erlass-Seiten · e2e unangepasst **29/29** (leser-gliederung-a33 · leser-optionen ·
+  leser-suche-a35-a40-a41 · gesetze · norm-sprung) · manuelle Sichtprüfung OR-Leser (Suche
+  «Kündigung» 69 Treffer + Highlight, Ansicht-Menü, Mobile-Drawer) ohne Befund. Gegenprüfung
+  n/a — reine Darstellung. Trailer `Roadmap: W2·12-HYGIENE`. **W2·12-HYGIENE damit ohne
+  offene baubare Einheit** (P3-Rest engine-map = T8-Doppelbau-Sperre, s. H-14).
