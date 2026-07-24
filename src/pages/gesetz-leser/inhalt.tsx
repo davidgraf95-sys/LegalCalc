@@ -22,7 +22,7 @@ import { ladeRevisionShard, revisionFuerToken, type RevisionShard } from '../../
 import { ladeHistorieShard, historieFuerArtikel, type HistorieShard } from '../../lib/normtext/historie-laden';
 import {
   paneRoot, istAnhangToken, findeArt,
-  berechneSekPos, berechneSektionMeta,
+  berechneSekPos, berechneSektionMeta, kuratiereTocSektionen,
 } from './berechnungen';
 import { GesetzFehlSeite } from './FehlSeite';
 import { setzeSuchHighlight } from './suchHighlight';
@@ -303,6 +303,11 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     () => (eintraege ? baueGliederungsbaum(eintraege, struktur) : { sektionen: [], ohneGliederung: [] }),
     [eintraege, struktur],
   );
+
+  // E4/A36: kuratierter Baum NUR für die GLIEDERUNG (SektionBaumTOC) — die
+  // Lesespalte (renderSektion unten) arbeitet weiter auf dem vollen `sektionen`
+  // (§15-Treue: Inhalt/Anker/Ctrl+F/Print vollständig; reine TOC-Kuration).
+  const tocSektionen = useMemo(() => kuratiereTocSektionen(sektionen), [sektionen]);
 
 
   // W2·5d U-LINIEN (A8): das Linien-Regelwerk «wann welche Linie» leitet der Reader
@@ -743,7 +748,9 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // Drawer, §5 — kein doppelter onSprung). `springeZuSektion`/`tocToggle` sind
   // oben als useCallback definiert (über dem early-return, Rank 4).
   const tocBaumEl = (
-    <SektionBaumTOC sektionen={sektionen} aktivPfad={aktivIds} offen={tocBaum}
+    // A36: kuratierter Baum (tocSektionen) — Sprung-/Toggle-Handler arbeiten
+    // weiter über IDs des vollen Baums (Teilmenge, pfadZu findet sie identisch).
+    <SektionBaumTOC sektionen={tocSektionen} aktivPfad={aktivIds} offen={tocBaum}
       onToggle={tocToggle} onSprung={springeZuSektion} />
   );
 
