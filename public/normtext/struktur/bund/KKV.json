@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-19",
+ "erzeugt": "2026-07-24",
  "kopf": {
   "srNummer": "951.311",
   "titel": "Verordnung über die kollektiven Kapitalanlagen",
@@ -2717,7 +2717,7 @@
     }
    ],
    "marginalie": [
-    "Effektenleihe () und Pensionsgeschäft ("
+    "Effektenleihe (Securities Lending) und Pensionsgeschäft (Repo, Reverse Repo)"
    ],
    "fussnoten": [
     {
@@ -5193,7 +5193,7 @@
     }
    ],
    "marginalie": [
-    "Verwaltung derLiquidität"
+    "Verwaltung der Liquidität"
    ],
    "fussnoten": [
     {
@@ -5433,7 +5433,7 @@
     }
    ],
    "marginalie": [
-    "Informationspflichten beiStatuswechsel"
+    "Informationspflichten bei Statuswechsel"
    ]
   },
   "126_e": {
@@ -7028,7 +7028,7 @@
     }
    ],
    "marginalie": [
-    "Bestmögliche Ausführung vonEffektenhandelsgeschäften und sonstigen Transaktionen"
+    "Bestmögliche Ausführung von Effektenhandelsgeschäften und sonstigen Transaktionen"
    ],
    "fussnoten": [
     {
