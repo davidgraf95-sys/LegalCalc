@@ -12,7 +12,16 @@ export interface Buckets {
   inArbeit: string[];
   wartet26xSlot: string[];
   slot26xBelegtVon: string | null;
+  /** ready-Einheiten aus dem Querschnitt-Band: laufen begleitend, konkurrieren
+   *  nie um den «obersten offenen Schritt» (ihre eigene Abschnitts-Überschrift
+   *  sagt «kein Reihenfolge-Slot» — bis 24.7.2026 gewann trotzdem ein
+   *  Querschnitt-Schritt die oberste Position, gegen zwei David-Dekrete). */
+  begleitend: string[];
 }
+
+/** Präfix-Test statt Gleichheit: parse.ts schneidet den «— …»-Tail der Überschrift ab,
+ *  aber Klammer-Zusätze wie «(läuft begleitend …)» bleiben Teil des Sektions-Strings. */
+const QUERSCHNITT_PRAEFIX = 'Querschnitt-Band';
 
 function kollBasis(p: string): string { return p.replace(/[*?{[].*$/, ''); }
 function pfadUeberlappt(x: string, y: string): boolean {
@@ -27,7 +36,7 @@ function kollidiert(a: string[], b: string[]): boolean {
   return false;
 }
 
-export function resolve(einheiten: Einheit[]): Buckets {
+export function resolve(einheiten: Einheit[], queue: string[] = []): Buckets {
   // Dokumentreihenfolge = Bau-Reihenfolge. Vorher wurde lexikografisch nach ID
   // sortiert; damit waren alle ready-Einheiten gleichrangig und die Frage nach
   // dem «obersten offenen Schritt» (Ausführungs-Protokoll) nicht beantwortbar.
@@ -49,6 +58,7 @@ export function resolve(einheiten: Einheit[]): Buckets {
   const geparkt: string[] = [];
   const inArbeit: string[] = [];
   const wartet26xSlot: string[] = [];
+  const begleitend: string[] = [];
   let ready26xAdmitted = false;
 
   for (const e of sortiert) {
@@ -58,6 +68,7 @@ export function resolve(einheiten: Einheit[]): Buckets {
     if (t.status === 'parked') { geparkt.push(e.id); continue; }
     if (t.status === 'blocked') { blockiert.push({ id: e.id, blocker: t.blocker ?? '?' }); continue; }
     // status === 'ready'
+    if (e.sektion.startsWith(QUERSCHNITT_PRAEFIX)) { begleitend.push(e.id); continue; }
     if (!t.of) { wartetFachzeit.push(e.id); continue; }
     const offen = t.dep.filter((d) => !done.has(d));
     if (offen.length) { wartetDep.push({ id: e.id, offen }); continue; }
@@ -65,6 +76,13 @@ export function resolve(einheiten: Einheit[]): Buckets {
     if (t.asset26x && !inhaber26x && (slot26xBelegtVon || ready26xAdmitted)) { wartet26xSlot.push(e.id); continue; }
     if (t.asset26x) ready26xAdmitted = true;
     readyNow.push(e.id);
+  }
+
+  // @queue-Rang VOR der Lane-Bildung: gequeuete IDs führen in Queue-Reihenfolge,
+  // alle übrigen behalten (stabiler Sort, Node ≥ 12) ihre pos-Ordnung dahinter.
+  if (queue.length) {
+    const qrang = new Map(queue.map((id, i) => [id, i]));
+    readyNow.sort((a, b) => (qrang.get(a) ?? Infinity) - (qrang.get(b) ?? Infinity));
   }
 
   // Lanes: greedy lexikografisch. Konservativ: leere kollision = undeklariert =
@@ -79,17 +97,18 @@ export function resolve(einheiten: Einheit[]): Buckets {
     }
     if (!platziert) lanes.push([id]);
   }
-  return { readyNow, lanes, wartetDep, wartetFachzeit, blockiert, geparkt, inArbeit, wartet26xSlot, slot26xBelegtVon };
+  return { readyNow, lanes, wartetDep, wartetFachzeit, blockiert, geparkt, inArbeit, wartet26xSlot, slot26xBelegtVon, begleitend };
 }
 
 // CLI
 if (!process.env.VITEST) {
-  const { einheiten } = parseRoadmap(readFileSync('ROADMAP.md', 'utf8'));
-  const b = resolve(einheiten);
+  const { einheiten, queue } = parseRoadmap(readFileSync('ROADMAP.md', 'utf8'));
+  const b = resolve(einheiten, queue);
   const z = (s: string) => console.log(s);
   z(`▶ OBERSTER offener Schritt: ${b.readyNow[0] ?? '—'}`);
   z(`▶ JETZT baubar (ready-now): ${b.readyNow.join(', ') || '—'}`);
   z(`  Parallel-Lanes: ${b.lanes.map((l) => `[${l.join(' + ')}]`).join('  ') || '—'}`);
+  if (b.begleitend.length) z(`🔄 begleitend (Querschnitt-Band, kein Reihenfolge-Slot): ${b.begleitend.join(', ')}`);
   if (b.wartetDep.length) z(`⏳ wartet auf dep: ${b.wartetDep.map((x) => `${x.id}→${x.offen.join(',')}`).join(' · ')}`);
   if (b.wartetFachzeit.length) z(`👤 wartet auf Davids Fachzeit: ${b.wartetFachzeit.join(', ')}`);
   if (b.blockiert.length) z(`⛔ blockiert: ${b.blockiert.map((x) => `${x.id}(${x.blocker})`).join(', ')}`);

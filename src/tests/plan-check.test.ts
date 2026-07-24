@@ -142,3 +142,40 @@ describe('pruefe — Lücken-Abdeckung (Task-5-Review)', () => {
     expect(ok(plan(slotUnit('[~]', 'wip', 'null')), ['A'])).toEqual([]);
   });
 });
+
+// Regel 8 (@queue-Integrität, Einbau 24.7.2026): die Queue ist die EINE
+// Prioritäts-Quelle; tote/erledigte IDs oder Prosa-Widerspruch steuern falsch.
+describe('pruefe — Regel 8 @queue-Integrität', () => {
+  const mitQueue = (queue: string, extra = '') =>
+    `## Die geordnete Abarbeitung\n<!-- @queue: ${queue} -->\n${extra}` + OK.replace('## Die geordnete Abarbeitung\n', '');
+
+  it('konsistente Queue → kein Problem', () => {
+    expect(pruefe(mitQueue('W1·4'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4'])).toEqual([]);
+  });
+  it('8.1: Queue-ID ohne @meta → Problem', () => {
+    const p = pruefe(mitQueue('GEIST'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4']);
+    expect(p.some((x) => x.id === 'GEIST' && /kein @meta/.test(x.meldung))).toBe(true);
+  });
+  it('8.2: Dublette in der Queue → Problem', () => {
+    const p = pruefe(mitQueue('W1·4, W1·4'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4']);
+    expect(p.some((x) => x.id === 'W1·4' && /mehrfach/.test(x.meldung))).toBe(true);
+  });
+  it('8.3: done-ID in der Queue → Problem (Stale-Guard)', () => {
+    const p = pruefe(mitQueue('W1·1'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4']);
+    expect(p.some((x) => x.id === 'W1·1' && /veraltete Steuerung/.test(x.meldung))).toBe(true);
+  });
+  it('8.4: Prosa-«OBERSTER» widerspricht Queue-Kopf → Problem', () => {
+    const md = mitQueue('W1·4', '> **⬆ OBERSTER OFFENER SCHRITT:** `W1·1` zuerst.\n');
+    const p = pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4']);
+    expect(p.some((x) => x.id === 'W1·1' && /Prosa behauptet oberster/.test(x.meldung))).toBe(true);
+  });
+  it('8.4: Prosa-«OBERSTER» ohne @queue → Problem', () => {
+    const md = OK + '\n> **⬆ OBERSTER OFFENER SCHRITT:** `W1·4` zuerst.\n';
+    const p = pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4']);
+    expect(p.some((x) => x.id === null && /keine @queue/.test(x.meldung))).toBe(true);
+  });
+  it('8.4: Prosa-«OBERSTER» stimmt mit Queue-Kopf überein → kein Problem', () => {
+    const md = mitQueue('W1·4', '> **⬆ OBERSTER OFFENER SCHRITT:** `W1·4` zuerst.\n');
+    expect(pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4'])).toEqual([]);
+  });
+});

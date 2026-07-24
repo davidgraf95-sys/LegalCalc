@@ -508,6 +508,15 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 > Reihenfolge nach Praxis-Hebel × Machbarkeit ohne Fachzeit × Abhängigkeiten. Alles `[OF]`, sofern
 > nicht vermerkt. Details + Bau-Auflagen je Werkzeug: «Funktions-Katalog» unten + jeweilige `FAHRPLAN-*.md`.
 
+<!-- @queue: QS-TOK, W2·12-HYGIENE, W2·5b, W2·5d, W2·5h-GESETZ-UI, W2·5i-HIST-ANSICHT, W2·13-KANTONE, W2·7-BEZUG, W2·6b-MAT-FINMA -->
+<!-- ^ SSoT der Bau-Reihenfolge (Einbau 24.7.2026): plan:next wertet die @queue VOR der
+     Dokumentreihenfolge aus; Integrität erzwingt check:plan Regel 8 (tote/erledigte IDs rot,
+     Prosa-«OBERSTER» muss dem Queue-Kopf entsprechen). Priorität ändern = NUR diese Zeile
+     ändern, nicht Prosa. Begründung je Schritt in den Dekret-Blöcken darunter.
+     Annahme (David-bestätigbar): QS-TOK bleibt vor dem Fokus-Dekret 24.7. an der Spitze
+     (Dekret 10.7. nie widerrufen); zieht David die Gesetzesdarstellung vor, W2·12-HYGIENE
+     an den Kopf dieser Zeile setzen. -->
+
 > **⬆ OBERSTER OFFENER SCHRITT (Priorisierung David 10.7.2026): `QS-TOK` Token-Ökonomie des
 > Agenten-Baus.** Wortlaut David (Chat 10.7.2026): «oberster schritt soll sein den token verbrauch
 > zu minimieren.»

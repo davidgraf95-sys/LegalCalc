@@ -68,7 +68,7 @@ export function pruefe(
   inventar: readonly string[] = INVENTAR,
 ): Problem[] {
   const probleme: Problem[] = [];
-  const { einheiten, blockers } = parseRoadmap(md);
+  const { einheiten, blockers, queue } = parseRoadmap(md);
   const vorhanden = new Set(einheiten.map((e) => e.id));
 
   // (1) Inventar-Abdeckung + keine Doppel
@@ -134,6 +134,32 @@ export function pruefe(
   }
   // (7) FAHRPLAN-Link-Check (eingegliedertes QS-PH)
   for (const f of fahrplanDateien) if (!md.includes(f)) probleme.push({ id: null, meldung: `${f} ist nicht aus ROADMAP.md verlinkt` });
+
+  // (8) @queue-Integrität — die Queue ist die EINE Prioritäts-Quelle (Einbau 24.7.2026);
+  // eine Queue, die auf tote/erledigte IDs zeigt oder der Prosa widerspricht, steuert falsch.
+  const inQueue = new Set<string>();
+  for (const id of queue) {
+    // (8.1) jede Queue-ID trägt ein @meta
+    if (!vorhanden.has(id)) probleme.push({ id, meldung: `@queue-ID "${id}" hat kein @meta` });
+    // (8.2) keine Dublette
+    if (inQueue.has(id)) probleme.push({ id, meldung: `@queue-ID "${id}" mehrfach in @queue` });
+    inQueue.add(id);
+    // (8.3) Stale-Guard: erledigte/geparkte Schritte haben in der Queue nichts verloren
+    // (§14.2 «Plan in beide Richtungen pflegen», maschinell erzwungen)
+    const ziel = einheiten.find((e) => e.id === id);
+    if (ziel && (ziel.etikett.status === 'done' || ziel.etikett.status === 'parked')) {
+      probleme.push({ id, meldung: `@queue-ID "${id}" ist ${ziel.etikett.status} — veraltete Steuerung, aus @queue entfernen` });
+    }
+  }
+  // (8.4) Prosa-Konsistenz-Guard: behauptet der Fliesstext einen «obersten» Schritt,
+  // muss er dem Queue-Kopf entsprechen — sonst steuert die Prosa an der Mechanik vorbei
+  // (Befund 24.7.2026: Dekret sagte QS-TOK, plan:next lieferte LERNPHASE-AB).
+  const obersterZeile = md.split(/\r?\n/).find((z) => z.includes('⬆ OBERSTER OFFENER SCHRITT'));
+  if (obersterZeile) {
+    const idImText = obersterZeile.match(/`([^`]+)`/)?.[1] ?? null;
+    if (!queue.length) probleme.push({ id: null, meldung: `Prosa behauptet einen obersten Schritt («⬆ OBERSTER OFFENER SCHRITT»), aber es gibt keine @queue` });
+    else if (idImText && idImText !== queue[0]) probleme.push({ id: idImText, meldung: `Prosa behauptet oberster "${idImText}", @queue-Kopf ist "${queue[0]}"` });
+  }
 
   return probleme;
 }
