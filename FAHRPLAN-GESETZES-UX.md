@@ -1966,3 +1966,45 @@ Regelwerk, keine Patches je Erlass.
 ### 14.4 DoD
 `check:tabellen` grün · golden byte-gleich (Zellinhalte unverändert) · Ctrl+F-/Print-Nachweis an
 mindestens einem breiten Erlass (VTS) · axe · `check:perf-budget`.
+
+## 15 · Gesetzes-Kopfzeile & Gliederungs-Default (`W2·5h-GESETZ-UI`, §14-Intake 24.7.2026)
+
+Wortlaut-Quelle: Anmerkungs-Session David 24.7.2026 (Anm. 6–12). Begriffsklärung (mit David
+bestätigt): **Gesetzes-Kopfzeile** = die Sticky-Werkzeugleiste der Gesetzesansicht
+(`Gesetze › Bund › ZGB` · Positions-Anzeige `Art. 214 ZGB` · «Im Gesetz suchen» · ◧ Ansicht ▾ ·
+Stand · ✕) — NICHT die globale Topbar.
+
+- **K1 · Gliederungs-Default kompakter.** Beim Seitenaufruf ist heute standardmässig zu viel
+  aufgeklappt; neuer Startzustand kompakt/eingeklappt, Aufklappen gezielt durch den Nutzer.
+  §15-Treue unberührt: Ctrl+F übers ganze Gesetz, `#art-`-Anker (Ziel klappt auf und springt an),
+  Print/PDF-Vollständigkeit, Prerender/SEO — Einklappen ändert das WIE-sichtbar, nie das
+  WAS-vorhanden (CLAUDE.md §15.1/§15.6).
+- **K2 · Abstand Gliederung ↔ Gesetzes-Kopfzeile** (heute zu knapp) über Spacing-Tokens (§13 D2),
+  keine Magic-Numbers.
+- **K3 · Suche als Lupe in die Kopfzeile.** Statt dauerhaft ausgeschriebenem Feld in eigener
+  Zeile: Lupen-Symbol in der Gesetzes-Kopfzeile, öffnet auf Klick das Eingabefeld — bestätigt
+  David 24.7. («standardmässig nur Lupe»). Gilt konsequent in beiden Zuständen (Seitenanfang und
+  gescrollt/sticky); die Abstands-Lücke zwischen Suchzeile und Kopfzeile entfällt.
+- **K4 · Gliederungs-Toggle in der Kopfzeile.** Eingeklappte Gliederung ist nie «weg»: ein
+  Gliederungs-Symbol in der Kopfzeile öffnet sie jederzeit wieder (geparkt, nicht entfernt).
+- **K5 · Scroll-Ziel nie verdeckt.** Gliederungs-Klick (Bsp. ZGB «Dritter Abschnitt: Die
+  Stiftung») landet teils mit angeschnittener Überschrift unter der Sticky-Leiste —
+  **intermittierend**, nicht deterministisch. Beim Bau per systematic-debugging verifizieren:
+  (a) `scroll-margin-top`/`scroll-padding-top` in Kopfzeilen-Höhe am Ziel, (b) Nach-Sprung-
+  Layout-Shift durch `content-visibility:auto` + `contain-intrinsic-size` (geschätzte Höhen
+  rendern beim Scrollen echt → Zielposition verschiebt sich; ggf. Scroll-Korrektur nach
+  Layout-Stabilisierung). Gilt für Gliederungs-Klicks UND `#art-`-Deep-Links (§15 Funktions-Treue).
+- **K6 · Kopfzeile gesamthaft optimieren** (Dach-Auftrag): Elemente, Ordnung und Gewichtung der
+  Leiste überarbeiten; konsistentes Verhalten Seitenanfang ↔ sticky; Responsive-Verdichtung auf
+  schmalen Viewports; §13 Block F (Zustands-Matrix, Fokus, Kontrast hell+dunkel).
+- **K7 · «Ansicht ▾» als Personalisierungs-Zentrum.** Deutlich mehr personalisierbar
+  (Kanton-Auswahl u. a.); Andockpunkt für die Bezüge-Facetten-Filter aus `W2·7-BEZUG`
+  (`FAHRPLAN-VERZAHNUNG-UI.md` §9 B4) und die Fassungshistorie-Auswahl (W2·5i).
+  `LeserAnsichtMenu.tsx` hat Persistenz + Pre-Paint-Mechanik — dort einklinken, kein neues Menü.
+
+**Prior-Art zuerst nachmessen (§8, kein Doppelbau):** M4/M5/M7/M8 aus
+`FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` (Suche/Gliederung responsiv · kompakt zum Header ·
+Scroll-Offset nach Suche · Treffer-Highlight) sowie U-SUCHE/U-KOPF (§10) überschneiden sich —
+PRs #284/#301 haben Teile davon vermutlich schon gebaut. Erst am heutigen Reader verifizieren,
+dann K1–K7 als Delta bauen. Reines UI, golden byte-gleich; DoD wie `W2·5h` (axe,
+`check:perf-budget`, e2e; K5 mit eigenem e2e-Nachweis Sprung→Überschrift vollständig sichtbar).

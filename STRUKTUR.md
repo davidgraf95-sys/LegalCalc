@@ -21,6 +21,15 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 24.7.2026 — §14-Intake: 14 Anmerkungen David (Gesetzesdarstellung + Verzahnungs-Fundament + FINMA) in den Plan verortet (Branch `docs/plan-intake-2026-07-24`, reine Plan-Doku)
+**Auftrag:** Anmerkungs-Session («go» = einbauen). 14 Anmerkungen nach §14 gebündelt und verortet — kein Bau:
+- **Fokus-Dekret 24.7.** im Abarbeitungs-Kopf der `ROADMAP.md`: Gesetzesdarstellung im Vordergrund — (1) erst Code-Vereinfachung der Gesetzes-Strecke (Vehikel W2·12-HYGIENE, §6-neutral) → (2) Gesetzes-Schritte prioritär → (3) daneben prioritär `W2·7-BEZUG` + `W2·6b-MAT-FINMA`.
+- **Neu `W2·7-BEZUG`** (Bezüge am Artikel — Facetten-Fundament alle Instanzen: kantonale Entscheide, BGer-Nicht-Leitentscheide, Facetten Quelltyp/Ebene/Kanton/Gericht/Leitentscheid-Status, Filter-UI Default konservativ; Long-Tail bleibt W2·6-DATA) → Detail `FAHRPLAN-VERZAHNUNG-UI.md` §9 (neu).
+- **Neu `W2·6b-MAT-FINMA`** (FINMA-Materialien prioritär, Kontext Bewerbung David bei der FINMA; F1 Quelle in Stufe-1-Pipeline, F2 evtl. direkte Artikel-Verzahnung nach H0-Machbarkeits-Verdikt) → Detail `FAHRPLAN-MATERIALIEN-VERZAHNUNG.md` §9 (neu).
+- **W2·5h-Intake «Gesetzes-Kopfzeile & Gliederungs-Default»** K1–K7 (Default kompakter · Abstand · Suche als Lupe in die Sticky-Leiste · Gliederungs-Toggle · Scroll-Ziel-Verdeckung · Kopfzeile gesamt · Ansicht ▾ als Personalisierungs-Zentrum) → Detail `FAHRPLAN-GESETZES-UX.md` §15 (neu); Prior-Art-Abgleich M4/M5/M7/M8, PRs #284/#301 vermerkt.
+- **W2·5b-Intake M12 Randtitel-Leerzeichen-Verklebung** — live + Daten verifiziert (OR Art. 10 «Wirkungeneines unterAbwesenden…»; Defekt in `public/normtext/struktur/bund/*.json` ≥8 Erlasse + vererbt in Such-Index, `bloecke` sauber) → Befund/Bau `FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` M12 (neu); Extraktions-Risikopfad, Gegenprüfung beim Bau.
+- Inventar `scripts/plan/inventar.ts` +2 IDs; `check:plan` grün, `plan:next` zeigt beide neu als ready. Gegenprüfung n/a — reine Plan-Doku.
+
 ## Session 21./22.7.2026 — Nacht-Aufräumung: Repo auf «nur main», zwei Falsch-Rot-Wurzeln gezogen, Steuer-Doku rotiert (Hauptcheckout, Auftrag David «tiefgründiges Aufräumen, run till dry»)
 **Auftrag:** Repo konsolidieren, bis nur `main` übrig ist; alles Liegengebliebene zusammenführen. Repo wurde von David von `LegalCalc` auf **`LexMetrik`** umbenannt (Remote-URL nachgezogen).
 - **Branch-/Worktree-Kahlschlag (nur belegt Gefahrloses):** 5 saubere Worktrees (`lm-ci/-fundament/-planintake/-toraudit/-verankerung`) aufgelöst · 13 lokale + 25 remote Branches gelöscht — jeder erst nach Beleg «PR gemergt + keine Nach-Merge-Commits» (Epochen-Vergleich mergedAt↔Tip; ein erster String-Vergleich war zeitzonenfalsch und wurde verworfen). `feat/richter-fundament` erst nach Nachweis gelöscht, dass seine 5 Nach-Merge-Commits identisch als PR #310 gemergt sind. UX-Audit-Screenshots (35 PNG, 3./4.7.) als PR #323 eingecheckt.

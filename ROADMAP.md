@@ -521,6 +521,18 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 > Plan-Reihenfolge. Die Reader-Kette **W2·5d U-POSITION → U-PDF** ist danach der nächste
 > Feature-Schritt.
 
+> **■ Fokus-Dekret 24.7.2026 (David, §14-Intake — 14 Anmerkungen, präzisiert die
+> Feature-Reihenfolge oben): die Gesetzesdarstellung steht im Vordergrund.** Reihenfolge:
+> **(1)** zuerst Code-Anpassungen, die den **Aufbau der Gesetzes-Strecke einfacher** machen
+> (verhaltensneutral nach §6, golden byte-gleich; Vehikel: `W2·12-HYGIENE`-Slices auf
+> `gesetz-leser`/`normtext` + §6.6-Splits — kein neuer Parallel-Schritt) → **(2)** danach die
+> **Gesetzes-Schritte des Plans prioritär** (W2·5-Familie inkl. neuem Kopfzeilen-Bündel in
+> `W2·5h`, M12 in `W2·5b`, `W2·13-KANTONE`) → **(3)** mit Priorität daneben:
+> **Verzahnungs-Fundament `W2·7-BEZUG`** (Gesetz ↔ Gerichtsentscheide = Kern-Differenzierung,
+> Wortlaut David «sehr gutes Feature, das ich mit Priorität einbauen will») und
+> **FINMA-Materialien `W2·6b-MAT-FINMA`** (Bewerbungs-Kontext: Bewerbung FINMA mit Verweis auf
+> LexMetrik — der Bereich muss vorzeigbar sein).
+
 > **■ Auftrags-Eingang 30.6.2026 (David) — §14 gebündelt + verortet.** 13 Aufträge, alle `[OF]`
 > (reine Darstellung oder amtliche Daten, keine Davids-Fachzeit). **Risiko-Klassen getrennt halten**
 > (§14.2: reines UI ≠ Daten/Pipeline ≠ §1-nahe Verweis-Logik — nicht in EINEN Commit mischen). Daten-/
@@ -660,6 +672,14 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
     P1/P2/P4/P5 (Spec 2.7.) · N3 `he`-Entities (0-Byte-Diff) · **W2·5b-Restblock komplett 5.7.**
     (P3 Drop-Klassen-Inventur + Tor `check:p-klassen` · linkedom-POC gemessen → KEINE Migration ·
     SVG-style-Leak; QS-GP-Quittungen). Spec-Heimat unverändert (s. oben).
+  - [ ] **M12 · Randtitel-Leerzeichen-Verklebung** *(§14-Intake 24.7.2026, David; Fokus-Dekret-
+    Priorität)*: Struktur-Generator verklebt mehrteilige Randtitel («Beginn der Wirkung**eneines**
+    unter**Abwesenden**geschlossenen …», OR Art. 10). Datenfehler, nicht Render:
+    `public/normtext/struktur/bund/*.json` (≥8 Erlasse belegt) + vererbt in
+    `public/such-index/artikel-bund.json`; Artikel-`bloecke` sauber; Dunkelziffer korpusweit messen.
+    Generator-Fix am Join (L0) + Regeneration Struktur/Such-Index + Verklebungs-Tor mit
+    Sabotage-Probe (§6.7); Extraktion ⇒ `check:gegenpruefung`. Detail + Befund:
+    `FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` M12.
 - [x] **5c · Startseite V3 + Branding I2** *(STARTSEITE-V3, done)* — ✅ GEBAUT 3.7.2026 (Bausequenz S1–S5 komplett, PRs #106/#107/#108/#111 + S5 Brass-Hero) + Zuletzt-Tracker. **Rest offen (kein Blocker):** Wash-Ton-Veto `bg-surface`-Fallback in `Hero.tsx`. Spec `FAHRPLAN-STARTSEITE-V3.md`. Trailer `Roadmap: W2·5c`. **Chronik:** `ROADMAP-CHRONIK.md` → W2·5c.
   <!-- @meta id: W2·5c · status: done · of: ja · blocker: null · dep: [] · kollision: [src/pages/Startseite.tsx, src/components/start, src/lib/navigation.ts, src/lib/seo.ts, index.html, tailwind.config.js, src/components/layout/Topbar.tsx, scripts/prerender.ts] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-STARTSEITE-V3.md -->
 - [ ] **5d · Gesetzes-UX & Darstellungs-Reglement** *(GESETZES-UX, `[OF]`, eigener Worktree; Auftrag David 4.7.)*:
@@ -877,6 +897,15 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   Informationshierarchie aus `QS-UI` stehen, sonst wird die Gesetzes-Fläche zweimal angefasst.
   **DoD:** `check:perf-budget` · `check:linien-kanon` · `e2e/leser-lesemass` · axe · **golden byte-gleich
   (Normtext-Treue §15 — Tempo gewinnt nie gegen Treue)**. Trailer `Roadmap: W2·5h-GESETZ-UI`.
+  **§14-Intake 24.7.2026 (David, Anm. 6–12 — Fokus-Dekret-Priorität): Bündel «Gesetzes-Kopfzeile &
+  Gliederungs-Default»** — K1 Default-Aufklappzustand kompakter (Treue §15 unberührt) · K2 Abstand
+  Gliederung↔Kopfzeile · K3 Suche als **Lupe** in die Sticky-Werkzeugleiste (statt Feld in eigener
+  Zeile, beide Zustände) · K4 Gliederungs-Toggle in der Kopfzeile (eingeklappt = geparkt, nie weg) ·
+  K5 Scroll-Ziel nie von der Sticky-Leiste verdeckt (intermittierend; `scroll-margin` vs.
+  `content-visibility`-Nachschub-Shift verifizieren; gilt auch für `#art-`-Deep-Links) · K6 Kopfzeile
+  gesamthaft (Ordnung/Responsive/§13 F) · K7 «Ansicht ▾» als Personalisierungs-Zentrum (Kanton u. a.;
+  Andockpunkt für `W2·7-BEZUG`-Facetten-Filter). Prior-Art (M4/M5/M7/M8, U-SUCHE/U-KOPF, PRs
+  #284/#301) erst nachmessen, dann Delta bauen. Detail: `FAHRPLAN-GESETZES-UX.md` §15.
 - [ ] **5i-HIST-ANSICHT · Fassungshistorie an-/abwählbar + Fussnoten von Änderungsvermerken trennen**
   <!-- @meta id: W2·5i-HIST-ANSICHT · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/LeserAnsichtMenu.tsx, src/components/normtext/ArtikelBody.tsx, src/pages/gesetz-leser/inhalt.tsx, public/normtext/historie] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
   *(§14-Intake 20.7.2026, David — Queue-Platz 4 · Darstellung + Datenklassifikation, kein Rechtsinhalt)*.
@@ -1099,8 +1128,35 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   `parts.tsx`-Eigentümerschaft geklärt (W2·5c fertig). Kein 26×-Bezug — parallel zu E3 fahrbar.
   Startseiten-Kachel «Meistzitierte Artikel» = Andockpunkt (W2·5c fertig, Fläche frei).
   **Detailquelle:** `FAHRPLAN-VERZAHNUNG-UI.md`.
+- [ ] **7-BEZUG · Bezüge am Artikel — Facetten-Fundament alle Instanzen** *(§14-Intake 24.7.2026;
+  <!-- @meta id: W2·7-BEZUG · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext/entscheide-schreiben.ts, src/lib/rechtsprechung/norm-index.ts, src/lib/verzahnung, src/components/kontext/KontextPanel.tsx, src/pages/gesetz-leser/LeserAnsichtMenu.tsx, public/rechtsprechung] · seq-weich: [W2·7-VZUI(KontextPanel.tsx), W2·5h-GESETZ-UI(LeserAnsichtMenu.tsx)] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-VERZAHNUNG-UI.md -->
+  **Fokus-Dekret-Priorität**, Wortlaut David: Verzahnung Gesetz↔Entscheide «sehr gutes Feature, das
+  ich mit Priorität einbauen will»)* — das Verzahnungs-Fundament wird von «BGE-Leitfälle an
+  Bundesnormen» auf **alle Instanzen und Entscheidkategorien** erweitert: **(a)** kantonale
+  Entscheide am Artikel (Start BS-Korpus 3765 aus W2·6-BS; kantonaler Norm-Resolver/P0 zuerst) ·
+  **(b)** BGer-**Nicht-Leitentscheide** aus dem kuratierten Korpus — Leitentscheid vs. übriges
+  Urteil bleibt als Status **unterschieden** (§8, nie stillschweigend gleichgestellt) · **(c)** jede
+  Kante trägt **filterbare Facetten** (Quelltyp · Ebene · Kanton · Gericht · Leitentscheid-Status) —
+  EINE generische «Bezüge am Artikel»-Schicht, an der auch Materialien-Kanten andocken (W2·6a-MAT,
+  künftig `W2·6b-MAT-FINMA`), kein Zweitmodell (§5) · **(d)** Filter-UI im Gesetz-Leser
+  (Instanz/Ebene/Kanton an-/abwählbar, Default konservativ: Leitentscheide an; Persistenz im
+  Ansicht-Menü). **Abgrenzung (§14.3):** Long-Tail 195k Massen-Entscheide bleibt `W2·6-DATA` E3/E4;
+  UI-Grammatik bleibt `W2·7-VZUI`. Facetten = Datenschicht, Filter = Darstellung (§3). Kantonale
+  Zitat-/Norm-Resolver-Extraktion = Risiko-Pfad ⇒ `check:gegenpruefung`; Generator deterministisch,
+  2 Läufe byte-gleich. Detail: `FAHRPLAN-VERZAHNUNG-UI.md` §9. Trailer `Roadmap: W2·7-BEZUG`.
 - [x] **6a-MAT · Materialien-Verzahnung Stufe 1** *(DATA+UI, Worktree)* — Verwaltungsverordnungen/Wegleitungen als Kanten am Norm-Artikel (E6a Stufe 1 = nur Verweis-/Register-Ebene, §7 a–d). Komplett 4.7.2026 (M0–M5, PRs #126/#127/#128 + ESTV-KS/MWST + UI-Delta; 4 Quellen SECO/EDÖB/ESTV-KS/ESTV-MWST, Cutoff-Revisions-Invariante, Gegenprüfung bestanden, CLS 0). Kein 26×-Bezug. Spec `FAHRPLAN-MATERIALIEN-VERZAHNUNG.md`. **Chronik:** `ROADMAP-CHRONIK.md` → W2·6a-MAT.
   <!-- @meta id: W2·6a-MAT · status: done · of: ja · blocker: null · dep: [W2·7] · kollision: [scripts/materialien/**, public/materialien/**, src/lib/materialien/typen.ts, src/lib/materialien/register.ts, src/pages/Materialien.tsx, src/lib/kontext.ts, src/components/kontext/KontextPanel.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+- [ ] **6b-MAT-FINMA · FINMA-Materialien prioritär + Verzahnung** *(§14-Intake 24.7.2026;
+  <!-- @meta id: W2·6b-MAT-FINMA · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/materialien/**, public/materialien/**, src/lib/materialien] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  **Fokus-Dekret-Priorität** — Kontext: Bewerbung David bei der FINMA mit Verweis auf LexMetrik,
+  der Bereich muss vorzeigbar sein)* — **F1:** FINMA als nächste Quelle der bestehenden
+  Stufe-1-Pipeline (Rundschreiben/Wegleitungen/Aufsichtsmitteilungen, amtlich Art. 5 URG;
+  browserloser Adapter nach §3-Muster, Provenienz §7 a–d; Quell-Wahl zuerst: strukturierte
+  Endpunkte vs. PDF empirisch erheben). **F2 (evtl., David «wenn möglich»):** direkte Verzahnung
+  FINMA-Schreiben ↔ Erlass-Artikel (FINMAG/FIDLEG/FINIG/KAG/BankG/GwG/VAG) via Referenz-Extraktion —
+  VOR Bau H0-Machbarkeits-Verdikt mit Zahlen; Extraktion ⇒ `check:gegenpruefung`. Kanten tragen die
+  `W2·7-BEZUG`-Facetten (`quelltyp: materialien`). Detail: `FAHRPLAN-MATERIALIEN-VERZAHNUNG.md` §9.
+  Trailer `Roadmap: W2·6b-MAT-FINMA`.
 - [x] **7 · Verzahnungs-Klingen** *(`[OF]`, amtlich)* — GEBAUT 5.7.2026: (a) Verjährungs-/Gewährleistungs-Board · (b) Verzugs-/Inkasso-Strecke · (c) Gerichts-Baustein-Set (Zitierer + Rubrum-Vorlage). Reine Darstellung auf bestehenden Engines (§3), golden 201 (+8 additiv), Gegenprüfung bestanden. **Chronik:** `ROADMAP-CHRONIK.md` → W2·7.
   <!-- @meta id: W2·7 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
 - [ ] **8 · Schriften-Baukasten** *(VORLAGEN, Worktree)* — Berufung/BGG-Beschwerde/Sistierung/

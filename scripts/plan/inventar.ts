@@ -20,4 +20,7 @@ export const INVENTAR: readonly string[] = [
   // die Reihe wird darum bei 5i fortgesetzt, nicht mit den freigewordenen Buchstaben.
   'W2·5i-HIST-ANSICHT', 'W2·5j-TABELLEN', 'W2·6-FILTER', 'W2·6-RNAME',
   'W2·15-CLS', 'W2·16-INVENTAR', 'W2·16-ANLEITUNG', 'QS-AUTOMATIK',
+
+  // §14-Intake 24.7.2026 (Anmerkungs-Session David): Verzahnungs-Fundament + FINMA-Materialien.
+  'W2·7-BEZUG', 'W2·6b-MAT-FINMA',
 ];
