@@ -49,6 +49,14 @@ export interface InternRefs {
   tokenMap: Map<string, string>;
   basisPfad: string;
   springeZu: (token: string) => void;
+  /** M6-D (W2·5b): Ist gesetzt, zeigen BARE «Art. N»-Verweise NICHT auf den
+   *  eigenen Erlass (Self-Sprung), sondern auf DIESES Fremdgesetz-Kürzel — via
+   *  NormChip (In-Reader-Popover, wenn im Korpus, sonst Fedlex-Deep-Link). Genutzt
+   *  von ArtikelBody für Items unter einem Fremdgesetz-Chapeau, dessen Zielgesetz
+   *  deterministisch feststeht (chapeauZielFremdgesetz). Der Self-Pfad (tokenMap)
+   *  wird dann übersprungen — es gibt in einem Fremdgesetz-Chapeau kein «eigenes»
+   *  Sprungziel (§1: lieber der Fremd-Verweis als ein falscher Self-Link). */
+  fremdKuerzel?: string;
 }
 const normRef = (s: string): string => s.toLowerCase().replace(/[^a-z0-9]/g, '');
 // «Art. N» / «Artikel N» (+ Buchstabe UND/ODER lat. Suffix als SEPARATE Gruppen,
@@ -100,6 +108,12 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
         linkSpans.push({
           start: g.start, end: g.end,
           node: <NormChip key={gk} artikel={`Art. ${g.roh} ${fremdEffektiv}`} anzeige={g.roh} linkClass={INLINE_CLASS} />,
+        });
+      } else if (intern.fremdKuerzel) {
+        // M6-D: bare Plural-Glied im Fremdgesetz-Chapeau → aufs Zielgesetz (NormChip).
+        linkSpans.push({
+          start: g.start, end: g.end,
+          node: <NormChip key={gk} artikel={`Art. ${g.roh} ${intern.fremdKuerzel}`} anzeige={g.roh} linkClass={INLINE_CLASS} />,
         });
       } else {
         const token = intern.tokenMap.get(normRef(g.roh));
@@ -192,6 +206,15 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     // David-Entscheid 28.6.). «Absatz/Buchstabe/Ziffer» (EIN Grossbuchstabe)
     // bleiben unberührt → echte Self-Verweise («Artikel 6 Absatz 2») weiter verlinkt.
     if (/^\s+(?:[A-ZÄÖÜ]{2,}|[A-ZÄÖÜ][a-zäöü]*[A-ZÄÖÜ]\w*)/.test(rest)) continue;
+    // M6-D: Fremdgesetz-Chapeau → bare «Art. N» zeigt aufs Zielgesetz (nicht Self).
+    // NormChip trägt die Auflösung (Korpus-Popover / Fedlex-Fallback / Text bei
+    // unbekanntem Ziel) — dieselbe Kette wie ein voll zitierter Fremdverweis (§5).
+    if (intern.fremdKuerzel) {
+      if (start > last) out.push(<RechtsprechungText key={`${key}-r${last}`} text={s.slice(last, start)} />);
+      out.push(<NormChip key={`${key}-x${start}`} artikel={`Art. ${m[1]} ${intern.fremdKuerzel}`} anzeige={m[0]} linkClass={INLINE_CLASS} />);
+      last = start + m[0].length;
+      continue;
+    }
     const token = intern.tokenMap.get(normRef(m[1]));
     if (!token) continue; // kein Artikel dieses Erlasses → als Text belassen
     if (start > last) out.push(<RechtsprechungText key={`${key}-r${last}`} text={s.slice(last, start)} />);

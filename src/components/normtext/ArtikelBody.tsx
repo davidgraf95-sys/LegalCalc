@@ -4,6 +4,7 @@ import type { NormSnapshot } from '../../lib/normtext/typen';
 import { absatzNorm, bestimmePassusZiel, type PassusInfo } from '../../lib/normtext/passusZiel';
 import { trenneAenderungshistorie, absatzMarke, gruppiereTausender, gruppiereBetraege, istAufgehoben } from '../../lib/normtext/darstellung';
 import { NormText, type InternRefs } from '../NormText';
+import { chapeauZielFremdgesetz } from '../../lib/fedlex';
 import { BildFigur, BildKacheln, type BildDaten, type BildKachel } from './BildElemente';
 import { zitatMitAusweis, heuteIso } from '../../lib/format';
 import { WJ } from './wortverbinder';
@@ -27,6 +28,12 @@ interface ZitierKontext {
   /** Permalink-Pfad inkl. #anker OHNE origin (origin kommt zur Klick-Zeit). */
   permalinkBasis?: string;
 }
+
+// M6-D: leere Self-Ziel-Map + No-op-Sprung für den Fremdgesetz-Chapeau-Kontext —
+// dort gibt es kein «eigenes» Sprungziel; NormText routet bare «Art. N» allein über
+// `fremdKuerzel` auf das Fremdgesetz (NormChip). Modul-konstant (keine Re-Allokation).
+const FREMD_LEER: Map<string, string> = new Map();
+const NOOP = (): void => {};
 
 /** lit. (Buchstaben, Bund) vs. Ziff. (Zahlen, Kanton) anhand der Marke. */
 function litZiff(marke: string): string {
@@ -488,8 +495,20 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
         // M6: erklärt dieser Absatz die Bestimmungen eines Fremdgesetzes für
         // anwendbar, zitieren seine Items bloße Fremd-Artikel → bare-Ref-Linking
         // dort unterdrücken (kein falscher Self-Link, §1). `pruefeBlock`-Kontext = b.text.
+        // M6-D (W2·5b): steht das Zielgesetz des Chapeaus DETERMINISTISCH fest
+        // (chapeauZielFremdgesetz), werden die bare Item-Verweise TATSÄCHLICH auf
+        // jenes Fremdgesetz aufgelöst (NormChip → In-Reader-Popover/Fedlex) statt nur
+        // unterdrückt. Ist das Ziel mehrdeutig/unbekannt, bleibt es bei der reinen
+        // M6-Unterdrückung (verlinktFremd, kein Self-Link) — §1: lieber kein Link.
+        const fremdKey = autolink ? chapeauZielFremdgesetz(b.text, zk?.kuerzel) : null;
         const fremdItems = autolink && etabliertFremdgesetz(b.text, zk?.kuerzel);
-        const verlinkeItem = (s: string) => (fremdItems ? verlinktFremd(s) : verlinkt(s));
+        const fremdIntern: InternRefs | undefined = fremdKey
+          ? { tokenMap: FREMD_LEER, basisPfad: '', springeZu: NOOP, fremdKuerzel: fremdKey }
+          : undefined;
+        const verlinkeItem = (s: string) =>
+          fremdKey
+            ? <NormText text={glaetteInterpunktion(s)} intern={fremdIntern} />
+            : fremdItems ? verlinktFremd(s) : verlinkt(s);
         return (
           <div
             key={i}

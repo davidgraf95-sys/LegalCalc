@@ -26,9 +26,14 @@ function formatiereDatum(iso: string): string {
   return m ? `${m[3]}.${m[2]}.${m[1]}` : iso;
 }
 
-export function NormPopover({ snapshot, passus, onClose }: {
+export function NormPopover({ snapshot, passus, sachtitel, onClose }: {
   snapshot: NormSnapshot;
   passus: { absatz: string | null; lit?: string; ziff?: string };
+  /** M11 (W2·5b): amtliche Artikel-Sachüberschrift (Randtitel-Blatt aus dem
+   *  Struktur-Sidecar, via artikelSachtitel) — erscheint im Kopf als
+   *  «Art. N ERLASS – <Sachtitel>». Fehlt sie (kein Randtitel / Altdaten), bleibt
+   *  der Kopf byte-gleich zum bisherigen «Art. N ERLASS». */
+  sachtitel?: string;
   onClose: () => void;
 }) {
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -79,7 +84,7 @@ export function NormPopover({ snapshot, passus, onClose }: {
   const liveUrl = snapshot.quelleUrl.includes('#')
     ? snapshot.quelleUrl + frag.slice(1)
     : snapshot.quelleUrl + frag;
-  const titel = `${snapshot.artikelLabel} ${snapshot.erlass}`;
+  const titel = `${snapshot.artikelLabel} ${snapshot.erlass}${sachtitel ? ` – ${sachtitel}` : ''}`;
 
   // Brücke in die Lesesicht (Rubrik V): Reader-Schlüssel aus der Snapshot-id
   // ableiten — bund/<quelle>/art_… → key '<quelle>'; kanton/<quelle>/<nr>/art_…
@@ -103,6 +108,7 @@ export function NormPopover({ snapshot, passus, onClose }: {
           <p className="lc-overline text-brass-700">Norm-Vorschau</p>
           <h2 className="text-body-l font-semibold text-ink-900 truncate">
             {snapshot.artikelLabel} <span className="text-ink-500 font-normal">{snapshot.erlass}</span>
+            {sachtitel && <span className="text-ink-500 font-normal"> – {sachtitel}</span>}
           </h2>
         </div>
         <button

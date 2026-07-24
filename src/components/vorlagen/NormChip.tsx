@@ -4,6 +4,8 @@ import { fedlexLinkFuerArtikel } from '../../lib/fedlex';
 import { useLocale, fedlexLokalisiert } from '../locale';
 import { bundSnapshotRef } from '../../lib/normtext/bundRef';
 import { ladeSnapshot } from '../../lib/normtext/laden';
+import { ladeStruktur } from '../../lib/normtext/browse';
+import { artikelSachtitel } from '../../lib/normtext/darstellung';
 import { naechsterFokus } from '../../lib/normtext/fokus';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { NormPopover } from '../NormPopover';
@@ -71,6 +73,9 @@ export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CH
   const [offen, setOffen] = useState(false);
   // 'laedt' | NormSnapshot (geladen) | null (Snapshot nicht verfügbar)
   const [snapshot, setSnapshot] = useState<NormSnapshot | 'laedt' | null>('laedt');
+  // M11 (W2·5b): amtliche Sachüberschrift des Artikels für den Popover-Kopf,
+  // lazy aus dem Struktur-Sidecar (§15: erst beim Öffnen). undefined = (noch) keine.
+  const [sachtitel, setSachtitel] = useState<string | undefined>(undefined);
 
   // Keine Fallback-URL → exakt das heutige Verhalten (reiner span-Chip).
   if (!url) return <span className="lc-chip" title={title}>{inhalt}</span>;
@@ -81,8 +86,15 @@ export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CH
     if (!ref) return; // kein Snapshot → normaler Link öffnet wie heute
     e.preventDefault();
     setSnapshot('laedt');
+    setSachtitel(undefined);
     setOffen(true);
     ladeSnapshot('bund', ref.quelle, ref.token).then((s) => setSnapshot(s));
+    // M11: Sachüberschrift lazy nachladen (eigener, gecachter Sidecar-Fetch —
+    // §15: kein eager-Korpus). Fehlt der Randtitel/schlägt der Fetch fehl, bleibt
+    // sachtitel undefined → Popover-Kopf byte-gleich «Art. N ERLASS» (§8).
+    ladeStruktur('bund', ref.quelle).then((m) => {
+      setSachtitel(artikelSachtitel(m?.[ref.token]?.marginalie ?? []) ?? undefined);
+    }).catch(() => setSachtitel(undefined));
   };
 
   const schliessen = () => {
@@ -106,7 +118,7 @@ export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CH
       {offen && (
         <NormPopoverOverlay onClose={schliessen} triggerRef={triggerRef}>
           {snapshot && snapshot !== 'laedt'
-            ? <NormPopover snapshot={snapshot} passus={{ absatz: ref?.absatz ?? null, lit: ref?.lit, ziff: ref?.ziff }} onClose={schliessen} />
+            ? <NormPopover snapshot={snapshot} passus={{ absatz: ref?.absatz ?? null, lit: ref?.lit, ziff: ref?.ziff }} sachtitel={sachtitel} onClose={schliessen} />
             : <NormPopoverHuelle zustand={snapshot === 'laedt' ? 'laedt' : 'fehlt'} url={url} artikel={artikel} onClose={schliessen} />}
         </NormPopoverOverlay>
       )}

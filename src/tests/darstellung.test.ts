@@ -37,6 +37,18 @@ describe('randtitelKnoten', () => {
     expect(randtitelKnoten(['A. Anwendung des Rechts']))
       .toEqual({ ahnen: ['A. Anwendung des Rechts'], blatt: null });
   });
+  // Gegenprüfungs-R3-Pin (24.7.2026, W2·5b/M11): MISCH-Aufzähler («2a.», «1bis.»,
+  // «5ter.») folgen derselben Regel wie reine Aufzähler («1.», «A.») — Blatt=null,
+  // Stufe in die TOC-Ahnen. Vor dem ENUM-Fix entkamen ~59 Bund-Artikel (OR 128a,
+  // SchKG 242a, ZGB 949b …) dieser dokumentierten Regel (Auftrag David 28.6.2026:
+  // aufzähler-tragende Blätter gehören in die Gliederung) und rannten als Blatt-
+  // Titel MIT klebendem Aufzähler. Deklarierte Vereinheitlichung, kein Refactoring.
+  it('MISCH-Aufzähler («2a. Zwanzig Jahre») → Knoten wie reine Aufzähler, nicht Blatt (R3-Pin)', () => {
+    expect(randtitelKnoten(['G. Verjährung', '2a. Zwanzig Jahre']))
+      .toEqual({ ahnen: ['G. Verjährung', '2a. Zwanzig Jahre'], blatt: null });
+    expect(randtitelKnoten(['B. Konkursverwaltung', '3a. Herausgabe kryptobasierter Vermögenswerte']))
+      .toEqual({ ahnen: ['B. Konkursverwaltung', '3a. Herausgabe kryptobasierter Vermögenswerte'], blatt: null });
+  });
   it('Einzel-Sachüberschrift ohne Aufzähler → kein Ahn, nur Blatt', () => {
     expect(randtitelKnoten(['Gegenstand'])).toEqual({ ahnen: [], blatt: 'Gegenstand' });
   });
