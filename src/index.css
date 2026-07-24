@@ -423,6 +423,12 @@
      proportionalen Schätzung (schaetzeArtikelHoehe, ArtikelLeser) → proportionaler
      Scrollbalken bei langen Gesetzen, ohne Logikverlust (content-visibility bleibt). */
   .nt-art-cv { content-visibility: auto; contain-intrinsic-size: auto 320px; }
+  /* IA-3 (§11.5/R-PERF-5): A–Z-Register-Zeilen — Virtualisierung im §15.1-Sinn:
+     off-screen-Zeilen überspringen Layout/Paint via content-visibility, KEIN
+     DOM-Removal (Ctrl+F/Screenreader/Fokus bleiben). 2.25rem ≈ eine einzeilige
+     Register-Zeile als Erst-Schätzung; `auto` merkt die echte Höhe nach dem
+     ersten Render (mehrzeilige Kanton-Titel) → kein Scroll-Springen. */
+  .az-zeile-cv { content-visibility: auto; contain-intrinsic-size: auto 2.25rem; }
   /* Anker-Offset für #art-/#fn-/Sektions-Sprünge (W2·10-UI-NAV/N0c): der frühere
      Festwert calc(4rem + 1rem) = 80px war KLEINER als der reale Sticky-Stack —
      Topbar (4rem) + Inhalts-Kopf (2.25rem) + die dritte klebende Zeile

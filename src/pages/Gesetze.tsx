@@ -28,6 +28,9 @@ import { Gitter } from './gesetze-teile/geteilt';
 import { BundSystematik } from './gesetze-teile/BundSystematik';
 import { KantonSystematik } from './gesetze-teile/KantonSystematik';
 import { KantonAuswahl } from './gesetze-teile/KantonAuswahl';
+// IA-3 (§11.5): A–Z-/Kürzel-Register — Browse-Zwilling zum Norm-Sprung auf dem
+// Landeplatz; rechnet auf dem BEREITS geladenen Manifest (kein zweiter Index, K10).
+import { AzRegister } from './gesetze-teile/AzRegister';
 
 type Ebene = 'bund' | 'kanton' | 'international';
 
@@ -317,6 +320,9 @@ export function Gesetze() {
               />
               {/* G6 · §4.4 — vierte Tür: die zweite Gliederung nach Rechtsgebiet/Thema. */}
               <RechtsgebietEinstieg onWahl={setzeThemen} />
+              {/* IA-3 (§11.5): A–Z-Register am ENDE des Landeplatzes — wächst nur
+                  nach unten (§15.2), alle Listen-Wechsel sind input-getrieben. */}
+              <AzRegister erlasse={erlasse} />
             </div>
           )}
 
