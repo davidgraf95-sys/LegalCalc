@@ -21,6 +21,13 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 24.7.2026 (II) — Ultracode-Fahrplan-Umbau: @queue-Mechanik macht plan:next dekret-treu (Branch `plan/queue-mechanik`, Roadmap QS-PH)
+**Auftrag David:** «baue mit ultracode den fahrplan sodass es sinn macht.» Council-Workflow (4 Analyse-Leser · 3 Entwürfe · 3 Judges, Sieger «Mechanik» einstimmig 26:20:14): Befund war, dass VIER gestapelte Prosa-Dekrete am Abarbeitungs-Kopf lagen, `plan:next` aber stur nach Dokumentposition sortierte und LERNPHASE-AB (Querschnitt-Band, «kein Reihenfolge-Slot») als obersten meldete — gegen QS-TOK-Dekret (10.7.) und Fokus-Dekret (24.7.). 4 Commits:
+- **@queue-Direktive** in `ROADMAP.md` (SSoT der Bau-Reihenfolge: QS-TOK → W2·12-HYGIENE → W2·5b/5d/5h/5i → W2·13-KANTONE → W2·7-BEZUG/W2·6b-MAT-FINMA) + `parse.ts` liest sie, `aufloesen.ts`/`next.ts` sortieren readyNow nach Queue-Rang und führen Querschnitt-Band-Schritte als «begleitend», `check.ts` Regel 8 (ID existiert / keine Dublette / kein done/parked / Prosa-«OBERSTER» == echte plan:next-Ausgabe). Sabotage-Proben 8.1/8.3/8.4 je rot gezeigt; 59 Plan-Tests grün.
+- **T7-Rotation** abgelöster Steuerungs-Prosa (Quell-Architektur-Essay, Informations-Nutzungs-Intake, I1/I2, VZUI-✅-Block) wörtlich nach `ROADMAP-CHRONIK.md`; Vollinhalt vorher in den FAHRPLAN-Detailquellen verifiziert; Beweis `plan:next` byte-identisch vorher/nachher. Offene Posten (B1/B2/S1/S2) unangetastet.
+- **W2·5b-Kollisionsfläche** um M12-Pfade erweitert (scripts/normtext, struktur-Snapshots, Such-Index) — Lane-Korrektheit.
+- **Adversariale Verifikation** (3 Opus-Widerleger): 0 kritisch; Mittel-Befund (8.4 band an queue[0] statt an die echte Ausgabe) + 2 Gering-Befunde umgesetzt und getestet. **Offene David-Ratifikation:** Annahme «QS-TOK bleibt vor der Gesetzesdarstellung an der Spitze» ist im @queue-Kommentar deklariert — kippt David sie, ist die Änderung ein Einzeiler an der @queue-Zeile.
+
 ## Session 24.7.2026 — §14-Intake: 14 Anmerkungen David (Gesetzesdarstellung + Verzahnungs-Fundament + FINMA) in den Plan verortet (Branch `docs/plan-intake-2026-07-24`, reine Plan-Doku)
 **Auftrag:** Anmerkungs-Session («go» = einbauen). 14 Anmerkungen nach §14 gebündelt und verortet — kein Bau:
 - **Fokus-Dekret 24.7.** im Abarbeitungs-Kopf der `ROADMAP.md`: Gesetzesdarstellung im Vordergrund — (1) erst Code-Vereinfachung der Gesetzes-Strecke (Vehikel W2·12-HYGIENE, §6-neutral) → (2) Gesetzes-Schritte prioritär → (3) daneben prioritär `W2·7-BEZUG` + `W2·6b-MAT-FINMA`.
