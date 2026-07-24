@@ -18,10 +18,15 @@ function checkboxAus(zeile: string): Checkbox {
   return m ? (`[${m[1].toLowerCase()}]` as Checkbox) : null;
 }
 
-export function parseRoadmap(md: string): { einheiten: Einheit[]; blockers: Record<string, string> } {
+export function parseRoadmap(md: string): { einheiten: Einheit[]; blockers: Record<string, string>; queue: string[] } {
   const zeilen = md.split(/\r?\n/);
   const einheiten: Einheit[] = [];
   const blockers: Record<string, string> = {};
+  /** `<!-- @queue: A, B, C -->` — die EINE maschinenlesbare Prioritäts-Quelle.
+   *  Ohne sie behaupten Prosa-Dekrete eine Reihenfolge, die next.ts (pos-Sort)
+   *  nie sieht — Befund 24.7.2026: vier gestapelte Dekrete, plan:next meldete
+   *  einen Querschnitt-Schritt als «obersten». Integrität erzwingt check.ts Regel 8. */
+  let queue: string[] = [];
   let sektion = '';
   let imBlockers = false;
 
@@ -30,6 +35,11 @@ export function parseRoadmap(md: string): { einheiten: Einheit[]; blockers: Reco
     if (z.startsWith('## ')) {
       // Sektion = Überschriftstext ohne Marker/Emoji und ohne Tail (— … / *(…)*)
       sektion = z.replace(/^##+\s+/, '').replace(/^[⚡🚀▶■\s]+/u, '').replace(/\s+—.*$/, '').replace(/\s+\*.*$/, '').trim();
+    }
+    const qm = z.match(/<!--\s*@queue:\s*(.*?)\s*-->/);
+    if (qm) {
+      queue = qm[1].split(',').map((s) => s.trim()).filter(Boolean);
+      continue;
     }
     if (z.trim().startsWith('<!-- @blockers')) {
       imBlockers = !z.includes('-->');
@@ -60,5 +70,5 @@ export function parseRoadmap(md: string): { einheiten: Einheit[]; blockers: Reco
       einheiten.push({ id: etikett.id, etikett, checkbox: cb, sektion, pos: einheiten.length });
     }
   }
-  return { einheiten, blockers };
+  return { einheiten, blockers, queue };
 }

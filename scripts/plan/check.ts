@@ -1,6 +1,7 @@
 // scripts/plan/check.ts
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { parseRoadmap, type Einheit } from './parse';
+import { resolve } from './aufloesen';
 import { type Status } from './etikett';
 import { INVENTAR } from './inventar';
 
@@ -68,7 +69,7 @@ export function pruefe(
   inventar: readonly string[] = INVENTAR,
 ): Problem[] {
   const probleme: Problem[] = [];
-  const { einheiten, blockers } = parseRoadmap(md);
+  const { einheiten, blockers, queue } = parseRoadmap(md);
   const vorhanden = new Set(einheiten.map((e) => e.id));
 
   // (1) Inventar-Abdeckung + keine Doppel
@@ -134,6 +135,45 @@ export function pruefe(
   }
   // (7) FAHRPLAN-Link-Check (eingegliedertes QS-PH)
   for (const f of fahrplanDateien) if (!md.includes(f)) probleme.push({ id: null, meldung: `${f} ist nicht aus ROADMAP.md verlinkt` });
+
+  // (8) @queue-Integrität — die Queue ist die EINE Prioritäts-Quelle (Einbau 24.7.2026);
+  // eine Queue, die auf tote/erledigte IDs zeigt oder der Prosa widerspricht, steuert falsch.
+  const inQueue = new Set<string>();
+  for (const id of queue) {
+    // (8.1) jede Queue-ID trägt ein @meta
+    if (!vorhanden.has(id)) probleme.push({ id, meldung: `@queue-ID "${id}" hat kein @meta` });
+    // (8.2) keine Dublette
+    if (inQueue.has(id)) probleme.push({ id, meldung: `@queue-ID "${id}" mehrfach in @queue` });
+    inQueue.add(id);
+    // (8.3) Stale-Guard: erledigte/geparkte Schritte haben in der Queue nichts verloren
+    // (§14.2 «Plan in beide Richtungen pflegen», maschinell erzwungen)
+    const ziel = einheiten.find((e) => e.id === id);
+    if (ziel && (ziel.etikett.status === 'done' || ziel.etikett.status === 'parked')) {
+      probleme.push({ id, meldung: `@queue-ID "${id}" ist ${ziel.etikett.status} — veraltete Steuerung, aus @queue entfernen` });
+    }
+  }
+  // (8.4) Prosa-Konsistenz-Guard: behauptet der Fliesstext einen «obersten» Schritt,
+  // muss er der TATSÄCHLICHEN plan:next-Ausgabe entsprechen (resolve().readyNow[0]),
+  // nicht bloss dem Queue-Kopf — sonst bleibt genau die Drift latent, die der Guard
+  // schliessen soll: ein Queue-Kopf, der blocked/dep-wartend wird, wäre gegen queue[0]
+  // weiterhin «konsistent», während plan:next längst einen anderen obersten liefert
+  // (Ur-Befund 24.7.2026: Dekret sagte QS-TOK, plan:next lieferte LERNPHASE-AB;
+  // Härtung nach adversarialem Verify-Befund vom selben Tag).
+  const obersterZeile = md.split(/\r?\n/).find((z) => z.includes('⬆ OBERSTER OFFENER SCHRITT'));
+  if (obersterZeile) {
+    // ID = erstes Backtick-Token NACH dem Marker (nicht der Zeile) — sonst bindet der
+    // Guard an ein zufälliges früheres `…`-Fragment statt an die Schritt-ID.
+    const nachMarker = obersterZeile.slice(obersterZeile.indexOf('⬆ OBERSTER OFFENER SCHRITT'));
+    const idImText = nachMarker.match(/`([^`]+)`/)?.[1] ?? null;
+    if (!queue.length) {
+      probleme.push({ id: null, meldung: `Prosa behauptet einen obersten Schritt («⬆ OBERSTER OFFENER SCHRITT»), aber es gibt keine @queue` });
+    } else if (idImText) {
+      const mechanischOberster = resolve(einheiten, queue).readyNow[0] ?? null;
+      if (idImText !== mechanischOberster) {
+        probleme.push({ id: idImText, meldung: `Prosa behauptet oberster "${idImText}", plan:next liefert "${mechanischOberster ?? '—'}"` });
+      }
+    }
+  }
 
   return probleme;
 }

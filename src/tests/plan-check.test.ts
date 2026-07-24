@@ -142,3 +142,70 @@ describe('pruefe — Lücken-Abdeckung (Task-5-Review)', () => {
     expect(ok(plan(slotUnit('[~]', 'wip', 'null')), ['A'])).toEqual([]);
   });
 });
+
+// Regel 8 (@queue-Integrität, Einbau 24.7.2026): die Queue ist die EINE
+// Prioritäts-Quelle; tote/erledigte IDs oder Prosa-Widerspruch steuern falsch.
+describe('pruefe — Regel 8 @queue-Integrität', () => {
+  const mitQueue = (queue: string, extra = '') =>
+    `## Die geordnete Abarbeitung\n<!-- @queue: ${queue} -->\n${extra}` + OK.replace('## Die geordnete Abarbeitung\n', '');
+
+  it('konsistente Queue → kein Problem', () => {
+    expect(pruefe(mitQueue('W1·4'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4'])).toEqual([]);
+  });
+  it('8.1: Queue-ID ohne @meta → Problem', () => {
+    const p = pruefe(mitQueue('GEIST'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4']);
+    expect(p.some((x) => x.id === 'GEIST' && /kein @meta/.test(x.meldung))).toBe(true);
+  });
+  it('8.2: Dublette in der Queue → Problem', () => {
+    const p = pruefe(mitQueue('W1·4, W1·4'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4']);
+    expect(p.some((x) => x.id === 'W1·4' && /mehrfach/.test(x.meldung))).toBe(true);
+  });
+  it('8.3: done-ID in der Queue → Problem (Stale-Guard)', () => {
+    const p = pruefe(mitQueue('W1·1'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4']);
+    expect(p.some((x) => x.id === 'W1·1' && /veraltete Steuerung/.test(x.meldung))).toBe(true);
+  });
+  // 8.4 prüft gegen die TATSÄCHLICHE plan:next-Ausgabe (resolve().readyNow[0]),
+  // nicht bloss gegen queue[0] — Härtung nach adversarialem Verify-Befund 24.7.2026.
+  const READY = `- [ ] **5 · E**\n  <!-- @meta id: W1·5 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->\n`;
+  const invR = ['W1·1', 'W1·4', 'W1·5'];
+
+  it('8.4: Prosa-«OBERSTER» widerspricht der plan:next-Ausgabe → Problem', () => {
+    const md = mitQueue('W1·5', '> **⬆ OBERSTER OFFENER SCHRITT:** `W1·1` zuerst.\n' + READY);
+    const p = pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, invR);
+    expect(p.some((x) => x.id === 'W1·1' && /Prosa behauptet oberster/.test(x.meldung))).toBe(true);
+  });
+  it('8.4: Prosa-«OBERSTER» ohne @queue → Problem', () => {
+    const md = OK + '\n> **⬆ OBERSTER OFFENER SCHRITT:** `W1·4` zuerst.\n';
+    const p = pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4']);
+    expect(p.some((x) => x.id === null && /keine @queue/.test(x.meldung))).toBe(true);
+  });
+  it('8.4: Prosa-«OBERSTER» == plan:next-Ausgabe → kein Problem', () => {
+    const md = mitQueue('W1·5', '> **⬆ OBERSTER OFFENER SCHRITT:** `W1·5` zuerst.\n' + READY);
+    expect(pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, invR)).toEqual([]);
+  });
+  it('8.4: Queue-Kopf nicht baubar (blocked) → Prosa==queue[0] genügt NICHT (Drift-Szenario)', () => {
+    // W1·4 ist blocked und Queue-Kopf; plan:next liefert W1·5. Die alte queue[0]-Prüfung
+    // wäre hier grün geblieben — genau die Drift, die der Guard schliessen soll.
+    const md = mitQueue('W1·4, W1·5', '> **⬆ OBERSTER OFFENER SCHRITT:** `W1·4` zuerst.\n' + READY);
+    const p = pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, invR);
+    expect(p.some((x) => x.id === 'W1·4' && /plan:next liefert "W1·5"/.test(x.meldung))).toBe(true);
+  });
+  it('8.4: Backtick-Fragment VOR dem Marker bindet nicht (Marker-verankerte ID)', () => {
+    const md = mitQueue('W1·5', '> Datei `foo.ts` gefixt. **⬆ OBERSTER OFFENER SCHRITT:** `W1·5` zuerst.\n' + READY);
+    expect(pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, invR)).toEqual([]);
+  });
+});
+
+// Verify-Befund 24.7.2026: Querschnitt-Filter darf of/dep-Signale nicht schlucken.
+describe('resolve-Kopplung — Querschnitt mit offener Voraussetzung', () => {
+  it('Querschnitt-ready mit offener dep landet in wartetDep, nicht still in begleitend', async () => {
+    const { resolve } = await import('../../scripts/plan/next');
+    const qs = {
+      id: 'QS-X', checkbox: null, sektion: 'Querschnitt-Band (läuft begleitend', pos: 0,
+      etikett: { id: 'QS-X', status: 'ready' as const, statusAgent: null, of: true, blocker: null, dep: ['FEHLT'], kollision: [], worktree: false, asset26x: false, fahrplan: null },
+    };
+    const b = resolve([qs]);
+    expect(b.wartetDep).toEqual([{ id: 'QS-X', offen: ['FEHLT'] }]);
+    expect(b.begleitend).toEqual([]);
+  });
+});
