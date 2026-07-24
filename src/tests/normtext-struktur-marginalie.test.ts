@@ -139,3 +139,49 @@ describe('extrahiereStruktur — <br>-Zeilennähte im Randtitel (M12)', () => {
     expect(extrahiereStruktur(html)['10'].marginalie).toEqual(['Hilfs- Neben- und gemischte Betriebe']);
   });
 });
+
+// HAENGEND-Härtung (R3-Nebenbefund 24.7.2026, FAHRPLAN-GESETZESDARSTELLUNG-BUND
+// §M12-Folge): Eine in HAENGEND FEHLENDE Konjunktion/Präposition erzeugt einen
+// still kleingeschriebenen Fehl-Merge («Straf- wie …» → «Strafwie …»), den keine
+// Tor-Klasse sieht (nach dem Merge existiert weder ein «- <klein>»-Rest noch eine
+// klein-GROSS-Naht). Korpusweit heute 0 Treffer (R2/R3-verifiziert) — reine
+// Zukunfts-Robustheit für neue Erlasse. Liste bleibt synchron mit check-verklebung.
+describe('extrahiereStruktur — HAENGEND-Härtung (wie/samt/je/pro/per/statt/trotz/ab/wider/als/noch/nebst)', () => {
+  function margArtikel(margInner: string, id: string): string {
+    return `<div class="heading">${margInner}</div>`
+      + `<div class="collapseable"><article id="${id}"><h6 class="heading">`
+      + `<a href="#${id}"><b>Art. 10</b></a></h6>`
+      + `<div class="collapseable"><p class="absatz ">Text.</p></div></article></div>`;
+  }
+  const faelle: Array<[string, string]> = [
+    ['Straf-<br>wie Massnahmenvollzug', 'Straf- wie Massnahmenvollzug'],
+    ['Grundstück-<br>samt Zubehör', 'Grundstück- samt Zubehör'],
+    ['Pauschale-<br>je Einheit', 'Pauschale- je Einheit'],
+    ['Gebühr-<br>pro Verrichtung', 'Gebühr- pro Verrichtung'],
+    ['Entschädigung-<br>per Saldo', 'Entschädigung- per Saldo'],
+    ['Miet-<br>statt Kaufzins', 'Miet- statt Kaufzins'],
+    ['Handeln-<br>trotz Verbots', 'Handeln- trotz Verbots'],
+    ['Auf-<br>ab Inkrafttreten', 'Auf- ab Inkrafttreten'],
+    ['Für-<br>wider den Entscheid', 'Für- wider den Entscheid'],
+    ['sowohl Straf-<br>als auch Massnahmenvollzug', 'sowohl Straf- als auch Massnahmenvollzug'],
+    ['weder Straf-<br>noch Massnahmenvollzug', 'weder Straf- noch Massnahmenvollzug'],
+    ['Grundstück-<br>nebst Zubehör', 'Grundstück- nebst Zubehör'],
+  ];
+  for (const [roh, soll] of faelle) {
+    it(`behält das hängende Divis: «${soll}»`, () => {
+      const html = margArtikel(`<a href="#art_10">${roh}</a>`, 'art_10');
+      expect(extrahiereStruktur(html)['10'].marginalie).toEqual([soll]);
+    });
+  }
+  it('literaler Trennstrich: «X- wie» bleibt ebenfalls hängend (Regel c synchron)', () => {
+    const html = margArtikel('<a href="#art_10">Straf- wie Massnahmenvollzug</a>', 'art_10');
+    expect(extrahiereStruktur(html)['10'].marginalie).toEqual(['Straf- wie Massnahmenvollzug']);
+  });
+  // «gen» bewusst NICHT gelistet (Prüfer-Kalibrierung): häufigste deutsche End-Silbe
+  // (Korpus-Beleg «Motorwa- gen», SSV), ~kein Titel-Nutzen als Präposition. Ein
+  // «Wa-<br>gen»-Silbenriss MUSS weiterhin zusammengefügt werden.
+  it('fügt «gen» als echte End-Silbe weiter zusammen (bewusste Nicht-Listung)', () => {
+    const html = margArtikel('<a href="#art_10">Motorwa-<br>gen und Motorräder</a>', 'art_10');
+    expect(extrahiereStruktur(html)['10'].marginalie).toEqual(['Motorwagen und Motorräder']);
+  });
+});

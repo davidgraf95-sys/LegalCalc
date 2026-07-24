@@ -57,7 +57,17 @@ function hatKlasse(attrs: string, name: string): boolean {
 // gesamten Bund-Korpus belegt: die einzige Nicht-Konjunktions-/-Präpositions-Klasse
 // ist echte Silbentrennung (keine Gegenbeispiele). Der Wächter check:verklebung
 // (Klasse B) trägt dieselbe Liste — beide müssen synchron bleiben.
-const HAENGEND = /^(?:und|oder|bzw\.?|sowie|resp\.?|bis|beziehungsweise|respektive|in|ins|im|zu|zum|zur|an|ans|am|auf|aus|bei|beim|mit|von|vom|vor|über|unter|nach|um|ums|für|gegen|durch|ohne)$/i;
+// HAENGEND-Härtung 24.7.2026 (Gegenprüfungs-R3-Nebenbefund + Prüfer-Kalibrierung):
+// wie/samt/je/pro/per/statt/anstatt/trotz/ab/wider/als/noch/nebst ergänzt — eine
+// FEHLENDE Konjunktion/Präposition erzeugt einen still kleingeschriebenen Fehl-Merge
+// mit ERFUNDENEM Wort («Grundstück- samt» → «Grundstücksamt», §1/§7: nie fabrizieren).
+// TRADE-OFF (§8, ehrlich): jedes Listen-Wort, das zugleich häufige deutsche End-Silbe
+// ist, macht Tor-Klasse B auf einen echten Silbenriss blind («Werk- statt» bliebe
+// stehen). Kalibrierung darum je Wort Nutzen (reale Konjunktions-/Präpositions-
+// Verwendung in Randtiteln) gegen Silben-Risiko: «gen» bewusst NICHT gelistet
+// (häufigste End-Silbe — Korpus-Beleg «Motorwa- gen» —, ~kein Titel-Nutzen);
+// die gelisteten Wörter sind im Bund-Korpus als End-Silbe unbelegt (0 Treffer).
+const HAENGEND = /^(?:und|oder|bzw\.?|sowie|resp\.?|bis|beziehungsweise|respektive|wie|samt|je|pro|per|statt|anstatt|trotz|ab|wider|als|noch|nebst|in|ins|im|zu|zum|zur|an|ans|am|auf|aus|bei|beim|mit|von|vom|vor|über|unter|nach|um|ums|für|gegen|durch|ohne)$/i;
 
 /** Ein «Wort-<Trennung><Folgewort>» (Zeilenumbruch-Trennstrich) kontextabhängig
  *  auflösen: hängendes Divis vor Konjunktion/Präposition → «- » ; Kompositum vor
