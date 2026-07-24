@@ -85,7 +85,11 @@ const QUELLE_FALSCHPOSITIV = new Set(['AmtspfIichtverletzung', 'ZeitIiche']);
 // («Hin- und Rückweg», «Inhaber- in Namenaktien», «Geschäfts- ins Privatvermögen»).
 // MUSS synchron zu HAENGEND in struktur-extrahiere.ts bleiben. Ein «Wort- <klein>»
 // vor irgendetwas ANDEREM ist eine zerrissene Silbentrennung (Regression 24.7.).
-const HAENGEND = /^(?:und|oder|bzw\.?|sowie|resp\.?|bis|beziehungsweise|respektive|in|ins|im|zu|zum|zur|an|ans|am|auf|aus|bei|beim|mit|von|vom|vor|über|unter|nach|um|ums|für|gegen|durch|ohne)$/i;
+// HAENGEND-Härtung 24.7.2026 (R3-Nebenbefund + Prüfer-Kalibrierung): wie/samt/je/
+// pro/per/statt/anstatt/trotz/ab/wider/als/noch/nebst ergänzt; «gen» bewusst NICHT
+// (häufigste End-Silbe, Korpus-Beleg «Motorwa- gen»). Synchron zum Extraktor —
+// Begründung/Trade-off dort am HAENGEND-Kommentar.
+const HAENGEND = /^(?:und|oder|bzw\.?|sowie|resp\.?|bis|beziehungsweise|respektive|wie|samt|je|pro|per|statt|anstatt|trotz|ab|wider|als|noch|nebst|in|ins|im|zu|zum|zur|an|ans|am|auf|aus|bei|beim|mit|von|vom|vor|über|unter|nach|um|ums|für|gegen|durch|ohne)$/i;
 // Klasse B: «X- y» (Buchstabe, Divis, Leerzeichen, KLEINgeschriebenes Folgewort).
 // Nur Kleinbuchstabe (Grossbuchstabe = Kompositum, kein Silbenriss); Buchstabe vor
 // dem Divis (kein freistehender Gedankenstrich «A - b»). g1=Zeichen vor Divis, g2=Wort.

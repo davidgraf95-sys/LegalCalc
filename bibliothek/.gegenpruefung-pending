@@ -1,9 +1,9 @@
 {
-  "hash": "d57eb5ba11201a61812bbaaa808377a11063d2abe04698efd14e5c4a8c893c88",
+  "hash": "e964599c77546d1decf2dc3448a035ab4594921a230c669f628a1d8fb0c3e7e2",
   "verdikt": "bestanden",
-  "quellePin": "fedlex Filestore-Cache gepinnt (schkg/zgb u.a.) + ZGB live cc/24/233_245_233/20260701 (R3), currency je selbst geprüft",
+  "quellePin": "fedlex Filestore-Cache 229 Bund-HTML (gepinnt, cache.sh grün)",
   "datum": "2026-07-24",
   "dateien": [
-    "src/lib/normtext/darstellung.ts"
+    "scripts/normtext/struktur-extrahiere.ts"
   ]
 }
