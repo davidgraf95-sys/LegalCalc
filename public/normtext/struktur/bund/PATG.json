@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "232.14",
   "titel": "Bundesgesetz über die Erfindungspatente",
@@ -101,11 +101,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -168,11 +170,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -201,11 +205,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -217,11 +223,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -265,11 +273,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -315,11 +325,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -331,11 +343,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -394,11 +408,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -428,11 +444,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -502,11 +520,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -536,11 +556,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -570,11 +592,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -586,11 +610,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -683,11 +709,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -733,11 +761,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -783,11 +813,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -845,11 +877,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Prioritätsrecht"
+     "label": "2. Abschnitt: Prioritätsrecht",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1000,11 +1034,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Prioritätsrecht"
+     "label": "2. Abschnitt: Prioritätsrecht",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1082,11 +1118,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Prioritätsrecht"
+     "label": "2. Abschnitt: Prioritätsrecht",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1115,11 +1153,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Prioritätsrecht"
+     "label": "2. Abschnitt: Prioritätsrecht",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1148,11 +1188,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Änderungen im Bestand des Patentes"
+     "label": "3. Abschnitt: Änderungen im Bestand des Patentes",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1198,11 +1240,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Änderungen im Bestand des Patentes"
+     "label": "3. Abschnitt: Änderungen im Bestand des Patentes",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1232,11 +1276,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Änderungen im Bestand des Patentes"
+     "label": "3. Abschnitt: Änderungen im Bestand des Patentes",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1282,11 +1328,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Änderungen im Bestand des Patentes"
+     "label": "3. Abschnitt: Änderungen im Bestand des Patentes",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1298,11 +1346,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Änderungen im Bestand des Patentes"
+     "label": "3. Abschnitt: Änderungen im Bestand des Patentes",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1332,11 +1382,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Änderungen im Recht auf das Patent und im Recht am Patent; Lizenzerteilung"
+     "label": "4. Abschnitt: Änderungen im Recht auf das Patent und im Recht am Patent; Lizenzerteilung",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1406,11 +1458,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Änderungen im Recht auf das Patent und im Recht am Patent; Lizenzerteilung"
+     "label": "4. Abschnitt: Änderungen im Recht auf das Patent und im Recht am Patent; Lizenzerteilung",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1440,11 +1494,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Änderungen im Recht auf das Patent und im Recht am Patent; Lizenzerteilung"
+     "label": "4. Abschnitt: Änderungen im Recht auf das Patent und im Recht am Patent; Lizenzerteilung",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1456,11 +1512,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Änderungen im Recht auf das Patent und im Recht am Patent; Lizenzerteilung"
+     "label": "4. Abschnitt: Änderungen im Recht auf das Patent und im Recht am Patent; Lizenzerteilung",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1486,11 +1544,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Änderungen im Recht auf das Patent und im Recht am Patent; Lizenzerteilung"
+     "label": "4. Abschnitt: Änderungen im Recht auf das Patent und im Recht am Patent; Lizenzerteilung",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1519,11 +1579,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Änderungen im Recht auf das Patent und im Recht am Patent; Lizenzerteilung"
+     "label": "4. Abschnitt: Änderungen im Recht auf das Patent und im Recht am Patent; Lizenzerteilung",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1534,11 +1596,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent"
+     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -1567,11 +1631,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent"
+     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -1618,11 +1684,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent"
+     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -1684,11 +1752,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent"
+     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -1718,11 +1788,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent"
+     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -1734,11 +1806,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent"
+     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -1783,11 +1857,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Gebühren"
+     "label": "6. Abschnitt: Gebühren",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [],
@@ -1831,11 +1907,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Weiterbehandlung und Wiedereinsetzung in den früheren Stand"
+     "label": "7. Abschnitt: Weiterbehandlung und Wiedereinsetzung in den früheren Stand",
+     "eId": "tit_1/chap_7"
     }
    ],
    "marginalie": [
@@ -1865,11 +1943,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Weiterbehandlung und Wiedereinsetzung in den früheren Stand"
+     "label": "7. Abschnitt: Weiterbehandlung und Wiedereinsetzung in den früheren Stand",
+     "eId": "tit_1/chap_7"
     }
    ],
    "marginalie": [
@@ -1931,11 +2011,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Die Patentanmeldung"
+     "label": "1. Abschnitt: Die Patentanmeldung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2014,11 +2096,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Die Patentanmeldung"
+     "label": "1. Abschnitt: Die Patentanmeldung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2081,11 +2165,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Die Patentanmeldung"
+     "label": "1. Abschnitt: Die Patentanmeldung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2115,11 +2201,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Die Patentanmeldung"
+     "label": "1. Abschnitt: Die Patentanmeldung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2149,11 +2237,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Die Patentanmeldung"
+     "label": "1. Abschnitt: Die Patentanmeldung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2183,11 +2273,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Die Patentanmeldung"
+     "label": "1. Abschnitt: Die Patentanmeldung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2266,11 +2358,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Die Patentanmeldung"
+     "label": "1. Abschnitt: Die Patentanmeldung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2316,11 +2410,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Die Patentanmeldung"
+     "label": "1. Abschnitt: Die Patentanmeldung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2349,11 +2445,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Das Prüfungsverfahren"
+     "label": "2. Abschnitt: Das Prüfungsverfahren",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2479,11 +2577,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr"
+     "label": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -2561,11 +2661,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr"
+     "label": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -2639,11 +2741,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr"
+     "label": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -2673,11 +2777,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr"
+     "label": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -2740,11 +2846,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr"
+     "label": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -2755,11 +2863,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr"
+     "label": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -2788,11 +2898,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -2821,11 +2933,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -2836,11 +2950,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -2851,11 +2967,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -2900,11 +3018,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -2946,11 +3066,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -2980,11 +3102,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen für den zivilrechtlichen Schutz"
+     "label": "2. Abschnitt: Besondere Bestimmungen für den zivilrechtlichen Schutz",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -3021,11 +3145,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen für den zivilrechtlichen Schutz"
+     "label": "2. Abschnitt: Besondere Bestimmungen für den zivilrechtlichen Schutz",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -3107,11 +3233,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen für den zivilrechtlichen Schutz"
+     "label": "2. Abschnitt: Besondere Bestimmungen für den zivilrechtlichen Schutz",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -3156,11 +3284,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen für den zivilrechtlichen Schutz"
+     "label": "2. Abschnitt: Besondere Bestimmungen für den zivilrechtlichen Schutz",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -3189,11 +3319,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen für den zivilrechtlichen Schutz"
+     "label": "2. Abschnitt: Besondere Bestimmungen für den zivilrechtlichen Schutz",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -3222,11 +3354,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen für den zivilrechtlichen Schutz"
+     "label": "2. Abschnitt: Besondere Bestimmungen für den zivilrechtlichen Schutz",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -3259,11 +3393,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen für den zivilrechtlichen Schutz"
+     "label": "2. Abschnitt: Besondere Bestimmungen für den zivilrechtlichen Schutz",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -3288,11 +3424,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Bestimmungen für den strafrechtlichen Schutz"
+     "label": "3. Abschnitt: Besondere Bestimmungen für den strafrechtlichen Schutz",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3354,11 +3492,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Bestimmungen für den strafrechtlichen Schutz"
+     "label": "3. Abschnitt: Besondere Bestimmungen für den strafrechtlichen Schutz",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3405,11 +3545,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Bestimmungen für den strafrechtlichen Schutz"
+     "label": "3. Abschnitt: Besondere Bestimmungen für den strafrechtlichen Schutz",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3436,11 +3578,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Bestimmungen für den strafrechtlichen Schutz"
+     "label": "3. Abschnitt: Besondere Bestimmungen für den strafrechtlichen Schutz",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3451,11 +3595,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Bestimmungen für den strafrechtlichen Schutz"
+     "label": "3. Abschnitt: Besondere Bestimmungen für den strafrechtlichen Schutz",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3467,11 +3613,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Bestimmungen für den strafrechtlichen Schutz"
+     "label": "3. Abschnitt: Besondere Bestimmungen für den strafrechtlichen Schutz",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3513,7 +3661,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: …"
+     "label": "Vierter Titel: …",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [],
@@ -3540,11 +3689,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anwendbares Recht"
+     "label": "1. Abschnitt: Anwendbares Recht",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3644,11 +3795,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wirkungen der europäischen Patentanmeldung und des europäischen Patents und Änderungen im Bestand des europäischen Patents"
+     "label": "2. Abschnitt: Wirkungen der europäischen Patentanmeldung und des europäischen Patents und Änderungen im Bestand des europäischen Patents",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3720,11 +3873,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wirkungen der europäischen Patentanmeldung und des europäischen Patents und Änderungen im Bestand des europäischen Patents"
+     "label": "2. Abschnitt: Wirkungen der europäischen Patentanmeldung und des europäischen Patents und Änderungen im Bestand des europäischen Patents",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3753,11 +3908,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwaltung des europäischen Patentes"
+     "label": "3. Abschnitt: Verwaltung des europäischen Patentes",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -3803,11 +3960,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwaltung des europäischen Patentes"
+     "label": "3. Abschnitt: Verwaltung des europäischen Patentes",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -3836,11 +3995,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwaltung des europäischen Patentes"
+     "label": "3. Abschnitt: Verwaltung des europäischen Patentes",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -3877,11 +4038,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verwaltung des europäischen Patentes"
+     "label": "3. Abschnitt: Verwaltung des europäischen Patentes",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -3918,11 +4081,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Umwandlung der europäischen Patentanmeldung"
+     "label": "4. Abschnitt: Umwandlung der europäischen Patentanmeldung",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -4016,11 +4181,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Umwandlung der europäischen Patentanmeldung"
+     "label": "4. Abschnitt: Umwandlung der europäischen Patentanmeldung",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -4049,11 +4216,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Umwandlung der europäischen Patentanmeldung"
+     "label": "4. Abschnitt: Umwandlung der europäischen Patentanmeldung",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -4082,11 +4251,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Umwandlung der europäischen Patentanmeldung"
+     "label": "4. Abschnitt: Umwandlung der europäischen Patentanmeldung",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -4115,11 +4286,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz"
+     "label": "5. Abschnitt: Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz",
+     "eId": "tit_5/chap_5"
     }
    ],
    "marginalie": [
@@ -4166,11 +4339,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz"
+     "label": "5. Abschnitt: Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz",
+     "eId": "tit_5/chap_5"
     }
    ],
    "marginalie": [
@@ -4200,11 +4375,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz"
+     "label": "5. Abschnitt: Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz",
+     "eId": "tit_5/chap_5"
     }
    ],
    "marginalie": [
@@ -4242,11 +4419,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz"
+     "label": "5. Abschnitt: Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz",
+     "eId": "tit_5/chap_5"
     }
    ],
    "marginalie": [
@@ -4285,11 +4464,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz"
+     "label": "5. Abschnitt: Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz",
+     "eId": "tit_5/chap_5"
     }
    ],
    "marginalie": [
@@ -4320,11 +4501,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Rechtshilfegesuche des Europäischen Patentamtes"
+     "label": "6. Abschnitt: Rechtshilfegesuche des Europäischen Patentamtes",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -4370,11 +4553,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Internationale Patentanmeldungen"
+     "label": "Sechster Titel: Internationale Patentanmeldungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anwendbares Recht"
+     "label": "1. Abschnitt: Anwendbares Recht",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -4478,11 +4663,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Internationale Patentanmeldungen"
+     "label": "Sechster Titel: Internationale Patentanmeldungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: In der Schweiz eingereichte Anmeldungen"
+     "label": "2. Abschnitt: In der Schweiz eingereichte Anmeldungen",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -4536,11 +4723,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Internationale Patentanmeldungen"
+     "label": "Sechster Titel: Internationale Patentanmeldungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: In der Schweiz eingereichte Anmeldungen"
+     "label": "2. Abschnitt: In der Schweiz eingereichte Anmeldungen",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -4573,11 +4762,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Internationale Patentanmeldungen"
+     "label": "Sechster Titel: Internationale Patentanmeldungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
+     "label": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt",
+     "eId": "tit_6/chap_3"
     }
    ],
    "marginalie": [
@@ -4639,11 +4830,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Internationale Patentanmeldungen"
+     "label": "Sechster Titel: Internationale Patentanmeldungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
+     "label": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt",
+     "eId": "tit_6/chap_3"
     }
    ],
    "marginalie": [
@@ -4677,11 +4870,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Internationale Patentanmeldungen"
+     "label": "Sechster Titel: Internationale Patentanmeldungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
+     "label": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt",
+     "eId": "tit_6/chap_3"
     }
    ],
    "marginalie": [
@@ -4715,11 +4910,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Internationale Patentanmeldungen"
+     "label": "Sechster Titel: Internationale Patentanmeldungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
+     "label": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt",
+     "eId": "tit_6/chap_3"
     }
    ],
    "marginalie": [
@@ -4753,11 +4950,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Internationale Patentanmeldungen"
+     "label": "Sechster Titel: Internationale Patentanmeldungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
+     "label": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt",
+     "eId": "tit_6/chap_3"
     }
    ],
    "marginalie": [
@@ -4794,11 +4993,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Internationale Patentanmeldungen"
+     "label": "Sechster Titel: Internationale Patentanmeldungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
+     "label": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt",
+     "eId": "tit_6/chap_3"
     }
    ],
    "marginalie": [
@@ -4835,11 +5036,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Internationale Patentanmeldungen"
+     "label": "Sechster Titel: Internationale Patentanmeldungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt"
+     "label": "3. Abschnitt: Für die Schweiz bestimmte Anmeldungen; ausgewähltes Amt",
+     "eId": "tit_6/chap_3"
     }
    ],
    "marginalie": [
@@ -4872,7 +5075,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: …"
+     "label": "Vierter Titel: …",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [],
@@ -4899,7 +5103,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: …"
+     "label": "Vierter Titel: …",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [],
@@ -4926,7 +5131,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: …"
+     "label": "Vierter Titel: …",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [],
@@ -4953,7 +5159,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: …"
+     "label": "Vierter Titel: …",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [],
@@ -4980,7 +5187,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: …"
+     "label": "Vierter Titel: …",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [],
@@ -5015,7 +5223,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: …"
+     "label": "Vierter Titel: …",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [],
@@ -5042,11 +5251,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wirkungen der europäischen Patentanmeldung und des europäischen Patents und Änderungen im Bestand des europäischen Patents"
+     "label": "2. Abschnitt: Wirkungen der europäischen Patentanmeldung und des europäischen Patents und Änderungen im Bestand des europäischen Patents",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -5076,11 +5287,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Fünfter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wirkungen der europäischen Patentanmeldung und des europäischen Patents und Änderungen im Bestand des europäischen Patents"
+     "label": "2. Abschnitt: Wirkungen der europäischen Patentanmeldung und des europäischen Patents und Änderungen im Bestand des europäischen Patents",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -5109,11 +5322,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -5221,11 +5436,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -5291,11 +5508,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -5332,11 +5551,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -5347,11 +5568,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -5404,11 +5627,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -5441,11 +5666,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -5456,11 +5683,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -5505,11 +5734,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -5595,11 +5826,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -5624,11 +5857,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -5661,11 +5896,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "1. Abschnitt: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -5676,11 +5913,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel"
+     "label": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -5731,11 +5970,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel"
+     "label": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -5746,11 +5987,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel"
+     "label": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -5761,11 +6004,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel"
+     "label": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -5776,11 +6021,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel"
+     "label": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -5791,11 +6038,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel"
+     "label": "2. Abschnitt: Verlängerung der Dauer der ergänzenden Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -5806,11 +6055,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_2_a"
     }
    ],
    "marginalie": [
@@ -5857,11 +6108,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_2_a"
     }
    ],
    "marginalie": [
@@ -5872,11 +6125,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_2_a"
     }
    ],
    "marginalie": [
@@ -5887,11 +6142,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_2_a"
     }
    ],
    "marginalie": [
@@ -5902,11 +6159,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_2_a"
     }
    ],
    "marginalie": [
@@ -5917,11 +6176,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "2a. Abschnitt: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_7/chap_2_a"
     }
    ],
    "marginalie": [
@@ -5932,11 +6193,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Ergänzende Schutzzertifikate"
+     "label": "Siebenter Titel: Ergänzende Schutzzertifikate",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ergänzende Schutzzertifikate für Pflanzenschutzmittel"
+     "label": "3. Abschnitt: Ergänzende Schutzzertifikate für Pflanzenschutzmittel",
+     "eId": "tit_7/chap_3"
     }
    ],
    "marginalie": [],
@@ -5968,11 +6231,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -6010,11 +6275,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -6044,11 +6311,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Prioritätsrecht"
+     "label": "2. Abschnitt: Prioritätsrecht",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -6077,11 +6346,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Prioritätsrecht"
+     "label": "2. Abschnitt: Prioritätsrecht",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -6110,11 +6381,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Änderungen im Bestand des Patentes"
+     "label": "3. Abschnitt: Änderungen im Bestand des Patentes",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -6143,11 +6416,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent"
+     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -6177,11 +6452,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent"
+     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -6211,11 +6488,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent"
+     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -6258,11 +6537,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent"
+     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -6291,11 +6572,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent"
+     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -6332,11 +6615,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent"
+     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -6365,11 +6650,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent"
+     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -6398,11 +6685,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent"
+     "label": "5. Abschnitt: Gesetzliche Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -6447,11 +6736,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Gebühren"
+     "label": "6. Abschnitt: Gebühren",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [],
@@ -6478,11 +6769,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Gebühren"
+     "label": "6. Abschnitt: Gebühren",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [],
@@ -6509,11 +6802,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Weiterbehandlung und Wiedereinsetzung in den früheren Stand"
+     "label": "7. Abschnitt: Weiterbehandlung und Wiedereinsetzung in den früheren Stand",
+     "eId": "tit_1/chap_7"
     }
    ],
    "marginalie": [
@@ -6651,11 +6946,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Vertretung und Aufsicht"
+     "label": "8. Abschnitt: Vertretung und Aufsicht",
+     "eId": "tit_1/chap_8"
     }
    ],
    "marginalie": [
@@ -6685,11 +6982,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Vertretung und Aufsicht"
+     "label": "8. Abschnitt: Vertretung und Aufsicht",
+     "eId": "tit_1/chap_8"
     }
    ],
    "marginalie": [
@@ -6716,11 +7015,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Die Patentanmeldung"
+     "label": "1. Abschnitt: Die Patentanmeldung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -6750,11 +7051,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Die Patentanmeldung"
+     "label": "1. Abschnitt: Die Patentanmeldung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -6784,11 +7087,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Die Patentanmeldung"
+     "label": "1. Abschnitt: Die Patentanmeldung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -6818,11 +7123,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Die Patentanmeldung"
+     "label": "1. Abschnitt: Die Patentanmeldung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -6860,11 +7167,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Die Patentanmeldung"
+     "label": "1. Abschnitt: Die Patentanmeldung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -6893,11 +7202,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Die Patentanmeldung"
+     "label": "1. Abschnitt: Die Patentanmeldung",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -6926,11 +7237,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Das Prüfungsverfahren"
+     "label": "2. Abschnitt: Das Prüfungsverfahren",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -6975,11 +7288,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Das Prüfungsverfahren"
+     "label": "2. Abschnitt: Das Prüfungsverfahren",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -7016,11 +7331,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Das Prüfungsverfahren"
+     "label": "2. Abschnitt: Das Prüfungsverfahren",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -7057,11 +7374,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Das Prüfungsverfahren"
+     "label": "2. Abschnitt: Das Prüfungsverfahren",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -7098,11 +7417,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr"
+     "label": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -7140,11 +7461,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Patenterteilung"
+     "label": "Zweiter Titel: Die Patenterteilung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr"
+     "label": "3. Abschnitt: Patentregister; Veröffentlichungen des IGE; elektronischer Behördenverkehr",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -7173,11 +7496,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen für den zivilrechtlichen und strafrechtlichen Schutz",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -7206,11 +7531,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen für den zivilrechtlichen Schutz"
+     "label": "2. Abschnitt: Besondere Bestimmungen für den zivilrechtlichen Schutz",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -7239,11 +7566,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -7281,11 +7610,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -7345,11 +7676,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -7402,11 +7735,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -7459,11 +7794,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Bestimmungen für den strafrechtlichen Schutz"
+     "label": "3. Abschnitt: Besondere Bestimmungen für den strafrechtlichen Schutz",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -7493,11 +7830,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Bestimmungen für den strafrechtlichen Schutz"
+     "label": "3. Abschnitt: Besondere Bestimmungen für den strafrechtlichen Schutz",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -7540,11 +7879,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -7607,11 +7948,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -7640,11 +7983,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -7673,11 +8018,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -7707,11 +8054,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -7722,11 +8071,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -7789,11 +8140,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -7814,11 +8167,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -7830,11 +8185,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -7846,11 +8203,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -7862,11 +8221,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -7877,11 +8238,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Rechtsschutz"
+     "label": "Dritter Titel: Rechtsschutz",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "4. Abschnitt: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -7910,11 +8273,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -7960,11 +8325,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -8011,11 +8378,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -8045,7 +8414,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: …"
+     "label": "Vierter Titel: …",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [],
@@ -8072,11 +8442,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes"
+     "label": "1. Abschnitt: Voraussetzungen und Wirkung des Patentes",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -8114,7 +8486,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Schlusstitel: Schluss- und Übergangsbestimmungen"
+     "label": "Schlusstitel: Schluss- und Übergangsbestimmungen",
+     "eId": "disp_u1"
     }
    ],
    "marginalie": [
@@ -8176,7 +8549,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Schlusstitel: Schluss- und Übergangsbestimmungen"
+     "label": "Schlusstitel: Schluss- und Übergangsbestimmungen",
+     "eId": "disp_u1"
     }
    ],
    "marginalie": [
@@ -8231,7 +8605,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Schlusstitel: Schluss- und Übergangsbestimmungen"
+     "label": "Schlusstitel: Schluss- und Übergangsbestimmungen",
+     "eId": "disp_u1"
     }
    ],
    "marginalie": [
@@ -8269,7 +8644,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Schlusstitel: Schluss- und Übergangsbestimmungen"
+     "label": "Schlusstitel: Schluss- und Übergangsbestimmungen",
+     "eId": "disp_u1"
     }
    ],
    "marginalie": [
@@ -8307,7 +8683,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Schlusstitel: Schluss- und Übergangsbestimmungen"
+     "label": "Schlusstitel: Schluss- und Übergangsbestimmungen",
+     "eId": "disp_u1"
     }
    ],
    "marginalie": [
@@ -8353,7 +8730,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Schlusstitel: Schluss- und Übergangsbestimmungen"
+     "label": "Schlusstitel: Schluss- und Übergangsbestimmungen",
+     "eId": "disp_u1"
     }
    ],
    "marginalie": [
@@ -8399,7 +8777,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Schlusstitel: Schluss- und Übergangsbestimmungen"
+     "label": "Schlusstitel: Schluss- und Übergangsbestimmungen",
+     "eId": "disp_u1"
     }
    ],
    "marginalie": [
@@ -8445,7 +8824,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Schlusstitel: Schluss- und Übergangsbestimmungen"
+     "label": "Schlusstitel: Schluss- und Übergangsbestimmungen",
+     "eId": "disp_u1"
     }
    ],
    "marginalie": [
@@ -8550,7 +8930,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Schlusstitel: Schluss- und Übergangsbestimmungen"
+     "label": "Schlusstitel: Schluss- und Übergangsbestimmungen",
+     "eId": "disp_u1"
     }
    ],
    "marginalie": [

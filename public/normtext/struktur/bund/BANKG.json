@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "952.0",
   "titel": "Bundesgesetz über die Banken und Sparkassen",
@@ -66,7 +66,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Geltungsbereich des Gesetzes"
+     "label": "Erster Abschnitt: Geltungsbereich des Gesetzes",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [],
@@ -140,7 +141,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Geltungsbereich des Gesetzes"
+     "label": "Erster Abschnitt: Geltungsbereich des Gesetzes",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [],
@@ -239,7 +241,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [],
@@ -403,7 +406,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit"
+     "label": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -451,7 +455,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit"
+     "label": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -482,7 +487,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Rechnungslegung"
+     "label": "Vierter Abschnitt: Rechnungslegung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -525,7 +531,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Systemrelevante Banken"
+     "label": "Fünfter Abschnitt: Systemrelevante Banken",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -555,7 +562,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Systemrelevante Banken"
+     "label": "Fünfter Abschnitt: Systemrelevante Banken",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -566,7 +574,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Systemrelevante Banken"
+     "label": "Fünfter Abschnitt: Systemrelevante Banken",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -577,7 +586,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Systemrelevante Banken"
+     "label": "Fünfter Abschnitt: Systemrelevante Banken",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -597,7 +607,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Zusätzliches Kapital"
+     "label": "Sechster Abschnitt: Zusätzliches Kapital",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -667,7 +678,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Zusätzliches Kapital"
+     "label": "Sechster Abschnitt: Zusätzliches Kapital",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -693,7 +705,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Zusätzliches Kapital"
+     "label": "Sechster Abschnitt: Zusätzliches Kapital",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -719,7 +732,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Zusätzliches Kapital"
+     "label": "Sechster Abschnitt: Zusätzliches Kapital",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -765,7 +779,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Spareinlagen und Depotwerte"
+     "label": "Siebenter Abschnitt: Spareinlagen und Depotwerte",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -825,7 +840,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Spareinlagen und Depotwerte"
+     "label": "Siebenter Abschnitt: Spareinlagen und Depotwerte",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -889,7 +905,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: …"
+     "label": "Achter Abschnitt: …",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -916,7 +933,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Abschnitt: Überwachung und Prüfung"
+     "label": "Neunter Abschnitt: Überwachung und Prüfung",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -1003,7 +1021,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Abschnitt: Aufsicht"
+     "label": "Zehnter Abschnitt: Aufsicht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [],
@@ -1055,7 +1074,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Abschnitt: Aufsicht"
+     "label": "Zehnter Abschnitt: Aufsicht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [],
@@ -1082,7 +1102,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -1186,7 +1207,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -1268,7 +1290,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -1329,7 +1352,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -1390,7 +1414,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -1419,7 +1444,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -1493,7 +1519,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -1522,7 +1549,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -1620,7 +1648,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -1666,7 +1695,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -1724,7 +1754,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -1753,7 +1784,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -1764,7 +1796,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -1793,7 +1826,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen"
+     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [],
@@ -1837,7 +1871,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen"
+     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [],
@@ -1878,7 +1913,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen"
+     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [],
@@ -1925,7 +1961,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen"
+     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [],
@@ -2041,7 +2078,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen"
+     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [],
@@ -2072,7 +2110,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen"
+     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [],
@@ -2119,7 +2158,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen"
+     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [],
@@ -2150,7 +2190,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen"
+     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [],
@@ -2181,7 +2222,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfzehnter Abschnitt: Übergangs- und Schlussbestimmungen"
+     "label": "Fünfzehnter Abschnitt: Übergangs- und Schlussbestimmungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [],
@@ -2208,7 +2250,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfzehnter Abschnitt: Übergangs- und Schlussbestimmungen"
+     "label": "Fünfzehnter Abschnitt: Übergangs- und Schlussbestimmungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [],
@@ -2248,7 +2291,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfzehnter Abschnitt: Übergangs- und Schlussbestimmungen"
+     "label": "Fünfzehnter Abschnitt: Übergangs- und Schlussbestimmungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [],
@@ -2275,7 +2319,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfzehnter Abschnitt: Übergangs- und Schlussbestimmungen"
+     "label": "Fünfzehnter Abschnitt: Übergangs- und Schlussbestimmungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [],
@@ -2306,7 +2351,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfzehnter Abschnitt: Übergangs- und Schlussbestimmungen"
+     "label": "Fünfzehnter Abschnitt: Übergangs- und Schlussbestimmungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [],
@@ -2324,7 +2370,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Systemrelevante Banken"
+     "label": "Fünfter Abschnitt: Systemrelevante Banken",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2335,7 +2382,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Zusätzliches Kapital"
+     "label": "Sechster Abschnitt: Zusätzliches Kapital",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2368,7 +2416,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Zusätzliches Kapital"
+     "label": "Sechster Abschnitt: Zusätzliches Kapital",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2414,7 +2463,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Abschnitt: Überwachung und Prüfung"
+     "label": "Neunter Abschnitt: Überwachung und Prüfung",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -2445,7 +2495,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Geltungsbereich des Gesetzes"
+     "label": "Erster Abschnitt: Geltungsbereich des Gesetzes",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -2553,7 +2604,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Geltungsbereich des Gesetzes"
+     "label": "Erster Abschnitt: Geltungsbereich des Gesetzes",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [],
@@ -2588,7 +2640,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Geltungsbereich des Gesetzes"
+     "label": "Erster Abschnitt: Geltungsbereich des Gesetzes",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -2633,7 +2686,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Abschnitt: Aufsicht"
+     "label": "Zehnter Abschnitt: Aufsicht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [],
@@ -2681,7 +2735,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Abschnitt: Aufsicht"
+     "label": "Zehnter Abschnitt: Aufsicht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [],
@@ -2720,7 +2775,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Abschnitt: Aufsicht"
+     "label": "Zehnter Abschnitt: Aufsicht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [],
@@ -2759,7 +2815,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Abschnitt: Aufsicht"
+     "label": "Zehnter Abschnitt: Aufsicht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [],
@@ -2805,7 +2862,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Abschnitt: Aufsicht"
+     "label": "Zehnter Abschnitt: Aufsicht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [],
@@ -2836,7 +2894,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Abschnitt: Aufsicht"
+     "label": "Zehnter Abschnitt: Aufsicht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [],
@@ -2875,7 +2934,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Abschnitt: Aufsicht"
+     "label": "Zehnter Abschnitt: Aufsicht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [],
@@ -2914,7 +2974,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2943,7 +3004,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Geltungsbereich des Gesetzes"
+     "label": "Erster Abschnitt: Geltungsbereich des Gesetzes",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [],
@@ -2986,7 +3048,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3015,7 +3078,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3057,7 +3121,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3086,7 +3151,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3152,7 +3218,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3189,7 +3256,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3218,7 +3286,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr"
+     "label": "Elfter Abschnitt: Massnahmen bei Insolvenzgefahr",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3247,7 +3316,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -3347,7 +3417,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -3389,7 +3460,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [],
@@ -3416,7 +3488,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -3463,7 +3536,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -3521,7 +3595,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -3532,7 +3607,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)"
+     "label": "Zwölfter Abschnitt: Konkursliquidation insolventer Banken (Bankenkonkurs)",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -3619,7 +3695,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter a. Abschnitt: Beschwerden in Verfahren nach dem elften und zwölften Abschnitt"
+     "label": "Zwölfter a. Abschnitt: Beschwerden in Verfahren nach dem elften und zwölften Abschnitt",
+     "eId": "chap_12_a"
     }
    ],
    "marginalie": [
@@ -3649,7 +3726,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter a. Abschnitt: Beschwerden in Verfahren nach dem elften und zwölften Abschnitt"
+     "label": "Zwölfter a. Abschnitt: Beschwerden in Verfahren nach dem elften und zwölften Abschnitt",
+     "eId": "chap_12_a"
     }
    ],
    "marginalie": [
@@ -3675,7 +3753,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter a. Abschnitt: Beschwerden in Verfahren nach dem elften und zwölften Abschnitt"
+     "label": "Zwölfter a. Abschnitt: Beschwerden in Verfahren nach dem elften und zwölften Abschnitt",
+     "eId": "chap_12_a"
     }
    ],
    "marginalie": [
@@ -3686,7 +3765,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter a. Abschnitt: Beschwerden in Verfahren nach dem elften und zwölften Abschnitt"
+     "label": "Zwölfter a. Abschnitt: Beschwerden in Verfahren nach dem elften und zwölften Abschnitt",
+     "eId": "chap_12_a"
     }
    ],
    "marginalie": [
@@ -3725,7 +3805,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dreizehnter Abschnitt: Einlagensicherung"
+     "label": "Dreizehnter Abschnitt: Einlagensicherung",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -3771,7 +3852,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dreizehnter Abschnitt: Einlagensicherung"
+     "label": "Dreizehnter Abschnitt: Einlagensicherung",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -3832,7 +3914,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dreizehnter Abschnitt: Einlagensicherung"
+     "label": "Dreizehnter Abschnitt: Einlagensicherung",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -3869,7 +3952,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dreizehnter Abschnitt: Einlagensicherung"
+     "label": "Dreizehnter Abschnitt: Einlagensicherung",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -3898,7 +3982,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dreizehnter Abschnitt: Einlagensicherung"
+     "label": "Dreizehnter Abschnitt: Einlagensicherung",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -3927,7 +4012,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dreizehnter Abschnitt a: Nachrichtenlose Vermögenswerte"
+     "label": "Dreizehnter Abschnitt a: Nachrichtenlose Vermögenswerte",
+     "eId": "chap_13_a"
     }
    ],
    "marginalie": [
@@ -3973,7 +4059,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dreizehnter Abschnitt a: Nachrichtenlose Vermögenswerte"
+     "label": "Dreizehnter Abschnitt a: Nachrichtenlose Vermögenswerte",
+     "eId": "chap_13_a"
     }
    ],
    "marginalie": [
@@ -4002,7 +4089,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [],
@@ -4033,7 +4121,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [],
@@ -4060,7 +4149,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [],
@@ -4183,7 +4273,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [],
@@ -4226,7 +4317,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [],
@@ -4273,7 +4365,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [],
@@ -4300,7 +4393,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [],
@@ -4327,7 +4421,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [],
@@ -4386,7 +4481,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [],
@@ -4425,7 +4521,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [],
@@ -4452,7 +4549,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb"
+     "label": "Zweiter Abschnitt: Bewilligung zum Geschäftsbetrieb",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [],
@@ -4515,7 +4613,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen"
+     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [],
@@ -4542,7 +4641,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit"
+     "label": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -4589,7 +4689,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit"
+     "label": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -4620,7 +4721,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit"
+     "label": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -4647,7 +4749,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit"
+     "label": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -4678,7 +4781,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit"
+     "label": "Dritter Abschnitt: Eigene Mittel, Liquidität und andere Vorschriften über die Geschäftstätigkeit",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -4725,7 +4829,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen"
+     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [],
@@ -4764,7 +4869,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen"
+     "label": "Vierzehnter Abschnitt: Verantwortlichkeits- und Strafbestimmungen",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [],
@@ -4803,7 +4909,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfzehnter Abschnitt: Übergangs- und Schlussbestimmungen"
+     "label": "Fünfzehnter Abschnitt: Übergangs- und Schlussbestimmungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [],
@@ -4844,7 +4951,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Rechnungslegung"
+     "label": "Vierter Abschnitt: Rechnungslegung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -4870,7 +4978,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Rechnungslegung"
+     "label": "Vierter Abschnitt: Rechnungslegung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [

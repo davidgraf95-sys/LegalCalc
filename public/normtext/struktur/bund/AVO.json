@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "961.011",
   "titel": "Verordnung über die Beaufsichtigung von privaten Versicherungsunternehmen",
@@ -84,11 +84,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeines"
+     "label": "1. Titel: Allgemeines",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -127,11 +129,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeines"
+     "label": "1. Titel: Allgemeines",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Grundsätze"
+     "label": "2. Kapitel: Grundsätze",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [],
@@ -154,11 +158,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -195,11 +201,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -224,11 +232,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -253,15 +263,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewilligungsvoraussetzungen"
+     "label": "2. Kapitel: Bewilligungsvoraussetzungen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Mindestkapital"
+     "label": "1. Abschnitt: Mindestkapital",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -286,15 +299,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewilligungsvoraussetzungen"
+     "label": "2. Kapitel: Bewilligungsvoraussetzungen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Mindestkapital"
+     "label": "1. Abschnitt: Mindestkapital",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -305,15 +321,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewilligungsvoraussetzungen"
+     "label": "2. Kapitel: Bewilligungsvoraussetzungen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Mindestkapital"
+     "label": "1. Abschnitt: Mindestkapital",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -324,15 +343,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewilligungsvoraussetzungen"
+     "label": "2. Kapitel: Bewilligungsvoraussetzungen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Mindestkapital"
+     "label": "1. Abschnitt: Mindestkapital",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -343,15 +365,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewilligungsvoraussetzungen"
+     "label": "2. Kapitel: Bewilligungsvoraussetzungen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Mindestkapital"
+     "label": "1. Abschnitt: Mindestkapital",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -362,15 +387,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewilligungsvoraussetzungen"
+     "label": "2. Kapitel: Bewilligungsvoraussetzungen",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisationsfonds"
+     "label": "2. Abschnitt: Organisationsfonds",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": []
@@ -379,11 +407,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Gewährsvorschriften"
+     "label": "3. Kapitel: Gewährsvorschriften",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -408,11 +438,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Gewährsvorschriften"
+     "label": "3. Kapitel: Gewährsvorschriften",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -437,11 +469,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Gewährsvorschriften"
+     "label": "3. Kapitel: Gewährsvorschriften",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -466,15 +500,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Ergänzende Vorschriften für ausländische Versicherungsunternehmen"
+     "label": "4. Kapitel: Ergänzende Vorschriften für ausländische Versicherungsunternehmen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: …"
+     "label": "1. Abschnitt: …",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -497,15 +534,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Ergänzende Vorschriften für ausländische Versicherungsunternehmen"
+     "label": "4. Kapitel: Ergänzende Vorschriften für ausländische Versicherungsunternehmen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Generalbevollmächtigter oder Generalbevollmächtigte"
+     "label": "2. Abschnitt: Generalbevollmächtigter oder Generalbevollmächtigte",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -516,15 +556,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Ergänzende Vorschriften für ausländische Versicherungsunternehmen"
+     "label": "4. Kapitel: Ergänzende Vorschriften für ausländische Versicherungsunternehmen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Generalbevollmächtigter oder Generalbevollmächtigte"
+     "label": "2. Abschnitt: Generalbevollmächtigter oder Generalbevollmächtigte",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -535,15 +578,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Ergänzende Vorschriften für ausländische Versicherungsunternehmen"
+     "label": "4. Kapitel: Ergänzende Vorschriften für ausländische Versicherungsunternehmen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Generalbevollmächtigter oder Generalbevollmächtigte"
+     "label": "2. Abschnitt: Generalbevollmächtigter oder Generalbevollmächtigte",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -554,15 +600,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Ergänzende Vorschriften für ausländische Versicherungsunternehmen"
+     "label": "4. Kapitel: Ergänzende Vorschriften für ausländische Versicherungsunternehmen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Generalbevollmächtigter oder Generalbevollmächtigte"
+     "label": "2. Abschnitt: Generalbevollmächtigter oder Generalbevollmächtigte",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -573,15 +622,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Ergänzende Vorschriften für ausländische Versicherungsunternehmen"
+     "label": "4. Kapitel: Ergänzende Vorschriften für ausländische Versicherungsunternehmen",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Generalbevollmächtigter oder Generalbevollmächtigte"
+     "label": "2. Abschnitt: Generalbevollmächtigter oder Generalbevollmächtigte",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -642,11 +694,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -685,11 +739,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -700,11 +756,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -715,11 +773,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Marktkonforme Bewertung"
+     "label": "2. Kapitel: Marktkonforme Bewertung",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -730,11 +790,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Marktkonforme Bewertung"
+     "label": "2. Kapitel: Marktkonforme Bewertung",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -745,11 +807,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Marktkonforme Bewertung"
+     "label": "2. Kapitel: Marktkonforme Bewertung",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -760,11 +824,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Marktkonforme Bewertung"
+     "label": "2. Kapitel: Marktkonforme Bewertung",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -775,11 +841,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Marktkonforme Bewertung"
+     "label": "2. Kapitel: Marktkonforme Bewertung",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -790,11 +858,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Marktkonforme Bewertung"
+     "label": "2. Kapitel: Marktkonforme Bewertung",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -805,11 +875,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Marktkonforme Bewertung"
+     "label": "2. Kapitel: Marktkonforme Bewertung",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -820,11 +892,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Marktkonforme Bewertung"
+     "label": "2. Kapitel: Marktkonforme Bewertung",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -835,11 +909,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Risikotragendes Kapital"
+     "label": "3. Kapitel: Risikotragendes Kapital",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -850,11 +926,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Risikotragendes Kapital"
+     "label": "3. Kapitel: Risikotragendes Kapital",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -865,11 +943,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Risikotragendes Kapital"
+     "label": "3. Kapitel: Risikotragendes Kapital",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -880,11 +960,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zielkapital"
+     "label": "4. Kapitel: Zielkapital",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -895,11 +977,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zielkapital"
+     "label": "4. Kapitel: Zielkapital",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -910,11 +994,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Risikoabsorbierende Kapitalinstrumente"
+     "label": "5. Kapitel: Risikoabsorbierende Kapitalinstrumente",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -925,11 +1011,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Risikoabsorbierende Kapitalinstrumente"
+     "label": "5. Kapitel: Risikoabsorbierende Kapitalinstrumente",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -940,11 +1028,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: SST-Quotient und Ermittlung des SST"
+     "label": "6. Kapitel: SST-Quotient und Ermittlung des SST",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -955,11 +1045,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: SST-Quotient und Ermittlung des SST"
+     "label": "6. Kapitel: SST-Quotient und Ermittlung des SST",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -970,11 +1062,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: SST-Quotient und Ermittlung des SST"
+     "label": "6. Kapitel: SST-Quotient und Ermittlung des SST",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -985,11 +1079,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: SST-Quotient und Ermittlung des SST"
+     "label": "6. Kapitel: SST-Quotient und Ermittlung des SST",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -1000,11 +1096,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: SST-Quotient und Ermittlung des SST"
+     "label": "6. Kapitel: SST-Quotient und Ermittlung des SST",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -1015,11 +1113,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Modelle"
+     "label": "7. Kapitel: Modelle",
+     "eId": "tit_3/chap_7"
     }
    ],
    "marginalie": [
@@ -1030,11 +1130,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Modelle"
+     "label": "7. Kapitel: Modelle",
+     "eId": "tit_3/chap_7"
     }
    ],
    "marginalie": [
@@ -1060,11 +1162,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Modelle"
+     "label": "7. Kapitel: Modelle",
+     "eId": "tit_3/chap_7"
     }
    ],
    "marginalie": [
@@ -1075,11 +1179,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Modelle"
+     "label": "7. Kapitel: Modelle",
+     "eId": "tit_3/chap_7"
     }
    ],
    "marginalie": [
@@ -1090,11 +1196,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Häufigkeit der Ermittlung und Berichterstattung betreffend den SST"
+     "label": "8. Kapitel: Häufigkeit der Ermittlung und Berichterstattung betreffend den SST",
+     "eId": "tit_3/chap_8"
     }
    ],
    "marginalie": [
@@ -1105,11 +1213,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Häufigkeit der Ermittlung und Berichterstattung betreffend den SST"
+     "label": "8. Kapitel: Häufigkeit der Ermittlung und Berichterstattung betreffend den SST",
+     "eId": "tit_3/chap_8"
     }
    ],
    "marginalie": [
@@ -1120,11 +1230,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Häufigkeit der Ermittlung und Berichterstattung betreffend den SST"
+     "label": "8. Kapitel: Häufigkeit der Ermittlung und Berichterstattung betreffend den SST",
+     "eId": "tit_3/chap_8"
     }
    ],
    "marginalie": [
@@ -1135,11 +1247,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "9. Kapitel: Massnahmen und Interventionen"
+     "label": "9. Kapitel: Massnahmen und Interventionen",
+     "eId": "tit_3/chap_9"
     }
    ],
    "marginalie": [
@@ -1150,11 +1264,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "9. Kapitel: Massnahmen und Interventionen"
+     "label": "9. Kapitel: Massnahmen und Interventionen",
+     "eId": "tit_3/chap_9"
     }
    ],
    "marginalie": [
@@ -1180,11 +1296,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "9. Kapitel: Massnahmen und Interventionen"
+     "label": "9. Kapitel: Massnahmen und Interventionen",
+     "eId": "tit_3/chap_9"
     }
    ],
    "marginalie": [
@@ -1195,15 +1313,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungstechnische Rückstellungen"
+     "label": "1. Kapitel: Versicherungstechnische Rückstellungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "tit_4/chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -1227,15 +1348,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungstechnische Rückstellungen"
+     "label": "1. Kapitel: Versicherungstechnische Rückstellungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Lebensversicherung"
+     "label": "2. Abschnitt: Lebensversicherung",
+     "eId": "tit_4/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1260,15 +1384,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungstechnische Rückstellungen"
+     "label": "1. Kapitel: Versicherungstechnische Rückstellungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Lebensversicherung"
+     "label": "2. Abschnitt: Lebensversicherung",
+     "eId": "tit_4/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1293,15 +1420,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungstechnische Rückstellungen"
+     "label": "1. Kapitel: Versicherungstechnische Rückstellungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Lebensversicherung"
+     "label": "2. Abschnitt: Lebensversicherung",
+     "eId": "tit_4/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1326,15 +1456,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungstechnische Rückstellungen"
+     "label": "1. Kapitel: Versicherungstechnische Rückstellungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Lebensversicherung"
+     "label": "2. Abschnitt: Lebensversicherung",
+     "eId": "tit_4/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1359,15 +1492,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungstechnische Rückstellungen"
+     "label": "1. Kapitel: Versicherungstechnische Rückstellungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Lebensversicherung"
+     "label": "2. Abschnitt: Lebensversicherung",
+     "eId": "tit_4/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1378,15 +1514,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungstechnische Rückstellungen"
+     "label": "1. Kapitel: Versicherungstechnische Rückstellungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Lebensversicherung"
+     "label": "2. Abschnitt: Lebensversicherung",
+     "eId": "tit_4/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1435,15 +1574,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungstechnische Rückstellungen"
+     "label": "1. Kapitel: Versicherungstechnische Rückstellungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Lebensversicherung"
+     "label": "2. Abschnitt: Lebensversicherung",
+     "eId": "tit_4/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1468,15 +1610,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungstechnische Rückstellungen"
+     "label": "1. Kapitel: Versicherungstechnische Rückstellungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Lebensversicherung"
+     "label": "2. Abschnitt: Lebensversicherung",
+     "eId": "tit_4/chap_1/sec_2"
     }
    ],
    "marginalie": [],
@@ -1499,15 +1644,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungstechnische Rückstellungen"
+     "label": "1. Kapitel: Versicherungstechnische Rückstellungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Lebensversicherung"
+     "label": "2. Abschnitt: Lebensversicherung",
+     "eId": "tit_4/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1532,15 +1680,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungstechnische Rückstellungen"
+     "label": "1. Kapitel: Versicherungstechnische Rückstellungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Schadenversicherung"
+     "label": "3. Abschnitt: Schadenversicherung",
+     "eId": "tit_4/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1565,15 +1716,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungstechnische Rückstellungen"
+     "label": "1. Kapitel: Versicherungstechnische Rückstellungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Schadenversicherung"
+     "label": "3. Abschnitt: Schadenversicherung",
+     "eId": "tit_4/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1598,15 +1752,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_4/chap_2_a/sec_1"
     }
    ],
    "marginalie": [
@@ -1632,15 +1789,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_4/chap_2_a/sec_1"
     }
    ],
    "marginalie": [
@@ -1665,15 +1825,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_4/chap_2_a/sec_1"
     }
    ],
    "marginalie": [
@@ -1698,15 +1861,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_4/chap_2_a/sec_1"
     }
    ],
    "marginalie": [
@@ -1717,15 +1883,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_4/chap_2_a/sec_1"
     }
    ],
    "marginalie": [
@@ -1736,15 +1905,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_4/chap_2_a/sec_1"
     }
    ],
    "marginalie": [
@@ -1769,15 +1941,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Bestellung"
+     "label": "2. Abschnitt: Bestellung",
+     "eId": "tit_4/chap_2_a/sec_2"
     }
    ],
    "marginalie": [
@@ -1802,15 +1977,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Bestellung"
+     "label": "2. Abschnitt: Bestellung",
+     "eId": "tit_4/chap_2_a/sec_2"
     }
    ],
    "marginalie": [
@@ -1835,15 +2013,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Bestellung"
+     "label": "2. Abschnitt: Bestellung",
+     "eId": "tit_4/chap_2_a/sec_2"
     }
    ],
    "marginalie": [
@@ -1854,15 +2035,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Bestellung"
+     "label": "2. Abschnitt: Bestellung",
+     "eId": "tit_4/chap_2_a/sec_2"
     }
    ],
    "marginalie": [
@@ -1887,15 +2071,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Bestellung"
+     "label": "2. Abschnitt: Bestellung",
+     "eId": "tit_4/chap_2_a/sec_2"
     }
    ],
    "marginalie": [],
@@ -1918,15 +2105,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Bestellung"
+     "label": "2. Abschnitt: Bestellung",
+     "eId": "tit_4/chap_2_a/sec_2"
     }
    ],
    "marginalie": [
@@ -1951,15 +2141,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Bestellung"
+     "label": "2. Abschnitt: Bestellung",
+     "eId": "tit_4/chap_2_a/sec_2"
     }
    ],
    "marginalie": [],
@@ -1982,15 +2175,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Bestellung"
+     "label": "2. Abschnitt: Bestellung",
+     "eId": "tit_4/chap_2_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2015,15 +2211,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuweisung und Kontrolle"
+     "label": "3. Abschnitt: Zuweisung und Kontrolle",
+     "eId": "tit_4/chap_2_a/sec_3"
     }
    ],
    "marginalie": [
@@ -2097,15 +2296,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuweisung und Kontrolle"
+     "label": "3. Abschnitt: Zuweisung und Kontrolle",
+     "eId": "tit_4/chap_2_a/sec_3"
     }
    ],
    "marginalie": [
@@ -2116,15 +2318,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuweisung und Kontrolle"
+     "label": "3. Abschnitt: Zuweisung und Kontrolle",
+     "eId": "tit_4/chap_2_a/sec_3"
     }
    ],
    "marginalie": [
@@ -2135,15 +2340,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuweisung und Kontrolle"
+     "label": "3. Abschnitt: Zuweisung und Kontrolle",
+     "eId": "tit_4/chap_2_a/sec_3"
     }
    ],
    "marginalie": [
@@ -2208,15 +2416,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Bewertung der Werte"
+     "label": "4. Abschnitt: Bewertung der Werte",
+     "eId": "tit_4/chap_2_a/sec_4"
     }
    ],
    "marginalie": [
@@ -2241,15 +2452,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Bewertung der Werte"
+     "label": "4. Abschnitt: Bewertung der Werte",
+     "eId": "tit_4/chap_2_a/sec_4"
     }
    ],
    "marginalie": [
@@ -2260,15 +2474,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Bewertung der Werte"
+     "label": "4. Abschnitt: Bewertung der Werte",
+     "eId": "tit_4/chap_2_a/sec_4"
     }
    ],
    "marginalie": [
@@ -2305,15 +2522,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Bewertung der Werte"
+     "label": "4. Abschnitt: Bewertung der Werte",
+     "eId": "tit_4/chap_2_a/sec_4"
     }
    ],
    "marginalie": [
@@ -2362,15 +2582,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Bewertung der Werte"
+     "label": "4. Abschnitt: Bewertung der Werte",
+     "eId": "tit_4/chap_2_a/sec_4"
     }
    ],
    "marginalie": [
@@ -2395,15 +2618,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Bewertung der Werte"
+     "label": "4. Abschnitt: Bewertung der Werte",
+     "eId": "tit_4/chap_2_a/sec_4"
     }
    ],
    "marginalie": [
@@ -2440,15 +2666,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Bewertung der Werte"
+     "label": "4. Abschnitt: Bewertung der Werte",
+     "eId": "tit_4/chap_2_a/sec_4"
     }
    ],
    "marginalie": [
@@ -2459,15 +2688,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Bewertung der Werte"
+     "label": "4. Abschnitt: Bewertung der Werte",
+     "eId": "tit_4/chap_2_a/sec_4"
     }
    ],
    "marginalie": [
@@ -2516,11 +2748,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Risikomanagement"
+     "label": "1. Kapitel: Risikomanagement",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -2621,11 +2855,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Risikomanagement"
+     "label": "1. Kapitel: Risikomanagement",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -2686,11 +2922,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Risikomanagement"
+     "label": "1. Kapitel: Risikomanagement",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -2715,11 +2953,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verantwortlicher Aktuar oder verantwortliche Aktuarin"
+     "label": "2. Kapitel: Verantwortlicher Aktuar oder verantwortliche Aktuarin",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": []
@@ -2728,11 +2968,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Einsatz derivativer Finanzinstrumente"
+     "label": "3. Kapitel: Einsatz derivativer Finanzinstrumente",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -2757,11 +2999,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Einsatz derivativer Finanzinstrumente"
+     "label": "3. Kapitel: Einsatz derivativer Finanzinstrumente",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -2786,11 +3030,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -2863,11 +3109,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -2878,11 +3126,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Weitere Grundsätze zur Ausübung der Versicherungstätigkeit"
+     "label": "6. Kapitel: Weitere Grundsätze zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -2893,11 +3143,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Weitere Grundsätze zur Ausübung der Versicherungstätigkeit"
+     "label": "6. Kapitel: Weitere Grundsätze zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -2908,11 +3160,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Weitere Grundsätze zur Ausübung der Versicherungstätigkeit"
+     "label": "6. Kapitel: Weitere Grundsätze zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -2923,15 +3177,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Tarifierung"
+     "label": "1. Abschnitt: Tarifierung",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2968,15 +3225,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Tarifierung"
+     "label": "1. Abschnitt: Tarifierung",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3001,15 +3261,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Tarifierung"
+     "label": "1. Abschnitt: Tarifierung",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3046,15 +3309,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Tarifierung"
+     "label": "1. Abschnitt: Tarifierung",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3091,15 +3357,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Tarifierung"
+     "label": "1. Abschnitt: Tarifierung",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3110,15 +3379,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Tarifierung"
+     "label": "1. Abschnitt: Tarifierung",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3129,15 +3401,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Tarifierung"
+     "label": "1. Abschnitt: Tarifierung",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3148,15 +3423,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Abfindung und Rückkauf"
+     "label": "2. Abschnitt: Abfindung und Rückkauf",
+     "eId": "tit_6/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3217,15 +3495,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Abfindung und Rückkauf"
+     "label": "2. Abschnitt: Abfindung und Rückkauf",
+     "eId": "tit_6/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3236,15 +3517,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Abfindung und Rückkauf"
+     "label": "2. Abschnitt: Abfindung und Rückkauf",
+     "eId": "tit_6/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3255,15 +3539,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -3274,15 +3561,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -3293,15 +3583,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -3312,15 +3605,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Restschuldversicherungsverträge"
+     "label": "4. Abschnitt: Restschuldversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -3331,15 +3627,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Restschuldversicherungsverträge"
+     "label": "4. Abschnitt: Restschuldversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -3350,15 +3649,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Restschuldversicherungsverträge"
+     "label": "4. Abschnitt: Restschuldversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -3369,11 +3671,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Vorschriften betreffend die Überschüsse in der Lebensversicherung ausserhalb der beruflichen Vorsorge"
+     "label": "2. Kapitel: Vorschriften betreffend die Überschüsse in der Lebensversicherung ausserhalb der beruflichen Vorsorge",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -3384,11 +3688,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Vorschriften betreffend die Überschüsse in der Lebensversicherung ausserhalb der beruflichen Vorsorge"
+     "label": "2. Kapitel: Vorschriften betreffend die Überschüsse in der Lebensversicherung ausserhalb der beruflichen Vorsorge",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -3399,11 +3705,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Vorschriften betreffend die Überschüsse in der Lebensversicherung ausserhalb der beruflichen Vorsorge"
+     "label": "2. Kapitel: Vorschriften betreffend die Überschüsse in der Lebensversicherung ausserhalb der beruflichen Vorsorge",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -3414,15 +3722,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge"
+     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge",
+     "eId": "tit_6/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Jährliche Betriebsrechnung und Informationspflichten"
+     "label": "1. Abschnitt: Jährliche Betriebsrechnung und Informationspflichten",
+     "eId": "tit_6/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3433,15 +3744,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge"
+     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge",
+     "eId": "tit_6/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Jährliche Betriebsrechnung und Informationspflichten"
+     "label": "1. Abschnitt: Jährliche Betriebsrechnung und Informationspflichten",
+     "eId": "tit_6/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3452,15 +3766,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge"
+     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge",
+     "eId": "tit_6/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Überschussbeteiligung"
+     "label": "2. Abschnitt: Überschussbeteiligung",
+     "eId": "tit_6/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3471,15 +3788,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge"
+     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge",
+     "eId": "tit_6/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Überschussbeteiligung"
+     "label": "2. Abschnitt: Überschussbeteiligung",
+     "eId": "tit_6/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3490,15 +3810,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge"
+     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge",
+     "eId": "tit_6/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Überschussbeteiligung"
+     "label": "2. Abschnitt: Überschussbeteiligung",
+     "eId": "tit_6/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3535,15 +3858,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge"
+     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge",
+     "eId": "tit_6/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Überschussbeteiligung"
+     "label": "2. Abschnitt: Überschussbeteiligung",
+     "eId": "tit_6/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3554,15 +3880,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge"
+     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge",
+     "eId": "tit_6/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Überschussbeteiligung"
+     "label": "2. Abschnitt: Überschussbeteiligung",
+     "eId": "tit_6/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3573,15 +3902,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge"
+     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge",
+     "eId": "tit_6/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Überschussbeteiligung"
+     "label": "2. Abschnitt: Überschussbeteiligung",
+     "eId": "tit_6/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3592,15 +3924,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge"
+     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge",
+     "eId": "tit_6/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Überschussbeteiligung"
+     "label": "2. Abschnitt: Überschussbeteiligung",
+     "eId": "tit_6/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3650,15 +3985,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge"
+     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge",
+     "eId": "tit_6/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Überschussbeteiligung"
+     "label": "2. Abschnitt: Überschussbeteiligung",
+     "eId": "tit_6/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3669,15 +4007,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge"
+     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge",
+     "eId": "tit_6/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Überschussbeteiligung"
+     "label": "2. Abschnitt: Überschussbeteiligung",
+     "eId": "tit_6/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3688,15 +4029,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge"
+     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge",
+     "eId": "tit_6/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Überschussbeteiligung"
+     "label": "2. Abschnitt: Überschussbeteiligung",
+     "eId": "tit_6/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3707,15 +4051,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge"
+     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge",
+     "eId": "tit_6/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Überschussbeteiligung"
+     "label": "2. Abschnitt: Überschussbeteiligung",
+     "eId": "tit_6/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3726,15 +4073,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge"
+     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge",
+     "eId": "tit_6/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Überschussbeteiligung"
+     "label": "2. Abschnitt: Überschussbeteiligung",
+     "eId": "tit_6/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3745,15 +4095,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge"
+     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge",
+     "eId": "tit_6/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Überschussbeteiligung"
+     "label": "2. Abschnitt: Überschussbeteiligung",
+     "eId": "tit_6/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3779,15 +4132,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge"
+     "label": "3. Kapitel: Besondere Bestimmungen für die Versicherungen der beruflichen Vorsorge",
+     "eId": "tit_6/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Überschussbeteiligung"
+     "label": "2. Abschnitt: Überschussbeteiligung",
+     "eId": "tit_6/chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -3810,11 +4166,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Kranken- und Unfallversicherung"
+     "label": "4. Kapitel: Kranken- und Unfallversicherung",
+     "eId": "tit_6/chap_4"
     }
    ],
    "marginalie": [
@@ -3839,11 +4197,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Kranken- und Unfallversicherung"
+     "label": "4. Kapitel: Kranken- und Unfallversicherung",
+     "eId": "tit_6/chap_4"
     }
    ],
    "marginalie": [
@@ -3854,11 +4214,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Kranken- und Unfallversicherung"
+     "label": "4. Kapitel: Kranken- und Unfallversicherung",
+     "eId": "tit_6/chap_4"
     }
    ],
    "marginalie": [
@@ -3869,11 +4231,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Kranken- und Unfallversicherung"
+     "label": "4. Kapitel: Kranken- und Unfallversicherung",
+     "eId": "tit_6/chap_4"
     }
    ],
    "marginalie": [
@@ -3884,11 +4248,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Kranken- und Unfallversicherung"
+     "label": "4. Kapitel: Kranken- und Unfallversicherung",
+     "eId": "tit_6/chap_4"
     }
    ],
    "marginalie": [
@@ -3899,11 +4265,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Kranken- und Unfallversicherung"
+     "label": "4. Kapitel: Kranken- und Unfallversicherung",
+     "eId": "tit_6/chap_4"
     }
    ],
    "marginalie": [
@@ -3914,15 +4282,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Rechtsschutzversicherung"
+     "label": "5. Kapitel: Rechtsschutzversicherung",
+     "eId": "tit_6/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_6/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -3933,15 +4304,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Rechtsschutzversicherung"
+     "label": "5. Kapitel: Rechtsschutzversicherung",
+     "eId": "tit_6/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_6/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -3952,15 +4326,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Rechtsschutzversicherung"
+     "label": "5. Kapitel: Rechtsschutzversicherung",
+     "eId": "tit_6/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_6/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -3971,15 +4348,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Rechtsschutzversicherung"
+     "label": "5. Kapitel: Rechtsschutzversicherung",
+     "eId": "tit_6/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Schadenregelungsunternehmen"
+     "label": "2. Abschnitt: Schadenregelungsunternehmen",
+     "eId": "tit_6/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -3990,15 +4370,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Rechtsschutzversicherung"
+     "label": "5. Kapitel: Rechtsschutzversicherung",
+     "eId": "tit_6/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Schadenregelungsunternehmen"
+     "label": "2. Abschnitt: Schadenregelungsunternehmen",
+     "eId": "tit_6/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -4009,15 +4392,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Rechtsschutzversicherung"
+     "label": "5. Kapitel: Rechtsschutzversicherung",
+     "eId": "tit_6/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Form und Inhalt des Rechtsschutzversicherungsvertrages"
+     "label": "3. Abschnitt: Form und Inhalt des Rechtsschutzversicherungsvertrages",
+     "eId": "tit_6/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -4028,15 +4414,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Rechtsschutzversicherung"
+     "label": "5. Kapitel: Rechtsschutzversicherung",
+     "eId": "tit_6/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Form und Inhalt des Rechtsschutzversicherungsvertrages"
+     "label": "3. Abschnitt: Form und Inhalt des Rechtsschutzversicherungsvertrages",
+     "eId": "tit_6/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -4047,15 +4436,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Rechtsschutzversicherung"
+     "label": "5. Kapitel: Rechtsschutzversicherung",
+     "eId": "tit_6/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Form und Inhalt des Rechtsschutzversicherungsvertrages"
+     "label": "3. Abschnitt: Form und Inhalt des Rechtsschutzversicherungsvertrages",
+     "eId": "tit_6/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -4066,15 +4458,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Rechtsschutzversicherung"
+     "label": "5. Kapitel: Rechtsschutzversicherung",
+     "eId": "tit_6/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Form und Inhalt des Rechtsschutzversicherungsvertrages"
+     "label": "3. Abschnitt: Form und Inhalt des Rechtsschutzversicherungsvertrages",
+     "eId": "tit_6/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -4085,15 +4480,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Rechtsschutzversicherung"
+     "label": "5. Kapitel: Rechtsschutzversicherung",
+     "eId": "tit_6/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Form und Inhalt des Rechtsschutzversicherungsvertrages"
+     "label": "3. Abschnitt: Form und Inhalt des Rechtsschutzversicherungsvertrages",
+     "eId": "tit_6/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -4104,15 +4502,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Elementarschadenversicherung"
+     "label": "6. Kapitel: Elementarschadenversicherung",
+     "eId": "tit_6/chap_6"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Versicherte Schäden und Deckungsumfang"
+     "label": "1. Abschnitt: Versicherte Schäden und Deckungsumfang",
+     "eId": "tit_6/chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -4123,15 +4524,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Elementarschadenversicherung"
+     "label": "6. Kapitel: Elementarschadenversicherung",
+     "eId": "tit_6/chap_6"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Versicherte Schäden und Deckungsumfang"
+     "label": "1. Abschnitt: Versicherte Schäden und Deckungsumfang",
+     "eId": "tit_6/chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -4157,15 +4561,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Elementarschadenversicherung"
+     "label": "6. Kapitel: Elementarschadenversicherung",
+     "eId": "tit_6/chap_6"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Versicherte Schäden und Deckungsumfang"
+     "label": "1. Abschnitt: Versicherte Schäden und Deckungsumfang",
+     "eId": "tit_6/chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -4176,15 +4583,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Elementarschadenversicherung"
+     "label": "6. Kapitel: Elementarschadenversicherung",
+     "eId": "tit_6/chap_6"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Versicherte Schäden und Deckungsumfang"
+     "label": "1. Abschnitt: Versicherte Schäden und Deckungsumfang",
+     "eId": "tit_6/chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -4195,15 +4605,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Elementarschadenversicherung"
+     "label": "6. Kapitel: Elementarschadenversicherung",
+     "eId": "tit_6/chap_6"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Versicherte Schäden und Deckungsumfang"
+     "label": "1. Abschnitt: Versicherte Schäden und Deckungsumfang",
+     "eId": "tit_6/chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -4228,15 +4641,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Elementarschadenversicherung"
+     "label": "6. Kapitel: Elementarschadenversicherung",
+     "eId": "tit_6/chap_6"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Versicherte Schäden und Deckungsumfang"
+     "label": "1. Abschnitt: Versicherte Schäden und Deckungsumfang",
+     "eId": "tit_6/chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -4261,15 +4677,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Elementarschadenversicherung"
+     "label": "6. Kapitel: Elementarschadenversicherung",
+     "eId": "tit_6/chap_6"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Prämien und Statistiken"
+     "label": "2. Abschnitt: Prämien und Statistiken",
+     "eId": "tit_6/chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -4280,15 +4699,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Elementarschadenversicherung"
+     "label": "6. Kapitel: Elementarschadenversicherung",
+     "eId": "tit_6/chap_6"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Prämien und Statistiken"
+     "label": "2. Abschnitt: Prämien und Statistiken",
+     "eId": "tit_6/chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -4299,15 +4721,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Elementarschadenversicherung"
+     "label": "6. Kapitel: Elementarschadenversicherung",
+     "eId": "tit_6/chap_6"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Prämien und Statistiken"
+     "label": "2. Abschnitt: Prämien und Statistiken",
+     "eId": "tit_6/chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -4318,15 +4743,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Elementarschadenversicherung"
+     "label": "6. Kapitel: Elementarschadenversicherung",
+     "eId": "tit_6/chap_6"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Prämien und Statistiken"
+     "label": "2. Abschnitt: Prämien und Statistiken",
+     "eId": "tit_6/chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -4337,15 +4765,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Elementarschadenversicherung"
+     "label": "6. Kapitel: Elementarschadenversicherung",
+     "eId": "tit_6/chap_6"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Prämien und Statistiken"
+     "label": "2. Abschnitt: Prämien und Statistiken",
+     "eId": "tit_6/chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -4356,11 +4787,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Versicherungsvermittlung"
+     "label": "7. Titel: Versicherungsvermittlung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Geltungsbereich und Begriffe",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -4386,11 +4819,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Versicherungsvermittlung"
+     "label": "7. Titel: Versicherungsvermittlung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Register"
+     "label": "2. Kapitel: Register",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -4401,11 +4836,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Versicherungsvermittlung"
+     "label": "7. Titel: Versicherungsvermittlung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Register"
+     "label": "2. Kapitel: Register",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -4416,11 +4853,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Versicherungsvermittlung"
+     "label": "7. Titel: Versicherungsvermittlung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Register"
+     "label": "2. Kapitel: Register",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -4431,11 +4870,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Versicherungsvermittlung"
+     "label": "7. Titel: Versicherungsvermittlung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Voraussetzungen der Versicherungsvermittlungstätigkeit"
+     "label": "3. Kapitel: Voraussetzungen der Versicherungsvermittlungstätigkeit",
+     "eId": "tit_7/chap_3"
     }
    ],
    "marginalie": [
@@ -4446,11 +4887,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Versicherungsvermittlung"
+     "label": "7. Titel: Versicherungsvermittlung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Voraussetzungen der Versicherungsvermittlungstätigkeit"
+     "label": "3. Kapitel: Voraussetzungen der Versicherungsvermittlungstätigkeit",
+     "eId": "tit_7/chap_3"
     }
    ],
    "marginalie": [
@@ -4461,11 +4904,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Versicherungsvermittlung"
+     "label": "7. Titel: Versicherungsvermittlung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Voraussetzungen der Versicherungsvermittlungstätigkeit"
+     "label": "3. Kapitel: Voraussetzungen der Versicherungsvermittlungstätigkeit",
+     "eId": "tit_7/chap_3"
     }
    ],
    "marginalie": [
@@ -4476,11 +4921,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Versicherungsvermittlung"
+     "label": "7. Titel: Versicherungsvermittlung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Voraussetzungen der Versicherungsvermittlungstätigkeit"
+     "label": "3. Kapitel: Voraussetzungen der Versicherungsvermittlungstätigkeit",
+     "eId": "tit_7/chap_3"
     }
    ],
    "marginalie": [
@@ -4491,11 +4938,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Versicherungsvermittlung"
+     "label": "7. Titel: Versicherungsvermittlung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aus- und Weiterbildung"
+     "label": "4. Kapitel: Aus- und Weiterbildung",
+     "eId": "tit_7/chap_4"
     }
    ],
    "marginalie": [
@@ -4506,15 +4955,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation, Gruppenstruktur und gruppeninterne Vorgänge"
+     "label": "1. Abschnitt: Organisation, Gruppenstruktur und gruppeninterne Vorgänge",
+     "eId": "tit_8/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -4525,15 +4977,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation, Gruppenstruktur und gruppeninterne Vorgänge"
+     "label": "1. Abschnitt: Organisation, Gruppenstruktur und gruppeninterne Vorgänge",
+     "eId": "tit_8/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -4558,15 +5013,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation, Gruppenstruktur und gruppeninterne Vorgänge"
+     "label": "1. Abschnitt: Organisation, Gruppenstruktur und gruppeninterne Vorgänge",
+     "eId": "tit_8/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -4577,15 +5035,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation, Gruppenstruktur und gruppeninterne Vorgänge"
+     "label": "1. Abschnitt: Organisation, Gruppenstruktur und gruppeninterne Vorgänge",
+     "eId": "tit_8/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -4610,15 +5071,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Risikomanagement"
+     "label": "2. Abschnitt: Risikomanagement",
+     "eId": "tit_8/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -4667,15 +5131,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Risikomanagement"
+     "label": "2. Abschnitt: Risikomanagement",
+     "eId": "tit_8/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -4686,15 +5153,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Risikomanagement"
+     "label": "2. Abschnitt: Risikomanagement",
+     "eId": "tit_8/chap_1/sec_2"
     }
    ],
    "marginalie": [],
@@ -4717,15 +5187,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Solvabilität"
+     "label": "3. Abschnitt: Solvabilität",
+     "eId": "tit_8/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -4750,15 +5223,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Solvabilität"
+     "label": "3. Abschnitt: Solvabilität",
+     "eId": "tit_8/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -4783,11 +5259,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Versicherungskonglomerate"
+     "label": "2. Kapitel: Versicherungskonglomerate",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -4812,11 +5290,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Versicherungskonglomerate"
+     "label": "2. Kapitel: Versicherungskonglomerate",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -4841,11 +5321,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Versicherungskonglomerate"
+     "label": "2. Kapitel: Versicherungskonglomerate",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [],
@@ -4868,7 +5350,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Titel: …"
+     "label": "10. Titel: …",
+     "eId": "tit_10"
     }
    ],
    "marginalie": [],
@@ -4891,7 +5374,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "11. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_11"
     }
    ],
    "marginalie": [
@@ -5003,7 +5487,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "11. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_11"
     }
    ],
    "marginalie": [
@@ -5248,7 +5733,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "11. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_11"
     }
    ],
    "marginalie": [
@@ -5259,11 +5745,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Einsatz derivativer Finanzinstrumente"
+     "label": "3. Kapitel: Einsatz derivativer Finanzinstrumente",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [],
@@ -5286,11 +5774,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -5387,11 +5877,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -5429,11 +5921,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4a. Kapitel: Versicherungsunternehmen, die professionelle Versicherungsnehmer versichern"
+     "label": "4a. Kapitel: Versicherungsunternehmen, die professionelle Versicherungsnehmer versichern",
+     "eId": "tit_5/chap_4_a"
     }
    ],
    "marginalie": [
@@ -5472,15 +5966,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4b. Kapitel: Versicherungszweckgesellschaften"
+     "label": "4b. Kapitel: Versicherungszweckgesellschaften",
+     "eId": "tit_5/chap_4_b"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_5/chap_4_b/sec_1"
     }
    ],
    "marginalie": [
@@ -5506,15 +6003,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4b. Kapitel: Versicherungszweckgesellschaften"
+     "label": "4b. Kapitel: Versicherungszweckgesellschaften",
+     "eId": "tit_5/chap_4_b"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_5/chap_4_b/sec_1"
     }
    ],
    "marginalie": [
@@ -5540,15 +6040,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4b. Kapitel: Versicherungszweckgesellschaften"
+     "label": "4b. Kapitel: Versicherungszweckgesellschaften",
+     "eId": "tit_5/chap_4_b"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_5/chap_4_b/sec_1"
     }
    ],
    "marginalie": [
@@ -5559,15 +6062,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4b. Kapitel: Versicherungszweckgesellschaften"
+     "label": "4b. Kapitel: Versicherungszweckgesellschaften",
+     "eId": "tit_5/chap_4_b"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_5/chap_4_b/sec_1"
     }
    ],
    "marginalie": [
@@ -5578,15 +6084,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4b. Kapitel: Versicherungszweckgesellschaften"
+     "label": "4b. Kapitel: Versicherungszweckgesellschaften",
+     "eId": "tit_5/chap_4_b"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_5/chap_4_b/sec_1"
     }
    ],
    "marginalie": [
@@ -5597,15 +6106,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4b. Kapitel: Versicherungszweckgesellschaften"
+     "label": "4b. Kapitel: Versicherungszweckgesellschaften",
+     "eId": "tit_5/chap_4_b"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_5/chap_4_b/sec_1"
     }
    ],
    "marginalie": [
@@ -5616,15 +6128,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4b. Kapitel: Versicherungszweckgesellschaften"
+     "label": "4b. Kapitel: Versicherungszweckgesellschaften",
+     "eId": "tit_5/chap_4_b"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Bewilligungsvoraussetzungen"
+     "label": "2. Abschnitt: Bewilligungsvoraussetzungen",
+     "eId": "tit_5/chap_4_b/sec_2"
     }
    ],
    "marginalie": [
@@ -5635,15 +6150,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4b. Kapitel: Versicherungszweckgesellschaften"
+     "label": "4b. Kapitel: Versicherungszweckgesellschaften",
+     "eId": "tit_5/chap_4_b"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Bewilligungsvoraussetzungen"
+     "label": "2. Abschnitt: Bewilligungsvoraussetzungen",
+     "eId": "tit_5/chap_4_b/sec_2"
     }
    ],
    "marginalie": [
@@ -5654,15 +6172,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4b. Kapitel: Versicherungszweckgesellschaften"
+     "label": "4b. Kapitel: Versicherungszweckgesellschaften",
+     "eId": "tit_5/chap_4_b"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Bewilligungsvoraussetzungen"
+     "label": "2. Abschnitt: Bewilligungsvoraussetzungen",
+     "eId": "tit_5/chap_4_b/sec_2"
     }
    ],
    "marginalie": [
@@ -5673,15 +6194,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4b. Kapitel: Versicherungszweckgesellschaften"
+     "label": "4b. Kapitel: Versicherungszweckgesellschaften",
+     "eId": "tit_5/chap_4_b"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Risikogruppen"
+     "label": "3. Abschnitt: Risikogruppen",
+     "eId": "tit_5/chap_4_b/sec_3"
     }
    ],
    "marginalie": [
@@ -5692,15 +6216,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4b. Kapitel: Versicherungszweckgesellschaften"
+     "label": "4b. Kapitel: Versicherungszweckgesellschaften",
+     "eId": "tit_5/chap_4_b"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Risikogruppen"
+     "label": "3. Abschnitt: Risikogruppen",
+     "eId": "tit_5/chap_4_b/sec_3"
     }
    ],
    "marginalie": [
@@ -5711,15 +6238,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4b. Kapitel: Versicherungszweckgesellschaften"
+     "label": "4b. Kapitel: Versicherungszweckgesellschaften",
+     "eId": "tit_5/chap_4_b"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Risikogruppen"
+     "label": "3. Abschnitt: Risikogruppen",
+     "eId": "tit_5/chap_4_b/sec_3"
     }
    ],
    "marginalie": [
@@ -5730,15 +6260,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4b. Kapitel: Versicherungszweckgesellschaften"
+     "label": "4b. Kapitel: Versicherungszweckgesellschaften",
+     "eId": "tit_5/chap_4_b"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Risikogruppen"
+     "label": "3. Abschnitt: Risikogruppen",
+     "eId": "tit_5/chap_4_b/sec_3"
     }
    ],
    "marginalie": [
@@ -5764,15 +6297,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4b. Kapitel: Versicherungszweckgesellschaften"
+     "label": "4b. Kapitel: Versicherungszweckgesellschaften",
+     "eId": "tit_5/chap_4_b"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Risikogruppen"
+     "label": "3. Abschnitt: Risikogruppen",
+     "eId": "tit_5/chap_4_b/sec_3"
     }
    ],
    "marginalie": [
@@ -5783,15 +6319,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4b. Kapitel: Versicherungszweckgesellschaften"
+     "label": "4b. Kapitel: Versicherungszweckgesellschaften",
+     "eId": "tit_5/chap_4_b"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Risikogruppen"
+     "label": "3. Abschnitt: Risikogruppen",
+     "eId": "tit_5/chap_4_b/sec_3"
     }
    ],
    "marginalie": [
@@ -5802,15 +6341,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4b. Kapitel: Versicherungszweckgesellschaften"
+     "label": "4b. Kapitel: Versicherungszweckgesellschaften",
+     "eId": "tit_5/chap_4_b"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Risikogruppen"
+     "label": "3. Abschnitt: Risikogruppen",
+     "eId": "tit_5/chap_4_b/sec_3"
     }
    ],
    "marginalie": [
@@ -5821,15 +6363,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4b. Kapitel: Versicherungszweckgesellschaften"
+     "label": "4b. Kapitel: Versicherungszweckgesellschaften",
+     "eId": "tit_5/chap_4_b"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Risikogruppen"
+     "label": "3. Abschnitt: Risikogruppen",
+     "eId": "tit_5/chap_4_b/sec_3"
     }
    ],
    "marginalie": [
@@ -5840,15 +6385,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4b. Kapitel: Versicherungszweckgesellschaften"
+     "label": "4b. Kapitel: Versicherungszweckgesellschaften",
+     "eId": "tit_5/chap_4_b"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Risikogruppen"
+     "label": "3. Abschnitt: Risikogruppen",
+     "eId": "tit_5/chap_4_b/sec_3"
     }
    ],
    "marginalie": [
@@ -5859,11 +6407,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: …"
+     "label": "5. Kapitel: …",
+     "eId": "tit_5/chap_5"
     }
    ],
    "marginalie": [],
@@ -5886,11 +6436,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Weitere Grundsätze zur Ausübung der Versicherungstätigkeit"
+     "label": "6. Kapitel: Weitere Grundsätze zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -5915,15 +6467,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Tarifierung"
+     "label": "1. Abschnitt: Tarifierung",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -5948,15 +6503,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Tarifierung"
+     "label": "1. Abschnitt: Tarifierung",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -5981,15 +6539,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Tarifierung"
+     "label": "1. Abschnitt: Tarifierung",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -6014,15 +6575,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Tarifierung"
+     "label": "1. Abschnitt: Tarifierung",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -6061,15 +6625,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -6094,15 +6661,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -6127,15 +6697,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -6160,15 +6733,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -6193,15 +6769,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -6226,15 +6805,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -6259,15 +6841,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -6292,15 +6877,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -6325,15 +6913,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -6358,15 +6949,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -6391,15 +6985,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -6424,15 +7021,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -6457,15 +7057,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -6490,15 +7093,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -6523,15 +7129,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -6556,15 +7165,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Lebensversicherung"
+     "label": "1. Kapitel: Lebensversicherung",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge"
+     "label": "3. Abschnitt: Anforderungen an Lebensversicherungsverträge",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -6589,11 +7201,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Gewährsvorschriften"
+     "label": "3. Kapitel: Gewährsvorschriften",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -6618,11 +7232,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3a. Kapitel: Interessenkonflikte"
+     "label": "3a. Kapitel: Interessenkonflikte",
+     "eId": "tit_2/chap_3_a"
     }
    ],
    "marginalie": [
@@ -6648,11 +7264,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3a. Kapitel: Interessenkonflikte"
+     "label": "3a. Kapitel: Interessenkonflikte",
+     "eId": "tit_2/chap_3_a"
     }
    ],
    "marginalie": [
@@ -6663,11 +7281,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Kranken- und Unfallversicherung"
+     "label": "4. Kapitel: Kranken- und Unfallversicherung",
+     "eId": "tit_6/chap_4"
     }
    ],
    "marginalie": [
@@ -6692,11 +7312,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Kranken- und Unfallversicherung"
+     "label": "4. Kapitel: Kranken- und Unfallversicherung",
+     "eId": "tit_6/chap_4"
     }
    ],
    "marginalie": [
@@ -6734,11 +7356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Titel: Bestimmungen für einzelne Versicherungszweige",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Rückversicherung"
+     "label": "7. Kapitel: Rückversicherung",
+     "eId": "tit_6/chap_7"
     }
    ],
    "marginalie": [],
@@ -6762,11 +7386,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Versicherungsvermittlung"
+     "label": "7. Titel: Versicherungsvermittlung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Geltungsbereich und Begriffe",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -6777,11 +7403,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Versicherungsvermittlung"
+     "label": "7. Titel: Versicherungsvermittlung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Geltungsbereich und Begriffe",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -6792,11 +7420,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Versicherungsvermittlung"
+     "label": "7. Titel: Versicherungsvermittlung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Geltungsbereich und Begriffe",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -6807,11 +7437,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Versicherungsvermittlung"
+     "label": "7. Titel: Versicherungsvermittlung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Register"
+     "label": "2. Kapitel: Register",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -6822,11 +7454,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Versicherungsvermittlung"
+     "label": "7. Titel: Versicherungsvermittlung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Aus- und Weiterbildung"
+     "label": "4. Kapitel: Aus- und Weiterbildung",
+     "eId": "tit_7/chap_4"
     }
    ],
    "marginalie": [
@@ -6837,11 +7471,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Versicherungsvermittlung"
+     "label": "7. Titel: Versicherungsvermittlung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Berichterstattung und Informationspflicht"
+     "label": "5. Kapitel: Berichterstattung und Informationspflicht",
+     "eId": "tit_7/chap_5"
     }
    ],
    "marginalie": [
@@ -6852,11 +7488,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Versicherungsvermittlung"
+     "label": "7. Titel: Versicherungsvermittlung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Berichterstattung und Informationspflicht"
+     "label": "5. Kapitel: Berichterstattung und Informationspflicht",
+     "eId": "tit_7/chap_5"
     }
    ],
    "marginalie": [
@@ -6867,7 +7505,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Versicherungsvermittlertätigkeit im Bereich der Zusatzversicherung zur sozialen Krankenversicherung"
+     "label": "6. Kapitel: Versicherungsvermittlertätigkeit im Bereich der Zusatzversicherung zur sozialen Krankenversicherung",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -6893,7 +7532,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Versicherungsvermittlertätigkeit im Bereich der Zusatzversicherung zur sozialen Krankenversicherung"
+     "label": "6. Kapitel: Versicherungsvermittlertätigkeit im Bereich der Zusatzversicherung zur sozialen Krankenversicherung",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -6914,7 +7554,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Versicherungsvermittlertätigkeit im Bereich der Zusatzversicherung zur sozialen Krankenversicherung"
+     "label": "6. Kapitel: Versicherungsvermittlertätigkeit im Bereich der Zusatzversicherung zur sozialen Krankenversicherung",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -6925,15 +7566,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Instrumente der Gruppenaufsicht"
+     "label": "2a. Abschnitt: Instrumente der Gruppenaufsicht",
+     "eId": "tit_8/chap_1/sec_2_a"
     }
    ],
    "marginalie": [
@@ -6959,15 +7603,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Instrumente der Gruppenaufsicht"
+     "label": "2a. Abschnitt: Instrumente der Gruppenaufsicht",
+     "eId": "tit_8/chap_1/sec_2_a"
     }
    ],
    "marginalie": [
@@ -6978,15 +7625,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Instrumente der Gruppenaufsicht"
+     "label": "2a. Abschnitt: Instrumente der Gruppenaufsicht",
+     "eId": "tit_8/chap_1/sec_2_a"
     }
    ],
    "marginalie": [
@@ -6997,15 +7647,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Instrumente der Gruppenaufsicht"
+     "label": "2a. Abschnitt: Instrumente der Gruppenaufsicht",
+     "eId": "tit_8/chap_1/sec_2_a"
     }
    ],
    "marginalie": [
@@ -7016,15 +7669,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Instrumente der Gruppenaufsicht"
+     "label": "2a. Abschnitt: Instrumente der Gruppenaufsicht",
+     "eId": "tit_8/chap_1/sec_2_a"
     }
    ],
    "marginalie": [
@@ -7045,15 +7701,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Solvabilität"
+     "label": "3. Abschnitt: Solvabilität",
+     "eId": "tit_8/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -7114,15 +7773,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Solvabilität"
+     "label": "3. Abschnitt: Solvabilität",
+     "eId": "tit_8/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -7171,15 +7833,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Solvabilität"
+     "label": "3. Abschnitt: Solvabilität",
+     "eId": "tit_8/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -7216,15 +7881,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Solvabilität"
+     "label": "3. Abschnitt: Solvabilität",
+     "eId": "tit_8/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -7249,15 +7917,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Solvabilität"
+     "label": "3. Abschnitt: Solvabilität",
+     "eId": "tit_8/chap_1/sec_3"
     }
    ],
    "marginalie": [],
@@ -7280,11 +7951,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeines"
+     "label": "1. Titel: Allgemeines",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -7309,11 +7982,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeines"
+     "label": "1. Titel: Allgemeines",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Grundsätze"
+     "label": "2. Kapitel: Grundsätze",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -7351,11 +8026,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeines"
+     "label": "1. Titel: Allgemeines",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Grundsätze"
+     "label": "2. Kapitel: Grundsätze",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -7393,11 +8070,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeines"
+     "label": "1. Titel: Allgemeines",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Grundsätze"
+     "label": "2. Kapitel: Grundsätze",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -7435,11 +8114,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeines"
+     "label": "1. Titel: Allgemeines",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Grundsätze"
+     "label": "2. Kapitel: Grundsätze",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -7464,11 +8145,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeines"
+     "label": "1. Titel: Allgemeines",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Grundsätze"
+     "label": "2. Kapitel: Grundsätze",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -7506,11 +8189,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeines"
+     "label": "1. Titel: Allgemeines",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Grundsätze"
+     "label": "2. Kapitel: Grundsätze",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -7535,11 +8220,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeines"
+     "label": "1. Titel: Allgemeines",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Grundsätze"
+     "label": "2. Kapitel: Grundsätze",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -7576,15 +8263,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Solvabilität"
+     "label": "3. Abschnitt: Solvabilität",
+     "eId": "tit_8/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -7609,15 +8299,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungsgruppen"
+     "label": "1. Kapitel: Versicherungsgruppen",
+     "eId": "tit_8/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: …"
+     "label": "4. Abschnitt: …",
+     "eId": "tit_8/chap_1/sec_4"
     }
    ],
    "marginalie": [],
@@ -7644,11 +8337,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "8. Titel: Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Versicherungskonglomerate"
+     "label": "2. Kapitel: Versicherungskonglomerate",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [],
@@ -7675,7 +8370,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Titel: …"
+     "label": "9. Titel: …",
+     "eId": "tit_9"
     }
    ],
    "marginalie": [],
@@ -7698,7 +8394,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Titel: …"
+     "label": "9. Titel: …",
+     "eId": "tit_9"
     }
    ],
    "marginalie": [],
@@ -7721,7 +8418,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "11. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_11"
     }
    ],
    "marginalie": [],
@@ -7748,7 +8446,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "11. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_11"
     }
    ],
    "marginalie": [
@@ -7773,7 +8472,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "11. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_11"
     }
    ],
    "marginalie": [
@@ -7798,7 +8498,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "11. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_11"
     }
    ],
    "marginalie": [
@@ -7837,11 +8538,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [],
@@ -7864,11 +8567,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Häufigkeit der Ermittlung und Berichterstattung betreffend den SST"
+     "label": "8. Kapitel: Häufigkeit der Ermittlung und Berichterstattung betreffend den SST",
+     "eId": "tit_3/chap_8"
     }
    ],
    "marginalie": [
@@ -7907,11 +8612,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Häufigkeit der Ermittlung und Berichterstattung betreffend den SST"
+     "label": "8. Kapitel: Häufigkeit der Ermittlung und Berichterstattung betreffend den SST",
+     "eId": "tit_3/chap_8"
     }
    ],
    "marginalie": [],
@@ -7934,11 +8641,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "10. Kapitel: Weitere Bestimmungen"
+     "label": "10. Kapitel: Weitere Bestimmungen",
+     "eId": "tit_3/chap_10"
     }
    ],
    "marginalie": [
@@ -7963,11 +8672,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Solvabilität"
+     "label": "3. Titel: Solvabilität",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "10. Kapitel: Weitere Bestimmungen"
+     "label": "10. Kapitel: Weitere Bestimmungen",
+     "eId": "tit_3/chap_10"
     }
    ],
    "marginalie": [
@@ -7978,11 +8689,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -8021,11 +8734,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -8050,11 +8765,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Titel: Aufnahme der Versicherungstätigkeit",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -8079,15 +8796,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungstechnische Rückstellungen"
+     "label": "1. Kapitel: Versicherungstechnische Rückstellungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Lebensversicherung"
+     "label": "2. Abschnitt: Lebensversicherung",
+     "eId": "tit_4/chap_1/sec_2"
     }
    ],
    "marginalie": [],
@@ -8110,15 +8830,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherungstechnische Rückstellungen"
+     "label": "1. Kapitel: Versicherungstechnische Rückstellungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Lebensversicherung"
+     "label": "2. Abschnitt: Lebensversicherung",
+     "eId": "tit_4/chap_1/sec_2"
     }
    ],
    "marginalie": [],
@@ -8141,11 +8864,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Grundsätze der Vermögensanlage"
+     "label": "2. Kapitel: Grundsätze der Vermögensanlage",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [],
@@ -8169,15 +8894,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Bestellung"
+     "label": "2. Abschnitt: Bestellung",
+     "eId": "tit_4/chap_2_a/sec_2"
     }
    ],
    "marginalie": [
@@ -8202,15 +8930,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Bewertung der Werte"
+     "label": "4. Abschnitt: Bewertung der Werte",
+     "eId": "tit_4/chap_2_a/sec_4"
     }
    ],
    "marginalie": [
@@ -8235,15 +8966,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Bewertung der Werte"
+     "label": "4. Abschnitt: Bewertung der Werte",
+     "eId": "tit_4/chap_2_a/sec_4"
     }
    ],
    "marginalie": [
@@ -8272,15 +9006,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Bewertung der Werte"
+     "label": "4. Abschnitt: Bewertung der Werte",
+     "eId": "tit_4/chap_2_a/sec_4"
     }
    ],
    "marginalie": [
@@ -8305,15 +9042,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen"
+     "label": "4. Titel: Versicherungstechnische Rückstellungen und gebundenes Vermögen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gebundenes Vermögen"
+     "label": "2a. Kapitel: Gebundenes Vermögen",
+     "eId": "tit_4/chap_2_a"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Bewertung der Werte"
+     "label": "4. Abschnitt: Bewertung der Werte",
+     "eId": "tit_4/chap_2_a/sec_4"
     }
    ],
    "marginalie": [
@@ -8338,11 +9078,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Risikomanagement"
+     "label": "1. Kapitel: Risikomanagement",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -8371,11 +9113,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Risikomanagement"
+     "label": "1. Kapitel: Risikomanagement",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -8404,11 +9148,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Stabilisierungspläne"
+     "label": "1a. Kapitel: Stabilisierungspläne",
+     "eId": "tit_5/chap_1_a"
     }
    ],
    "marginalie": [
@@ -8434,11 +9180,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Stabilisierungspläne"
+     "label": "1a. Kapitel: Stabilisierungspläne",
+     "eId": "tit_5/chap_1_a"
     }
    ],
    "marginalie": [
@@ -8449,11 +9197,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Stabilisierungspläne"
+     "label": "1a. Kapitel: Stabilisierungspläne",
+     "eId": "tit_5/chap_1_a"
     }
    ],
    "marginalie": [
@@ -8464,11 +9214,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit"
+     "label": "5. Titel: Übrige Vorschriften zur Ausübung der Versicherungstätigkeit",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Stabilisierungspläne"
+     "label": "1a. Kapitel: Stabilisierungspläne",
+     "eId": "tit_5/chap_1_a"
     }
    ],
    "marginalie": [

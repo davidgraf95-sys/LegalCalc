@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "814.81",
   "titel": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen",
@@ -125,7 +125,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -213,7 +214,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -239,11 +241,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Einschränkungen, Verbote und Ausnahmebewilligungen"
+     "label": "1. Abschnitt: Einschränkungen, Verbote und Ausnahmebewilligungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": []
@@ -252,11 +256,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anwendungsbewilligungen"
+     "label": "2. Abschnitt: Anwendungsbewilligungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -309,11 +315,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anwendungsbewilligungen"
+     "label": "2. Abschnitt: Anwendungsbewilligungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -350,11 +358,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anwendungsbewilligungen"
+     "label": "2. Abschnitt: Anwendungsbewilligungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -379,11 +389,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fachbewilligungen"
+     "label": "3. Abschnitt: Fachbewilligungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -420,11 +432,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fachbewilligungen"
+     "label": "3. Abschnitt: Fachbewilligungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -473,11 +487,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fachbewilligungen"
+     "label": "3. Abschnitt: Fachbewilligungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -502,11 +518,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fachbewilligungen"
+     "label": "3. Abschnitt: Fachbewilligungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -531,11 +549,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fachbewilligungen"
+     "label": "3. Abschnitt: Fachbewilligungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -560,11 +580,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fachbewilligungen"
+     "label": "3. Abschnitt: Fachbewilligungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -601,7 +623,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -612,7 +635,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -637,7 +661,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -648,7 +673,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -724,7 +750,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -749,7 +776,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -786,7 +814,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -797,7 +826,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -822,7 +852,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -861,7 +892,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vollzug"
+     "label": "3. Kapitel: Vollzug",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -888,7 +920,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1017,7 +1050,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1028,11 +1062,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fachbewilligungen"
+     "label": "3. Abschnitt: Fachbewilligungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1057,7 +1093,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1099,11 +1136,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Besondere Kennzeichnungen"
+     "label": "1a. Abschnitt: Besondere Kennzeichnungen",
+     "eId": "chap_2/sec_1_a"
     }
    ],
    "marginalie": [],
@@ -1127,11 +1166,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anwendungsbewilligungen"
+     "label": "2. Abschnitt: Anwendungsbewilligungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1156,11 +1197,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "2. Kapitel: Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fachbewilligungen"
+     "label": "3. Abschnitt: Fachbewilligungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [

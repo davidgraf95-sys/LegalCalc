@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "952.02",
   "titel": "Verordnung über die Banken und Sparkassen",
@@ -41,7 +41,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -66,7 +67,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -155,7 +157,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -181,7 +184,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -242,7 +246,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -327,7 +332,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -412,7 +418,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -437,11 +444,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Angaben zu Personen und Beteiligten im Bewilligungsgesuch und Änderung von Tatsachen"
+     "label": "1. Abschnitt: Angaben zu Personen und Beteiligten im Bewilligungsgesuch und Änderung von Tatsachen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -491,11 +500,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Organisation der Banken"
+     "label": "2. Abschnitt: Organisation der Banken",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -533,11 +544,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Organisation der Banken"
+     "label": "2. Abschnitt: Organisation der Banken",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -548,11 +561,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Organisation der Banken"
+     "label": "2. Abschnitt: Organisation der Banken",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -563,11 +578,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Organisation der Banken"
+     "label": "2. Abschnitt: Organisation der Banken",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -620,11 +637,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Organisation der Banken"
+     "label": "2. Abschnitt: Organisation der Banken",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -635,11 +654,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Organisation der Banken"
+     "label": "2. Abschnitt: Organisation der Banken",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -650,11 +671,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Kapitalanforderungen"
+     "label": "3. Abschnitt: Kapitalanforderungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -665,11 +688,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Kapitalanforderungen"
+     "label": "3. Abschnitt: Kapitalanforderungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -706,11 +731,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Kapitalanforderungen"
+     "label": "3. Abschnitt: Kapitalanforderungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -721,11 +748,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Grenzüberschreitende Sachverhalte"
+     "label": "4. Abschnitt: Grenzüberschreitende Sachverhalte",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -736,11 +765,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Grenzüberschreitende Sachverhalte"
+     "label": "4. Abschnitt: Grenzüberschreitende Sachverhalte",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -751,11 +782,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Grenzüberschreitende Sachverhalte"
+     "label": "4. Abschnitt: Grenzüberschreitende Sachverhalte",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -766,7 +799,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Finanzgruppen und Finanzkonglomerate"
+     "label": "3. Kapitel: Finanzgruppen und Finanzkonglomerate",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -777,7 +811,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Finanzgruppen und Finanzkonglomerate"
+     "label": "3. Kapitel: Finanzgruppen und Finanzkonglomerate",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -788,7 +823,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Finanzgruppen und Finanzkonglomerate"
+     "label": "3. Kapitel: Finanzgruppen und Finanzkonglomerate",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -799,7 +835,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Finanzgruppen und Finanzkonglomerate"
+     "label": "3. Kapitel: Finanzgruppen und Finanzkonglomerate",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -810,11 +847,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Einzelabschluss"
+     "label": "1. Abschnitt: Einzelabschluss",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -839,11 +878,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Einzelabschluss"
+     "label": "1. Abschnitt: Einzelabschluss",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -868,11 +909,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Einzelabschluss"
+     "label": "1. Abschnitt: Einzelabschluss",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -897,11 +940,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Einzelabschluss"
+     "label": "1. Abschnitt: Einzelabschluss",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -912,11 +957,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Einzelabschluss"
+     "label": "1. Abschnitt: Einzelabschluss",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -942,11 +989,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Einzelabschluss"
+     "label": "1. Abschnitt: Einzelabschluss",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -957,11 +1006,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Einzelabschluss"
+     "label": "1. Abschnitt: Einzelabschluss",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -972,11 +1023,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Einzelabschluss"
+     "label": "1. Abschnitt: Einzelabschluss",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -987,11 +1040,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konzernrechnung"
+     "label": "2. Abschnitt: Konzernrechnung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1002,11 +1057,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konzernrechnung"
+     "label": "2. Abschnitt: Konzernrechnung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1017,11 +1074,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konzernrechnung"
+     "label": "2. Abschnitt: Konzernrechnung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1032,11 +1091,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konzernrechnung"
+     "label": "2. Abschnitt: Konzernrechnung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1061,11 +1122,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konzernrechnung"
+     "label": "2. Abschnitt: Konzernrechnung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1076,11 +1139,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konzernrechnung"
+     "label": "2. Abschnitt: Konzernrechnung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1106,11 +1171,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konzernrechnung"
+     "label": "2. Abschnitt: Konzernrechnung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1121,11 +1188,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konzernrechnung"
+     "label": "2. Abschnitt: Konzernrechnung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1136,11 +1205,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konzernrechnung"
+     "label": "2. Abschnitt: Konzernrechnung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1151,11 +1222,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechnungslegung"
+     "label": "4. Kapitel: Rechnungslegung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ausführungsbestimmungen zur Rechnungslegung"
+     "label": "3. Abschnitt: Ausführungsbestimmungen zur Rechnungslegung",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": []
@@ -1164,7 +1237,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Einlagensicherung von Banken"
+     "label": "5. Kapitel: Einlagensicherung von Banken",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1189,7 +1263,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Einlagensicherung von Banken"
+     "label": "5. Kapitel: Einlagensicherung von Banken",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1214,11 +1289,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte"
+     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Begriff"
+     "label": "1. Abschnitt: Begriff",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": []
@@ -1227,11 +1304,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte"
+     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übertragung"
+     "label": "2. Abschnitt: Übertragung",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1242,11 +1321,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte"
+     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übertragung"
+     "label": "2. Abschnitt: Übertragung",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1257,11 +1338,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte"
+     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übertragung"
+     "label": "2. Abschnitt: Übertragung",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1272,11 +1355,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte"
+     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Publikation"
+     "label": "3. Abschnitt: Publikation",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -1287,11 +1372,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte"
+     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Publikation"
+     "label": "3. Abschnitt: Publikation",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -1302,11 +1389,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte"
+     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Publikation"
+     "label": "3. Abschnitt: Publikation",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -1317,11 +1406,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte"
+     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Publikation"
+     "label": "3. Abschnitt: Publikation",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -1332,11 +1423,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte"
+     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Publikation"
+     "label": "3. Abschnitt: Publikation",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -1347,11 +1440,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte"
+     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Liquidation"
+     "label": "4. Abschnitt: Liquidation",
+     "eId": "chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -1362,11 +1457,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte"
+     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Liquidation"
+     "label": "4. Abschnitt: Liquidation",
+     "eId": "chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -1377,11 +1474,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte"
+     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Liquidation"
+     "label": "4. Abschnitt: Liquidation",
+     "eId": "chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -1392,11 +1491,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte"
+     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Liquidation"
+     "label": "4. Abschnitt: Liquidation",
+     "eId": "chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -1407,11 +1508,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte"
+     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Liquidation"
+     "label": "4. Abschnitt: Liquidation",
+     "eId": "chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -1422,11 +1525,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte"
+     "label": "6. Kapitel: Nachrichtenlose Vermögenswerte",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Liquidation"
+     "label": "4. Abschnitt: Liquidation",
+     "eId": "chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -1437,11 +1542,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken"
+     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Notfallplanung"
+     "label": "1. Abschnitt: Notfallplanung",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1478,11 +1585,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken"
+     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Notfallplanung"
+     "label": "1. Abschnitt: Notfallplanung",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1507,11 +1616,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken"
+     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Notfallplanung"
+     "label": "1. Abschnitt: Notfallplanung",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1522,11 +1633,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken"
+     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Notfallplanung"
+     "label": "1. Abschnitt: Notfallplanung",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1563,11 +1676,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken"
+     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sanier- und Liquidierbarkeit"
+     "label": "2. Abschnitt: Sanier- und Liquidierbarkeit",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1617,11 +1732,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken"
+     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sanier- und Liquidierbarkeit"
+     "label": "2. Abschnitt: Sanier- und Liquidierbarkeit",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1659,11 +1776,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken"
+     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Information der Öffentlichkeit"
+     "label": "3. Abschnitt: Information der Öffentlichkeit",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [],
@@ -1699,7 +1818,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1720,7 +1840,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1731,7 +1852,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1780,7 +1902,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1791,11 +1914,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG"
+     "label": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1821,11 +1946,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG"
+     "label": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1836,11 +1963,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG"
+     "label": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1851,11 +1980,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG"
+     "label": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1866,11 +1997,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG"
+     "label": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1881,11 +2014,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG"
+     "label": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1958,11 +2093,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG"
+     "label": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1973,11 +2110,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Kapitalanforderungen"
+     "label": "3. Abschnitt: Kapitalanforderungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2038,7 +2177,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Finanzgruppen und Finanzkonglomerate"
+     "label": "3. Kapitel: Finanzgruppen und Finanzkonglomerate",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2063,7 +2203,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -2088,7 +2229,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Privilegierte Einlagen sowie privilegierte Einlegerinnen und Einleger"
+     "label": "4a. Kapitel: Privilegierte Einlagen sowie privilegierte Einlegerinnen und Einleger",
+     "eId": "chap_4_a"
     }
    ],
    "marginalie": [
@@ -2114,7 +2256,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Privilegierte Einlagen sowie privilegierte Einlegerinnen und Einleger"
+     "label": "4a. Kapitel: Privilegierte Einlagen sowie privilegierte Einlegerinnen und Einleger",
+     "eId": "chap_4_a"
     }
    ],
    "marginalie": [
@@ -2125,7 +2268,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Privilegierte Einlagen sowie privilegierte Einlegerinnen und Einleger"
+     "label": "4a. Kapitel: Privilegierte Einlagen sowie privilegierte Einlegerinnen und Einleger",
+     "eId": "chap_4_a"
     }
    ],
    "marginalie": [
@@ -2198,7 +2342,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Privilegierte Einlagen sowie privilegierte Einlegerinnen und Einleger"
+     "label": "4a. Kapitel: Privilegierte Einlagen sowie privilegierte Einlegerinnen und Einleger",
+     "eId": "chap_4_a"
     }
    ],
    "marginalie": [
@@ -2209,7 +2354,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Einlagensicherung von Banken"
+     "label": "5. Kapitel: Einlagensicherung von Banken",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2247,7 +2393,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Einlagensicherung von Banken"
+     "label": "5. Kapitel: Einlagensicherung von Banken",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2272,7 +2419,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Einlagensicherung von Banken"
+     "label": "5. Kapitel: Einlagensicherung von Banken",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2297,7 +2445,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Einlagensicherung von Banken"
+     "label": "5. Kapitel: Einlagensicherung von Banken",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2322,7 +2471,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Einlagensicherung von Banken"
+     "label": "5. Kapitel: Einlagensicherung von Banken",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2347,7 +2497,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Einlagensicherung von Banken"
+     "label": "5. Kapitel: Einlagensicherung von Banken",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2372,7 +2523,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -2397,11 +2549,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken"
+     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Notfallplanung"
+     "label": "1. Abschnitt: Notfallplanung",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -2426,11 +2580,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken"
+     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sanier- und Liquidierbarkeit"
+     "label": "2. Abschnitt: Sanier- und Liquidierbarkeit",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -2455,11 +2611,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken"
+     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sanier- und Liquidierbarkeit"
+     "label": "2. Abschnitt: Sanier- und Liquidierbarkeit",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -2508,11 +2666,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken"
+     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wesentliche Gruppengesellschaften systemrelevanter Banken mit Sitz in der Schweiz"
+     "label": "4. Abschnitt: Wesentliche Gruppengesellschaften systemrelevanter Banken mit Sitz in der Schweiz",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -2538,11 +2698,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken"
+     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wesentliche Gruppengesellschaften systemrelevanter Banken mit Sitz in der Schweiz"
+     "label": "4. Abschnitt: Wesentliche Gruppengesellschaften systemrelevanter Banken mit Sitz in der Schweiz",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -2553,11 +2715,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken"
+     "label": "7. Kapitel: Besondere Bestimmungen für systemrelevante Banken",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wesentliche Gruppengesellschaften systemrelevanter Banken mit Sitz in der Schweiz"
+     "label": "4. Abschnitt: Wesentliche Gruppengesellschaften systemrelevanter Banken mit Sitz in der Schweiz",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -2568,7 +2732,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2593,7 +2758,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -2630,7 +2796,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -2668,11 +2835,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bewilligungen"
+     "label": "2. Kapitel: Bewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Angaben zu Personen und Beteiligten im Bewilligungsgesuch und Änderung von Tatsachen"
+     "label": "1. Abschnitt: Angaben zu Personen und Beteiligten im Bewilligungsgesuch und Änderung von Tatsachen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [

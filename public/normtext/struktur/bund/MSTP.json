@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "322.1",
   "titel": "Militärstrafprozess",
@@ -71,11 +71,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Grundsatz"
+     "label": "Erstes Kapitel: Grundsatz",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -86,11 +88,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Militärjustiz"
+     "label": "Zweites Kapitel: Militärjustiz",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -183,11 +187,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Militärjustiz"
+     "label": "Zweites Kapitel: Militärjustiz",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [],
@@ -218,11 +224,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Militärjustiz"
+     "label": "Zweites Kapitel: Militärjustiz",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -291,15 +299,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Strafbehörden"
+     "label": "Drittes Kapitel: Strafbehörden",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1a. Abschnitt: Militärgerichte"
+     "label": "1a. Abschnitt: Militärgerichte",
+     "eId": "tit_1/chap_3/sec_1_a"
     }
    ],
    "marginalie": [
@@ -320,15 +331,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Strafbehörden"
+     "label": "Drittes Kapitel: Strafbehörden",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1a. Abschnitt: Militärgerichte"
+     "label": "1a. Abschnitt: Militärgerichte",
+     "eId": "tit_1/chap_3/sec_1_a"
     }
    ],
    "marginalie": [
@@ -381,15 +395,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Strafbehörden"
+     "label": "Drittes Kapitel: Strafbehörden",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1a. Abschnitt: Militärgerichte"
+     "label": "1a. Abschnitt: Militärgerichte",
+     "eId": "tit_1/chap_3/sec_1_a"
     }
    ],
    "marginalie": [
@@ -434,15 +451,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Strafbehörden"
+     "label": "Drittes Kapitel: Strafbehörden",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1a. Abschnitt: Militärgerichte"
+     "label": "1a. Abschnitt: Militärgerichte",
+     "eId": "tit_1/chap_3/sec_1_a"
     }
    ],
    "marginalie": [
@@ -495,15 +515,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Strafbehörden"
+     "label": "Drittes Kapitel: Strafbehörden",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Militärappellationsgerichte"
+     "label": "Zweiter Abschnitt: Militärappellationsgerichte",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -514,15 +537,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Strafbehörden"
+     "label": "Drittes Kapitel: Strafbehörden",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Militärappellationsgerichte"
+     "label": "Zweiter Abschnitt: Militärappellationsgerichte",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -555,15 +581,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Strafbehörden"
+     "label": "Drittes Kapitel: Strafbehörden",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Militärappellationsgerichte"
+     "label": "Zweiter Abschnitt: Militärappellationsgerichte",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -608,15 +637,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Strafbehörden"
+     "label": "Drittes Kapitel: Strafbehörden",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Militärappellationsgerichte"
+     "label": "Zweiter Abschnitt: Militärappellationsgerichte",
+     "eId": "tit_1/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -701,15 +733,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Strafbehörden"
+     "label": "Drittes Kapitel: Strafbehörden",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Militärkassationsgericht"
+     "label": "Dritter Abschnitt: Militärkassationsgericht",
+     "eId": "tit_1/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -720,15 +755,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Strafbehörden"
+     "label": "Drittes Kapitel: Strafbehörden",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Militärkassationsgericht"
+     "label": "Dritter Abschnitt: Militärkassationsgericht",
+     "eId": "tit_1/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -773,15 +811,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Strafbehörden"
+     "label": "Drittes Kapitel: Strafbehörden",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Militärkassationsgericht"
+     "label": "Dritter Abschnitt: Militärkassationsgericht",
+     "eId": "tit_1/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -846,11 +887,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Oberauditor"
+     "label": "Viertes Kapitel: Oberauditor",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -890,11 +933,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Oberauditor"
+     "label": "Viertes Kapitel: Oberauditor",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -927,11 +972,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Rechtshilfe"
+     "label": "Fünftes Kapitel: Rechtshilfe",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -984,11 +1031,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Rechtshilfe"
+     "label": "Fünftes Kapitel: Rechtshilfe",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -999,11 +1048,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Rechtshilfe"
+     "label": "Fünftes Kapitel: Rechtshilfe",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -1014,11 +1065,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Rechtshilfe"
+     "label": "Fünftes Kapitel: Rechtshilfe",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -1047,11 +1100,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Rechtshilfe"
+     "label": "Fünftes Kapitel: Rechtshilfe",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -1062,11 +1117,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Rechtshilfe"
+     "label": "Fünftes Kapitel: Rechtshilfe",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -1077,11 +1134,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Rechtshilfe"
+     "label": "Fünftes Kapitel: Rechtshilfe",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -1122,11 +1181,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Rechtshilfe"
+     "label": "Fünftes Kapitel: Rechtshilfe",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -1137,15 +1198,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Gerichtsstand"
+     "label": "Erster Abschnitt: Gerichtsstand",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -1178,15 +1242,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Gerichtsstand"
+     "label": "Erster Abschnitt: Gerichtsstand",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -1219,15 +1286,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Gerichtsstand"
+     "label": "Erster Abschnitt: Gerichtsstand",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -1260,15 +1330,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Gerichtsstand"
+     "label": "Erster Abschnitt: Gerichtsstand",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -1301,15 +1374,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Ausstand von Gerichtspersonen"
+     "label": "Zweiter Abschnitt: Ausstand von Gerichtspersonen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1386,15 +1462,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Ausstand von Gerichtspersonen"
+     "label": "Zweiter Abschnitt: Ausstand von Gerichtspersonen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1405,15 +1484,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Ausstand von Gerichtspersonen"
+     "label": "Zweiter Abschnitt: Ausstand von Gerichtspersonen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1424,15 +1506,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Ausstand von Gerichtspersonen"
+     "label": "Zweiter Abschnitt: Ausstand von Gerichtspersonen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1443,15 +1528,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Ausstand von Gerichtspersonen"
+     "label": "Zweiter Abschnitt: Ausstand von Gerichtspersonen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1462,15 +1550,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Protokolle"
+     "label": "Dritter Abschnitt: Protokolle",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1481,15 +1572,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Protokolle"
+     "label": "Dritter Abschnitt: Protokolle",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1500,15 +1594,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Protokolle"
+     "label": "Dritter Abschnitt: Protokolle",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1519,15 +1616,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Protokolle"
+     "label": "Dritter Abschnitt: Protokolle",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1538,15 +1638,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Entscheide und Akten"
+     "label": "Vierter Abschnitt: Entscheide und Akten",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1557,15 +1660,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Entscheide und Akten"
+     "label": "Vierter Abschnitt: Entscheide und Akten",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1594,15 +1700,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Entscheide und Akten"
+     "label": "Vierter Abschnitt: Entscheide und Akten",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1613,15 +1722,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Entscheide und Akten"
+     "label": "Vierter Abschnitt: Entscheide und Akten",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1632,15 +1744,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Fünfter Abschnitt: Fristen"
+     "label": "Fünfter Abschnitt: Fristen",
+     "eId": "tit_2/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1651,15 +1766,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Fünfter Abschnitt: Fristen"
+     "label": "Fünfter Abschnitt: Fristen",
+     "eId": "tit_2/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1670,15 +1788,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Sechster Abschnitt: Öffentlichkeit und Sitzungspolizei"
+     "label": "Sechster Abschnitt: Öffentlichkeit und Sitzungspolizei",
+     "eId": "tit_2/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1723,15 +1844,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Sechster Abschnitt: Öffentlichkeit und Sitzungspolizei"
+     "label": "Sechster Abschnitt: Öffentlichkeit und Sitzungspolizei",
+     "eId": "tit_2/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1776,15 +1900,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Sechster Abschnitt: Öffentlichkeit und Sitzungspolizei"
+     "label": "Sechster Abschnitt: Öffentlichkeit und Sitzungspolizei",
+     "eId": "tit_2/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1795,15 +1922,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Siebenter Abschnitt: Einvernahme des Beschuldigten; freies Geleit"
+     "label": "Siebenter Abschnitt: Einvernahme des Beschuldigten; freies Geleit",
+     "eId": "tit_2/chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -1832,15 +1962,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Siebenter Abschnitt: Einvernahme des Beschuldigten; freies Geleit"
+     "label": "Siebenter Abschnitt: Einvernahme des Beschuldigten; freies Geleit",
+     "eId": "tit_2/chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -1851,15 +1984,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Siebenter Abschnitt: Einvernahme des Beschuldigten; freies Geleit"
+     "label": "Siebenter Abschnitt: Einvernahme des Beschuldigten; freies Geleit",
+     "eId": "tit_2/chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -1870,15 +2006,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft"
+     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft",
+     "eId": "tit_2/chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -1924,15 +2063,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft"
+     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft",
+     "eId": "tit_2/chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -1961,15 +2103,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft"
+     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft",
+     "eId": "tit_2/chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -2034,15 +2179,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft"
+     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft",
+     "eId": "tit_2/chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -2053,15 +2201,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft"
+     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft",
+     "eId": "tit_2/chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -2072,15 +2223,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft"
+     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft",
+     "eId": "tit_2/chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -2091,15 +2245,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft"
+     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft",
+     "eId": "tit_2/chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -2110,15 +2267,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft"
+     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft",
+     "eId": "tit_2/chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -2129,15 +2289,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Neunter Abschnitt: Untersuchungsmassnahmen"
+     "label": "Neunter Abschnitt: Untersuchungsmassnahmen",
+     "eId": "tit_2/chap_1/sec_9"
     }
    ],
    "marginalie": [
@@ -2167,15 +2330,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Neunter Abschnitt: Untersuchungsmassnahmen"
+     "label": "Neunter Abschnitt: Untersuchungsmassnahmen",
+     "eId": "tit_2/chap_1/sec_9"
     }
    ],
    "marginalie": [
@@ -2216,15 +2382,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Neunter Abschnitt: Untersuchungsmassnahmen"
+     "label": "Neunter Abschnitt: Untersuchungsmassnahmen",
+     "eId": "tit_2/chap_1/sec_9"
     }
    ],
    "marginalie": [
@@ -2235,15 +2404,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Neunter Abschnitt: Untersuchungsmassnahmen"
+     "label": "Neunter Abschnitt: Untersuchungsmassnahmen",
+     "eId": "tit_2/chap_1/sec_9"
     }
    ],
    "marginalie": [
@@ -2272,15 +2444,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Neunter Abschnitt: Untersuchungsmassnahmen"
+     "label": "Neunter Abschnitt: Untersuchungsmassnahmen",
+     "eId": "tit_2/chap_1/sec_9"
     }
    ],
    "marginalie": [
@@ -2309,15 +2484,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Neunter Abschnitt: Untersuchungsmassnahmen"
+     "label": "Neunter Abschnitt: Untersuchungsmassnahmen",
+     "eId": "tit_2/chap_1/sec_9"
     }
    ],
    "marginalie": [
@@ -2328,15 +2506,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Neunter Abschnitt: Untersuchungsmassnahmen"
+     "label": "Neunter Abschnitt: Untersuchungsmassnahmen",
+     "eId": "tit_2/chap_1/sec_9"
     }
    ],
    "marginalie": [
@@ -2373,15 +2554,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Neunter Abschnitt: Untersuchungsmassnahmen"
+     "label": "Neunter Abschnitt: Untersuchungsmassnahmen",
+     "eId": "tit_2/chap_1/sec_9"
     }
    ],
    "marginalie": [
@@ -2392,15 +2576,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs"
+     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs",
+     "eId": "tit_2/chap_1/sec_10"
     }
    ],
    "marginalie": [
@@ -2486,15 +2673,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter a Abschnitt: Überwachung mit technischen Überwachungsgeräten"
+     "label": "Zehnter a Abschnitt: Überwachung mit technischen Überwachungsgeräten",
+     "eId": "tit_2/chap_1/sec_10_a"
     }
    ],
    "marginalie": [
@@ -2560,15 +2750,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter a Abschnitt: Überwachung mit technischen Überwachungsgeräten"
+     "label": "Zehnter a Abschnitt: Überwachung mit technischen Überwachungsgeräten",
+     "eId": "tit_2/chap_1/sec_10_a"
     }
    ],
    "marginalie": [],
@@ -2599,15 +2792,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung"
+     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung",
+     "eId": "tit_2/chap_1/sec_10_b"
     }
    ],
    "marginalie": [
@@ -2665,15 +2861,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen"
+     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen",
+     "eId": "tit_2/chap_1/sec_11"
     }
    ],
    "marginalie": [
@@ -2736,15 +2935,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen"
+     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen",
+     "eId": "tit_2/chap_1/sec_11"
     }
    ],
    "marginalie": [
@@ -2821,15 +3023,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen"
+     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen",
+     "eId": "tit_2/chap_1/sec_11"
     }
    ],
    "marginalie": [
@@ -2840,15 +3045,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen"
+     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen",
+     "eId": "tit_2/chap_1/sec_11"
     }
    ],
    "marginalie": [
@@ -2905,15 +3113,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen"
+     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen",
+     "eId": "tit_2/chap_1/sec_11"
     }
    ],
    "marginalie": [
@@ -2924,15 +3135,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen"
+     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen",
+     "eId": "tit_2/chap_1/sec_11"
     }
    ],
    "marginalie": [
@@ -2943,15 +3157,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen"
+     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen",
+     "eId": "tit_2/chap_1/sec_11"
     }
    ],
    "marginalie": [
@@ -2984,15 +3201,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen"
+     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen",
+     "eId": "tit_2/chap_1/sec_11"
     }
    ],
    "marginalie": [
@@ -3003,15 +3223,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen"
+     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen",
+     "eId": "tit_2/chap_1/sec_11"
     }
    ],
    "marginalie": [
@@ -3052,15 +3275,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen"
+     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen",
+     "eId": "tit_2/chap_1/sec_11"
     }
    ],
    "marginalie": [
@@ -3071,15 +3297,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen"
+     "label": "Elfter Abschnitt: Zeugen und Auskunftspersonen",
+     "eId": "tit_2/chap_1/sec_11"
     }
    ],
    "marginalie": [
@@ -3090,15 +3319,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zwölfter Abschnitt: Sachverständige"
+     "label": "Zwölfter Abschnitt: Sachverständige",
+     "eId": "tit_2/chap_1/sec_12"
     }
    ],
    "marginalie": [
@@ -3109,15 +3341,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zwölfter Abschnitt: Sachverständige"
+     "label": "Zwölfter Abschnitt: Sachverständige",
+     "eId": "tit_2/chap_1/sec_12"
     }
    ],
    "marginalie": [
@@ -3143,15 +3378,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zwölfter Abschnitt: Sachverständige"
+     "label": "Zwölfter Abschnitt: Sachverständige",
+     "eId": "tit_2/chap_1/sec_12"
     }
    ],
    "marginalie": [
@@ -3162,15 +3400,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zwölfter Abschnitt: Sachverständige"
+     "label": "Zwölfter Abschnitt: Sachverständige",
+     "eId": "tit_2/chap_1/sec_12"
     }
    ],
    "marginalie": [
@@ -3181,15 +3422,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zwölfter Abschnitt: Sachverständige"
+     "label": "Zwölfter Abschnitt: Sachverständige",
+     "eId": "tit_2/chap_1/sec_12"
     }
    ],
    "marginalie": [
@@ -3200,15 +3444,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zwölfter Abschnitt: Sachverständige"
+     "label": "Zwölfter Abschnitt: Sachverständige",
+     "eId": "tit_2/chap_1/sec_12"
     }
    ],
    "marginalie": [
@@ -3219,15 +3466,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zwölfter Abschnitt: Sachverständige"
+     "label": "Zwölfter Abschnitt: Sachverständige",
+     "eId": "tit_2/chap_1/sec_12"
     }
    ],
    "marginalie": [
@@ -3238,15 +3488,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zwölfter Abschnitt: Sachverständige"
+     "label": "Zwölfter Abschnitt: Sachverständige",
+     "eId": "tit_2/chap_1/sec_12"
     }
    ],
    "marginalie": [
@@ -3257,15 +3510,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zwölfter Abschnitt: Sachverständige"
+     "label": "Zwölfter Abschnitt: Sachverständige",
+     "eId": "tit_2/chap_1/sec_12"
     }
    ],
    "marginalie": [
@@ -3276,15 +3532,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Dreizehnter Abschnitt: Augenschein"
+     "label": "Dreizehnter Abschnitt: Augenschein",
+     "eId": "tit_2/chap_1/sec_13"
     }
    ],
    "marginalie": []
@@ -3293,15 +3552,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Vierzehnter Abschnitt: Dolmetscher und Übersetzer"
+     "label": "Vierzehnter Abschnitt: Dolmetscher und Übersetzer",
+     "eId": "tit_2/chap_1/sec_14"
     }
    ],
    "marginalie": [
@@ -3312,15 +3574,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Vierzehnter Abschnitt: Dolmetscher und Übersetzer"
+     "label": "Vierzehnter Abschnitt: Dolmetscher und Übersetzer",
+     "eId": "tit_2/chap_1/sec_14"
     }
    ],
    "marginalie": [
@@ -3346,15 +3611,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Vierzehnter Abschnitt: Dolmetscher und Übersetzer"
+     "label": "Vierzehnter Abschnitt: Dolmetscher und Übersetzer",
+     "eId": "tit_2/chap_1/sec_14"
     }
    ],
    "marginalie": [
@@ -3365,15 +3633,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Vierzehnter Abschnitt: Dolmetscher und Übersetzer"
+     "label": "Vierzehnter Abschnitt: Dolmetscher und Übersetzer",
+     "eId": "tit_2/chap_1/sec_14"
     }
    ],
    "marginalie": [
@@ -3384,15 +3655,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Fünfzehnter Abschnitt: Verteidiger"
+     "label": "Fünfzehnter Abschnitt: Verteidiger",
+     "eId": "tit_2/chap_1/sec_15"
     }
    ],
    "marginalie": [
@@ -3437,15 +3711,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Einleitung des Verfahrens"
+     "label": "Erster Abschnitt: Einleitung des Verfahrens",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3456,15 +3733,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Einleitung des Verfahrens"
+     "label": "Erster Abschnitt: Einleitung des Verfahrens",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3493,15 +3773,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Einleitung des Verfahrens"
+     "label": "Erster Abschnitt: Einleitung des Verfahrens",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3530,15 +3813,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Einleitung des Verfahrens"
+     "label": "Erster Abschnitt: Einleitung des Verfahrens",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3549,15 +3835,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Einleitung des Verfahrens"
+     "label": "Erster Abschnitt: Einleitung des Verfahrens",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3598,15 +3887,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Einleitung des Verfahrens"
+     "label": "Erster Abschnitt: Einleitung des Verfahrens",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3617,15 +3909,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Einleitung des Verfahrens"
+     "label": "Erster Abschnitt: Einleitung des Verfahrens",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3636,15 +3931,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Einleitung des Verfahrens"
+     "label": "Erster Abschnitt: Einleitung des Verfahrens",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3655,15 +3953,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Einleitung des Verfahrens"
+     "label": "Erster Abschnitt: Einleitung des Verfahrens",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3674,15 +3975,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Einleitung des Verfahrens"
+     "label": "Erster Abschnitt: Einleitung des Verfahrens",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3693,15 +3997,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Einleitung des Verfahrens"
+     "label": "Erster Abschnitt: Einleitung des Verfahrens",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3730,15 +4037,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Einleitung des Verfahrens"
+     "label": "Erster Abschnitt: Einleitung des Verfahrens",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3767,15 +4077,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Einleitung des Verfahrens"
+     "label": "Erster Abschnitt: Einleitung des Verfahrens",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3808,15 +4121,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Einleitung des Verfahrens"
+     "label": "Erster Abschnitt: Einleitung des Verfahrens",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3827,15 +4143,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Einleitung des Verfahrens"
+     "label": "Erster Abschnitt: Einleitung des Verfahrens",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3928,15 +4247,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Einleitung des Verfahrens"
+     "label": "Erster Abschnitt: Einleitung des Verfahrens",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3985,15 +4307,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Einleitung des Verfahrens"
+     "label": "Erster Abschnitt: Einleitung des Verfahrens",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4090,15 +4415,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Strafmandatverfahren"
+     "label": "Zweiter Abschnitt: Strafmandatverfahren",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4255,15 +4583,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Strafmandatverfahren"
+     "label": "Zweiter Abschnitt: Strafmandatverfahren",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4312,15 +4643,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Strafmandatverfahren"
+     "label": "Zweiter Abschnitt: Strafmandatverfahren",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4353,15 +4687,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Strafmandatverfahren"
+     "label": "Zweiter Abschnitt: Strafmandatverfahren",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4414,15 +4751,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Strafmandatverfahren"
+     "label": "Zweiter Abschnitt: Strafmandatverfahren",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4433,15 +4773,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Vorbereitung der Hauptverhandlung"
+     "label": "Dritter Abschnitt: Vorbereitung der Hauptverhandlung",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -4452,15 +4795,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Vorbereitung der Hauptverhandlung"
+     "label": "Dritter Abschnitt: Vorbereitung der Hauptverhandlung",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -4471,15 +4817,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Vorbereitung der Hauptverhandlung"
+     "label": "Dritter Abschnitt: Vorbereitung der Hauptverhandlung",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -4490,15 +4839,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Vorbereitung der Hauptverhandlung"
+     "label": "Dritter Abschnitt: Vorbereitung der Hauptverhandlung",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -4509,15 +4861,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Vorbereitung der Hauptverhandlung"
+     "label": "Dritter Abschnitt: Vorbereitung der Hauptverhandlung",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -4528,15 +4883,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Vorbereitung der Hauptverhandlung"
+     "label": "Dritter Abschnitt: Vorbereitung der Hauptverhandlung",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -4547,15 +4905,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4566,15 +4927,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4585,15 +4949,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4604,15 +4971,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4623,15 +4993,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4642,15 +5015,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4661,15 +5037,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4710,15 +5089,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4729,15 +5111,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4748,15 +5133,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4767,15 +5155,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4786,15 +5177,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4805,15 +5199,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4824,15 +5221,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4843,15 +5243,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4896,15 +5299,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4915,15 +5321,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4952,15 +5361,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4971,15 +5383,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4990,15 +5405,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -5071,15 +5489,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -5090,15 +5511,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -5151,15 +5575,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -5170,15 +5597,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -5211,15 +5641,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -5304,15 +5737,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Fünfter Abschnitt: Verfahren gegen Abwesende und Wiederaufnahme"
+     "label": "Fünfter Abschnitt: Verfahren gegen Abwesende und Wiederaufnahme",
+     "eId": "tit_2/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -5323,15 +5759,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Fünfter Abschnitt: Verfahren gegen Abwesende und Wiederaufnahme"
+     "label": "Fünfter Abschnitt: Verfahren gegen Abwesende und Wiederaufnahme",
+     "eId": "tit_2/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -5360,15 +5799,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Fünfter Abschnitt: Verfahren gegen Abwesende und Wiederaufnahme"
+     "label": "Fünfter Abschnitt: Verfahren gegen Abwesende und Wiederaufnahme",
+     "eId": "tit_2/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -5379,15 +5821,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Fünfter Abschnitt: Verfahren gegen Abwesende und Wiederaufnahme"
+     "label": "Fünfter Abschnitt: Verfahren gegen Abwesende und Wiederaufnahme",
+     "eId": "tit_2/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -5398,15 +5843,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Sechster Abschnitt: Verfahren bei Widerruf oder Rückversetzung"
+     "label": "Sechster Abschnitt: Verfahren bei Widerruf oder Rückversetzung",
+     "eId": "tit_2/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -5476,15 +5924,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Achter Abschnitt: Zivilrechtliche Ansprüche"
+     "label": "Achter Abschnitt: Zivilrechtliche Ansprüche",
+     "eId": "tit_2/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -5541,15 +5992,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Achter Abschnitt: Zivilrechtliche Ansprüche"
+     "label": "Achter Abschnitt: Zivilrechtliche Ansprüche",
+     "eId": "tit_2/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -5582,15 +6036,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Achter Abschnitt: Zivilrechtliche Ansprüche"
+     "label": "Achter Abschnitt: Zivilrechtliche Ansprüche",
+     "eId": "tit_2/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -5601,15 +6058,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Beschwerde"
+     "label": "Erster Abschnitt: Beschwerde",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5620,15 +6080,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Beschwerde"
+     "label": "Erster Abschnitt: Beschwerde",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5639,15 +6102,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Beschwerde"
+     "label": "Erster Abschnitt: Beschwerde",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5658,15 +6124,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Beschwerde"
+     "label": "Erster Abschnitt: Beschwerde",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5677,15 +6146,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Beschwerde"
+     "label": "Erster Abschnitt: Beschwerde",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5696,15 +6168,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Beschwerde"
+     "label": "Erster Abschnitt: Beschwerde",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5715,15 +6190,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Appellation"
+     "label": "Zweiter Abschnitt: Appellation",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5796,15 +6274,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Appellation"
+     "label": "Zweiter Abschnitt: Appellation",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5845,15 +6326,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Appellation"
+     "label": "Zweiter Abschnitt: Appellation",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5882,15 +6366,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Appellation"
+     "label": "Zweiter Abschnitt: Appellation",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5919,15 +6406,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Appellation"
+     "label": "Zweiter Abschnitt: Appellation",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5938,15 +6428,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Appellation"
+     "label": "Zweiter Abschnitt: Appellation",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5957,15 +6450,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Appellation"
+     "label": "Zweiter Abschnitt: Appellation",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5976,15 +6472,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Appellation"
+     "label": "Zweiter Abschnitt: Appellation",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -6029,15 +6528,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Appellation"
+     "label": "Zweiter Abschnitt: Appellation",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -6048,15 +6550,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Appellation"
+     "label": "Zweiter Abschnitt: Appellation",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -6085,15 +6590,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Appellation"
+     "label": "Zweiter Abschnitt: Appellation",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -6104,15 +6612,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Zweiter Abschnitt: Appellation"
+     "label": "Zweiter Abschnitt: Appellation",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -6177,15 +6688,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Kassation"
+     "label": "Dritter Abschnitt: Kassation",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -6238,15 +6752,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Kassation"
+     "label": "Dritter Abschnitt: Kassation",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -6257,15 +6774,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Kassation"
+     "label": "Dritter Abschnitt: Kassation",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -6306,15 +6826,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Kassation"
+     "label": "Dritter Abschnitt: Kassation",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -6325,15 +6848,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Kassation"
+     "label": "Dritter Abschnitt: Kassation",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -6344,15 +6870,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Kassation"
+     "label": "Dritter Abschnitt: Kassation",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -6363,15 +6892,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Kassation"
+     "label": "Dritter Abschnitt: Kassation",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -6382,15 +6914,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Kassation"
+     "label": "Dritter Abschnitt: Kassation",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -6401,15 +6936,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Kassation"
+     "label": "Dritter Abschnitt: Kassation",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -6420,15 +6958,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Kassation"
+     "label": "Dritter Abschnitt: Kassation",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -6457,15 +6998,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Kassation"
+     "label": "Dritter Abschnitt: Kassation",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -6476,15 +7020,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Rekurs"
+     "label": "Vierter Abschnitt: Rekurs",
+     "eId": "tit_2/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -6513,15 +7060,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Rekurs"
+     "label": "Vierter Abschnitt: Rekurs",
+     "eId": "tit_2/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -6554,15 +7104,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Rekurs"
+     "label": "Vierter Abschnitt: Rekurs",
+     "eId": "tit_2/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -6573,15 +7126,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Rekurs"
+     "label": "Vierter Abschnitt: Rekurs",
+     "eId": "tit_2/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -6592,15 +7148,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Rekurs"
+     "label": "Vierter Abschnitt: Rekurs",
+     "eId": "tit_2/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -6629,15 +7188,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Fünfter Abschnitt: Revision"
+     "label": "Fünfter Abschnitt: Revision",
+     "eId": "tit_2/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -6694,15 +7256,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Fünfter Abschnitt: Revision"
+     "label": "Fünfter Abschnitt: Revision",
+     "eId": "tit_2/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -6713,15 +7278,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Fünfter Abschnitt: Revision"
+     "label": "Fünfter Abschnitt: Revision",
+     "eId": "tit_2/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -6786,15 +7354,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Fünfter Abschnitt: Revision"
+     "label": "Fünfter Abschnitt: Revision",
+     "eId": "tit_2/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -6823,15 +7394,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Fünfter Abschnitt: Revision"
+     "label": "Fünfter Abschnitt: Revision",
+     "eId": "tit_2/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -6842,15 +7416,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Fünfter Abschnitt: Revision"
+     "label": "Fünfter Abschnitt: Revision",
+     "eId": "tit_2/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -6861,15 +7438,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Fünfter Abschnitt: Revision"
+     "label": "Fünfter Abschnitt: Revision",
+     "eId": "tit_2/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -6880,15 +7460,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Fünfter Abschnitt: Revision"
+     "label": "Fünfter Abschnitt: Revision",
+     "eId": "tit_2/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -6899,15 +7482,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Fünfter Abschnitt: Revision"
+     "label": "Fünfter Abschnitt: Revision",
+     "eId": "tit_2/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -6918,15 +7504,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Rechtsmittel"
+     "label": "Drittes Kapitel: Rechtsmittel",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Fünfter Abschnitt: Revision"
+     "label": "Fünfter Abschnitt: Revision",
+     "eId": "tit_2/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -6937,11 +7526,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Strafvollzug"
+     "label": "Viertes Kapitel: Strafvollzug",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -6952,11 +7543,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Strafvollzug"
+     "label": "Viertes Kapitel: Strafvollzug",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -6985,11 +7578,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Strafvollzug"
+     "label": "Viertes Kapitel: Strafvollzug",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -7046,11 +7641,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Strafvollzug"
+     "label": "Viertes Kapitel: Strafvollzug",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [],
@@ -7077,11 +7674,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Strafvollzug"
+     "label": "Viertes Kapitel: Strafvollzug",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -7092,11 +7691,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Strafvollzug"
+     "label": "Viertes Kapitel: Strafvollzug",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -7153,11 +7754,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Strafverfahren gegen Ausländer"
+     "label": "Fünftes Kapitel: Strafverfahren gegen Ausländer",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -7199,11 +7802,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Strafverfahren gegen Ausländer"
+     "label": "Fünftes Kapitel: Strafverfahren gegen Ausländer",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -7214,7 +7819,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Schlussbestimmungen"
+     "label": "Dritter Titel: Schlussbestimmungen",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -7225,7 +7831,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Schlussbestimmungen"
+     "label": "Dritter Titel: Schlussbestimmungen",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -7255,7 +7862,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Schlussbestimmungen"
+     "label": "Dritter Titel: Schlussbestimmungen",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -7266,7 +7874,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Schlussbestimmungen"
+     "label": "Dritter Titel: Schlussbestimmungen",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -7286,15 +7895,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Einleitung des Verfahrens"
+     "label": "Erster Abschnitt: Einleitung des Verfahrens",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -7325,15 +7937,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Vorbereitung der Hauptverhandlung"
+     "label": "Dritter Abschnitt: Vorbereitung der Hauptverhandlung",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -7362,15 +7977,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil"
+     "label": "Vierter Abschnitt: Hauptverhandlung und Urteil",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -7403,15 +8021,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Strafbehörden"
+     "label": "Drittes Kapitel: Strafbehörden",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Dritter Abschnitt: Militärkassationsgericht"
+     "label": "Dritter Abschnitt: Militärkassationsgericht",
+     "eId": "tit_1/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -7444,15 +8065,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Siebenter Abschnitt: …"
+     "label": "Siebenter Abschnitt: …",
+     "eId": "tit_2/chap_2/sec_7"
     }
    ],
    "marginalie": [],
@@ -7479,15 +8103,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Achter Abschnitt: Zivilrechtliche Ansprüche"
+     "label": "Achter Abschnitt: Zivilrechtliche Ansprüche",
+     "eId": "tit_2/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -7520,15 +8147,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Achter Abschnitt: Zivilrechtliche Ansprüche"
+     "label": "Achter Abschnitt: Zivilrechtliche Ansprüche",
+     "eId": "tit_2/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -7561,15 +8191,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Achter Abschnitt: Zivilrechtliche Ansprüche"
+     "label": "Achter Abschnitt: Zivilrechtliche Ansprüche",
+     "eId": "tit_2/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -7602,15 +8235,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Verfahrensablauf"
+     "label": "Zweites Kapitel: Verfahrensablauf",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "Achter Abschnitt: Zivilrechtliche Ansprüche"
+     "label": "Achter Abschnitt: Zivilrechtliche Ansprüche",
+     "eId": "tit_2/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -7643,7 +8279,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Schlussbestimmungen"
+     "label": "Dritter Titel: Schlussbestimmungen",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -7676,11 +8313,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Schutz von Personendaten"
+     "label": "Sechstes Kapitel: Schutz von Personendaten",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [
@@ -7710,11 +8349,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Schutz von Personendaten"
+     "label": "Sechstes Kapitel: Schutz von Personendaten",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [
@@ -7725,11 +8366,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Schutz von Personendaten"
+     "label": "Sechstes Kapitel: Schutz von Personendaten",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [
@@ -7740,11 +8383,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Schutz von Personendaten"
+     "label": "Sechstes Kapitel: Schutz von Personendaten",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [
@@ -7755,11 +8400,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Schutz von Personendaten"
+     "label": "Sechstes Kapitel: Schutz von Personendaten",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [
@@ -7770,15 +8417,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Gerichtsstand"
+     "label": "Erster Abschnitt: Gerichtsstand",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -7809,15 +8459,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Strafbehörden"
+     "label": "Drittes Kapitel: Strafbehörden",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Strafverfolgungsbehörden"
+     "label": "Erster Abschnitt: Strafverfolgungsbehörden",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -7872,15 +8525,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Strafbehörden"
+     "label": "Drittes Kapitel: Strafbehörden",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Strafverfolgungsbehörden"
+     "label": "Erster Abschnitt: Strafverfolgungsbehörden",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -7891,15 +8547,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Gerichtsordnung"
+     "label": "Erster Titel: Gerichtsordnung",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Strafbehörden"
+     "label": "Drittes Kapitel: Strafbehörden",
+     "eId": "tit_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "Erster Abschnitt: Strafverfolgungsbehörden"
+     "label": "Erster Abschnitt: Strafverfolgungsbehörden",
+     "eId": "tit_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -7910,15 +8569,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft"
+     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft",
+     "eId": "tit_2/chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -7947,15 +8609,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft"
+     "label": "Achter Abschnitt: Anhaltung; Vorläufige Festnahme; Untersuchungs- und Sicherheitshaft",
+     "eId": "tit_2/chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -7984,15 +8649,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs"
+     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs",
+     "eId": "tit_2/chap_1/sec_10"
     }
    ],
    "marginalie": [
@@ -8038,15 +8706,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs"
+     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs",
+     "eId": "tit_2/chap_1/sec_10"
     }
    ],
    "marginalie": [
@@ -8075,15 +8746,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs"
+     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs",
+     "eId": "tit_2/chap_1/sec_10"
     }
    ],
    "marginalie": [
@@ -8112,15 +8786,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs"
+     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs",
+     "eId": "tit_2/chap_1/sec_10"
     }
    ],
    "marginalie": [
@@ -8165,15 +8842,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs"
+     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs",
+     "eId": "tit_2/chap_1/sec_10"
     }
    ],
    "marginalie": [
@@ -8214,15 +8894,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs"
+     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs",
+     "eId": "tit_2/chap_1/sec_10"
     }
    ],
    "marginalie": [
@@ -8279,15 +8962,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs"
+     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs",
+     "eId": "tit_2/chap_1/sec_10"
     }
    ],
    "marginalie": [
@@ -8298,15 +8984,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs"
+     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs",
+     "eId": "tit_2/chap_1/sec_10"
     }
    ],
    "marginalie": [
@@ -8317,15 +9006,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs"
+     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs",
+     "eId": "tit_2/chap_1/sec_10"
     }
    ],
    "marginalie": [
@@ -8336,15 +9028,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs"
+     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs",
+     "eId": "tit_2/chap_1/sec_10"
     }
    ],
    "marginalie": [
@@ -8355,15 +9050,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs"
+     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs",
+     "eId": "tit_2/chap_1/sec_10"
     }
    ],
    "marginalie": [
@@ -8374,15 +9072,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs"
+     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs",
+     "eId": "tit_2/chap_1/sec_10"
     }
    ],
    "marginalie": [
@@ -8411,15 +9112,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs"
+     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs",
+     "eId": "tit_2/chap_1/sec_10"
     }
    ],
    "marginalie": [
@@ -8448,15 +9152,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs"
+     "label": "Zehnter Abschnitt: Überwachung des Post- und Fernmeldeverkehrs",
+     "eId": "tit_2/chap_1/sec_10"
     }
    ],
    "marginalie": [
@@ -8497,15 +9204,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter a Abschnitt: Überwachung mit technischen Überwachungsgeräten"
+     "label": "Zehnter a Abschnitt: Überwachung mit technischen Überwachungsgeräten",
+     "eId": "tit_2/chap_1/sec_10_a"
     }
    ],
    "marginalie": [
@@ -8534,15 +9244,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter a Abschnitt: Überwachung mit technischen Überwachungsgeräten"
+     "label": "Zehnter a Abschnitt: Überwachung mit technischen Überwachungsgeräten",
+     "eId": "tit_2/chap_1/sec_10_a"
     }
    ],
    "marginalie": [
@@ -8571,15 +9284,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter a Abschnitt: Überwachung mit technischen Überwachungsgeräten"
+     "label": "Zehnter a Abschnitt: Überwachung mit technischen Überwachungsgeräten",
+     "eId": "tit_2/chap_1/sec_10_a"
     }
    ],
    "marginalie": [
@@ -8608,15 +9324,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter a Abschnitt: Überwachung mit technischen Überwachungsgeräten"
+     "label": "Zehnter a Abschnitt: Überwachung mit technischen Überwachungsgeräten",
+     "eId": "tit_2/chap_1/sec_10_a"
     }
    ],
    "marginalie": [],
@@ -8647,15 +9366,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung"
+     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung",
+     "eId": "tit_2/chap_1/sec_10_b"
     }
    ],
    "marginalie": [
@@ -8716,15 +9438,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung"
+     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung",
+     "eId": "tit_2/chap_1/sec_10_b"
     }
    ],
    "marginalie": [
@@ -8735,15 +9460,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung"
+     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung",
+     "eId": "tit_2/chap_1/sec_10_b"
     }
    ],
    "marginalie": [
@@ -8796,15 +9524,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung"
+     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung",
+     "eId": "tit_2/chap_1/sec_10_b"
     }
    ],
    "marginalie": [
@@ -8815,15 +9546,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung"
+     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung",
+     "eId": "tit_2/chap_1/sec_10_b"
     }
    ],
    "marginalie": [
@@ -8834,15 +9568,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung"
+     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung",
+     "eId": "tit_2/chap_1/sec_10_b"
     }
    ],
    "marginalie": [
@@ -8853,15 +9590,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung"
+     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung",
+     "eId": "tit_2/chap_1/sec_10_b"
     }
    ],
    "marginalie": [
@@ -8872,15 +9612,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung"
+     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung",
+     "eId": "tit_2/chap_1/sec_10_b"
     }
    ],
    "marginalie": [
@@ -8891,15 +9634,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung"
+     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung",
+     "eId": "tit_2/chap_1/sec_10_b"
     }
    ],
    "marginalie": [
@@ -8925,15 +9671,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung"
+     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung",
+     "eId": "tit_2/chap_1/sec_10_b"
     }
    ],
    "marginalie": [
@@ -8944,15 +9693,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung"
+     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung",
+     "eId": "tit_2/chap_1/sec_10_b"
     }
    ],
    "marginalie": [
@@ -8963,15 +9715,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung"
+     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung",
+     "eId": "tit_2/chap_1/sec_10_b"
     }
    ],
    "marginalie": [
@@ -8982,15 +9737,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung"
+     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung",
+     "eId": "tit_2/chap_1/sec_10_b"
     }
    ],
    "marginalie": [
@@ -9001,15 +9759,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung"
+     "label": "Zehnter b Abschnitt: Verdeckte Ermittlung",
+     "eId": "tit_2/chap_1/sec_10_b"
     }
    ],
    "marginalie": [
@@ -9020,15 +9781,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter c Abschnitt: Verdeckte Fahndung"
+     "label": "Zehnter c Abschnitt: Verdeckte Fahndung",
+     "eId": "tit_2/chap_1/sec_10_c"
     }
    ],
    "marginalie": [
@@ -9062,15 +9826,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter c Abschnitt: Verdeckte Fahndung"
+     "label": "Zehnter c Abschnitt: Verdeckte Fahndung",
+     "eId": "tit_2/chap_1/sec_10_c"
     }
    ],
    "marginalie": [
@@ -9081,15 +9848,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter c Abschnitt: Verdeckte Fahndung"
+     "label": "Zehnter c Abschnitt: Verdeckte Fahndung",
+     "eId": "tit_2/chap_1/sec_10_c"
     }
    ],
    "marginalie": [
@@ -9100,15 +9870,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter c Abschnitt: Verdeckte Fahndung"
+     "label": "Zehnter c Abschnitt: Verdeckte Fahndung",
+     "eId": "tit_2/chap_1/sec_10_c"
     }
    ],
    "marginalie": [
@@ -9119,15 +9892,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter d Abschnitt: DNA-Analysen"
+     "label": "Zehnter d Abschnitt: DNA-Analysen",
+     "eId": "tit_2/chap_1/sec_10_d"
     }
    ],
    "marginalie": [
@@ -9201,15 +9977,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter d Abschnitt: DNA-Analysen"
+     "label": "Zehnter d Abschnitt: DNA-Analysen",
+     "eId": "tit_2/chap_1/sec_10_d"
     }
    ],
    "marginalie": [
@@ -9220,15 +9999,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter d Abschnitt: DNA-Analysen"
+     "label": "Zehnter d Abschnitt: DNA-Analysen",
+     "eId": "tit_2/chap_1/sec_10_d"
     }
    ],
    "marginalie": [
@@ -9257,15 +10039,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter d Abschnitt: DNA-Analysen"
+     "label": "Zehnter d Abschnitt: DNA-Analysen",
+     "eId": "tit_2/chap_1/sec_10_d"
     }
    ],
    "marginalie": [
@@ -9276,15 +10061,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter d Abschnitt: DNA-Analysen"
+     "label": "Zehnter d Abschnitt: DNA-Analysen",
+     "eId": "tit_2/chap_1/sec_10_d"
     }
    ],
    "marginalie": [
@@ -9323,15 +10111,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter d Abschnitt: DNA-Analysen"
+     "label": "Zehnter d Abschnitt: DNA-Analysen",
+     "eId": "tit_2/chap_1/sec_10_d"
     }
    ],
    "marginalie": [
@@ -9370,15 +10161,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Zehnter d Abschnitt: DNA-Analysen"
+     "label": "Zehnter d Abschnitt: DNA-Analysen",
+     "eId": "tit_2/chap_1/sec_10_d"
     }
    ],
    "marginalie": [
@@ -9404,15 +10198,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter a Abschnitt: Geschädigter"
+     "label": "Elfter a Abschnitt: Geschädigter",
+     "eId": "tit_2/chap_1/sec_11_a"
     }
    ],
    "marginalie": [],
@@ -9480,15 +10277,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen"
+     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen",
+     "eId": "tit_2/chap_1/sec_11_b"
     }
    ],
    "marginalie": [
@@ -9542,15 +10342,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen"
+     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen",
+     "eId": "tit_2/chap_1/sec_11_b"
     }
    ],
    "marginalie": [
@@ -9595,15 +10398,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen"
+     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen",
+     "eId": "tit_2/chap_1/sec_11_b"
     }
    ],
    "marginalie": [
@@ -9648,15 +10454,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen"
+     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen",
+     "eId": "tit_2/chap_1/sec_11_b"
     }
    ],
    "marginalie": [
@@ -9685,15 +10494,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen"
+     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen",
+     "eId": "tit_2/chap_1/sec_11_b"
     }
    ],
    "marginalie": [
@@ -9722,15 +10534,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen"
+     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen",
+     "eId": "tit_2/chap_1/sec_11_b"
     }
    ],
    "marginalie": [
@@ -9759,15 +10574,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen"
+     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen",
+     "eId": "tit_2/chap_1/sec_11_b"
     }
    ],
    "marginalie": [],
@@ -9798,15 +10616,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen"
+     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen",
+     "eId": "tit_2/chap_1/sec_11_b"
     }
    ],
    "marginalie": [
@@ -9863,15 +10684,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen"
+     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen",
+     "eId": "tit_2/chap_1/sec_11_b"
     }
    ],
    "marginalie": [
@@ -9900,15 +10724,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen"
+     "label": "Elfter b Abschnitt: Opfer und ihre Angehörigen",
+     "eId": "tit_2/chap_1/sec_11_b"
     }
    ],
    "marginalie": [
@@ -9937,15 +10764,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter c Abschnitt: Privatklägerschaft"
+     "label": "Elfter c Abschnitt: Privatklägerschaft",
+     "eId": "tit_2/chap_1/sec_11_c"
     }
    ],
    "marginalie": [
@@ -9979,15 +10809,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter c Abschnitt: Privatklägerschaft"
+     "label": "Elfter c Abschnitt: Privatklägerschaft",
+     "eId": "tit_2/chap_1/sec_11_c"
     }
    ],
    "marginalie": [
@@ -9998,15 +10831,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter c Abschnitt: Privatklägerschaft"
+     "label": "Elfter c Abschnitt: Privatklägerschaft",
+     "eId": "tit_2/chap_1/sec_11_c"
     }
    ],
    "marginalie": [
@@ -10017,15 +10853,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter c Abschnitt: Privatklägerschaft"
+     "label": "Elfter c Abschnitt: Privatklägerschaft",
+     "eId": "tit_2/chap_1/sec_11_c"
     }
    ],
    "marginalie": [
@@ -10050,15 +10889,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter c Abschnitt: Privatklägerschaft"
+     "label": "Elfter c Abschnitt: Privatklägerschaft",
+     "eId": "tit_2/chap_1/sec_11_c"
     }
    ],
    "marginalie": [
@@ -10069,15 +10911,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter c Abschnitt: Privatklägerschaft"
+     "label": "Elfter c Abschnitt: Privatklägerschaft",
+     "eId": "tit_2/chap_1/sec_11_c"
     }
    ],
    "marginalie": [
@@ -10088,15 +10933,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Elfter d Abschnitt: Von einer Einziehung betroffener Dritter"
+     "label": "Elfter d Abschnitt: Von einer Einziehung betroffener Dritter",
+     "eId": "tit_2/chap_1/sec_11_d"
     }
    ],
    "marginalie": [],
@@ -10128,15 +10976,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Vierzehnter a Abschnitt: Schutz von Verfahrensbeteiligten"
+     "label": "Vierzehnter a Abschnitt: Schutz von Verfahrensbeteiligten",
+     "eId": "tit_2/chap_1/sec_14_a"
     }
    ],
    "marginalie": [
@@ -10182,15 +11033,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Vierzehnter a Abschnitt: Schutz von Verfahrensbeteiligten"
+     "label": "Vierzehnter a Abschnitt: Schutz von Verfahrensbeteiligten",
+     "eId": "tit_2/chap_1/sec_14_a"
     }
    ],
    "marginalie": [
@@ -10235,15 +11089,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Vierzehnter a Abschnitt: Schutz von Verfahrensbeteiligten"
+     "label": "Vierzehnter a Abschnitt: Schutz von Verfahrensbeteiligten",
+     "eId": "tit_2/chap_1/sec_14_a"
     }
    ],
    "marginalie": [
@@ -10254,15 +11111,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Verfahren"
+     "label": "Zweiter Titel: Verfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeine Bestimmungen"
+     "label": "Erstes Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Vierzehnter a Abschnitt: Schutz von Verfahrensbeteiligten"
+     "label": "Vierzehnter a Abschnitt: Schutz von Verfahrensbeteiligten",
+     "eId": "tit_2/chap_1/sec_14_a"
     }
    ],
    "marginalie": [

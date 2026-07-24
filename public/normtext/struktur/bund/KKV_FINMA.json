@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "951.312",
   "titel": "Verordnung der Eidgenössischen Finanzmarktaufsicht über die kollektiven Kapitalanlagen",
@@ -42,15 +42,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Effektenleihe («Securities Lending»)"
+     "label": "1. Abschnitt: Effektenleihe («Securities Lending»)",
+     "eId": "tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -61,15 +64,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Effektenleihe («Securities Lending»)"
+     "label": "1. Abschnitt: Effektenleihe («Securities Lending»)",
+     "eId": "tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -80,15 +86,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Effektenleihe («Securities Lending»)"
+     "label": "1. Abschnitt: Effektenleihe («Securities Lending»)",
+     "eId": "tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -99,15 +108,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Effektenleihe («Securities Lending»)"
+     "label": "1. Abschnitt: Effektenleihe («Securities Lending»)",
+     "eId": "tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -118,15 +130,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Effektenleihe («Securities Lending»)"
+     "label": "1. Abschnitt: Effektenleihe («Securities Lending»)",
+     "eId": "tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -137,15 +152,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Effektenleihe («Securities Lending»)"
+     "label": "1. Abschnitt: Effektenleihe («Securities Lending»)",
+     "eId": "tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -156,15 +174,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Effektenleihe («Securities Lending»)"
+     "label": "1. Abschnitt: Effektenleihe («Securities Lending»)",
+     "eId": "tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -175,15 +196,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Effektenleihe («Securities Lending»)"
+     "label": "1. Abschnitt: Effektenleihe («Securities Lending»)",
+     "eId": "tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -194,15 +218,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Effektenleihe («Securities Lending»)"
+     "label": "1. Abschnitt: Effektenleihe («Securities Lending»)",
+     "eId": "tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -213,15 +240,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)"
+     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -232,15 +262,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)"
+     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -251,15 +284,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)"
+     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -270,15 +306,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)"
+     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -289,15 +328,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)"
+     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -308,15 +350,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)"
+     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -327,15 +372,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)"
+     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -346,15 +394,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)"
+     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -365,15 +416,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)"
+     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -384,15 +438,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)"
+     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -418,15 +475,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)"
+     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -452,15 +512,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)"
+     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -471,15 +534,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)"
+     "label": "2. Abschnitt: Pensionsgeschäft («Repo, Reverse Repo»)",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -490,15 +556,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -509,15 +578,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -528,15 +600,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -547,15 +622,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -566,15 +644,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -600,15 +681,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -619,15 +703,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -638,15 +725,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -657,15 +747,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -676,15 +769,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -695,15 +791,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -714,15 +813,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -748,15 +850,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -767,15 +872,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -786,15 +894,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -805,15 +916,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -824,15 +938,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -843,15 +960,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -862,15 +982,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -881,15 +1004,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -900,15 +1026,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -919,15 +1048,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -938,15 +1070,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -957,15 +1092,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -991,15 +1129,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1010,15 +1151,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1029,15 +1173,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Derivative Finanzinstrumente"
+     "label": "3. Abschnitt: Derivative Finanzinstrumente",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1048,15 +1195,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Verwaltung der Sicherheiten"
+     "label": "4. Abschnitt: Verwaltung der Sicherheiten",
+     "eId": "tit_1/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1067,15 +1217,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Verwaltung der Sicherheiten"
+     "label": "4. Abschnitt: Verwaltung der Sicherheiten",
+     "eId": "tit_1/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1086,15 +1239,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Verwaltung der Sicherheiten"
+     "label": "4. Abschnitt: Verwaltung der Sicherheiten",
+     "eId": "tit_1/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1120,15 +1276,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Verwaltung der Sicherheiten"
+     "label": "4. Abschnitt: Verwaltung der Sicherheiten",
+     "eId": "tit_1/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1139,15 +1298,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Verwaltung der Sicherheiten"
+     "label": "4. Abschnitt: Verwaltung der Sicherheiten",
+     "eId": "tit_1/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1158,15 +1320,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Verwaltung der Sicherheiten"
+     "label": "4. Abschnitt: Verwaltung der Sicherheiten",
+     "eId": "tit_1/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1177,15 +1342,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Master-Feeder-Strukturen"
+     "label": "5. Abschnitt: Master-Feeder-Strukturen",
+     "eId": "tit_1/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1196,15 +1364,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Master-Feeder-Strukturen"
+     "label": "5. Abschnitt: Master-Feeder-Strukturen",
+     "eId": "tit_1/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1230,15 +1401,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Master-Feeder-Strukturen"
+     "label": "5. Abschnitt: Master-Feeder-Strukturen",
+     "eId": "tit_1/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1249,15 +1423,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Master-Feeder-Strukturen"
+     "label": "5. Abschnitt: Master-Feeder-Strukturen",
+     "eId": "tit_1/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1268,15 +1445,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Master-Feeder-Strukturen"
+     "label": "5. Abschnitt: Master-Feeder-Strukturen",
+     "eId": "tit_1/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1302,15 +1482,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Master-Feeder-Strukturen"
+     "label": "5. Abschnitt: Master-Feeder-Strukturen",
+     "eId": "tit_1/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1321,15 +1504,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Master-Feeder-Strukturen"
+     "label": "5. Abschnitt: Master-Feeder-Strukturen",
+     "eId": "tit_1/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1340,15 +1526,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Master-Feeder-Strukturen"
+     "label": "5. Abschnitt: Master-Feeder-Strukturen",
+     "eId": "tit_1/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1359,15 +1548,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Effektenfonds"
+     "label": "1. Kapitel: Effektenfonds",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Master-Feeder-Strukturen"
+     "label": "5. Abschnitt: Master-Feeder-Strukturen",
+     "eId": "tit_1/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1378,11 +1570,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Kollektive Kapitalanlagen"
+     "label": "1. Titel: Kollektive Kapitalanlagen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Übrige Fonds"
+     "label": "2. Kapitel: Übrige Fonds",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [],
@@ -1406,11 +1600,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Institute"
+     "label": "2. Titel: Institute",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Pflichten für Vertreter ausländischer kollektiver Kapitalanlagen"
+     "label": "1. Kapitel: Pflichten für Vertreter ausländischer kollektiver Kapitalanlagen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1449,11 +1645,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Institute"
+     "label": "2. Titel: Institute",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Riskmanagement und Risikokontrolle"
+     "label": "2. Kapitel: Riskmanagement und Risikokontrolle",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [],
@@ -1490,11 +1688,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Institute"
+     "label": "2. Titel: Institute",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: SICAV"
+     "label": "3. Kapitel: SICAV",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [],
@@ -1518,11 +1718,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Institute"
+     "label": "2. Titel: Institute",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Depotbank"
+     "label": "5. Kapitel: Depotbank",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -1533,11 +1735,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Institute"
+     "label": "2. Titel: Institute",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Depotbank"
+     "label": "5. Kapitel: Depotbank",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -1563,15 +1767,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Buchführung und Rechnungslegung"
+     "label": "1. Kapitel: Buchführung und Rechnungslegung",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -1597,15 +1804,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Buchführung und Rechnungslegung"
+     "label": "1. Kapitel: Buchführung und Rechnungslegung",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -1631,15 +1841,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Buchführung und Rechnungslegung"
+     "label": "1. Kapitel: Buchführung und Rechnungslegung",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Offene kollektive Kapitalanlagen"
+     "label": "2. Abschnitt: Offene kollektive Kapitalanlagen",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1677,15 +1890,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Buchführung und Rechnungslegung"
+     "label": "1. Kapitel: Buchführung und Rechnungslegung",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Offene kollektive Kapitalanlagen"
+     "label": "2. Abschnitt: Offene kollektive Kapitalanlagen",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1696,15 +1912,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Buchführung und Rechnungslegung"
+     "label": "1. Kapitel: Buchführung und Rechnungslegung",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Offene kollektive Kapitalanlagen"
+     "label": "2. Abschnitt: Offene kollektive Kapitalanlagen",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1730,15 +1949,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewertung"
+     "label": "2. Kapitel: Bewertung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1749,15 +1971,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewertung"
+     "label": "2. Kapitel: Bewertung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1768,15 +1993,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewertung"
+     "label": "2. Kapitel: Bewertung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1801,15 +2029,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewertung"
+     "label": "2. Kapitel: Bewertung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Offene kollektive Kapitalanlagen"
+     "label": "2. Abschnitt: Offene kollektive Kapitalanlagen",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": []
@@ -1818,15 +2049,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewertung"
+     "label": "2. Kapitel: Bewertung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Geschlossene kollektive Kapitalanlagen"
+     "label": "3. Abschnitt: Geschlossene kollektive Kapitalanlagen",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1837,15 +2071,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewertung"
+     "label": "2. Kapitel: Bewertung",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Geschlossene kollektive Kapitalanlagen"
+     "label": "3. Abschnitt: Geschlossene kollektive Kapitalanlagen",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1871,11 +2108,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Gemeinsame Bestimmungen zur Rechenschaftsablage"
+     "label": "3. Kapitel: Gemeinsame Bestimmungen zur Rechenschaftsablage",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -1886,11 +2125,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Gemeinsame Bestimmungen zur Rechenschaftsablage"
+     "label": "3. Kapitel: Gemeinsame Bestimmungen zur Rechenschaftsablage",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -1929,15 +2170,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen"
+     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Jahresrechnung"
+     "label": "1. Abschnitt: Jahresrechnung",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1976,15 +2220,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen"
+     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Jahresrechnung"
+     "label": "1. Abschnitt: Jahresrechnung",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1995,15 +2242,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen"
+     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Jahresrechnung"
+     "label": "1. Abschnitt: Jahresrechnung",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2029,15 +2279,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen"
+     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Jahresrechnung"
+     "label": "1. Abschnitt: Jahresrechnung",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2063,15 +2316,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen"
+     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Jahresrechnung"
+     "label": "1. Abschnitt: Jahresrechnung",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2097,15 +2353,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen"
+     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Jahresrechnung"
+     "label": "1. Abschnitt: Jahresrechnung",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2144,15 +2403,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen"
+     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Jahresrechnung"
+     "label": "1. Abschnitt: Jahresrechnung",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2178,15 +2440,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen"
+     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Weitere Angaben"
+     "label": "2. Abschnitt: Weitere Angaben",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2212,15 +2477,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen"
+     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Weitere Angaben"
+     "label": "2. Abschnitt: Weitere Angaben",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2231,15 +2499,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen"
+     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Weitere Angaben"
+     "label": "2. Abschnitt: Weitere Angaben",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2250,15 +2521,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen"
+     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Weitere Angaben"
+     "label": "2. Abschnitt: Weitere Angaben",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2269,15 +2543,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen"
+     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Weitere Angaben"
+     "label": "2. Abschnitt: Weitere Angaben",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2288,15 +2565,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen"
+     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Verwendung des Erfolges und Ausschüttungen"
+     "label": "3. Abschnitt: Verwendung des Erfolges und Ausschüttungen",
+     "eId": "tit_3/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -2307,15 +2587,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen"
+     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Verwendung des Erfolges und Ausschüttungen"
+     "label": "3. Abschnitt: Verwendung des Erfolges und Ausschüttungen",
+     "eId": "tit_3/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -2326,15 +2609,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen"
+     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Publikationspflichten"
+     "label": "4. Abschnitt: Publikationspflichten",
+     "eId": "tit_3/chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2360,15 +2646,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen"
+     "label": "4. Kapitel: Rechenschaftsablage bei offenen kollektiven Kapitalanlagen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Publikationspflichten"
+     "label": "4. Abschnitt: Publikationspflichten",
+     "eId": "tit_3/chap_4/sec_4"
     }
    ],
    "marginalie": [],
@@ -2391,11 +2680,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Rechenschaftsablage bei geschlossenen kollektiven Kapitalanlagen"
+     "label": "5. Kapitel: Rechenschaftsablage bei geschlossenen kollektiven Kapitalanlagen",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -2406,11 +2697,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht"
+     "label": "3. Titel: Buchführung, Bewertung, Rechenschaftsablage und Publikationspflicht",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Rechenschaftsablage bei geschlossenen kollektiven Kapitalanlagen"
+     "label": "5. Kapitel: Rechenschaftsablage bei geschlossenen kollektiven Kapitalanlagen",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -2449,11 +2742,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Prüfung und Prüfberichte"
+     "label": "4. Titel: Prüfung und Prüfberichte",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prüfung"
+     "label": "1. Kapitel: Prüfung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2491,11 +2786,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Prüfung und Prüfberichte"
+     "label": "4. Titel: Prüfung und Prüfberichte",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prüfung"
+     "label": "1. Kapitel: Prüfung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2558,11 +2855,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Prüfung und Prüfberichte"
+     "label": "4. Titel: Prüfung und Prüfberichte",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prüfung"
+     "label": "1. Kapitel: Prüfung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2649,11 +2948,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Prüfung und Prüfberichte"
+     "label": "4. Titel: Prüfung und Prüfberichte",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Prüfberichte"
+     "label": "2. Kapitel: Prüfberichte",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -2705,11 +3006,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Prüfung und Prüfberichte"
+     "label": "4. Titel: Prüfung und Prüfberichte",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Prüfberichte"
+     "label": "2. Kapitel: Prüfberichte",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -2784,11 +3087,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Prüfung und Prüfberichte"
+     "label": "4. Titel: Prüfung und Prüfberichte",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Prüfberichte"
+     "label": "2. Kapitel: Prüfberichte",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -2827,11 +3132,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Prüfung und Prüfberichte"
+     "label": "4. Titel: Prüfung und Prüfberichte",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Prüfberichte"
+     "label": "2. Kapitel: Prüfberichte",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -2896,7 +3203,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Schluss- und Übergangsbestimmungen"
+     "label": "5. Titel: Schluss- und Übergangsbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -2926,7 +3234,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Schluss- und Übergangsbestimmungen"
+     "label": "5. Titel: Schluss- und Übergangsbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [],
@@ -2949,7 +3258,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Schluss- und Übergangsbestimmungen"
+     "label": "5. Titel: Schluss- und Übergangsbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -2960,11 +3270,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Prüfung und Prüfberichte"
+     "label": "4. Titel: Prüfung und Prüfberichte",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "4a. Titel: Form der Zustellung"
+     "label": "4a. Titel: Form der Zustellung",
+     "eId": "tit_4/4_a"
     }
    ],
    "marginalie": [],
@@ -3001,11 +3313,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Institute"
+     "label": "2. Titel: Institute",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Pflichten für Vertreter ausländischer kollektiver Kapitalanlagen"
+     "label": "1. Kapitel: Pflichten für Vertreter ausländischer kollektiver Kapitalanlagen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -3016,11 +3330,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Institute"
+     "label": "2. Titel: Institute",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Pflichten für Vertreter ausländischer kollektiver Kapitalanlagen"
+     "label": "1. Kapitel: Pflichten für Vertreter ausländischer kollektiver Kapitalanlagen",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -3031,11 +3347,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Institute"
+     "label": "2. Titel: Institute",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Riskmanagement und Risikokontrolle"
+     "label": "2. Kapitel: Riskmanagement und Risikokontrolle",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [],
@@ -3058,11 +3376,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Institute"
+     "label": "2. Titel: Institute",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: ..."
+     "label": "4. Kapitel: ...",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [],

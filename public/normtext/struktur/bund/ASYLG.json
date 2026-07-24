@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "142.31",
   "titel": "Asylgesetz",
@@ -72,7 +72,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze"
+     "label": "1. Kapitel: Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -83,7 +84,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze"
+     "label": "1. Kapitel: Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -94,7 +96,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze"
+     "label": "1. Kapitel: Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -176,7 +179,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze"
+     "label": "1. Kapitel: Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -187,7 +191,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze"
+     "label": "1. Kapitel: Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -198,7 +203,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze"
+     "label": "1. Kapitel: Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -273,11 +279,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -288,11 +296,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -450,11 +460,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -496,11 +508,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -589,11 +603,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -604,11 +620,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -641,11 +659,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -691,11 +711,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -802,11 +824,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -817,11 +841,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -898,11 +924,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1064,11 +1092,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Asylgesuch und Einreise"
+     "label": "2. Abschnitt: Asylgesuch und Einreise",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1079,11 +1109,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Asylgesuch und Einreise"
+     "label": "2. Abschnitt: Asylgesuch und Einreise",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1116,11 +1148,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Asylgesuch und Einreise"
+     "label": "2. Abschnitt: Asylgesuch und Einreise",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1157,11 +1191,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Asylgesuch und Einreise"
+     "label": "2. Abschnitt: Asylgesuch und Einreise",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1214,11 +1250,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Asylgesuch und Einreise"
+     "label": "2. Abschnitt: Asylgesuch und Einreise",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1254,11 +1292,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Asylgesuch und Einreise"
+     "label": "2. Abschnitt: Asylgesuch und Einreise",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1331,11 +1371,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Zentren des Bundes"
+     "label": "2a. Abschnitt: Zentren des Bundes",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1389,11 +1431,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Betrieb der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+     "label": "2b. Abschnitt: Betrieb der Zentren des Bundes und der Unterkünfte an den Flughäfen",
+     "eId": "chap_2/sec_2_b"
     }
    ],
    "marginalie": [
@@ -1452,11 +1496,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1655,11 +1701,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1756,11 +1804,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1793,11 +1843,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1830,11 +1882,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [],
@@ -1865,11 +1919,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1906,11 +1962,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1947,11 +2005,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2066,11 +2126,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [],
@@ -2105,11 +2167,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2163,11 +2227,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2200,11 +2266,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [],
@@ -2239,11 +2307,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Stellung während des Asylverfahrens"
+     "label": "4. Abschnitt: Stellung während des Asylverfahrens",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -2276,11 +2346,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Stellung während des Asylverfahrens"
+     "label": "4. Abschnitt: Stellung während des Asylverfahrens",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -2434,11 +2506,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen"
+     "label": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -2510,11 +2584,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen"
+     "label": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -2682,11 +2758,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen"
+     "label": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -2799,11 +2877,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen"
+     "label": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -2836,11 +2916,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen"
+     "label": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -2851,11 +2933,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge"
+     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Asylgewährung"
+     "label": "1. Abschnitt: Asylgewährung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -2866,11 +2950,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge"
+     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Asylgewährung"
+     "label": "1. Abschnitt: Asylgewährung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -2881,11 +2967,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge"
+     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Asylgewährung"
+     "label": "1. Abschnitt: Asylgewährung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3059,11 +3147,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge"
+     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Asylgewährung"
+     "label": "1. Abschnitt: Asylgewährung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [],
@@ -3114,11 +3204,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge"
+     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Asylgewährung"
+     "label": "1. Abschnitt: Asylgewährung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3173,11 +3265,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge"
+     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Asylgewährung"
+     "label": "1. Abschnitt: Asylgewährung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3188,11 +3282,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge"
+     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Asylgewährung"
+     "label": "1. Abschnitt: Asylgewährung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3203,11 +3299,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge"
+     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Asyl für Gruppen"
+     "label": "2. Abschnitt: Asyl für Gruppen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3218,11 +3316,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge"
+     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Asyl für Gruppen"
+     "label": "2. Abschnitt: Asyl für Gruppen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3233,11 +3333,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge"
+     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rechtsstellung der Flüchtlinge"
+     "label": "3. Abschnitt: Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3264,11 +3366,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge"
+     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rechtsstellung der Flüchtlinge"
+     "label": "3. Abschnitt: Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3311,11 +3415,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge"
+     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rechtsstellung der Flüchtlinge"
+     "label": "3. Abschnitt: Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3385,11 +3491,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge"
+     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rechtsstellung der Flüchtlinge"
+     "label": "3. Abschnitt: Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3497,11 +3605,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge"
+     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rechtsstellung der Flüchtlinge"
+     "label": "3. Abschnitt: Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3512,11 +3622,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge"
+     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Beendigung des Asyls"
+     "label": "4. Abschnitt: Beendigung des Asyls",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -3607,11 +3719,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge"
+     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Beendigung des Asyls"
+     "label": "4. Abschnitt: Beendigung des Asyls",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -3747,11 +3861,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge"
+     "label": "3. Kapitel: Asylgewährung und Rechtsstellung der Flüchtlinge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Beendigung des Asyls"
+     "label": "4. Abschnitt: Beendigung des Asyls",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -3802,11 +3918,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen"
+     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3817,11 +3935,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen"
+     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3832,11 +3952,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen"
+     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -3869,11 +3991,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen"
+     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -3906,11 +4030,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen"
+     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -3921,11 +4047,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen"
+     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -4015,11 +4143,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen"
+     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -4069,11 +4199,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen"
+     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -4128,11 +4260,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen"
+     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rechtsstellung"
+     "label": "3. Abschnitt: Rechtsstellung",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -4143,11 +4277,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen"
+     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rechtsstellung"
+     "label": "3. Abschnitt: Rechtsstellung",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -4213,11 +4349,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen"
+     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Beendigung des vorübergehenden Schutzes und Rückkehr"
+     "label": "4. Abschnitt: Beendigung des vorübergehenden Schutzes und Rückkehr",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -4307,11 +4445,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen"
+     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Beendigung des vorübergehenden Schutzes und Rückkehr"
+     "label": "4. Abschnitt: Beendigung des vorübergehenden Schutzes und Rückkehr",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -4322,11 +4462,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen"
+     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Beendigung des vorübergehenden Schutzes und Rückkehr"
+     "label": "4. Abschnitt: Beendigung des vorübergehenden Schutzes und Rückkehr",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -4375,11 +4517,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen"
+     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Beendigung des vorübergehenden Schutzes und Rückkehr"
+     "label": "4. Abschnitt: Beendigung des vorübergehenden Schutzes und Rückkehr",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -4480,11 +4624,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Sozialhilfe und Nothilfe"
+     "label": "5. Kapitel: Sozialhilfe und Nothilfe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht"
+     "label": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -4551,11 +4697,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Sozialhilfe und Nothilfe"
+     "label": "5. Kapitel: Sozialhilfe und Nothilfe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht"
+     "label": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -4588,11 +4736,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Sozialhilfe und Nothilfe"
+     "label": "5. Kapitel: Sozialhilfe und Nothilfe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht"
+     "label": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -4757,11 +4907,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Sozialhilfe und Nothilfe"
+     "label": "5. Kapitel: Sozialhilfe und Nothilfe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht"
+     "label": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -4958,11 +5110,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Sozialhilfe und Nothilfe"
+     "label": "5. Kapitel: Sozialhilfe und Nothilfe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht"
+     "label": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -5009,11 +5163,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Sozialhilfe und Nothilfe"
+     "label": "5. Kapitel: Sozialhilfe und Nothilfe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückerstattungspflicht und Sonderabgabe auf Vermögenswerten"
+     "label": "2. Abschnitt: Rückerstattungspflicht und Sonderabgabe auf Vermögenswerten",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -5063,11 +5219,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Sozialhilfe und Nothilfe"
+     "label": "5. Kapitel: Sozialhilfe und Nothilfe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückerstattungspflicht und Sonderabgabe auf Vermögenswerten"
+     "label": "2. Abschnitt: Rückerstattungspflicht und Sonderabgabe auf Vermögenswerten",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -5087,11 +5245,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Sozialhilfe und Nothilfe"
+     "label": "5. Kapitel: Sozialhilfe und Nothilfe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückerstattungspflicht und Sonderabgabe auf Vermögenswerten"
+     "label": "2. Abschnitt: Rückerstattungspflicht und Sonderabgabe auf Vermögenswerten",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -5111,7 +5271,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bundesbeiträge"
+     "label": "6. Kapitel: Bundesbeiträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -5307,7 +5468,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bundesbeiträge"
+     "label": "6. Kapitel: Bundesbeiträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -5340,7 +5502,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bundesbeiträge"
+     "label": "6. Kapitel: Bundesbeiträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -5351,7 +5514,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bundesbeiträge"
+     "label": "6. Kapitel: Bundesbeiträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -5512,7 +5676,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bundesbeiträge"
+     "label": "6. Kapitel: Bundesbeiträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -5568,7 +5733,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bundesbeiträge"
+     "label": "6. Kapitel: Bundesbeiträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -5601,7 +5767,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bundesbeiträge"
+     "label": "6. Kapitel: Bundesbeiträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -5632,7 +5799,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bundesbeiträge"
+     "label": "6. Kapitel: Bundesbeiträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -5665,11 +5833,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -5785,11 +5955,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -5867,11 +6039,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -5933,11 +6107,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -6079,11 +6255,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1b. Abschnitt: Andere Informationssysteme"
+     "label": "1b. Abschnitt: Andere Informationssysteme",
+     "eId": "chap_7/sec_1_b"
     }
    ],
    "marginalie": [
@@ -6181,11 +6359,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1b. Abschnitt: Andere Informationssysteme"
+     "label": "1b. Abschnitt: Andere Informationssysteme",
+     "eId": "chap_7/sec_1_b"
     }
    ],
    "marginalie": [],
@@ -6220,11 +6400,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1b. Abschnitt: Andere Informationssysteme"
+     "label": "1b. Abschnitt: Andere Informationssysteme",
+     "eId": "chap_7/sec_1_b"
     }
    ],
    "marginalie": [
@@ -6289,11 +6471,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1c. Abschnitt: Beschwerdeverfahren auf Kantonsebene"
+     "label": "1c. Abschnitt: Beschwerdeverfahren auf Kantonsebene",
+     "eId": "chap_8/sec_1_c"
     }
    ],
    "marginalie": [],
@@ -6325,11 +6509,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene"
+     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [],
@@ -6360,11 +6546,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene"
+     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -6411,11 +6599,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene"
+     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -6484,11 +6674,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene"
+     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -6546,11 +6738,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene"
+     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -6612,11 +6806,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene"
+     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -6708,11 +6904,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene"
+     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -6785,11 +6983,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene"
+     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -6842,11 +7042,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Wiedererwägung und Mehrfachgesuche"
+     "label": "3. Abschnitt: Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8/sec_3"
     }
    ],
    "marginalie": [],
@@ -6881,7 +7083,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Internationale Zusammenarbeit"
+     "label": "9. Kapitel: Internationale Zusammenarbeit",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -6942,7 +7145,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Internationale Zusammenarbeit"
+     "label": "9. Kapitel: Internationale Zusammenarbeit",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -6971,11 +7175,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Strafbestimmungen"
+     "label": "10. Kapitel: Strafbestimmungen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbestimmungen zum 5. Kapitel 2. Abschnitt"
+     "label": "1. Abschnitt: Strafbestimmungen zum 5. Kapitel 2. Abschnitt",
+     "eId": "chap_10/sec_1"
     }
    ],
    "marginalie": [
@@ -7129,11 +7335,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Strafbestimmungen"
+     "label": "10. Kapitel: Strafbestimmungen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbestimmungen zum 5. Kapitel 2. Abschnitt"
+     "label": "1. Abschnitt: Strafbestimmungen zum 5. Kapitel 2. Abschnitt",
+     "eId": "chap_10/sec_1"
     }
    ],
    "marginalie": [
@@ -7194,11 +7402,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Strafbestimmungen"
+     "label": "10. Kapitel: Strafbestimmungen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbestimmungen zum 5. Kapitel 2. Abschnitt"
+     "label": "1. Abschnitt: Strafbestimmungen zum 5. Kapitel 2. Abschnitt",
+     "eId": "chap_10/sec_1"
     }
    ],
    "marginalie": [],
@@ -7229,11 +7439,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Strafbestimmungen"
+     "label": "10. Kapitel: Strafbestimmungen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafverfolgung"
+     "label": "3. Abschnitt: Strafverfolgung",
+     "eId": "chap_10/sec_3"
     }
    ],
    "marginalie": [],
@@ -7285,7 +7497,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -7296,7 +7509,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -7381,7 +7595,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -7499,7 +7714,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -7548,7 +7764,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -7568,11 +7785,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1b. Abschnitt: Andere Informationssysteme"
+     "label": "1b. Abschnitt: Andere Informationssysteme",
+     "eId": "chap_7/sec_1_b"
     }
    ],
    "marginalie": [
@@ -7605,11 +7824,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen"
+     "label": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -7666,11 +7887,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen"
+     "label": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -7745,11 +7968,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen"
+     "label": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -7778,11 +8003,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen"
+     "label": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -7840,11 +8067,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen"
+     "label": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -7873,11 +8102,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen"
+     "label": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -7998,11 +8229,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen"
+     "label": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -8031,11 +8264,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen"
+     "label": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -8068,11 +8303,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen"
+     "label": "2. Abschnitt: Datenbearbeitung im Rahmen der Dublin-Assoziierungsabkommen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -8119,11 +8356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Videoüberwachung"
+     "label": "3. Abschnitt: Videoüberwachung",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [],
@@ -8155,11 +8394,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes"
+     "label": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -8214,11 +8455,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes"
+     "label": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -8285,11 +8528,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes"
+     "label": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -8325,11 +8570,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes"
+     "label": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -8340,11 +8587,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes"
+     "label": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -8380,11 +8629,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes"
+     "label": "1. Abschnitt: Rechtsschutz in den Zentren des Bundes",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -8451,11 +8702,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Beratung und Rechtsvertretung im erweiterten Verfahren nach Zuweisung auf die Kantone"
+     "label": "1a. Abschnitt: Beratung und Rechtsvertretung im erweiterten Verfahren nach Zuweisung auf die Kantone",
+     "eId": "chap_8/sec_1_a"
     }
    ],
    "marginalie": [],
@@ -8519,11 +8772,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1b. Abschnitt: Unentgeltliche Rechtspflege"
+     "label": "1b. Abschnitt: Unentgeltliche Rechtspflege",
+     "eId": "chap_8/sec_1_b"
     }
    ],
    "marginalie": [],
@@ -8581,11 +8836,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene"
+     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -8693,11 +8950,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene"
+     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -8748,11 +9007,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene"
+     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -8789,11 +9050,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene"
+     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -8830,11 +9093,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene"
+     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [],
@@ -8877,11 +9142,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene"
+     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -8934,11 +9201,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene"
+     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -8984,11 +9253,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Unabhängiger Überwachungsmechanismus im Rahmen der Überprüfung"
+     "label": "2a. Abschnitt: Unabhängiger Überwachungsmechanismus im Rahmen der Überprüfung",
+     "eId": "chap_8/sec_2_a"
     }
    ],
    "marginalie": [],
@@ -9036,11 +9307,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene"
+     "label": "2. Abschnitt: Beschwerdeverfahren auf Bundesebene",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -9073,11 +9346,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Wiedererwägung und Mehrfachgesuche"
+     "label": "3. Abschnitt: Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -9159,11 +9434,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Wiedererwägung und Mehrfachgesuche"
+     "label": "3. Abschnitt: Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -9220,11 +9497,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Wiedererwägung und Mehrfachgesuche"
+     "label": "3. Abschnitt: Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -9261,11 +9540,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche"
+     "label": "8. Kapitel: Rechtsschutz, Beschwerdeverfahren, Wiedererwägung und Mehrfachgesuche",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Hinderung und Stillstand der Verjährung"
+     "label": "4. Abschnitt: Hinderung und Stillstand der Verjährung",
+     "eId": "chap_8/sec_4"
     }
    ],
    "marginalie": [],
@@ -9325,7 +9606,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8a. Kapitel: Asylverfahren im Rahmen von Testphasen"
+     "label": "8a. Kapitel: Asylverfahren im Rahmen von Testphasen",
+     "eId": "chap_8_a"
     }
    ],
    "marginalie": [],
@@ -9389,11 +9671,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Strafbestimmungen"
+     "label": "10. Kapitel: Strafbestimmungen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbestimmungen zum 5. Kapitel 2. Abschnitt"
+     "label": "1. Abschnitt: Strafbestimmungen zum 5. Kapitel 2. Abschnitt",
+     "eId": "chap_10/sec_1"
     }
    ],
    "marginalie": [],
@@ -9432,11 +9716,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Strafbestimmungen"
+     "label": "10. Kapitel: Strafbestimmungen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Strafbestimmungen zum 7. Kapitel 2. Abschnitt"
+     "label": "2. Abschnitt: Strafbestimmungen zum 7. Kapitel 2. Abschnitt",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -9470,11 +9756,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -9507,11 +9795,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -9544,11 +9834,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -9591,11 +9883,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Asylgesuch und Einreise"
+     "label": "2. Abschnitt: Asylgesuch und Einreise",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -9638,11 +9932,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Zentren des Bundes"
+     "label": "2a. Abschnitt: Zentren des Bundes",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -9688,11 +9984,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Zentren des Bundes"
+     "label": "2a. Abschnitt: Zentren des Bundes",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [],
@@ -9727,11 +10025,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Zentren des Bundes"
+     "label": "2a. Abschnitt: Zentren des Bundes",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -9764,11 +10064,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Zentren des Bundes"
+     "label": "2a. Abschnitt: Zentren des Bundes",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -9817,11 +10119,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Zentren des Bundes"
+     "label": "2a. Abschnitt: Zentren des Bundes",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -9854,11 +10158,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Betrieb der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+     "label": "2b. Abschnitt: Betrieb der Zentren des Bundes und der Unterkünfte an den Flughäfen",
+     "eId": "chap_2/sec_2_b"
     }
    ],
    "marginalie": [
@@ -9899,11 +10205,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Betrieb der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+     "label": "2b. Abschnitt: Betrieb der Zentren des Bundes und der Unterkünfte an den Flughäfen",
+     "eId": "chap_2/sec_2_b"
     }
    ],
    "marginalie": [
@@ -9932,11 +10240,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Betrieb der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+     "label": "2b. Abschnitt: Betrieb der Zentren des Bundes und der Unterkünfte an den Flughäfen",
+     "eId": "chap_2/sec_2_b"
     }
    ],
    "marginalie": [
@@ -9978,11 +10288,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Betrieb der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+     "label": "2b. Abschnitt: Betrieb der Zentren des Bundes und der Unterkünfte an den Flughäfen",
+     "eId": "chap_2/sec_2_b"
     }
    ],
    "marginalie": [
@@ -10024,11 +10336,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Betrieb der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+     "label": "2b. Abschnitt: Betrieb der Zentren des Bundes und der Unterkünfte an den Flughäfen",
+     "eId": "chap_2/sec_2_b"
     }
    ],
    "marginalie": [
@@ -10057,11 +10371,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -10098,11 +10414,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -10158,11 +10476,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -10195,11 +10515,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -10232,11 +10554,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -10282,11 +10606,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -10323,11 +10649,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -10400,11 +10728,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -10456,11 +10786,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [],
@@ -10495,11 +10827,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -10552,11 +10886,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -10593,11 +10929,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -10634,11 +10972,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Das erstinstanzliche Verfahren"
+     "label": "3. Abschnitt: Das erstinstanzliche Verfahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -10681,11 +11021,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen"
+     "label": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [],
@@ -10724,11 +11066,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen"
+     "label": "5. Abschnitt: Vollzug der Wegweisung und Ersatzmassnahmen",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -10781,7 +11125,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze"
+     "label": "1. Kapitel: Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -10814,7 +11159,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze"
+     "label": "1. Kapitel: Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -10847,11 +11193,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -10940,11 +11288,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen"
+     "label": "4. Kapitel: Gewährung vorübergehenden Schutzes und Rechtsstellung der Schutzbedürftigen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Beendigung des vorübergehenden Schutzes und Rückkehr"
+     "label": "4. Abschnitt: Beendigung des vorübergehenden Schutzes und Rückkehr",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -10973,11 +11323,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Sozialhilfe und Nothilfe"
+     "label": "5. Kapitel: Sozialhilfe und Nothilfe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht"
+     "label": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -11006,11 +11358,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Sozialhilfe und Nothilfe"
+     "label": "5. Kapitel: Sozialhilfe und Nothilfe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht"
+     "label": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -11056,11 +11410,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Sozialhilfe und Nothilfe"
+     "label": "5. Kapitel: Sozialhilfe und Nothilfe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht"
+     "label": "1. Abschnitt: Ausrichtung von Sozialhilfe, Nothilfe und Kinderzulagen sowie Grundschulunterricht",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -11093,7 +11449,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bundesbeiträge"
+     "label": "6. Kapitel: Bundesbeiträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -11163,7 +11520,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bundesbeiträge"
+     "label": "6. Kapitel: Bundesbeiträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -11217,11 +11575,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -11267,11 +11627,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Asylsuchende"
+     "label": "2. Kapitel: Asylsuchende",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -11308,7 +11670,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bundesbeiträge"
+     "label": "6. Kapitel: Bundesbeiträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -11341,7 +11704,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bundesbeiträge"
+     "label": "6. Kapitel: Bundesbeiträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -11374,11 +11738,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_6_a/sec_1"
     }
    ],
    "marginalie": [
@@ -11425,11 +11791,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_6_a/sec_1"
     }
    ],
    "marginalie": [
@@ -11487,11 +11855,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_6_a/sec_2"
     }
    ],
    "marginalie": [
@@ -11502,11 +11872,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_6_a/sec_2"
     }
    ],
    "marginalie": [
@@ -11517,11 +11889,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_6_a/sec_2"
     }
    ],
    "marginalie": [
@@ -11550,11 +11924,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_6_a/sec_2"
     }
    ],
    "marginalie": [],
@@ -11581,11 +11957,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_6_a/sec_2"
     }
    ],
    "marginalie": [
@@ -11656,11 +12034,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_6_a/sec_2"
     }
    ],
    "marginalie": [
@@ -11687,11 +12067,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_6_a/sec_2"
     }
    ],
    "marginalie": [
@@ -11702,11 +12084,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_6_a/sec_2"
     }
    ],
    "marginalie": [
@@ -11717,11 +12101,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Einigungs- und Schätzungsverfahren; vorzeitige Besitzeinweisung"
+     "label": "3. Abschnitt: Einigungs- und Schätzungsverfahren; vorzeitige Besitzeinweisung",
+     "eId": "chap_6_a/sec_3"
     }
    ],
    "marginalie": [],
@@ -11794,11 +12180,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes"
+     "label": "6a. Kapitel: Plangenehmigung bei Bauten und Anlagen des Bundes",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Rechtsmittelverfahren"
+     "label": "4. Abschnitt: Rechtsmittelverfahren",
+     "eId": "chap_6_a/sec_4"
     }
    ],
    "marginalie": []
@@ -11807,11 +12195,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -11844,11 +12234,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -11901,11 +12293,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Informationssystem der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+     "label": "1a. Abschnitt: Informationssystem der Zentren des Bundes und der Unterkünfte an den Flughäfen",
+     "eId": "chap_7/sec_1_a"
     }
    ],
    "marginalie": [
@@ -12037,11 +12431,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Informationssystem der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+     "label": "1a. Abschnitt: Informationssystem der Zentren des Bundes und der Unterkünfte an den Flughäfen",
+     "eId": "chap_7/sec_1_a"
     }
    ],
    "marginalie": [
@@ -12074,11 +12470,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Informationssystem der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+     "label": "1a. Abschnitt: Informationssystem der Zentren des Bundes und der Unterkünfte an den Flughäfen",
+     "eId": "chap_7/sec_1_a"
     }
    ],
    "marginalie": [
@@ -12089,11 +12487,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bearbeitung von Personendaten"
+     "label": "7. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Informationssystem der Zentren des Bundes und der Unterkünfte an den Flughäfen"
+     "label": "1a. Abschnitt: Informationssystem der Zentren des Bundes und der Unterkünfte an den Flughäfen",
+     "eId": "chap_7/sec_1_a"
     }
    ],
    "marginalie": [

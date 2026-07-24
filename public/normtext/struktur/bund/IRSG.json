@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "351.1",
   "titel": "Bundesgesetz über internationale Rechtshilfe in Strafsachen",
@@ -71,15 +71,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "part_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gegenstand und Begrenzung der Zusammenarbeit"
+     "label": "1. Abschnitt: Gegenstand und Begrenzung der Zusammenarbeit",
+     "eId": "part_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -184,15 +187,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "part_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausschluss von Ersuchen"
+     "label": "2. Abschnitt: Ausschluss von Ersuchen",
+     "eId": "part_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -277,15 +283,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "part_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausschluss von Ersuchen"
+     "label": "2. Abschnitt: Ausschluss von Ersuchen",
+     "eId": "part_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -342,15 +351,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "part_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausschluss von Ersuchen"
+     "label": "2. Abschnitt: Ausschluss von Ersuchen",
+     "eId": "part_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -379,15 +391,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "part_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausschluss von Ersuchen"
+     "label": "2. Abschnitt: Ausschluss von Ersuchen",
+     "eId": "part_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -492,15 +507,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "part_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausschluss von Ersuchen"
+     "label": "2. Abschnitt: Ausschluss von Ersuchen",
+     "eId": "part_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -511,15 +529,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "part_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Besondere Bestimmungen"
+     "label": "3. Abschnitt: Besondere Bestimmungen",
+     "eId": "part_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -530,15 +551,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "part_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Besondere Bestimmungen"
+     "label": "3. Abschnitt: Besondere Bestimmungen",
+     "eId": "part_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -583,15 +607,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "part_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Besondere Bestimmungen"
+     "label": "3. Abschnitt: Besondere Bestimmungen",
+     "eId": "part_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -634,15 +661,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "part_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Besondere Bestimmungen"
+     "label": "3. Abschnitt: Besondere Bestimmungen",
+     "eId": "part_1/chap_1/sec_3"
     }
    ],
    "marginalie": [],
@@ -669,15 +699,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "part_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Besondere Bestimmungen"
+     "label": "3. Abschnitt: Besondere Bestimmungen",
+     "eId": "part_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -706,11 +739,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anwendbares Recht"
+     "label": "2. Kapitel: Anwendbares Recht",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -751,11 +786,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anwendbares Recht"
+     "label": "2. Kapitel: Anwendbares Recht",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -784,11 +821,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anwendbares Recht"
+     "label": "2. Kapitel: Anwendbares Recht",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -814,11 +853,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anwendbares Recht"
+     "label": "2. Kapitel: Anwendbares Recht",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -907,15 +948,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Innerstaatliches Verfahren"
+     "label": "3. Kapitel: Innerstaatliches Verfahren",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Behörden und Befugnisse"
+     "label": "1. Abschnitt: Behörden und Befugnisse",
+     "eId": "part_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -944,15 +988,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Innerstaatliches Verfahren"
+     "label": "3. Kapitel: Innerstaatliches Verfahren",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Behörden und Befugnisse"
+     "label": "1. Abschnitt: Behörden und Befugnisse",
+     "eId": "part_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1013,15 +1060,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Innerstaatliches Verfahren"
+     "label": "3. Kapitel: Innerstaatliches Verfahren",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Behörden und Befugnisse"
+     "label": "1. Abschnitt: Behörden und Befugnisse",
+     "eId": "part_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1050,15 +1100,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Innerstaatliches Verfahren"
+     "label": "3. Kapitel: Innerstaatliches Verfahren",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Behörden und Befugnisse"
+     "label": "1. Abschnitt: Behörden und Befugnisse",
+     "eId": "part_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1069,15 +1122,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Innerstaatliches Verfahren"
+     "label": "3. Kapitel: Innerstaatliches Verfahren",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Behörden und Befugnisse"
+     "label": "1. Abschnitt: Behörden und Befugnisse",
+     "eId": "part_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1088,15 +1144,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Innerstaatliches Verfahren"
+     "label": "3. Kapitel: Innerstaatliches Verfahren",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Rechtsschutz"
+     "label": "2. Abschnitt: Rechtsschutz",
+     "eId": "part_1/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1141,15 +1200,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Innerstaatliches Verfahren"
+     "label": "3. Kapitel: Innerstaatliches Verfahren",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Rechtsschutz"
+     "label": "2. Abschnitt: Rechtsschutz",
+     "eId": "part_1/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1178,15 +1240,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Innerstaatliches Verfahren"
+     "label": "3. Kapitel: Innerstaatliches Verfahren",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Rechtsschutz"
+     "label": "2. Abschnitt: Rechtsschutz",
+     "eId": "part_1/chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -1213,15 +1278,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Innerstaatliches Verfahren"
+     "label": "3. Kapitel: Innerstaatliches Verfahren",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Rechtsschutz"
+     "label": "2. Abschnitt: Rechtsschutz",
+     "eId": "part_1/chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -1248,15 +1316,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Innerstaatliches Verfahren"
+     "label": "3. Kapitel: Innerstaatliches Verfahren",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Rechtsschutz"
+     "label": "2. Abschnitt: Rechtsschutz",
+     "eId": "part_1/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1381,15 +1452,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Innerstaatliches Verfahren"
+     "label": "3. Kapitel: Innerstaatliches Verfahren",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Rechtsschutz"
+     "label": "2. Abschnitt: Rechtsschutz",
+     "eId": "part_1/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1435,11 +1509,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zwischenstaatliches Verfahren"
+     "label": "4. Kapitel: Zwischenstaatliches Verfahren",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1468,11 +1544,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zwischenstaatliches Verfahren"
+     "label": "4. Kapitel: Zwischenstaatliches Verfahren",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1501,11 +1579,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zwischenstaatliches Verfahren"
+     "label": "4. Kapitel: Zwischenstaatliches Verfahren",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1516,11 +1596,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zwischenstaatliches Verfahren"
+     "label": "4. Kapitel: Zwischenstaatliches Verfahren",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1565,11 +1647,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zwischenstaatliches Verfahren"
+     "label": "4. Kapitel: Zwischenstaatliches Verfahren",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1580,11 +1664,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1595,11 +1681,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1624,11 +1712,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [],
@@ -1655,11 +1745,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1712,11 +1804,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1727,11 +1821,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1776,11 +1872,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1841,11 +1939,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1856,11 +1956,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1871,15 +1973,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ersuchen"
+     "label": "1. Abschnitt: Ersuchen",
+     "eId": "part_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1890,15 +1995,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ersuchen"
+     "label": "1. Abschnitt: Ersuchen",
+     "eId": "part_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1909,15 +2017,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ersuchen"
+     "label": "1. Abschnitt: Ersuchen",
+     "eId": "part_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1928,15 +2039,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Vorläufige Massnahmen"
+     "label": "2. Abschnitt: Vorläufige Massnahmen",
+     "eId": "part_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1966,15 +2080,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Vorläufige Massnahmen"
+     "label": "2. Abschnitt: Vorläufige Massnahmen",
+     "eId": "part_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1985,15 +2102,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Vorläufige Massnahmen"
+     "label": "2. Abschnitt: Vorläufige Massnahmen",
+     "eId": "part_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2004,15 +2124,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Auslieferungshaft und Sicherstellung"
+     "label": "3. Abschnitt: Auslieferungshaft und Sicherstellung",
+     "eId": "part_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2023,15 +2146,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Auslieferungshaft und Sicherstellung"
+     "label": "3. Abschnitt: Auslieferungshaft und Sicherstellung",
+     "eId": "part_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2072,15 +2198,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Auslieferungshaft und Sicherstellung"
+     "label": "3. Abschnitt: Auslieferungshaft und Sicherstellung",
+     "eId": "part_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2109,15 +2238,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Auslieferungshaft und Sicherstellung"
+     "label": "3. Abschnitt: Auslieferungshaft und Sicherstellung",
+     "eId": "part_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2174,15 +2306,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Auslieferungshaft und Sicherstellung"
+     "label": "3. Abschnitt: Auslieferungshaft und Sicherstellung",
+     "eId": "part_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2193,15 +2328,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Vorbereitung des Auslieferungsentscheides"
+     "label": "4. Abschnitt: Vorbereitung des Auslieferungsentscheides",
+     "eId": "part_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -2230,15 +2368,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Vorbereitung des Auslieferungsentscheides"
+     "label": "4. Abschnitt: Vorbereitung des Auslieferungsentscheides",
+     "eId": "part_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -2249,15 +2390,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Vorbereitung des Auslieferungsentscheides"
+     "label": "4. Abschnitt: Vorbereitung des Auslieferungsentscheides",
+     "eId": "part_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -2286,15 +2430,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Auslieferungsentscheid"
+     "label": "5. Abschnitt: Auslieferungsentscheid",
+     "eId": "part_2/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -2355,15 +2502,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Vollzug"
+     "label": "6. Abschnitt: Vollzug",
+     "eId": "part_2/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -2374,15 +2524,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Vollzug"
+     "label": "6. Abschnitt: Vollzug",
+     "eId": "part_2/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -2393,15 +2546,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Vollzug"
+     "label": "6. Abschnitt: Vollzug",
+     "eId": "part_2/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -2412,15 +2568,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Vollzug"
+     "label": "6. Abschnitt: Vollzug",
+     "eId": "part_2/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -2477,15 +2636,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Vollzug"
+     "label": "6. Abschnitt: Vollzug",
+     "eId": "part_2/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -2496,15 +2658,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Vollzug"
+     "label": "6. Abschnitt: Vollzug",
+     "eId": "part_2/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -2515,15 +2680,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Vollzug"
+     "label": "6. Abschnitt: Vollzug",
+     "eId": "part_2/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -2534,15 +2702,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "part_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2603,15 +2774,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "part_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2652,15 +2826,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "part_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2689,15 +2866,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "part_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2742,15 +2922,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "part_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2779,15 +2962,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Einzelne Rechtshilfemassnahmen"
+     "label": "2. Abschnitt: Einzelne Rechtshilfemassnahmen",
+     "eId": "part_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2798,15 +2984,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Einzelne Rechtshilfemassnahmen"
+     "label": "2. Abschnitt: Einzelne Rechtshilfemassnahmen",
+     "eId": "part_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2817,15 +3006,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Einzelne Rechtshilfemassnahmen"
+     "label": "2. Abschnitt: Einzelne Rechtshilfemassnahmen",
+     "eId": "part_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2836,15 +3028,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Einzelne Rechtshilfemassnahmen"
+     "label": "2. Abschnitt: Einzelne Rechtshilfemassnahmen",
+     "eId": "part_3/chap_1/sec_2"
     }
    ],
    "marginalie": [],
@@ -2871,15 +3066,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Einzelne Rechtshilfemassnahmen"
+     "label": "2. Abschnitt: Einzelne Rechtshilfemassnahmen",
+     "eId": "part_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2890,15 +3088,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Einzelne Rechtshilfemassnahmen"
+     "label": "2. Abschnitt: Einzelne Rechtshilfemassnahmen",
+     "eId": "part_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2909,15 +3110,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Einzelne Rechtshilfemassnahmen"
+     "label": "2. Abschnitt: Einzelne Rechtshilfemassnahmen",
+     "eId": "part_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2946,15 +3150,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Rechtshilfeersuchen"
+     "label": "1. Abschnitt: Rechtshilfeersuchen",
+     "eId": "part_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2983,15 +3190,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Rechtshilfeersuchen"
+     "label": "1. Abschnitt: Rechtshilfeersuchen",
+     "eId": "part_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3002,15 +3212,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Rechtshilfeersuchen"
+     "label": "1. Abschnitt: Rechtshilfeersuchen",
+     "eId": "part_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3051,15 +3264,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Behandlung des Ersuchens"
+     "label": "2. Abschnitt: Behandlung des Ersuchens",
+     "eId": "part_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -3089,15 +3305,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Behandlung des Ersuchens"
+     "label": "2. Abschnitt: Behandlung des Ersuchens",
+     "eId": "part_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -3138,15 +3357,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Behandlung des Ersuchens"
+     "label": "2. Abschnitt: Behandlung des Ersuchens",
+     "eId": "part_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -3157,15 +3379,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Teil: Stellvertretende Strafverfolgung"
+     "label": "Vierter Teil: Stellvertretende Strafverfolgung",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Übernahme durch die Schweiz"
+     "label": "1. Abschnitt: Übernahme durch die Schweiz",
+     "eId": "part_4/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3194,15 +3419,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Teil: Stellvertretende Strafverfolgung"
+     "label": "Vierter Teil: Stellvertretende Strafverfolgung",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Übernahme durch die Schweiz"
+     "label": "1. Abschnitt: Übernahme durch die Schweiz",
+     "eId": "part_4/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3213,15 +3441,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Teil: Stellvertretende Strafverfolgung"
+     "label": "Vierter Teil: Stellvertretende Strafverfolgung",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Übernahme durch die Schweiz"
+     "label": "1. Abschnitt: Übernahme durch die Schweiz",
+     "eId": "part_4/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3263,15 +3494,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Teil: Stellvertretende Strafverfolgung"
+     "label": "Vierter Teil: Stellvertretende Strafverfolgung",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Übertragung an das Ausland"
+     "label": "2. Abschnitt: Übertragung an das Ausland",
+     "eId": "part_4/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3300,15 +3534,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Teil: Stellvertretende Strafverfolgung"
+     "label": "Vierter Teil: Stellvertretende Strafverfolgung",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Übertragung an das Ausland"
+     "label": "2. Abschnitt: Übertragung an das Ausland",
+     "eId": "part_4/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3337,11 +3574,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Teil: Stellvertretende Strafverfolgung"
+     "label": "Vierter Teil: Stellvertretende Strafverfolgung",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3352,11 +3591,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Teil: Stellvertretende Strafverfolgung"
+     "label": "Vierter Teil: Stellvertretende Strafverfolgung",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3367,11 +3608,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Teil: Stellvertretende Strafverfolgung"
+     "label": "Vierter Teil: Stellvertretende Strafverfolgung",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3382,11 +3625,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Teil: Stellvertretende Strafverfolgung"
+     "label": "Vierter Teil: Stellvertretende Strafverfolgung",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3427,15 +3672,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden"
+     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Übernahme durch die Schweiz"
+     "label": "1. Abschnitt: Übernahme durch die Schweiz",
+     "eId": "part_5/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3464,15 +3712,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden"
+     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Übernahme durch die Schweiz"
+     "label": "1. Abschnitt: Übernahme durch die Schweiz",
+     "eId": "part_5/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3501,15 +3752,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden"
+     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Übernahme durch die Schweiz"
+     "label": "1. Abschnitt: Übernahme durch die Schweiz",
+     "eId": "part_5/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3520,15 +3774,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden"
+     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Übernahme durch die Schweiz"
+     "label": "1. Abschnitt: Übernahme durch die Schweiz",
+     "eId": "part_5/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3539,15 +3796,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden"
+     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Übernahme durch die Schweiz"
+     "label": "1. Abschnitt: Übernahme durch die Schweiz",
+     "eId": "part_5/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3558,15 +3818,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden"
+     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Übernahme durch die Schweiz"
+     "label": "1. Abschnitt: Übernahme durch die Schweiz",
+     "eId": "part_5/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3577,15 +3840,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden"
+     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Übertragung an das Ausland"
+     "label": "2. Abschnitt: Übertragung an das Ausland",
+     "eId": "part_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3596,15 +3862,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden"
+     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Übertragung an das Ausland"
+     "label": "2. Abschnitt: Übertragung an das Ausland",
+     "eId": "part_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3633,15 +3902,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden"
+     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Übertragung an das Ausland"
+     "label": "2. Abschnitt: Übertragung an das Ausland",
+     "eId": "part_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3652,15 +3924,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden"
+     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ersuchen"
+     "label": "1. Abschnitt: Ersuchen",
+     "eId": "part_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3671,15 +3946,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden"
+     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ersuchen"
+     "label": "1. Abschnitt: Ersuchen",
+     "eId": "part_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3690,15 +3968,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden"
+     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Exequaturverfahren"
+     "label": "2. Abschnitt: Exequaturverfahren",
+     "eId": "part_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -3740,15 +4021,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden"
+     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Exequaturverfahren"
+     "label": "2. Abschnitt: Exequaturverfahren",
+     "eId": "part_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -3759,15 +4043,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden"
+     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Vollstreckung"
+     "label": "3. Abschnitt: Vollstreckung",
+     "eId": "part_5/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -3778,15 +4065,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden"
+     "label": "Fünfter Teil: Vollstreckung von Strafentscheiden",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Vollstreckung"
+     "label": "3. Abschnitt: Vollstreckung",
+     "eId": "part_5/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -3797,7 +4087,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Teil: Schlussbestimmungen"
+     "label": "Sechster Teil: Schlussbestimmungen",
+     "eId": "part_6"
     }
    ],
    "marginalie": [
@@ -3829,7 +4120,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Teil: Schlussbestimmungen"
+     "label": "Sechster Teil: Schlussbestimmungen",
+     "eId": "part_6"
     }
    ],
    "marginalie": [
@@ -3881,7 +4173,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Teil: Schlussbestimmungen"
+     "label": "Sechster Teil: Schlussbestimmungen",
+     "eId": "part_6"
     }
    ],
    "marginalie": [
@@ -3892,7 +4185,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Teil: Schlussbestimmungen"
+     "label": "Sechster Teil: Schlussbestimmungen",
+     "eId": "part_6"
     }
    ],
    "marginalie": [
@@ -3912,7 +4206,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Teil: Schlussbestimmungen"
+     "label": "Sechster Teil: Schlussbestimmungen",
+     "eId": "part_6"
     }
    ],
    "marginalie": [
@@ -3941,7 +4236,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Teil: Schlussbestimmungen"
+     "label": "Sechster Teil: Schlussbestimmungen",
+     "eId": "part_6"
     }
    ],
    "marginalie": [
@@ -3970,11 +4266,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Personen-, Akten- und Geschäftsverwaltungssystem"
+     "label": "1a. Kapitel: Personen-, Akten- und Geschäftsverwaltungssystem",
+     "eId": "part_1/chap_1_a"
     }
    ],
    "marginalie": [],
@@ -4038,11 +4336,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1b. Kapitel: Schutz von Personendaten"
+     "label": "1b. Kapitel: Schutz von Personendaten",
+     "eId": "part_1/chap_1_b"
     }
    ],
    "marginalie": [
@@ -4072,11 +4372,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1b. Kapitel: Schutz von Personendaten"
+     "label": "1b. Kapitel: Schutz von Personendaten",
+     "eId": "part_1/chap_1_b"
     }
    ],
    "marginalie": [
@@ -4149,11 +4451,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1b. Kapitel: Schutz von Personendaten"
+     "label": "1b. Kapitel: Schutz von Personendaten",
+     "eId": "part_1/chap_1_b"
     }
    ],
    "marginalie": [
@@ -4164,11 +4468,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1b. Kapitel: Schutz von Personendaten"
+     "label": "1b. Kapitel: Schutz von Personendaten",
+     "eId": "part_1/chap_1_b"
     }
    ],
    "marginalie": [
@@ -4179,11 +4485,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1b. Kapitel: Schutz von Personendaten"
+     "label": "1b. Kapitel: Schutz von Personendaten",
+     "eId": "part_1/chap_1_b"
     }
    ],
    "marginalie": [
@@ -4194,11 +4502,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1b. Kapitel: Schutz von Personendaten"
+     "label": "1b. Kapitel: Schutz von Personendaten",
+     "eId": "part_1/chap_1_b"
     }
    ],
    "marginalie": [
@@ -4209,11 +4519,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1b. Kapitel: Schutz von Personendaten"
+     "label": "1b. Kapitel: Schutz von Personendaten",
+     "eId": "part_1/chap_1_b"
     }
    ],
    "marginalie": [
@@ -4224,15 +4536,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Innerstaatliches Verfahren"
+     "label": "3. Kapitel: Innerstaatliches Verfahren",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Behörden und Befugnisse"
+     "label": "1. Abschnitt: Behörden und Befugnisse",
+     "eId": "part_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -4261,15 +4576,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Innerstaatliches Verfahren"
+     "label": "3. Kapitel: Innerstaatliches Verfahren",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Behörden und Befugnisse"
+     "label": "1. Abschnitt: Behörden und Befugnisse",
+     "eId": "part_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -4382,15 +4700,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Innerstaatliches Verfahren"
+     "label": "3. Kapitel: Innerstaatliches Verfahren",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Behörden und Befugnisse"
+     "label": "1. Abschnitt: Behörden und Befugnisse",
+     "eId": "part_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -4431,15 +4752,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "part_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gegenstand und Begrenzung der Zusammenarbeit"
+     "label": "1. Abschnitt: Gegenstand und Begrenzung der Zusammenarbeit",
+     "eId": "part_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -4468,15 +4792,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Innerstaatliches Verfahren"
+     "label": "3. Kapitel: Innerstaatliches Verfahren",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Behörden und Befugnisse"
+     "label": "1. Abschnitt: Behörden und Befugnisse",
+     "eId": "part_1/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -4505,15 +4832,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Auslieferung"
+     "label": "Zweiter Teil: Auslieferung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Auslieferungsentscheid"
+     "label": "5. Abschnitt: Auslieferungsentscheid",
+     "eId": "part_2/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -4555,15 +4885,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "part_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -4592,15 +4925,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Im allgemeinen"
+     "label": "1. Abschnitt: Im allgemeinen",
+     "eId": "part_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -4629,15 +4965,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Voraussetzungen"
+     "label": "1. Kapitel: Voraussetzungen",
+     "eId": "part_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Einzelne Rechtshilfemassnahmen"
+     "label": "2. Abschnitt: Einzelne Rechtshilfemassnahmen",
+     "eId": "part_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -4694,15 +5033,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Rechtshilfeersuchen"
+     "label": "1. Abschnitt: Rechtshilfeersuchen",
+     "eId": "part_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4731,15 +5073,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Behandlung des Ersuchens"
+     "label": "2. Abschnitt: Behandlung des Ersuchens",
+     "eId": "part_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4750,15 +5095,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Behandlung des Ersuchens"
+     "label": "2. Abschnitt: Behandlung des Ersuchens",
+     "eId": "part_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4769,15 +5117,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Behandlung des Ersuchens"
+     "label": "2. Abschnitt: Behandlung des Ersuchens",
+     "eId": "part_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4788,15 +5139,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Behandlung des Ersuchens"
+     "label": "2. Abschnitt: Behandlung des Ersuchens",
+     "eId": "part_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4807,15 +5161,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Behandlung des Ersuchens"
+     "label": "2. Abschnitt: Behandlung des Ersuchens",
+     "eId": "part_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4826,15 +5183,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Behandlung des Ersuchens"
+     "label": "2. Abschnitt: Behandlung des Ersuchens",
+     "eId": "part_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4863,15 +5223,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe",
+     "eId": "part_3/chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -4882,15 +5245,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe",
+     "eId": "part_3/chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -4901,15 +5267,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe",
+     "eId": "part_3/chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -4920,15 +5289,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe",
+     "eId": "part_3/chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -4939,15 +5311,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe",
+     "eId": "part_3/chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -4958,15 +5333,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe",
+     "eId": "part_3/chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -4977,15 +5355,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe",
+     "eId": "part_3/chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -4996,15 +5377,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe",
+     "eId": "part_3/chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -5015,15 +5399,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe",
+     "eId": "part_3/chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -5053,15 +5440,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe"
+     "label": "2a. Abschnitt: Gemeinsame Ermittlungsgruppe",
+     "eId": "part_3/chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -5072,15 +5462,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Beschwerde"
+     "label": "3. Abschnitt: Beschwerde",
+     "eId": "part_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5126,15 +5519,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Beschwerde"
+     "label": "3. Abschnitt: Beschwerde",
+     "eId": "part_3/chap_2/sec_3"
     }
    ],
    "marginalie": [],
@@ -5161,15 +5557,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Beschwerde"
+     "label": "3. Abschnitt: Beschwerde",
+     "eId": "part_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5180,15 +5579,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Beschwerde"
+     "label": "3. Abschnitt: Beschwerde",
+     "eId": "part_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5217,15 +5619,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Beschwerde"
+     "label": "3. Abschnitt: Beschwerde",
+     "eId": "part_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5236,15 +5641,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Beschwerde"
+     "label": "3. Abschnitt: Beschwerde",
+     "eId": "part_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5289,15 +5697,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Besondere Bestimmungen"
+     "label": "4. Abschnitt: Besondere Bestimmungen",
+     "eId": "part_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -5327,15 +5738,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Besondere Bestimmungen"
+     "label": "4. Abschnitt: Besondere Bestimmungen",
+     "eId": "part_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -5360,15 +5774,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Besondere Bestimmungen"
+     "label": "4. Abschnitt: Besondere Bestimmungen",
+     "eId": "part_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -5379,15 +5796,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Besondere Bestimmungen"
+     "label": "4. Abschnitt: Besondere Bestimmungen",
+     "eId": "part_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -5416,15 +5836,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Besondere Bestimmungen"
+     "label": "4. Abschnitt: Besondere Bestimmungen",
+     "eId": "part_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -5435,15 +5858,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Andere Rechtshilfe"
+     "label": "Dritter Teil: Andere Rechtshilfe",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verfahren"
+     "label": "2. Kapitel: Verfahren",
+     "eId": "part_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Besondere Bestimmungen"
+     "label": "4. Abschnitt: Besondere Bestimmungen",
+     "eId": "part_3/chap_2/sec_4"
     }
    ],
    "marginalie": [],
@@ -5470,15 +5896,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Allgemeine Bestimmungen"
+     "label": "Erster Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "part_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Besondere Bestimmungen"
+     "label": "3. Abschnitt: Besondere Bestimmungen",
+     "eId": "part_1/chap_1/sec_3"
     }
    ],
    "marginalie": [

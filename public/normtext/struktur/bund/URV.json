@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "231.11",
   "titel": "Verordnung über das Urheberrecht und verwandte Schutzrechte",
@@ -83,11 +83,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -98,11 +100,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -156,11 +160,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -171,11 +177,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -216,11 +224,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -245,11 +255,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -260,11 +272,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -289,11 +303,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -316,11 +332,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -331,11 +349,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -346,11 +366,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -375,11 +397,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -390,11 +414,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -405,11 +431,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -420,11 +448,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -435,11 +465,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -488,7 +520,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Schutz von Computerprogrammen"
+     "label": "2. Kapitel: Schutz von Computerprogrammen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": []
@@ -497,7 +530,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -523,7 +557,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -534,7 +569,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -545,7 +581,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -584,7 +621,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -649,7 +687,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -660,11 +699,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gebühren"
+     "label": "3. Abschnitt: Gebühren",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -703,11 +744,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gebühren"
+     "label": "3. Abschnitt: Gebühren",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -718,11 +761,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gebühren"
+     "label": "3. Abschnitt: Gebühren",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -733,11 +778,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten"
+     "label": "1. Kapitel: Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und verwandten Schutzrechten",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gebühren"
+     "label": "3. Abschnitt: Gebühren",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -764,7 +811,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Beobachtungsstelle für technische Massnahmen"
+     "label": "1a. Kapitel: Beobachtungsstelle für technische Massnahmen",
+     "eId": "chap_1_a"
     }
    ],
    "marginalie": [
@@ -802,7 +850,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Beobachtungsstelle für technische Massnahmen"
+     "label": "1a. Kapitel: Beobachtungsstelle für technische Massnahmen",
+     "eId": "chap_1_a"
     }
    ],
    "marginalie": [
@@ -827,7 +876,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Beobachtungsstelle für technische Massnahmen"
+     "label": "1a. Kapitel: Beobachtungsstelle für technische Massnahmen",
+     "eId": "chap_1_a"
     }
    ],
    "marginalie": [
@@ -838,7 +888,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel 2a: …"
+     "label": "Kapitel 2a: …",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [],
@@ -865,7 +916,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -876,7 +928,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -887,7 +940,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -898,7 +952,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -909,7 +964,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -920,7 +976,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "3. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -931,7 +988,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: …"
+     "label": "4. Kapitel: …",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [],

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "944.3",
   "titel": "Bundesgesetz über Pauschalreisen",
@@ -55,7 +55,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Begriffe"
+     "label": "1. Abschnitt: Begriffe",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -66,7 +67,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Begriffe"
+     "label": "1. Abschnitt: Begriffe",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -100,7 +102,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Prospekte"
+     "label": "2. Abschnitt: Prospekte",
+     "eId": "sec_2"
     }
    ],
    "marginalie": []
@@ -109,7 +112,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Information des Konsumenten"
+     "label": "3. Abschnitt: Information des Konsumenten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -120,7 +124,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Information des Konsumenten"
+     "label": "3. Abschnitt: Information des Konsumenten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -131,7 +136,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Inhalt des Vertrages"
+     "label": "4. Abschnitt: Inhalt des Vertrages",
+     "eId": "sec_4"
     }
    ],
    "marginalie": []
@@ -140,7 +146,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Preiserhöhungen"
+     "label": "5. Abschnitt: Preiserhöhungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": []
@@ -149,7 +156,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Wesentliche Vertragsänderungen"
+     "label": "6. Abschnitt: Wesentliche Vertragsänderungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -160,7 +168,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Wesentliche Vertragsänderungen"
+     "label": "6. Abschnitt: Wesentliche Vertragsänderungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -171,7 +180,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Wesentliche Vertragsänderungen"
+     "label": "6. Abschnitt: Wesentliche Vertragsänderungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -182,7 +192,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Annullierung der Pauschalreise"
+     "label": "7. Abschnitt: Annullierung der Pauschalreise",
+     "eId": "sec_7"
     }
    ],
    "marginalie": []
@@ -191,7 +202,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Nichterfüllung und nicht gehörige Erfüllung des Vertrages"
+     "label": "8. Abschnitt: Nichterfüllung und nicht gehörige Erfüllung des Vertrages",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -202,7 +214,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Nichterfüllung und nicht gehörige Erfüllung des Vertrages"
+     "label": "8. Abschnitt: Nichterfüllung und nicht gehörige Erfüllung des Vertrages",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -227,7 +240,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Nichterfüllung und nicht gehörige Erfüllung des Vertrages"
+     "label": "8. Abschnitt: Nichterfüllung und nicht gehörige Erfüllung des Vertrages",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -238,7 +252,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Nichterfüllung und nicht gehörige Erfüllung des Vertrages"
+     "label": "8. Abschnitt: Nichterfüllung und nicht gehörige Erfüllung des Vertrages",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -249,7 +264,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Nichterfüllung und nicht gehörige Erfüllung des Vertrages"
+     "label": "8. Abschnitt: Nichterfüllung und nicht gehörige Erfüllung des Vertrages",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -260,7 +276,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Abtretung der Buchung der Pauschalreise"
+     "label": "9. Abschnitt: Abtretung der Buchung der Pauschalreise",
+     "eId": "sec_9"
     }
    ],
    "marginalie": []
@@ -269,7 +286,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt: Sicherstellung"
+     "label": "10. Abschnitt: Sicherstellung",
+     "eId": "sec_10"
     }
    ],
    "marginalie": []
@@ -278,7 +296,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Abschnitt: Zwingendes Recht"
+     "label": "11. Abschnitt: Zwingendes Recht",
+     "eId": "sec_11"
     }
    ],
    "marginalie": []
@@ -287,7 +306,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Abschnitt: Referendum und Inkrafttreten"
+     "label": "12. Abschnitt: Referendum und Inkrafttreten",
+     "eId": "sec_12"
     }
    ],
    "marginalie": [],

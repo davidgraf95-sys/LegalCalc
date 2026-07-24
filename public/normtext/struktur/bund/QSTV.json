@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "642.118.2",
   "titel": "Verordnung des EFD über die Quellensteuer bei der direkten Bundessteuer",
@@ -54,7 +54,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -191,7 +192,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -202,7 +204,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -213,7 +216,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -238,7 +242,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -249,7 +254,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -260,7 +266,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -271,7 +278,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -282,7 +290,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt in der Schweiz"
+     "label": "2. Abschnitt: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt in der Schweiz",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -293,7 +302,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt in der Schweiz"
+     "label": "2. Abschnitt: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt in der Schweiz",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -304,7 +314,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt in der Schweiz"
+     "label": "2. Abschnitt: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt in der Schweiz",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -315,7 +326,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt in der Schweiz"
+     "label": "2. Abschnitt: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt in der Schweiz",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -326,7 +338,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt in der Schweiz"
+     "label": "2. Abschnitt: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt in der Schweiz",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -337,7 +350,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+     "label": "3. Abschnitt: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -362,7 +376,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+     "label": "3. Abschnitt: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -387,7 +402,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+     "label": "3. Abschnitt: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -398,7 +414,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+     "label": "3. Abschnitt: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -409,7 +426,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+     "label": "3. Abschnitt: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -420,7 +438,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+     "label": "3. Abschnitt: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -431,7 +450,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+     "label": "3. Abschnitt: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -442,7 +462,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vereinfachtes Abrechnungsverfahren"
+     "label": "4. Abschnitt: Vereinfachtes Abrechnungsverfahren",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -453,7 +474,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vereinfachtes Abrechnungsverfahren"
+     "label": "4. Abschnitt: Vereinfachtes Abrechnungsverfahren",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -464,7 +486,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vereinfachtes Abrechnungsverfahren"
+     "label": "4. Abschnitt: Vereinfachtes Abrechnungsverfahren",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -489,7 +512,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vereinfachtes Abrechnungsverfahren"
+     "label": "4. Abschnitt: Vereinfachtes Abrechnungsverfahren",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -500,7 +524,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Schlussbestimmungen"
+     "label": "5. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -550,7 +575,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Schlussbestimmungen"
+     "label": "5. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -576,7 +602,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Schlussbestimmungen"
+     "label": "5. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -587,7 +614,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [

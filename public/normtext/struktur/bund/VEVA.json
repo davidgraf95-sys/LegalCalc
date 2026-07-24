@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "814.610",
   "titel": "Verordnung über den Verkehr mit Abfällen",
@@ -80,7 +80,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -129,7 +130,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -197,7 +199,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -208,11 +211,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Übergabe von Abfällen"
+     "label": "1. Abschnitt: Übergabe von Abfällen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -223,11 +228,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Übergabe von Abfällen"
+     "label": "1. Abschnitt: Übergabe von Abfällen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -264,11 +271,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Übergabe von Abfällen"
+     "label": "1. Abschnitt: Übergabe von Abfällen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -305,11 +314,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Übergabe von Abfällen"
+     "label": "1. Abschnitt: Übergabe von Abfällen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -320,11 +331,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entgegennahme von Abfällen"
+     "label": "2. Abschnitt: Entgegennahme von Abfällen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -361,11 +374,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entgegennahme von Abfällen"
+     "label": "2. Abschnitt: Entgegennahme von Abfällen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -376,11 +391,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entgegennahme von Abfällen"
+     "label": "2. Abschnitt: Entgegennahme von Abfällen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -405,11 +422,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entgegennahme von Abfällen"
+     "label": "2. Abschnitt: Entgegennahme von Abfällen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -474,11 +493,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entgegennahme von Abfällen"
+     "label": "2. Abschnitt: Entgegennahme von Abfällen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -539,11 +560,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Verkehr mit Abfällen im Inland"
+     "label": "2. Kapitel: Verkehr mit Abfällen im Inland",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Transport von Abfällen mit Begleitscheinpflicht"
+     "label": "3. Abschnitt: Transport von Abfällen mit Begleitscheinpflicht",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [],
@@ -579,11 +602,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Aus- und Einfuhrbeschränkungen"
+     "label": "1. Abschnitt: Aus- und Einfuhrbeschränkungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [],
@@ -618,11 +643,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausfuhr"
+     "label": "2. Abschnitt: Ausfuhr",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -671,11 +698,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausfuhr"
+     "label": "2. Abschnitt: Ausfuhr",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -712,11 +741,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausfuhr"
+     "label": "2. Abschnitt: Ausfuhr",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -837,11 +868,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausfuhr"
+     "label": "2. Abschnitt: Ausfuhr",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -878,11 +911,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausfuhr"
+     "label": "2. Abschnitt: Ausfuhr",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -893,11 +928,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausfuhr"
+     "label": "2. Abschnitt: Ausfuhr",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -922,11 +959,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausfuhr"
+     "label": "2. Abschnitt: Ausfuhr",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -937,11 +976,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Einfuhr"
+     "label": "3. Abschnitt: Einfuhr",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -978,11 +1019,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Einfuhr"
+     "label": "3. Abschnitt: Einfuhr",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1007,11 +1050,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Einfuhr"
+     "label": "3. Abschnitt: Einfuhr",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1036,11 +1081,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Einfuhr"
+     "label": "3. Abschnitt: Einfuhr",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1051,11 +1098,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Einfuhr"
+     "label": "3. Abschnitt: Einfuhr",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1066,11 +1115,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Einfuhr"
+     "label": "3. Abschnitt: Einfuhr",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1081,11 +1132,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Einfuhr"
+     "label": "3. Abschnitt: Einfuhr",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -1108,11 +1161,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Durchfuhr"
+     "label": "4. Abschnitt: Durchfuhr",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1153,11 +1208,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Durchfuhr"
+     "label": "4. Abschnitt: Durchfuhr",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [],
@@ -1180,11 +1237,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Notifizierungsbögen, Begleitscheine und Kennzeichnung"
+     "label": "5. Abschnitt: Notifizierungsbögen, Begleitscheine und Kennzeichnung",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1349,11 +1408,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Notifizierungsbögen, Begleitscheine und Kennzeichnung"
+     "label": "5. Abschnitt: Notifizierungsbögen, Begleitscheine und Kennzeichnung",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1364,11 +1425,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Rücknahme"
+     "label": "6. Abschnitt: Rücknahme",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1379,11 +1442,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Rücknahme"
+     "label": "6. Abschnitt: Rücknahme",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1394,11 +1459,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Rücknahme"
+     "label": "6. Abschnitt: Rücknahme",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1409,11 +1476,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen"
+     "label": "3. Kapitel: Grenzüberschreitender Verkehr mit Abfällen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Verkehr mit Sonderabfällen im Ausland"
+     "label": "7. Abschnitt: Verkehr mit Sonderabfällen im Ausland",
+     "eId": "chap_3/sec_7"
     }
    ],
    "marginalie": []
@@ -1422,7 +1491,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1433,7 +1503,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1444,7 +1515,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1469,7 +1541,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1530,7 +1603,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1579,7 +1653,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1590,7 +1665,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1663,7 +1739,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1674,7 +1751,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1715,7 +1793,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1726,7 +1805,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [

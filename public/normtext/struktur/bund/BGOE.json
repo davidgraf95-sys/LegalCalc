@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "152.3",
   "titel": "Bundesgesetz über das Öffentlichkeitsprinzip der Verwaltung",
@@ -54,7 +54,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -65,7 +66,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -106,7 +108,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -147,7 +150,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -158,7 +162,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -169,7 +174,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Recht auf Zugang zu amtlichen Dokumenten"
+     "label": "2. Abschnitt: Recht auf Zugang zu amtlichen Dokumenten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -180,7 +186,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Recht auf Zugang zu amtlichen Dokumenten"
+     "label": "2. Abschnitt: Recht auf Zugang zu amtlichen Dokumenten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -191,7 +198,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Recht auf Zugang zu amtlichen Dokumenten"
+     "label": "2. Abschnitt: Recht auf Zugang zu amtlichen Dokumenten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -202,7 +210,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Recht auf Zugang zu amtlichen Dokumenten"
+     "label": "2. Abschnitt: Recht auf Zugang zu amtlichen Dokumenten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -255,7 +264,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Verfahren für den Zugang zu amtlichen Dokumenten"
+     "label": "3. Abschnitt: Verfahren für den Zugang zu amtlichen Dokumenten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -266,7 +276,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Verfahren für den Zugang zu amtlichen Dokumenten"
+     "label": "3. Abschnitt: Verfahren für den Zugang zu amtlichen Dokumenten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -295,7 +306,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Verfahren für den Zugang zu amtlichen Dokumenten"
+     "label": "3. Abschnitt: Verfahren für den Zugang zu amtlichen Dokumenten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -340,7 +352,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Verfahren für den Zugang zu amtlichen Dokumenten"
+     "label": "3. Abschnitt: Verfahren für den Zugang zu amtlichen Dokumenten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -376,7 +389,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Verfahren für den Zugang zu amtlichen Dokumenten"
+     "label": "3. Abschnitt: Verfahren für den Zugang zu amtlichen Dokumenten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -406,7 +420,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Verfahren für den Zugang zu amtlichen Dokumenten"
+     "label": "3. Abschnitt: Verfahren für den Zugang zu amtlichen Dokumenten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -447,7 +462,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Verfahren für den Zugang zu amtlichen Dokumenten"
+     "label": "3. Abschnitt: Verfahren für den Zugang zu amtlichen Dokumenten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -480,7 +496,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Verfahren für den Zugang zu amtlichen Dokumenten"
+     "label": "3. Abschnitt: Verfahren für den Zugang zu amtlichen Dokumenten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -573,7 +590,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Der EDÖB"
+     "label": "4. Abschnitt: Der EDÖB",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -651,7 +669,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Der EDÖB"
+     "label": "4. Abschnitt: Der EDÖB",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -662,7 +681,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Der EDÖB"
+     "label": "4. Abschnitt: Der EDÖB",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -691,7 +711,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Schlussbestimmungen"
+     "label": "5. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -702,7 +723,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Schlussbestimmungen"
+     "label": "5. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -713,7 +735,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Schlussbestimmungen"
+     "label": "5. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -724,7 +747,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Schlussbestimmungen"
+     "label": "5. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -744,7 +768,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Schlussbestimmungen"
+     "label": "5. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [

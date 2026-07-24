@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "0.275.12",
   "titel": "Übereinkommen über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen",
@@ -75,7 +75,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel I: Anwendungsbereich"
+     "label": "Titel I: Anwendungsbereich",
+     "eId": "tit_I"
     }
    ],
    "marginalie": []
@@ -84,11 +85,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1: Allgemeine Vorschriften"
+     "label": "Abschnitt 1: Allgemeine Vorschriften",
+     "eId": "tit_II/sec_1"
     }
    ],
    "marginalie": []
@@ -97,11 +100,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1: Allgemeine Vorschriften"
+     "label": "Abschnitt 1: Allgemeine Vorschriften",
+     "eId": "tit_II/sec_1"
     }
    ],
    "marginalie": []
@@ -110,11 +115,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1: Allgemeine Vorschriften"
+     "label": "Abschnitt 1: Allgemeine Vorschriften",
+     "eId": "tit_II/sec_1"
     }
    ],
    "marginalie": []
@@ -123,11 +130,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2: Besondere Zuständigkeiten"
+     "label": "Abschnitt 2: Besondere Zuständigkeiten",
+     "eId": "tit_II/sec_2"
     }
    ],
    "marginalie": []
@@ -136,11 +145,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2: Besondere Zuständigkeiten"
+     "label": "Abschnitt 2: Besondere Zuständigkeiten",
+     "eId": "tit_II/sec_2"
     }
    ],
    "marginalie": []
@@ -149,11 +160,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2: Besondere Zuständigkeiten"
+     "label": "Abschnitt 2: Besondere Zuständigkeiten",
+     "eId": "tit_II/sec_2"
     }
    ],
    "marginalie": []
@@ -162,11 +175,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3: Zuständigkeit für Versicherungssachen"
+     "label": "Abschnitt 3: Zuständigkeit für Versicherungssachen",
+     "eId": "tit_II/sec_3"
     }
    ],
    "marginalie": []
@@ -175,11 +190,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3: Zuständigkeit für Versicherungssachen"
+     "label": "Abschnitt 3: Zuständigkeit für Versicherungssachen",
+     "eId": "tit_II/sec_3"
     }
    ],
    "marginalie": []
@@ -188,11 +205,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3: Zuständigkeit für Versicherungssachen"
+     "label": "Abschnitt 3: Zuständigkeit für Versicherungssachen",
+     "eId": "tit_II/sec_3"
     }
    ],
    "marginalie": []
@@ -201,11 +220,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3: Zuständigkeit für Versicherungssachen"
+     "label": "Abschnitt 3: Zuständigkeit für Versicherungssachen",
+     "eId": "tit_II/sec_3"
     }
    ],
    "marginalie": []
@@ -214,11 +235,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3: Zuständigkeit für Versicherungssachen"
+     "label": "Abschnitt 3: Zuständigkeit für Versicherungssachen",
+     "eId": "tit_II/sec_3"
     }
    ],
    "marginalie": []
@@ -227,11 +250,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3: Zuständigkeit für Versicherungssachen"
+     "label": "Abschnitt 3: Zuständigkeit für Versicherungssachen",
+     "eId": "tit_II/sec_3"
     }
    ],
    "marginalie": []
@@ -240,11 +265,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3: Zuständigkeit für Versicherungssachen"
+     "label": "Abschnitt 3: Zuständigkeit für Versicherungssachen",
+     "eId": "tit_II/sec_3"
     }
    ],
    "marginalie": []
@@ -253,11 +280,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 4: Zuständigkeit bei Verbrauchersachen"
+     "label": "Abschnitt 4: Zuständigkeit bei Verbrauchersachen",
+     "eId": "tit_II/sec_4"
     }
    ],
    "marginalie": []
@@ -266,11 +295,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 4: Zuständigkeit bei Verbrauchersachen"
+     "label": "Abschnitt 4: Zuständigkeit bei Verbrauchersachen",
+     "eId": "tit_II/sec_4"
     }
    ],
    "marginalie": []
@@ -279,11 +310,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 4: Zuständigkeit bei Verbrauchersachen"
+     "label": "Abschnitt 4: Zuständigkeit bei Verbrauchersachen",
+     "eId": "tit_II/sec_4"
     }
    ],
    "marginalie": []
@@ -292,11 +325,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 5: Zuständigkeit für individuelle Arbeitsverträge"
+     "label": "Abschnitt 5: Zuständigkeit für individuelle Arbeitsverträge",
+     "eId": "tit_II/sec_5"
     }
    ],
    "marginalie": []
@@ -305,11 +340,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 5: Zuständigkeit für individuelle Arbeitsverträge"
+     "label": "Abschnitt 5: Zuständigkeit für individuelle Arbeitsverträge",
+     "eId": "tit_II/sec_5"
     }
    ],
    "marginalie": []
@@ -318,11 +355,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 5: Zuständigkeit für individuelle Arbeitsverträge"
+     "label": "Abschnitt 5: Zuständigkeit für individuelle Arbeitsverträge",
+     "eId": "tit_II/sec_5"
     }
    ],
    "marginalie": []
@@ -331,11 +370,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 5: Zuständigkeit für individuelle Arbeitsverträge"
+     "label": "Abschnitt 5: Zuständigkeit für individuelle Arbeitsverträge",
+     "eId": "tit_II/sec_5"
     }
    ],
    "marginalie": []
@@ -344,11 +385,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 6: Ausschliessliche Zuständigkeiten"
+     "label": "Abschnitt 6: Ausschliessliche Zuständigkeiten",
+     "eId": "tit_II/sec_6"
     }
    ],
    "marginalie": [],
@@ -372,11 +415,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 7: Vereinbarung über die Zuständigkeit"
+     "label": "Abschnitt 7: Vereinbarung über die Zuständigkeit",
+     "eId": "tit_II/sec_7"
     }
    ],
    "marginalie": []
@@ -385,11 +430,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 7: Vereinbarung über die Zuständigkeit"
+     "label": "Abschnitt 7: Vereinbarung über die Zuständigkeit",
+     "eId": "tit_II/sec_7"
     }
    ],
    "marginalie": []
@@ -398,11 +445,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 8: Prüfung der Zuständigkeit und der Zulässigkeit des Verfahrens"
+     "label": "Abschnitt 8: Prüfung der Zuständigkeit und der Zulässigkeit des Verfahrens",
+     "eId": "tit_II/sec_8"
     }
    ],
    "marginalie": []
@@ -411,11 +460,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 8: Prüfung der Zuständigkeit und der Zulässigkeit des Verfahrens"
+     "label": "Abschnitt 8: Prüfung der Zuständigkeit und der Zulässigkeit des Verfahrens",
+     "eId": "tit_II/sec_8"
     }
    ],
    "marginalie": [],
@@ -440,11 +491,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 9: Rechtshängigkeit und im Zusammenhang stehende Verfahren"
+     "label": "Abschnitt 9: Rechtshängigkeit und im Zusammenhang stehende Verfahren",
+     "eId": "tit_II/sec_9"
     }
    ],
    "marginalie": []
@@ -453,11 +506,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 9: Rechtshängigkeit und im Zusammenhang stehende Verfahren"
+     "label": "Abschnitt 9: Rechtshängigkeit und im Zusammenhang stehende Verfahren",
+     "eId": "tit_II/sec_9"
     }
    ],
    "marginalie": []
@@ -466,11 +521,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 9: Rechtshängigkeit und im Zusammenhang stehende Verfahren"
+     "label": "Abschnitt 9: Rechtshängigkeit und im Zusammenhang stehende Verfahren",
+     "eId": "tit_II/sec_9"
     }
    ],
    "marginalie": []
@@ -479,11 +536,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 9: Rechtshängigkeit und im Zusammenhang stehende Verfahren"
+     "label": "Abschnitt 9: Rechtshängigkeit und im Zusammenhang stehende Verfahren",
+     "eId": "tit_II/sec_9"
     }
    ],
    "marginalie": []
@@ -492,11 +551,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel II: Zuständigkeit"
+     "label": "Titel II: Zuständigkeit",
+     "eId": "tit_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 10: Einstweilige Massnahmen einschliesslich solcher, die auf eine Sicherung gerichtet sind"
+     "label": "Abschnitt 10: Einstweilige Massnahmen einschliesslich solcher, die auf eine Sicherung gerichtet sind",
+     "eId": "tit_II/sec_10"
     }
    ],
    "marginalie": []
@@ -505,7 +566,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     }
    ],
    "marginalie": []
@@ -514,11 +576,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1: Anerkennung"
+     "label": "Abschnitt 1: Anerkennung",
+     "eId": "tit_III/sec_1"
     }
    ],
    "marginalie": []
@@ -527,11 +591,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1: Anerkennung"
+     "label": "Abschnitt 1: Anerkennung",
+     "eId": "tit_III/sec_1"
     }
    ],
    "marginalie": []
@@ -540,11 +606,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1: Anerkennung"
+     "label": "Abschnitt 1: Anerkennung",
+     "eId": "tit_III/sec_1"
     }
    ],
    "marginalie": []
@@ -553,11 +621,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1: Anerkennung"
+     "label": "Abschnitt 1: Anerkennung",
+     "eId": "tit_III/sec_1"
     }
    ],
    "marginalie": []
@@ -566,11 +636,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1: Anerkennung"
+     "label": "Abschnitt 1: Anerkennung",
+     "eId": "tit_III/sec_1"
     }
    ],
    "marginalie": []
@@ -579,11 +651,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2: Vollstreckung"
+     "label": "Abschnitt 2: Vollstreckung",
+     "eId": "tit_III/sec_2"
     }
    ],
    "marginalie": []
@@ -592,11 +666,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2: Vollstreckung"
+     "label": "Abschnitt 2: Vollstreckung",
+     "eId": "tit_III/sec_2"
     }
    ],
    "marginalie": []
@@ -605,11 +681,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2: Vollstreckung"
+     "label": "Abschnitt 2: Vollstreckung",
+     "eId": "tit_III/sec_2"
     }
    ],
    "marginalie": []
@@ -618,11 +696,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2: Vollstreckung"
+     "label": "Abschnitt 2: Vollstreckung",
+     "eId": "tit_III/sec_2"
     }
    ],
    "marginalie": []
@@ -631,11 +711,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2: Vollstreckung"
+     "label": "Abschnitt 2: Vollstreckung",
+     "eId": "tit_III/sec_2"
     }
    ],
    "marginalie": []
@@ -644,11 +726,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2: Vollstreckung"
+     "label": "Abschnitt 2: Vollstreckung",
+     "eId": "tit_III/sec_2"
     }
    ],
    "marginalie": []
@@ -657,11 +741,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2: Vollstreckung"
+     "label": "Abschnitt 2: Vollstreckung",
+     "eId": "tit_III/sec_2"
     }
    ],
    "marginalie": []
@@ -670,11 +756,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2: Vollstreckung"
+     "label": "Abschnitt 2: Vollstreckung",
+     "eId": "tit_III/sec_2"
     }
    ],
    "marginalie": []
@@ -683,11 +771,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2: Vollstreckung"
+     "label": "Abschnitt 2: Vollstreckung",
+     "eId": "tit_III/sec_2"
     }
    ],
    "marginalie": []
@@ -696,11 +786,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2: Vollstreckung"
+     "label": "Abschnitt 2: Vollstreckung",
+     "eId": "tit_III/sec_2"
     }
    ],
    "marginalie": []
@@ -709,11 +801,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2: Vollstreckung"
+     "label": "Abschnitt 2: Vollstreckung",
+     "eId": "tit_III/sec_2"
     }
    ],
    "marginalie": []
@@ -722,11 +816,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2: Vollstreckung"
+     "label": "Abschnitt 2: Vollstreckung",
+     "eId": "tit_III/sec_2"
     }
    ],
    "marginalie": []
@@ -735,11 +831,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2: Vollstreckung"
+     "label": "Abschnitt 2: Vollstreckung",
+     "eId": "tit_III/sec_2"
     }
    ],
    "marginalie": []
@@ -748,11 +846,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2: Vollstreckung"
+     "label": "Abschnitt 2: Vollstreckung",
+     "eId": "tit_III/sec_2"
     }
    ],
    "marginalie": []
@@ -761,11 +861,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2: Vollstreckung"
+     "label": "Abschnitt 2: Vollstreckung",
+     "eId": "tit_III/sec_2"
     }
    ],
    "marginalie": []
@@ -774,11 +876,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3: Gemeinsame Vorschriften"
+     "label": "Abschnitt 3: Gemeinsame Vorschriften",
+     "eId": "tit_III/sec_3"
     }
    ],
    "marginalie": []
@@ -787,11 +891,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3: Gemeinsame Vorschriften"
+     "label": "Abschnitt 3: Gemeinsame Vorschriften",
+     "eId": "tit_III/sec_3"
     }
    ],
    "marginalie": []
@@ -800,11 +906,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3: Gemeinsame Vorschriften"
+     "label": "Abschnitt 3: Gemeinsame Vorschriften",
+     "eId": "tit_III/sec_3"
     }
    ],
    "marginalie": []
@@ -813,11 +921,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel III: Anerkennung und Vollstreckung"
+     "label": "Titel III: Anerkennung und Vollstreckung",
+     "eId": "tit_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3: Gemeinsame Vorschriften"
+     "label": "Abschnitt 3: Gemeinsame Vorschriften",
+     "eId": "tit_III/sec_3"
     }
    ],
    "marginalie": []
@@ -826,7 +936,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel IV: Öffentliche Urkunden und Prozessvergleiche"
+     "label": "Titel IV: Öffentliche Urkunden und Prozessvergleiche",
+     "eId": "tit_IV"
     }
    ],
    "marginalie": []
@@ -835,7 +946,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel IV: Öffentliche Urkunden und Prozessvergleiche"
+     "label": "Titel IV: Öffentliche Urkunden und Prozessvergleiche",
+     "eId": "tit_IV"
     }
    ],
    "marginalie": []
@@ -844,7 +956,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel V: Allgemeine Vorschriften"
+     "label": "Titel V: Allgemeine Vorschriften",
+     "eId": "tit_V"
     }
    ],
    "marginalie": []
@@ -853,7 +966,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel V: Allgemeine Vorschriften"
+     "label": "Titel V: Allgemeine Vorschriften",
+     "eId": "tit_V"
     }
    ],
    "marginalie": []
@@ -862,7 +976,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel V: Allgemeine Vorschriften"
+     "label": "Titel V: Allgemeine Vorschriften",
+     "eId": "tit_V"
     }
    ],
    "marginalie": []
@@ -871,7 +986,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel V: Allgemeine Vorschriften"
+     "label": "Titel V: Allgemeine Vorschriften",
+     "eId": "tit_V"
     }
    ],
    "marginalie": []
@@ -880,7 +996,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel VI: Übergangsvorschriften"
+     "label": "Titel VI: Übergangsvorschriften",
+     "eId": "tit_VI"
     }
    ],
    "marginalie": []
@@ -889,7 +1006,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel VII: Verhältnis zu der Verordnung (EG) Nr. 44/2001 des Rates und zu anderen Rechtsinstrumenten"
+     "label": "Titel VII: Verhältnis zu der Verordnung (EG) Nr. 44/2001 des Rates und zu anderen Rechtsinstrumenten",
+     "eId": "tit_VII"
     }
    ],
    "marginalie": []
@@ -898,7 +1016,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel VII: Verhältnis zu der Verordnung (EG) Nr. 44/2001 des Rates und zu anderen Rechtsinstrumenten"
+     "label": "Titel VII: Verhältnis zu der Verordnung (EG) Nr. 44/2001 des Rates und zu anderen Rechtsinstrumenten",
+     "eId": "tit_VII"
     }
    ],
    "marginalie": []
@@ -907,7 +1026,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel VII: Verhältnis zu der Verordnung (EG) Nr. 44/2001 des Rates und zu anderen Rechtsinstrumenten"
+     "label": "Titel VII: Verhältnis zu der Verordnung (EG) Nr. 44/2001 des Rates und zu anderen Rechtsinstrumenten",
+     "eId": "tit_VII"
     }
    ],
    "marginalie": []
@@ -916,7 +1036,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel VII: Verhältnis zu der Verordnung (EG) Nr. 44/2001 des Rates und zu anderen Rechtsinstrumenten"
+     "label": "Titel VII: Verhältnis zu der Verordnung (EG) Nr. 44/2001 des Rates und zu anderen Rechtsinstrumenten",
+     "eId": "tit_VII"
     }
    ],
    "marginalie": []
@@ -925,7 +1046,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel VII: Verhältnis zu der Verordnung (EG) Nr. 44/2001 des Rates und zu anderen Rechtsinstrumenten"
+     "label": "Titel VII: Verhältnis zu der Verordnung (EG) Nr. 44/2001 des Rates und zu anderen Rechtsinstrumenten",
+     "eId": "tit_VII"
     }
    ],
    "marginalie": []
@@ -934,7 +1056,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel VIII: Schlussvorschriften"
+     "label": "Titel VIII: Schlussvorschriften",
+     "eId": "tit_VIII"
     }
    ],
    "marginalie": []
@@ -943,7 +1066,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel VIII: Schlussvorschriften"
+     "label": "Titel VIII: Schlussvorschriften",
+     "eId": "tit_VIII"
     }
    ],
    "marginalie": []
@@ -952,7 +1076,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel VIII: Schlussvorschriften"
+     "label": "Titel VIII: Schlussvorschriften",
+     "eId": "tit_VIII"
     }
    ],
    "marginalie": []
@@ -961,7 +1086,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel VIII: Schlussvorschriften"
+     "label": "Titel VIII: Schlussvorschriften",
+     "eId": "tit_VIII"
     }
    ],
    "marginalie": []
@@ -970,7 +1096,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel VIII: Schlussvorschriften"
+     "label": "Titel VIII: Schlussvorschriften",
+     "eId": "tit_VIII"
     }
    ],
    "marginalie": []
@@ -979,7 +1106,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel VIII: Schlussvorschriften"
+     "label": "Titel VIII: Schlussvorschriften",
+     "eId": "tit_VIII"
     }
    ],
    "marginalie": []
@@ -988,7 +1116,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel VIII: Schlussvorschriften"
+     "label": "Titel VIII: Schlussvorschriften",
+     "eId": "tit_VIII"
     }
    ],
    "marginalie": []
@@ -997,7 +1126,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel VIII: Schlussvorschriften"
+     "label": "Titel VIII: Schlussvorschriften",
+     "eId": "tit_VIII"
     }
    ],
    "marginalie": []
@@ -1006,7 +1136,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel VIII: Schlussvorschriften"
+     "label": "Titel VIII: Schlussvorschriften",
+     "eId": "tit_VIII"
     }
    ],
    "marginalie": []
@@ -1015,7 +1146,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel VIII: Schlussvorschriften"
+     "label": "Titel VIII: Schlussvorschriften",
+     "eId": "tit_VIII"
     }
    ],
    "marginalie": []
@@ -1024,7 +1156,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel VIII: Schlussvorschriften"
+     "label": "Titel VIII: Schlussvorschriften",
+     "eId": "tit_VIII"
     }
    ],
    "marginalie": []

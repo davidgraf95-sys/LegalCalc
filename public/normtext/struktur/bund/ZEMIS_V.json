@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "142.513",
   "titel": "Verordnung über das Zentrale Migrationsinformationssystem",
@@ -42,7 +42,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -53,7 +54,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -293,7 +295,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Struktur und Inhalt von ZEMIS"
+     "label": "2. Abschnitt: Struktur und Inhalt von ZEMIS",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -443,7 +446,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Struktur und Inhalt von ZEMIS"
+     "label": "2. Abschnitt: Struktur und Inhalt von ZEMIS",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -500,7 +504,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Meldepflichten"
+     "label": "3. Abschnitt: Meldepflichten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -574,7 +579,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Meldepflichten"
+     "label": "3. Abschnitt: Meldepflichten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -667,7 +673,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Meldepflichten"
+     "label": "3. Abschnitt: Meldepflichten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -716,7 +723,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Meldepflichten"
+     "label": "3. Abschnitt: Meldepflichten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -741,7 +749,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Zugriff auf ZEMIS"
+     "label": "4. Abschnitt: Zugriff auf ZEMIS",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1300,7 +1309,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Zugriff auf ZEMIS"
+     "label": "4. Abschnitt: Zugriff auf ZEMIS",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1722,7 +1732,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Zugriff auf ZEMIS"
+     "label": "4. Abschnitt: Zugriff auf ZEMIS",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1733,7 +1744,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Zugriff auf ZEMIS"
+     "label": "4. Abschnitt: Zugriff auf ZEMIS",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1744,7 +1756,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Bekanntgabe von Daten durch das SEM"
+     "label": "5. Abschnitt: Bekanntgabe von Daten durch das SEM",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -1824,7 +1837,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Bekanntgabe von Daten durch das SEM"
+     "label": "5. Abschnitt: Bekanntgabe von Daten durch das SEM",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -1849,7 +1863,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Bekanntgabe von Daten durch das SEM"
+     "label": "5. Abschnitt: Bekanntgabe von Daten durch das SEM",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -1860,7 +1875,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Datenschutz und Informatiksicherheit"
+     "label": "6. Abschnitt: Datenschutz und Informatiksicherheit",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -1871,7 +1887,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Datenschutz und Informatiksicherheit"
+     "label": "6. Abschnitt: Datenschutz und Informatiksicherheit",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -1971,7 +1988,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Datenschutz und Informatiksicherheit"
+     "label": "6. Abschnitt: Datenschutz und Informatiksicherheit",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -2057,7 +2075,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Datenschutz und Informatiksicherheit"
+     "label": "6. Abschnitt: Datenschutz und Informatiksicherheit",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -2133,7 +2152,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Statistiken und Kontrollen"
+     "label": "7. Abschnitt: Statistiken und Kontrollen",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -2293,7 +2313,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Statistiken und Kontrollen"
+     "label": "7. Abschnitt: Statistiken und Kontrollen",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -2304,7 +2325,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Gebühren"
+     "label": "8. Abschnitt: Gebühren",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [],
@@ -2352,7 +2374,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Schlussbestimmungen"
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [
@@ -2410,7 +2433,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Schlussbestimmungen"
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [
@@ -2421,7 +2445,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Schlussbestimmungen"
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [],
@@ -2444,7 +2469,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Schlussbestimmungen"
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [
@@ -2455,7 +2481,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Bekanntgabe von Daten durch das SEM"
+     "label": "5. Abschnitt: Bekanntgabe von Daten durch das SEM",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [],
@@ -2482,7 +2509,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Schlussbestimmungen"
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [
@@ -2533,7 +2561,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Meldepflichten"
+     "label": "3. Abschnitt: Meldepflichten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [],

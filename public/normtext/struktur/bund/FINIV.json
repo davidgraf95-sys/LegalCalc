@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "954.11",
   "titel": "Verordnung über die Finanzinstitute",
@@ -41,11 +41,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gegenstand und Geltungsbereich"
+     "label": "1. Abschnitt: Gegenstand und Geltungsbereich",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -56,11 +58,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gegenstand und Geltungsbereich"
+     "label": "1. Abschnitt: Gegenstand und Geltungsbereich",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -71,11 +75,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gegenstand und Geltungsbereich"
+     "label": "1. Abschnitt: Gegenstand und Geltungsbereich",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -86,11 +92,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gegenstand und Geltungsbereich"
+     "label": "1. Abschnitt: Gegenstand und Geltungsbereich",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -115,11 +123,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gegenstand und Geltungsbereich"
+     "label": "1. Abschnitt: Gegenstand und Geltungsbereich",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -130,11 +140,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gegenstand und Geltungsbereich"
+     "label": "1. Abschnitt: Gegenstand und Geltungsbereich",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -231,11 +243,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gegenstand und Geltungsbereich"
+     "label": "1. Abschnitt: Gegenstand und Geltungsbereich",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -260,11 +274,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gegenstand und Geltungsbereich"
+     "label": "1. Abschnitt: Gegenstand und Geltungsbereich",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -275,11 +291,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "2. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -304,11 +322,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "2. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -319,11 +339,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "2. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -334,11 +356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "2. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -349,11 +373,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "2. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -378,11 +404,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "2. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -407,11 +435,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "2. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -422,11 +452,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "2. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -437,11 +469,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "2. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -452,11 +486,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "2. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -467,11 +503,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -482,11 +520,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -497,11 +537,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -512,11 +554,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -527,11 +571,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -542,11 +588,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -595,11 +643,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -610,11 +660,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -625,11 +677,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -640,11 +694,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -655,11 +711,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -684,11 +742,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -699,11 +759,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -714,11 +776,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -743,11 +807,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -758,11 +824,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verwalter von Kollektivvermögen"
+     "label": "2. Abschnitt: Verwalter von Kollektivvermögen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -773,11 +841,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verwalter von Kollektivvermögen"
+     "label": "2. Abschnitt: Verwalter von Kollektivvermögen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -788,11 +858,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verwalter von Kollektivvermögen"
+     "label": "2. Abschnitt: Verwalter von Kollektivvermögen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -803,11 +875,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verwalter von Kollektivvermögen"
+     "label": "2. Abschnitt: Verwalter von Kollektivvermögen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -818,11 +892,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verwalter von Kollektivvermögen"
+     "label": "2. Abschnitt: Verwalter von Kollektivvermögen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -833,11 +909,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verwalter von Kollektivvermögen"
+     "label": "2. Abschnitt: Verwalter von Kollektivvermögen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -848,11 +926,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verwalter von Kollektivvermögen"
+     "label": "2. Abschnitt: Verwalter von Kollektivvermögen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -863,11 +943,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verwalter von Kollektivvermögen"
+     "label": "2. Abschnitt: Verwalter von Kollektivvermögen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -878,11 +960,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verwalter von Kollektivvermögen"
+     "label": "2. Abschnitt: Verwalter von Kollektivvermögen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -893,11 +977,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verwalter von Kollektivvermögen"
+     "label": "2. Abschnitt: Verwalter von Kollektivvermögen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -908,11 +994,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verwalter von Kollektivvermögen"
+     "label": "2. Abschnitt: Verwalter von Kollektivvermögen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -937,11 +1025,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verwalter von Kollektivvermögen"
+     "label": "2. Abschnitt: Verwalter von Kollektivvermögen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -966,11 +1056,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verwalter von Kollektivvermögen"
+     "label": "2. Abschnitt: Verwalter von Kollektivvermögen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -981,11 +1073,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verwalter von Kollektivvermögen"
+     "label": "2. Abschnitt: Verwalter von Kollektivvermögen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1034,11 +1128,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verwalter von Kollektivvermögen"
+     "label": "2. Abschnitt: Verwalter von Kollektivvermögen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1049,11 +1145,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fondsleitungen"
+     "label": "3. Abschnitt: Fondsleitungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1078,11 +1176,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fondsleitungen"
+     "label": "3. Abschnitt: Fondsleitungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1107,11 +1207,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fondsleitungen"
+     "label": "3. Abschnitt: Fondsleitungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1122,11 +1224,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fondsleitungen"
+     "label": "3. Abschnitt: Fondsleitungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1137,11 +1241,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fondsleitungen"
+     "label": "3. Abschnitt: Fondsleitungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1166,11 +1272,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fondsleitungen"
+     "label": "3. Abschnitt: Fondsleitungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1181,11 +1289,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fondsleitungen"
+     "label": "3. Abschnitt: Fondsleitungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1196,11 +1306,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fondsleitungen"
+     "label": "3. Abschnitt: Fondsleitungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1211,11 +1323,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fondsleitungen"
+     "label": "3. Abschnitt: Fondsleitungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1226,11 +1340,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fondsleitungen"
+     "label": "3. Abschnitt: Fondsleitungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1241,11 +1357,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fondsleitungen"
+     "label": "3. Abschnitt: Fondsleitungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1282,11 +1400,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fondsleitungen"
+     "label": "3. Abschnitt: Fondsleitungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1297,11 +1417,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fondsleitungen"
+     "label": "3. Abschnitt: Fondsleitungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1312,11 +1434,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fondsleitungen"
+     "label": "3. Abschnitt: Fondsleitungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1353,11 +1477,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fondsleitungen"
+     "label": "3. Abschnitt: Fondsleitungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1368,11 +1494,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fondsleitungen"
+     "label": "3. Abschnitt: Fondsleitungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1411,11 +1539,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wertpapierhäuser"
+     "label": "4. Abschnitt: Wertpapierhäuser",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1440,11 +1570,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wertpapierhäuser"
+     "label": "4. Abschnitt: Wertpapierhäuser",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1469,11 +1601,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wertpapierhäuser"
+     "label": "4. Abschnitt: Wertpapierhäuser",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1484,11 +1618,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wertpapierhäuser"
+     "label": "4. Abschnitt: Wertpapierhäuser",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1513,11 +1649,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wertpapierhäuser"
+     "label": "4. Abschnitt: Wertpapierhäuser",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1528,11 +1666,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wertpapierhäuser"
+     "label": "4. Abschnitt: Wertpapierhäuser",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1557,11 +1697,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wertpapierhäuser"
+     "label": "4. Abschnitt: Wertpapierhäuser",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1586,11 +1728,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wertpapierhäuser"
+     "label": "4. Abschnitt: Wertpapierhäuser",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1616,11 +1760,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wertpapierhäuser"
+     "label": "4. Abschnitt: Wertpapierhäuser",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1631,11 +1777,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wertpapierhäuser"
+     "label": "4. Abschnitt: Wertpapierhäuser",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1660,11 +1808,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wertpapierhäuser"
+     "label": "4. Abschnitt: Wertpapierhäuser",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1689,11 +1839,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Zweigniederlassungen"
+     "label": "5. Abschnitt: Zweigniederlassungen",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -1718,11 +1870,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Zweigniederlassungen"
+     "label": "5. Abschnitt: Zweigniederlassungen",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -1747,11 +1901,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Zweigniederlassungen"
+     "label": "5. Abschnitt: Zweigniederlassungen",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -1762,11 +1918,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Zweigniederlassungen"
+     "label": "5. Abschnitt: Zweigniederlassungen",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -1777,11 +1935,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Zweigniederlassungen"
+     "label": "5. Abschnitt: Zweigniederlassungen",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -1792,11 +1952,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Zweigniederlassungen"
+     "label": "5. Abschnitt: Zweigniederlassungen",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -1807,11 +1969,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Vertretungen"
+     "label": "6. Abschnitt: Vertretungen",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [],
@@ -1883,11 +2047,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1898,11 +2064,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1975,11 +2143,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1990,11 +2160,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -2019,11 +2191,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vermögensverwalter und Trustees"
+     "label": "1. Abschnitt: Vermögensverwalter und Trustees",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -2034,11 +2208,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verwalter von Kollektivvermögen, Fondsleitungen, Wertpapierhäuser, Finanzgruppen und Finanzkonglomerate"
+     "label": "2. Abschnitt: Verwalter von Kollektivvermögen, Fondsleitungen, Wertpapierhäuser, Finanzgruppen und Finanzkonglomerate",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2087,11 +2263,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verwalter von Kollektivvermögen, Fondsleitungen, Wertpapierhäuser, Finanzgruppen und Finanzkonglomerate"
+     "label": "2. Abschnitt: Verwalter von Kollektivvermögen, Fondsleitungen, Wertpapierhäuser, Finanzgruppen und Finanzkonglomerate",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2102,11 +2280,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Insolvenzrechtliche Massnahmen"
+     "label": "3. Abschnitt: Insolvenzrechtliche Massnahmen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -2130,7 +2310,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -2141,7 +2322,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -2166,7 +2348,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -2215,7 +2398,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -2226,11 +2410,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verwalter von Kollektivvermögen"
+     "label": "2. Abschnitt: Verwalter von Kollektivvermögen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2255,11 +2441,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fondsleitungen"
+     "label": "3. Abschnitt: Fondsleitungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2284,11 +2472,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Finanzinstitute"
+     "label": "2. Kapitel: Finanzinstitute",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wertpapierhäuser"
+     "label": "4. Abschnitt: Wertpapierhäuser",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "0.142.112.681",
   "titel": "Abkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft und ihren Mitgliedstaaten andererseits über die Freizügigkeit",
@@ -89,7 +89,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Grundbestimmungen"
+     "label": "I. Grundbestimmungen",
+     "eId": "lvl_I"
     }
    ],
    "marginalie": [
@@ -100,7 +101,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Grundbestimmungen"
+     "label": "I. Grundbestimmungen",
+     "eId": "lvl_I"
     }
    ],
    "marginalie": [
@@ -111,7 +113,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Grundbestimmungen"
+     "label": "I. Grundbestimmungen",
+     "eId": "lvl_I"
     }
    ],
    "marginalie": [
@@ -122,7 +125,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Grundbestimmungen"
+     "label": "I. Grundbestimmungen",
+     "eId": "lvl_I"
     }
    ],
    "marginalie": [
@@ -133,7 +137,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Grundbestimmungen"
+     "label": "I. Grundbestimmungen",
+     "eId": "lvl_I"
     }
    ],
    "marginalie": [
@@ -144,7 +149,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Grundbestimmungen"
+     "label": "I. Grundbestimmungen",
+     "eId": "lvl_I"
     }
    ],
    "marginalie": [
@@ -155,7 +161,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Grundbestimmungen"
+     "label": "I. Grundbestimmungen",
+     "eId": "lvl_I"
     }
    ],
    "marginalie": [
@@ -166,7 +173,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Grundbestimmungen"
+     "label": "I. Grundbestimmungen",
+     "eId": "lvl_I"
     }
    ],
    "marginalie": [
@@ -177,7 +185,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Grundbestimmungen"
+     "label": "I. Grundbestimmungen",
+     "eId": "lvl_I"
     }
    ],
    "marginalie": [
@@ -188,7 +197,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Allgemeine und Schlussbestimmungen"
+     "label": "II. Allgemeine und Schlussbestimmungen",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [
@@ -765,7 +775,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Allgemeine und Schlussbestimmungen"
+     "label": "II. Allgemeine und Schlussbestimmungen",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [
@@ -776,7 +787,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Allgemeine und Schlussbestimmungen"
+     "label": "II. Allgemeine und Schlussbestimmungen",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [
@@ -787,7 +799,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Allgemeine und Schlussbestimmungen"
+     "label": "II. Allgemeine und Schlussbestimmungen",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [
@@ -798,7 +811,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Allgemeine und Schlussbestimmungen"
+     "label": "II. Allgemeine und Schlussbestimmungen",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [
@@ -809,7 +823,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Allgemeine und Schlussbestimmungen"
+     "label": "II. Allgemeine und Schlussbestimmungen",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [
@@ -820,7 +835,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Allgemeine und Schlussbestimmungen"
+     "label": "II. Allgemeine und Schlussbestimmungen",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [
@@ -831,7 +847,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Allgemeine und Schlussbestimmungen"
+     "label": "II. Allgemeine und Schlussbestimmungen",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [
@@ -842,7 +859,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Allgemeine und Schlussbestimmungen"
+     "label": "II. Allgemeine und Schlussbestimmungen",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [
@@ -853,7 +871,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Allgemeine und Schlussbestimmungen"
+     "label": "II. Allgemeine und Schlussbestimmungen",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [
@@ -864,7 +883,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Allgemeine und Schlussbestimmungen"
+     "label": "II. Allgemeine und Schlussbestimmungen",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [
@@ -875,7 +895,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Allgemeine und Schlussbestimmungen"
+     "label": "II. Allgemeine und Schlussbestimmungen",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [
@@ -886,7 +907,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Allgemeine und Schlussbestimmungen"
+     "label": "II. Allgemeine und Schlussbestimmungen",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [
@@ -897,7 +919,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Allgemeine und Schlussbestimmungen"
+     "label": "II. Allgemeine und Schlussbestimmungen",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [
@@ -908,7 +931,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Allgemeine und Schlussbestimmungen"
+     "label": "II. Allgemeine und Schlussbestimmungen",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [
@@ -919,7 +943,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Allgemeine und Schlussbestimmungen"
+     "label": "II. Allgemeine und Schlussbestimmungen",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "748.131.1",
   "titel": "Verordnung über die Infrastruktur der Luftfahrt",
@@ -55,7 +55,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -82,7 +83,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -205,7 +207,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -250,15 +253,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -284,15 +290,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -303,15 +312,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -322,15 +334,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -341,15 +356,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -374,15 +392,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -431,15 +452,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Betriebskonzession"
+     "label": "2. Abschnitt: Betriebskonzession",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -450,15 +474,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Betriebskonzession"
+     "label": "2. Abschnitt: Betriebskonzession",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -507,15 +534,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Betriebskonzession"
+     "label": "2. Abschnitt: Betriebskonzession",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -526,15 +556,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Betriebskonzession"
+     "label": "2. Abschnitt: Betriebskonzession",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -545,15 +578,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Betriebskonzession"
+     "label": "2. Abschnitt: Betriebskonzession",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -564,15 +600,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Betriebskonzession"
+     "label": "2. Abschnitt: Betriebskonzession",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -597,15 +636,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Betriebskonzession"
+     "label": "2. Abschnitt: Betriebskonzession",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -616,15 +658,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Betriebsbewilligung"
+     "label": "3. Abschnitt: Betriebsbewilligung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -635,15 +680,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Betriebsbewilligung"
+     "label": "3. Abschnitt: Betriebsbewilligung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -668,15 +716,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Betriebsbewilligung"
+     "label": "3. Abschnitt: Betriebsbewilligung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -687,15 +738,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Betriebsbewilligung"
+     "label": "3. Abschnitt: Betriebsbewilligung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -706,15 +760,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Betriebsbewilligung"
+     "label": "3. Abschnitt: Betriebsbewilligung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -725,15 +782,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Betriebsbewilligung"
+     "label": "3. Abschnitt: Betriebsbewilligung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -758,15 +818,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Betriebsreglement"
+     "label": "4. Abschnitt: Betriebsreglement",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -804,15 +867,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Betriebsreglement"
+     "label": "4. Abschnitt: Betriebsreglement",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -850,15 +916,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Betriebsreglement"
+     "label": "4. Abschnitt: Betriebsreglement",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -935,15 +1004,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Betriebsreglement"
+     "label": "4. Abschnitt: Betriebsreglement",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -954,15 +1026,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Betriebsreglement"
+     "label": "4. Abschnitt: Betriebsreglement",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -987,15 +1062,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Genehmigungsfreie Bauvorhaben und Nebenanlagen"
+     "label": "6. Abschnitt: Genehmigungsfreie Bauvorhaben und Nebenanlagen",
+     "eId": "tit_2/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1072,15 +1150,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Genehmigungsfreie Bauvorhaben und Nebenanlagen"
+     "label": "6. Abschnitt: Genehmigungsfreie Bauvorhaben und Nebenanlagen",
+     "eId": "tit_2/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1117,11 +1198,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zivile Nutzung von Militärflugplätzen"
+     "label": "2. Kapitel: Zivile Nutzung von Militärflugplätzen",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1171,11 +1254,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zivile Nutzung von Militärflugplätzen"
+     "label": "2. Kapitel: Zivile Nutzung von Militärflugplätzen",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1200,15 +1285,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Lärmbekämpfung"
+     "label": "4. Kapitel: Lärmbekämpfung",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1219,15 +1307,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Lärmbekämpfung"
+     "label": "4. Kapitel: Lärmbekämpfung",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1238,15 +1329,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Lärmbekämpfung"
+     "label": "4. Kapitel: Lärmbekämpfung",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1257,15 +1351,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Lärmbekämpfung"
+     "label": "4. Kapitel: Lärmbekämpfung",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Nachtflugordnung"
+     "label": "2. Abschnitt: Nachtflugordnung",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1290,7 +1387,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Aussenlandungen"
+     "label": "4. Titel: Aussenlandungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1329,7 +1427,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Aussenlandungen"
+     "label": "4. Titel: Aussenlandungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1378,7 +1477,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Aussenlandungen"
+     "label": "4. Titel: Aussenlandungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [],
@@ -1401,7 +1501,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Aussenlandungen"
+     "label": "4. Titel: Aussenlandungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1426,11 +1527,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -1455,11 +1558,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -1470,11 +1575,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -1499,11 +1606,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -1528,15 +1637,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewilligungs- und Meldepflichten"
+     "label": "2. Kapitel: Bewilligungs- und Meldepflichten",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungspflichtige Luftfahrthindernisse"
+     "label": "1. Abschnitt: Bewilligungspflichtige Luftfahrthindernisse",
+     "eId": "tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1561,15 +1673,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewilligungs- und Meldepflichten"
+     "label": "2. Kapitel: Bewilligungs- und Meldepflichten",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungspflichtige Luftfahrthindernisse"
+     "label": "1. Abschnitt: Bewilligungspflichtige Luftfahrthindernisse",
+     "eId": "tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1606,15 +1721,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewilligungs- und Meldepflichten"
+     "label": "2. Kapitel: Bewilligungs- und Meldepflichten",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungspflichtige Luftfahrthindernisse"
+     "label": "1. Abschnitt: Bewilligungspflichtige Luftfahrthindernisse",
+     "eId": "tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1639,11 +1757,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Weitere Pflichten der Eigentümer der Luftfahrthindernisse"
+     "label": "3. Kapitel: Weitere Pflichten der Eigentümer der Luftfahrthindernisse",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -1681,11 +1801,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Weitere Pflichten der Eigentümer der Luftfahrthindernisse"
+     "label": "3. Kapitel: Weitere Pflichten der Eigentümer der Luftfahrthindernisse",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -1710,11 +1832,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Weitere Pflichten der Eigentümer der Luftfahrthindernisse"
+     "label": "3. Kapitel: Weitere Pflichten der Eigentümer der Luftfahrthindernisse",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -1739,11 +1863,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Weitere Pflichten der Eigentümer der Luftfahrthindernisse"
+     "label": "3. Kapitel: Weitere Pflichten der Eigentümer der Luftfahrthindernisse",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -1768,11 +1894,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Weitere Pflichten der Eigentümer der Luftfahrthindernisse"
+     "label": "3. Kapitel: Weitere Pflichten der Eigentümer der Luftfahrthindernisse",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -1797,11 +1925,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Sicherheitszonen"
+     "label": "4. Kapitel: Sicherheitszonen",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -1826,11 +1956,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Sicherheitszonen"
+     "label": "4. Kapitel: Sicherheitszonen",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -1855,11 +1987,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Sicherheitszonen"
+     "label": "4. Kapitel: Sicherheitszonen",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -1884,7 +2018,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -1910,7 +2045,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -1921,15 +2057,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Betriebsreglement"
+     "label": "4. Abschnitt: Betriebsreglement",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1978,15 +2117,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Betriebsreglement"
+     "label": "4. Abschnitt: Betriebsreglement",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -2031,15 +2173,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Betriebsreglement"
+     "label": "4. Abschnitt: Betriebsreglement",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -2071,15 +2216,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Betriebsreglement"
+     "label": "4. Abschnitt: Betriebsreglement",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -2104,15 +2252,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Plangenehmigungsverfahren"
+     "label": "5. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_2/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -2137,15 +2288,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Plangenehmigungsverfahren"
+     "label": "5. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_2/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -2240,15 +2394,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Plangenehmigungsverfahren"
+     "label": "5. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_2/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -2273,15 +2430,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Plangenehmigungsverfahren"
+     "label": "5. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_2/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -2292,15 +2452,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Plangenehmigungsverfahren"
+     "label": "5. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_2/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -2342,15 +2505,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Plangenehmigungsverfahren"
+     "label": "5. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_2/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -2361,15 +2527,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Plangenehmigungsverfahren"
+     "label": "5. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_2/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -2394,15 +2563,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Plangenehmigungsverfahren"
+     "label": "5. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_2/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -2413,15 +2585,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Plangenehmigungsverfahren"
+     "label": "5. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_2/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -2446,15 +2621,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Plangenehmigungsverfahren"
+     "label": "5. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_2/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -2465,15 +2643,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Plangenehmigungsverfahren"
+     "label": "5. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "tit_2/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -2484,15 +2665,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Bodenabfertigungsdienste"
+     "label": "7. Abschnitt: Bodenabfertigungsdienste",
+     "eId": "tit_2/chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -2544,15 +2728,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Bodenabfertigungsdienste"
+     "label": "7. Abschnitt: Bodenabfertigungsdienste",
+     "eId": "tit_2/chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -2584,15 +2771,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Flugplatzleiter oder Flugplatzleiterin"
+     "label": "8. Abschnitt: Flugplatzleiter oder Flugplatzleiterin",
+     "eId": "tit_2/chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -2630,15 +2820,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Flugplatzleiter oder Flugplatzleiterin"
+     "label": "8. Abschnitt: Flugplatzleiter oder Flugplatzleiterin",
+     "eId": "tit_2/chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -2649,15 +2842,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Flugplatzleiter oder Flugplatzleiterin"
+     "label": "8. Abschnitt: Flugplatzleiter oder Flugplatzleiterin",
+     "eId": "tit_2/chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -2668,15 +2864,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Flugplatzleiter oder Flugplatzleiterin"
+     "label": "8. Abschnitt: Flugplatzleiter oder Flugplatzleiterin",
+     "eId": "tit_2/chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -2687,15 +2886,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Flugplatzleiter oder Flugplatzleiterin"
+     "label": "8. Abschnitt: Flugplatzleiter oder Flugplatzleiterin",
+     "eId": "tit_2/chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -2735,15 +2937,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Flugplatzleiter oder Flugplatzleiterin"
+     "label": "8. Abschnitt: Flugplatzleiter oder Flugplatzleiterin",
+     "eId": "tit_2/chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -2754,15 +2959,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Flugplatzleiter oder Flugplatzleiterin"
+     "label": "8. Abschnitt: Flugplatzleiter oder Flugplatzleiterin",
+     "eId": "tit_2/chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -2788,11 +2996,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zivile Nutzung von Militärflugplätzen"
+     "label": "2. Kapitel: Zivile Nutzung von Militärflugplätzen",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2817,11 +3027,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zivile Nutzung von Militärflugplätzen"
+     "label": "2. Kapitel: Zivile Nutzung von Militärflugplätzen",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2846,11 +3058,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zivile Nutzung von Militärflugplätzen"
+     "label": "2. Kapitel: Zivile Nutzung von Militärflugplätzen",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2875,11 +3089,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: …"
+     "label": "3. Kapitel: …",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [],
@@ -2902,15 +3118,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Lärmbekämpfung"
+     "label": "4. Kapitel: Lärmbekämpfung",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Nachtflugordnung"
+     "label": "2. Abschnitt: Nachtflugordnung",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2935,15 +3154,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Lärmbekämpfung"
+     "label": "4. Kapitel: Lärmbekämpfung",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Nachtflugordnung"
+     "label": "2. Abschnitt: Nachtflugordnung",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2968,15 +3190,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Lärmbekämpfung"
+     "label": "4. Kapitel: Lärmbekämpfung",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Nachtflugordnung"
+     "label": "2. Abschnitt: Nachtflugordnung",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -3009,15 +3234,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Lärmbekämpfung"
+     "label": "4. Kapitel: Lärmbekämpfung",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Nachtflugordnung"
+     "label": "2. Abschnitt: Nachtflugordnung",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -3078,7 +3306,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -3107,7 +3336,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -3185,15 +3415,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Lärmbekämpfung"
+     "label": "4. Kapitel: Lärmbekämpfung",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: …"
+     "label": "3. Abschnitt: …",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": [],
@@ -3216,7 +3449,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: …"
+     "label": "3. Titel: …",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [],
@@ -3239,7 +3473,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Aussenlandungen"
+     "label": "4. Titel: Aussenlandungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [],
@@ -3262,7 +3497,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Aussenlandungen"
+     "label": "4. Titel: Aussenlandungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [],
@@ -3285,11 +3521,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3328,11 +3566,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3357,11 +3597,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3386,11 +3628,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [],
@@ -3413,15 +3657,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewilligungs- und Meldepflichten"
+     "label": "2. Kapitel: Bewilligungs- und Meldepflichten",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Bewilligungspflichtige Luftfahrthindernisse"
+     "label": "1. Abschnitt: Bewilligungspflichtige Luftfahrthindernisse",
+     "eId": "tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -3474,15 +3721,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewilligungs- und Meldepflichten"
+     "label": "2. Kapitel: Bewilligungs- und Meldepflichten",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Registrierungspflichtige Luftfahrthindernisse"
+     "label": "2. Abschnitt: Registrierungspflichtige Luftfahrthindernisse",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -3508,15 +3758,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewilligungs- und Meldepflichten"
+     "label": "2. Kapitel: Bewilligungs- und Meldepflichten",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Registrierungspflichtige Luftfahrthindernisse"
+     "label": "2. Abschnitt: Registrierungspflichtige Luftfahrthindernisse",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -3527,15 +3780,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bewilligungs- und Meldepflichten"
+     "label": "2. Kapitel: Bewilligungs- und Meldepflichten",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Registrierungspflichtige Luftfahrthindernisse"
+     "label": "2. Abschnitt: Registrierungspflichtige Luftfahrthindernisse",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -3546,11 +3802,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen"
+     "label": "5. Titel: Luftfahrthindernisse und Sicherheitszonen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Weitere Pflichten der Eigentümer der Luftfahrthindernisse"
+     "label": "3. Kapitel: Weitere Pflichten der Eigentümer der Luftfahrthindernisse",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [],
@@ -3577,7 +3835,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Titel: Strafbestimmung"
+     "label": "5a. Titel: Strafbestimmung",
+     "eId": "tit_5_a"
     }
    ],
    "marginalie": [],
@@ -3613,7 +3872,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -3638,7 +3898,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -3676,7 +3937,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -3701,7 +3963,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -3726,7 +3989,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -3751,15 +4015,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Flugplätze"
+     "label": "2. Titel: Flugplätze",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Betrieb und Bau"
+     "label": "1. Kapitel: Betrieb und Bau",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "172.021",
   "titel": "Bundesgesetz über das Verwaltungsverfahren",
@@ -92,7 +92,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Geltungsbereich und Begriffe"
+     "label": "Erster Abschnitt: Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -252,7 +253,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Geltungsbereich und Begriffe"
+     "label": "Erster Abschnitt: Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -329,7 +331,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Geltungsbereich und Begriffe"
+     "label": "Erster Abschnitt: Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -494,7 +497,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Geltungsbereich und Begriffe"
+     "label": "Erster Abschnitt: Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -506,7 +510,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Geltungsbereich und Begriffe"
+     "label": "Erster Abschnitt: Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -540,7 +545,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Geltungsbereich und Begriffe"
+     "label": "Erster Abschnitt: Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -552,7 +558,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -564,7 +571,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -576,7 +584,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -610,7 +619,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -655,7 +665,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -710,7 +721,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -722,7 +734,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -765,7 +778,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -916,7 +930,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -929,7 +944,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -993,7 +1009,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1039,7 +1056,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1052,7 +1070,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1080,7 +1099,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1134,7 +1154,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1220,7 +1241,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1232,7 +1254,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1244,7 +1267,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1294,7 +1318,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1305,7 +1330,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1339,7 +1365,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1351,7 +1378,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1363,7 +1391,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1375,7 +1404,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1411,7 +1441,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1423,7 +1454,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1435,7 +1467,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1447,7 +1480,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1519,7 +1553,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1532,7 +1567,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1627,7 +1663,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1661,7 +1698,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1673,7 +1711,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1685,7 +1724,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1730,7 +1770,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1758,7 +1799,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1771,7 +1813,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1783,7 +1826,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1817,7 +1861,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1851,7 +1896,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1885,7 +1931,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2011,7 +2058,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2044,7 +2092,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2055,7 +2104,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2088,7 +2138,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2122,7 +2173,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2134,7 +2186,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2146,7 +2199,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2158,7 +2212,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2229,7 +2284,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2264,7 +2320,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2298,7 +2355,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2310,7 +2368,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2322,7 +2381,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2356,7 +2416,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2368,7 +2429,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2380,7 +2442,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2496,7 +2559,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2572,7 +2636,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2688,7 +2753,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2755,7 +2821,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2822,7 +2889,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2834,7 +2902,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2845,7 +2914,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2879,7 +2949,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2891,7 +2962,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Besondere Behörden"
+     "label": "Vierter Abschnitt: Besondere Behörden",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -2927,7 +2999,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Besondere Behörden"
+     "label": "Vierter Abschnitt: Besondere Behörden",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -2963,7 +3036,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Besondere Behörden"
+     "label": "Vierter Abschnitt: Besondere Behörden",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -2999,7 +3073,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Besondere Behörden"
+     "label": "Vierter Abschnitt: Besondere Behörden",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -3035,7 +3110,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Besondere Behörden"
+     "label": "Vierter Abschnitt: Besondere Behörden",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -3200,7 +3276,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Besondere Behörden"
+     "label": "Vierter Abschnitt: Besondere Behörden",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -3236,7 +3313,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Besondere Behörden"
+     "label": "Vierter Abschnitt: Besondere Behörden",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -3271,7 +3349,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Besondere Behörden"
+     "label": "Vierter Abschnitt: Besondere Behörden",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -3321,7 +3400,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3574,7 +3654,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3585,7 +3666,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3605,7 +3687,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3639,7 +3722,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3689,7 +3773,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3741,7 +3826,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3823,7 +3909,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3856,7 +3943,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3891,7 +3979,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3924,7 +4013,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze"
+     "label": "Zweiter Abschnitt: Allgemeine Verfahrensgrundsätze",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3957,7 +4047,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -3990,7 +4081,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen"
+     "label": "Dritter Abschnitt: Das Beschwerdeverfahren im Allgemeinen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -4031,7 +4123,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Besondere Behörden"
+     "label": "Vierter Abschnitt: Besondere Behörden",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [

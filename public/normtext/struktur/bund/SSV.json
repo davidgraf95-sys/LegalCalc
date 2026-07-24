@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "741.21",
   "titel": "Signalisationsverordnung",
@@ -68,7 +68,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Begriffe und Geltungsbereich"
+     "label": "1. Kapitel: Begriffe und Geltungsbereich",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -279,7 +280,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Begriffe und Geltungsbereich"
+     "label": "1. Kapitel: Begriffe und Geltungsbereich",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -328,11 +330,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -367,11 +371,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gefährliche Strassenanlage"
+     "label": "2. Abschnitt: Gefährliche Strassenanlage",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -382,11 +388,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gefährliche Strassenanlage"
+     "label": "2. Abschnitt: Gefährliche Strassenanlage",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -397,11 +405,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gefährliche Strassenanlage"
+     "label": "2. Abschnitt: Gefährliche Strassenanlage",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -426,11 +436,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gefährliche Strassenanlage"
+     "label": "2. Abschnitt: Gefährliche Strassenanlage",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -441,11 +453,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gefährliche Strassenanlage"
+     "label": "2. Abschnitt: Gefährliche Strassenanlage",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -456,11 +470,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gefährliche Strassenanlage"
+     "label": "2. Abschnitt: Gefährliche Strassenanlage",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -471,11 +487,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gefährliche Strassenanlage"
+     "label": "2. Abschnitt: Gefährliche Strassenanlage",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -524,11 +542,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übrige Gefahren"
+     "label": "3. Abschnitt: Übrige Gefahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -593,11 +613,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übrige Gefahren"
+     "label": "3. Abschnitt: Übrige Gefahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -622,11 +644,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übrige Gefahren"
+     "label": "3. Abschnitt: Übrige Gefahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -651,11 +675,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übrige Gefahren"
+     "label": "3. Abschnitt: Übrige Gefahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -728,11 +754,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gefahrensignale"
+     "label": "2. Kapitel: Gefahrensignale",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übrige Gefahren"
+     "label": "3. Abschnitt: Übrige Gefahren",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -757,11 +785,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -811,11 +841,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -840,11 +872,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Fahrverbote, Mass- und Gewichtsbeschränkungen"
+     "label": "2. Abschnitt: Fahrverbote, Mass- und Gewichtsbeschränkungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -905,11 +939,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Fahrverbote, Mass- und Gewichtsbeschränkungen"
+     "label": "2. Abschnitt: Fahrverbote, Mass- und Gewichtsbeschränkungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1092,11 +1128,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Fahrverbote, Mass- und Gewichtsbeschränkungen"
+     "label": "2. Abschnitt: Fahrverbote, Mass- und Gewichtsbeschränkungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1134,11 +1172,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Fahrverbote, Mass- und Gewichtsbeschränkungen"
+     "label": "2. Abschnitt: Fahrverbote, Mass- und Gewichtsbeschränkungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1188,11 +1228,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1266,11 +1308,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1281,11 +1325,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1354,11 +1400,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1383,11 +1431,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1437,11 +1487,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1452,11 +1504,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1481,11 +1535,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1510,11 +1566,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1552,11 +1610,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1581,11 +1641,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1650,11 +1712,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Wege, Busfahrbahnen, Bus-Streifen"
+     "label": "4. Abschnitt: Besondere Wege, Busfahrbahnen, Bus-Streifen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1703,11 +1767,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Wege, Busfahrbahnen, Bus-Streifen"
+     "label": "4. Abschnitt: Besondere Wege, Busfahrbahnen, Bus-Streifen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1732,7 +1798,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vortrittssignale"
+     "label": "4. Kapitel: Vortrittssignale",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1743,7 +1810,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vortrittssignale"
+     "label": "4. Kapitel: Vortrittssignale",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1805,7 +1873,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vortrittssignale"
+     "label": "4. Kapitel: Vortrittssignale",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1843,7 +1912,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vortrittssignale"
+     "label": "4. Kapitel: Vortrittssignale",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1868,7 +1938,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vortrittssignale"
+     "label": "4. Kapitel: Vortrittssignale",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1893,7 +1964,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vortrittssignale"
+     "label": "4. Kapitel: Vortrittssignale",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1904,7 +1976,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vortrittssignale"
+     "label": "4. Kapitel: Vortrittssignale",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [],
@@ -1927,7 +2000,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vortrittssignale"
+     "label": "4. Kapitel: Vortrittssignale",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1938,7 +2012,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vortrittssignale"
+     "label": "4. Kapitel: Vortrittssignale",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [],
@@ -1961,11 +2036,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhaltenshinweise"
+     "label": "1. Abschnitt: Verhaltenshinweise",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1976,11 +2053,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhaltenshinweise"
+     "label": "1. Abschnitt: Verhaltenshinweise",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -2043,11 +2122,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhaltenshinweise"
+     "label": "1. Abschnitt: Verhaltenshinweise",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -2109,11 +2190,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhaltenshinweise"
+     "label": "1. Abschnitt: Verhaltenshinweise",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -2175,11 +2258,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhaltenshinweise"
+     "label": "1. Abschnitt: Verhaltenshinweise",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -2204,11 +2289,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2269,11 +2356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2284,11 +2373,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2325,11 +2416,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2414,11 +2507,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2455,11 +2550,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2544,11 +2641,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2589,11 +2688,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2647,11 +2748,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationshinweise"
+     "label": "3. Abschnitt: Informationshinweise",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -2676,11 +2779,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationshinweise"
+     "label": "3. Abschnitt: Informationshinweise",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -2691,11 +2796,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationshinweise"
+     "label": "3. Abschnitt: Informationshinweise",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -2756,11 +2863,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationshinweise"
+     "label": "3. Abschnitt: Informationshinweise",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [],
@@ -2783,11 +2892,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationshinweise"
+     "label": "3. Abschnitt: Informationshinweise",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -2812,11 +2923,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationshinweise"
+     "label": "3. Abschnitt: Informationshinweise",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -2841,7 +2954,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ergänzende Angaben zu Signalen"
+     "label": "6. Kapitel: Ergänzende Angaben zu Signalen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2878,7 +2992,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ergänzende Angaben zu Signalen"
+     "label": "6. Kapitel: Ergänzende Angaben zu Signalen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2956,7 +3071,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ergänzende Angaben zu Signalen"
+     "label": "6. Kapitel: Ergänzende Angaben zu Signalen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -3146,7 +3262,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zeichen und Weisungen der Polizei"
+     "label": "7. Kapitel: Zeichen und Weisungen der Polizei",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3195,7 +3312,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zeichen und Weisungen der Polizei"
+     "label": "7. Kapitel: Zeichen und Weisungen der Polizei",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3298,7 +3416,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen"
+     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3409,7 +3528,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen"
+     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3446,7 +3566,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen"
+     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3543,7 +3664,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen"
+     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3656,7 +3778,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3753,7 +3876,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3826,7 +3950,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3863,7 +3988,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3940,7 +4066,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -4002,7 +4129,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -4052,7 +4180,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -4063,7 +4192,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -4136,7 +4266,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Baustellen, Leiteinrichtungen, Schranken"
+     "label": "10. Kapitel: Baustellen, Leiteinrichtungen, Schranken",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4161,7 +4292,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Baustellen, Leiteinrichtungen, Schranken"
+     "label": "10. Kapitel: Baustellen, Leiteinrichtungen, Schranken",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4210,7 +4342,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Baustellen, Leiteinrichtungen, Schranken"
+     "label": "10. Kapitel: Baustellen, Leiteinrichtungen, Schranken",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4235,7 +4368,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Baustellen, Leiteinrichtungen, Schranken"
+     "label": "10. Kapitel: Baustellen, Leiteinrichtungen, Schranken",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4260,7 +4394,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4285,7 +4420,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4296,7 +4432,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4345,7 +4482,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4431,7 +4569,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4456,7 +4595,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4481,7 +4621,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4542,7 +4683,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [],
@@ -4565,7 +4707,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Bahnübergänge"
+     "label": "12. Kapitel: Bahnübergänge",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -4602,7 +4745,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Bahnübergänge"
+     "label": "12. Kapitel: Bahnübergänge",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -4675,7 +4819,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Bahnübergänge"
+     "label": "12. Kapitel: Bahnübergänge",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [],
@@ -4698,7 +4843,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Strassenreklamen"
+     "label": "13. Kapitel: Strassenreklamen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4723,7 +4869,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Strassenreklamen"
+     "label": "13. Kapitel: Strassenreklamen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4760,7 +4907,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Strassenreklamen"
+     "label": "13. Kapitel: Strassenreklamen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4797,7 +4945,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Strassenreklamen"
+     "label": "13. Kapitel: Strassenreklamen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4834,7 +4983,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Strassenreklamen"
+     "label": "13. Kapitel: Strassenreklamen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4871,7 +5021,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Strassenreklamen"
+     "label": "13. Kapitel: Strassenreklamen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4896,7 +5047,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation"
+     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -5013,7 +5165,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation"
+     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -5066,7 +5219,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation"
+     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -5119,7 +5273,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation"
+     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -5217,7 +5372,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation"
+     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -5254,7 +5410,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation"
+     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -5328,7 +5485,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen"
+     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [
@@ -5438,7 +5596,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen"
+     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [
@@ -5624,7 +5783,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen"
+     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [
@@ -5661,7 +5821,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen"
+     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [
@@ -5723,7 +5884,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen"
+     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [
@@ -5796,7 +5958,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen"
+     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [
@@ -5807,7 +5970,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen"
+     "label": "15. Kapitel: Verkehrsanordnungen und Verkehrsbeschränkungen",
+     "eId": "chap_15"
     }
    ],
    "marginalie": [
@@ -5844,7 +6008,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -5893,7 +6058,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -5918,7 +6084,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -5973,7 +6140,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -5984,7 +6152,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -5995,7 +6164,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation"
+     "label": "14. Kapitel: Allgemeine Anforderungen an die Strassensignalisation",
+     "eId": "chap_14"
     }
    ],
    "marginalie": [
@@ -6032,7 +6202,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [],
@@ -6059,7 +6230,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -6084,7 +6256,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -6109,7 +6282,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -6134,7 +6308,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -6159,7 +6334,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "16. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "16. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_16"
     }
    ],
    "marginalie": [
@@ -6184,11 +6360,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -6213,11 +6391,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -6266,11 +6446,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Vorschriftssignale"
+     "label": "3. Kapitel: Vorschriftssignale",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen"
+     "label": "3. Abschnitt: Fahranordnungen, Parkierungsbeschränkungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -6319,7 +6501,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Begriffe und Geltungsbereich"
+     "label": "1. Kapitel: Begriffe und Geltungsbereich",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -6384,11 +6567,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhaltenshinweise"
+     "label": "1. Abschnitt: Verhaltenshinweise",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -6425,11 +6610,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhaltenshinweise"
+     "label": "1. Abschnitt: Verhaltenshinweise",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -6454,11 +6641,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -6487,11 +6676,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -6529,11 +6720,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hinweissignale"
+     "label": "5. Kapitel: Hinweissignale",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wegweisung"
+     "label": "2. Abschnitt: Wegweisung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -6558,7 +6751,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ergänzende Angaben zu Signalen"
+     "label": "6. Kapitel: Ergänzende Angaben zu Signalen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -6583,7 +6777,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen"
+     "label": "8. Kapitel: Lichtsignale sowie ergänzende Angaben zu Lichtsignalen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -6608,7 +6803,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -6657,7 +6853,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -6682,7 +6879,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -6803,7 +7001,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -6828,7 +7027,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Markierungen"
+     "label": "9. Kapitel: Markierungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -6865,7 +7065,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -6890,7 +7091,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -6915,7 +7117,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -6940,7 +7143,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Autobahnen und Autostrassen"
+     "label": "11. Kapitel: Autobahnen und Autostrassen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [

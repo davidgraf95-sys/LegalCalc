@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "211.222.338",
   "titel": "Verordnung über die Aufnahme von Pflegekindern",
@@ -118,7 +118,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -179,7 +180,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -216,7 +218,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -241,7 +244,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienpflege"
+     "label": "2. Abschnitt: Familienpflege",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -266,7 +270,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienpflege"
+     "label": "2. Abschnitt: Familienpflege",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -291,7 +296,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienpflege"
+     "label": "2. Abschnitt: Familienpflege",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -316,7 +322,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienpflege"
+     "label": "2. Abschnitt: Familienpflege",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -341,7 +348,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienpflege"
+     "label": "2. Abschnitt: Familienpflege",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -382,7 +390,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienpflege"
+     "label": "2. Abschnitt: Familienpflege",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -393,7 +402,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienpflege"
+     "label": "2. Abschnitt: Familienpflege",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -430,7 +440,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienpflege"
+     "label": "2. Abschnitt: Familienpflege",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -467,7 +478,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Tagespflege"
+     "label": "3. Abschnitt: Tagespflege",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [],
@@ -490,7 +502,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Heimpflege"
+     "label": "4. Abschnitt: Heimpflege",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -539,7 +552,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Heimpflege"
+     "label": "4. Abschnitt: Heimpflege",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -564,7 +578,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Heimpflege"
+     "label": "4. Abschnitt: Heimpflege",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -589,7 +604,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Heimpflege"
+     "label": "4. Abschnitt: Heimpflege",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -600,7 +616,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Heimpflege"
+     "label": "4. Abschnitt: Heimpflege",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -637,7 +654,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Heimpflege"
+     "label": "4. Abschnitt: Heimpflege",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -674,7 +692,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Heimpflege"
+     "label": "4. Abschnitt: Heimpflege",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -699,7 +718,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Heimpflege"
+     "label": "4. Abschnitt: Heimpflege",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -724,7 +744,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Verfahren"
+     "label": "5. Abschnitt: Verfahren",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -785,7 +806,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Verfahren"
+     "label": "5. Abschnitt: Verfahren",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -796,7 +818,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Verfahren"
+     "label": "5. Abschnitt: Verfahren",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -821,7 +844,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Verfahren"
+     "label": "5. Abschnitt: Verfahren",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -832,7 +856,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Verfahren"
+     "label": "5. Abschnitt: Verfahren",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -857,7 +882,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Verfahren"
+     "label": "5. Abschnitt: Verfahren",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -922,7 +948,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Verfahren"
+     "label": "5. Abschnitt: Verfahren",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -947,7 +974,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -958,7 +986,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -969,7 +998,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -980,7 +1010,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienpflege"
+     "label": "2. Abschnitt: Familienpflege",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [],
@@ -1007,7 +1038,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Heimpflege"
+     "label": "4. Abschnitt: Heimpflege",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1032,7 +1064,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -1057,7 +1090,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Dienstleistungsangebote in der Familienpflege"
+     "label": "4a. Abschnitt: Dienstleistungsangebote in der Familienpflege",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1083,7 +1117,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Dienstleistungsangebote in der Familienpflege"
+     "label": "4a. Abschnitt: Dienstleistungsangebote in der Familienpflege",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1132,7 +1167,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Dienstleistungsangebote in der Familienpflege"
+     "label": "4a. Abschnitt: Dienstleistungsangebote in der Familienpflege",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1169,7 +1205,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Dienstleistungsangebote in der Familienpflege"
+     "label": "4a. Abschnitt: Dienstleistungsangebote in der Familienpflege",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1194,7 +1231,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Dienstleistungsangebote in der Familienpflege"
+     "label": "4a. Abschnitt: Dienstleistungsangebote in der Familienpflege",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1219,7 +1257,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Dienstleistungsangebote in der Familienpflege"
+     "label": "4a. Abschnitt: Dienstleistungsangebote in der Familienpflege",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1230,7 +1269,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -1255,7 +1295,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -1292,7 +1333,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienpflege"
+     "label": "2. Abschnitt: Familienpflege",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [],
@@ -1319,7 +1361,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienpflege"
+     "label": "2. Abschnitt: Familienpflege",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1357,7 +1400,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienpflege"
+     "label": "2. Abschnitt: Familienpflege",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1386,7 +1430,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienpflege"
+     "label": "2. Abschnitt: Familienpflege",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [

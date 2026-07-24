@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "832.20",
   "titel": "Bundesgesetz über die Unfallversicherung",
@@ -76,7 +76,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Anwendbarkeit des ATSG"
+     "label": "Erster Titel: Anwendbarkeit des ATSG",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [],
@@ -161,11 +162,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel a. Versicherte Personen"
+     "label": "Erster Titel a. Versicherte Personen",
+     "eId": "tit_1_a"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Obligatorische Versicherung"
+     "label": "1. Kapitel: Obligatorische Versicherung",
+     "eId": "tit_1_a/chap_1"
     }
    ],
    "marginalie": [
@@ -176,11 +179,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel a. Versicherte Personen"
+     "label": "Erster Titel a. Versicherte Personen",
+     "eId": "tit_1_a"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Obligatorische Versicherung"
+     "label": "1. Kapitel: Obligatorische Versicherung",
+     "eId": "tit_1_a/chap_1"
     }
    ],
    "marginalie": [
@@ -286,11 +291,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel a. Versicherte Personen"
+     "label": "Erster Titel a. Versicherte Personen",
+     "eId": "tit_1_a"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Freiwillige Versicherung"
+     "label": "2. Kapitel: Freiwillige Versicherung",
+     "eId": "tit_1_a/chap_2"
     }
    ],
    "marginalie": [
@@ -301,11 +308,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel a. Versicherte Personen"
+     "label": "Erster Titel a. Versicherte Personen",
+     "eId": "tit_1_a"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Freiwillige Versicherung"
+     "label": "2. Kapitel: Freiwillige Versicherung",
+     "eId": "tit_1_a/chap_2"
     }
    ],
    "marginalie": [
@@ -316,7 +325,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Gegenstand der Versicherung"
+     "label": "Zweiter Titel: Gegenstand der Versicherung",
+     "eId": "tit_2"
     }
    ],
    "marginalie": [
@@ -349,7 +359,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Gegenstand der Versicherung"
+     "label": "Zweiter Titel: Gegenstand der Versicherung",
+     "eId": "tit_2"
     }
    ],
    "marginalie": [
@@ -395,7 +406,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Gegenstand der Versicherung"
+     "label": "Zweiter Titel: Gegenstand der Versicherung",
+     "eId": "tit_2"
     }
    ],
    "marginalie": [
@@ -441,7 +453,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Gegenstand der Versicherung"
+     "label": "Zweiter Titel: Gegenstand der Versicherung",
+     "eId": "tit_2"
     }
    ],
    "marginalie": [
@@ -507,11 +520,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Pflegeleistungen und Kostenvergütungen"
+     "label": "1. Kapitel: Pflegeleistungen und Kostenvergütungen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -584,11 +599,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Pflegeleistungen und Kostenvergütungen"
+     "label": "1. Kapitel: Pflegeleistungen und Kostenvergütungen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -599,11 +616,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Pflegeleistungen und Kostenvergütungen"
+     "label": "1. Kapitel: Pflegeleistungen und Kostenvergütungen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -614,11 +633,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Pflegeleistungen und Kostenvergütungen"
+     "label": "1. Kapitel: Pflegeleistungen und Kostenvergütungen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -629,11 +650,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Pflegeleistungen und Kostenvergütungen"
+     "label": "1. Kapitel: Pflegeleistungen und Kostenvergütungen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -644,15 +667,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Versicherter Verdienst"
+     "label": "1. Abschnitt: Versicherter Verdienst",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -696,15 +722,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Taggeld"
+     "label": "2. Abschnitt: Taggeld",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -845,15 +874,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Taggeld"
+     "label": "2. Abschnitt: Taggeld",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -968,15 +1000,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Invalidenrente"
+     "label": "3. Abschnitt: Invalidenrente",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1058,15 +1093,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Invalidenrente"
+     "label": "3. Abschnitt: Invalidenrente",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1119,15 +1157,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Invalidenrente"
+     "label": "3. Abschnitt: Invalidenrente",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1265,15 +1306,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Invalidenrente"
+     "label": "3. Abschnitt: Invalidenrente",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1306,15 +1350,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Invalidenrente"
+     "label": "3. Abschnitt: Invalidenrente",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1371,15 +1418,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Invalidenrente"
+     "label": "3. Abschnitt: Invalidenrente",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1390,15 +1440,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Integritätsentschädigung"
+     "label": "4. Abschnitt: Integritätsentschädigung",
+     "eId": "tit_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1447,15 +1500,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Integritätsentschädigung"
+     "label": "4. Abschnitt: Integritätsentschädigung",
+     "eId": "tit_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1466,15 +1522,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Hilflosenentschädigung"
+     "label": "5. Abschnitt: Hilflosenentschädigung",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -1540,15 +1599,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Hilflosenentschädigung"
+     "label": "5. Abschnitt: Hilflosenentschädigung",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -1596,15 +1658,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Hinterlassenenrenten"
+     "label": "6. Abschnitt: Hinterlassenenrenten",
+     "eId": "tit_3/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -1615,15 +1680,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Hinterlassenenrenten"
+     "label": "6. Abschnitt: Hinterlassenenrenten",
+     "eId": "tit_3/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -1696,15 +1764,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Hinterlassenenrenten"
+     "label": "6. Abschnitt: Hinterlassenenrenten",
+     "eId": "tit_3/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -1753,15 +1824,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Hinterlassenenrenten"
+     "label": "6. Abschnitt: Hinterlassenenrenten",
+     "eId": "tit_3/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -1843,15 +1917,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Hinterlassenenrenten"
+     "label": "6. Abschnitt: Hinterlassenenrenten",
+     "eId": "tit_3/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -1862,15 +1939,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Hinterlassenenrenten"
+     "label": "6. Abschnitt: Hinterlassenenrenten",
+     "eId": "tit_3/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -1881,15 +1961,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Anpassung der Renten an die Teuerung"
+     "label": "7. Abschnitt: Anpassung der Renten an die Teuerung",
+     "eId": "tit_3/chap_2/sec_7"
     }
    ],
    "marginalie": [],
@@ -1916,15 +1999,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geldleistungen"
+     "label": "2. Kapitel: Geldleistungen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Auskauf von Renten"
+     "label": "8. Abschnitt: Auskauf von Renten",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": []
@@ -1933,11 +2019,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen"
+     "label": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -1991,11 +2079,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen"
+     "label": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2061,11 +2151,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen"
+     "label": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [],
@@ -2096,11 +2188,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen"
+     "label": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2147,11 +2241,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen"
+     "label": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2198,15 +2294,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Festsetzung und Gewährung der Leistungen"
+     "label": "4. Kapitel: Festsetzung und Gewährung der Leistungen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Feststellung des Unfalles"
+     "label": "1. Abschnitt: Feststellung des Unfalles",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2296,15 +2395,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Festsetzung und Gewährung der Leistungen"
+     "label": "4. Kapitel: Festsetzung und Gewährung der Leistungen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Feststellung des Unfalles"
+     "label": "1. Abschnitt: Feststellung des Unfalles",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2315,15 +2417,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Festsetzung und Gewährung der Leistungen"
+     "label": "4. Kapitel: Festsetzung und Gewährung der Leistungen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Feststellung des Unfalles"
+     "label": "1. Abschnitt: Feststellung des Unfalles",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2356,15 +2461,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Festsetzung und Gewährung der Leistungen"
+     "label": "4. Kapitel: Festsetzung und Gewährung der Leistungen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Gewährung der Leistungen"
+     "label": "2. Abschnitt: Gewährung der Leistungen",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2397,15 +2505,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Festsetzung und Gewährung der Leistungen"
+     "label": "4. Kapitel: Festsetzung und Gewährung der Leistungen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Gewährung der Leistungen"
+     "label": "2. Abschnitt: Gewährung der Leistungen",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2438,15 +2549,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Festsetzung und Gewährung der Leistungen"
+     "label": "4. Kapitel: Festsetzung und Gewährung der Leistungen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Gewährung der Leistungen"
+     "label": "2. Abschnitt: Gewährung der Leistungen",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2479,11 +2593,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Medizinalrecht und Tarifwesen"
+     "label": "Vierter Titel: Medizinalrecht und Tarifwesen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Medizinalpersonen und Spitäler"
+     "label": "1. Kapitel: Medizinalpersonen und Spitäler",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2550,11 +2666,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Medizinalrecht und Tarifwesen"
+     "label": "Vierter Titel: Medizinalrecht und Tarifwesen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Medizinalpersonen und Spitäler"
+     "label": "1. Kapitel: Medizinalpersonen und Spitäler",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2565,11 +2683,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Medizinalrecht und Tarifwesen"
+     "label": "Vierter Titel: Medizinalrecht und Tarifwesen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Medizinalpersonen und Spitäler"
+     "label": "1. Kapitel: Medizinalpersonen und Spitäler",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2602,11 +2722,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Medizinalrecht und Tarifwesen"
+     "label": "Vierter Titel: Medizinalrecht und Tarifwesen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zusammenarbeit und Tarife"
+     "label": "2. Kapitel: Zusammenarbeit und Tarife",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [],
@@ -2739,11 +2861,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Medizinalrecht und Tarifwesen"
+     "label": "Vierter Titel: Medizinalrecht und Tarifwesen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Streitigkeiten"
+     "label": "3. Kapitel: Streitigkeiten",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [],
@@ -2807,15 +2931,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_5/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2869,15 +2996,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_5/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2888,15 +3018,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_5/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2929,15 +3062,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt"
+     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt",
+     "eId": "tit_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2990,15 +3126,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt"
+     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt",
+     "eId": "tit_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3031,15 +3170,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt"
+     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt",
+     "eId": "tit_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3085,15 +3227,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt"
+     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt",
+     "eId": "tit_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3152,15 +3297,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt"
+     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt",
+     "eId": "tit_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3193,15 +3341,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt"
+     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt",
+     "eId": "tit_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3303,15 +3454,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt"
+     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt",
+     "eId": "tit_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3366,15 +3520,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Andere Versicherer"
+     "label": "3. Abschnitt: Andere Versicherer",
+     "eId": "tit_5/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -3480,15 +3637,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Andere Versicherer"
+     "label": "3. Abschnitt: Andere Versicherer",
+     "eId": "tit_5/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -3499,15 +3659,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Andere Versicherer"
+     "label": "3. Abschnitt: Andere Versicherer",
+     "eId": "tit_5/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -3552,15 +3715,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Andere Versicherer"
+     "label": "3. Abschnitt: Andere Versicherer",
+     "eId": "tit_5/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -3607,15 +3773,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Ersatzkasse"
+     "label": "4. Abschnitt: Ersatzkasse",
+     "eId": "tit_5/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -3640,15 +3809,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Ersatzkasse"
+     "label": "4. Abschnitt: Ersatzkasse",
+     "eId": "tit_5/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -3730,15 +3902,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Ersatzkasse"
+     "label": "4. Abschnitt: Ersatzkasse",
+     "eId": "tit_5/chap_1/sec_4"
     }
    ],
    "marginalie": [],
@@ -3769,15 +3944,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Vorschriften"
+     "label": "5. Abschnitt: Gemeinsame Vorschriften",
+     "eId": "tit_5/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -3802,15 +3980,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Vorschriften"
+     "label": "5. Abschnitt: Gemeinsame Vorschriften",
+     "eId": "tit_5/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -3821,15 +4002,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Vorschriften"
+     "label": "5. Abschnitt: Gemeinsame Vorschriften",
+     "eId": "tit_5/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -3840,15 +4024,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Vorschriften"
+     "label": "5. Abschnitt: Gemeinsame Vorschriften",
+     "eId": "tit_5/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -3881,11 +4068,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Aufsicht"
+     "label": "2. Kapitel: Aufsicht",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3944,11 +4133,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Aufsicht"
+     "label": "2. Kapitel: Aufsicht",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3959,15 +4150,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Unfallverhütung"
+     "label": "Sechster Titel: Unfallverhütung",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhütung von Berufsunfällen und Berufskrankheiten"
+     "label": "1. Kapitel: Verhütung von Berufsunfällen und Berufskrankheiten",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Geltungsbereich"
+     "label": "1. Abschnitt: Geltungsbereich",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -3998,15 +4192,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Unfallverhütung"
+     "label": "Sechster Titel: Unfallverhütung",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhütung von Berufsunfällen und Berufskrankheiten"
+     "label": "1. Kapitel: Verhütung von Berufsunfällen und Berufskrankheiten",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "2. Abschnitt: Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "tit_6/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -4017,15 +4214,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Unfallverhütung"
+     "label": "Sechster Titel: Unfallverhütung",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhütung von Berufsunfällen und Berufskrankheiten"
+     "label": "1. Kapitel: Verhütung von Berufsunfällen und Berufskrankheiten",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "2. Abschnitt: Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "tit_6/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -4036,15 +4236,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Unfallverhütung"
+     "label": "Sechster Titel: Unfallverhütung",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhütung von Berufsunfällen und Berufskrankheiten"
+     "label": "1. Kapitel: Verhütung von Berufsunfällen und Berufskrankheiten",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "2. Abschnitt: Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "tit_6/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -4055,15 +4258,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Unfallverhütung"
+     "label": "Sechster Titel: Unfallverhütung",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhütung von Berufsunfällen und Berufskrankheiten"
+     "label": "1. Kapitel: Verhütung von Berufsunfällen und Berufskrankheiten",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Durchführung"
+     "label": "3. Abschnitt: Durchführung",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -4182,15 +4388,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Unfallverhütung"
+     "label": "Sechster Titel: Unfallverhütung",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhütung von Berufsunfällen und Berufskrankheiten"
+     "label": "1. Kapitel: Verhütung von Berufsunfällen und Berufskrankheiten",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Durchführung"
+     "label": "3. Abschnitt: Durchführung",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -4201,15 +4410,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Unfallverhütung"
+     "label": "Sechster Titel: Unfallverhütung",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhütung von Berufsunfällen und Berufskrankheiten"
+     "label": "1. Kapitel: Verhütung von Berufsunfällen und Berufskrankheiten",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Finanzierung"
+     "label": "4. Abschnitt: Finanzierung",
+     "eId": "tit_6/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -4263,11 +4475,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Unfallverhütung"
+     "label": "Sechster Titel: Unfallverhütung",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhütung von Nichtberufsunfällen"
+     "label": "2. Kapitel: Verhütung von Nichtberufsunfällen",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -4278,11 +4492,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Rechnung und Finanzierung"
+     "label": "Siebter Titel: Rechnung und Finanzierung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Rechnung"
+     "label": "1. Kapitel: Rechnung",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [],
@@ -4403,11 +4619,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Rechnung und Finanzierung"
+     "label": "Siebter Titel: Rechnung und Finanzierung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Finanzierung"
+     "label": "1a. Kapitel: Finanzierung",
+     "eId": "tit_7/chap_1_a"
     }
    ],
    "marginalie": [
@@ -4468,11 +4686,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Rechnung und Finanzierung"
+     "label": "Siebter Titel: Rechnung und Finanzierung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Prämien"
+     "label": "2. Kapitel: Prämien",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -4534,11 +4754,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Rechnung und Finanzierung"
+     "label": "Siebter Titel: Rechnung und Finanzierung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Prämien"
+     "label": "2. Kapitel: Prämien",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -4619,11 +4841,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Rechnung und Finanzierung"
+     "label": "Siebter Titel: Rechnung und Finanzierung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Prämien"
+     "label": "2. Kapitel: Prämien",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -4634,11 +4858,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Rechnung und Finanzierung"
+     "label": "Siebter Titel: Rechnung und Finanzierung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Prämien"
+     "label": "2. Kapitel: Prämien",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -4685,11 +4911,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Rechnung und Finanzierung"
+     "label": "Siebter Titel: Rechnung und Finanzierung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Prämien"
+     "label": "2. Kapitel: Prämien",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -4731,11 +4959,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Verschiedene Bestimmungen"
+     "label": "Achter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Datenbearbeitung und -bekanntgabe, Amts- und Verwaltungshilfe"
+     "label": "1. Kapitel: Datenbearbeitung und -bekanntgabe, Amts- und Verwaltungshilfe",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [
@@ -4842,11 +5072,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Verschiedene Bestimmungen"
+     "label": "Achter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Datenbearbeitung und -bekanntgabe, Amts- und Verwaltungshilfe"
+     "label": "1. Kapitel: Datenbearbeitung und -bekanntgabe, Amts- und Verwaltungshilfe",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [
@@ -5211,11 +5443,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Verschiedene Bestimmungen"
+     "label": "Achter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Datenbearbeitung und -bekanntgabe, Amts- und Verwaltungshilfe"
+     "label": "1. Kapitel: Datenbearbeitung und -bekanntgabe, Amts- und Verwaltungshilfe",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [
@@ -5244,11 +5478,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Verschiedene Bestimmungen"
+     "label": "Achter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Vollstreckung und Haftung"
+     "label": "2. Kapitel: Vollstreckung und Haftung",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -5308,11 +5544,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Verschiedene Bestimmungen"
+     "label": "Achter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Vollstreckung und Haftung"
+     "label": "2. Kapitel: Vollstreckung und Haftung",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -5355,11 +5593,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Verschiedene Bestimmungen"
+     "label": "Achter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Vollstreckung und Haftung"
+     "label": "2. Kapitel: Vollstreckung und Haftung",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [],
@@ -5386,11 +5626,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Verschiedene Bestimmungen"
+     "label": "Achter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Vollstreckung und Haftung"
+     "label": "2. Kapitel: Vollstreckung und Haftung",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [],
@@ -5421,11 +5663,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Verschiedene Bestimmungen"
+     "label": "Achter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Verhältnis zu anderen Sozialversicherungszweigen"
+     "label": "3. Kapitel: Verhältnis zu anderen Sozialversicherungszweigen",
+     "eId": "tit_8/chap_3"
     }
    ],
    "marginalie": [
@@ -5488,11 +5732,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Verschiedene Bestimmungen"
+     "label": "Achter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Verhältnis zu anderen Sozialversicherungszweigen"
+     "label": "3. Kapitel: Verhältnis zu anderen Sozialversicherungszweigen",
+     "eId": "tit_8/chap_3"
     }
    ],
    "marginalie": [
@@ -5525,11 +5771,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen"
+     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen",
+     "eId": "tit_9"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sonderbestimmungen zur Rechtspflege"
+     "label": "1. Kapitel: Sonderbestimmungen zur Rechtspflege",
+     "eId": "tit_9/chap_1"
     }
    ],
    "marginalie": [
@@ -5597,11 +5845,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen"
+     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen",
+     "eId": "tit_9"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sonderbestimmungen zur Rechtspflege"
+     "label": "1. Kapitel: Sonderbestimmungen zur Rechtspflege",
+     "eId": "tit_9/chap_1"
     }
    ],
    "marginalie": [],
@@ -5632,11 +5882,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen"
+     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen",
+     "eId": "tit_9"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sonderbestimmungen zur Rechtspflege"
+     "label": "1. Kapitel: Sonderbestimmungen zur Rechtspflege",
+     "eId": "tit_9/chap_1"
     }
    ],
    "marginalie": [
@@ -5683,11 +5935,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen"
+     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen",
+     "eId": "tit_9"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sonderbestimmungen zur Rechtspflege"
+     "label": "1. Kapitel: Sonderbestimmungen zur Rechtspflege",
+     "eId": "tit_9/chap_1"
     }
    ],
    "marginalie": [],
@@ -5718,11 +5972,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen"
+     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen",
+     "eId": "tit_9"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sonderbestimmungen zur Rechtspflege"
+     "label": "1. Kapitel: Sonderbestimmungen zur Rechtspflege",
+     "eId": "tit_9/chap_1"
     }
    ],
    "marginalie": [
@@ -5755,11 +6011,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen"
+     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen",
+     "eId": "tit_9"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Strafbestimmungen"
+     "label": "2. Kapitel: Strafbestimmungen",
+     "eId": "tit_9/chap_2"
     }
    ],
    "marginalie": [],
@@ -5790,11 +6048,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen"
+     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen",
+     "eId": "tit_9"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Strafbestimmungen"
+     "label": "2. Kapitel: Strafbestimmungen",
+     "eId": "tit_9/chap_2"
     }
    ],
    "marginalie": [],
@@ -5825,11 +6085,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Schlussbestimmungen"
+     "label": "Elfter Titel: Schlussbestimmungen",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Aufhebung und Änderung von Gesetzesbestimmungen"
+     "label": "1. Kapitel: Aufhebung und Änderung von Gesetzesbestimmungen",
+     "eId": "tit_11/chap_1"
     }
    ],
    "marginalie": [
@@ -5902,11 +6164,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Schlussbestimmungen"
+     "label": "Elfter Titel: Schlussbestimmungen",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Aufhebung und Änderung von Gesetzesbestimmungen"
+     "label": "1. Kapitel: Aufhebung und Änderung von Gesetzesbestimmungen",
+     "eId": "tit_11/chap_1"
     }
    ],
    "marginalie": [
@@ -5917,11 +6181,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Schlussbestimmungen"
+     "label": "Elfter Titel: Schlussbestimmungen",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Übergangsbestimmungen und Inkrafttreten"
+     "label": "2. Kapitel: Übergangsbestimmungen und Inkrafttreten",
+     "eId": "tit_11/chap_2"
     }
    ],
    "marginalie": [
@@ -5989,11 +6255,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Schlussbestimmungen"
+     "label": "Elfter Titel: Schlussbestimmungen",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Übergangsbestimmungen und Inkrafttreten"
+     "label": "2. Kapitel: Übergangsbestimmungen und Inkrafttreten",
+     "eId": "tit_11/chap_2"
     }
    ],
    "marginalie": [
@@ -6004,11 +6272,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Schlussbestimmungen"
+     "label": "Elfter Titel: Schlussbestimmungen",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Übergangsbestimmungen und Inkrafttreten"
+     "label": "2. Kapitel: Übergangsbestimmungen und Inkrafttreten",
+     "eId": "tit_11/chap_2"
     }
    ],
    "marginalie": [
@@ -6019,11 +6289,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Verschiedene Bestimmungen"
+     "label": "Achter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Vollstreckung und Haftung"
+     "label": "2. Kapitel: Vollstreckung und Haftung",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [],
@@ -6058,11 +6330,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen"
+     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen",
+     "eId": "tit_9"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sonderbestimmungen zur Rechtspflege"
+     "label": "1. Kapitel: Sonderbestimmungen zur Rechtspflege",
+     "eId": "tit_9/chap_1"
     }
    ],
    "marginalie": [
@@ -6109,11 +6383,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen"
+     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen",
+     "eId": "tit_9"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sonderbestimmungen zur Rechtspflege"
+     "label": "1. Kapitel: Sonderbestimmungen zur Rechtspflege",
+     "eId": "tit_9/chap_1"
     }
    ],
    "marginalie": [],
@@ -6144,11 +6420,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen"
+     "label": "Neunter Titel: Rechtspflege- und Strafbestimmungen",
+     "eId": "tit_9"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Strafbestimmungen"
+     "label": "2. Kapitel: Strafbestimmungen",
+     "eId": "tit_9/chap_2"
     }
    ],
    "marginalie": [],
@@ -6179,7 +6457,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Verhältnis zum europäischen Recht"
+     "label": "Zehnter Titel: Verhältnis zum europäischen Recht",
+     "eId": "tit_10"
     }
    ],
    "marginalie": [],
@@ -6323,11 +6602,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel a. Versicherte Personen"
+     "label": "Erster Titel a. Versicherte Personen",
+     "eId": "tit_1_a"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Obligatorische Versicherung"
+     "label": "1. Kapitel: Obligatorische Versicherung",
+     "eId": "tit_1_a/chap_1"
     }
    ],
    "marginalie": [
@@ -6446,11 +6727,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen"
+     "label": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [],
@@ -6481,11 +6764,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen"
+     "label": "3. Kapitel: Kürzung und Verweigerung von Versicherungsleistungen aus besonderen Gründen",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [],
@@ -6516,15 +6801,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Versicherungsleistungen"
+     "label": "Dritter Titel: Versicherungsleistungen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Festsetzung und Gewährung der Leistungen"
+     "label": "4. Kapitel: Festsetzung und Gewährung der Leistungen",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Gewährung der Leistungen"
+     "label": "2. Abschnitt: Gewährung der Leistungen",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -6555,11 +6843,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Medizinalrecht und Tarifwesen"
+     "label": "Vierter Titel: Medizinalrecht und Tarifwesen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Medizinalpersonen und Spitäler"
+     "label": "1. Kapitel: Medizinalpersonen und Spitäler",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -6588,15 +6878,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_5/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -6629,15 +6922,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_5/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -6696,15 +6992,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt"
+     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt",
+     "eId": "tit_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -6737,15 +7036,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt"
+     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt",
+     "eId": "tit_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -6791,15 +7093,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt"
+     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt",
+     "eId": "tit_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -6848,15 +7153,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt"
+     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt",
+     "eId": "tit_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -6902,15 +7210,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt"
+     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt",
+     "eId": "tit_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -6969,15 +7280,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt"
+     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt",
+     "eId": "tit_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -7024,15 +7338,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt"
+     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt",
+     "eId": "tit_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -7078,15 +7395,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt"
+     "label": "2. Abschnitt: Schweizerische Unfallversicherungsanstalt",
+     "eId": "tit_5/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -7111,15 +7431,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Organisation"
+     "label": "Fünfter Titel: Organisation",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Versicherer"
+     "label": "1. Kapitel: Versicherer",
+     "eId": "tit_5/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Vorschriften"
+     "label": "5. Abschnitt: Gemeinsame Vorschriften",
+     "eId": "tit_5/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -7144,15 +7467,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Unfallverhütung"
+     "label": "Sechster Titel: Unfallverhütung",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhütung von Berufsunfällen und Berufskrankheiten"
+     "label": "1. Kapitel: Verhütung von Berufsunfällen und Berufskrankheiten",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "2. Abschnitt: Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "tit_6/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -7185,15 +7511,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Unfallverhütung"
+     "label": "Sechster Titel: Unfallverhütung",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhütung von Berufsunfällen und Berufskrankheiten"
+     "label": "1. Kapitel: Verhütung von Berufsunfällen und Berufskrankheiten",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Finanzierung"
+     "label": "4. Abschnitt: Finanzierung",
+     "eId": "tit_6/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -7226,11 +7555,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Rechnung und Finanzierung"
+     "label": "Siebter Titel: Rechnung und Finanzierung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Finanzierung"
+     "label": "1a. Kapitel: Finanzierung",
+     "eId": "tit_7/chap_1_a"
     }
    ],
    "marginalie": [
@@ -7276,11 +7607,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Rechnung und Finanzierung"
+     "label": "Siebter Titel: Rechnung und Finanzierung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Finanzierung"
+     "label": "1a. Kapitel: Finanzierung",
+     "eId": "tit_7/chap_1_a"
     }
    ],
    "marginalie": [
@@ -7313,11 +7646,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Rechnung und Finanzierung"
+     "label": "Siebter Titel: Rechnung und Finanzierung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Finanzierung"
+     "label": "1a. Kapitel: Finanzierung",
+     "eId": "tit_7/chap_1_a"
     }
    ],
    "marginalie": [
@@ -7350,11 +7685,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Rechnung und Finanzierung"
+     "label": "Siebter Titel: Rechnung und Finanzierung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Finanzierung"
+     "label": "1a. Kapitel: Finanzierung",
+     "eId": "tit_7/chap_1_a"
     }
    ],
    "marginalie": [
@@ -7383,11 +7720,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: Rechnung und Finanzierung"
+     "label": "Siebter Titel: Rechnung und Finanzierung",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Finanzierung"
+     "label": "1a. Kapitel: Finanzierung",
+     "eId": "tit_7/chap_1_a"
     }
    ],
    "marginalie": [

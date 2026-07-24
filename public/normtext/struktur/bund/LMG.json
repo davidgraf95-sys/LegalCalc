@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "817.0",
   "titel": "Bundesgesetz über Lebensmittel und Gebrauchsgegenstände",
@@ -55,11 +55,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zweck und Geltungsbereich"
+     "label": "1. Abschnitt: Zweck und Geltungsbereich",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -70,11 +72,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zweck und Geltungsbereich"
+     "label": "1. Abschnitt: Zweck und Geltungsbereich",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -85,11 +89,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zweck und Geltungsbereich"
+     "label": "1. Abschnitt: Zweck und Geltungsbereich",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -100,11 +106,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Begriffe"
+     "label": "2. Abschnitt: Begriffe",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -115,11 +123,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Begriffe"
+     "label": "2. Abschnitt: Begriffe",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -130,11 +140,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Begriffe"
+     "label": "2. Abschnitt: Begriffe",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -145,11 +157,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lebensmittel"
+     "label": "1. Abschnitt: Lebensmittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -160,11 +174,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lebensmittel"
+     "label": "1. Abschnitt: Lebensmittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -175,11 +191,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lebensmittel"
+     "label": "1. Abschnitt: Lebensmittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -190,11 +208,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lebensmittel"
+     "label": "1. Abschnitt: Lebensmittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -205,11 +225,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lebensmittel"
+     "label": "1. Abschnitt: Lebensmittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -220,11 +242,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lebensmittel"
+     "label": "1. Abschnitt: Lebensmittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -235,11 +259,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lebensmittel"
+     "label": "1. Abschnitt: Lebensmittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -250,11 +276,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lebensmittel"
+     "label": "1. Abschnitt: Lebensmittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -293,11 +321,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gebrauchsgegenstände"
+     "label": "2. Abschnitt: Gebrauchsgegenstände",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -308,11 +338,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gebrauchsgegenstände"
+     "label": "2. Abschnitt: Gebrauchsgegenstände",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -323,11 +355,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gebrauchsgegenstände"
+     "label": "2. Abschnitt: Gebrauchsgegenstände",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -338,11 +372,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen für Lebensmittel und Gebrauchsgegenstände"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen für Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -368,11 +404,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen für Lebensmittel und Gebrauchsgegenstände"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen für Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -383,11 +421,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen für Lebensmittel und Gebrauchsgegenstände"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen für Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -413,11 +453,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Aufgaben der Behörden"
+     "label": "4. Abschnitt: Aufgaben der Behörden",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -428,11 +470,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Aufgaben der Behörden"
+     "label": "4. Abschnitt: Aufgaben der Behörden",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -443,11 +487,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Aufgaben der Behörden"
+     "label": "4. Abschnitt: Aufgaben der Behörden",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -458,11 +504,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Aufgaben der Behörden"
+     "label": "4. Abschnitt: Aufgaben der Behörden",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -473,11 +521,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle"
+     "label": "3. Kapitel: Kontrolle",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Untersuchungsverfahren"
+     "label": "1. Abschnitt: Untersuchungsverfahren",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": []
@@ -486,11 +536,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle"
+     "label": "3. Kapitel: Kontrolle",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Unternehmen"
+     "label": "2. Abschnitt: Pflichten der Unternehmen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -501,11 +553,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle"
+     "label": "3. Kapitel: Kontrolle",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Unternehmen"
+     "label": "2. Abschnitt: Pflichten der Unternehmen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -516,11 +570,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle"
+     "label": "3. Kapitel: Kontrolle",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Unternehmen"
+     "label": "2. Abschnitt: Pflichten der Unternehmen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -531,11 +587,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle"
+     "label": "3. Kapitel: Kontrolle",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Unternehmen"
+     "label": "2. Abschnitt: Pflichten der Unternehmen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -546,11 +604,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle"
+     "label": "3. Kapitel: Kontrolle",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Amtliche Kontrolle"
+     "label": "3. Abschnitt: Amtliche Kontrolle",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -561,11 +621,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle"
+     "label": "3. Kapitel: Kontrolle",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Amtliche Kontrolle"
+     "label": "3. Abschnitt: Amtliche Kontrolle",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -576,11 +638,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle"
+     "label": "3. Kapitel: Kontrolle",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Amtliche Kontrolle"
+     "label": "3. Abschnitt: Amtliche Kontrolle",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -591,11 +655,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle"
+     "label": "3. Kapitel: Kontrolle",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Amtliche Kontrolle"
+     "label": "3. Abschnitt: Amtliche Kontrolle",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -606,11 +672,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle"
+     "label": "3. Kapitel: Kontrolle",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Massnahmen"
+     "label": "4. Abschnitt: Massnahmen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -621,11 +689,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle"
+     "label": "3. Kapitel: Kontrolle",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Massnahmen"
+     "label": "4. Abschnitt: Massnahmen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -636,11 +706,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle"
+     "label": "3. Kapitel: Kontrolle",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Massnahmen"
+     "label": "4. Abschnitt: Massnahmen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -651,11 +723,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle"
+     "label": "3. Kapitel: Kontrolle",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Massnahmen"
+     "label": "4. Abschnitt: Massnahmen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -666,11 +740,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -681,11 +757,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -696,11 +774,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -711,11 +791,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -726,11 +808,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -821,11 +905,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -895,11 +981,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -910,11 +998,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -940,11 +1030,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -955,11 +1047,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kantone"
+     "label": "2. Abschnitt: Kantone",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -970,11 +1064,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kantone"
+     "label": "2. Abschnitt: Kantone",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -985,11 +1081,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kantone"
+     "label": "2. Abschnitt: Kantone",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1000,11 +1098,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kantone"
+     "label": "2. Abschnitt: Kantone",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1015,11 +1115,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kantone"
+     "label": "2. Abschnitt: Kantone",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1030,11 +1132,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Mitarbeiterinnen und Mitarbeiter der Vollzugsorgane"
+     "label": "3. Abschnitt: Mitarbeiterinnen und Mitarbeiter der Vollzugsorgane",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1045,11 +1149,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Mitarbeiterinnen und Mitarbeiter der Vollzugsorgane"
+     "label": "3. Abschnitt: Mitarbeiterinnen und Mitarbeiter der Vollzugsorgane",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1060,11 +1166,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Gemeinsame Bestimmungen für den Vollzug durch Bund und Kantone"
+     "label": "4. Abschnitt: Gemeinsame Bestimmungen für den Vollzug durch Bund und Kantone",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1075,11 +1183,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Gemeinsame Bestimmungen für den Vollzug durch Bund und Kantone"
+     "label": "4. Abschnitt: Gemeinsame Bestimmungen für den Vollzug durch Bund und Kantone",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1090,11 +1200,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Vollzug"
+     "label": "4. Kapitel: Vollzug",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Gemeinsame Bestimmungen für den Vollzug durch Bund und Kantone"
+     "label": "4. Abschnitt: Gemeinsame Bestimmungen für den Vollzug durch Bund und Kantone",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1105,7 +1217,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Finanzierung"
+     "label": "5. Kapitel: Finanzierung",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1116,7 +1229,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Finanzierung"
+     "label": "5. Kapitel: Finanzierung",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1127,7 +1241,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Datenbearbeitung"
+     "label": "6. Kapitel: Datenbearbeitung",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1138,7 +1253,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Datenbearbeitung"
+     "label": "6. Kapitel: Datenbearbeitung",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1164,7 +1280,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Datenbearbeitung"
+     "label": "6. Kapitel: Datenbearbeitung",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1175,7 +1292,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Datenbearbeitung"
+     "label": "6. Kapitel: Datenbearbeitung",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1225,11 +1343,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Strafbestimmungen und Rechtsschutz"
+     "label": "7. Kapitel: Strafbestimmungen und Rechtsschutz",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbestimmungen"
+     "label": "1. Abschnitt: Strafbestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1240,11 +1360,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Strafbestimmungen und Rechtsschutz"
+     "label": "7. Kapitel: Strafbestimmungen und Rechtsschutz",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbestimmungen"
+     "label": "1. Abschnitt: Strafbestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1255,11 +1377,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Strafbestimmungen und Rechtsschutz"
+     "label": "7. Kapitel: Strafbestimmungen und Rechtsschutz",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbestimmungen"
+     "label": "1. Abschnitt: Strafbestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1286,11 +1410,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Strafbestimmungen und Rechtsschutz"
+     "label": "7. Kapitel: Strafbestimmungen und Rechtsschutz",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbestimmungen"
+     "label": "1. Abschnitt: Strafbestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1327,11 +1453,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Strafbestimmungen und Rechtsschutz"
+     "label": "7. Kapitel: Strafbestimmungen und Rechtsschutz",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rechtsschutz"
+     "label": "2. Abschnitt: Rechtsschutz",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1342,11 +1470,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Strafbestimmungen und Rechtsschutz"
+     "label": "7. Kapitel: Strafbestimmungen und Rechtsschutz",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rechtsschutz"
+     "label": "2. Abschnitt: Rechtsschutz",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1357,11 +1487,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Strafbestimmungen und Rechtsschutz"
+     "label": "7. Kapitel: Strafbestimmungen und Rechtsschutz",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rechtsschutz"
+     "label": "2. Abschnitt: Rechtsschutz",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1372,11 +1504,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Strafbestimmungen und Rechtsschutz"
+     "label": "7. Kapitel: Strafbestimmungen und Rechtsschutz",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rechtsschutz"
+     "label": "2. Abschnitt: Rechtsschutz",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1387,11 +1521,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Strafbestimmungen und Rechtsschutz"
+     "label": "7. Kapitel: Strafbestimmungen und Rechtsschutz",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rechtsschutz"
+     "label": "2. Abschnitt: Rechtsschutz",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1402,7 +1538,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1413,7 +1550,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1502,7 +1640,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1522,11 +1661,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände"
+     "label": "2. Kapitel: Anforderungen an Lebensmittel und Gebrauchsgegenstände",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lebensmittel"
+     "label": "1. Abschnitt: Lebensmittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [

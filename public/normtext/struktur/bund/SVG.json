@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "741.01",
   "titel": "Strassenverkehrsgesetz",
@@ -88,7 +88,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Titel: Allgemeine Bestimmungen"
+     "label": "I. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -174,7 +175,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Titel: Allgemeine Bestimmungen"
+     "label": "I. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -303,7 +305,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Titel: Allgemeine Bestimmungen"
+     "label": "I. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -408,7 +411,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Titel: Allgemeine Bestimmungen"
+     "label": "I. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -419,7 +423,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Titel: Allgemeine Bestimmungen"
+     "label": "I. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -430,7 +435,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Titel: Allgemeine Bestimmungen"
+     "label": "I. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -463,11 +469,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -478,11 +486,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -511,11 +521,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -640,11 +652,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -673,11 +687,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -732,11 +748,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -765,11 +783,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -798,11 +818,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -831,11 +853,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -965,11 +989,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1084,11 +1110,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1133,11 +1161,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Motorlose Fahrzeuge und ihre Führer"
+     "label": "2. Abschnitt: Motorlose Fahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1190,11 +1220,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Motorlose Fahrzeuge und ihre Führer"
+     "label": "2. Abschnitt: Motorlose Fahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1259,11 +1291,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Motorlose Fahrzeuge und ihre Führer"
+     "label": "2. Abschnitt: Motorlose Fahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1292,11 +1326,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Motorlose Fahrzeuge und ihre Führer"
+     "label": "2. Abschnitt: Motorlose Fahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1325,11 +1361,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1358,11 +1396,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1373,11 +1413,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1406,11 +1448,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "3. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1567,7 +1611,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -1578,11 +1623,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Regeln für alle Strassenbenützer"
+     "label": "1. Abschnitt: Regeln für alle Strassenbenützer",
+     "eId": "tit_3/lvl_u1/chap_1"
     }
    ],
    "marginalie": [
@@ -1612,11 +1659,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Regeln für alle Strassenbenützer"
+     "label": "1. Abschnitt: Regeln für alle Strassenbenützer",
+     "eId": "tit_3/lvl_u1/chap_1"
     }
    ],
    "marginalie": [
@@ -1628,15 +1677,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "I. Allgemeine Fahrregeln"
+     "label": "I. Allgemeine Fahrregeln",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1648,15 +1700,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "I. Allgemeine Fahrregeln"
+     "label": "I. Allgemeine Fahrregeln",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1722,15 +1777,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "I. Allgemeine Fahrregeln"
+     "label": "I. Allgemeine Fahrregeln",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1826,15 +1884,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "I. Allgemeine Fahrregeln"
+     "label": "I. Allgemeine Fahrregeln",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1912,15 +1973,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "I. Allgemeine Fahrregeln"
+     "label": "I. Allgemeine Fahrregeln",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1974,15 +2038,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "II. Einzelne Verkehrsvorgänge"
+     "label": "II. Einzelne Verkehrsvorgänge",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -1994,15 +2061,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "II. Einzelne Verkehrsvorgänge"
+     "label": "II. Einzelne Verkehrsvorgänge",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2014,15 +2084,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "II. Einzelne Verkehrsvorgänge"
+     "label": "II. Einzelne Verkehrsvorgänge",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2034,15 +2107,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "II. Einzelne Verkehrsvorgänge"
+     "label": "II. Einzelne Verkehrsvorgänge",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2054,15 +2130,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "II. Einzelne Verkehrsvorgänge"
+     "label": "II. Einzelne Verkehrsvorgänge",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2074,15 +2153,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "III. Sicherungsvorkehren"
+     "label": "III. Sicherungsvorkehren",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2094,15 +2176,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "III. Sicherungsvorkehren"
+     "label": "III. Sicherungsvorkehren",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2114,15 +2199,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "III. Sicherungsvorkehren"
+     "label": "III. Sicherungsvorkehren",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2196,15 +2284,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "III. Sicherungsvorkehren"
+     "label": "III. Sicherungsvorkehren",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2216,15 +2307,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "IV. Regeln für besondere Strassenverhältnisse"
+     "label": "IV. Regeln für besondere Strassenverhältnisse",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2236,15 +2330,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "IV. Regeln für besondere Strassenverhältnisse"
+     "label": "IV. Regeln für besondere Strassenverhältnisse",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2256,15 +2353,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "IV. Regeln für besondere Strassenverhältnisse"
+     "label": "IV. Regeln für besondere Strassenverhältnisse",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2276,15 +2376,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "V. Besondere Fahrzeugarten"
+     "label": "V. Besondere Fahrzeugarten",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_V"
     }
    ],
    "marginalie": [
@@ -2338,15 +2441,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "V. Besondere Fahrzeugarten"
+     "label": "V. Besondere Fahrzeugarten",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_V"
     }
    ],
    "marginalie": [
@@ -2358,15 +2464,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Regeln für den Fahrverkehr"
+     "label": "2. Abschnitt: Regeln für den Fahrverkehr",
+     "eId": "tit_3/lvl_u1/chap_2"
     },
     {
      "ebene": 4,
-     "label": "V. Besondere Fahrzeugarten"
+     "label": "V. Besondere Fahrzeugarten",
+     "eId": "tit_3/lvl_u1/chap_2/lvl_V"
     }
    ],
    "marginalie": [
@@ -2378,11 +2487,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Regeln für den übrigen Verkehr"
+     "label": "3. Abschnitt: Regeln für den übrigen Verkehr",
+     "eId": "tit_3/lvl_u1/chap_3"
     }
    ],
    "marginalie": [
@@ -2416,11 +2527,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Regeln für den übrigen Verkehr"
+     "label": "3. Abschnitt: Regeln für den übrigen Verkehr",
+     "eId": "tit_3/lvl_u1/chap_3"
     }
    ],
    "marginalie": [
@@ -2432,11 +2545,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Verhalten bei Unfällen"
+     "label": "4. Abschnitt: Verhalten bei Unfällen",
+     "eId": "tit_3/lvl_u1/chap_4"
     }
    ],
    "marginalie": [
@@ -2447,11 +2562,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Sportliche Veranstaltungen, Versuchsfahrten"
+     "label": "5. Abschnitt: Sportliche Veranstaltungen, Versuchsfahrten",
+     "eId": "tit_3/lvl_u1/chap_5"
     }
    ],
    "marginalie": [
@@ -2505,11 +2622,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Sportliche Veranstaltungen, Versuchsfahrten"
+     "label": "5. Abschnitt: Sportliche Veranstaltungen, Versuchsfahrten",
+     "eId": "tit_3/lvl_u1/chap_5"
     }
    ],
    "marginalie": [
@@ -2521,11 +2640,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Durchführungsbestimmungen"
+     "label": "6. Abschnitt: Durchführungsbestimmungen",
+     "eId": "tit_3/lvl_u1/chap_6"
     }
    ],
    "marginalie": [
@@ -2555,11 +2676,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Durchführungsbestimmungen"
+     "label": "6. Abschnitt: Durchführungsbestimmungen",
+     "eId": "tit_3/lvl_u1/chap_6"
     }
    ],
    "marginalie": [
@@ -2737,11 +2860,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Durchführungsbestimmungen"
+     "label": "6. Abschnitt: Durchführungsbestimmungen",
+     "eId": "tit_3/lvl_u1/chap_6"
     }
    ],
    "marginalie": [
@@ -2791,11 +2916,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Durchführungsbestimmungen"
+     "label": "6. Abschnitt: Durchführungsbestimmungen",
+     "eId": "tit_3/lvl_u1/chap_6"
     }
    ],
    "marginalie": [
@@ -2881,11 +3008,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Haftpflicht"
+     "label": "1. Abschnitt: Haftpflicht",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2896,11 +3025,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Haftpflicht"
+     "label": "1. Abschnitt: Haftpflicht",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2991,11 +3122,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Haftpflicht"
+     "label": "1. Abschnitt: Haftpflicht",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3028,11 +3161,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Haftpflicht"
+     "label": "1. Abschnitt: Haftpflicht",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3085,11 +3220,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Haftpflicht"
+     "label": "1. Abschnitt: Haftpflicht",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3115,11 +3252,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherung"
+     "label": "2. Abschnitt: Versicherung",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3180,11 +3319,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherung"
+     "label": "2. Abschnitt: Versicherung",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3217,11 +3358,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherung"
+     "label": "2. Abschnitt: Versicherung",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3279,11 +3422,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherung"
+     "label": "2. Abschnitt: Versicherung",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3294,11 +3439,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherung"
+     "label": "2. Abschnitt: Versicherung",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3343,11 +3490,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherung"
+     "label": "2. Abschnitt: Versicherung",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3380,11 +3529,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3426,11 +3577,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3477,11 +3630,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3514,11 +3669,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3571,11 +3728,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3624,11 +3783,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3657,11 +3818,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3694,11 +3857,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3740,11 +3905,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3813,11 +3980,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3846,11 +4015,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -3879,11 +4050,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Verhältnis zu andern Versicherungen"
+     "label": "4. Abschnitt: Verhältnis zu andern Versicherungen",
+     "eId": "tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -3930,11 +4103,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Verhältnis zu andern Versicherungen"
+     "label": "4. Abschnitt: Verhältnis zu andern Versicherungen",
+     "eId": "tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -3977,11 +4152,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_4/chap_5"
     }
    ],
    "marginalie": [
@@ -4014,11 +4191,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_4/chap_5"
     }
    ],
    "marginalie": [
@@ -4054,11 +4233,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_4/chap_5"
     }
    ],
    "marginalie": [
@@ -4083,11 +4264,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_4/chap_5"
     }
    ],
    "marginalie": [
@@ -4116,11 +4299,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_4/chap_5"
     }
    ],
    "marginalie": [
@@ -4149,11 +4334,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_4/chap_5"
     }
    ],
    "marginalie": [
@@ -4164,11 +4351,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_4/chap_5"
     }
    ],
    "marginalie": [
@@ -4179,11 +4368,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "tit_4/chap_5"
     }
    ],
    "marginalie": [
@@ -4228,7 +4419,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4331,7 +4523,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4380,7 +4573,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4409,7 +4603,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4438,7 +4633,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4480,7 +4676,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4529,7 +4726,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4574,7 +4772,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4632,7 +4831,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4661,7 +4861,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4701,7 +4902,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4803,7 +5005,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4814,7 +5017,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4860,7 +5064,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -4871,7 +5076,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen"
+     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4900,7 +5106,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen"
+     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4949,7 +5156,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen"
+     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5082,7 +5290,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen"
+     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5119,7 +5328,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen"
+     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5229,7 +5439,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen"
+     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5274,7 +5485,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen"
+     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5311,7 +5523,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen"
+     "label": "VI. Titel: Ausführungs- und Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5456,11 +5669,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5489,11 +5704,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5586,11 +5803,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5619,11 +5838,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5652,11 +5873,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5726,11 +5949,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5759,11 +5984,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5832,11 +6059,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5912,11 +6141,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5996,11 +6227,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -6049,11 +6282,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Titel: Fahrzeuge und Fahrzeugführer"
+     "label": "II. Titel: Fahrzeuge und Fahrzeugführer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer"
+     "label": "1. Abschnitt: Motorfahrzeuge und ihre Führer",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -6098,7 +6333,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem",
+     "eId": "tit_2_a"
     }
    ],
    "marginalie": [
@@ -6132,7 +6368,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem",
+     "eId": "tit_2_a"
     }
    ],
    "marginalie": [
@@ -6143,7 +6380,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem",
+     "eId": "tit_2_a"
     }
    ],
    "marginalie": [
@@ -6154,7 +6392,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem",
+     "eId": "tit_2_a"
     }
    ],
    "marginalie": [
@@ -6165,7 +6404,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem",
+     "eId": "tit_2_a"
     }
    ],
    "marginalie": [
@@ -6176,7 +6416,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem",
+     "eId": "tit_2_a"
     }
    ],
    "marginalie": [
@@ -6187,7 +6428,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem",
+     "eId": "tit_2_a"
     }
    ],
    "marginalie": [
@@ -6198,7 +6440,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem"
+     "label": "IIa. Titel: Fahrzeuge mit einem Automatisierungssystem",
+     "eId": "tit_2_a"
     }
    ],
    "marginalie": [
@@ -6209,7 +6452,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Titel: Allgemeine Bestimmungen"
+     "label": "I. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -6238,11 +6482,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Durchführungsbestimmungen"
+     "label": "6. Abschnitt: Durchführungsbestimmungen",
+     "eId": "tit_3/lvl_u1/chap_6"
     }
    ],
    "marginalie": [
@@ -6294,11 +6540,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Durchführungsbestimmungen"
+     "label": "6. Abschnitt: Durchführungsbestimmungen",
+     "eId": "tit_3/lvl_u1/chap_6"
     }
    ],
    "marginalie": [
@@ -6344,11 +6592,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Titel: Verkehrsregeln"
+     "label": "III. Titel: Verkehrsregeln",
+     "eId": "tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Durchführungsbestimmungen"
+     "label": "6. Abschnitt: Durchführungsbestimmungen",
+     "eId": "tit_3/lvl_u1/chap_6"
     }
    ],
    "marginalie": [
@@ -6386,7 +6636,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIIa. Titel: Verkehrsmanagement"
+     "label": "IIIa. Titel: Verkehrsmanagement",
+     "eId": "tit_3_a"
     }
    ],
    "marginalie": [
@@ -6458,7 +6709,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IIIa. Titel: Verkehrsmanagement"
+     "label": "IIIa. Titel: Verkehrsmanagement",
+     "eId": "tit_3_a"
     }
    ],
    "marginalie": [
@@ -6487,11 +6739,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherung"
+     "label": "2. Abschnitt: Versicherung",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -6524,7 +6778,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Titel: Allgemeine Bestimmungen"
+     "label": "I. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -6585,11 +6840,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -6695,11 +6952,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -6760,11 +7019,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -6793,11 +7054,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -6826,11 +7089,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -6859,11 +7124,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -6892,11 +7159,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Titel: Haftpflicht und Versicherung"
+     "label": "IV. Titel: Haftpflicht und Versicherung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Fälle"
+     "label": "3. Abschnitt: Besondere Fälle",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -6941,11 +7210,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Informationssystem Verkehrszulassung"
+     "label": "1. Abschnitt: Informationssystem Verkehrszulassung",
+     "eId": "tit_4_a/chap_1"
     }
    ],
    "marginalie": [
@@ -6990,11 +7261,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Informationssystem Verkehrszulassung"
+     "label": "1. Abschnitt: Informationssystem Verkehrszulassung",
+     "eId": "tit_4_a/chap_1"
     }
    ],
    "marginalie": [
@@ -7081,11 +7354,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Informationssystem Verkehrszulassung"
+     "label": "1. Abschnitt: Informationssystem Verkehrszulassung",
+     "eId": "tit_4_a/chap_1"
     }
    ],
    "marginalie": [
@@ -7096,11 +7371,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Informationssystem Verkehrszulassung"
+     "label": "1. Abschnitt: Informationssystem Verkehrszulassung",
+     "eId": "tit_4_a/chap_1"
     }
    ],
    "marginalie": [
@@ -7278,11 +7555,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Informationssystem Verkehrszulassung"
+     "label": "1. Abschnitt: Informationssystem Verkehrszulassung",
+     "eId": "tit_4_a/chap_1"
     }
    ],
    "marginalie": [
@@ -7380,11 +7659,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Informationssystem Verkehrszulassung"
+     "label": "1. Abschnitt: Informationssystem Verkehrszulassung",
+     "eId": "tit_4_a/chap_1"
     }
    ],
    "marginalie": [
@@ -7395,11 +7676,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Informationssystem Verkehrszulassung"
+     "label": "1. Abschnitt: Informationssystem Verkehrszulassung",
+     "eId": "tit_4_a/chap_1"
     }
    ],
    "marginalie": [
@@ -7410,11 +7693,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Informationssystem Verkehrszulassung"
+     "label": "1. Abschnitt: Informationssystem Verkehrszulassung",
+     "eId": "tit_4_a/chap_1"
     }
    ],
    "marginalie": [
@@ -7425,11 +7710,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle"
+     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle",
+     "eId": "tit_4_a/chap_2"
     }
    ],
    "marginalie": [
@@ -7440,11 +7727,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle"
+     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle",
+     "eId": "tit_4_a/chap_2"
     }
    ],
    "marginalie": [
@@ -7455,11 +7744,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle"
+     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle",
+     "eId": "tit_4_a/chap_2"
     }
    ],
    "marginalie": [
@@ -7470,11 +7761,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle"
+     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle",
+     "eId": "tit_4_a/chap_2"
     }
    ],
    "marginalie": [
@@ -7485,11 +7778,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle"
+     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle",
+     "eId": "tit_4_a/chap_2"
     }
    ],
    "marginalie": [
@@ -7500,11 +7795,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle"
+     "label": "2. Abschnitt: Informationssystem Strassenverkehrsunfälle",
+     "eId": "tit_4_a/chap_2"
     }
    ],
    "marginalie": [
@@ -7515,11 +7812,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen"
+     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen",
+     "eId": "tit_4_a/chap_3"
     }
    ],
    "marginalie": [
@@ -7544,11 +7843,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen"
+     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen",
+     "eId": "tit_4_a/chap_3"
     }
    ],
    "marginalie": [
@@ -7574,11 +7875,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen"
+     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen",
+     "eId": "tit_4_a/chap_3"
     }
    ],
    "marginalie": [
@@ -7589,11 +7892,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen"
+     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen",
+     "eId": "tit_4_a/chap_3"
     }
    ],
    "marginalie": [
@@ -7604,11 +7909,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen"
+     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen",
+     "eId": "tit_4_a/chap_3"
     }
    ],
    "marginalie": [
@@ -7619,11 +7926,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IVa. Titel: Informationssysteme"
+     "label": "IVa. Titel: Informationssysteme",
+     "eId": "tit_4_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen"
+     "label": "3. Abschnitt: Informationssystem Strassenverkehrskontrollen",
+     "eId": "tit_4_a/chap_3"
     }
    ],
    "marginalie": [
@@ -7634,7 +7943,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -7663,7 +7973,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -7696,7 +8007,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Titel: Strafbestimmungen"
+     "label": "V. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [

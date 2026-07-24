@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "831.30",
   "titel": "Bundesgesetz über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung",
@@ -55,7 +55,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Anwendbarkeit des ATSG"
+     "label": "1. Kapitel: Anwendbarkeit des ATSG",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [],
@@ -79,11 +80,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -94,11 +97,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -124,11 +129,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anspruch auf Ergänzungsleistungen"
+     "label": "2. Abschnitt: Anspruch auf Ergänzungsleistungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -332,11 +339,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anspruch auf Ergänzungsleistungen"
+     "label": "2. Abschnitt: Anspruch auf Ergänzungsleistungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -503,11 +512,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anspruch auf Ergänzungsleistungen"
+     "label": "2. Abschnitt: Anspruch auf Ergänzungsleistungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -518,11 +529,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anspruch auf Ergänzungsleistungen"
+     "label": "2. Abschnitt: Anspruch auf Ergänzungsleistungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -533,11 +546,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anspruch auf Ergänzungsleistungen"
+     "label": "2. Abschnitt: Anspruch auf Ergänzungsleistungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -564,11 +579,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Jährliche Ergänzungsleistung"
+     "label": "3. Abschnitt: Jährliche Ergänzungsleistung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -658,11 +675,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Jährliche Ergänzungsleistung"
+     "label": "3. Abschnitt: Jährliche Ergänzungsleistung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -965,11 +984,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Jährliche Ergänzungsleistung"
+     "label": "3. Abschnitt: Jährliche Ergänzungsleistung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1238,11 +1259,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Jährliche Ergänzungsleistung"
+     "label": "3. Abschnitt: Jährliche Ergänzungsleistung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1268,11 +1291,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Jährliche Ergänzungsleistung"
+     "label": "3. Abschnitt: Jährliche Ergänzungsleistung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1317,11 +1342,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Vergütung der Krankheits- und Behinderungskosten durch die Kantone"
+     "label": "4. Abschnitt: Vergütung der Krankheits- und Behinderungskosten durch die Kantone",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1395,11 +1422,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Vergütung der Krankheits- und Behinderungskosten durch die Kantone"
+     "label": "4. Abschnitt: Vergütung der Krankheits- und Behinderungskosten durch die Kantone",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1410,11 +1439,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Vergütung der Krankheits- und Behinderungskosten durch die Kantone"
+     "label": "4. Abschnitt: Vergütung der Krankheits- und Behinderungskosten durch die Kantone",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1425,7 +1456,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Leistungen gemeinnütziger Institutionen"
+     "label": "3. Kapitel: Leistungen gemeinnütziger Institutionen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1451,7 +1483,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Leistungen gemeinnütziger Institutionen"
+     "label": "3. Kapitel: Leistungen gemeinnütziger Institutionen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1462,7 +1495,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1489,7 +1523,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1531,7 +1566,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1624,7 +1660,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1635,7 +1672,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1693,7 +1731,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1722,7 +1761,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1749,7 +1789,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1791,7 +1832,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [],
@@ -1818,7 +1860,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1860,7 +1903,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1889,7 +1933,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1916,7 +1961,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1984,7 +2030,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Verhältnis zum europäischen Recht"
+     "label": "5. Kapitel: Verhältnis zum europäischen Recht",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [],
@@ -2111,7 +2158,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2122,7 +2170,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2181,7 +2230,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2270,11 +2320,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Jährliche Ergänzungsleistung"
+     "label": "3. Abschnitt: Jährliche Ergänzungsleistung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2303,11 +2355,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Rückerstattung rechtmässig bezogener Leistungen"
+     "label": "5. Abschnitt: Rückerstattung rechtmässig bezogener Leistungen",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -2337,11 +2391,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Rückerstattung rechtmässig bezogener Leistungen"
+     "label": "5. Abschnitt: Rückerstattung rechtmässig bezogener Leistungen",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -2352,7 +2408,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -2406,7 +2463,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -2463,7 +2521,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -2514,7 +2573,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gemeinsame Bestimmungen"
+     "label": "4. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -2543,11 +2603,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Ergänzungsleistungen"
+     "label": "2. Kapitel: Ergänzungsleistungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Jährliche Ergänzungsleistung"
+     "label": "3. Abschnitt: Jährliche Ergänzungsleistung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [

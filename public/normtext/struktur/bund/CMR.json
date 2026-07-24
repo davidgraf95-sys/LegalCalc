@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "0.741.611",
   "titel": "Übereinkommen über den Beförderungsvertrag im internationalen Strassengüterverkehr (CMR)",
@@ -39,7 +39,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I Geltungsbereich"
+     "label": "Kapitel I Geltungsbereich",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -48,7 +49,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I Geltungsbereich"
+     "label": "Kapitel I Geltungsbereich",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -57,7 +59,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II Haftung des Frachtführers für andere Personen"
+     "label": "Kapitel II Haftung des Frachtführers für andere Personen",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -66,7 +69,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages"
+     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -75,7 +79,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages"
+     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -84,7 +89,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages"
+     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -93,7 +99,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages"
+     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -102,7 +109,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages"
+     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -111,7 +119,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages"
+     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -120,7 +129,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages"
+     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -129,7 +139,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages"
+     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -138,7 +149,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages"
+     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -147,7 +159,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages"
+     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -156,7 +169,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages"
+     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -165,7 +179,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages"
+     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -174,7 +189,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages"
+     "label": "Kapitel III Abschluss und Ausführung des Beförderungsvertrages",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -183,7 +199,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Haftung des Frachtführers"
+     "label": "Kapitel IV Haftung des Frachtführers",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -192,7 +209,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Haftung des Frachtführers"
+     "label": "Kapitel IV Haftung des Frachtführers",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -201,7 +219,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Haftung des Frachtführers"
+     "label": "Kapitel IV Haftung des Frachtführers",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -210,7 +229,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Haftung des Frachtführers"
+     "label": "Kapitel IV Haftung des Frachtführers",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -219,7 +239,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Haftung des Frachtführers"
+     "label": "Kapitel IV Haftung des Frachtführers",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -228,7 +249,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Haftung des Frachtführers"
+     "label": "Kapitel IV Haftung des Frachtführers",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -237,7 +259,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Haftung des Frachtführers"
+     "label": "Kapitel IV Haftung des Frachtführers",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": [],
@@ -313,7 +336,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Haftung des Frachtführers"
+     "label": "Kapitel IV Haftung des Frachtführers",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -322,7 +346,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Haftung des Frachtführers"
+     "label": "Kapitel IV Haftung des Frachtführers",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -331,7 +356,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Haftung des Frachtführers"
+     "label": "Kapitel IV Haftung des Frachtführers",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -340,7 +366,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Haftung des Frachtführers"
+     "label": "Kapitel IV Haftung des Frachtführers",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -349,7 +376,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Haftung des Frachtführers"
+     "label": "Kapitel IV Haftung des Frachtführers",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -358,7 +386,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV Haftung des Frachtführers"
+     "label": "Kapitel IV Haftung des Frachtführers",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -367,7 +396,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V Reklamationen und Klagen"
+     "label": "Kapitel V Reklamationen und Klagen",
+     "eId": "chap_V"
     }
    ],
    "marginalie": []
@@ -376,7 +406,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V Reklamationen und Klagen"
+     "label": "Kapitel V Reklamationen und Klagen",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [],
@@ -395,7 +426,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V Reklamationen und Klagen"
+     "label": "Kapitel V Reklamationen und Klagen",
+     "eId": "chap_V"
     }
    ],
    "marginalie": []
@@ -404,7 +436,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V Reklamationen und Klagen"
+     "label": "Kapitel V Reklamationen und Klagen",
+     "eId": "chap_V"
     }
    ],
    "marginalie": []
@@ -413,7 +446,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Bestimmungen über die Beförderung durch aufeinander folgende Frachtführer"
+     "label": "Kapitel VI Bestimmungen über die Beförderung durch aufeinander folgende Frachtführer",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -422,7 +456,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Bestimmungen über die Beförderung durch aufeinander folgende Frachtführer"
+     "label": "Kapitel VI Bestimmungen über die Beförderung durch aufeinander folgende Frachtführer",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -431,7 +466,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Bestimmungen über die Beförderung durch aufeinander folgende Frachtführer"
+     "label": "Kapitel VI Bestimmungen über die Beförderung durch aufeinander folgende Frachtführer",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -440,7 +476,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Bestimmungen über die Beförderung durch aufeinander folgende Frachtführer"
+     "label": "Kapitel VI Bestimmungen über die Beförderung durch aufeinander folgende Frachtführer",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -449,7 +486,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Bestimmungen über die Beförderung durch aufeinander folgende Frachtführer"
+     "label": "Kapitel VI Bestimmungen über die Beförderung durch aufeinander folgende Frachtführer",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -458,7 +496,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Bestimmungen über die Beförderung durch aufeinander folgende Frachtführer"
+     "label": "Kapitel VI Bestimmungen über die Beförderung durch aufeinander folgende Frachtführer",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -467,7 +506,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI Bestimmungen über die Beförderung durch aufeinander folgende Frachtführer"
+     "label": "Kapitel VI Bestimmungen über die Beförderung durch aufeinander folgende Frachtführer",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -476,7 +516,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII Nichtigkeit von den Übereinkommen widersprechenden Vereinbarungen"
+     "label": "Kapitel VII Nichtigkeit von den Übereinkommen widersprechenden Vereinbarungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -485,7 +526,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VIII Schlussbestimmungen"
+     "label": "Kapitel VIII Schlussbestimmungen",
+     "eId": "chap_VIII"
     }
    ],
    "marginalie": []
@@ -494,7 +536,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VIII Schlussbestimmungen"
+     "label": "Kapitel VIII Schlussbestimmungen",
+     "eId": "chap_VIII"
     }
    ],
    "marginalie": []
@@ -503,7 +546,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VIII Schlussbestimmungen"
+     "label": "Kapitel VIII Schlussbestimmungen",
+     "eId": "chap_VIII"
     }
    ],
    "marginalie": []
@@ -512,7 +556,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VIII Schlussbestimmungen"
+     "label": "Kapitel VIII Schlussbestimmungen",
+     "eId": "chap_VIII"
     }
    ],
    "marginalie": []
@@ -521,7 +566,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VIII Schlussbestimmungen"
+     "label": "Kapitel VIII Schlussbestimmungen",
+     "eId": "chap_VIII"
     }
    ],
    "marginalie": []
@@ -530,7 +576,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VIII Schlussbestimmungen"
+     "label": "Kapitel VIII Schlussbestimmungen",
+     "eId": "chap_VIII"
     }
    ],
    "marginalie": []
@@ -539,7 +586,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VIII Schlussbestimmungen"
+     "label": "Kapitel VIII Schlussbestimmungen",
+     "eId": "chap_VIII"
     }
    ],
    "marginalie": []
@@ -548,7 +596,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VIII Schlussbestimmungen"
+     "label": "Kapitel VIII Schlussbestimmungen",
+     "eId": "chap_VIII"
     }
    ],
    "marginalie": []
@@ -557,7 +606,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VIII Schlussbestimmungen"
+     "label": "Kapitel VIII Schlussbestimmungen",
+     "eId": "chap_VIII"
     }
    ],
    "marginalie": []
@@ -566,7 +616,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VIII Schlussbestimmungen"
+     "label": "Kapitel VIII Schlussbestimmungen",
+     "eId": "chap_VIII"
     }
    ],
    "marginalie": []

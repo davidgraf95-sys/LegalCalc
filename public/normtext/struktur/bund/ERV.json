@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "952.03",
   "titel": "Verordnung über die Eigenmittel und Risikoverteilung der Banken und Wertpapierhäuser",
@@ -81,11 +81,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -122,11 +124,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -163,11 +167,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -192,11 +198,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -345,11 +353,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -381,11 +391,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -429,11 +441,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Konsolidierung"
+     "label": "2. Kapitel: Konsolidierung",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -471,11 +485,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Konsolidierung"
+     "label": "2. Kapitel: Konsolidierung",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -486,11 +502,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Konsolidierung"
+     "label": "2. Kapitel: Konsolidierung",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -501,11 +519,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Konsolidierung"
+     "label": "2. Kapitel: Konsolidierung",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -543,11 +563,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Konsolidierung"
+     "label": "2. Kapitel: Konsolidierung",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -558,11 +580,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Konsolidierung"
+     "label": "2. Kapitel: Konsolidierung",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -573,11 +597,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Konsolidierung"
+     "label": "2. Kapitel: Konsolidierung",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -602,11 +628,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nachweis und Offenlegung angemessener Eigenmittel"
+     "label": "3. Kapitel: Nachweis und Offenlegung angemessener Eigenmittel",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -631,11 +659,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nachweis und Offenlegung angemessener Eigenmittel"
+     "label": "3. Kapitel: Nachweis und Offenlegung angemessener Eigenmittel",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -646,11 +676,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nachweis und Offenlegung angemessener Eigenmittel"
+     "label": "3. Kapitel: Nachweis und Offenlegung angemessener Eigenmittel",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -682,11 +714,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Vereinfachte Anwendung"
+     "label": "4. Kapitel: Vereinfachte Anwendung",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": []
@@ -695,11 +729,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -725,11 +761,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -740,11 +778,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -781,15 +821,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Hartes Kernkapital («CET1»)"
+     "label": "1. Abschnitt: Hartes Kernkapital («CET1»)",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -846,15 +889,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Hartes Kernkapital («CET1»)"
+     "label": "1. Abschnitt: Hartes Kernkapital («CET1»)",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -891,15 +937,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Hartes Kernkapital («CET1»)"
+     "label": "1. Abschnitt: Hartes Kernkapital («CET1»)",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -910,15 +959,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Hartes Kernkapital («CET1»)"
+     "label": "1. Abschnitt: Hartes Kernkapital («CET1»)",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -929,15 +981,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Hartes Kernkapital («CET1»)"
+     "label": "1. Abschnitt: Hartes Kernkapital («CET1»)",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -948,15 +1003,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Hartes Kernkapital («CET1»)"
+     "label": "1. Abschnitt: Hartes Kernkapital («CET1»)",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -994,15 +1052,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zusätzliches Kernkapital («Additional Tier 1, AT1»)"
+     "label": "2. Abschnitt: Zusätzliches Kernkapital («Additional Tier 1, AT1»)",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1039,15 +1100,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zusätzliches Kernkapital («Additional Tier 1, AT1»)"
+     "label": "2. Abschnitt: Zusätzliches Kernkapital («Additional Tier 1, AT1»)",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1058,15 +1122,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zusätzliches Kernkapital («Additional Tier 1, AT1»)"
+     "label": "2. Abschnitt: Zusätzliches Kernkapital («Additional Tier 1, AT1»)",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1103,15 +1170,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Ergänzungskapital («Tier 2»)"
+     "label": "3. Abschnitt: Ergänzungskapital («Tier 2»)",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1122,15 +1192,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Korrekturen"
+     "label": "4. Abschnitt: Korrekturen",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1155,15 +1228,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Korrekturen"
+     "label": "4. Abschnitt: Korrekturen",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1195,15 +1271,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Korrekturen"
+     "label": "4. Abschnitt: Korrekturen",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1232,15 +1311,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Korrekturen"
+     "label": "4. Abschnitt: Korrekturen",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1251,15 +1333,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Korrekturen"
+     "label": "4. Abschnitt: Korrekturen",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1284,15 +1369,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Korrekturen"
+     "label": "4. Abschnitt: Korrekturen",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1329,15 +1417,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Korrekturen"
+     "label": "4. Abschnitt: Korrekturen",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1386,15 +1477,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Korrekturen"
+     "label": "4. Abschnitt: Korrekturen",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1419,15 +1513,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Korrekturen"
+     "label": "4. Abschnitt: Korrekturen",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1438,15 +1535,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Korrekturen"
+     "label": "4. Abschnitt: Korrekturen",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1471,11 +1571,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1524,11 +1626,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1553,11 +1657,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1582,11 +1688,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1623,11 +1731,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1652,15 +1762,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1685,15 +1798,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1718,15 +1834,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1758,15 +1877,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Berechnung der Positionen"
+     "label": "2. Abschnitt: Berechnung der Positionen",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1791,15 +1913,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Berechnung der Positionen"
+     "label": "2. Abschnitt: Berechnung der Positionen",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1824,15 +1949,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Berechnung der Positionen"
+     "label": "2. Abschnitt: Berechnung der Positionen",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1857,15 +1985,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Berechnung der Positionen"
+     "label": "2. Abschnitt: Berechnung der Positionen",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1890,15 +2021,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Berechnung der Positionen"
+     "label": "2. Abschnitt: Berechnung der Positionen",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [],
@@ -1921,15 +2055,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Berechnung der Positionen"
+     "label": "2. Abschnitt: Berechnung der Positionen",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1954,15 +2091,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Berechnung der Positionen"
+     "label": "2. Abschnitt: Berechnung der Positionen",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1994,15 +2134,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Berechnung der Positionen"
+     "label": "2. Abschnitt: Berechnung der Positionen",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2040,15 +2183,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Berechnung der Positionen"
+     "label": "2. Abschnitt: Berechnung der Positionen",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2080,15 +2226,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Berechnung der Positionen"
+     "label": "2. Abschnitt: Berechnung der Positionen",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2113,15 +2262,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Berechnung der Positionen"
+     "label": "2. Abschnitt: Berechnung der Positionen",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2203,15 +2355,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Berechnung der Positionen"
+     "label": "2. Abschnitt: Berechnung der Positionen",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2243,15 +2398,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2296,15 +2454,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2336,15 +2497,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2355,15 +2519,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2388,15 +2555,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2421,15 +2591,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2454,15 +2627,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2500,15 +2676,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2546,15 +2725,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2579,15 +2761,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2612,15 +2797,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2658,15 +2846,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: IRB"
+     "label": "4. Abschnitt: IRB",
+     "eId": "tit_3/chap_2/sec_4"
     }
    ],
    "marginalie": [],
@@ -2696,15 +2887,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Marktrisiken"
+     "label": "4. Kapitel: Marktrisiken",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -2727,15 +2921,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Marktrisiken"
+     "label": "4. Kapitel: Marktrisiken",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2760,15 +2957,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Marktrisiken"
+     "label": "4. Kapitel: Marktrisiken",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2793,15 +2993,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Marktrisiken"
+     "label": "4. Kapitel: Marktrisiken",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz"
+     "label": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2827,15 +3030,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Marktrisiken"
+     "label": "4. Kapitel: Marktrisiken",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz"
+     "label": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2846,15 +3052,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Marktrisiken"
+     "label": "4. Kapitel: Marktrisiken",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz"
+     "label": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2874,15 +3083,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Marktrisiken"
+     "label": "4. Kapitel: Marktrisiken",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz"
+     "label": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2893,15 +3105,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Marktrisiken"
+     "label": "4. Kapitel: Marktrisiken",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Marktrisiko-Standardansatz"
+     "label": "3. Abschnitt: Marktrisiko-Standardansatz",
+     "eId": "tit_3/chap_4/sec_3"
     }
    ],
    "marginalie": [],
@@ -2932,15 +3147,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Marktrisiken"
+     "label": "4. Kapitel: Marktrisiken",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Marktrisiko-Modellansatz"
+     "label": "4. Abschnitt: Marktrisiko-Modellansatz",
+     "eId": "tit_3/chap_4/sec_4"
     }
    ],
    "marginalie": [],
@@ -2970,11 +3188,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Operationelle Risiken"
+     "label": "5. Kapitel: Operationelle Risiken",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -3000,11 +3220,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Operationelle Risiken"
+     "label": "5. Kapitel: Operationelle Risiken",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -3024,11 +3246,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Operationelle Risiken"
+     "label": "5. Kapitel: Operationelle Risiken",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -3039,11 +3263,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Operationelle Risiken"
+     "label": "5. Kapitel: Operationelle Risiken",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -3054,11 +3280,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Operationelle Risiken"
+     "label": "5. Kapitel: Operationelle Risiken",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -3069,11 +3297,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Operationelle Risiken"
+     "label": "5. Kapitel: Operationelle Risiken",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -3084,15 +3314,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gegenstand"
+     "label": "1. Abschnitt: Gegenstand",
+     "eId": "tit_4/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3117,15 +3350,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gegenstand"
+     "label": "1. Abschnitt: Gegenstand",
+     "eId": "tit_4/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3162,15 +3398,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Obergrenzen der Klumpenrisiken"
+     "label": "2. Abschnitt: Obergrenzen der Klumpenrisiken",
+     "eId": "tit_4/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3207,15 +3446,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Obergrenzen der Klumpenrisiken"
+     "label": "2. Abschnitt: Obergrenzen der Klumpenrisiken",
+     "eId": "tit_4/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3254,15 +3496,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Obergrenzen der Klumpenrisiken"
+     "label": "2. Abschnitt: Obergrenzen der Klumpenrisiken",
+     "eId": "tit_4/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3287,15 +3532,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Meldepflichten im Zusammenhang mit Klumpenrisiken und anderen grossen Kreditrisiken"
+     "label": "3. Abschnitt: Meldepflichten im Zusammenhang mit Klumpenrisiken und anderen grossen Kreditrisiken",
+     "eId": "tit_4/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -3345,15 +3593,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Meldepflichten im Zusammenhang mit Klumpenrisiken und anderen grossen Kreditrisiken"
+     "label": "3. Abschnitt: Meldepflichten im Zusammenhang mit Klumpenrisiken und anderen grossen Kreditrisiken",
+     "eId": "tit_4/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -3378,15 +3629,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Meldepflichten im Zusammenhang mit Klumpenrisiken und anderen grossen Kreditrisiken"
+     "label": "3. Abschnitt: Meldepflichten im Zusammenhang mit Klumpenrisiken und anderen grossen Kreditrisiken",
+     "eId": "tit_4/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -3411,15 +3665,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Berechnungsgrundsätze"
+     "label": "4. Abschnitt: Berechnungsgrundsätze",
+     "eId": "tit_4/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -3430,15 +3687,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Berechnungsgrundsätze"
+     "label": "4. Abschnitt: Berechnungsgrundsätze",
+     "eId": "tit_4/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -3463,15 +3723,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Berechnungsgrundsätze"
+     "label": "4. Abschnitt: Berechnungsgrundsätze",
+     "eId": "tit_4/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -3496,15 +3759,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Berechnungsgrundsätze"
+     "label": "4. Abschnitt: Berechnungsgrundsätze",
+     "eId": "tit_4/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -3515,15 +3781,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Berechnungsgrundsätze"
+     "label": "4. Abschnitt: Berechnungsgrundsätze",
+     "eId": "tit_4/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -3534,15 +3803,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Erleichterungen und Verschärfungen"
+     "label": "5. Abschnitt: Erleichterungen und Verschärfungen",
+     "eId": "tit_4/chap_1/sec_5"
     }
    ],
    "marginalie": [],
@@ -3578,15 +3850,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung der Gesamtposition"
+     "label": "2. Kapitel: Berechnung der Gesamtposition",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gewichtung"
+     "label": "1. Abschnitt: Gewichtung",
+     "eId": "tit_4/chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -3635,15 +3910,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung der Gesamtposition"
+     "label": "2. Kapitel: Berechnung der Gesamtposition",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zusammenrechnung"
+     "label": "2. Abschnitt: Zusammenrechnung",
+     "eId": "tit_4/chap_2/sec_2"
     }
    ],
    "marginalie": []
@@ -3652,15 +3930,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung der Gesamtposition"
+     "label": "2. Kapitel: Berechnung der Gesamtposition",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsberechnung allgemein"
+     "label": "3. Abschnitt: Positionsberechnung allgemein",
+     "eId": "tit_4/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -3692,15 +3973,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung der Gesamtposition"
+     "label": "2. Kapitel: Berechnung der Gesamtposition",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsberechnung allgemein"
+     "label": "3. Abschnitt: Positionsberechnung allgemein",
+     "eId": "tit_4/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -3725,15 +4009,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung der Gesamtposition"
+     "label": "2. Kapitel: Berechnung der Gesamtposition",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsberechnung allgemein"
+     "label": "3. Abschnitt: Positionsberechnung allgemein",
+     "eId": "tit_4/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -3758,15 +4045,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung der Gesamtposition"
+     "label": "2. Kapitel: Berechnung der Gesamtposition",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsberechnung allgemein"
+     "label": "3. Abschnitt: Positionsberechnung allgemein",
+     "eId": "tit_4/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -3811,15 +4101,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung der Gesamtposition"
+     "label": "2. Kapitel: Berechnung der Gesamtposition",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Risikominderung"
+     "label": "4. Abschnitt: Risikominderung",
+     "eId": "tit_4/chap_2/sec_4"
     }
    ],
    "marginalie": [],
@@ -3873,11 +4166,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3939,11 +4234,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [],
@@ -3966,11 +4263,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Wandlungskapital und Schuldinstrumente zur Verlusttragung bei Insolvenzmassnahmen"
+     "label": "2. Kapitel: Wandlungskapital und Schuldinstrumente zur Verlusttragung bei Insolvenzmassnahmen",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -4008,11 +4307,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Wandlungskapital und Schuldinstrumente zur Verlusttragung bei Insolvenzmassnahmen"
+     "label": "2. Kapitel: Wandlungskapital und Schuldinstrumente zur Verlusttragung bei Insolvenzmassnahmen",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -4049,11 +4350,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank"
+     "label": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -4091,11 +4394,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank"
+     "label": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -4120,11 +4425,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank"
+     "label": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -4135,11 +4442,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank"
+     "label": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -4150,11 +4459,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zusätzliche verlustabsorbierende Mittel"
+     "label": "4. Kapitel: Zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -4253,11 +4564,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zusätzliche verlustabsorbierende Mittel"
+     "label": "4. Kapitel: Zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -4296,11 +4609,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Besondere Risikoverteilungsvorschriften"
+     "label": "5. Kapitel: Besondere Risikoverteilungsvorschriften",
+     "eId": "tit_5/chap_5"
     }
    ],
    "marginalie": [
@@ -4361,15 +4676,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "6. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Übergangsbestimmungen"
+     "label": "1. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: …"
+     "label": "1. Abschnitt: …",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -4392,11 +4710,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "6. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -4438,11 +4758,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "6. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -4453,11 +4775,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "6. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -4482,15 +4806,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Berechnungsgrundsätze"
+     "label": "4. Abschnitt: Berechnungsgrundsätze",
+     "eId": "tit_4/chap_1/sec_4"
     }
    ],
    "marginalie": [],
@@ -4513,15 +4840,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Berechnungsgrundsätze"
+     "label": "4. Abschnitt: Berechnungsgrundsätze",
+     "eId": "tit_4/chap_1/sec_4"
     }
    ],
    "marginalie": [],
@@ -4544,15 +4874,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Berechnungsgrundsätze"
+     "label": "4. Abschnitt: Berechnungsgrundsätze",
+     "eId": "tit_4/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -4577,15 +4910,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Risikoverteilung"
+     "label": "4. Titel: Risikoverteilung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung der Gesamtposition"
+     "label": "2. Kapitel: Berechnung der Gesamtposition",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Risikominderung"
+     "label": "4. Abschnitt: Risikominderung",
+     "eId": "tit_4/chap_2/sec_4"
     }
    ],
    "marginalie": []
@@ -4594,11 +4930,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -4623,11 +4961,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [],
@@ -4654,11 +4994,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Wandlungskapital und Schuldinstrumente zur Verlusttragung bei Insolvenzmassnahmen"
+     "label": "2. Kapitel: Wandlungskapital und Schuldinstrumente zur Verlusttragung bei Insolvenzmassnahmen",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -4719,11 +5061,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Wandlungskapital und Schuldinstrumente zur Verlusttragung bei Insolvenzmassnahmen"
+     "label": "2. Kapitel: Wandlungskapital und Schuldinstrumente zur Verlusttragung bei Insolvenzmassnahmen",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -4748,11 +5092,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Wandlungskapital und Schuldinstrumente zur Verlusttragung bei Insolvenzmassnahmen"
+     "label": "2. Kapitel: Wandlungskapital und Schuldinstrumente zur Verlusttragung bei Insolvenzmassnahmen",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -4825,11 +5171,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank"
+     "label": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -4854,11 +5202,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank"
+     "label": "3. Kapitel: Eigenmittel zur ordentlichen Weiterführung der Bank",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": []
@@ -4867,11 +5217,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zusätzliche verlustabsorbierende Mittel"
+     "label": "4. Kapitel: Zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -4900,11 +5252,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zusätzliche verlustabsorbierende Mittel"
+     "label": "4. Kapitel: Zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -4929,11 +5283,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bestimmungen für systemrelevante Banken"
+     "label": "5. Titel: Bestimmungen für systemrelevante Banken",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zusätzliche verlustabsorbierende Mittel"
+     "label": "4. Kapitel: Zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": []
@@ -4942,15 +5298,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "6. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Übergangsbestimmungen"
+     "label": "1. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: …"
+     "label": "1. Abschnitt: …",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -4986,15 +5345,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "6. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Übergangsbestimmungen"
+     "label": "1. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: …"
+     "label": "1. Abschnitt: …",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -5017,15 +5379,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "6. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Übergangsbestimmungen"
+     "label": "1. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: …"
+     "label": "1. Abschnitt: …",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -5048,15 +5413,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "6. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Übergangsbestimmungen"
+     "label": "1. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: …"
+     "label": "1. Abschnitt: …",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -5083,15 +5451,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "6. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Übergangsbestimmungen"
+     "label": "1. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Übergangsbestimmungen zur Änderung vom 11. Mai 2016"
+     "label": "2. Abschnitt: Übergangsbestimmungen zur Änderung vom 11. Mai 2016",
+     "eId": "tit_6/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -5117,15 +5488,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "6. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Übergangsbestimmungen"
+     "label": "1. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
+     "label": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -5164,15 +5538,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "6. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Übergangsbestimmungen"
+     "label": "1. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
+     "label": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -5183,15 +5560,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "6. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Übergangsbestimmungen"
+     "label": "1. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
+     "label": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -5202,15 +5582,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "6. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Übergangsbestimmungen"
+     "label": "1. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
+     "label": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -5221,15 +5604,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "6. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Übergangsbestimmungen"
+     "label": "1. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
+     "label": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -5240,15 +5626,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "6. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Übergangsbestimmungen"
+     "label": "1. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
+     "label": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -5259,15 +5648,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "6. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Übergangsbestimmungen"
+     "label": "1. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
+     "label": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -5278,15 +5670,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "6. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Übergangsbestimmungen"
+     "label": "1. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
+     "label": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -5307,15 +5702,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Übergangs- und Schlussbestimmungen"
+     "label": "6. Titel: Übergangs- und Schlussbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Übergangsbestimmungen"
+     "label": "1. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023"
+     "label": "3. Abschnitt: Übergangsbestimmungen zur Änderung vom 29. November 2023",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": []
@@ -5324,15 +5722,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zusätzliches Kernkapital («Additional Tier 1, AT1»)"
+     "label": "2. Abschnitt: Zusätzliches Kernkapital («Additional Tier 1, AT1»)",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -5357,15 +5758,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Berechnung"
+     "label": "2. Kapitel: Berechnung",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Korrekturen"
+     "label": "4. Abschnitt: Korrekturen",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -5390,11 +5794,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel"
+     "label": "2. Titel: Anrechenbare Eigenmittel sowie zusätzliche verlustabsorbierende Mittel",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Zusätzliche verlustabsorbierende Mittel für Kantonalbanken"
+     "label": "3. Kapitel: Zusätzliche verlustabsorbierende Mittel für Kantonalbanken",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [],
@@ -5418,11 +5824,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -5454,11 +5862,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -5483,11 +5893,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -5512,11 +5924,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -5565,11 +5979,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -5594,11 +6010,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeines"
+     "label": "1. Kapitel: Allgemeines",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [],
@@ -5621,11 +6039,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Vereinfachungen für besonders liquide und gut kapitalisierte Banken der Kategorien 4 und 5"
+     "label": "1a. Kapitel: Vereinfachungen für besonders liquide und gut kapitalisierte Banken der Kategorien 4 und 5",
+     "eId": "tit_3/chap_1_a"
     }
    ],
    "marginalie": [
@@ -5677,11 +6097,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Vereinfachungen für besonders liquide und gut kapitalisierte Banken der Kategorien 4 und 5"
+     "label": "1a. Kapitel: Vereinfachungen für besonders liquide und gut kapitalisierte Banken der Kategorien 4 und 5",
+     "eId": "tit_3/chap_1_a"
     }
    ],
    "marginalie": [
@@ -5707,11 +6129,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Vereinfachungen für besonders liquide und gut kapitalisierte Banken der Kategorien 4 und 5"
+     "label": "1a. Kapitel: Vereinfachungen für besonders liquide und gut kapitalisierte Banken der Kategorien 4 und 5",
+     "eId": "tit_3/chap_1_a"
     }
    ],
    "marginalie": [
@@ -5776,11 +6200,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Vereinfachungen für besonders liquide und gut kapitalisierte Banken der Kategorien 4 und 5"
+     "label": "1a. Kapitel: Vereinfachungen für besonders liquide und gut kapitalisierte Banken der Kategorien 4 und 5",
+     "eId": "tit_3/chap_1_a"
     }
    ],
    "marginalie": [
@@ -5791,11 +6217,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Vereinfachungen für besonders liquide und gut kapitalisierte Banken der Kategorien 4 und 5"
+     "label": "1a. Kapitel: Vereinfachungen für besonders liquide und gut kapitalisierte Banken der Kategorien 4 und 5",
+     "eId": "tit_3/chap_1_a"
     }
    ],
    "marginalie": [
@@ -5806,11 +6234,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -5835,11 +6265,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -5864,15 +6296,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Berechnung der Positionen"
+     "label": "2. Abschnitt: Berechnung der Positionen",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -5904,15 +6339,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Berechnung der Positionen"
+     "label": "2. Abschnitt: Berechnung der Positionen",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -5957,15 +6395,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Berechnung der Positionen"
+     "label": "2. Abschnitt: Berechnung der Positionen",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -5997,11 +6438,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -6046,11 +6489,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Gegenstand, Geltungsbereich und Begriffe",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -6082,15 +6527,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6122,15 +6570,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6162,15 +6613,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6195,15 +6649,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6228,15 +6685,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6285,15 +6745,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6331,15 +6794,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6364,15 +6830,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6410,15 +6879,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6450,15 +6922,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6497,15 +6972,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6537,15 +7015,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6570,15 +7051,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6603,15 +7087,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6661,15 +7148,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6694,15 +7184,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6727,15 +7220,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6786,15 +7282,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6827,15 +7326,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ"
+     "label": "3. Abschnitt: Positionsklassen und Risikogewichte nach dem SA-BIZ",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [],
@@ -6858,15 +7360,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -6905,15 +7410,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -6933,15 +7441,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -6952,15 +7463,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -6971,15 +7485,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -6990,15 +7507,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -7009,15 +7529,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -7037,15 +7560,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -7065,15 +7591,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -7084,15 +7613,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kreditrisiken"
+     "label": "2. Kapitel: Kreditrisiken",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Risikogewichtung nach dem SA-BIZ und dem IRB",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -7112,11 +7644,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: …"
+     "label": "3. Kapitel: …",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [],
@@ -7139,15 +7673,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Marktrisiken"
+     "label": "4. Kapitel: Marktrisiken",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -7172,15 +7709,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Marktrisiken"
+     "label": "4. Kapitel: Marktrisiken",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -7212,15 +7752,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Marktrisiken"
+     "label": "4. Kapitel: Marktrisiken",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -7245,15 +7788,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Marktrisiken"
+     "label": "4. Kapitel: Marktrisiken",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz"
+     "label": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -7273,15 +7819,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Marktrisiken"
+     "label": "4. Kapitel: Marktrisiken",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz"
+     "label": "2. Abschnitt: Einfacher Marktrisiko-Standardansatz",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -7292,11 +7841,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Operationelle Risiken"
+     "label": "5. Kapitel: Operationelle Risiken",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -7307,11 +7858,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Operationelle Risiken"
+     "label": "5. Kapitel: Operationelle Risiken",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -7322,11 +7875,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Operationelle Risiken"
+     "label": "5. Kapitel: Operationelle Risiken",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -7337,11 +7892,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Operationelle Risiken"
+     "label": "5. Kapitel: Operationelle Risiken",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -7352,11 +7909,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Erforderliche Eigenmittel"
+     "label": "3. Titel: Erforderliche Eigenmittel",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Operationelle Risiken"
+     "label": "5. Kapitel: Operationelle Risiken",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [

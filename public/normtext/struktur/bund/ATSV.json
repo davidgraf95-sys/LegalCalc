@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "830.11",
   "titel": "Verordnung über den Allgemeinen Teil des Sozialversicherungsrechts",
@@ -41,11 +41,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Bestimmungen zu den Leistungen"
+     "label": "1. Kapitel: Bestimmungen zu den Leistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gewährleistung zweckgemässer Verwendung"
+     "label": "1. Abschnitt: Gewährleistung zweckgemässer Verwendung",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -92,11 +94,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Bestimmungen zu den Leistungen"
+     "label": "1. Kapitel: Bestimmungen zu den Leistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückerstattung unrechtmässig bezogener Leistungen"
+     "label": "2. Abschnitt: Rückerstattung unrechtmässig bezogener Leistungen",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -133,11 +137,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Bestimmungen zu den Leistungen"
+     "label": "1. Kapitel: Bestimmungen zu den Leistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückerstattung unrechtmässig bezogener Leistungen"
+     "label": "2. Abschnitt: Rückerstattung unrechtmässig bezogener Leistungen",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -148,11 +154,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Bestimmungen zu den Leistungen"
+     "label": "1. Kapitel: Bestimmungen zu den Leistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückerstattung unrechtmässig bezogener Leistungen"
+     "label": "2. Abschnitt: Rückerstattung unrechtmässig bezogener Leistungen",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -163,11 +171,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Bestimmungen zu den Leistungen"
+     "label": "1. Kapitel: Bestimmungen zu den Leistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückerstattung unrechtmässig bezogener Leistungen"
+     "label": "2. Abschnitt: Rückerstattung unrechtmässig bezogener Leistungen",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -216,11 +226,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Bestimmungen zu den Leistungen"
+     "label": "1. Kapitel: Bestimmungen zu den Leistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verzugszins auf Leistungen"
+     "label": "3. Abschnitt: Verzugszins auf Leistungen",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [],
@@ -243,11 +255,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Bestimmungen zu den Leistungen"
+     "label": "1. Kapitel: Bestimmungen zu den Leistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verzugszins auf Leistungen"
+     "label": "3. Abschnitt: Verzugszins auf Leistungen",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -258,11 +272,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Aktenführung, -aufbewahrung, -einsicht und -vernichtung sowie Zustellung der Urteile"
+     "label": "3. Abschnitt: Aktenführung, -aufbewahrung, -einsicht und -vernichtung sowie Zustellung der Urteile",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -287,11 +303,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Aktenführung, -aufbewahrung, -einsicht und -vernichtung sowie Zustellung der Urteile"
+     "label": "3. Abschnitt: Aktenführung, -aufbewahrung, -einsicht und -vernichtung sowie Zustellung der Urteile",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -352,11 +370,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Einspracheverfahren"
+     "label": "4. Abschnitt: Einspracheverfahren",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -393,11 +413,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Einspracheverfahren"
+     "label": "4. Abschnitt: Einspracheverfahren",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -408,11 +430,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Einspracheverfahren"
+     "label": "4. Abschnitt: Einspracheverfahren",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -423,7 +447,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rückgriff"
+     "label": "3. Kapitel: Rückgriff",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -434,7 +459,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rückgriff"
+     "label": "3. Kapitel: Rückgriff",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -459,7 +485,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rückgriff"
+     "label": "3. Kapitel: Rückgriff",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -485,7 +512,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rückgriff"
+     "label": "3. Kapitel: Rückgriff",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -510,7 +538,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Rückgriff"
+     "label": "3. Kapitel: Rückgriff",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -521,7 +550,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Übrige Bestimmungen"
+     "label": "4. Kapitel: Übrige Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -559,7 +589,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Übrige Bestimmungen"
+     "label": "4. Kapitel: Übrige Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -570,11 +601,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Kosten einer unentgeltlichen Rechtsverbeiständung"
+     "label": "5. Abschnitt: Kosten einer unentgeltlichen Rechtsverbeiständung",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [],
@@ -619,11 +652,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen"
+     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen",
+     "eId": "chap_3_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bezeichnung der Zuständigkeiten"
+     "label": "1. Abschnitt: Bezeichnung der Zuständigkeiten",
+     "eId": "chap_3_a/sec_1"
     }
    ],
    "marginalie": [
@@ -681,11 +716,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen"
+     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen",
+     "eId": "chap_3_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bezeichnung der Zuständigkeiten"
+     "label": "1. Abschnitt: Bezeichnung der Zuständigkeiten",
+     "eId": "chap_3_a/sec_1"
     }
    ],
    "marginalie": [
@@ -782,11 +819,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen"
+     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen",
+     "eId": "chap_3_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bezeichnung der Zuständigkeiten"
+     "label": "1. Abschnitt: Bezeichnung der Zuständigkeiten",
+     "eId": "chap_3_a/sec_1"
     }
    ],
    "marginalie": [
@@ -859,11 +898,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen"
+     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen",
+     "eId": "chap_3_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bezeichnung der Zuständigkeiten"
+     "label": "1. Abschnitt: Bezeichnung der Zuständigkeiten",
+     "eId": "chap_3_a/sec_1"
     }
    ],
    "marginalie": [
@@ -912,11 +953,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen"
+     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen",
+     "eId": "chap_3_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bezeichnung der Zuständigkeiten"
+     "label": "1. Abschnitt: Bezeichnung der Zuständigkeiten",
+     "eId": "chap_3_a/sec_1"
     }
    ],
    "marginalie": [
@@ -927,11 +970,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen"
+     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen",
+     "eId": "chap_3_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gebühren"
+     "label": "2. Abschnitt: Gebühren",
+     "eId": "chap_3_a/sec_2"
     }
    ],
    "marginalie": [
@@ -942,11 +987,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen"
+     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen",
+     "eId": "chap_3_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gebühren"
+     "label": "2. Abschnitt: Gebühren",
+     "eId": "chap_3_a/sec_2"
     }
    ],
    "marginalie": [
@@ -957,11 +1004,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen"
+     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen",
+     "eId": "chap_3_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gebühren"
+     "label": "2. Abschnitt: Gebühren",
+     "eId": "chap_3_a/sec_2"
     }
    ],
    "marginalie": [
@@ -972,11 +1021,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen"
+     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen",
+     "eId": "chap_3_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gebühren"
+     "label": "2. Abschnitt: Gebühren",
+     "eId": "chap_3_a/sec_2"
     }
    ],
    "marginalie": [
@@ -987,11 +1038,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen"
+     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen",
+     "eId": "chap_3_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gebühren"
+     "label": "2. Abschnitt: Gebühren",
+     "eId": "chap_3_a/sec_2"
     }
    ],
    "marginalie": [
@@ -1002,11 +1055,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen"
+     "label": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen",
+     "eId": "chap_3_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gebühren"
+     "label": "2. Abschnitt: Gebühren",
+     "eId": "chap_3_a/sec_2"
     }
    ],
    "marginalie": [
@@ -1017,7 +1072,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Übrige Bestimmungen"
+     "label": "4. Kapitel: Übrige Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1042,7 +1098,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Übrige Bestimmungen"
+     "label": "4. Kapitel: Übrige Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1080,7 +1137,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Übrige Bestimmungen"
+     "label": "4. Kapitel: Übrige Bestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1105,11 +1163,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anforderungen an Spezialistinnen und Spezialisten, die Observationen durchführen"
+     "label": "1. Abschnitt: Anforderungen an Spezialistinnen und Spezialisten, die Observationen durchführen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1135,11 +1195,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anforderungen an Spezialistinnen und Spezialisten, die Observationen durchführen"
+     "label": "1. Abschnitt: Anforderungen an Spezialistinnen und Spezialisten, die Observationen durchführen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1188,11 +1250,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anforderungen an Spezialistinnen und Spezialisten, die Observationen durchführen"
+     "label": "1. Abschnitt: Anforderungen an Spezialistinnen und Spezialisten, die Observationen durchführen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1203,11 +1267,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anforderungen an Spezialistinnen und Spezialisten, die Observationen durchführen"
+     "label": "1. Abschnitt: Anforderungen an Spezialistinnen und Spezialisten, die Observationen durchführen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1218,11 +1284,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anforderungen an Spezialistinnen und Spezialisten, die Observationen durchführen"
+     "label": "1. Abschnitt: Anforderungen an Spezialistinnen und Spezialisten, die Observationen durchführen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1247,11 +1315,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anforderungen an Spezialistinnen und Spezialisten, die Observationen durchführen"
+     "label": "1. Abschnitt: Anforderungen an Spezialistinnen und Spezialisten, die Observationen durchführen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1276,11 +1346,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anforderungen an Spezialistinnen und Spezialisten, die Observationen durchführen"
+     "label": "1. Abschnitt: Anforderungen an Spezialistinnen und Spezialisten, die Observationen durchführen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1291,11 +1363,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Durchführung der Observation"
+     "label": "2. Abschnitt: Durchführung der Observation",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1321,11 +1395,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Durchführung der Observation"
+     "label": "2. Abschnitt: Durchführung der Observation",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1336,11 +1412,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Gutachten"
+     "label": "2a. Abschnitt: Gutachten",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1366,11 +1444,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Gutachten"
+     "label": "2a. Abschnitt: Gutachten",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1381,11 +1461,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Gutachten"
+     "label": "2a. Abschnitt: Gutachten",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1410,11 +1492,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Gutachten"
+     "label": "2a. Abschnitt: Gutachten",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1470,11 +1554,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Gutachten"
+     "label": "2a. Abschnitt: Gutachten",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1485,11 +1571,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Gutachten"
+     "label": "2a. Abschnitt: Gutachten",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1500,11 +1588,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Gutachten"
+     "label": "2a. Abschnitt: Gutachten",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1515,11 +1605,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Gutachten"
+     "label": "2a. Abschnitt: Gutachten",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1530,11 +1622,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Aktenführung, -aufbewahrung, -einsicht und -vernichtung sowie Zustellung der Urteile"
+     "label": "3. Abschnitt: Aktenführung, -aufbewahrung, -einsicht und -vernichtung sowie Zustellung der Urteile",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1559,11 +1653,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Aktenführung, -aufbewahrung, -einsicht und -vernichtung sowie Zustellung der Urteile"
+     "label": "3. Abschnitt: Aktenführung, -aufbewahrung, -einsicht und -vernichtung sowie Zustellung der Urteile",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1631,11 +1727,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Aktenführung, -aufbewahrung, -einsicht und -vernichtung sowie Zustellung der Urteile"
+     "label": "3. Abschnitt: Aktenführung, -aufbewahrung, -einsicht und -vernichtung sowie Zustellung der Urteile",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1660,11 +1758,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Aktenführung, -aufbewahrung, -einsicht und -vernichtung sowie Zustellung der Urteile"
+     "label": "3. Abschnitt: Aktenführung, -aufbewahrung, -einsicht und -vernichtung sowie Zustellung der Urteile",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1689,11 +1789,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "2. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Aktenführung, -aufbewahrung, -einsicht und -vernichtung sowie Zustellung der Urteile"
+     "label": "3. Abschnitt: Aktenführung, -aufbewahrung, -einsicht und -vernichtung sowie Zustellung der Urteile",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [

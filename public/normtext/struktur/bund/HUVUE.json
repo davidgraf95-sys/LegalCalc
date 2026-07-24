@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "0.211.213.02",
   "titel": "Übereinkommen über die Anerkennung und Vollstreckung von Unterhaltsentscheidungen",
@@ -64,7 +64,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt I Anwendungsbereich des Übereinkommens"
+     "label": "Abschnitt I Anwendungsbereich des Übereinkommens",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -73,7 +74,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt I Anwendungsbereich des Übereinkommens"
+     "label": "Abschnitt I Anwendungsbereich des Übereinkommens",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -82,7 +84,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt I Anwendungsbereich des Übereinkommens"
+     "label": "Abschnitt I Anwendungsbereich des Übereinkommens",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -91,7 +94,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt II Voraussetzungen der Anerkennung und Vollstreckung von Entscheidungen"
+     "label": "Abschnitt II Voraussetzungen der Anerkennung und Vollstreckung von Entscheidungen",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -100,7 +104,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt II Voraussetzungen der Anerkennung und Vollstreckung von Entscheidungen"
+     "label": "Abschnitt II Voraussetzungen der Anerkennung und Vollstreckung von Entscheidungen",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -109,7 +114,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt II Voraussetzungen der Anerkennung und Vollstreckung von Entscheidungen"
+     "label": "Abschnitt II Voraussetzungen der Anerkennung und Vollstreckung von Entscheidungen",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -118,7 +124,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt II Voraussetzungen der Anerkennung und Vollstreckung von Entscheidungen"
+     "label": "Abschnitt II Voraussetzungen der Anerkennung und Vollstreckung von Entscheidungen",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -127,7 +134,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt II Voraussetzungen der Anerkennung und Vollstreckung von Entscheidungen"
+     "label": "Abschnitt II Voraussetzungen der Anerkennung und Vollstreckung von Entscheidungen",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -136,7 +144,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt II Voraussetzungen der Anerkennung und Vollstreckung von Entscheidungen"
+     "label": "Abschnitt II Voraussetzungen der Anerkennung und Vollstreckung von Entscheidungen",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -145,7 +154,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt II Voraussetzungen der Anerkennung und Vollstreckung von Entscheidungen"
+     "label": "Abschnitt II Voraussetzungen der Anerkennung und Vollstreckung von Entscheidungen",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -154,7 +164,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt II Voraussetzungen der Anerkennung und Vollstreckung von Entscheidungen"
+     "label": "Abschnitt II Voraussetzungen der Anerkennung und Vollstreckung von Entscheidungen",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [],
@@ -177,7 +188,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt II Voraussetzungen der Anerkennung und Vollstreckung von Entscheidungen"
+     "label": "Abschnitt II Voraussetzungen der Anerkennung und Vollstreckung von Entscheidungen",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -186,7 +198,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt III Verfahren der Anerkennung und Vollstreckung von Entscheidungen"
+     "label": "Abschnitt III Verfahren der Anerkennung und Vollstreckung von Entscheidungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -195,7 +208,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt III Verfahren der Anerkennung und Vollstreckung von Entscheidungen"
+     "label": "Abschnitt III Verfahren der Anerkennung und Vollstreckung von Entscheidungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -204,7 +218,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt III Verfahren der Anerkennung und Vollstreckung von Entscheidungen"
+     "label": "Abschnitt III Verfahren der Anerkennung und Vollstreckung von Entscheidungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -213,7 +228,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt III Verfahren der Anerkennung und Vollstreckung von Entscheidungen"
+     "label": "Abschnitt III Verfahren der Anerkennung und Vollstreckung von Entscheidungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -222,7 +238,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt III Verfahren der Anerkennung und Vollstreckung von Entscheidungen"
+     "label": "Abschnitt III Verfahren der Anerkennung und Vollstreckung von Entscheidungen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -231,7 +248,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt IV Ergänzende Vorschriften über öffentliche Aufgaben wahrnehmende Einrichtungen"
+     "label": "Abschnitt IV Ergänzende Vorschriften über öffentliche Aufgaben wahrnehmende Einrichtungen",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -240,7 +258,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt IV Ergänzende Vorschriften über öffentliche Aufgaben wahrnehmende Einrichtungen"
+     "label": "Abschnitt IV Ergänzende Vorschriften über öffentliche Aufgaben wahrnehmende Einrichtungen",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -249,7 +268,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt IV Ergänzende Vorschriften über öffentliche Aufgaben wahrnehmende Einrichtungen"
+     "label": "Abschnitt IV Ergänzende Vorschriften über öffentliche Aufgaben wahrnehmende Einrichtungen",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -258,7 +278,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt V Vergleiche"
+     "label": "Abschnitt V Vergleiche",
+     "eId": "chap_V"
     }
    ],
    "marginalie": []
@@ -267,7 +288,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt VI Verschiedene Bestimmungen"
+     "label": "Abschnitt VI Verschiedene Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -276,7 +298,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt VI Verschiedene Bestimmungen"
+     "label": "Abschnitt VI Verschiedene Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -285,7 +308,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt VI Verschiedene Bestimmungen"
+     "label": "Abschnitt VI Verschiedene Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -294,7 +318,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt VI Verschiedene Bestimmungen"
+     "label": "Abschnitt VI Verschiedene Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -303,7 +328,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt VI Verschiedene Bestimmungen"
+     "label": "Abschnitt VI Verschiedene Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -312,7 +338,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt VI Verschiedene Bestimmungen"
+     "label": "Abschnitt VI Verschiedene Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -321,7 +348,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt VI Verschiedene Bestimmungen"
+     "label": "Abschnitt VI Verschiedene Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -330,7 +358,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt VI Verschiedene Bestimmungen"
+     "label": "Abschnitt VI Verschiedene Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -339,7 +368,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt VII Schlussbestimmungen"
+     "label": "Abschnitt VII Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -348,7 +378,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt VII Schlussbestimmungen"
+     "label": "Abschnitt VII Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": [],
@@ -372,7 +403,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt VII Schlussbestimmungen"
+     "label": "Abschnitt VII Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -381,7 +413,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt VII Schlussbestimmungen"
+     "label": "Abschnitt VII Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -390,7 +423,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt VII Schlussbestimmungen"
+     "label": "Abschnitt VII Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -399,7 +433,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt VII Schlussbestimmungen"
+     "label": "Abschnitt VII Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -408,7 +443,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt VII Schlussbestimmungen"
+     "label": "Abschnitt VII Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -417,7 +453,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Abschnitt VII Schlussbestimmungen"
+     "label": "Abschnitt VII Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []

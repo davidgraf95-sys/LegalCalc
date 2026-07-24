@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "812.212.21",
   "titel": "Verordnung über die Arzneimittel",
@@ -84,7 +84,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand und Geltungsbereich"
+     "label": "1. Kapitel: Gegenstand und Geltungsbereich",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [],
@@ -138,11 +139,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel"
+     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -168,11 +171,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel"
+     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -198,11 +203,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel"
+     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -213,11 +220,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel"
+     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -228,11 +237,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel"
+     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -258,11 +269,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel"
+     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -273,11 +286,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel"
+     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -288,11 +303,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel"
+     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -343,11 +360,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel"
+     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -358,11 +377,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel"
+     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -388,11 +409,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel"
+     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -403,11 +426,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel"
+     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -418,11 +443,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel"
+     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -433,11 +460,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel"
+     "label": "1. Abschnitt: Zulassung verwendungsfertiger Arzneimittel",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -448,11 +477,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Im Ausland zugelassene Arzneimittel und Verfahren (Art. 13 HMG)"
+     "label": "2. Abschnitt: Im Ausland zugelassene Arzneimittel und Verfahren (Art. 13 HMG)",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -463,11 +494,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Im Ausland zugelassene Arzneimittel und Verfahren (Art. 13 HMG)"
+     "label": "2. Abschnitt: Im Ausland zugelassene Arzneimittel und Verfahren (Art. 13 HMG)",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -478,11 +511,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Im Ausland zugelassene Arzneimittel und Verfahren (Art. 13 HMG)"
+     "label": "2. Abschnitt: Im Ausland zugelassene Arzneimittel und Verfahren (Art. 13 HMG)",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -493,11 +528,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Im Ausland zugelassene Arzneimittel und Verfahren (Art. 13 HMG)"
+     "label": "2. Abschnitt: Im Ausland zugelassene Arzneimittel und Verfahren (Art. 13 HMG)",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -508,11 +545,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Im Ausland zugelassene Arzneimittel und Verfahren (Art. 13 HMG)"
+     "label": "2. Abschnitt: Im Ausland zugelassene Arzneimittel und Verfahren (Art. 13 HMG)",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -523,11 +562,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Änderungen der Zulassung bei Humanarzneimitteln"
+     "label": "3. Abschnitt: Änderungen der Zulassung bei Humanarzneimitteln",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -553,11 +594,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Änderungen der Zulassung bei Humanarzneimitteln"
+     "label": "3. Abschnitt: Änderungen der Zulassung bei Humanarzneimitteln",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -568,11 +611,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Änderungen der Zulassung bei Humanarzneimitteln"
+     "label": "3. Abschnitt: Änderungen der Zulassung bei Humanarzneimitteln",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -583,11 +628,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Änderungen der Zulassung bei Humanarzneimitteln"
+     "label": "3. Abschnitt: Änderungen der Zulassung bei Humanarzneimitteln",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -598,11 +645,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Änderungen der Zulassung bei Humanarzneimitteln"
+     "label": "3. Abschnitt: Änderungen der Zulassung bei Humanarzneimitteln",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -634,11 +683,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Kennzeichnung und Arzneimittelinformation"
+     "label": "4. Abschnitt: Kennzeichnung und Arzneimittelinformation",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -649,11 +700,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Kennzeichnung und Arzneimittelinformation"
+     "label": "4. Abschnitt: Kennzeichnung und Arzneimittelinformation",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -664,11 +717,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Kennzeichnung und Arzneimittelinformation"
+     "label": "4. Abschnitt: Kennzeichnung und Arzneimittelinformation",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -693,11 +748,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Kennzeichnung und Arzneimittelinformation"
+     "label": "4. Abschnitt: Kennzeichnung und Arzneimittelinformation",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -708,11 +765,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Zulassung von im Wesentlichen gleichen Arzneimitteln (Art. 12 HMG)"
+     "label": "5. Abschnitt: Zulassung von im Wesentlichen gleichen Arzneimitteln (Art. 12 HMG)",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": []
@@ -721,11 +780,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Zulassung von Verfahren"
+     "label": "6. Abschnitt: Zulassung von Verfahren",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -736,11 +797,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Zulassung von Verfahren"
+     "label": "6. Abschnitt: Zulassung von Verfahren",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -765,11 +828,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Zulassung von Verfahren"
+     "label": "6. Abschnitt: Zulassung von Verfahren",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -780,11 +845,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Zulassung von Verfahren"
+     "label": "6. Abschnitt: Zulassung von Verfahren",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -795,11 +862,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Nicht zulassungspflichtige Arzneimittel (Art. 9 Abs. 2quater HMG)"
+     "label": "7. Abschnitt: Nicht zulassungspflichtige Arzneimittel (Art. 9 Abs. 2quater HMG)",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -810,11 +879,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Nicht zulassungspflichtige Arzneimittel (Art. 9 Abs. 2quater HMG)"
+     "label": "7. Abschnitt: Nicht zulassungspflichtige Arzneimittel (Art. 9 Abs. 2quater HMG)",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -825,11 +896,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Nicht zulassungspflichtige Arzneimittel (Art. 9 Abs. 2quater HMG)"
+     "label": "7. Abschnitt: Nicht zulassungspflichtige Arzneimittel (Art. 9 Abs. 2quater HMG)",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -840,11 +913,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Nicht zulassungspflichtige Arzneimittel (Art. 9 Abs. 2quater HMG)"
+     "label": "7. Abschnitt: Nicht zulassungspflichtige Arzneimittel (Art. 9 Abs. 2quater HMG)",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -855,11 +930,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Nicht zulassungspflichtige Arzneimittel (Art. 9 Abs. 2quater HMG)"
+     "label": "7. Abschnitt: Nicht zulassungspflichtige Arzneimittel (Art. 9 Abs. 2quater HMG)",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -870,11 +947,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Abgabekategorien und Abgabe"
+     "label": "3. Kapitel: Abgabekategorien und Abgabe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Einteilung der Arzneimittel in Abgabekategorien"
+     "label": "1. Abschnitt: Einteilung der Arzneimittel in Abgabekategorien",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [],
@@ -898,11 +977,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Abgabekategorien und Abgabe"
+     "label": "3. Kapitel: Abgabekategorien und Abgabe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kategorien mit Verschreibungspflicht"
+     "label": "2. Abschnitt: Kategorien mit Verschreibungspflicht",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -913,11 +994,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Abgabekategorien und Abgabe"
+     "label": "3. Kapitel: Abgabekategorien und Abgabe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kategorien mit Verschreibungspflicht"
+     "label": "2. Abschnitt: Kategorien mit Verschreibungspflicht",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -928,11 +1011,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Abgabekategorien und Abgabe"
+     "label": "3. Kapitel: Abgabekategorien und Abgabe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Kategorien ohne Verschreibungspflicht"
+     "label": "3. Abschnitt: Kategorien ohne Verschreibungspflicht",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -943,11 +1028,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Abgabekategorien und Abgabe"
+     "label": "3. Kapitel: Abgabekategorien und Abgabe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Kategorien ohne Verschreibungspflicht"
+     "label": "3. Abschnitt: Kategorien ohne Verschreibungspflicht",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -958,11 +1045,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Abgabekategorien und Abgabe"
+     "label": "3. Kapitel: Abgabekategorien und Abgabe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Anforderungen an die Abgabe"
+     "label": "4. Abschnitt: Anforderungen an die Abgabe",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -973,11 +1062,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Abgabekategorien und Abgabe"
+     "label": "3. Kapitel: Abgabekategorien und Abgabe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Anforderungen an die Abgabe"
+     "label": "4. Abschnitt: Anforderungen an die Abgabe",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1004,11 +1095,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Abgabekategorien und Abgabe"
+     "label": "3. Kapitel: Abgabekategorien und Abgabe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Anforderungen an die Abgabe"
+     "label": "4. Abschnitt: Anforderungen an die Abgabe",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1019,11 +1112,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Abgabekategorien und Abgabe"
+     "label": "3. Kapitel: Abgabekategorien und Abgabe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Anforderungen an die Abgabe"
+     "label": "4. Abschnitt: Anforderungen an die Abgabe",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1074,11 +1169,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Abgabekategorien und Abgabe"
+     "label": "3. Kapitel: Abgabekategorien und Abgabe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Anforderungen an die Abgabe"
+     "label": "4. Abschnitt: Anforderungen an die Abgabe",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1089,11 +1186,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Abgabekategorien und Abgabe"
+     "label": "3. Kapitel: Abgabekategorien und Abgabe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Anforderungen an die Abgabe"
+     "label": "4. Abschnitt: Anforderungen an die Abgabe",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1104,7 +1203,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Minimalanforderungen an die Verschreibung eines Humanarzneimittels"
+     "label": "4. Kapitel: Minimalanforderungen an die Verschreibung eines Humanarzneimittels",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [],
@@ -1148,7 +1248,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Anwendung verschreibungspflichtiger Arzneimittel"
+     "label": "5. Kapitel: Anwendung verschreibungspflichtiger Arzneimittel",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1173,7 +1274,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Anwendung verschreibungspflichtiger Arzneimittel"
+     "label": "5. Kapitel: Anwendung verschreibungspflichtiger Arzneimittel",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1184,7 +1286,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vertriebsbeschränkungen"
+     "label": "6. Kapitel: Vertriebsbeschränkungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -1207,7 +1310,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bewilligung für den Versandhandel mit Arzneimitteln"
+     "label": "7. Kapitel: Bewilligung für den Versandhandel mit Arzneimitteln",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -1233,7 +1337,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bewilligung für den Versandhandel mit Arzneimitteln"
+     "label": "7. Kapitel: Bewilligung für den Versandhandel mit Arzneimitteln",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -1244,11 +1349,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Marktüberwachung"
+     "label": "8. Kapitel: Marktüberwachung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Nachträgliche Kontrolle"
+     "label": "1. Abschnitt: Nachträgliche Kontrolle",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -1259,11 +1366,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Marktüberwachung"
+     "label": "8. Kapitel: Marktüberwachung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Nachträgliche Kontrolle"
+     "label": "1. Abschnitt: Nachträgliche Kontrolle",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -1274,11 +1383,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Marktüberwachung"
+     "label": "8. Kapitel: Marktüberwachung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Nachträgliche Kontrolle"
+     "label": "1. Abschnitt: Nachträgliche Kontrolle",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -1309,11 +1420,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Marktüberwachung"
+     "label": "8. Kapitel: Marktüberwachung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Periodischer Bericht über die Sicherheit und das Nutzen-Risiko-Verhältnis des Arzneimittels"
+     "label": "2. Abschnitt: Periodischer Bericht über die Sicherheit und das Nutzen-Risiko-Verhältnis des Arzneimittels",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [],
@@ -1348,11 +1461,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Marktüberwachung"
+     "label": "8. Kapitel: Marktüberwachung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Vigilance"
+     "label": "3. Abschnitt: Vigilance",
+     "eId": "chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -1383,11 +1498,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Marktüberwachung"
+     "label": "8. Kapitel: Marktüberwachung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Vigilance"
+     "label": "3. Abschnitt: Vigilance",
+     "eId": "chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -1398,11 +1515,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Marktüberwachung"
+     "label": "8. Kapitel: Marktüberwachung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Vigilance"
+     "label": "3. Abschnitt: Vigilance",
+     "eId": "chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -1413,11 +1532,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Marktüberwachung"
+     "label": "8. Kapitel: Marktüberwachung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Vigilance"
+     "label": "3. Abschnitt: Vigilance",
+     "eId": "chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -1428,11 +1549,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Marktüberwachung"
+     "label": "8. Kapitel: Marktüberwachung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Vigilance"
+     "label": "3. Abschnitt: Vigilance",
+     "eId": "chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -1463,11 +1586,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Marktüberwachung"
+     "label": "8. Kapitel: Marktüberwachung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Vigilance"
+     "label": "3. Abschnitt: Vigilance",
+     "eId": "chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -1478,7 +1603,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Grundsätze der Guten Laborpraxis"
+     "label": "9. Kapitel: Grundsätze der Guten Laborpraxis",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -1502,11 +1628,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Information"
+     "label": "10. Kapitel: Information",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Information der Öffentlichkeit"
+     "label": "1. Abschnitt: Information der Öffentlichkeit",
+     "eId": "chap_10/sec_1"
     }
    ],
    "marginalie": []
@@ -1515,11 +1643,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Information"
+     "label": "10. Kapitel: Information",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Veröffentlichung von Ergebnissen klinischer Versuche"
+     "label": "3. Abschnitt: Veröffentlichung von Ergebnissen klinischer Versuche",
+     "eId": "chap_10/sec_3"
     }
    ],
    "marginalie": [
@@ -1530,11 +1660,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Information"
+     "label": "10. Kapitel: Information",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Veröffentlichung von Ergebnissen klinischer Versuche"
+     "label": "3. Abschnitt: Veröffentlichung von Ergebnissen klinischer Versuche",
+     "eId": "chap_10/sec_3"
     }
    ],
    "marginalie": [
@@ -1545,11 +1677,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Information"
+     "label": "10. Kapitel: Information",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Veröffentlichung von Ergebnissen klinischer Versuche"
+     "label": "3. Abschnitt: Veröffentlichung von Ergebnissen klinischer Versuche",
+     "eId": "chap_10/sec_3"
     }
    ],
    "marginalie": [
@@ -1560,7 +1694,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Datenbearbeitung"
+     "label": "11. Kapitel: Datenbearbeitung",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -1571,7 +1706,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Datenbearbeitung"
+     "label": "11. Kapitel: Datenbearbeitung",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -1582,7 +1718,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Datenbearbeitung"
+     "label": "11. Kapitel: Datenbearbeitung",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -1607,7 +1744,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Datenbearbeitung"
+     "label": "11. Kapitel: Datenbearbeitung",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -1618,11 +1756,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_12/sec_1"
     }
    ],
    "marginalie": [
@@ -1633,11 +1773,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_12/sec_1"
     }
    ],
    "marginalie": [
@@ -1663,11 +1805,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_12/sec_1"
     }
    ],
    "marginalie": [],
@@ -1690,11 +1834,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_12/sec_1"
     }
    ],
    "marginalie": [
@@ -1727,11 +1873,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_12/sec_1"
     }
    ],
    "marginalie": [
@@ -1769,11 +1917,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung und Änderung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung und Änderung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_12/sec_2"
     }
    ],
    "marginalie": [
@@ -1784,11 +1934,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung und Änderung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung und Änderung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_12/sec_2"
     }
    ],
    "marginalie": [
@@ -1799,11 +1951,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung und Änderung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung und Änderung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_12/sec_2"
     }
    ],
    "marginalie": [
@@ -1814,11 +1968,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung und Änderung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung und Änderung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_12/sec_2"
     }
    ],
    "marginalie": [
@@ -1829,11 +1985,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung und Änderung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung und Änderung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_12/sec_2"
     }
    ],
    "marginalie": [
@@ -1844,11 +2002,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung und Änderung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung und Änderung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_12/sec_2"
     }
    ],
    "marginalie": [
@@ -1859,11 +2019,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung und Änderung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung und Änderung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_12/sec_2"
     }
    ],
    "marginalie": [
@@ -1889,11 +2051,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Inkrafttreten"
+     "label": "3. Abschnitt: Inkrafttreten",
+     "eId": "chap_12/sec_3"
     }
    ],
    "marginalie": []
@@ -1902,11 +2066,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Änderungen der Zulassung bei Tierarzneimitteln"
+     "label": "3a. Abschnitt: Änderungen der Zulassung bei Tierarzneimitteln",
+     "eId": "chap_2/sec_3_a"
     }
    ],
    "marginalie": [
@@ -1932,11 +2098,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Änderungen der Zulassung bei Tierarzneimitteln"
+     "label": "3a. Abschnitt: Änderungen der Zulassung bei Tierarzneimitteln",
+     "eId": "chap_2/sec_3_a"
     }
    ],
    "marginalie": [
@@ -1947,11 +2115,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zulassungsverfahren"
+     "label": "2. Kapitel: Zulassungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Änderungen der Zulassung bei Tierarzneimitteln"
+     "label": "3a. Abschnitt: Änderungen der Zulassung bei Tierarzneimitteln",
+     "eId": "chap_2/sec_3_a"
     }
    ],
    "marginalie": [
@@ -1971,11 +2141,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Marktüberwachung"
+     "label": "8. Kapitel: Marktüberwachung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Vigilance"
+     "label": "3. Abschnitt: Vigilance",
+     "eId": "chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -2000,11 +2172,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Information"
+     "label": "10. Kapitel: Information",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [],

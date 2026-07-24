@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "312.1",
   "titel": "Schweizerische Jugendstrafprozessordnung",
@@ -67,7 +67,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand und Grundsätze"
+     "label": "1. Kapitel: Gegenstand und Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -113,7 +114,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand und Grundsätze"
+     "label": "1. Kapitel: Gegenstand und Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -124,7 +126,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand und Grundsätze"
+     "label": "1. Kapitel: Gegenstand und Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -149,7 +152,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand und Grundsätze"
+     "label": "1. Kapitel: Gegenstand und Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -160,7 +164,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand und Grundsätze"
+     "label": "1. Kapitel: Gegenstand und Grundsätze",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -197,7 +202,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Jugendstrafbehörden"
+     "label": "2. Kapitel: Jugendstrafbehörden",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -222,7 +228,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Jugendstrafbehörden"
+     "label": "2. Kapitel: Jugendstrafbehörden",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -233,7 +240,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Jugendstrafbehörden"
+     "label": "2. Kapitel: Jugendstrafbehörden",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -244,7 +252,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Verfahrensregeln"
+     "label": "3. Kapitel: Allgemeine Verfahrensregeln",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -255,7 +264,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Verfahrensregeln"
+     "label": "3. Kapitel: Allgemeine Verfahrensregeln",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -328,7 +338,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Verfahrensregeln"
+     "label": "3. Kapitel: Allgemeine Verfahrensregeln",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -339,7 +350,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Verfahrensregeln"
+     "label": "3. Kapitel: Allgemeine Verfahrensregeln",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -350,7 +362,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Verfahrensregeln"
+     "label": "3. Kapitel: Allgemeine Verfahrensregeln",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -361,7 +374,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Verfahrensregeln"
+     "label": "3. Kapitel: Allgemeine Verfahrensregeln",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -372,7 +386,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Verfahrensregeln"
+     "label": "3. Kapitel: Allgemeine Verfahrensregeln",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -383,7 +398,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Verfahrensregeln"
+     "label": "3. Kapitel: Allgemeine Verfahrensregeln",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -408,7 +424,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Verfahrensregeln"
+     "label": "3. Kapitel: Allgemeine Verfahrensregeln",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -433,11 +450,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Parteien und Verteidigung"
+     "label": "4. Kapitel: Parteien und Verteidigung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Parteien"
+     "label": "1. Abschnitt: Parteien",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -448,11 +467,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Parteien und Verteidigung"
+     "label": "4. Kapitel: Parteien und Verteidigung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Parteien"
+     "label": "1. Abschnitt: Parteien",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -463,11 +484,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Parteien und Verteidigung"
+     "label": "4. Kapitel: Parteien und Verteidigung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Parteien"
+     "label": "1. Abschnitt: Parteien",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -478,11 +501,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Parteien und Verteidigung"
+     "label": "4. Kapitel: Parteien und Verteidigung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Parteien"
+     "label": "1. Abschnitt: Parteien",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -493,11 +518,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Parteien und Verteidigung"
+     "label": "4. Kapitel: Parteien und Verteidigung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Parteien"
+     "label": "1. Abschnitt: Parteien",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -523,11 +550,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Parteien und Verteidigung"
+     "label": "4. Kapitel: Parteien und Verteidigung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verteidigung"
+     "label": "2. Abschnitt: Verteidigung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -538,11 +567,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Parteien und Verteidigung"
+     "label": "4. Kapitel: Parteien und Verteidigung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verteidigung"
+     "label": "2. Abschnitt: Verteidigung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -553,11 +584,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Parteien und Verteidigung"
+     "label": "4. Kapitel: Parteien und Verteidigung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verteidigung"
+     "label": "2. Abschnitt: Verteidigung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -582,7 +615,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Zwangsmassnahmen, Schutzmassnahmen und Beobachtungen"
+     "label": "5. Kapitel: Zwangsmassnahmen, Schutzmassnahmen und Beobachtungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -635,7 +669,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Zwangsmassnahmen, Schutzmassnahmen und Beobachtungen"
+     "label": "5. Kapitel: Zwangsmassnahmen, Schutzmassnahmen und Beobachtungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -660,7 +695,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Zwangsmassnahmen, Schutzmassnahmen und Beobachtungen"
+     "label": "5. Kapitel: Zwangsmassnahmen, Schutzmassnahmen und Beobachtungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -671,7 +707,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Zwangsmassnahmen, Schutzmassnahmen und Beobachtungen"
+     "label": "5. Kapitel: Zwangsmassnahmen, Schutzmassnahmen und Beobachtungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -696,11 +733,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verfahren"
+     "label": "6. Kapitel: Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Untersuchung"
+     "label": "1. Abschnitt: Untersuchung",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -725,11 +764,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verfahren"
+     "label": "6. Kapitel: Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Untersuchung"
+     "label": "1. Abschnitt: Untersuchung",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -740,11 +781,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verfahren"
+     "label": "6. Kapitel: Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Strafbefehlsverfahren"
+     "label": "2. Abschnitt: Strafbefehlsverfahren",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [],
@@ -799,11 +842,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verfahren"
+     "label": "6. Kapitel: Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anklageerhebung"
+     "label": "3. Abschnitt: Anklageerhebung",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": []
@@ -812,11 +857,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verfahren"
+     "label": "6. Kapitel: Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Hauptverhandlung"
+     "label": "4. Abschnitt: Hauptverhandlung",
+     "eId": "chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -827,11 +874,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verfahren"
+     "label": "6. Kapitel: Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Hauptverhandlung"
+     "label": "4. Abschnitt: Hauptverhandlung",
+     "eId": "chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -842,11 +891,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verfahren"
+     "label": "6. Kapitel: Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Hauptverhandlung"
+     "label": "4. Abschnitt: Hauptverhandlung",
+     "eId": "chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -857,11 +908,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verfahren"
+     "label": "6. Kapitel: Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Hauptverhandlung"
+     "label": "4. Abschnitt: Hauptverhandlung",
+     "eId": "chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -872,7 +925,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Rechtsmittel"
+     "label": "7. Kapitel: Rechtsmittel",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -897,7 +951,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Rechtsmittel"
+     "label": "7. Kapitel: Rechtsmittel",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -923,7 +978,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Rechtsmittel"
+     "label": "7. Kapitel: Rechtsmittel",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -934,7 +990,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Rechtsmittel"
+     "label": "7. Kapitel: Rechtsmittel",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -945,7 +1002,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Vollzug von Sanktionen"
+     "label": "8. Kapitel: Vollzug von Sanktionen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -956,7 +1014,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Vollzug von Sanktionen"
+     "label": "8. Kapitel: Vollzug von Sanktionen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -967,7 +1026,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Kosten"
+     "label": "9. Kapitel: Kosten",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -992,7 +1052,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Kosten"
+     "label": "9. Kapitel: Kosten",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -1003,11 +1064,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Änderung bisherigen Rechts"
+     "label": "1. Abschnitt: Änderung bisherigen Rechts",
+     "eId": "chap_10/sec_1"
     }
    ],
    "marginalie": []
@@ -1016,11 +1079,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -1031,11 +1096,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -1046,11 +1113,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -1061,11 +1130,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -1076,11 +1147,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -1105,11 +1178,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -1120,11 +1195,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -1135,11 +1212,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Referendum und Inkrafttreten"
+     "label": "3. Abschnitt: Referendum und Inkrafttreten",
+     "eId": "chap_10/sec_3"
     }
    ],
    "marginalie": [],

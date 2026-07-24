@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "173.71",
   "titel": "Bundesgesetz über die Organisation der Strafbehörden des Bundes",
@@ -54,7 +54,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -79,7 +80,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -90,7 +92,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -101,11 +104,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Polizei"
+     "label": "1. Kapitel: Polizei",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -116,11 +121,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Polizei"
+     "label": "1. Kapitel: Polizei",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -131,11 +138,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Polizei"
+     "label": "1. Kapitel: Polizei",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -160,15 +169,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Behörde und Sitz"
+     "label": "1. Abschnitt: Behörde und Sitz",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -179,15 +191,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Behörde und Sitz"
+     "label": "1. Abschnitt: Behörde und Sitz",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -198,15 +213,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse"
+     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -217,15 +235,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse"
+     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -236,15 +257,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse"
+     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -255,15 +279,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse"
+     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -274,15 +301,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse"
+     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -293,15 +323,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse"
+     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -312,15 +345,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse"
+     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -331,15 +367,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse"
+     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -350,15 +389,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse"
+     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -369,15 +411,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse"
+     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -402,15 +447,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse"
+     "label": "2. Abschnitt: Organisation, Verwaltung und Befugnisse",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -421,15 +469,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Wahl, Amtsdauer, Amtsenthebung und personalrechtliche Stellung"
+     "label": "3. Abschnitt: Wahl, Amtsdauer, Amtsenthebung und personalrechtliche Stellung",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -482,15 +533,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Wahl, Amtsdauer, Amtsenthebung und personalrechtliche Stellung"
+     "label": "3. Abschnitt: Wahl, Amtsdauer, Amtsenthebung und personalrechtliche Stellung",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -501,15 +555,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Wahl, Amtsdauer, Amtsenthebung und personalrechtliche Stellung"
+     "label": "3. Abschnitt: Wahl, Amtsdauer, Amtsenthebung und personalrechtliche Stellung",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -520,15 +577,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Aufsicht"
+     "label": "4. Abschnitt: Aufsicht",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -539,15 +599,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Aufsicht"
+     "label": "4. Abschnitt: Aufsicht",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -558,15 +621,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Aufsicht"
+     "label": "4. Abschnitt: Aufsicht",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -577,15 +643,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Aufsicht"
+     "label": "4. Abschnitt: Aufsicht",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -596,15 +665,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Aufsicht"
+     "label": "4. Abschnitt: Aufsicht",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -615,15 +687,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Aufsicht"
+     "label": "4. Abschnitt: Aufsicht",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -649,15 +724,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Aufsicht"
+     "label": "4. Abschnitt: Aufsicht",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -668,15 +746,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Aufsicht"
+     "label": "4. Abschnitt: Aufsicht",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -687,15 +768,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Strafverfolgungsbehörden"
+     "label": "2. Titel: Strafverfolgungsbehörden",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesanwaltschaft"
+     "label": "2. Kapitel: Bundesanwaltschaft",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Aufsicht"
+     "label": "4. Abschnitt: Aufsicht",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -720,15 +804,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Sitz, Zusammensetzung und Aufsicht"
+     "label": "1. Abschnitt: Sitz, Zusammensetzung und Aufsicht",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -739,15 +826,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Sitz, Zusammensetzung und Aufsicht"
+     "label": "1. Abschnitt: Sitz, Zusammensetzung und Aufsicht",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -780,15 +870,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Sitz, Zusammensetzung und Aufsicht"
+     "label": "1. Abschnitt: Sitz, Zusammensetzung und Aufsicht",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -799,15 +892,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Strafkammern"
+     "label": "2. Abschnitt: Strafkammern",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -832,15 +928,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Strafkammern"
+     "label": "2. Abschnitt: Strafkammern",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -865,15 +964,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Beschwerdekammern"
+     "label": "3. Abschnitt: Beschwerdekammern",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1026,15 +1128,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Beschwerdekammern"
+     "label": "3. Abschnitt: Beschwerdekammern",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1045,15 +1150,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Anwendbares Verfahrensrecht"
+     "label": "4. Abschnitt: Anwendbares Verfahrensrecht",
+     "eId": "tit_3/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1126,15 +1234,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Anwendbares Verfahrensrecht"
+     "label": "4. Abschnitt: Anwendbares Verfahrensrecht",
+     "eId": "tit_3/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1171,15 +1282,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Richter und Richterinnen"
+     "label": "5. Abschnitt: Richter und Richterinnen",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1232,15 +1346,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Richter und Richterinnen"
+     "label": "5. Abschnitt: Richter und Richterinnen",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1273,15 +1390,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Richter und Richterinnen"
+     "label": "5. Abschnitt: Richter und Richterinnen",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1292,15 +1412,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Richter und Richterinnen"
+     "label": "5. Abschnitt: Richter und Richterinnen",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1329,15 +1452,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Richter und Richterinnen"
+     "label": "5. Abschnitt: Richter und Richterinnen",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1348,15 +1474,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Richter und Richterinnen"
+     "label": "5. Abschnitt: Richter und Richterinnen",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1367,15 +1496,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Richter und Richterinnen"
+     "label": "5. Abschnitt: Richter und Richterinnen",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1386,15 +1518,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Richter und Richterinnen"
+     "label": "5. Abschnitt: Richter und Richterinnen",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1427,15 +1562,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Richter und Richterinnen"
+     "label": "5. Abschnitt: Richter und Richterinnen",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1446,15 +1584,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Richter und Richterinnen"
+     "label": "5. Abschnitt: Richter und Richterinnen",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [],
@@ -1485,15 +1626,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Organisation und Verwaltung"
+     "label": "6. Abschnitt: Organisation und Verwaltung",
+     "eId": "tit_3/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1504,15 +1648,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Organisation und Verwaltung"
+     "label": "6. Abschnitt: Organisation und Verwaltung",
+     "eId": "tit_3/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1523,15 +1670,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Organisation und Verwaltung"
+     "label": "6. Abschnitt: Organisation und Verwaltung",
+     "eId": "tit_3/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1596,15 +1746,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Organisation und Verwaltung"
+     "label": "6. Abschnitt: Organisation und Verwaltung",
+     "eId": "tit_3/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1633,15 +1786,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Organisation und Verwaltung"
+     "label": "6. Abschnitt: Organisation und Verwaltung",
+     "eId": "tit_3/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1706,15 +1862,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Organisation und Verwaltung"
+     "label": "6. Abschnitt: Organisation und Verwaltung",
+     "eId": "tit_3/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1747,15 +1906,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Organisation und Verwaltung"
+     "label": "6. Abschnitt: Organisation und Verwaltung",
+     "eId": "tit_3/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1766,15 +1928,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Organisation und Verwaltung"
+     "label": "6. Abschnitt: Organisation und Verwaltung",
+     "eId": "tit_3/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1785,15 +1950,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Organisation und Verwaltung"
+     "label": "6. Abschnitt: Organisation und Verwaltung",
+     "eId": "tit_3/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1804,15 +1972,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Organisation und Verwaltung"
+     "label": "6. Abschnitt: Organisation und Verwaltung",
+     "eId": "tit_3/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1823,15 +1994,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Organisation und Verwaltung"
+     "label": "6. Abschnitt: Organisation und Verwaltung",
+     "eId": "tit_3/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1842,15 +2016,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Organisation und Verwaltung"
+     "label": "6. Abschnitt: Organisation und Verwaltung",
+     "eId": "tit_3/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1861,15 +2038,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Organisation und Verwaltung"
+     "label": "6. Abschnitt: Organisation und Verwaltung",
+     "eId": "tit_3/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1880,15 +2060,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Organisation und Verwaltung"
+     "label": "6. Abschnitt: Organisation und Verwaltung",
+     "eId": "tit_3/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1913,11 +2096,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kantonale Zwangsmassnahmengerichte"
+     "label": "2. Kapitel: Kantonale Zwangsmassnahmengerichte",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [],
@@ -1940,7 +2125,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ergänzende Verfahrensbestimmungen"
+     "label": "4. Titel: Ergänzende Verfahrensbestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1951,7 +2137,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ergänzende Verfahrensbestimmungen"
+     "label": "4. Titel: Ergänzende Verfahrensbestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1962,7 +2149,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ergänzende Verfahrensbestimmungen"
+     "label": "4. Titel: Ergänzende Verfahrensbestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1973,7 +2161,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ergänzende Verfahrensbestimmungen"
+     "label": "4. Titel: Ergänzende Verfahrensbestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1984,7 +2173,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ergänzende Verfahrensbestimmungen"
+     "label": "4. Titel: Ergänzende Verfahrensbestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1995,7 +2185,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ergänzende Verfahrensbestimmungen"
+     "label": "4. Titel: Ergänzende Verfahrensbestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2006,7 +2197,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ergänzende Verfahrensbestimmungen"
+     "label": "4. Titel: Ergänzende Verfahrensbestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2017,7 +2209,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ergänzende Verfahrensbestimmungen"
+     "label": "4. Titel: Ergänzende Verfahrensbestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2028,7 +2221,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ergänzende Verfahrensbestimmungen"
+     "label": "4. Titel: Ergänzende Verfahrensbestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2101,7 +2295,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ergänzende Verfahrensbestimmungen"
+     "label": "4. Titel: Ergänzende Verfahrensbestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2112,7 +2307,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Ergänzende Verfahrensbestimmungen"
+     "label": "4. Titel: Ergänzende Verfahrensbestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2123,7 +2319,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Schlussbestimmungen"
+     "label": "5. Titel: Schlussbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -2134,7 +2331,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Schlussbestimmungen"
+     "label": "5. Titel: Schlussbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -2171,7 +2369,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Schlussbestimmungen"
+     "label": "5. Titel: Schlussbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -2191,15 +2390,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3a. Abschnitt: Berufungskammer"
+     "label": "3a. Abschnitt: Berufungskammer",
+     "eId": "tit_3/chap_1/sec_3_a"
     }
    ],
    "marginalie": [
@@ -2233,15 +2435,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3a. Abschnitt: Berufungskammer"
+     "label": "3a. Abschnitt: Berufungskammer",
+     "eId": "tit_3/chap_1/sec_3_a"
     }
    ],
    "marginalie": [
@@ -2252,15 +2457,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3a. Abschnitt: Berufungskammer"
+     "label": "3a. Abschnitt: Berufungskammer",
+     "eId": "tit_3/chap_1/sec_3_a"
     }
    ],
    "marginalie": [
@@ -2271,15 +2479,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsbehörden"
+     "label": "3. Titel: Gerichtsbehörden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bundesstrafgericht"
+     "label": "1. Kapitel: Bundesstrafgericht",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Organisation und Verwaltung"
+     "label": "6. Abschnitt: Organisation und Verwaltung",
+     "eId": "tit_3/chap_1/sec_6"
     }
    ],
    "marginalie": [

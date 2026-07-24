@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "831.301",
   "titel": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung",
@@ -79,15 +79,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Anspruch"
+     "label": "I. Anspruch",
+     "eId": "chap_1/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -163,15 +166,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Anspruch"
+     "label": "I. Anspruch",
+     "eId": "chap_1/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -196,15 +202,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Anspruch"
+     "label": "I. Anspruch",
+     "eId": "chap_1/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -288,15 +297,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern"
+     "label": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern",
+     "eId": "chap_1/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -321,15 +333,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern"
+     "label": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern",
+     "eId": "chap_1/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -354,15 +369,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern"
+     "label": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern",
+     "eId": "chap_1/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -399,15 +417,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern"
+     "label": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern",
+     "eId": "chap_1/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -480,15 +501,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern"
+     "label": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern",
+     "eId": "chap_1/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -525,15 +549,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern"
+     "label": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern",
+     "eId": "chap_1/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -558,15 +585,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern"
+     "label": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern",
+     "eId": "chap_1/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -577,15 +607,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -647,15 +680,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -680,15 +716,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -699,15 +738,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [],
@@ -730,15 +772,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -763,15 +808,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -808,15 +856,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -841,15 +892,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -874,15 +928,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "III. Vergütung von Krankheits- und Behinderungskosten"
+     "label": "III. Vergütung von Krankheits- und Behinderungskosten",
+     "eId": "chap_1/lvl_A/lvl_III"
     }
    ],
    "marginalie": [
@@ -920,15 +977,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -985,15 +1045,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1018,15 +1081,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1087,15 +1153,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1132,15 +1201,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1151,15 +1223,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1344,15 +1419,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1401,15 +1479,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1434,15 +1515,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "B. Die Organisation und das Verfahren"
+     "label": "B. Die Organisation und das Verfahren",
+     "eId": "chap_1/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Geschäftsführung und Verwaltungskosten"
+     "label": "I. Geschäftsführung und Verwaltungskosten",
+     "eId": "chap_1/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -1467,15 +1551,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "B. Die Organisation und das Verfahren"
+     "label": "B. Die Organisation und das Verfahren",
+     "eId": "chap_1/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Geschäftsführung und Verwaltungskosten"
+     "label": "I. Geschäftsführung und Verwaltungskosten",
+     "eId": "chap_1/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -1500,15 +1587,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "B. Die Organisation und das Verfahren"
+     "label": "B. Die Organisation und das Verfahren",
+     "eId": "chap_1/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Geschäftsführung und Verwaltungskosten"
+     "label": "I. Geschäftsführung und Verwaltungskosten",
+     "eId": "chap_1/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -1533,15 +1623,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "B. Die Organisation und das Verfahren"
+     "label": "B. Die Organisation und das Verfahren",
+     "eId": "chap_1/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Geschäftsführung und Verwaltungskosten"
+     "label": "I. Geschäftsführung und Verwaltungskosten",
+     "eId": "chap_1/lvl_B/lvl_I"
     }
    ],
    "marginalie": [],
@@ -1564,15 +1657,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "B. Die Organisation und das Verfahren"
+     "label": "B. Die Organisation und das Verfahren",
+     "eId": "chap_1/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Geschäftsführung und Verwaltungskosten"
+     "label": "I. Geschäftsführung und Verwaltungskosten",
+     "eId": "chap_1/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -1609,15 +1705,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "B. Die Organisation und das Verfahren"
+     "label": "B. Die Organisation und das Verfahren",
+     "eId": "chap_1/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "II. Revisionen"
+     "label": "II. Revisionen",
+     "eId": "chap_1/lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -1642,15 +1741,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "B. Die Organisation und das Verfahren"
+     "label": "B. Die Organisation und das Verfahren",
+     "eId": "chap_1/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "II. Revisionen"
+     "label": "II. Revisionen",
+     "eId": "chap_1/lvl_B/lvl_II"
     }
    ],
    "marginalie": [],
@@ -1673,15 +1775,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "B. Die Organisation und das Verfahren"
+     "label": "B. Die Organisation und das Verfahren",
+     "eId": "chap_1/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "II. Revisionen"
+     "label": "II. Revisionen",
+     "eId": "chap_1/lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -1730,15 +1835,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "B. Die Organisation und das Verfahren"
+     "label": "B. Die Organisation und das Verfahren",
+     "eId": "chap_1/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "II. Revisionen"
+     "label": "II. Revisionen",
+     "eId": "chap_1/lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -1763,15 +1871,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "B. Die Organisation und das Verfahren"
+     "label": "B. Die Organisation und das Verfahren",
+     "eId": "chap_1/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "II. Revisionen"
+     "label": "II. Revisionen",
+     "eId": "chap_1/lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -1796,15 +1907,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "B. Die Organisation und das Verfahren"
+     "label": "B. Die Organisation und das Verfahren",
+     "eId": "chap_1/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "III. Rechtspflege"
+     "label": "III. Rechtspflege",
+     "eId": "chap_1/lvl_B/lvl_III"
     }
    ],
    "marginalie": [],
@@ -1827,15 +1941,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Die Beiträge des Bundes"
+     "label": "C. Die Beiträge des Bundes",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "I. An die jährlichen Ergänzungsleistungen"
+     "label": "I. An die jährlichen Ergänzungsleistungen",
+     "eId": "chap_1/lvl_C/lvl_I"
     }
    ],
    "marginalie": [
@@ -1909,15 +2026,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Die Beiträge des Bundes"
+     "label": "C. Die Beiträge des Bundes",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "I. An die jährlichen Ergänzungsleistungen"
+     "label": "I. An die jährlichen Ergänzungsleistungen",
+     "eId": "chap_1/lvl_C/lvl_I"
     }
    ],
    "marginalie": [
@@ -1990,15 +2110,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Die Beiträge des Bundes"
+     "label": "C. Die Beiträge des Bundes",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "I. An die jährlichen Ergänzungsleistungen"
+     "label": "I. An die jährlichen Ergänzungsleistungen",
+     "eId": "chap_1/lvl_C/lvl_I"
     }
    ],
    "marginalie": [
@@ -2023,15 +2146,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Die Beiträge des Bundes"
+     "label": "C. Die Beiträge des Bundes",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "I. An die jährlichen Ergänzungsleistungen"
+     "label": "I. An die jährlichen Ergänzungsleistungen",
+     "eId": "chap_1/lvl_C/lvl_I"
     }
    ],
    "marginalie": [
@@ -2069,11 +2195,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Leistungen der gemeinnützigen Institutionen"
+     "label": "Zweiter Abschnitt: Die Leistungen der gemeinnützigen Institutionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "I. Beiträge der Alters-, Hinterlassenen- und Invalidenversicherung"
+     "label": "I. Beiträge der Alters-, Hinterlassenen- und Invalidenversicherung",
+     "eId": "chap_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -2135,11 +2263,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Leistungen der gemeinnützigen Institutionen"
+     "label": "Zweiter Abschnitt: Die Leistungen der gemeinnützigen Institutionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "I. Beiträge der Alters-, Hinterlassenen- und Invalidenversicherung"
+     "label": "I. Beiträge der Alters-, Hinterlassenen- und Invalidenversicherung",
+     "eId": "chap_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -2183,11 +2313,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Leistungen der gemeinnützigen Institutionen"
+     "label": "Zweiter Abschnitt: Die Leistungen der gemeinnützigen Institutionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "II. Leistungen"
+     "label": "II. Leistungen",
+     "eId": "chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2249,11 +2381,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Leistungen der gemeinnützigen Institutionen"
+     "label": "Zweiter Abschnitt: Die Leistungen der gemeinnützigen Institutionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "II. Leistungen"
+     "label": "II. Leistungen",
+     "eId": "chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2264,11 +2398,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Leistungen der gemeinnützigen Institutionen"
+     "label": "Zweiter Abschnitt: Die Leistungen der gemeinnützigen Institutionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "II. Leistungen"
+     "label": "II. Leistungen",
+     "eId": "chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2305,11 +2441,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Leistungen der gemeinnützigen Institutionen"
+     "label": "Zweiter Abschnitt: Die Leistungen der gemeinnützigen Institutionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "II. Leistungen"
+     "label": "II. Leistungen",
+     "eId": "chap_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2371,11 +2509,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Leistungen der gemeinnützigen Institutionen"
+     "label": "Zweiter Abschnitt: Die Leistungen der gemeinnützigen Institutionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "III. Kontrollen und Berichte"
+     "label": "III. Kontrollen und Berichte",
+     "eId": "chap_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2400,11 +2540,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Leistungen der gemeinnützigen Institutionen"
+     "label": "Zweiter Abschnitt: Die Leistungen der gemeinnützigen Institutionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "III. Kontrollen und Berichte"
+     "label": "III. Kontrollen und Berichte",
+     "eId": "chap_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2415,11 +2557,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Leistungen der gemeinnützigen Institutionen"
+     "label": "Zweiter Abschnitt: Die Leistungen der gemeinnützigen Institutionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "III. Kontrollen und Berichte"
+     "label": "III. Kontrollen und Berichte",
+     "eId": "chap_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2430,11 +2574,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Koordination und Aufsicht des Bundes"
+     "label": "Dritter Abschnitt: Koordination und Aufsicht des Bundes",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "I. Koordination"
+     "label": "I. Koordination",
+     "eId": "chap_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -2471,11 +2617,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Koordination und Aufsicht des Bundes"
+     "label": "Dritter Abschnitt: Koordination und Aufsicht des Bundes",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "I. Koordination"
+     "label": "I. Koordination",
+     "eId": "chap_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -2500,11 +2648,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Koordination und Aufsicht des Bundes"
+     "label": "Dritter Abschnitt: Koordination und Aufsicht des Bundes",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "I. Koordination"
+     "label": "I. Koordination",
+     "eId": "chap_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -2541,11 +2691,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Koordination und Aufsicht des Bundes"
+     "label": "Dritter Abschnitt: Koordination und Aufsicht des Bundes",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "II. Aufsicht des Bundes"
+     "label": "II. Aufsicht des Bundes",
+     "eId": "chap_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -2571,11 +2723,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Koordination und Aufsicht des Bundes"
+     "label": "Dritter Abschnitt: Koordination und Aufsicht des Bundes",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "II. Aufsicht des Bundes"
+     "label": "II. Aufsicht des Bundes",
+     "eId": "chap_3/lvl_II"
     }
    ],
    "marginalie": [],
@@ -2598,11 +2752,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Koordination und Aufsicht des Bundes"
+     "label": "Dritter Abschnitt: Koordination und Aufsicht des Bundes",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "II. Aufsicht des Bundes"
+     "label": "II. Aufsicht des Bundes",
+     "eId": "chap_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -2639,7 +2795,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Übergangs- und Schlussbestimmungen"
+     "label": "Vierter Abschnitt: Übergangs- und Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -2664,7 +2821,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Übergangs- und Schlussbestimmungen"
+     "label": "Vierter Abschnitt: Übergangs- und Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -2693,15 +2851,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern"
+     "label": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern",
+     "eId": "chap_1/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -2756,15 +2917,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -2789,15 +2953,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -2894,15 +3061,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -2943,15 +3113,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -2993,15 +3166,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -3030,15 +3206,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -3063,15 +3242,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -3109,15 +3291,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -3142,15 +3327,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -3199,15 +3387,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -3244,15 +3435,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -3277,15 +3471,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -3310,15 +3507,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -3356,15 +3556,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -3389,15 +3592,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -3462,15 +3668,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -3495,15 +3704,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -3528,15 +3740,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -3573,15 +3788,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen"
+     "label": "IIa. Anrechenbare Einnahmen, anerkannte Ausgaben und Vermögen",
+     "eId": "chap_1/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [
@@ -3606,15 +3824,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "III. Vergütung von Krankheits- und Behinderungskosten"
+     "label": "III. Vergütung von Krankheits- und Behinderungskosten",
+     "eId": "chap_1/lvl_A/lvl_III"
     }
    ],
    "marginalie": [],
@@ -3641,15 +3862,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "III. Vergütung von Krankheits- und Behinderungskosten"
+     "label": "III. Vergütung von Krankheits- und Behinderungskosten",
+     "eId": "chap_1/lvl_A/lvl_III"
     }
    ],
    "marginalie": [
@@ -3702,15 +3926,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Anspruch"
+     "label": "I. Anspruch",
+     "eId": "chap_1/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -3763,15 +3990,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Anspruch"
+     "label": "I. Anspruch",
+     "eId": "chap_1/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -3796,15 +4026,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -3829,15 +4062,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -3874,15 +4110,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -3907,15 +4146,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [],
@@ -3942,15 +4184,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -3999,15 +4244,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4060,15 +4308,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [],
@@ -4115,15 +4366,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4148,15 +4402,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4206,15 +4463,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4252,15 +4512,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4298,15 +4561,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "B. Die Organisation und das Verfahren"
+     "label": "B. Die Organisation und das Verfahren",
+     "eId": "chap_1/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Geschäftsführung und Verwaltungskosten"
+     "label": "I. Geschäftsführung und Verwaltungskosten",
+     "eId": "chap_1/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -4343,15 +4609,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "B. Die Organisation und das Verfahren"
+     "label": "B. Die Organisation und das Verfahren",
+     "eId": "chap_1/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Geschäftsführung und Verwaltungskosten"
+     "label": "I. Geschäftsführung und Verwaltungskosten",
+     "eId": "chap_1/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -4376,15 +4645,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Die Beiträge des Bundes"
+     "label": "C. Die Beiträge des Bundes",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "I. An die jährlichen Ergänzungsleistungen"
+     "label": "I. An die jährlichen Ergänzungsleistungen",
+     "eId": "chap_1/lvl_C/lvl_I"
     }
    ],
    "marginalie": [
@@ -4409,15 +4681,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Der Anspruch und die Berechnungsgrundlagen"
+     "label": "A. Der Anspruch und die Berechnungsgrundlagen",
+     "eId": "chap_1/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern"
+     "label": "II. Zusammenrechnung der anerkannten Ausgaben und der anrechenbaren Einnahmen sowie des Vermögens von Familienmitgliedern",
+     "eId": "chap_1/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -4455,15 +4730,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Die Beiträge des Bundes"
+     "label": "C. Die Beiträge des Bundes",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "I. An die jährlichen Ergänzungsleistungen"
+     "label": "I. An die jährlichen Ergänzungsleistungen",
+     "eId": "chap_1/lvl_C/lvl_I"
     }
    ],
    "marginalie": [
@@ -4488,15 +4766,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Die Beiträge des Bundes"
+     "label": "C. Die Beiträge des Bundes",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "II. An die Verwaltungskosten"
+     "label": "II. An die Verwaltungskosten",
+     "eId": "chap_1/lvl_C/lvl_II"
     }
    ],
    "marginalie": [
@@ -4522,15 +4803,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Die Beiträge des Bundes"
+     "label": "C. Die Beiträge des Bundes",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "II. An die Verwaltungskosten"
+     "label": "II. An die Verwaltungskosten",
+     "eId": "chap_1/lvl_C/lvl_II"
     }
    ],
    "marginalie": [
@@ -4555,15 +4839,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Die Beiträge des Bundes"
+     "label": "C. Die Beiträge des Bundes",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "II. An die Verwaltungskosten"
+     "label": "II. An die Verwaltungskosten",
+     "eId": "chap_1/lvl_C/lvl_II"
     }
    ],
    "marginalie": [
@@ -4600,15 +4887,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Die Beiträge des Bundes"
+     "label": "C. Die Beiträge des Bundes",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "II. An die Verwaltungskosten"
+     "label": "II. An die Verwaltungskosten",
+     "eId": "chap_1/lvl_C/lvl_II"
     }
    ],
    "marginalie": [
@@ -4646,15 +4936,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Die Beiträge des Bundes"
+     "label": "C. Die Beiträge des Bundes",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "III. Kürzung des Bundesbeitrags an die Verwaltungskosten"
+     "label": "III. Kürzung des Bundesbeitrags an die Verwaltungskosten",
+     "eId": "chap_1/lvl_C/lvl_III"
     }
    ],
    "marginalie": [
@@ -4680,15 +4973,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Ergänzungsleistungen"
+     "label": "Erster Abschnitt: Ergänzungsleistungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Die Beiträge des Bundes"
+     "label": "C. Die Beiträge des Bundes",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "III. Kürzung des Bundesbeitrags an die Verwaltungskosten"
+     "label": "III. Kürzung des Bundesbeitrags an die Verwaltungskosten",
+     "eId": "chap_1/lvl_C/lvl_III"
     }
    ],
    "marginalie": [
@@ -4699,11 +4995,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Koordination und Aufsicht des Bundes"
+     "label": "Dritter Abschnitt: Koordination und Aufsicht des Bundes",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "I. Koordination"
+     "label": "I. Koordination",
+     "eId": "chap_3/lvl_I"
     }
    ],
    "marginalie": [

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "812.121",
   "titel": "Bundesgesetz über die Betäubungsmittel und die psychotropen Stoffe",
@@ -87,7 +87,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -141,7 +142,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -178,7 +180,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -303,11 +306,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln"
+     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Fabrikations- und Handelsfirmen"
+     "label": "1. Abschnitt: Fabrikations- und Handelsfirmen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -384,11 +389,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln"
+     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Fabrikations- und Handelsfirmen"
+     "label": "1. Abschnitt: Fabrikations- und Handelsfirmen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -501,11 +508,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln"
+     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Fabrikations- und Handelsfirmen"
+     "label": "1. Abschnitt: Fabrikations- und Handelsfirmen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -566,11 +575,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln"
+     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Fabrikations- und Handelsfirmen"
+     "label": "1. Abschnitt: Fabrikations- und Handelsfirmen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -607,11 +618,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln"
+     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Fabrikations- und Handelsfirmen"
+     "label": "1. Abschnitt: Fabrikations- und Handelsfirmen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -856,11 +869,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln"
+     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Medizinalpersonen"
+     "label": "2. Abschnitt: Medizinalpersonen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [],
@@ -995,11 +1010,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln"
+     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Medizinalpersonen"
+     "label": "2. Abschnitt: Medizinalpersonen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [],
@@ -1038,11 +1055,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln"
+     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Medizinalpersonen"
+     "label": "2. Abschnitt: Medizinalpersonen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [],
@@ -1101,11 +1120,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln"
+     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Medizinalpersonen"
+     "label": "2. Abschnitt: Medizinalpersonen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [],
@@ -1168,11 +1189,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln"
+     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Medizinalpersonen"
+     "label": "2. Abschnitt: Medizinalpersonen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": []
@@ -1181,11 +1204,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln"
+     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Krankenanstalten und Institute"
+     "label": "3. Abschnitt: Krankenanstalten und Institute",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [],
@@ -1236,11 +1261,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln"
+     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: …"
+     "label": "4. Abschnitt: …",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [],
@@ -1300,7 +1327,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle"
+     "label": "3. Kapitel: Kontrolle",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -1352,7 +1380,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle"
+     "label": "3. Kapitel: Kontrolle",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -1447,7 +1476,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle"
+     "label": "3. Kapitel: Kontrolle",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -1486,11 +1516,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbare Handlungen"
+     "label": "1. Abschnitt: Strafbare Handlungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -1575,11 +1607,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbare Handlungen"
+     "label": "1. Abschnitt: Strafbare Handlungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -1662,11 +1696,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbare Handlungen"
+     "label": "1. Abschnitt: Strafbare Handlungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -1733,11 +1769,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbare Handlungen"
+     "label": "1. Abschnitt: Strafbare Handlungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -1772,11 +1810,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbare Handlungen"
+     "label": "1. Abschnitt: Strafbare Handlungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -1819,11 +1859,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbare Handlungen"
+     "label": "1. Abschnitt: Strafbare Handlungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -1902,11 +1944,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbare Handlungen"
+     "label": "1. Abschnitt: Strafbare Handlungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -1929,11 +1973,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbare Handlungen"
+     "label": "1. Abschnitt: Strafbare Handlungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -1957,11 +2003,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbare Handlungen"
+     "label": "1. Abschnitt: Strafbare Handlungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -2092,11 +2140,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Strafverfolgung"
+     "label": "2. Abschnitt: Strafverfolgung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -2176,11 +2226,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufgaben der Kantone und des Bundes"
+     "label": "5. Kapitel: Aufgaben der Kantone und des Bundes",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Aufgaben des Bundes"
+     "label": "1. Abschnitt: Aufgaben des Bundes",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [],
@@ -2232,7 +2284,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -2267,7 +2320,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -2294,7 +2348,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -2329,7 +2384,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -2354,11 +2410,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln"
+     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3a: Organisationen und Behörden"
+     "label": "Abschnitt 3a: Organisationen und Behörden",
+     "eId": "chap_2/sec_3_a"
     }
    ],
    "marginalie": [],
@@ -2402,11 +2460,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln"
+     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: …"
+     "label": "4. Abschnitt: …",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [],
@@ -2449,11 +2509,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Datenschutz und Datenbearbeitung"
+     "label": "3a. Kapitel: Datenschutz und Datenbearbeitung",
+     "eId": "chap_3_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Datenschutz im Rahmen der Schengen-Assoziierungsabkommen"
+     "label": "1. Abschnitt: Datenschutz im Rahmen der Schengen-Assoziierungsabkommen",
+     "eId": "chap_3_a/sec_1"
     }
    ],
    "marginalie": [
@@ -2546,11 +2608,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Datenschutz und Datenbearbeitung"
+     "label": "3a. Kapitel: Datenschutz und Datenbearbeitung",
+     "eId": "chap_3_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Datenschutz im Rahmen der Schengen-Assoziierungsabkommen"
+     "label": "1. Abschnitt: Datenschutz im Rahmen der Schengen-Assoziierungsabkommen",
+     "eId": "chap_3_a/sec_1"
     }
    ],
    "marginalie": [],
@@ -2577,11 +2641,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Datenschutz und Datenbearbeitung"
+     "label": "3a. Kapitel: Datenschutz und Datenbearbeitung",
+     "eId": "chap_3_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Datenschutz im Rahmen der Schengen-Assoziierungsabkommen"
+     "label": "1. Abschnitt: Datenschutz im Rahmen der Schengen-Assoziierungsabkommen",
+     "eId": "chap_3_a/sec_1"
     }
    ],
    "marginalie": [
@@ -2628,11 +2694,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Datenschutz und Datenbearbeitung"
+     "label": "3a. Kapitel: Datenschutz und Datenbearbeitung",
+     "eId": "chap_3_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Datenbearbeitung"
+     "label": "2. Abschnitt: Datenbearbeitung",
+     "eId": "chap_3_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2698,11 +2766,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Datenschutz und Datenbearbeitung"
+     "label": "3a. Kapitel: Datenschutz und Datenbearbeitung",
+     "eId": "chap_3_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Datenbearbeitung"
+     "label": "2. Abschnitt: Datenbearbeitung",
+     "eId": "chap_3_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2731,11 +2801,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Datenschutz und Datenbearbeitung"
+     "label": "3a. Kapitel: Datenschutz und Datenbearbeitung",
+     "eId": "chap_3_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Datenbearbeitung"
+     "label": "2. Abschnitt: Datenbearbeitung",
+     "eId": "chap_3_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2764,11 +2836,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbare Handlungen"
+     "label": "1. Abschnitt: Strafbare Handlungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -2842,11 +2916,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbare Handlungen"
+     "label": "1. Abschnitt: Strafbare Handlungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -2909,11 +2985,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbare Handlungen"
+     "label": "1. Abschnitt: Strafbare Handlungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -2948,11 +3026,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Strafbare Handlungen"
+     "label": "1. Abschnitt: Strafbare Handlungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -2979,7 +3059,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -3016,7 +3097,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -3066,11 +3148,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Strafverfolgung"
+     "label": "2. Abschnitt: Strafverfolgung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -3118,11 +3202,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Strafverfolgung"
+     "label": "2. Abschnitt: Strafverfolgung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -3165,11 +3251,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufgaben der Kantone und des Bundes"
+     "label": "5. Kapitel: Aufgaben der Kantone und des Bundes",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Aufgaben des Bundes"
+     "label": "1. Abschnitt: Aufgaben des Bundes",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [],
@@ -3196,11 +3284,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufgaben der Kantone und des Bundes"
+     "label": "5. Kapitel: Aufgaben der Kantone und des Bundes",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Aufgaben des Bundes"
+     "label": "1. Abschnitt: Aufgaben des Bundes",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [],
@@ -3251,11 +3341,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufgaben der Kantone und des Bundes"
+     "label": "5. Kapitel: Aufgaben der Kantone und des Bundes",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Aufgaben des Bundes"
+     "label": "1. Abschnitt: Aufgaben des Bundes",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": []
@@ -3264,11 +3356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufgaben der Kantone und des Bundes"
+     "label": "5. Kapitel: Aufgaben der Kantone und des Bundes",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufgaben der Kantone"
+     "label": "2. Abschnitt: Aufgaben der Kantone",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": []
@@ -3277,11 +3371,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufgaben der Kantone und des Bundes"
+     "label": "5. Kapitel: Aufgaben der Kantone und des Bundes",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufgaben der Kantone"
+     "label": "2. Abschnitt: Aufgaben der Kantone",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [],
@@ -3304,7 +3400,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -3341,7 +3438,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -3378,7 +3476,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -3413,7 +3512,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -3442,7 +3542,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [],
@@ -3485,11 +3586,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
+     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Prävention"
+     "label": "1. Abschnitt: Prävention",
+     "eId": "chap_1_a/sec_1"
     }
    ],
    "marginalie": [
@@ -3527,11 +3630,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
+     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Prävention"
+     "label": "1. Abschnitt: Prävention",
+     "eId": "chap_1_a/sec_1"
     }
    ],
    "marginalie": [
@@ -3568,11 +3673,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
+     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Therapie und Wiedereingliederung"
+     "label": "2. Abschnitt: Therapie und Wiedereingliederung",
+     "eId": "chap_1_a/sec_2"
     }
    ],
    "marginalie": [
@@ -3583,11 +3690,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
+     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Therapie und Wiedereingliederung"
+     "label": "2. Abschnitt: Therapie und Wiedereingliederung",
+     "eId": "chap_1_a/sec_2"
     }
    ],
    "marginalie": [
@@ -3612,11 +3721,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
+     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Therapie und Wiedereingliederung"
+     "label": "2. Abschnitt: Therapie und Wiedereingliederung",
+     "eId": "chap_1_a/sec_2"
     }
    ],
    "marginalie": [],
@@ -3647,11 +3758,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
+     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Schadenminderung und Überlebenshilfe"
+     "label": "3. Abschnitt: Schadenminderung und Überlebenshilfe",
+     "eId": "chap_1_a/sec_3"
     }
    ],
    "marginalie": [
@@ -3662,11 +3775,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
+     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Schadenminderung und Überlebenshilfe"
+     "label": "3. Abschnitt: Schadenminderung und Überlebenshilfe",
+     "eId": "chap_1_a/sec_3"
     }
    ],
    "marginalie": [
@@ -3677,11 +3792,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
+     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Koordination, Forschung, Ausbildung und Qualitätssicherung"
+     "label": "4. Abschnitt: Koordination, Forschung, Ausbildung und Qualitätssicherung",
+     "eId": "chap_1_a/sec_4"
     }
    ],
    "marginalie": [
@@ -3692,11 +3809,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
+     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Koordination, Forschung, Ausbildung und Qualitätssicherung"
+     "label": "4. Abschnitt: Koordination, Forschung, Ausbildung und Qualitätssicherung",
+     "eId": "chap_1_a/sec_4"
     }
    ],
    "marginalie": [
@@ -3782,11 +3901,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
+     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Koordination, Forschung, Ausbildung und Qualitätssicherung"
+     "label": "4. Abschnitt: Koordination, Forschung, Ausbildung und Qualitätssicherung",
+     "eId": "chap_1_a/sec_4"
     }
    ],
    "marginalie": [
@@ -3797,11 +3918,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung"
+     "label": "1a. Kapitel: Prävention, Therapie und Schadenminderung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Koordination, Forschung, Ausbildung und Qualitätssicherung"
+     "label": "4. Abschnitt: Koordination, Forschung, Ausbildung und Qualitätssicherung",
+     "eId": "chap_1_a/sec_4"
     }
    ],
    "marginalie": [
@@ -3812,11 +3935,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln"
+     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Fabrikations- und Handelsfirmen"
+     "label": "1. Abschnitt: Fabrikations- und Handelsfirmen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -3865,11 +3990,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln"
+     "label": "2. Kapitel: Herstellung, Abgabe, Bezug und Verwendung von Betäubungsmitteln",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Fabrikations- und Handelsfirmen"
+     "label": "1. Abschnitt: Fabrikations- und Handelsfirmen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [

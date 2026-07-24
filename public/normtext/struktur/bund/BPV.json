@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "172.220.111.3",
   "titel": "Bundespersonalverordnung",
@@ -42,7 +42,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -241,7 +242,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -338,7 +340,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -363,11 +366,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -476,11 +481,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -529,11 +536,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -544,11 +553,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -587,11 +598,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -602,11 +615,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -617,11 +632,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -646,11 +663,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -675,11 +694,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -690,11 +711,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -705,11 +728,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -734,11 +759,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Dialog und Personalbeurteilung"
+     "label": "2. Abschnitt: Dialog und Personalbeurteilung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -764,11 +791,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Dialog und Personalbeurteilung"
+     "label": "2. Abschnitt: Dialog und Personalbeurteilung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -779,11 +808,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Dialog und Personalbeurteilung"
+     "label": "2. Abschnitt: Dialog und Personalbeurteilung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": []
@@ -792,11 +823,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Koordination und Berichterstattung"
+     "label": "3. Abschnitt: Koordination und Berichterstattung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -929,11 +962,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Koordination und Berichterstattung"
+     "label": "3. Abschnitt: Koordination und Berichterstattung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -958,11 +993,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Koordination und Berichterstattung"
+     "label": "3. Abschnitt: Koordination und Berichterstattung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -987,11 +1024,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Koordination und Berichterstattung"
+     "label": "3. Abschnitt: Koordination und Berichterstattung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1016,7 +1055,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1126,7 +1166,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1175,7 +1216,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1212,7 +1254,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1285,7 +1328,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1310,7 +1354,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1383,7 +1428,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1408,7 +1454,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1470,7 +1517,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1495,7 +1543,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1520,7 +1569,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1545,7 +1595,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1619,11 +1670,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lohn"
+     "label": "1. Abschnitt: Lohn",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1648,11 +1701,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lohn"
+     "label": "1. Abschnitt: Lohn",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1677,11 +1732,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lohn"
+     "label": "1. Abschnitt: Lohn",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1706,11 +1763,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lohn"
+     "label": "1. Abschnitt: Lohn",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1735,11 +1794,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lohn"
+     "label": "1. Abschnitt: Lohn",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1764,11 +1825,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lohn"
+     "label": "1. Abschnitt: Lohn",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1779,11 +1842,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lohn"
+     "label": "1. Abschnitt: Lohn",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1808,11 +1873,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1823,11 +1890,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1892,11 +1961,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1925,11 +1996,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1954,11 +2027,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -1981,11 +2056,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1996,11 +2073,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2037,11 +2116,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2066,11 +2147,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2109,11 +2192,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Funktionsbewertung"
+     "label": "3. Abschnitt: Funktionsbewertung",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -2202,11 +2287,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Funktionsbewertung"
+     "label": "3. Abschnitt: Funktionsbewertung",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -2247,11 +2334,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2328,11 +2417,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2373,11 +2464,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2402,11 +2495,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2457,11 +2552,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2559,11 +2656,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2600,11 +2699,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2629,11 +2730,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2644,11 +2747,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub"
+     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -2686,11 +2791,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub"
+     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -2751,11 +2858,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub"
+     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -2792,11 +2901,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub"
+     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -2849,11 +2960,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub"
+     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -2894,11 +3007,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -2923,11 +3038,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -2938,11 +3055,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -2953,11 +3072,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -2994,11 +3115,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -3071,11 +3194,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -3086,11 +3211,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -3139,11 +3266,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -3180,11 +3309,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -3195,11 +3326,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -3388,11 +3521,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -3517,11 +3652,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -3546,11 +3683,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen"
+     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -3561,11 +3700,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen"
+     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -3576,11 +3717,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen"
+     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -3621,11 +3764,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen"
+     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -3636,11 +3781,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen"
+     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -3651,11 +3798,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen"
+     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -3680,11 +3829,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen"
+     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -3695,11 +3846,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen"
+     "label": "7. Abschnitt: Leistungen des Arbeitgebers bei Versetzungen und Einsätzen im Ausland sowie bei internationalen Organisationen",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -3781,7 +3934,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3792,7 +3946,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3803,7 +3958,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3852,7 +4008,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3877,7 +4034,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3902,7 +4060,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3952,7 +4111,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3977,7 +4137,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4014,7 +4175,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten"
+     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -4037,7 +4199,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten"
+     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4063,7 +4226,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten"
+     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4088,7 +4252,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten"
+     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4099,7 +4264,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten"
+     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4126,7 +4292,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten"
+     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4152,7 +4319,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten"
+     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4177,11 +4345,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4231,11 +4401,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4260,11 +4432,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Leistungen des Arbeitgebers zur sozialen Sicherung des Personals bei einvernehmlicher Auflösung des Arbeitsverhältnisses"
+     "label": "2. Abschnitt: Leistungen des Arbeitgebers zur sozialen Sicherung des Personals bei einvernehmlicher Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -4338,7 +4512,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Mitwirkung und Sozialpartnerschaft"
+     "label": "8. Kapitel: Mitwirkung und Sozialpartnerschaft",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4375,7 +4550,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Mitwirkung und Sozialpartnerschaft"
+     "label": "8. Kapitel: Mitwirkung und Sozialpartnerschaft",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4424,7 +4600,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Mitwirkung und Sozialpartnerschaft"
+     "label": "8. Kapitel: Mitwirkung und Sozialpartnerschaft",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4449,7 +4626,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Verjährung"
+     "label": "9. Kapitel: Verjährung",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -4485,7 +4663,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Verjährung"
+     "label": "9. Kapitel: Verjährung",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -4508,7 +4687,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Verjährung"
+     "label": "9. Kapitel: Verjährung",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -4531,7 +4711,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Verjährung"
+     "label": "9. Kapitel: Verjährung",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -4568,7 +4749,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Ausführungsbestimmungen"
+     "label": "10. Kapitel: Ausführungsbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4705,7 +4887,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Ausführungsbestimmungen"
+     "label": "10. Kapitel: Ausführungsbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4782,7 +4965,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Ausführungsbestimmungen"
+     "label": "10. Kapitel: Ausführungsbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4823,7 +5007,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4834,7 +5019,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten"
+     "label": "6. Kapitel: Verletzung der arbeitsrechtlichen Pflichten",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4895,11 +5081,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4924,11 +5112,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4939,11 +5129,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4968,11 +5160,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4983,11 +5177,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4998,11 +5194,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [],
@@ -5025,11 +5223,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -5054,11 +5254,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -5158,11 +5360,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -5187,11 +5391,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen"
+     "label": "1. Abschnitt: Umstrukturierungen und Reorganisationen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -5216,11 +5422,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen"
+     "label": "7. Kapitel: Massnahmen und Leistungen des Arbeitgebers in besonderen Fällen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Leistungen des Arbeitgebers zur sozialen Sicherung des Personals bei einvernehmlicher Auflösung des Arbeitsverhältnisses"
+     "label": "2. Abschnitt: Leistungen des Arbeitgebers zur sozialen Sicherung des Personals bei einvernehmlicher Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -5231,11 +5439,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -5260,11 +5470,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -5301,11 +5513,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -5356,7 +5570,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [],
@@ -5396,7 +5611,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [],
@@ -5423,7 +5639,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5509,7 +5726,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [],
@@ -5536,7 +5754,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5573,7 +5792,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5598,7 +5818,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5623,7 +5844,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5648,7 +5870,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [],
@@ -5675,7 +5898,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5700,7 +5924,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5725,7 +5950,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5789,7 +6015,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5997,7 +6224,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -6022,11 +6250,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -6067,11 +6297,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Koordination und Berichterstattung"
+     "label": "3. Abschnitt: Koordination und Berichterstattung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6096,11 +6328,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Personalpolitik"
+     "label": "2. Kapitel: Personalpolitik",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Koordination und Berichterstattung"
+     "label": "3. Abschnitt: Koordination und Berichterstattung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6125,7 +6359,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -6186,7 +6421,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -6259,7 +6495,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -6284,7 +6521,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -6309,7 +6547,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -6334,7 +6573,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -6420,7 +6660,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -6443,7 +6684,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses"
+     "label": "3. Kapitel: Entstehung, Änderung und Auflösung des Arbeitsverhältnisses",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -6470,11 +6712,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lohn"
+     "label": "1. Abschnitt: Lohn",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -6535,11 +6779,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Lohn"
+     "label": "1. Abschnitt: Lohn",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -6564,11 +6810,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -6644,11 +6892,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -6677,11 +6927,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -6718,11 +6970,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -6846,11 +7100,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zulagen zum Lohn"
+     "label": "2. Abschnitt: Zulagen zum Lohn",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -6877,11 +7133,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Funktionsbewertung"
+     "label": "3. Abschnitt: Funktionsbewertung",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -6910,11 +7168,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Funktionsbewertung"
+     "label": "3. Abschnitt: Funktionsbewertung",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -6939,11 +7199,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Funktionsbewertung"
+     "label": "3. Abschnitt: Funktionsbewertung",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [],
@@ -6970,11 +7232,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -7015,11 +7279,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -7044,11 +7310,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -7101,11 +7369,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -7182,11 +7452,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -7271,11 +7543,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Sozialleistungen"
+     "label": "4. Abschnitt: Sozialleistungen",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -7300,11 +7574,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub"
+     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -7353,11 +7629,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub"
+     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -7382,11 +7660,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub"
+     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -7472,11 +7752,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub"
+     "label": "5. Abschnitt: Arbeitszeit, Ferien, Urlaub",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -7513,11 +7795,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -7542,11 +7826,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -7600,11 +7886,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -7629,11 +7917,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -7670,11 +7960,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Leistungen des Arbeitgebers"
+     "label": "4. Kapitel: Leistungen des Arbeitgebers",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers"
+     "label": "6. Abschnitt: Weitere Leistungen des Arbeitgebers",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -7699,11 +7991,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massgebender Lohn"
+     "label": "1. Abschnitt: Massgebender Lohn",
+     "eId": "chap_4_a/sec_1"
     }
    ],
    "marginalie": [
@@ -7781,11 +8075,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massgebender Lohn"
+     "label": "1. Abschnitt: Massgebender Lohn",
+     "eId": "chap_4_a/sec_1"
     }
    ],
    "marginalie": [
@@ -7796,11 +8092,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Leistungen des Arbeitgebers"
+     "label": "2. Abschnitt: Leistungen des Arbeitgebers",
+     "eId": "chap_4_a/sec_2"
     }
    ],
    "marginalie": [
@@ -7811,11 +8109,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Leistungen des Arbeitgebers"
+     "label": "2. Abschnitt: Leistungen des Arbeitgebers",
+     "eId": "chap_4_a/sec_2"
     }
    ],
    "marginalie": [
@@ -7840,11 +8140,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Leistungen des Arbeitgebers"
+     "label": "2. Abschnitt: Leistungen des Arbeitgebers",
+     "eId": "chap_4_a/sec_2"
     }
    ],
    "marginalie": [
@@ -7882,11 +8184,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Leistungen des Arbeitgebers"
+     "label": "2. Abschnitt: Leistungen des Arbeitgebers",
+     "eId": "chap_4_a/sec_2"
     }
    ],
    "marginalie": [
@@ -7925,11 +8229,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Leistungen des Arbeitgebers"
+     "label": "2. Abschnitt: Leistungen des Arbeitgebers",
+     "eId": "chap_4_a/sec_2"
     }
    ],
    "marginalie": [],
@@ -7952,11 +8258,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Leistungen des Arbeitgebers"
+     "label": "2. Abschnitt: Leistungen des Arbeitgebers",
+     "eId": "chap_4_a/sec_2"
     }
    ],
    "marginalie": [
@@ -8056,11 +8364,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: …"
+     "label": "3. Abschnitt: …",
+     "eId": "chap_4_a/sec_3"
     }
    ],
    "marginalie": [],
@@ -8083,11 +8393,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: …"
+     "label": "4. Abschnitt: …",
+     "eId": "chap_4_a/sec_4"
     }
    ],
    "marginalie": [],
@@ -8114,11 +8426,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Berufliche Vorsorge"
+     "label": "4a. Kapitel: Berufliche Vorsorge",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: …"
+     "label": "4. Abschnitt: …",
+     "eId": "chap_4_a/sec_4"
     }
    ],
    "marginalie": [],
@@ -8145,7 +8459,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -8170,7 +8485,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -8212,7 +8528,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -8241,7 +8558,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -8278,7 +8596,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -8303,7 +8622,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -8328,7 +8648,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Pflichten des Personals"
+     "label": "5. Kapitel: Pflichten des Personals",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [

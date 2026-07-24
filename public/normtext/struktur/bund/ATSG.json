@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "830.1",
   "titel": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts",
@@ -96,7 +96,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Anwendungsbereich"
+     "label": "1. Kapitel: Anwendungsbereich",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -107,7 +108,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Anwendungsbereich"
+     "label": "1. Kapitel: Anwendungsbereich",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -118,7 +120,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Definitionen allgemeiner Begriffe"
+     "label": "2. Kapitel: Definitionen allgemeiner Begriffe",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -147,7 +150,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Definitionen allgemeiner Begriffe"
+     "label": "2. Kapitel: Definitionen allgemeiner Begriffe",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -176,7 +180,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Definitionen allgemeiner Begriffe"
+     "label": "2. Kapitel: Definitionen allgemeiner Begriffe",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -187,7 +192,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Definitionen allgemeiner Begriffe"
+     "label": "2. Kapitel: Definitionen allgemeiner Begriffe",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -217,7 +223,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Definitionen allgemeiner Begriffe"
+     "label": "2. Kapitel: Definitionen allgemeiner Begriffe",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -262,7 +269,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Definitionen allgemeiner Begriffe"
+     "label": "2. Kapitel: Definitionen allgemeiner Begriffe",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -323,7 +331,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Definitionen allgemeiner Begriffe"
+     "label": "2. Kapitel: Definitionen allgemeiner Begriffe",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -334,7 +343,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Definitionen allgemeiner Begriffe"
+     "label": "2. Kapitel: Definitionen allgemeiner Begriffe",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -345,7 +355,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Definitionen allgemeiner Begriffe"
+     "label": "2. Kapitel: Definitionen allgemeiner Begriffe",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -356,7 +367,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Definitionen allgemeiner Begriffe"
+     "label": "2. Kapitel: Definitionen allgemeiner Begriffe",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -367,7 +379,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Definitionen allgemeiner Begriffe"
+     "label": "2. Kapitel: Definitionen allgemeiner Begriffe",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -392,11 +405,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge"
+     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sachleistungen"
+     "label": "1. Abschnitt: Sachleistungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": []
@@ -405,11 +420,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge"
+     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Geldleistungen"
+     "label": "2. Abschnitt: Geldleistungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -420,11 +437,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge"
+     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Geldleistungen"
+     "label": "2. Abschnitt: Geldleistungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -435,11 +454,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge"
+     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Geldleistungen"
+     "label": "2. Abschnitt: Geldleistungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -468,11 +489,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge"
+     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Geldleistungen"
+     "label": "2. Abschnitt: Geldleistungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -483,11 +506,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge"
+     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Geldleistungen"
+     "label": "2. Abschnitt: Geldleistungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -498,11 +523,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge"
+     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Geldleistungen"
+     "label": "2. Abschnitt: Geldleistungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -513,11 +540,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge"
+     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Kürzung und Verweigerung von Leistungen"
+     "label": "3. Abschnitt: Kürzung und Verweigerung von Leistungen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -544,11 +573,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge"
+     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Spezielle Bestimmungen"
+     "label": "4. Abschnitt: Spezielle Bestimmungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -559,11 +590,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge"
+     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Spezielle Bestimmungen"
+     "label": "4. Abschnitt: Spezielle Bestimmungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -574,11 +607,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge"
+     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Spezielle Bestimmungen"
+     "label": "4. Abschnitt: Spezielle Bestimmungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -589,11 +624,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge"
+     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Spezielle Bestimmungen"
+     "label": "4. Abschnitt: Spezielle Bestimmungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -622,11 +659,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge"
+     "label": "3. Kapitel: Allgemeine Bestimmungen über Leistungen und Beiträge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Spezielle Bestimmungen"
+     "label": "4. Abschnitt: Spezielle Bestimmungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -671,11 +710,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Auskunft, Verwaltungshilfe, Schweigepflicht"
+     "label": "1. Abschnitt: Auskunft, Verwaltungshilfe, Schweigepflicht",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -686,11 +727,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Auskunft, Verwaltungshilfe, Schweigepflicht"
+     "label": "1. Abschnitt: Auskunft, Verwaltungshilfe, Schweigepflicht",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -735,11 +778,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Auskunft, Verwaltungshilfe, Schweigepflicht"
+     "label": "1. Abschnitt: Auskunft, Verwaltungshilfe, Schweigepflicht",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -750,11 +795,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Auskunft, Verwaltungshilfe, Schweigepflicht"
+     "label": "1. Abschnitt: Auskunft, Verwaltungshilfe, Schweigepflicht",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -765,11 +812,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Auskunft, Verwaltungshilfe, Schweigepflicht"
+     "label": "1. Abschnitt: Auskunft, Verwaltungshilfe, Schweigepflicht",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -780,11 +829,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Auskunft, Verwaltungshilfe, Schweigepflicht"
+     "label": "1. Abschnitt: Auskunft, Verwaltungshilfe, Schweigepflicht",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -853,11 +904,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Auskunft, Verwaltungshilfe, Schweigepflicht"
+     "label": "1. Abschnitt: Auskunft, Verwaltungshilfe, Schweigepflicht",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -868,11 +921,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -883,11 +938,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -898,11 +955,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -913,11 +972,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -928,11 +989,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -993,11 +1056,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1008,11 +1073,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1023,11 +1090,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1056,11 +1125,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1071,11 +1142,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1104,11 +1177,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1137,11 +1212,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1182,11 +1259,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1197,11 +1276,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1226,11 +1307,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1241,11 +1324,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1274,11 +1359,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1289,11 +1376,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1304,11 +1393,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1337,11 +1428,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1352,11 +1445,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1381,11 +1476,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1426,11 +1523,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rechtspflegeverfahren"
+     "label": "3. Abschnitt: Rechtspflegeverfahren",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1441,11 +1540,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rechtspflegeverfahren"
+     "label": "3. Abschnitt: Rechtspflegeverfahren",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1456,11 +1557,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rechtspflegeverfahren"
+     "label": "3. Abschnitt: Rechtspflegeverfahren",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1471,11 +1574,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rechtspflegeverfahren"
+     "label": "3. Abschnitt: Rechtspflegeverfahren",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1486,11 +1591,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rechtspflegeverfahren"
+     "label": "3. Abschnitt: Rechtspflegeverfahren",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1501,11 +1608,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rechtspflegeverfahren"
+     "label": "3. Abschnitt: Rechtspflegeverfahren",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1563,11 +1672,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rechtspflegeverfahren"
+     "label": "3. Abschnitt: Rechtspflegeverfahren",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1608,11 +1719,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Koordinationsregeln"
+     "label": "5. Kapitel: Koordinationsregeln",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Leistungskoordination"
+     "label": "1. Abschnitt: Leistungskoordination",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1623,11 +1736,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Koordinationsregeln"
+     "label": "5. Kapitel: Koordinationsregeln",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Leistungskoordination"
+     "label": "1. Abschnitt: Leistungskoordination",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1638,11 +1753,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Koordinationsregeln"
+     "label": "5. Kapitel: Koordinationsregeln",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Leistungskoordination"
+     "label": "1. Abschnitt: Leistungskoordination",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1653,11 +1770,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Koordinationsregeln"
+     "label": "5. Kapitel: Koordinationsregeln",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Leistungskoordination"
+     "label": "1. Abschnitt: Leistungskoordination",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1682,11 +1801,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Koordinationsregeln"
+     "label": "5. Kapitel: Koordinationsregeln",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Leistungskoordination"
+     "label": "1. Abschnitt: Leistungskoordination",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1715,11 +1836,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Koordinationsregeln"
+     "label": "5. Kapitel: Koordinationsregeln",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Leistungskoordination"
+     "label": "1. Abschnitt: Leistungskoordination",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1730,11 +1853,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Koordinationsregeln"
+     "label": "5. Kapitel: Koordinationsregeln",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Leistungskoordination"
+     "label": "1. Abschnitt: Leistungskoordination",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1745,11 +1870,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Koordinationsregeln"
+     "label": "5. Kapitel: Koordinationsregeln",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Leistungskoordination"
+     "label": "1. Abschnitt: Leistungskoordination",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1790,11 +1917,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Koordinationsregeln"
+     "label": "5. Kapitel: Koordinationsregeln",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Leistungskoordination"
+     "label": "1. Abschnitt: Leistungskoordination",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1805,11 +1934,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Koordinationsregeln"
+     "label": "5. Kapitel: Koordinationsregeln",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückgriff"
+     "label": "2. Abschnitt: Rückgriff",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1820,11 +1951,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Koordinationsregeln"
+     "label": "5. Kapitel: Koordinationsregeln",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückgriff"
+     "label": "2. Abschnitt: Rückgriff",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1853,11 +1986,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Koordinationsregeln"
+     "label": "5. Kapitel: Koordinationsregeln",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückgriff"
+     "label": "2. Abschnitt: Rückgriff",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1918,11 +2053,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Koordinationsregeln"
+     "label": "5. Kapitel: Koordinationsregeln",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückgriff"
+     "label": "2. Abschnitt: Rückgriff",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1951,7 +2088,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verschiedene Bestimmungen"
+     "label": "6. Kapitel: Verschiedene Bestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1996,7 +2134,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verschiedene Bestimmungen"
+     "label": "6. Kapitel: Verschiedene Bestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2007,7 +2146,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verschiedene Bestimmungen"
+     "label": "6. Kapitel: Verschiedene Bestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2044,7 +2184,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verschiedene Bestimmungen"
+     "label": "6. Kapitel: Verschiedene Bestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2129,7 +2270,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verschiedene Bestimmungen"
+     "label": "6. Kapitel: Verschiedene Bestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2140,7 +2282,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2151,7 +2294,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2180,7 +2324,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2191,7 +2336,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2211,7 +2357,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Definitionen allgemeiner Begriffe"
+     "label": "2. Kapitel: Definitionen allgemeiner Begriffe",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -2240,11 +2387,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2289,11 +2438,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2326,11 +2477,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "4. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sozialversicherungsverfahren"
+     "label": "2. Abschnitt: Sozialversicherungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2359,7 +2512,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen"
+     "label": "5a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen",
+     "eId": "chap_5_a"
     }
    ],
    "marginalie": [
@@ -2402,7 +2556,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen"
+     "label": "5a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen",
+     "eId": "chap_5_a"
     }
    ],
    "marginalie": [
@@ -2413,7 +2568,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen"
+     "label": "5a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen",
+     "eId": "chap_5_a"
     }
    ],
    "marginalie": [
@@ -2438,7 +2594,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verschiedene Bestimmungen"
+     "label": "6. Kapitel: Verschiedene Bestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2467,7 +2624,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [

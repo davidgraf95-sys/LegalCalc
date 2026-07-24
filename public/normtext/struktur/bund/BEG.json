@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "957.1",
   "titel": "Bundesgesetz über Bucheffekten",
@@ -54,7 +54,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck, Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Zweck, Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -65,7 +66,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck, Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Zweck, Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -94,7 +96,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck, Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Zweck, Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -130,7 +133,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck, Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Zweck, Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -335,7 +339,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck, Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Zweck, Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -392,7 +397,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entstehung, Umwandlung und Untergang von Bucheffekten"
+     "label": "2. Kapitel: Entstehung, Umwandlung und Untergang von Bucheffekten",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -469,7 +475,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entstehung, Umwandlung und Untergang von Bucheffekten"
+     "label": "2. Kapitel: Entstehung, Umwandlung und Untergang von Bucheffekten",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -514,7 +521,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entstehung, Umwandlung und Untergang von Bucheffekten"
+     "label": "2. Kapitel: Entstehung, Umwandlung und Untergang von Bucheffekten",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -543,7 +551,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Drittverwahrung und Verfügbarkeit von Bucheffekten"
+     "label": "3. Kapitel: Drittverwahrung und Verfügbarkeit von Bucheffekten",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -572,7 +581,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Drittverwahrung und Verfügbarkeit von Bucheffekten"
+     "label": "3. Kapitel: Drittverwahrung und Verfügbarkeit von Bucheffekten",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -583,7 +593,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Drittverwahrung und Verfügbarkeit von Bucheffekten"
+     "label": "3. Kapitel: Drittverwahrung und Verfügbarkeit von Bucheffekten",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -612,7 +623,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Drittverwahrung und Verfügbarkeit von Bucheffekten"
+     "label": "3. Kapitel: Drittverwahrung und Verfügbarkeit von Bucheffekten",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -657,11 +669,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten"
+     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Rechte der Kontoinhaberinnen und Kontoinhaber"
+     "label": "1. Abschnitt: Allgemeine Rechte der Kontoinhaberinnen und Kontoinhaber",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -672,11 +686,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten"
+     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Rechte der Kontoinhaberinnen und Kontoinhaber"
+     "label": "1. Abschnitt: Allgemeine Rechte der Kontoinhaberinnen und Kontoinhaber",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -687,11 +703,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten"
+     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Rechte der Kontoinhaberinnen und Kontoinhaber"
+     "label": "1. Abschnitt: Allgemeine Rechte der Kontoinhaberinnen und Kontoinhaber",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -702,11 +720,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten"
+     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Rechte der Kontoinhaberinnen und Kontoinhaber"
+     "label": "1. Abschnitt: Allgemeine Rechte der Kontoinhaberinnen und Kontoinhaber",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -717,11 +737,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten"
+     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rechte der Kontoinhaberinnen und Kontoinhaber in der Liquidation einer Verwahrungsstelle"
+     "label": "2. Abschnitt: Rechte der Kontoinhaberinnen und Kontoinhaber in der Liquidation einer Verwahrungsstelle",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -782,11 +804,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten"
+     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rechte der Kontoinhaberinnen und Kontoinhaber in der Liquidation einer Verwahrungsstelle"
+     "label": "2. Abschnitt: Rechte der Kontoinhaberinnen und Kontoinhaber in der Liquidation einer Verwahrungsstelle",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -797,11 +821,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten"
+     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rechte der Kontoinhaberinnen und Kontoinhaber in der Liquidation einer Verwahrungsstelle"
+     "label": "2. Abschnitt: Rechte der Kontoinhaberinnen und Kontoinhaber in der Liquidation einer Verwahrungsstelle",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -812,11 +838,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten"
+     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rechte der Kontoinhaberinnen und Kontoinhaber in der Liquidation einer Verwahrungsstelle"
+     "label": "2. Abschnitt: Rechte der Kontoinhaberinnen und Kontoinhaber in der Liquidation einer Verwahrungsstelle",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -827,11 +855,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten"
+     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rechte der Verwahrungsstelle an Bucheffekten"
+     "label": "3. Abschnitt: Rechte der Verwahrungsstelle an Bucheffekten",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -842,11 +872,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten"
+     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rechte der Verwahrungsstelle an Bucheffekten"
+     "label": "3. Abschnitt: Rechte der Verwahrungsstelle an Bucheffekten",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -857,11 +889,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten"
+     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rechte der Verwahrungsstelle an Bucheffekten"
+     "label": "3. Abschnitt: Rechte der Verwahrungsstelle an Bucheffekten",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -872,11 +906,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Verfügung über Bucheffekten und Wirkung gegenüber Dritten"
+     "label": "5. Kapitel: Verfügung über Bucheffekten und Wirkung gegenüber Dritten",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verfügung über Bucheffekten"
+     "label": "1. Abschnitt: Verfügung über Bucheffekten",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -921,11 +957,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Verfügung über Bucheffekten und Wirkung gegenüber Dritten"
+     "label": "5. Kapitel: Verfügung über Bucheffekten und Wirkung gegenüber Dritten",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verfügung über Bucheffekten"
+     "label": "1. Abschnitt: Verfügung über Bucheffekten",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -954,11 +992,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Verfügung über Bucheffekten und Wirkung gegenüber Dritten"
+     "label": "5. Kapitel: Verfügung über Bucheffekten und Wirkung gegenüber Dritten",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verfügung über Bucheffekten"
+     "label": "1. Abschnitt: Verfügung über Bucheffekten",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -987,11 +1027,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Verfügung über Bucheffekten und Wirkung gegenüber Dritten"
+     "label": "5. Kapitel: Verfügung über Bucheffekten und Wirkung gegenüber Dritten",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Stornierung"
+     "label": "2. Abschnitt: Stornierung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1032,11 +1074,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Verfügung über Bucheffekten und Wirkung gegenüber Dritten"
+     "label": "5. Kapitel: Verfügung über Bucheffekten und Wirkung gegenüber Dritten",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Stornierung"
+     "label": "2. Abschnitt: Stornierung",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1065,11 +1109,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Verfügung über Bucheffekten und Wirkung gegenüber Dritten"
+     "label": "5. Kapitel: Verfügung über Bucheffekten und Wirkung gegenüber Dritten",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Wirkung gegenüber Dritten"
+     "label": "3. Abschnitt: Wirkung gegenüber Dritten",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1110,11 +1156,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Verfügung über Bucheffekten und Wirkung gegenüber Dritten"
+     "label": "5. Kapitel: Verfügung über Bucheffekten und Wirkung gegenüber Dritten",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Wirkung gegenüber Dritten"
+     "label": "3. Abschnitt: Wirkung gegenüber Dritten",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1159,7 +1207,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verwertung von Sicherheiten"
+     "label": "6. Kapitel: Verwertung von Sicherheiten",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1188,7 +1237,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verwertung von Sicherheiten"
+     "label": "6. Kapitel: Verwertung von Sicherheiten",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1199,7 +1249,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Haftungsbestimmungen"
+     "label": "7. Kapitel: Haftungsbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -1222,7 +1273,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1233,7 +1285,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1244,7 +1297,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1264,7 +1318,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Drittverwahrung und Verfügbarkeit von Bucheffekten"
+     "label": "3. Kapitel: Drittverwahrung und Verfügbarkeit von Bucheffekten",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1293,7 +1348,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Drittverwahrung und Verfügbarkeit von Bucheffekten"
+     "label": "3. Kapitel: Drittverwahrung und Verfügbarkeit von Bucheffekten",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1322,11 +1378,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten"
+     "label": "4. Kapitel: Rechte aus der Verwahrung von Bucheffekten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rechte der Verwahrungsstelle an Bucheffekten"
+     "label": "3. Abschnitt: Rechte der Verwahrungsstelle an Bucheffekten",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1368,7 +1426,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entstehung, Umwandlung und Untergang von Bucheffekten"
+     "label": "2. Kapitel: Entstehung, Umwandlung und Untergang von Bucheffekten",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [

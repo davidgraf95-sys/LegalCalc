@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "0.105",
   "titel": "Übereinkommen gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
@@ -70,7 +70,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil 1"
+     "label": "Teil 1",
+     "eId": "part_1"
     }
    ],
    "marginalie": []
@@ -79,7 +80,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil 1"
+     "label": "Teil 1",
+     "eId": "part_1"
     }
    ],
    "marginalie": []
@@ -88,7 +90,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil 1"
+     "label": "Teil 1",
+     "eId": "part_1"
     }
    ],
    "marginalie": []
@@ -97,7 +100,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil 1"
+     "label": "Teil 1",
+     "eId": "part_1"
     }
    ],
    "marginalie": []
@@ -106,7 +110,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil 1"
+     "label": "Teil 1",
+     "eId": "part_1"
     }
    ],
    "marginalie": []
@@ -115,7 +120,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil 1"
+     "label": "Teil 1",
+     "eId": "part_1"
     }
    ],
    "marginalie": []
@@ -124,7 +130,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil 1"
+     "label": "Teil 1",
+     "eId": "part_1"
     }
    ],
    "marginalie": []
@@ -133,7 +140,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil 1"
+     "label": "Teil 1",
+     "eId": "part_1"
     }
    ],
    "marginalie": []
@@ -142,7 +150,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil 1"
+     "label": "Teil 1",
+     "eId": "part_1"
     }
    ],
    "marginalie": []
@@ -151,7 +160,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil 1"
+     "label": "Teil 1",
+     "eId": "part_1"
     }
    ],
    "marginalie": []
@@ -160,7 +170,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil 1"
+     "label": "Teil 1",
+     "eId": "part_1"
     }
    ],
    "marginalie": []
@@ -169,7 +180,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil 1"
+     "label": "Teil 1",
+     "eId": "part_1"
     }
    ],
    "marginalie": []
@@ -178,7 +190,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil 1"
+     "label": "Teil 1",
+     "eId": "part_1"
     }
    ],
    "marginalie": []
@@ -187,7 +200,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil 1"
+     "label": "Teil 1",
+     "eId": "part_1"
     }
    ],
    "marginalie": []
@@ -196,7 +210,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil 1"
+     "label": "Teil 1",
+     "eId": "part_1"
     }
    ],
    "marginalie": []
@@ -205,7 +220,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil 1"
+     "label": "Teil 1",
+     "eId": "part_1"
     }
    ],
    "marginalie": []
@@ -214,7 +230,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II"
+     "label": "Teil II",
+     "eId": "part_2"
     }
    ],
    "marginalie": []
@@ -223,7 +240,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II"
+     "label": "Teil II",
+     "eId": "part_2"
     }
    ],
    "marginalie": []
@@ -232,7 +250,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II"
+     "label": "Teil II",
+     "eId": "part_2"
     }
    ],
    "marginalie": []
@@ -241,7 +260,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II"
+     "label": "Teil II",
+     "eId": "part_2"
     }
    ],
    "marginalie": []
@@ -250,7 +270,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II"
+     "label": "Teil II",
+     "eId": "part_2"
     }
    ],
    "marginalie": []
@@ -259,7 +280,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II"
+     "label": "Teil II",
+     "eId": "part_2"
     }
    ],
    "marginalie": []
@@ -268,7 +290,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II"
+     "label": "Teil II",
+     "eId": "part_2"
     }
    ],
    "marginalie": []
@@ -277,7 +300,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II"
+     "label": "Teil II",
+     "eId": "part_2"
     }
    ],
    "marginalie": []
@@ -286,7 +310,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": []
@@ -295,7 +320,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": []
@@ -304,7 +330,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": []
@@ -313,7 +340,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": [],
@@ -337,7 +365,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": []
@@ -346,7 +375,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": []
@@ -355,7 +385,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": []
@@ -364,7 +395,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": []
@@ -373,7 +405,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III"
+     "label": "Teil III",
+     "eId": "part_3"
     }
    ],
    "marginalie": []

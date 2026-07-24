@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "142.204",
   "titel": "Verordnung über die Einreise und die Visumerteilung",
@@ -56,7 +56,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Gegenstand, Geltungsbereich und Begriffe"
+     "label": "1. Abschnitt: Gegenstand, Geltungsbereich und Begriffe",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -424,7 +425,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Gegenstand, Geltungsbereich und Begriffe"
+     "label": "1. Abschnitt: Gegenstand, Geltungsbereich und Begriffe",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -504,7 +506,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit"
+     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -543,7 +546,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit"
+     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -575,7 +579,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit"
+     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -586,7 +591,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit"
+     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -648,7 +654,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit"
+     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -659,7 +666,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit"
+     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -829,7 +837,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit"
+     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -866,7 +875,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit"
+     "label": "2. Abschnitt: Bestimmungen zur Einreise in die Schweiz und zum Flughafentransit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -984,7 +994,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1009,7 +1020,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1029,7 +1041,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1055,7 +1068,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1081,7 +1095,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1092,7 +1107,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1103,7 +1119,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1135,7 +1152,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1146,7 +1164,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1181,7 +1200,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit"
+     "label": "3. Abschnitt: Visa für kurzfristige Aufenthalte und Visa für den Flughafentransit",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [],
@@ -1204,7 +1224,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte"
+     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1230,7 +1251,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte"
+     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1267,7 +1289,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte"
+     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1292,7 +1315,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte"
+     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1303,7 +1327,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte"
+     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1330,7 +1355,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte"
+     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1341,7 +1367,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte"
+     "label": "4. Abschnitt: Visa für längerfristige Aufenthalte",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1374,7 +1401,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Verfahren an der Grenze"
+     "label": "5. Abschnitt: Verfahren an der Grenze",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -1422,7 +1450,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Verfahren an der Grenze"
+     "label": "5. Abschnitt: Verfahren an der Grenze",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -1454,7 +1483,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Verfahren an der Grenze"
+     "label": "5. Abschnitt: Verfahren an der Grenze",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -1479,7 +1509,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Verfahren an der Grenze"
+     "label": "5. Abschnitt: Verfahren an der Grenze",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -1517,7 +1548,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Sorgfalts- und Betreuungspflicht der Luftverkehrsunternehmen"
+     "label": "6. Abschnitt: Sorgfalts- und Betreuungspflicht der Luftverkehrsunternehmen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -1573,7 +1605,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Sorgfalts- und Betreuungspflicht der Luftverkehrsunternehmen"
+     "label": "6. Abschnitt: Sorgfalts- und Betreuungspflicht der Luftverkehrsunternehmen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -1584,7 +1617,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1775,7 +1809,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1800,7 +1835,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1811,7 +1847,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1836,7 +1873,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1862,7 +1900,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1873,7 +1912,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1884,7 +1924,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Zusammenarbeit der Behörden"
+     "label": "8. Abschnitt: Zusammenarbeit der Behörden",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -1904,7 +1945,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Zusammenarbeit der Behörden"
+     "label": "8. Abschnitt: Zusammenarbeit der Behörden",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -1924,7 +1966,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Zusammenarbeit der Behörden"
+     "label": "8. Abschnitt: Zusammenarbeit der Behörden",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -1945,7 +1988,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Zusammenarbeit der Behörden"
+     "label": "8. Abschnitt: Zusammenarbeit der Behörden",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -1956,7 +2000,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Automatisierte Grenzkontrolle an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "9. Abschnitt: Automatisierte Grenzkontrolle an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [],
@@ -1993,7 +2038,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -2019,7 +2065,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -2030,7 +2077,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -2041,7 +2089,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -2052,7 +2101,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -2063,7 +2113,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -2074,7 +2125,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -2085,7 +2137,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -2096,7 +2149,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "10. Abschnitt : Überwachung der Ankunft an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -2107,7 +2161,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Abschnitt : Dokumentenberaterinnen und -berater"
+     "label": "11. Abschnitt : Dokumentenberaterinnen und -berater",
+     "eId": "sec_11"
     }
    ],
    "marginalie": [
@@ -2132,7 +2187,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Abschnitt : Dokumentenberaterinnen und -berater"
+     "label": "11. Abschnitt : Dokumentenberaterinnen und -berater",
+     "eId": "sec_11"
     }
    ],
    "marginalie": [
@@ -2158,7 +2214,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Abschnitt : Dokumentenberaterinnen und -berater"
+     "label": "11. Abschnitt : Dokumentenberaterinnen und -berater",
+     "eId": "sec_11"
     }
    ],
    "marginalie": [
@@ -2183,7 +2240,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Abschnitt : Dokumentenberaterinnen und -berater"
+     "label": "11. Abschnitt : Dokumentenberaterinnen und -berater",
+     "eId": "sec_11"
     }
    ],
    "marginalie": [
@@ -2208,7 +2266,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Abschnitt : Einreiseverweigerung und Rechtsschutz"
+     "label": "12. Abschnitt : Einreiseverweigerung und Rechtsschutz",
+     "eId": "sec_12"
     }
    ],
    "marginalie": [
@@ -2228,7 +2287,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Abschnitt : Einreiseverweigerung und Rechtsschutz"
+     "label": "12. Abschnitt : Einreiseverweigerung und Rechtsschutz",
+     "eId": "sec_12"
     }
    ],
    "marginalie": [
@@ -2239,7 +2299,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Abschnitt : Schlussbestimmungen"
+     "label": "13. Abschnitt : Schlussbestimmungen",
+     "eId": "sec_13"
     }
    ],
    "marginalie": [
@@ -2365,7 +2426,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Abschnitt : Schlussbestimmungen"
+     "label": "13. Abschnitt : Schlussbestimmungen",
+     "eId": "sec_13"
     }
    ],
    "marginalie": [
@@ -2376,7 +2438,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Abschnitt : Schlussbestimmungen"
+     "label": "13. Abschnitt : Schlussbestimmungen",
+     "eId": "sec_13"
     }
    ],
    "marginalie": [
@@ -2387,7 +2450,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Abschnitt: Einreisebeschränkungen zum Schutz der öffentlichen Gesundheit"
+     "label": "2a. Abschnitt: Einreisebeschränkungen zum Schutz der öffentlichen Gesundheit",
+     "eId": "sec_2_a"
     }
    ],
    "marginalie": [
@@ -2413,7 +2477,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Abschnitt: Einreisebeschränkungen zum Schutz der öffentlichen Gesundheit"
+     "label": "2a. Abschnitt: Einreisebeschränkungen zum Schutz der öffentlichen Gesundheit",
+     "eId": "sec_2_a"
     }
    ],
    "marginalie": [
@@ -2424,7 +2489,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Verfahren an der Grenze"
+     "label": "5. Abschnitt: Verfahren an der Grenze",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -2493,7 +2559,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -2586,7 +2653,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -2703,7 +2771,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -2779,7 +2848,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -2843,7 +2913,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -2936,7 +3007,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -2988,7 +3060,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -3035,7 +3108,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -3082,7 +3156,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -3127,7 +3202,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -3174,7 +3250,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -3219,7 +3296,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Zuständige Behörden"
+     "label": "7. Abschnitt: Zuständige Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -3251,7 +3329,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Automatisierte Grenzkontrolle an den Flugplätzen, die eine Schengen‑Aussengrenze bilden"
+     "label": "9. Abschnitt: Automatisierte Grenzkontrolle an den Flugplätzen, die eine Schengen‑Aussengrenze bilden",
+     "eId": "sec_9"
     }
    ],
    "marginalie": []
@@ -3260,7 +3339,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
+     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet",
+     "eId": "sec_12_a"
     }
    ],
    "marginalie": [
@@ -3313,7 +3393,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
+     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet",
+     "eId": "sec_12_a"
     }
    ],
    "marginalie": [
@@ -3324,7 +3405,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
+     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet",
+     "eId": "sec_12_a"
     }
    ],
    "marginalie": [
@@ -3350,7 +3432,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
+     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet",
+     "eId": "sec_12_a"
     }
    ],
    "marginalie": [
@@ -3370,7 +3453,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
+     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet",
+     "eId": "sec_12_a"
     }
    ],
    "marginalie": [
@@ -3381,7 +3465,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet"
+     "label": "12a. Abschnitt: Überprüfung von Ausländerinnen und Ausländern an den Schengen-Aussengrenzen und im Hoheitsgebiet",
+     "eId": "sec_12_a"
     }
    ],
    "marginalie": [

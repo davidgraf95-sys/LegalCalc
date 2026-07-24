@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "831.101",
   "titel": "Verordnung über die Alters- und Hinterlassenenversicherung",
@@ -94,11 +94,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen"
+     "label": "Erster Abschnitt: Die versicherten Personen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Versicherungsunterstellung"
+     "label": "A. Versicherungsunterstellung",
+     "eId": "chap_1/lvl_A"
     }
    ],
    "marginalie": [
@@ -149,11 +151,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen"
+     "label": "Erster Abschnitt: Die versicherten Personen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "B. Ausnahmen von der Versicherung"
+     "label": "B. Ausnahmen von der Versicherung",
+     "eId": "chap_1/lvl_B"
     }
    ],
    "marginalie": [
@@ -178,11 +182,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen"
+     "label": "Erster Abschnitt: Die versicherten Personen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "B. Ausnahmen von der Versicherung"
+     "label": "B. Ausnahmen von der Versicherung",
+     "eId": "chap_1/lvl_B"
     }
    ],
    "marginalie": [
@@ -207,11 +213,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen"
+     "label": "Erster Abschnitt: Die versicherten Personen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "B. Ausnahmen von der Versicherung"
+     "label": "B. Ausnahmen von der Versicherung",
+     "eId": "chap_1/lvl_B"
     }
    ],
    "marginalie": [],
@@ -234,15 +242,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen"
+     "label": "Erster Abschnitt: Die versicherten Personen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Beitritt zur Versicherung"
+     "label": "C. Beitritt zur Versicherung",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "I. Personen, welche im Ausland von einem Arbeitgeber in der Schweiz beschäftigt werden"
+     "label": "I. Personen, welche im Ausland von einem Arbeitgeber in der Schweiz beschäftigt werden",
+     "eId": "chap_1/lvl_C/lvl_I"
     }
    ],
    "marginalie": [
@@ -268,11 +279,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     }
    ],
    "marginalie": [
@@ -441,15 +454,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit"
+     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -615,15 +631,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit"
+     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -672,15 +691,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit"
+     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -741,15 +763,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit"
+     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_I"
     }
    ],
    "marginalie": [],
@@ -772,15 +797,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit"
+     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -805,15 +833,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit"
+     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_I"
     }
    ],
    "marginalie": [],
@@ -836,15 +867,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit"
+     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -869,15 +903,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit"
+     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -914,15 +951,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit"
+     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -959,15 +999,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit"
+     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -1004,19 +1047,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit"
+     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_II"
     },
     {
      "ebene": 4,
-     "label": "1. Allgemeines"
+     "label": "1. Allgemeines",
+     "eId": "chap_2/lvl_A/lvl_II/lvl_1"
     }
    ],
    "marginalie": [
@@ -1054,19 +1101,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit"
+     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_II"
     },
     {
      "ebene": 4,
-     "label": "1. Allgemeines"
+     "label": "1. Allgemeines",
+     "eId": "chap_2/lvl_A/lvl_II/lvl_1"
     }
    ],
    "marginalie": [
@@ -1115,19 +1166,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit"
+     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_II"
     },
     {
      "ebene": 4,
-     "label": "1. Allgemeines"
+     "label": "1. Allgemeines",
+     "eId": "chap_2/lvl_A/lvl_II/lvl_1"
     }
    ],
    "marginalie": [
@@ -1152,19 +1207,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit"
+     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_II"
     },
     {
      "ebene": 4,
-     "label": "1. Allgemeines"
+     "label": "1. Allgemeines",
+     "eId": "chap_2/lvl_A/lvl_II/lvl_1"
     }
    ],
    "marginalie": [
@@ -1201,19 +1260,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit"
+     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_II"
     },
     {
      "ebene": 4,
-     "label": "1. Allgemeines"
+     "label": "1. Allgemeines",
+     "eId": "chap_2/lvl_A/lvl_II/lvl_1"
     }
    ],
    "marginalie": [
@@ -1238,19 +1301,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit"
+     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_II"
     },
     {
      "ebene": 4,
-     "label": "2. Festsetzung und Ermittlung der Beiträge"
+     "label": "2. Festsetzung und Ermittlung der Beiträge",
+     "eId": "chap_2/lvl_A/lvl_II/lvl_2"
     }
    ],
    "marginalie": [
@@ -1324,19 +1391,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit"
+     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_II"
     },
     {
      "ebene": 4,
-     "label": "2. Festsetzung und Ermittlung der Beiträge"
+     "label": "2. Festsetzung und Ermittlung der Beiträge",
+     "eId": "chap_2/lvl_A/lvl_II/lvl_2"
     }
    ],
    "marginalie": [
@@ -1409,19 +1480,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit"
+     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_II"
     },
     {
      "ebene": 4,
-     "label": "2. Festsetzung und Ermittlung der Beiträge"
+     "label": "2. Festsetzung und Ermittlung der Beiträge",
+     "eId": "chap_2/lvl_A/lvl_II/lvl_2"
     }
    ],
    "marginalie": [
@@ -1446,19 +1521,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit"
+     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_II"
     },
     {
      "ebene": 4,
-     "label": "2. Festsetzung und Ermittlung der Beiträge"
+     "label": "2. Festsetzung und Ermittlung der Beiträge",
+     "eId": "chap_2/lvl_A/lvl_II/lvl_2"
     }
    ],
    "marginalie": [
@@ -1483,19 +1562,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit"
+     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_II"
     },
     {
      "ebene": 4,
-     "label": "2. Festsetzung und Ermittlung der Beiträge"
+     "label": "2. Festsetzung und Ermittlung der Beiträge",
+     "eId": "chap_2/lvl_A/lvl_II/lvl_2"
     }
    ],
    "marginalie": [],
@@ -1518,19 +1601,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit"
+     "label": "II. Beiträge vom Einkommen aus selbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_II"
     },
     {
      "ebene": 4,
-     "label": "2. Festsetzung und Ermittlung der Beiträge"
+     "label": "2. Festsetzung und Ermittlung der Beiträge",
+     "eId": "chap_2/lvl_A/lvl_II/lvl_2"
     }
    ],
    "marginalie": [
@@ -1579,11 +1666,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Beiträge der Nichterwerbstätigen"
+     "label": "B. Die Beiträge der Nichterwerbstätigen",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -1753,11 +1842,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Beiträge der Nichterwerbstätigen"
+     "label": "B. Die Beiträge der Nichterwerbstätigen",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -1834,11 +1925,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Beiträge der Nichterwerbstätigen"
+     "label": "B. Die Beiträge der Nichterwerbstätigen",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -1887,11 +1980,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "C. Herabsetzung und Erlass der Beiträge für Selbständigerwerbende und Nichterwerbstätige"
+     "label": "C. Herabsetzung und Erlass der Beiträge für Selbständigerwerbende und Nichterwerbstätige",
+     "eId": "chap_2/lvl_C"
     }
    ],
    "marginalie": [
@@ -1953,11 +2048,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "C. Herabsetzung und Erlass der Beiträge für Selbständigerwerbende und Nichterwerbstätige"
+     "label": "C. Herabsetzung und Erlass der Beiträge für Selbständigerwerbende und Nichterwerbstätige",
+     "eId": "chap_2/lvl_C"
     }
    ],
    "marginalie": [
@@ -1994,11 +2091,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "D. Die Beiträge der Arbeitgeber"
+     "label": "D. Die Beiträge der Arbeitgeber",
+     "eId": "chap_2/lvl_D"
     }
    ],
    "marginalie": [
@@ -2059,15 +2158,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Beitragsbezug"
+     "label": "E. Beitragsbezug",
+     "eId": "chap_2/lvl_E"
     },
     {
      "ebene": 3,
-     "label": "I. Allgemeines"
+     "label": "I. Allgemeines",
+     "eId": "chap_2/lvl_E/lvl_I"
     }
    ],
    "marginalie": [
@@ -2166,15 +2268,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Beitragsbezug"
+     "label": "E. Beitragsbezug",
+     "eId": "chap_2/lvl_E"
     },
     {
      "ebene": 3,
-     "label": "II. Lohnbeiträge"
+     "label": "II. Lohnbeiträge",
+     "eId": "chap_2/lvl_E/lvl_II"
     }
    ],
    "marginalie": [
@@ -2223,15 +2328,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Beitragsbezug"
+     "label": "E. Beitragsbezug",
+     "eId": "chap_2/lvl_E"
     },
     {
      "ebene": 3,
-     "label": "II. Lohnbeiträge"
+     "label": "II. Lohnbeiträge",
+     "eId": "chap_2/lvl_E/lvl_II"
     }
    ],
    "marginalie": [
@@ -2256,15 +2364,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Beitragsbezug"
+     "label": "E. Beitragsbezug",
+     "eId": "chap_2/lvl_E"
     },
     {
      "ebene": 3,
-     "label": "II. Lohnbeiträge"
+     "label": "II. Lohnbeiträge",
+     "eId": "chap_2/lvl_E/lvl_II"
     }
    ],
    "marginalie": [
@@ -2289,15 +2400,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Beitragsbezug"
+     "label": "E. Beitragsbezug",
+     "eId": "chap_2/lvl_E"
     },
     {
      "ebene": 3,
-     "label": "II. Lohnbeiträge"
+     "label": "II. Lohnbeiträge",
+     "eId": "chap_2/lvl_E/lvl_II"
     }
    ],
    "marginalie": [
@@ -2346,15 +2460,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Beitragsbezug"
+     "label": "E. Beitragsbezug",
+     "eId": "chap_2/lvl_E"
     },
     {
      "ebene": 3,
-     "label": "III. Nachzahlung und Rückerstattung von Beiträgen"
+     "label": "III. Nachzahlung und Rückerstattung von Beiträgen",
+     "eId": "chap_2/lvl_E/lvl_III"
     }
    ],
    "marginalie": [
@@ -2392,15 +2509,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Beitragsbezug"
+     "label": "E. Beitragsbezug",
+     "eId": "chap_2/lvl_E"
     },
     {
      "ebene": 3,
-     "label": "III. Nachzahlung und Rückerstattung von Beiträgen"
+     "label": "III. Nachzahlung und Rückerstattung von Beiträgen",
+     "eId": "chap_2/lvl_E/lvl_III"
     }
    ],
    "marginalie": [
@@ -2425,15 +2545,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Beitragsbezug"
+     "label": "E. Beitragsbezug",
+     "eId": "chap_2/lvl_E"
     },
     {
      "ebene": 3,
-     "label": "III. Nachzahlung und Rückerstattung von Beiträgen"
+     "label": "III. Nachzahlung und Rückerstattung von Beiträgen",
+     "eId": "chap_2/lvl_E/lvl_III"
     }
    ],
    "marginalie": [
@@ -2458,15 +2581,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Beitragsbezug"
+     "label": "E. Beitragsbezug",
+     "eId": "chap_2/lvl_E"
     },
     {
      "ebene": 3,
-     "label": "IV. Zinsen"
+     "label": "IV. Zinsen",
+     "eId": "chap_2/lvl_E/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2491,11 +2617,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "F. Haftung der Erben"
+     "label": "F. Haftung der Erben",
+     "eId": "chap_2/lvl_F"
     }
    ],
    "marginalie": [],
@@ -2544,11 +2672,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     }
    ],
    "marginalie": [
@@ -2573,11 +2703,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     }
    ],
    "marginalie": [
@@ -2602,11 +2734,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     }
    ],
    "marginalie": [],
@@ -2629,11 +2763,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     }
    ],
    "marginalie": [
@@ -2658,11 +2794,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -2687,11 +2825,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -2796,11 +2936,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -2853,11 +2995,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -2906,11 +3050,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -2935,11 +3081,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "C. Ausserordentliche Renten"
+     "label": "C. Ausserordentliche Renten",
+     "eId": "chap_3/lvl_C"
     }
    ],
    "marginalie": [
@@ -2972,15 +3120,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Der flexible Rentenbezug"
+     "label": "D. Der flexible Rentenbezug",
+     "eId": "chap_3/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "II. Der Rentenvorbezug"
+     "label": "II. Der Rentenvorbezug",
+     "eId": "chap_3/lvl_D/lvl_II"
     }
    ],
    "marginalie": [
@@ -3018,15 +3169,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Der flexible Rentenbezug"
+     "label": "D. Der flexible Rentenbezug",
+     "eId": "chap_3/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "II. Der Rentenvorbezug"
+     "label": "II. Der Rentenvorbezug",
+     "eId": "chap_3/lvl_D/lvl_II"
     }
    ],
    "marginalie": [],
@@ -3049,11 +3203,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Rentenvorausberechnungen"
+     "label": "E. Rentenvorausberechnungen",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -3091,11 +3247,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Rentenvorausberechnungen"
+     "label": "E. Rentenvorausberechnungen",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -3120,11 +3278,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Rentenvorausberechnungen"
+     "label": "E. Rentenvorausberechnungen",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -3161,15 +3321,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "I. Geltendmachung des Anspruchs"
+     "label": "I. Geltendmachung des Anspruchs",
+     "eId": "chap_3/lvl_H/lvl_I"
     }
    ],
    "marginalie": [],
@@ -3285,15 +3448,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "II. Festsetzung der Renten"
+     "label": "II. Festsetzung der Renten",
+     "eId": "chap_3/lvl_H/lvl_II"
     }
    ],
    "marginalie": [
@@ -3378,15 +3544,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "II. Festsetzung der Renten"
+     "label": "II. Festsetzung der Renten",
+     "eId": "chap_3/lvl_H/lvl_II"
     }
    ],
    "marginalie": [],
@@ -3409,15 +3578,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "IV. Gemeinsame Verfahrensbestimmungen"
+     "label": "IV. Gemeinsame Verfahrensbestimmungen",
+     "eId": "chap_3/lvl_H/lvl_IV"
     }
    ],
    "marginalie": [
@@ -3442,15 +3614,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "V. Auszahlung der Renten und Hilflosenentschädigungen"
+     "label": "V. Auszahlung der Renten und Hilflosenentschädigungen",
+     "eId": "chap_3/lvl_H/lvl_V"
     }
    ],
    "marginalie": [
@@ -3499,15 +3674,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "V. Auszahlung der Renten und Hilflosenentschädigungen"
+     "label": "V. Auszahlung der Renten und Hilflosenentschädigungen",
+     "eId": "chap_3/lvl_H/lvl_V"
     }
    ],
    "marginalie": [
@@ -3532,15 +3710,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "V. Auszahlung der Renten und Hilflosenentschädigungen"
+     "label": "V. Auszahlung der Renten und Hilflosenentschädigungen",
+     "eId": "chap_3/lvl_H/lvl_V"
     }
    ],
    "marginalie": [
@@ -3565,15 +3746,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "V. Auszahlung der Renten und Hilflosenentschädigungen"
+     "label": "V. Auszahlung der Renten und Hilflosenentschädigungen",
+     "eId": "chap_3/lvl_H/lvl_V"
     }
    ],
    "marginalie": [
@@ -3626,15 +3810,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "V. Auszahlung der Renten und Hilflosenentschädigungen"
+     "label": "V. Auszahlung der Renten und Hilflosenentschädigungen",
+     "eId": "chap_3/lvl_H/lvl_V"
     }
    ],
    "marginalie": [
@@ -3659,15 +3846,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "V. Auszahlung der Renten und Hilflosenentschädigungen"
+     "label": "V. Auszahlung der Renten und Hilflosenentschädigungen",
+     "eId": "chap_3/lvl_H/lvl_V"
     }
    ],
    "marginalie": [],
@@ -3690,15 +3880,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "VI. Nachzahlung und uneinbringliche Rückerstattung"
+     "label": "VI. Nachzahlung und uneinbringliche Rückerstattung",
+     "eId": "chap_3/lvl_H/lvl_VI"
     }
    ],
    "marginalie": [
@@ -3724,11 +3917,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "A. …"
+     "label": "A. …",
+     "eId": "chap_4/lvl_A"
     }
    ],
    "marginalie": [],
@@ -3751,15 +3946,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Allgemeines"
+     "label": "I. Allgemeines",
+     "eId": "chap_4/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -3796,15 +3994,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Allgemeines"
+     "label": "I. Allgemeines",
+     "eId": "chap_4/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -3829,15 +4030,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Allgemeines"
+     "label": "I. Allgemeines",
+     "eId": "chap_4/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -3862,15 +4066,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Allgemeines"
+     "label": "I. Allgemeines",
+     "eId": "chap_4/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -3881,15 +4088,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Allgemeines"
+     "label": "I. Allgemeines",
+     "eId": "chap_4/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -3900,15 +4110,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "III. Sicherheitsleistung"
+     "label": "III. Sicherheitsleistung",
+     "eId": "chap_4/lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -3950,15 +4163,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "III. Sicherheitsleistung"
+     "label": "III. Sicherheitsleistung",
+     "eId": "chap_4/lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -3995,15 +4211,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "III. Sicherheitsleistung"
+     "label": "III. Sicherheitsleistung",
+     "eId": "chap_4/lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -4040,15 +4259,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "III. Sicherheitsleistung"
+     "label": "III. Sicherheitsleistung",
+     "eId": "chap_4/lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -4097,15 +4319,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "III. Sicherheitsleistung"
+     "label": "III. Sicherheitsleistung",
+     "eId": "chap_4/lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -4116,15 +4341,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "III. Sicherheitsleistung"
+     "label": "III. Sicherheitsleistung",
+     "eId": "chap_4/lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -4149,15 +4377,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "IV. Kassenerrichtung"
+     "label": "IV. Kassenerrichtung",
+     "eId": "chap_4/lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4182,15 +4413,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "IV. Kassenerrichtung"
+     "label": "IV. Kassenerrichtung",
+     "eId": "chap_4/lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4227,15 +4461,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "V. Kassenreglement"
+     "label": "V. Kassenreglement",
+     "eId": "chap_4/lvl_B/lvl_V"
     }
    ],
    "marginalie": [
@@ -4260,15 +4497,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "V. Kassenreglement"
+     "label": "V. Kassenreglement",
+     "eId": "chap_4/lvl_B/lvl_V"
     }
    ],
    "marginalie": [
@@ -4293,15 +4533,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "VI. Kassenvorstand"
+     "label": "VI. Kassenvorstand",
+     "eId": "chap_4/lvl_B/lvl_VI"
     }
    ],
    "marginalie": [
@@ -4338,15 +4581,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "VI. Kassenvorstand"
+     "label": "VI. Kassenvorstand",
+     "eId": "chap_4/lvl_B/lvl_VI"
     }
    ],
    "marginalie": [
@@ -4357,15 +4603,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "VI. Kassenvorstand"
+     "label": "VI. Kassenvorstand",
+     "eId": "chap_4/lvl_B/lvl_VI"
     }
    ],
    "marginalie": [
@@ -4390,15 +4639,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "VI. Kassenvorstand"
+     "label": "VI. Kassenvorstand",
+     "eId": "chap_4/lvl_B/lvl_VI"
     }
    ],
    "marginalie": [
@@ -4471,15 +4723,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "VII. Kassenleiter"
+     "label": "VII. Kassenleiter",
+     "eId": "chap_4/lvl_B/lvl_VII"
     }
    ],
    "marginalie": [],
@@ -4502,15 +4757,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "VIII. Auflösung der Ausgleichskasse"
+     "label": "VIII. Auflösung der Ausgleichskasse",
+     "eId": "chap_4/lvl_B/lvl_VIII"
     }
    ],
    "marginalie": [],
@@ -4545,11 +4803,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "C. Die kantonalen Ausgleichskassen"
+     "label": "C. Die kantonalen Ausgleichskassen",
+     "eId": "chap_4/lvl_C"
     }
    ],
    "marginalie": [
@@ -4574,11 +4834,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "C. Die kantonalen Ausgleichskassen"
+     "label": "C. Die kantonalen Ausgleichskassen",
+     "eId": "chap_4/lvl_C"
     }
    ],
    "marginalie": [
@@ -4589,15 +4851,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausgleichskassen des Bundes"
+     "label": "D. Die Ausgleichskassen des Bundes",
+     "eId": "chap_4/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Eidgenössische Ausgleichskasse"
+     "label": "I. Eidgenössische Ausgleichskasse",
+     "eId": "chap_4/lvl_D/lvl_I"
     }
    ],
    "marginalie": [
@@ -4617,15 +4882,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausgleichskassen des Bundes"
+     "label": "D. Die Ausgleichskassen des Bundes",
+     "eId": "chap_4/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Eidgenössische Ausgleichskasse"
+     "label": "I. Eidgenössische Ausgleichskasse",
+     "eId": "chap_4/lvl_D/lvl_I"
     }
    ],
    "marginalie": [
@@ -4650,15 +4918,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausgleichskassen des Bundes"
+     "label": "D. Die Ausgleichskassen des Bundes",
+     "eId": "chap_4/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Eidgenössische Ausgleichskasse"
+     "label": "I. Eidgenössische Ausgleichskasse",
+     "eId": "chap_4/lvl_D/lvl_I"
     }
    ],
    "marginalie": [],
@@ -4681,15 +4952,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausgleichskassen des Bundes"
+     "label": "D. Die Ausgleichskassen des Bundes",
+     "eId": "chap_4/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "II. Schweizerische Ausgleichskasse"
+     "label": "II. Schweizerische Ausgleichskasse",
+     "eId": "chap_4/lvl_D/lvl_II"
     }
    ],
    "marginalie": [],
@@ -4736,11 +5010,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "E. Zweigstellen von Ausgleichskassen"
+     "label": "E. Zweigstellen von Ausgleichskassen",
+     "eId": "chap_4/lvl_E"
     }
    ],
    "marginalie": [
@@ -4751,11 +5027,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "E. Zweigstellen von Ausgleichskassen"
+     "label": "E. Zweigstellen von Ausgleichskassen",
+     "eId": "chap_4/lvl_E"
     }
    ],
    "marginalie": [
@@ -4780,11 +5058,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "E. Zweigstellen von Ausgleichskassen"
+     "label": "E. Zweigstellen von Ausgleichskassen",
+     "eId": "chap_4/lvl_E"
     }
    ],
    "marginalie": [
@@ -4821,15 +5101,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "F. Kassenzugehörigkeit"
+     "label": "F. Kassenzugehörigkeit",
+     "eId": "chap_4/lvl_F"
     },
     {
      "ebene": 3,
-     "label": "I. Zuständigkeit zum Beitragsbezug"
+     "label": "I. Zuständigkeit zum Beitragsbezug",
+     "eId": "chap_4/lvl_F/lvl_I"
     }
    ],
    "marginalie": [
@@ -4840,15 +5123,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "F. Kassenzugehörigkeit"
+     "label": "F. Kassenzugehörigkeit",
+     "eId": "chap_4/lvl_F"
     },
     {
      "ebene": 3,
-     "label": "I. Zuständigkeit zum Beitragsbezug"
+     "label": "I. Zuständigkeit zum Beitragsbezug",
+     "eId": "chap_4/lvl_F/lvl_I"
     }
    ],
    "marginalie": [
@@ -4921,15 +5207,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "F. Kassenzugehörigkeit"
+     "label": "F. Kassenzugehörigkeit",
+     "eId": "chap_4/lvl_F"
     },
     {
      "ebene": 3,
-     "label": "I. Zuständigkeit zum Beitragsbezug"
+     "label": "I. Zuständigkeit zum Beitragsbezug",
+     "eId": "chap_4/lvl_F/lvl_I"
     }
    ],
    "marginalie": [
@@ -4940,15 +5229,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "F. Kassenzugehörigkeit"
+     "label": "F. Kassenzugehörigkeit",
+     "eId": "chap_4/lvl_F"
     },
     {
      "ebene": 3,
-     "label": "I. Zuständigkeit zum Beitragsbezug"
+     "label": "I. Zuständigkeit zum Beitragsbezug",
+     "eId": "chap_4/lvl_F/lvl_I"
     }
    ],
    "marginalie": [
@@ -4997,15 +5289,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "F. Kassenzugehörigkeit"
+     "label": "F. Kassenzugehörigkeit",
+     "eId": "chap_4/lvl_F"
     },
     {
      "ebene": 3,
-     "label": "I. Zuständigkeit zum Beitragsbezug"
+     "label": "I. Zuständigkeit zum Beitragsbezug",
+     "eId": "chap_4/lvl_F/lvl_I"
     }
    ],
    "marginalie": [
@@ -5016,15 +5311,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "F. Kassenzugehörigkeit"
+     "label": "F. Kassenzugehörigkeit",
+     "eId": "chap_4/lvl_F"
     },
     {
      "ebene": 3,
-     "label": "II. Zuständigkeit für die Rentenfestsetzung und -auszahlung"
+     "label": "II. Zuständigkeit für die Rentenfestsetzung und -auszahlung",
+     "eId": "chap_4/lvl_F/lvl_II"
     }
    ],
    "marginalie": [
@@ -5049,15 +5347,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "F. Kassenzugehörigkeit"
+     "label": "F. Kassenzugehörigkeit",
+     "eId": "chap_4/lvl_F"
     },
     {
      "ebene": 3,
-     "label": "II. Zuständigkeit für die Rentenfestsetzung und -auszahlung"
+     "label": "II. Zuständigkeit für die Rentenfestsetzung und -auszahlung",
+     "eId": "chap_4/lvl_F/lvl_II"
     }
    ],
    "marginalie": [
@@ -5082,15 +5383,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "F. Kassenzugehörigkeit"
+     "label": "F. Kassenzugehörigkeit",
+     "eId": "chap_4/lvl_F"
     },
     {
      "ebene": 3,
-     "label": "II. Zuständigkeit für die Rentenfestsetzung und -auszahlung"
+     "label": "II. Zuständigkeit für die Rentenfestsetzung und -auszahlung",
+     "eId": "chap_4/lvl_F/lvl_II"
     }
    ],
    "marginalie": [
@@ -5115,15 +5419,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "F. Kassenzugehörigkeit"
+     "label": "F. Kassenzugehörigkeit",
+     "eId": "chap_4/lvl_F"
     },
     {
      "ebene": 3,
-     "label": "II. Zuständigkeit für die Rentenfestsetzung und -auszahlung"
+     "label": "II. Zuständigkeit für die Rentenfestsetzung und -auszahlung",
+     "eId": "chap_4/lvl_F/lvl_II"
     }
    ],
    "marginalie": [
@@ -5172,15 +5479,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "F. Kassenzugehörigkeit"
+     "label": "F. Kassenzugehörigkeit",
+     "eId": "chap_4/lvl_F"
     },
     {
      "ebene": 3,
-     "label": "III. …"
+     "label": "III. …",
+     "eId": "chap_4/lvl_F/lvl_III"
     }
    ],
    "marginalie": [],
@@ -5203,15 +5513,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "F. Kassenzugehörigkeit"
+     "label": "F. Kassenzugehörigkeit",
+     "eId": "chap_4/lvl_F"
     },
     {
      "ebene": 3,
-     "label": "III. …"
+     "label": "III. …",
+     "eId": "chap_4/lvl_F/lvl_III"
     }
    ],
    "marginalie": [],
@@ -5234,11 +5547,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "G. Aufgaben der Ausgleichskassen"
+     "label": "G. Aufgaben der Ausgleichskassen",
+     "eId": "chap_4/lvl_G"
     }
    ],
    "marginalie": [],
@@ -5261,11 +5576,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "G. Aufgaben der Ausgleichskassen"
+     "label": "G. Aufgaben der Ausgleichskassen",
+     "eId": "chap_4/lvl_G"
     }
    ],
    "marginalie": [
@@ -5290,11 +5607,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "G. Aufgaben der Ausgleichskassen"
+     "label": "G. Aufgaben der Ausgleichskassen",
+     "eId": "chap_4/lvl_G"
     }
    ],
    "marginalie": [
@@ -5343,11 +5662,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "G. Aufgaben der Ausgleichskassen"
+     "label": "G. Aufgaben der Ausgleichskassen",
+     "eId": "chap_4/lvl_G"
     }
    ],
    "marginalie": [
@@ -5384,11 +5705,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "G. Aufgaben der Ausgleichskassen"
+     "label": "G. Aufgaben der Ausgleichskassen",
+     "eId": "chap_4/lvl_G"
     }
    ],
    "marginalie": [
@@ -5425,15 +5748,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "H. AHV-Nummer"
+     "label": "H. AHV-Nummer",
+     "eId": "chap_4/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "I. Eigenschaften und Zuweisung"
+     "label": "I. Eigenschaften und Zuweisung",
+     "eId": "chap_4/lvl_H/lvl_I"
     }
    ],
    "marginalie": [
@@ -5484,15 +5810,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "H. AHV-Nummer"
+     "label": "H. AHV-Nummer",
+     "eId": "chap_4/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "I. Eigenschaften und Zuweisung"
+     "label": "I. Eigenschaften und Zuweisung",
+     "eId": "chap_4/lvl_H/lvl_I"
     }
    ],
    "marginalie": [],
@@ -5515,11 +5844,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "Hbis. Versicherungsausweis und individuelles Konto"
+     "label": "Hbis. Versicherungsausweis und individuelles Konto",
+     "eId": "chap_4/lvl_H_bis"
     }
    ],
    "marginalie": [],
@@ -5559,11 +5890,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "Hbis. Versicherungsausweis und individuelles Konto"
+     "label": "Hbis. Versicherungsausweis und individuelles Konto",
+     "eId": "chap_4/lvl_H_bis"
     }
    ],
    "marginalie": [],
@@ -5586,11 +5919,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "Hbis. Versicherungsausweis und individuelles Konto"
+     "label": "Hbis. Versicherungsausweis und individuelles Konto",
+     "eId": "chap_4/lvl_H_bis"
     }
    ],
    "marginalie": [
@@ -5615,11 +5950,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "Hbis. Versicherungsausweis und individuelles Konto"
+     "label": "Hbis. Versicherungsausweis und individuelles Konto",
+     "eId": "chap_4/lvl_H_bis"
     }
    ],
    "marginalie": [
@@ -5668,11 +6005,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "Hbis. Versicherungsausweis und individuelles Konto"
+     "label": "Hbis. Versicherungsausweis und individuelles Konto",
+     "eId": "chap_4/lvl_H_bis"
     }
    ],
    "marginalie": [
@@ -5697,11 +6036,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "Hbis. Versicherungsausweis und individuelles Konto"
+     "label": "Hbis. Versicherungsausweis und individuelles Konto",
+     "eId": "chap_4/lvl_H_bis"
     }
    ],
    "marginalie": [
@@ -5786,11 +6127,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "Hbis. Versicherungsausweis und individuelles Konto"
+     "label": "Hbis. Versicherungsausweis und individuelles Konto",
+     "eId": "chap_4/lvl_H_bis"
     }
    ],
    "marginalie": [
@@ -5855,15 +6198,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "J. Zahlungs- und Abrechnungsverkehr"
+     "label": "J. Zahlungs- und Abrechnungsverkehr",
+     "eId": "chap_4/lvl_J"
     },
     {
      "ebene": 3,
-     "label": "I. Zahlungs- und Abrechnungsverkehr mit den Ausgleichskassen"
+     "label": "I. Zahlungs- und Abrechnungsverkehr mit den Ausgleichskassen",
+     "eId": "chap_4/lvl_J/lvl_I"
     }
    ],
    "marginalie": [
@@ -5912,15 +6258,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "J. Zahlungs- und Abrechnungsverkehr"
+     "label": "J. Zahlungs- und Abrechnungsverkehr",
+     "eId": "chap_4/lvl_J"
     },
     {
      "ebene": 3,
-     "label": "I. Zahlungs- und Abrechnungsverkehr mit den Ausgleichskassen"
+     "label": "I. Zahlungs- und Abrechnungsverkehr mit den Ausgleichskassen",
+     "eId": "chap_4/lvl_J/lvl_I"
     }
    ],
    "marginalie": [
@@ -6005,15 +6354,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "J. Zahlungs- und Abrechnungsverkehr"
+     "label": "J. Zahlungs- und Abrechnungsverkehr",
+     "eId": "chap_4/lvl_J"
     },
     {
      "ebene": 3,
-     "label": "I. Zahlungs- und Abrechnungsverkehr mit den Ausgleichskassen"
+     "label": "I. Zahlungs- und Abrechnungsverkehr mit den Ausgleichskassen",
+     "eId": "chap_4/lvl_J/lvl_I"
     }
    ],
    "marginalie": [
@@ -6051,15 +6403,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "J. Zahlungs- und Abrechnungsverkehr"
+     "label": "J. Zahlungs- und Abrechnungsverkehr",
+     "eId": "chap_4/lvl_J"
     },
     {
      "ebene": 3,
-     "label": "III. Geldverkehr der Ausgleichskassen"
+     "label": "III. Geldverkehr der Ausgleichskassen",
+     "eId": "chap_4/lvl_J/lvl_III"
     }
    ],
    "marginalie": [
@@ -6084,15 +6439,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "J. Zahlungs- und Abrechnungsverkehr"
+     "label": "J. Zahlungs- und Abrechnungsverkehr",
+     "eId": "chap_4/lvl_J"
     },
     {
      "ebene": 3,
-     "label": "III. Geldverkehr der Ausgleichskassen"
+     "label": "III. Geldverkehr der Ausgleichskassen",
+     "eId": "chap_4/lvl_J/lvl_III"
     }
    ],
    "marginalie": [
@@ -6117,15 +6475,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "J. Zahlungs- und Abrechnungsverkehr"
+     "label": "J. Zahlungs- und Abrechnungsverkehr",
+     "eId": "chap_4/lvl_J"
     },
     {
      "ebene": 3,
-     "label": "III. Geldverkehr der Ausgleichskassen"
+     "label": "III. Geldverkehr der Ausgleichskassen",
+     "eId": "chap_4/lvl_J/lvl_III"
     }
    ],
    "marginalie": [
@@ -6150,15 +6511,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "J. Zahlungs- und Abrechnungsverkehr"
+     "label": "J. Zahlungs- und Abrechnungsverkehr",
+     "eId": "chap_4/lvl_J"
     },
     {
      "ebene": 3,
-     "label": "IV. Buchführung der Ausgleichskassen"
+     "label": "IV. Buchführung der Ausgleichskassen",
+     "eId": "chap_4/lvl_J/lvl_IV"
     }
    ],
    "marginalie": [
@@ -6183,15 +6547,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "J. Zahlungs- und Abrechnungsverkehr"
+     "label": "J. Zahlungs- und Abrechnungsverkehr",
+     "eId": "chap_4/lvl_J"
     },
     {
      "ebene": 3,
-     "label": "IV. Buchführung der Ausgleichskassen"
+     "label": "IV. Buchführung der Ausgleichskassen",
+     "eId": "chap_4/lvl_J/lvl_IV"
     }
    ],
    "marginalie": [],
@@ -6214,15 +6581,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "J. Zahlungs- und Abrechnungsverkehr"
+     "label": "J. Zahlungs- und Abrechnungsverkehr",
+     "eId": "chap_4/lvl_J"
     },
     {
      "ebene": 3,
-     "label": "IV. Buchführung der Ausgleichskassen"
+     "label": "IV. Buchführung der Ausgleichskassen",
+     "eId": "chap_4/lvl_J/lvl_IV"
     }
    ],
    "marginalie": [
@@ -6247,15 +6617,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "J. Zahlungs- und Abrechnungsverkehr"
+     "label": "J. Zahlungs- und Abrechnungsverkehr",
+     "eId": "chap_4/lvl_J"
     },
     {
      "ebene": 3,
-     "label": "IV. Buchführung der Ausgleichskassen"
+     "label": "IV. Buchführung der Ausgleichskassen",
+     "eId": "chap_4/lvl_J/lvl_IV"
     }
    ],
    "marginalie": [],
@@ -6278,15 +6651,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "J. Zahlungs- und Abrechnungsverkehr"
+     "label": "J. Zahlungs- und Abrechnungsverkehr",
+     "eId": "chap_4/lvl_J"
     },
     {
      "ebene": 3,
-     "label": "IV. Buchführung der Ausgleichskassen"
+     "label": "IV. Buchführung der Ausgleichskassen",
+     "eId": "chap_4/lvl_J/lvl_IV"
     }
    ],
    "marginalie": [
@@ -6311,15 +6687,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "J. Zahlungs- und Abrechnungsverkehr"
+     "label": "J. Zahlungs- und Abrechnungsverkehr",
+     "eId": "chap_4/lvl_J"
     },
     {
      "ebene": 3,
-     "label": "IV. Buchführung der Ausgleichskassen"
+     "label": "IV. Buchführung der Ausgleichskassen",
+     "eId": "chap_4/lvl_J/lvl_IV"
     }
    ],
    "marginalie": [
@@ -6344,15 +6723,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "J. Zahlungs- und Abrechnungsverkehr"
+     "label": "J. Zahlungs- und Abrechnungsverkehr",
+     "eId": "chap_4/lvl_J"
     },
     {
      "ebene": 3,
-     "label": "V. Aktenaufbewahrung"
+     "label": "V. Aktenaufbewahrung",
+     "eId": "chap_4/lvl_J/lvl_V"
     }
    ],
    "marginalie": []
@@ -6361,11 +6743,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "K. Die Deckung der Verwaltungskosten"
+     "label": "K. Die Deckung der Verwaltungskosten",
+     "eId": "chap_4/lvl_K"
     }
    ],
    "marginalie": [
@@ -6390,11 +6774,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "K. Die Deckung der Verwaltungskosten"
+     "label": "K. Die Deckung der Verwaltungskosten",
+     "eId": "chap_4/lvl_K"
     }
    ],
    "marginalie": [
@@ -6419,15 +6805,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen"
+     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen",
+     "eId": "chap_4/lvl_L"
     },
     {
      "ebene": 3,
-     "label": "I. Kassenrevisionen"
+     "label": "I. Kassenrevisionen",
+     "eId": "chap_4/lvl_L/lvl_I"
     }
    ],
    "marginalie": [
@@ -6452,15 +6841,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen"
+     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen",
+     "eId": "chap_4/lvl_L"
     },
     {
      "ebene": 3,
-     "label": "I. Kassenrevisionen"
+     "label": "I. Kassenrevisionen",
+     "eId": "chap_4/lvl_L/lvl_I"
     }
    ],
    "marginalie": [
@@ -6485,15 +6877,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen"
+     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen",
+     "eId": "chap_4/lvl_L"
     },
     {
      "ebene": 3,
-     "label": "I. Kassenrevisionen"
+     "label": "I. Kassenrevisionen",
+     "eId": "chap_4/lvl_L/lvl_I"
     }
    ],
    "marginalie": [
@@ -6542,15 +6937,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen"
+     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen",
+     "eId": "chap_4/lvl_L"
     },
     {
      "ebene": 3,
-     "label": "II. Arbeitgeberkontrollen"
+     "label": "II. Arbeitgeberkontrollen",
+     "eId": "chap_4/lvl_L/lvl_II"
     }
    ],
    "marginalie": [
@@ -6623,15 +7021,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen"
+     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen",
+     "eId": "chap_4/lvl_L"
     },
     {
      "ebene": 3,
-     "label": "II. Arbeitgeberkontrollen"
+     "label": "II. Arbeitgeberkontrollen",
+     "eId": "chap_4/lvl_L/lvl_II"
     }
    ],
    "marginalie": [
@@ -6692,15 +7093,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen"
+     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen",
+     "eId": "chap_4/lvl_L"
     },
     {
      "ebene": 3,
-     "label": "III. Anforderungen an die Revisionsstelle und den leitenden Revisor"
+     "label": "III. Anforderungen an die Revisionsstelle und den leitenden Revisor",
+     "eId": "chap_4/lvl_L/lvl_III"
     }
    ],
    "marginalie": [
@@ -6751,15 +7155,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen"
+     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen",
+     "eId": "chap_4/lvl_L"
     },
     {
      "ebene": 3,
-     "label": "III. Anforderungen an die Revisionsstelle und den leitenden Revisor"
+     "label": "III. Anforderungen an die Revisionsstelle und den leitenden Revisor",
+     "eId": "chap_4/lvl_L/lvl_III"
     }
    ],
    "marginalie": [
@@ -6784,15 +7191,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen"
+     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen",
+     "eId": "chap_4/lvl_L"
     },
     {
      "ebene": 3,
-     "label": "IIIa. Kosten der Kassenrevision und der Arbeitgeberkontrollen"
+     "label": "IIIa. Kosten der Kassenrevision und der Arbeitgeberkontrollen",
+     "eId": "chap_4/lvl_L/lvl_III_a"
     }
    ],
    "marginalie": [],
@@ -6852,15 +7262,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen"
+     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen",
+     "eId": "chap_4/lvl_L"
     },
     {
      "ebene": 3,
-     "label": "IV. Ergänzende Revisionen und Kontrollen"
+     "label": "IV. Ergänzende Revisionen und Kontrollen",
+     "eId": "chap_4/lvl_L/lvl_IV"
     }
    ],
    "marginalie": [],
@@ -6896,11 +7309,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "N. Die Zentrale Ausgleichsstelle (ZAS)"
+     "label": "N. Die Zentrale Ausgleichsstelle (ZAS)",
+     "eId": "chap_4/lvl_N"
     }
    ],
    "marginalie": [
@@ -7125,11 +7540,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "N. Die Zentrale Ausgleichsstelle (ZAS)"
+     "label": "N. Die Zentrale Ausgleichsstelle (ZAS)",
+     "eId": "chap_4/lvl_N"
     }
    ],
    "marginalie": [
@@ -7154,11 +7571,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "O. Die Aufsicht des Bundes"
+     "label": "O. Die Aufsicht des Bundes",
+     "eId": "chap_4/lvl_O"
     }
    ],
    "marginalie": [
@@ -7251,11 +7670,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "O. Die Aufsicht des Bundes"
+     "label": "O. Die Aufsicht des Bundes",
+     "eId": "chap_4/lvl_O"
     }
    ],
    "marginalie": [
@@ -7280,11 +7701,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "O. Die Aufsicht des Bundes"
+     "label": "O. Die Aufsicht des Bundes",
+     "eId": "chap_4/lvl_O"
     }
    ],
    "marginalie": [],
@@ -7307,11 +7730,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "O. Die Aufsicht des Bundes"
+     "label": "O. Die Aufsicht des Bundes",
+     "eId": "chap_4/lvl_O"
     }
    ],
    "marginalie": [
@@ -7336,11 +7761,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "O. Die Aufsicht des Bundes"
+     "label": "O. Die Aufsicht des Bundes",
+     "eId": "chap_4/lvl_O"
     }
    ],
    "marginalie": [
@@ -7389,7 +7816,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Die Rechtspflege"
+     "label": "Sechster Abschnitt: Die Rechtspflege",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -7414,7 +7842,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Die Rechtspflege"
+     "label": "Sechster Abschnitt: Die Rechtspflege",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -7451,7 +7880,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Die Rechtspflege"
+     "label": "Sechster Abschnitt: Die Rechtspflege",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -7474,7 +7904,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Die Rechtspflege"
+     "label": "Sechster Abschnitt: Die Rechtspflege",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -7497,7 +7928,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Die Rechtspflege"
+     "label": "Sechster Abschnitt: Die Rechtspflege",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -7520,7 +7952,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -7545,7 +7978,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -7570,7 +8004,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -7595,7 +8030,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -7606,7 +8042,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -7643,7 +8080,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -7680,7 +8118,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -7705,7 +8144,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -7742,7 +8182,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -7765,7 +8206,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -7790,7 +8232,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Baubeiträge an Heime und andere Einrichtungen für Betagte"
+     "label": "Achter Abschnitt: Die Baubeiträge an Heime und andere Einrichtungen für Betagte",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -7817,7 +8260,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Baubeiträge an Heime und andere Einrichtungen für Betagte"
+     "label": "Achter Abschnitt: Die Baubeiträge an Heime und andere Einrichtungen für Betagte",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -7842,7 +8286,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe"
+     "label": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -7953,7 +8398,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe"
+     "label": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -7978,7 +8424,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe"
+     "label": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -8003,7 +8450,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe"
+     "label": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -8028,7 +8476,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Abschnitt: Schlussbestimmungen"
+     "label": "Zehnter Abschnitt: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -8061,15 +8510,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "VIII. Auflösung der Ausgleichskasse"
+     "label": "VIII. Auflösung der Ausgleichskasse",
+     "eId": "chap_4/lvl_B/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -8094,11 +8546,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "C. Die kantonalen Ausgleichskassen"
+     "label": "C. Die kantonalen Ausgleichskassen",
+     "eId": "chap_4/lvl_C"
     }
    ],
    "marginalie": [
@@ -8123,15 +8577,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "F. Kassenzugehörigkeit"
+     "label": "F. Kassenzugehörigkeit",
+     "eId": "chap_4/lvl_F"
     },
     {
      "ebene": 3,
-     "label": "II. Zuständigkeit für die Rentenfestsetzung und -auszahlung"
+     "label": "II. Zuständigkeit für die Rentenfestsetzung und -auszahlung",
+     "eId": "chap_4/lvl_F/lvl_II"
     }
    ],
    "marginalie": [
@@ -8156,15 +8613,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "F. Kassenzugehörigkeit"
+     "label": "F. Kassenzugehörigkeit",
+     "eId": "chap_4/lvl_F"
     },
     {
      "ebene": 3,
-     "label": "II. Zuständigkeit für die Rentenfestsetzung und -auszahlung"
+     "label": "II. Zuständigkeit für die Rentenfestsetzung und -auszahlung",
+     "eId": "chap_4/lvl_F/lvl_II"
     }
    ],
    "marginalie": [
@@ -8189,15 +8649,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "F. Kassenzugehörigkeit"
+     "label": "F. Kassenzugehörigkeit",
+     "eId": "chap_4/lvl_F"
     },
     {
      "ebene": 3,
-     "label": "II. Zuständigkeit für die Rentenfestsetzung und -auszahlung"
+     "label": "II. Zuständigkeit für die Rentenfestsetzung und -auszahlung",
+     "eId": "chap_4/lvl_F/lvl_II"
     }
    ],
    "marginalie": [
@@ -8222,11 +8685,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "G. Aufgaben der Ausgleichskassen"
+     "label": "G. Aufgaben der Ausgleichskassen",
+     "eId": "chap_4/lvl_G"
     }
    ],
    "marginalie": [
@@ -8263,11 +8728,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "G. Aufgaben der Ausgleichskassen"
+     "label": "G. Aufgaben der Ausgleichskassen",
+     "eId": "chap_4/lvl_G"
     }
    ],
    "marginalie": [
@@ -8292,11 +8759,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "G. Aufgaben der Ausgleichskassen"
+     "label": "G. Aufgaben der Ausgleichskassen",
+     "eId": "chap_4/lvl_G"
     }
    ],
    "marginalie": [
@@ -8321,11 +8790,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "G. Aufgaben der Ausgleichskassen"
+     "label": "G. Aufgaben der Ausgleichskassen",
+     "eId": "chap_4/lvl_G"
     }
    ],
    "marginalie": [
@@ -8350,11 +8821,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "G. Aufgaben der Ausgleichskassen"
+     "label": "G. Aufgaben der Ausgleichskassen",
+     "eId": "chap_4/lvl_G"
     }
    ],
    "marginalie": [
@@ -8379,11 +8852,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "G. Aufgaben der Ausgleichskassen"
+     "label": "G. Aufgaben der Ausgleichskassen",
+     "eId": "chap_4/lvl_G"
     }
    ],
    "marginalie": [
@@ -8408,11 +8883,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "G. Aufgaben der Ausgleichskassen"
+     "label": "G. Aufgaben der Ausgleichskassen",
+     "eId": "chap_4/lvl_G"
     }
    ],
    "marginalie": [
@@ -8449,15 +8926,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "H. AHV-Nummer"
+     "label": "H. AHV-Nummer",
+     "eId": "chap_4/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "I. Eigenschaften und Zuweisung"
+     "label": "I. Eigenschaften und Zuweisung",
+     "eId": "chap_4/lvl_H/lvl_I"
     }
    ],
    "marginalie": [
@@ -8530,15 +9010,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "H. AHV-Nummer"
+     "label": "H. AHV-Nummer",
+     "eId": "chap_4/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "II. Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
+     "label": "II. Systematische Verwendung der AHV-Nummer ausserhalb der AHV",
+     "eId": "chap_4/lvl_H/lvl_II"
     }
    ],
    "marginalie": [],
@@ -8578,15 +9061,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "H. AHV-Nummer"
+     "label": "H. AHV-Nummer",
+     "eId": "chap_4/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "II. Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
+     "label": "II. Systematische Verwendung der AHV-Nummer ausserhalb der AHV",
+     "eId": "chap_4/lvl_H/lvl_II"
     }
    ],
    "marginalie": [
@@ -8623,15 +9109,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "H. AHV-Nummer"
+     "label": "H. AHV-Nummer",
+     "eId": "chap_4/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "II. Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
+     "label": "II. Systematische Verwendung der AHV-Nummer ausserhalb der AHV",
+     "eId": "chap_4/lvl_H/lvl_II"
     }
    ],
    "marginalie": [
@@ -8660,15 +9149,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "H. AHV-Nummer"
+     "label": "H. AHV-Nummer",
+     "eId": "chap_4/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "II. Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
+     "label": "II. Systematische Verwendung der AHV-Nummer ausserhalb der AHV",
+     "eId": "chap_4/lvl_H/lvl_II"
     }
    ],
    "marginalie": [],
@@ -8695,15 +9187,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "H. AHV-Nummer"
+     "label": "H. AHV-Nummer",
+     "eId": "chap_4/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "II. Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
+     "label": "II. Systematische Verwendung der AHV-Nummer ausserhalb der AHV",
+     "eId": "chap_4/lvl_H/lvl_II"
     }
    ],
    "marginalie": [
@@ -8732,11 +9227,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "Hbis. Versicherungsausweis und individuelles Konto"
+     "label": "Hbis. Versicherungsausweis und individuelles Konto",
+     "eId": "chap_4/lvl_H_bis"
     }
    ],
    "marginalie": [
@@ -8765,11 +9262,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "Hbis. Versicherungsausweis und individuelles Konto"
+     "label": "Hbis. Versicherungsausweis und individuelles Konto",
+     "eId": "chap_4/lvl_H_bis"
     }
    ],
    "marginalie": [
@@ -8794,15 +9293,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "Hter. Informationssysteme zur Durchführung von internationalen Abkommen"
+     "label": "Hter. Informationssysteme zur Durchführung von internationalen Abkommen",
+     "eId": "chap_4/lvl_H_ter"
     },
     {
      "ebene": 3,
-     "label": "I. Informationssystem zur Feststellung von Leistungen aufgrund von internationalen Abkommen"
+     "label": "I. Informationssystem zur Feststellung von Leistungen aufgrund von internationalen Abkommen",
+     "eId": "chap_4/lvl_H_ter/lvl_I"
     }
    ],
    "marginalie": [
@@ -8840,15 +9342,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "Hter. Informationssysteme zur Durchführung von internationalen Abkommen"
+     "label": "Hter. Informationssysteme zur Durchführung von internationalen Abkommen",
+     "eId": "chap_4/lvl_H_ter"
     },
     {
      "ebene": 3,
-     "label": "II. Informationssystem im Bereich der Versicherungsunterstellung"
+     "label": "II. Informationssystem im Bereich der Versicherungsunterstellung",
+     "eId": "chap_4/lvl_H_ter/lvl_II"
     }
    ],
    "marginalie": [
@@ -8859,15 +9364,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "Hter. Informationssysteme zur Durchführung von internationalen Abkommen"
+     "label": "Hter. Informationssysteme zur Durchführung von internationalen Abkommen",
+     "eId": "chap_4/lvl_H_ter"
     },
     {
      "ebene": 3,
-     "label": "II. Informationssystem im Bereich der Versicherungsunterstellung"
+     "label": "II. Informationssystem im Bereich der Versicherungsunterstellung",
+     "eId": "chap_4/lvl_H_ter/lvl_II"
     }
    ],
    "marginalie": [
@@ -8878,11 +9386,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "Hquinquies. Meldepflicht bei Beeinträchtigungen der Informationssysteme"
+     "label": "Hquinquies. Meldepflicht bei Beeinträchtigungen der Informationssysteme",
+     "eId": "chap_4/lvl_H_quinquies"
     }
    ],
    "marginalie": [],
@@ -8918,11 +9428,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "Hquater. Informationssystem für die Übermittlung von Anträgen"
+     "label": "Hquater. Informationssystem für die Übermittlung von Anträgen",
+     "eId": "chap_4/lvl_H_quater"
     }
    ],
    "marginalie": [],
@@ -8946,15 +9458,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "Hter. Informationssysteme zur Durchführung von internationalen Abkommen"
+     "label": "Hter. Informationssysteme zur Durchführung von internationalen Abkommen",
+     "eId": "chap_4/lvl_H_ter"
     },
     {
      "ebene": 3,
-     "label": "I. Informationssystem zur Feststellung von Leistungen aufgrund von internationalen Abkommen"
+     "label": "I. Informationssystem zur Feststellung von Leistungen aufgrund von internationalen Abkommen",
+     "eId": "chap_4/lvl_H_ter/lvl_I"
     }
    ],
    "marginalie": [
@@ -8965,15 +9480,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "J. Zahlungs- und Abrechnungsverkehr"
+     "label": "J. Zahlungs- und Abrechnungsverkehr",
+     "eId": "chap_4/lvl_J"
     },
     {
      "ebene": 3,
-     "label": "II. …"
+     "label": "II. …",
+     "eId": "chap_4/lvl_J/lvl_II"
     }
    ],
    "marginalie": [],
@@ -8996,15 +9514,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "J. Zahlungs- und Abrechnungsverkehr"
+     "label": "J. Zahlungs- und Abrechnungsverkehr",
+     "eId": "chap_4/lvl_J"
     },
     {
      "ebene": 3,
-     "label": "III. Geldverkehr der Ausgleichskassen"
+     "label": "III. Geldverkehr der Ausgleichskassen",
+     "eId": "chap_4/lvl_J/lvl_III"
     }
    ],
    "marginalie": [
@@ -9033,15 +9554,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "J. Zahlungs- und Abrechnungsverkehr"
+     "label": "J. Zahlungs- und Abrechnungsverkehr",
+     "eId": "chap_4/lvl_J"
     },
     {
      "ebene": 3,
-     "label": "III. Geldverkehr der Ausgleichskassen"
+     "label": "III. Geldverkehr der Ausgleichskassen",
+     "eId": "chap_4/lvl_J/lvl_III"
     }
    ],
    "marginalie": [
@@ -9066,15 +9590,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "J. Zahlungs- und Abrechnungsverkehr"
+     "label": "J. Zahlungs- und Abrechnungsverkehr",
+     "eId": "chap_4/lvl_J"
     },
     {
      "ebene": 3,
-     "label": "IV. Buchführung der Ausgleichskassen"
+     "label": "IV. Buchführung der Ausgleichskassen",
+     "eId": "chap_4/lvl_J/lvl_IV"
     }
    ],
    "marginalie": [
@@ -9099,11 +9626,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "K. Die Deckung der Verwaltungskosten"
+     "label": "K. Die Deckung der Verwaltungskosten",
+     "eId": "chap_4/lvl_K"
     }
    ],
    "marginalie": [
@@ -9164,15 +9693,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen"
+     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen",
+     "eId": "chap_4/lvl_L"
     },
     {
      "ebene": 3,
-     "label": "I. Kassenrevisionen"
+     "label": "I. Kassenrevisionen",
+     "eId": "chap_4/lvl_L/lvl_I"
     }
    ],
    "marginalie": [
@@ -9197,15 +9729,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen"
+     "label": "L. Kassenrevisionen und Arbeitgeberkontrollen",
+     "eId": "chap_4/lvl_L"
     },
     {
      "ebene": 3,
-     "label": "III. Anforderungen an die Revisionsstelle und den leitenden Revisor"
+     "label": "III. Anforderungen an die Revisionsstelle und den leitenden Revisor",
+     "eId": "chap_4/lvl_L/lvl_III"
     }
    ],
    "marginalie": [],
@@ -9228,11 +9763,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "M. …"
+     "label": "M. …",
+     "eId": "chap_4/lvl_M"
     }
    ],
    "marginalie": [],
@@ -9255,7 +9792,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: …"
+     "label": "Fünfter Abschnitt: …",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [],
@@ -9278,11 +9816,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen"
+     "label": "Erster Abschnitt: Die versicherten Personen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "A. Versicherungsunterstellung"
+     "label": "A. Versicherungsunterstellung",
+     "eId": "chap_1/lvl_A"
     }
    ],
    "marginalie": [
@@ -9326,11 +9866,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen"
+     "label": "Erster Abschnitt: Die versicherten Personen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "B. Ausnahmen von der Versicherung"
+     "label": "B. Ausnahmen von der Versicherung",
+     "eId": "chap_1/lvl_B"
     }
    ],
    "marginalie": [
@@ -9455,7 +9997,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Die Rechtspflege"
+     "label": "Sechster Abschnitt: Die Rechtspflege",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -9482,7 +10025,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Die Rechtspflege"
+     "label": "Sechster Abschnitt: Die Rechtspflege",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -9509,7 +10053,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9538,7 +10083,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9563,7 +10109,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9600,7 +10147,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9632,7 +10180,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9681,7 +10230,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9706,7 +10256,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9755,7 +10306,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9780,7 +10332,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Baubeiträge an Heime und andere Einrichtungen für Betagte"
+     "label": "Achter Abschnitt: Die Baubeiträge an Heime und andere Einrichtungen für Betagte",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -9816,7 +10369,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe"
+     "label": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -9841,7 +10395,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe"
+     "label": "Neunter Abschnitt: Die Finanzhilfen zur Förderung der Altershilfe",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -9866,11 +10421,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Beiträge der Nichterwerbstätigen"
+     "label": "B. Die Beiträge der Nichterwerbstätigen",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -9899,11 +10456,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Beiträge der Nichterwerbstätigen"
+     "label": "B. Die Beiträge der Nichterwerbstätigen",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -9940,11 +10499,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Beiträge der Nichterwerbstätigen"
+     "label": "B. Die Beiträge der Nichterwerbstätigen",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -9969,15 +10530,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Beitragsbezug"
+     "label": "E. Beitragsbezug",
+     "eId": "chap_2/lvl_E"
     },
     {
      "ebene": 3,
-     "label": "I. Allgemeines"
+     "label": "I. Allgemeines",
+     "eId": "chap_2/lvl_E/lvl_I"
     }
    ],
    "marginalie": [
@@ -10002,15 +10566,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Beitragsbezug"
+     "label": "E. Beitragsbezug",
+     "eId": "chap_2/lvl_E"
     },
     {
      "ebene": 3,
-     "label": "I. Allgemeines"
+     "label": "I. Allgemeines",
+     "eId": "chap_2/lvl_E/lvl_I"
     }
    ],
    "marginalie": [
@@ -10035,15 +10602,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Beitragsbezug"
+     "label": "E. Beitragsbezug",
+     "eId": "chap_2/lvl_E"
     },
     {
      "ebene": 3,
-     "label": "I. Allgemeines"
+     "label": "I. Allgemeines",
+     "eId": "chap_2/lvl_E/lvl_I"
     }
    ],
    "marginalie": [
@@ -10092,15 +10662,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Beitragsbezug"
+     "label": "E. Beitragsbezug",
+     "eId": "chap_2/lvl_E"
     },
     {
      "ebene": 3,
-     "label": "II. Lohnbeiträge"
+     "label": "II. Lohnbeiträge",
+     "eId": "chap_2/lvl_E/lvl_II"
     }
    ],
    "marginalie": [
@@ -10186,15 +10759,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Beitragsbezug"
+     "label": "E. Beitragsbezug",
+     "eId": "chap_2/lvl_E"
     },
     {
      "ebene": 3,
-     "label": "IV. Zinsen"
+     "label": "IV. Zinsen",
+     "eId": "chap_2/lvl_E/lvl_IV"
     }
    ],
    "marginalie": [
@@ -10308,15 +10884,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Beitragsbezug"
+     "label": "E. Beitragsbezug",
+     "eId": "chap_2/lvl_E"
     },
     {
      "ebene": 3,
-     "label": "IV. Zinsen"
+     "label": "IV. Zinsen",
+     "eId": "chap_2/lvl_E/lvl_IV"
     }
    ],
    "marginalie": [
@@ -10345,11 +10924,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     }
    ],
    "marginalie": [],
@@ -10385,11 +10966,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     }
    ],
    "marginalie": [
@@ -10414,11 +10997,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     }
    ],
    "marginalie": [
@@ -10443,11 +11028,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -10472,11 +11059,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -10513,11 +11102,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -10542,11 +11133,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -10583,11 +11176,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -10612,11 +11207,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -10653,11 +11250,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -10682,11 +11281,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -10711,11 +11312,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -10776,11 +11379,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -10805,11 +11410,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -10882,11 +11489,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -10923,11 +11532,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -10956,11 +11567,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -10985,11 +11598,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -11027,11 +11642,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -11056,11 +11673,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -11085,11 +11704,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -11114,11 +11735,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -11147,11 +11770,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -11192,11 +11817,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -11221,11 +11848,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -11254,11 +11883,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -11287,11 +11918,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -11316,11 +11949,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -11345,11 +11980,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -11374,11 +12011,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -11407,11 +12046,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -11436,11 +12077,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -11465,11 +12108,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -11518,15 +12163,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Der flexible Rentenbezug"
+     "label": "D. Der flexible Rentenbezug",
+     "eId": "chap_3/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Der Rentenaufschub"
+     "label": "I. Der Rentenaufschub",
+     "eId": "chap_3/lvl_D/lvl_I"
     }
    ],
    "marginalie": [],
@@ -11583,15 +12231,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Der flexible Rentenbezug"
+     "label": "D. Der flexible Rentenbezug",
+     "eId": "chap_3/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Der Rentenaufschub"
+     "label": "I. Der Rentenaufschub",
+     "eId": "chap_3/lvl_D/lvl_I"
     }
    ],
    "marginalie": [
@@ -11664,15 +12315,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Der flexible Rentenbezug"
+     "label": "D. Der flexible Rentenbezug",
+     "eId": "chap_3/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Der Rentenaufschub"
+     "label": "I. Der Rentenaufschub",
+     "eId": "chap_3/lvl_D/lvl_I"
     }
    ],
    "marginalie": [
@@ -11713,15 +12367,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Der flexible Rentenbezug"
+     "label": "D. Der flexible Rentenbezug",
+     "eId": "chap_3/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "II. Der Rentenvorbezug"
+     "label": "II. Der Rentenvorbezug",
+     "eId": "chap_3/lvl_D/lvl_II"
     }
    ],
    "marginalie": [
@@ -11746,15 +12403,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Der flexible Rentenbezug"
+     "label": "D. Der flexible Rentenbezug",
+     "eId": "chap_3/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "II. Der Rentenvorbezug"
+     "label": "II. Der Rentenvorbezug",
+     "eId": "chap_3/lvl_D/lvl_II"
     }
    ],
    "marginalie": [
@@ -11779,15 +12439,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Der flexible Rentenbezug"
+     "label": "D. Der flexible Rentenbezug",
+     "eId": "chap_3/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "II. Der Rentenvorbezug"
+     "label": "II. Der Rentenvorbezug",
+     "eId": "chap_3/lvl_D/lvl_II"
     }
    ],
    "marginalie": [
@@ -11824,15 +12487,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen"
+     "label": "Erster Abschnitt: Die versicherten Personen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Beitritt zur Versicherung"
+     "label": "C. Beitritt zur Versicherung",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "I. Personen, welche im Ausland von einem Arbeitgeber in der Schweiz beschäftigt werden"
+     "label": "I. Personen, welche im Ausland von einem Arbeitgeber in der Schweiz beschäftigt werden",
+     "eId": "chap_1/lvl_C/lvl_I"
     }
    ],
    "marginalie": [
@@ -11857,15 +12523,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen"
+     "label": "Erster Abschnitt: Die versicherten Personen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Beitritt zur Versicherung"
+     "label": "C. Beitritt zur Versicherung",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "I. Personen, welche im Ausland von einem Arbeitgeber in der Schweiz beschäftigt werden"
+     "label": "I. Personen, welche im Ausland von einem Arbeitgeber in der Schweiz beschäftigt werden",
+     "eId": "chap_1/lvl_C/lvl_I"
     }
    ],
    "marginalie": [
@@ -11876,15 +12545,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen"
+     "label": "Erster Abschnitt: Die versicherten Personen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Beitritt zur Versicherung"
+     "label": "C. Beitritt zur Versicherung",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "I. Personen, welche im Ausland von einem Arbeitgeber in der Schweiz beschäftigt werden"
+     "label": "I. Personen, welche im Ausland von einem Arbeitgeber in der Schweiz beschäftigt werden",
+     "eId": "chap_1/lvl_C/lvl_I"
     }
    ],
    "marginalie": [
@@ -11909,15 +12581,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen"
+     "label": "Erster Abschnitt: Die versicherten Personen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Beitritt zur Versicherung"
+     "label": "C. Beitritt zur Versicherung",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "II. Personen mit Wohnsitz in der Schweiz, die auf Grund zwischenstaatlicher Vereinbarung nicht versichert sind"
+     "label": "II. Personen mit Wohnsitz in der Schweiz, die auf Grund zwischenstaatlicher Vereinbarung nicht versichert sind",
+     "eId": "chap_1/lvl_C/lvl_II"
     }
    ],
    "marginalie": [
@@ -11956,15 +12631,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen"
+     "label": "Erster Abschnitt: Die versicherten Personen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Beitritt zur Versicherung"
+     "label": "C. Beitritt zur Versicherung",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "II. Personen mit Wohnsitz in der Schweiz, die auf Grund zwischenstaatlicher Vereinbarung nicht versichert sind"
+     "label": "II. Personen mit Wohnsitz in der Schweiz, die auf Grund zwischenstaatlicher Vereinbarung nicht versichert sind",
+     "eId": "chap_1/lvl_C/lvl_II"
     }
    ],
    "marginalie": [
@@ -11975,15 +12653,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen"
+     "label": "Erster Abschnitt: Die versicherten Personen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Beitritt zur Versicherung"
+     "label": "C. Beitritt zur Versicherung",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "II. Personen mit Wohnsitz in der Schweiz, die auf Grund zwischenstaatlicher Vereinbarung nicht versichert sind"
+     "label": "II. Personen mit Wohnsitz in der Schweiz, die auf Grund zwischenstaatlicher Vereinbarung nicht versichert sind",
+     "eId": "chap_1/lvl_C/lvl_II"
     }
    ],
    "marginalie": [
@@ -12008,15 +12689,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen"
+     "label": "Erster Abschnitt: Die versicherten Personen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Beitritt zur Versicherung"
+     "label": "C. Beitritt zur Versicherung",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "III. Nichterwerbstätige Studierende mit Wohnsitz im Ausland"
+     "label": "III. Nichterwerbstätige Studierende mit Wohnsitz im Ausland",
+     "eId": "chap_1/lvl_C/lvl_III"
     }
    ],
    "marginalie": [
@@ -12042,15 +12726,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen"
+     "label": "Erster Abschnitt: Die versicherten Personen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Beitritt zur Versicherung"
+     "label": "C. Beitritt zur Versicherung",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "III. Nichterwerbstätige Studierende mit Wohnsitz im Ausland"
+     "label": "III. Nichterwerbstätige Studierende mit Wohnsitz im Ausland",
+     "eId": "chap_1/lvl_C/lvl_III"
     }
    ],
    "marginalie": [
@@ -12061,15 +12748,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen"
+     "label": "Erster Abschnitt: Die versicherten Personen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Beitritt zur Versicherung"
+     "label": "C. Beitritt zur Versicherung",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "III. Nichterwerbstätige Studierende mit Wohnsitz im Ausland"
+     "label": "III. Nichterwerbstätige Studierende mit Wohnsitz im Ausland",
+     "eId": "chap_1/lvl_C/lvl_III"
     }
    ],
    "marginalie": [
@@ -12080,15 +12770,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen"
+     "label": "Erster Abschnitt: Die versicherten Personen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Beitritt zur Versicherung"
+     "label": "C. Beitritt zur Versicherung",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "IV. Nichterwerbstätige Personen, die ihren versicherten Ehegatten ins Ausland begleiten"
+     "label": "IV. Nichterwerbstätige Personen, die ihren versicherten Ehegatten ins Ausland begleiten",
+     "eId": "chap_1/lvl_C/lvl_IV"
     }
    ],
    "marginalie": [
@@ -12114,15 +12807,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen"
+     "label": "Erster Abschnitt: Die versicherten Personen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "C. Beitritt zur Versicherung"
+     "label": "C. Beitritt zur Versicherung",
+     "eId": "chap_1/lvl_C"
     },
     {
      "ebene": 3,
-     "label": "IV. Nichterwerbstätige Personen, die ihren versicherten Ehegatten ins Ausland begleiten"
+     "label": "IV. Nichterwerbstätige Personen, die ihren versicherten Ehegatten ins Ausland begleiten",
+     "eId": "chap_1/lvl_C/lvl_IV"
     }
    ],
    "marginalie": [
@@ -12133,11 +12829,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Rentenvorausberechnungen"
+     "label": "E. Rentenvorausberechnungen",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [],
@@ -12160,11 +12858,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "F. Die Hilflosenentschädigung und die Hilfsmittel"
+     "label": "F. Die Hilflosenentschädigung und die Hilfsmittel",
+     "eId": "chap_3/lvl_F"
     }
    ],
    "marginalie": [
@@ -12262,11 +12962,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "G. Das Verhältnis zur Hilflosenentschädigung der Unfallversicherung"
+     "label": "G. Das Verhältnis zur Hilflosenentschädigung der Unfallversicherung",
+     "eId": "chap_3/lvl_G"
     }
    ],
    "marginalie": [],
@@ -12310,11 +13012,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "F. Die Hilflosenentschädigung und die Hilfsmittel"
+     "label": "F. Die Hilflosenentschädigung und die Hilfsmittel",
+     "eId": "chap_3/lvl_F"
     }
    ],
    "marginalie": [
@@ -12363,15 +13067,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "III. Festsetzung der Hilflosenentschädigung"
+     "label": "III. Festsetzung der Hilflosenentschädigung",
+     "eId": "chap_3/lvl_H/lvl_III"
     }
    ],
    "marginalie": [
@@ -12420,15 +13127,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "III. Festsetzung der Hilflosenentschädigung"
+     "label": "III. Festsetzung der Hilflosenentschädigung",
+     "eId": "chap_3/lvl_H/lvl_III"
     }
    ],
    "marginalie": [
@@ -12469,15 +13179,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "III. Festsetzung der Hilflosenentschädigung"
+     "label": "III. Festsetzung der Hilflosenentschädigung",
+     "eId": "chap_3/lvl_H/lvl_III"
     }
    ],
    "marginalie": [
@@ -12506,15 +13219,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "III. Festsetzung der Hilflosenentschädigung"
+     "label": "III. Festsetzung der Hilflosenentschädigung",
+     "eId": "chap_3/lvl_H/lvl_III"
     }
    ],
    "marginalie": [
@@ -12556,11 +13272,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     }
    ],
    "marginalie": [],
@@ -12587,11 +13305,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     }
    ],
    "marginalie": [
@@ -12620,11 +13340,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     }
    ],
    "marginalie": [
@@ -12697,15 +13419,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "IV. Gemeinsame Verfahrensbestimmungen"
+     "label": "IV. Gemeinsame Verfahrensbestimmungen",
+     "eId": "chap_3/lvl_H/lvl_IV"
     }
    ],
    "marginalie": [
@@ -12758,15 +13483,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "V. Auszahlung der Renten und Hilflosenentschädigungen"
+     "label": "V. Auszahlung der Renten und Hilflosenentschädigungen",
+     "eId": "chap_3/lvl_H/lvl_V"
     }
    ],
    "marginalie": [],
@@ -12793,15 +13521,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "V. Auszahlung der Renten und Hilflosenentschädigungen"
+     "label": "V. Auszahlung der Renten und Hilflosenentschädigungen",
+     "eId": "chap_3/lvl_H/lvl_V"
     }
    ],
    "marginalie": [
@@ -12850,15 +13581,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "V. Auszahlung der Renten und Hilflosenentschädigungen"
+     "label": "V. Auszahlung der Renten und Hilflosenentschädigungen",
+     "eId": "chap_3/lvl_H/lvl_V"
     }
    ],
    "marginalie": [],
@@ -12885,15 +13619,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "VI. Nachzahlung und uneinbringliche Rückerstattung"
+     "label": "VI. Nachzahlung und uneinbringliche Rückerstattung",
+     "eId": "chap_3/lvl_H/lvl_VI"
     }
    ],
    "marginalie": [],
@@ -12916,15 +13653,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "VI. Nachzahlung und uneinbringliche Rückerstattung"
+     "label": "VI. Nachzahlung und uneinbringliche Rückerstattung",
+     "eId": "chap_3/lvl_H/lvl_VI"
     }
    ],
    "marginalie": [
@@ -12961,15 +13701,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "VII. …"
+     "label": "VII. …",
+     "eId": "chap_3/lvl_H/lvl_VII"
     }
    ],
    "marginalie": [],
@@ -12996,15 +13739,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung"
+     "label": "Dritter Abschnitt: Die Renten und die Hilflosenentschädigung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "H. Verschiedene Bestimmungen"
+     "label": "H. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_H"
     },
     {
      "ebene": 3,
-     "label": "VI. Nachzahlung und uneinbringliche Rückerstattung"
+     "label": "VI. Nachzahlung und uneinbringliche Rückerstattung",
+     "eId": "chap_3/lvl_H/lvl_VI"
     }
    ],
    "marginalie": [
@@ -13033,11 +13779,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "A. …"
+     "label": "A. …",
+     "eId": "chap_4/lvl_A"
     }
    ],
    "marginalie": [],
@@ -13060,15 +13808,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Verbandsausgleichskassen"
+     "label": "B. Die Verbandsausgleichskassen",
+     "eId": "chap_4/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "II. …"
+     "label": "II. …",
+     "eId": "chap_4/lvl_B/lvl_II"
     }
    ],
    "marginalie": [],
@@ -13091,15 +13842,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit"
+     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -13128,15 +13882,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit"
+     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -13161,15 +13918,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "A. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "chap_2/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit"
+     "label": "I. Beiträge vom Einkommen aus unselbständiger Erwerbstätigkeit",
+     "eId": "chap_2/lvl_A/lvl_I"
     }
    ],
    "marginalie": [

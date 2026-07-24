@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "151.1",
   "titel": "Bundesgesetz über die Gleichstellung von Frau und Mann",
@@ -72,7 +72,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Zweck"
+     "label": "1. Abschnitt: Zweck",
+     "eId": "sec_1"
     }
    ],
    "marginalie": []
@@ -81,7 +82,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Gleichstellung im Erwerbsleben"
+     "label": "2. Abschnitt: Gleichstellung im Erwerbsleben",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -108,7 +110,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Gleichstellung im Erwerbsleben"
+     "label": "2. Abschnitt: Gleichstellung im Erwerbsleben",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -119,7 +122,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Gleichstellung im Erwerbsleben"
+     "label": "2. Abschnitt: Gleichstellung im Erwerbsleben",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -130,7 +134,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Gleichstellung im Erwerbsleben"
+     "label": "2. Abschnitt: Gleichstellung im Erwerbsleben",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -141,7 +146,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Gleichstellung im Erwerbsleben"
+     "label": "2. Abschnitt: Gleichstellung im Erwerbsleben",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -152,7 +158,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Gleichstellung im Erwerbsleben"
+     "label": "2. Abschnitt: Gleichstellung im Erwerbsleben",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -163,7 +170,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Besondere Bestimmungen für Arbeitsverhältnisse nach Obligationenrecht"
+     "label": "3. Abschnitt: Besondere Bestimmungen für Arbeitsverhältnisse nach Obligationenrecht",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -190,7 +198,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Besondere Bestimmungen für Arbeitsverhältnisse nach Obligationenrecht"
+     "label": "3. Abschnitt: Besondere Bestimmungen für Arbeitsverhältnisse nach Obligationenrecht",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -217,7 +226,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Besondere Bestimmungen für Arbeitsverhältnisse nach Obligationenrecht"
+     "label": "3. Abschnitt: Besondere Bestimmungen für Arbeitsverhältnisse nach Obligationenrecht",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -243,7 +253,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Rechtsschutz bei öffentlich-rechtlichen Arbeitsverhältnissen"
+     "label": "4. Abschnitt: Rechtsschutz bei öffentlich-rechtlichen Arbeitsverhältnissen",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [],
@@ -373,7 +384,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Finanzhilfen"
+     "label": "5. Abschnitt: Finanzhilfen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -384,7 +396,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Finanzhilfen"
+     "label": "5. Abschnitt: Finanzhilfen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -395,7 +408,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Eidgenössisches Büro für die Gleichstellung von Frau und Mann"
+     "label": "6. Abschnitt: Eidgenössisches Büro für die Gleichstellung von Frau und Mann",
+     "eId": "sec_6"
     }
    ],
    "marginalie": []
@@ -404,7 +418,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Schlussbestimmungen"
+     "label": "7. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -415,7 +430,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Schlussbestimmungen"
+     "label": "7. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -435,7 +451,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Besondere Bestimmungen für Arbeitsverhältnisse nach Obligationenrecht"
+     "label": "3. Abschnitt: Besondere Bestimmungen für Arbeitsverhältnisse nach Obligationenrecht",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [],
@@ -462,7 +479,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung"
+     "label": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -492,7 +510,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung"
+     "label": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -503,7 +522,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung"
+     "label": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -514,7 +534,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung"
+     "label": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -566,7 +587,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung"
+     "label": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -577,7 +599,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung"
+     "label": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -588,7 +611,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung"
+     "label": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -599,7 +623,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung"
+     "label": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -626,7 +651,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung"
+     "label": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -637,7 +663,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Schlussbestimmungen"
+     "label": "7. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -666,7 +693,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Schlussbestimmungen"
+     "label": "7. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "172.056.11",
   "titel": "Verordnung über das öffentliche Beschaffungswesen",
@@ -41,7 +41,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Geltungsbereich"
+     "label": "1. Abschnitt: Geltungsbereich",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -61,7 +62,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Geltungsbereich"
+     "label": "1. Abschnitt: Geltungsbereich",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -72,7 +74,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Allgemeine Grundsätze"
+     "label": "2. Abschnitt: Allgemeine Grundsätze",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -83,7 +86,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Allgemeine Grundsätze"
+     "label": "2. Abschnitt: Allgemeine Grundsätze",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -94,7 +98,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Vergabeverfahren"
+     "label": "3. Abschnitt: Vergabeverfahren",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -105,7 +110,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Vergabeverfahren"
+     "label": "3. Abschnitt: Vergabeverfahren",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -116,7 +122,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Vergabeverfahren"
+     "label": "3. Abschnitt: Vergabeverfahren",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -127,7 +134,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Vergabeverfahren"
+     "label": "3. Abschnitt: Vergabeverfahren",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -138,7 +146,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Vergabeverfahren"
+     "label": "3. Abschnitt: Vergabeverfahren",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -149,7 +158,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Vergabeverfahren"
+     "label": "3. Abschnitt: Vergabeverfahren",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -160,7 +170,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Vergabeverfahren"
+     "label": "3. Abschnitt: Vergabeverfahren",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -171,7 +182,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Vergabeverfahren"
+     "label": "3. Abschnitt: Vergabeverfahren",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -182,7 +194,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Wettbewerbs- und Studienauftragsverfahren"
+     "label": "4. Abschnitt: Wettbewerbs- und Studienauftragsverfahren",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -193,7 +206,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Wettbewerbs- und Studienauftragsverfahren"
+     "label": "4. Abschnitt: Wettbewerbs- und Studienauftragsverfahren",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -204,7 +218,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Wettbewerbs- und Studienauftragsverfahren"
+     "label": "4. Abschnitt: Wettbewerbs- und Studienauftragsverfahren",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -215,7 +230,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Wettbewerbs- und Studienauftragsverfahren"
+     "label": "4. Abschnitt: Wettbewerbs- und Studienauftragsverfahren",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -226,7 +242,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Wettbewerbs- und Studienauftragsverfahren"
+     "label": "4. Abschnitt: Wettbewerbs- und Studienauftragsverfahren",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -237,7 +254,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Wettbewerbs- und Studienauftragsverfahren"
+     "label": "4. Abschnitt: Wettbewerbs- und Studienauftragsverfahren",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -248,7 +266,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Wettbewerbs- und Studienauftragsverfahren"
+     "label": "4. Abschnitt: Wettbewerbs- und Studienauftragsverfahren",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -285,7 +304,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Sprachen"
+     "label": "5. Abschnitt: Sprachen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -296,7 +316,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Sprachen"
+     "label": "5. Abschnitt: Sprachen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -307,7 +328,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Sprachen"
+     "label": "5. Abschnitt: Sprachen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -318,7 +340,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Sprachen"
+     "label": "5. Abschnitt: Sprachen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -329,7 +352,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Weitere Bestimmungen"
+     "label": "6. Abschnitt: Weitere Bestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -366,7 +390,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Weitere Bestimmungen"
+     "label": "6. Abschnitt: Weitere Bestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -377,7 +402,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Weitere Bestimmungen"
+     "label": "6. Abschnitt: Weitere Bestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -388,7 +414,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Weitere Bestimmungen"
+     "label": "6. Abschnitt: Weitere Bestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -399,7 +426,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Weitere Bestimmungen"
+     "label": "6. Abschnitt: Weitere Bestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -424,7 +452,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Weitere Bestimmungen"
+     "label": "6. Abschnitt: Weitere Bestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -435,7 +464,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Schlussbestimmungen"
+     "label": "7. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -516,7 +546,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Schlussbestimmungen"
+     "label": "7. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [

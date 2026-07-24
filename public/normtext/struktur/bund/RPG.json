@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "700",
   "titel": "Bundesgesetz über die Raumplanung",
@@ -88,7 +88,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Einleitung"
+     "label": "1. Titel: Einleitung",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -221,7 +222,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Einleitung"
+     "label": "1. Titel: Einleitung",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -232,7 +234,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Einleitung"
+     "label": "1. Titel: Einleitung",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -309,7 +312,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Einleitung"
+     "label": "1. Titel: Einleitung",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -320,7 +324,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Einleitung"
+     "label": "1. Titel: Einleitung",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -438,11 +443,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Richtpläne der Kantone"
+     "label": "1. Kapitel: Richtpläne der Kantone",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -647,11 +654,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Richtpläne der Kantone"
+     "label": "1. Kapitel: Richtpläne der Kantone",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -662,11 +671,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Richtpläne der Kantone"
+     "label": "1. Kapitel: Richtpläne der Kantone",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -740,11 +751,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Richtpläne der Kantone"
+     "label": "1. Kapitel: Richtpläne der Kantone",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -755,11 +768,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Richtpläne der Kantone"
+     "label": "1. Kapitel: Richtpläne der Kantone",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -818,11 +833,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Richtpläne der Kantone"
+     "label": "1. Kapitel: Richtpläne der Kantone",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -833,11 +850,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Richtpläne der Kantone"
+     "label": "1. Kapitel: Richtpläne der Kantone",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -848,11 +867,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Besondere Massnahmen des Bundes"
+     "label": "2. Kapitel: Besondere Massnahmen des Bundes",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -863,15 +884,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweck und Inhalt"
+     "label": "1. Abschnitt: Zweck und Inhalt",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -882,15 +906,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweck und Inhalt"
+     "label": "1. Abschnitt: Zweck und Inhalt",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -935,15 +962,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweck und Inhalt"
+     "label": "1. Abschnitt: Zweck und Inhalt",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1017,15 +1047,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweck und Inhalt"
+     "label": "1. Abschnitt: Zweck und Inhalt",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1036,15 +1069,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweck und Inhalt"
+     "label": "1. Abschnitt: Zweck und Inhalt",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1105,15 +1141,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweck und Inhalt"
+     "label": "1. Abschnitt: Zweck und Inhalt",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1158,15 +1197,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweck und Inhalt"
+     "label": "1. Abschnitt: Zweck und Inhalt",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1177,15 +1219,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Allgemeine Wirkungen"
+     "label": "2. Abschnitt: Allgemeine Wirkungen",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1215,15 +1260,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Allgemeine Wirkungen"
+     "label": "2. Abschnitt: Allgemeine Wirkungen",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1234,15 +1282,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Allgemeine Wirkungen"
+     "label": "2. Abschnitt: Allgemeine Wirkungen",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1253,15 +1304,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
+     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen",
+     "eId": "tit_2/chap_3/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1339,15 +1393,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuständigkeit und Verfahren"
+     "label": "3. Abschnitt: Zuständigkeit und Verfahren",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1448,15 +1505,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuständigkeit und Verfahren"
+     "label": "3. Abschnitt: Zuständigkeit und Verfahren",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1467,15 +1527,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuständigkeit und Verfahren"
+     "label": "3. Abschnitt: Zuständigkeit und Verfahren",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1486,7 +1549,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [],
@@ -1513,7 +1577,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -1524,7 +1589,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -1535,7 +1601,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Organisation"
+     "label": "4. Titel: Organisation",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1546,7 +1613,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Organisation"
+     "label": "4. Titel: Organisation",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1567,7 +1635,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Rechtsschutz"
+     "label": "5. Titel: Rechtsschutz",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -1616,7 +1685,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Rechtsschutz"
+     "label": "5. Titel: Rechtsschutz",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -1701,7 +1771,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -1778,7 +1849,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -1807,7 +1879,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -1818,7 +1891,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [],
@@ -1845,7 +1919,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -1865,15 +1940,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweck und Inhalt"
+     "label": "1. Abschnitt: Zweck und Inhalt",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1902,15 +1980,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweck und Inhalt"
+     "label": "1. Abschnitt: Zweck und Inhalt",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1999,15 +2080,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweck und Inhalt"
+     "label": "1. Abschnitt: Zweck und Inhalt",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -2053,15 +2137,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweck und Inhalt"
+     "label": "1. Abschnitt: Zweck und Inhalt",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -2142,15 +2229,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweck und Inhalt"
+     "label": "1. Abschnitt: Zweck und Inhalt",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -2259,15 +2349,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweck und Inhalt"
+     "label": "1. Abschnitt: Zweck und Inhalt",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -2296,15 +2389,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweck und Inhalt"
+     "label": "1. Abschnitt: Zweck und Inhalt",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -2333,15 +2429,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
+     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen",
+     "eId": "tit_2/chap_3/sec_2_a"
     }
    ],
    "marginalie": [
@@ -2370,15 +2469,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
+     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen",
+     "eId": "tit_2/chap_3/sec_2_a"
     }
    ],
    "marginalie": [
@@ -2500,15 +2602,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
+     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen",
+     "eId": "tit_2/chap_3/sec_2_a"
     }
    ],
    "marginalie": [
@@ -2537,15 +2642,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
+     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen",
+     "eId": "tit_2/chap_3/sec_2_a"
     }
    ],
    "marginalie": [
@@ -2670,15 +2778,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
+     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen",
+     "eId": "tit_2/chap_3/sec_2_a"
     }
    ],
    "marginalie": [
@@ -2707,15 +2818,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
+     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen",
+     "eId": "tit_2/chap_3/sec_2_a"
     }
    ],
    "marginalie": [
@@ -2856,15 +2970,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
+     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen",
+     "eId": "tit_2/chap_3/sec_2_a"
     }
    ],
    "marginalie": [
@@ -2913,15 +3030,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2b. Abschnitt: Berichterstattung"
+     "label": "2b. Abschnitt: Berichterstattung",
+     "eId": "tit_2/chap_3/sec_2_b"
     }
    ],
    "marginalie": [],
@@ -2949,15 +3069,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
+     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen",
+     "eId": "tit_2/chap_3/sec_2_a"
     }
    ],
    "marginalie": [
@@ -2990,15 +3113,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
+     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen",
+     "eId": "tit_2/chap_3/sec_2_a"
     }
    ],
    "marginalie": [
@@ -3027,15 +3153,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen"
+     "label": "2a. Abschnitt: Ausnahmebewilligungen ausserhalb der Bauzonen",
+     "eId": "tit_2/chap_3/sec_2_a"
     }
    ],
    "marginalie": [
@@ -3081,15 +3210,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuständigkeit und Verfahren"
+     "label": "3. Abschnitt: Zuständigkeit und Verfahren",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3118,15 +3250,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nutzungspläne"
+     "label": "3. Kapitel: Nutzungspläne",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuständigkeit und Verfahren"
+     "label": "3. Abschnitt: Zuständigkeit und Verfahren",
+     "eId": "tit_2/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3163,7 +3298,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -3200,7 +3336,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -3245,7 +3382,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -3274,7 +3412,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -3303,7 +3442,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -3332,7 +3472,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Einleitung"
+     "label": "1. Titel: Einleitung",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -3361,11 +3502,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Richtpläne der Kantone"
+     "label": "1. Kapitel: Richtpläne der Kantone",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -3418,11 +3561,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Richtpläne der Kantone"
+     "label": "1. Kapitel: Richtpläne der Kantone",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -3451,11 +3596,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Richtpläne der Kantone"
+     "label": "1. Kapitel: Richtpläne der Kantone",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -3484,11 +3631,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Massnahmen der Raumplanung"
+     "label": "2. Titel: Massnahmen der Raumplanung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Richtpläne der Kantone"
+     "label": "1. Kapitel: Richtpläne der Kantone",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [

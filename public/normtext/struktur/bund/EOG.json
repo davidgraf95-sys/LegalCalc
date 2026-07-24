@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "834.1",
   "titel": "Bundesgesetz über den Erwerbsersatz",
@@ -88,7 +88,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Anwendbarkeit des ATSG"
+     "label": "Erster Abschnitt: Anwendbarkeit des ATSG",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [],
@@ -134,11 +135,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "II. Die Entschädigungsarten"
+     "label": "II. Die Entschädigungsarten",
+     "eId": "chap_1_a/lvl_II"
     }
    ],
    "marginalie": [
@@ -163,11 +166,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "II. Die Entschädigungsarten"
+     "label": "II. Die Entschädigungsarten",
+     "eId": "chap_1_a/lvl_II"
     }
    ],
    "marginalie": [],
@@ -190,11 +195,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "II. Die Entschädigungsarten"
+     "label": "II. Die Entschädigungsarten",
+     "eId": "chap_1_a/lvl_II"
     }
    ],
    "marginalie": [
@@ -259,11 +266,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "II. Die Entschädigungsarten"
+     "label": "II. Die Entschädigungsarten",
+     "eId": "chap_1_a/lvl_II"
     }
    ],
    "marginalie": [
@@ -288,11 +297,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "II. Die Entschädigungsarten"
+     "label": "II. Die Entschädigungsarten",
+     "eId": "chap_1_a/lvl_II"
     }
    ],
    "marginalie": [
@@ -337,11 +348,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "III. Die Bemessung der Entschädigungen"
+     "label": "III. Die Bemessung der Entschädigungen",
+     "eId": "chap_1_a/lvl_III"
     }
    ],
    "marginalie": [
@@ -411,11 +424,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "III. Die Bemessung der Entschädigungen"
+     "label": "III. Die Bemessung der Entschädigungen",
+     "eId": "chap_1_a/lvl_III"
     }
    ],
    "marginalie": [
@@ -452,11 +467,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "III. Die Bemessung der Entschädigungen"
+     "label": "III. Die Bemessung der Entschädigungen",
+     "eId": "chap_1_a/lvl_III"
     }
    ],
    "marginalie": [
@@ -534,11 +551,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "III. Die Bemessung der Entschädigungen"
+     "label": "III. Die Bemessung der Entschädigungen",
+     "eId": "chap_1_a/lvl_III"
     }
    ],
    "marginalie": [],
@@ -565,11 +584,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "III. Die Bemessung der Entschädigungen"
+     "label": "III. Die Bemessung der Entschädigungen",
+     "eId": "chap_1_a/lvl_III"
     }
    ],
    "marginalie": [
@@ -606,11 +627,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "III. Die Bemessung der Entschädigungen"
+     "label": "III. Die Bemessung der Entschädigungen",
+     "eId": "chap_1_a/lvl_III"
     }
    ],
    "marginalie": [],
@@ -633,11 +656,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "III. Die Bemessung der Entschädigungen"
+     "label": "III. Die Bemessung der Entschädigungen",
+     "eId": "chap_1_a/lvl_III"
     }
    ],
    "marginalie": [
@@ -666,11 +691,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "III. Die Bemessung der Entschädigungen"
+     "label": "III. Die Bemessung der Entschädigungen",
+     "eId": "chap_1_a/lvl_III"
     }
    ],
    "marginalie": [
@@ -707,11 +734,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1_a/lvl_IV"
     }
    ],
    "marginalie": [
@@ -797,11 +826,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1_a/lvl_IV"
     }
    ],
    "marginalie": [
@@ -847,11 +878,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1_a/lvl_IV"
     }
    ],
    "marginalie": [
@@ -901,11 +934,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1_a/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1090,7 +1125,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Organisation"
+     "label": "Zweiter Abschnitt: Die Organisation",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1244,7 +1280,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Organisation"
+     "label": "Zweiter Abschnitt: Die Organisation",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1287,7 +1324,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Organisation"
+     "label": "Zweiter Abschnitt: Die Organisation",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1390,7 +1428,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Rechtspflege und Strafbestimmungen"
+     "label": "Dritter Abschnitt: Rechtspflege und Strafbestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1469,7 +1508,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Rechtspflege und Strafbestimmungen"
+     "label": "Dritter Abschnitt: Rechtspflege und Strafbestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1496,7 +1536,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Finanzierung"
+     "label": "Vierter Abschnitt: Die Finanzierung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1538,7 +1579,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Finanzierung"
+     "label": "Vierter Abschnitt: Die Finanzierung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1673,7 +1715,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Finanzierung"
+     "label": "Vierter Abschnitt: Die Finanzierung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1715,7 +1758,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Sechster Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1766,7 +1810,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Sechster Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -1793,7 +1838,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Sechster Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -1820,7 +1866,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Sechster Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -1847,7 +1894,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Sechster Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1858,7 +1906,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Sechster Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1887,11 +1936,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "III. Die Bemessung der Entschädigungen"
+     "label": "III. Die Bemessung der Entschädigungen",
+     "eId": "chap_1_a/lvl_III"
     }
    ],
    "marginalie": [
@@ -1938,11 +1989,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "III. Die Bemessung der Entschädigungen"
+     "label": "III. Die Bemessung der Entschädigungen",
+     "eId": "chap_1_a/lvl_III"
     }
    ],
    "marginalie": [
@@ -2007,11 +2060,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIa. Die Mutterschaftsentschädigung"
+     "label": "IIIa. Die Mutterschaftsentschädigung",
+     "eId": "chap_1_a/lvl_III_a"
     }
    ],
    "marginalie": [
@@ -2098,11 +2153,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIa. Die Mutterschaftsentschädigung"
+     "label": "IIIa. Die Mutterschaftsentschädigung",
+     "eId": "chap_1_a/lvl_III_a"
     }
    ],
    "marginalie": [
@@ -2179,11 +2236,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIa. Die Mutterschaftsentschädigung"
+     "label": "IIIa. Die Mutterschaftsentschädigung",
+     "eId": "chap_1_a/lvl_III_a"
     }
    ],
    "marginalie": [
@@ -2216,11 +2275,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIa. Die Mutterschaftsentschädigung"
+     "label": "IIIa. Die Mutterschaftsentschädigung",
+     "eId": "chap_1_a/lvl_III_a"
     }
    ],
    "marginalie": [
@@ -2269,11 +2330,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIa. Die Mutterschaftsentschädigung"
+     "label": "IIIa. Die Mutterschaftsentschädigung",
+     "eId": "chap_1_a/lvl_III_a"
     }
    ],
    "marginalie": [
@@ -2284,11 +2347,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIa. Die Mutterschaftsentschädigung"
+     "label": "IIIa. Die Mutterschaftsentschädigung",
+     "eId": "chap_1_a/lvl_III_a"
     }
    ],
    "marginalie": [
@@ -2313,11 +2378,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIa. Die Mutterschaftsentschädigung"
+     "label": "IIIa. Die Mutterschaftsentschädigung",
+     "eId": "chap_1_a/lvl_III_a"
     }
    ],
    "marginalie": [
@@ -2411,11 +2478,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIa. Die Mutterschaftsentschädigung"
+     "label": "IIIa. Die Mutterschaftsentschädigung",
+     "eId": "chap_1_a/lvl_III_a"
     }
    ],
    "marginalie": [
@@ -2448,11 +2517,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIb. Die Entschädigung des andern Elternteils"
+     "label": "IIIb. Die Entschädigung des andern Elternteils",
+     "eId": "chap_1_a/lvl_III_b"
     }
    ],
    "marginalie": [
@@ -2641,11 +2712,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIb. Die Entschädigung des andern Elternteils"
+     "label": "IIIb. Die Entschädigung des andern Elternteils",
+     "eId": "chap_1_a/lvl_III_b"
     }
    ],
    "marginalie": [
@@ -2718,11 +2791,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIb. Die Entschädigung des andern Elternteils"
+     "label": "IIIb. Die Entschädigung des andern Elternteils",
+     "eId": "chap_1_a/lvl_III_b"
     }
    ],
    "marginalie": [
@@ -2755,11 +2830,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIb. Die Entschädigung des andern Elternteils"
+     "label": "IIIb. Die Entschädigung des andern Elternteils",
+     "eId": "chap_1_a/lvl_III_b"
     }
    ],
    "marginalie": [
@@ -2792,11 +2869,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIb. Die Entschädigung des andern Elternteils"
+     "label": "IIIb. Die Entschädigung des andern Elternteils",
+     "eId": "chap_1_a/lvl_III_b"
     }
    ],
    "marginalie": [
@@ -2821,11 +2900,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIb. Die Entschädigung des andern Elternteils"
+     "label": "IIIb. Die Entschädigung des andern Elternteils",
+     "eId": "chap_1_a/lvl_III_b"
     }
    ],
    "marginalie": [
@@ -2963,11 +3044,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen"
+     "label": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen",
+     "eId": "chap_1_a/lvl_IIIc"
     }
    ],
    "marginalie": [
@@ -3010,11 +3093,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen"
+     "label": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen",
+     "eId": "chap_1_a/lvl_IIIc"
     }
    ],
    "marginalie": [
@@ -3025,11 +3110,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen"
+     "label": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen",
+     "eId": "chap_1_a/lvl_IIIc"
     }
    ],
    "marginalie": [
@@ -3040,11 +3127,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen"
+     "label": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen",
+     "eId": "chap_1_a/lvl_IIIc"
     }
    ],
    "marginalie": [
@@ -3055,11 +3144,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen"
+     "label": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen",
+     "eId": "chap_1_a/lvl_IIIc"
     }
    ],
    "marginalie": [
@@ -3070,11 +3161,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen"
+     "label": "IIIc. Die Entschädigung für Eltern, die ein wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigtes Kind betreuen",
+     "eId": "chap_1_a/lvl_IIIc"
     }
    ],
    "marginalie": [
@@ -3152,11 +3245,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIId. Die Adoptionsentschädigung"
+     "label": "IIId. Die Adoptionsentschädigung",
+     "eId": "chap_1_a/lvl_IIId"
     }
    ],
    "marginalie": [
@@ -3229,11 +3324,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIId. Die Adoptionsentschädigung"
+     "label": "IIId. Die Adoptionsentschädigung",
+     "eId": "chap_1_a/lvl_IIId"
     }
    ],
    "marginalie": [
@@ -3244,11 +3341,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIId. Die Adoptionsentschädigung"
+     "label": "IIId. Die Adoptionsentschädigung",
+     "eId": "chap_1_a/lvl_IIId"
     }
    ],
    "marginalie": [
@@ -3259,11 +3358,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIId. Die Adoptionsentschädigung"
+     "label": "IIId. Die Adoptionsentschädigung",
+     "eId": "chap_1_a/lvl_IIId"
     }
    ],
    "marginalie": [
@@ -3274,11 +3375,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IIId. Die Adoptionsentschädigung"
+     "label": "IIId. Die Adoptionsentschädigung",
+     "eId": "chap_1_a/lvl_IIId"
     }
    ],
    "marginalie": [
@@ -3289,11 +3392,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1_a/lvl_IV"
     }
    ],
    "marginalie": [
@@ -3383,11 +3488,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "I. Der Entschädigungsanspruch für Dienstleistende"
+     "label": "I. Der Entschädigungsanspruch für Dienstleistende",
+     "eId": "chap_1_a/lvl_I"
     }
    ],
    "marginalie": [],
@@ -3685,11 +3792,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "IV. Verschiedene Bestimmungen"
+     "label": "IV. Verschiedene Bestimmungen",
+     "eId": "chap_1_a/lvl_IV"
     }
    ],
    "marginalie": [
@@ -3776,7 +3885,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Die Organisation"
+     "label": "Zweiter Abschnitt: Die Organisation",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3896,7 +4006,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Verhältnis zum europäischen Recht"
+     "label": "Fünfter Abschnitt: Verhältnis zum europäischen Recht",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [],
@@ -4048,7 +4159,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Sechster Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4099,11 +4211,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung"
+     "label": "Erster Abschnitt a: Die Erwerbsausfallentschädigung",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "I. Der Entschädigungsanspruch für Dienstleistende"
+     "label": "I. Der Entschädigungsanspruch für Dienstleistende",
+     "eId": "chap_1_a/lvl_I"
     }
    ],
    "marginalie": [],

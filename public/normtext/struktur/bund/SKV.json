@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "741.013",
   "titel": "Verordnung über die Kontrolle des Strassenverkehrs",
@@ -42,7 +42,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -53,7 +54,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -143,7 +145,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -206,7 +209,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -358,7 +362,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -396,7 +401,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -407,7 +413,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -418,7 +425,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [],
@@ -441,7 +449,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -543,11 +552,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen"
+     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit"
+     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -572,11 +583,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen"
+     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit"
+     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -627,11 +640,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen"
+     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit"
+     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -656,11 +671,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen"
+     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit"
+     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -709,11 +726,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen"
+     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit"
+     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -724,11 +743,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen"
+     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit"
+     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -739,11 +760,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen"
+     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit"
+     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -781,11 +804,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen"
+     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit"
+     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -810,11 +835,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen"
+     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit"
+     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -825,11 +852,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen"
+     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit"
+     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -840,11 +869,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen"
+     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kontrolle der Arbeits-, Lenk- und Ruhezeit der berufsmässigen Motorfahrzeugführer und -führerinnen"
+     "label": "2. Abschnitt: Kontrolle der Arbeits-, Lenk- und Ruhezeit der berufsmässigen Motorfahrzeugführer und -führerinnen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -895,11 +926,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen"
+     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kontrolle der Arbeits-, Lenk- und Ruhezeit der berufsmässigen Motorfahrzeugführer und -führerinnen"
+     "label": "2. Abschnitt: Kontrolle der Arbeits-, Lenk- und Ruhezeit der berufsmässigen Motorfahrzeugführer und -führerinnen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -936,11 +969,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen"
+     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kontrolle der Arbeits-, Lenk- und Ruhezeit der berufsmässigen Motorfahrzeugführer und -führerinnen"
+     "label": "2. Abschnitt: Kontrolle der Arbeits-, Lenk- und Ruhezeit der berufsmässigen Motorfahrzeugführer und -führerinnen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -991,11 +1026,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle der Fahrzeuge"
+     "label": "3. Kapitel: Kontrolle der Fahrzeuge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kontrolle des technischen Zustandes von Fahrzeugen"
+     "label": "1. Abschnitt: Kontrolle des technischen Zustandes von Fahrzeugen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1006,11 +1043,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle der Fahrzeuge"
+     "label": "3. Kapitel: Kontrolle der Fahrzeuge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kontrolle des technischen Zustandes von Fahrzeugen"
+     "label": "1. Abschnitt: Kontrolle des technischen Zustandes von Fahrzeugen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1043,11 +1082,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle der Fahrzeuge"
+     "label": "3. Kapitel: Kontrolle der Fahrzeuge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kontrolle des technischen Zustandes von Fahrzeugen"
+     "label": "1. Abschnitt: Kontrolle des technischen Zustandes von Fahrzeugen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1086,11 +1127,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle der Fahrzeuge"
+     "label": "3. Kapitel: Kontrolle der Fahrzeuge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gefahrgutkontrollen"
+     "label": "2. Abschnitt: Gefahrgutkontrollen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1116,11 +1159,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle der Fahrzeuge"
+     "label": "3. Kapitel: Kontrolle der Fahrzeuge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gefahrgutkontrollen"
+     "label": "2. Abschnitt: Gefahrgutkontrollen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1131,11 +1176,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Kontrolle der Fahrzeuge"
+     "label": "3. Kapitel: Kontrolle der Fahrzeuge",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gefahrgutkontrollen"
+     "label": "2. Abschnitt: Gefahrgutkontrollen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1146,11 +1193,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Massnahmen"
+     "label": "4. Kapitel: Massnahmen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Wiederherstellung des vorschriftsgemässen Zustandes"
+     "label": "1. Abschnitt: Wiederherstellung des vorschriftsgemässen Zustandes",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": []
@@ -1159,11 +1208,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Massnahmen"
+     "label": "4. Kapitel: Massnahmen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verhinderung der Weiterfahrt und Ausweisabnahme"
+     "label": "2. Abschnitt: Verhinderung der Weiterfahrt und Ausweisabnahme",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1230,11 +1281,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Massnahmen"
+     "label": "4. Kapitel: Massnahmen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verhinderung der Weiterfahrt und Ausweisabnahme"
+     "label": "2. Abschnitt: Verhinderung der Weiterfahrt und Ausweisabnahme",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1259,11 +1312,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Massnahmen"
+     "label": "4. Kapitel: Massnahmen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verhinderung der Weiterfahrt und Ausweisabnahme"
+     "label": "2. Abschnitt: Verhinderung der Weiterfahrt und Ausweisabnahme",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1288,11 +1343,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Massnahmen"
+     "label": "4. Kapitel: Massnahmen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verhinderung der Weiterfahrt und Ausweisabnahme"
+     "label": "2. Abschnitt: Verhinderung der Weiterfahrt und Ausweisabnahme",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1317,11 +1374,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Massnahmen"
+     "label": "4. Kapitel: Massnahmen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verhinderung der Weiterfahrt und Ausweisabnahme"
+     "label": "2. Abschnitt: Verhinderung der Weiterfahrt und Ausweisabnahme",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1347,11 +1406,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Massnahmen"
+     "label": "4. Kapitel: Massnahmen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verhinderung der Weiterfahrt und Ausweisabnahme"
+     "label": "2. Abschnitt: Verhinderung der Weiterfahrt und Ausweisabnahme",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1362,11 +1423,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Massnahmen"
+     "label": "4. Kapitel: Massnahmen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Meldungen der Polizei"
+     "label": "3. Abschnitt: Meldungen der Polizei",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1406,11 +1469,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Massnahmen"
+     "label": "4. Kapitel: Massnahmen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Meldungen der Polizei"
+     "label": "3. Abschnitt: Meldungen der Polizei",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1421,11 +1486,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Massnahmen"
+     "label": "4. Kapitel: Massnahmen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Meldungen der Polizei"
+     "label": "3. Abschnitt: Meldungen der Polizei",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1436,11 +1503,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Massnahmen"
+     "label": "4. Kapitel: Massnahmen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Meldungen der Polizei"
+     "label": "3. Abschnitt: Meldungen der Polizei",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1451,7 +1520,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Informationen und Meldungen zwischen der Schweiz und den Mitgliedstaaten der Europäischen Union"
+     "label": "5. Kapitel: Informationen und Meldungen zwischen der Schweiz und den Mitgliedstaaten der Europäischen Union",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1462,7 +1532,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Informationen und Meldungen zwischen der Schweiz und den Mitgliedstaaten der Europäischen Union"
+     "label": "5. Kapitel: Informationen und Meldungen zwischen der Schweiz und den Mitgliedstaaten der Europäischen Union",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1473,7 +1544,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Informationen und Meldungen zwischen der Schweiz und den Mitgliedstaaten der Europäischen Union"
+     "label": "5. Kapitel: Informationen und Meldungen zwischen der Schweiz und den Mitgliedstaaten der Europäischen Union",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1484,7 +1556,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Informationen und Meldungen zwischen der Schweiz und den Mitgliedstaaten der Europäischen Union"
+     "label": "5. Kapitel: Informationen und Meldungen zwischen der Schweiz und den Mitgliedstaaten der Europäischen Union",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1495,11 +1568,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Meldewesen und Datenbearbeitung"
+     "label": "6. Kapitel: Meldewesen und Datenbearbeitung",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Meldungen der Kantone"
+     "label": "1. Abschnitt: Meldungen der Kantone",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1525,11 +1600,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Meldewesen und Datenbearbeitung"
+     "label": "6. Kapitel: Meldewesen und Datenbearbeitung",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Meldungen der Kantone"
+     "label": "1. Abschnitt: Meldungen der Kantone",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1540,11 +1617,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Meldewesen und Datenbearbeitung"
+     "label": "6. Kapitel: Meldewesen und Datenbearbeitung",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berichterstattung des ASTRA"
+     "label": "2. Abschnitt: Berichterstattung des ASTRA",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [],
@@ -1567,11 +1646,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Meldewesen und Datenbearbeitung"
+     "label": "6. Kapitel: Meldewesen und Datenbearbeitung",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Datenbearbeitung"
+     "label": "3. Abschnitt: Datenbearbeitung",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -1596,11 +1677,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Meldewesen und Datenbearbeitung"
+     "label": "6. Kapitel: Meldewesen und Datenbearbeitung",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Datenbearbeitung"
+     "label": "3. Abschnitt: Datenbearbeitung",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -1611,7 +1694,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "7. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -1622,7 +1706,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "7. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -1649,7 +1734,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "7. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -1660,11 +1746,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen"
+     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit"
+     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1689,11 +1777,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen"
+     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit"
+     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1731,11 +1821,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen"
+     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit"
+     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1760,11 +1852,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen"
+     "label": "2. Kapitel: Kontrolle der Fahrzeugführer und Fahrzeugführerinnen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit"
+     "label": "1. Abschnitt: Kontrolle der Fahrfähigkeit",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1789,7 +1883,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Straf- und Schlussbestimmungen"
+     "label": "7. Kapitel: Straf- und Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],

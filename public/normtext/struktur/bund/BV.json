@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "101",
   "titel": "Bundesverfassung der Schweizerischen Eidgenossenschaft",
@@ -74,7 +74,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -85,7 +86,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -96,7 +98,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -107,7 +110,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -118,7 +122,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -129,7 +134,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -140,11 +146,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -155,11 +163,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -170,11 +180,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -185,11 +197,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -200,11 +214,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -215,11 +231,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -230,11 +248,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -245,11 +265,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -260,11 +282,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -275,11 +299,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -290,11 +316,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -305,11 +333,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -320,11 +350,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -335,11 +367,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -350,11 +384,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -365,11 +401,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -380,11 +418,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -395,11 +435,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -410,11 +452,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -425,11 +469,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -440,11 +486,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -455,11 +503,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -470,11 +520,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -485,11 +537,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -500,11 +554,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -515,11 +571,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -530,11 +588,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -545,11 +605,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -560,11 +622,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -575,11 +639,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -590,11 +656,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bürgerrecht und politische Rechte"
+     "label": "2. Kapitel: Bürgerrecht und politische Rechte",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -605,11 +673,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bürgerrecht und politische Rechte"
+     "label": "2. Kapitel: Bürgerrecht und politische Rechte",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -650,11 +720,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bürgerrecht und politische Rechte"
+     "label": "2. Kapitel: Bürgerrecht und politische Rechte",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -665,11 +737,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bürgerrecht und politische Rechte"
+     "label": "2. Kapitel: Bürgerrecht und politische Rechte",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -680,11 +754,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Sozialziele"
+     "label": "3. Kapitel: Sozialziele",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [],
@@ -727,15 +803,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhältnis von Bund und Kantonen"
+     "label": "1. Kapitel: Verhältnis von Bund und Kantonen",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Aufgaben von Bund und Kantonen"
+     "label": "1. Abschnitt: Aufgaben von Bund und Kantonen",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -776,15 +855,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhältnis von Bund und Kantonen"
+     "label": "1. Kapitel: Verhältnis von Bund und Kantonen",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Aufgaben von Bund und Kantonen"
+     "label": "1. Abschnitt: Aufgaben von Bund und Kantonen",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -795,15 +877,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhältnis von Bund und Kantonen"
+     "label": "1. Kapitel: Verhältnis von Bund und Kantonen",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zusammenwirken von Bund und Kantonen"
+     "label": "2. Abschnitt: Zusammenwirken von Bund und Kantonen",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -814,15 +899,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhältnis von Bund und Kantonen"
+     "label": "1. Kapitel: Verhältnis von Bund und Kantonen",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zusammenwirken von Bund und Kantonen"
+     "label": "2. Abschnitt: Zusammenwirken von Bund und Kantonen",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -833,15 +921,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhältnis von Bund und Kantonen"
+     "label": "1. Kapitel: Verhältnis von Bund und Kantonen",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zusammenwirken von Bund und Kantonen"
+     "label": "2. Abschnitt: Zusammenwirken von Bund und Kantonen",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -910,15 +1001,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhältnis von Bund und Kantonen"
+     "label": "1. Kapitel: Verhältnis von Bund und Kantonen",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zusammenwirken von Bund und Kantonen"
+     "label": "2. Abschnitt: Zusammenwirken von Bund und Kantonen",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -959,15 +1053,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhältnis von Bund und Kantonen"
+     "label": "1. Kapitel: Verhältnis von Bund und Kantonen",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zusammenwirken von Bund und Kantonen"
+     "label": "2. Abschnitt: Zusammenwirken von Bund und Kantonen",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1036,15 +1133,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhältnis von Bund und Kantonen"
+     "label": "1. Kapitel: Verhältnis von Bund und Kantonen",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zusammenwirken von Bund und Kantonen"
+     "label": "2. Abschnitt: Zusammenwirken von Bund und Kantonen",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1055,15 +1155,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhältnis von Bund und Kantonen"
+     "label": "1. Kapitel: Verhältnis von Bund und Kantonen",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Gemeinden"
+     "label": "3. Abschnitt: Gemeinden",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": []
@@ -1072,15 +1175,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhältnis von Bund und Kantonen"
+     "label": "1. Kapitel: Verhältnis von Bund und Kantonen",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Bundesgarantien"
+     "label": "4. Abschnitt: Bundesgarantien",
+     "eId": "tit_3/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1091,15 +1197,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhältnis von Bund und Kantonen"
+     "label": "1. Kapitel: Verhältnis von Bund und Kantonen",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Bundesgarantien"
+     "label": "4. Abschnitt: Bundesgarantien",
+     "eId": "tit_3/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1110,15 +1219,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhältnis von Bund und Kantonen"
+     "label": "1. Kapitel: Verhältnis von Bund und Kantonen",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Bundesgarantien"
+     "label": "4. Abschnitt: Bundesgarantien",
+     "eId": "tit_3/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1129,15 +1241,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Beziehungen zum Ausland"
+     "label": "1. Abschnitt: Beziehungen zum Ausland",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1148,15 +1263,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Beziehungen zum Ausland"
+     "label": "1. Abschnitt: Beziehungen zum Ausland",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1167,15 +1285,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Beziehungen zum Ausland"
+     "label": "1. Abschnitt: Beziehungen zum Ausland",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1186,15 +1307,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Sicherheit, Landesverteidigung, Zivilschutz"
+     "label": "2. Abschnitt: Sicherheit, Landesverteidigung, Zivilschutz",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1205,15 +1329,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Sicherheit, Landesverteidigung, Zivilschutz"
+     "label": "2. Abschnitt: Sicherheit, Landesverteidigung, Zivilschutz",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1254,15 +1381,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Sicherheit, Landesverteidigung, Zivilschutz"
+     "label": "2. Abschnitt: Sicherheit, Landesverteidigung, Zivilschutz",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1273,15 +1403,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Sicherheit, Landesverteidigung, Zivilschutz"
+     "label": "2. Abschnitt: Sicherheit, Landesverteidigung, Zivilschutz",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1322,15 +1455,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Sicherheit, Landesverteidigung, Zivilschutz"
+     "label": "2. Abschnitt: Sicherheit, Landesverteidigung, Zivilschutz",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1341,15 +1477,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bildung, Forschung und Kultur"
+     "label": "3. Abschnitt: Bildung, Forschung und Kultur",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1525,15 +1664,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bildung, Forschung und Kultur"
+     "label": "3. Abschnitt: Bildung, Forschung und Kultur",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1578,15 +1720,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bildung, Forschung und Kultur"
+     "label": "3. Abschnitt: Bildung, Forschung und Kultur",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1663,15 +1808,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bildung, Forschung und Kultur"
+     "label": "3. Abschnitt: Bildung, Forschung und Kultur",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1716,15 +1864,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bildung, Forschung und Kultur"
+     "label": "3. Abschnitt: Bildung, Forschung und Kultur",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1801,15 +1952,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bildung, Forschung und Kultur"
+     "label": "3. Abschnitt: Bildung, Forschung und Kultur",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1886,15 +2040,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bildung, Forschung und Kultur"
+     "label": "3. Abschnitt: Bildung, Forschung und Kultur",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1905,15 +2062,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bildung, Forschung und Kultur"
+     "label": "3. Abschnitt: Bildung, Forschung und Kultur",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1924,15 +2084,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bildung, Forschung und Kultur"
+     "label": "3. Abschnitt: Bildung, Forschung und Kultur",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1943,15 +2106,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bildung, Forschung und Kultur"
+     "label": "3. Abschnitt: Bildung, Forschung und Kultur",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1962,15 +2128,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bildung, Forschung und Kultur"
+     "label": "3. Abschnitt: Bildung, Forschung und Kultur",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2015,15 +2184,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Umwelt und Raumplanung"
+     "label": "4. Abschnitt: Umwelt und Raumplanung",
+     "eId": "tit_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -2034,15 +2206,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Umwelt und Raumplanung"
+     "label": "4. Abschnitt: Umwelt und Raumplanung",
+     "eId": "tit_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -2053,15 +2228,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Umwelt und Raumplanung"
+     "label": "4. Abschnitt: Umwelt und Raumplanung",
+     "eId": "tit_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -2072,15 +2250,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Umwelt und Raumplanung"
+     "label": "4. Abschnitt: Umwelt und Raumplanung",
+     "eId": "tit_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -2091,15 +2272,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Umwelt und Raumplanung"
+     "label": "4. Abschnitt: Umwelt und Raumplanung",
+     "eId": "tit_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -2110,15 +2294,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Umwelt und Raumplanung"
+     "label": "4. Abschnitt: Umwelt und Raumplanung",
+     "eId": "tit_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -2129,15 +2316,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Umwelt und Raumplanung"
+     "label": "4. Abschnitt: Umwelt und Raumplanung",
+     "eId": "tit_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -2148,15 +2338,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Umwelt und Raumplanung"
+     "label": "4. Abschnitt: Umwelt und Raumplanung",
+     "eId": "tit_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -2167,15 +2360,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Öffentliche Werke und Verkehr"
+     "label": "5. Abschnitt: Öffentliche Werke und Verkehr",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -2186,15 +2382,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Öffentliche Werke und Verkehr"
+     "label": "5. Abschnitt: Öffentliche Werke und Verkehr",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -2205,15 +2404,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Öffentliche Werke und Verkehr"
+     "label": "5. Abschnitt: Öffentliche Werke und Verkehr",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -2254,15 +2456,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Öffentliche Werke und Verkehr"
+     "label": "5. Abschnitt: Öffentliche Werke und Verkehr",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -2282,15 +2487,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Öffentliche Werke und Verkehr"
+     "label": "5. Abschnitt: Öffentliche Werke und Verkehr",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -2350,15 +2558,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Öffentliche Werke und Verkehr"
+     "label": "5. Abschnitt: Öffentliche Werke und Verkehr",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -2406,15 +2617,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Öffentliche Werke und Verkehr"
+     "label": "5. Abschnitt: Öffentliche Werke und Verkehr",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -2434,15 +2648,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Öffentliche Werke und Verkehr"
+     "label": "5. Abschnitt: Öffentliche Werke und Verkehr",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -2487,15 +2704,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Energie und Kommunikation"
+     "label": "6. Abschnitt: Energie und Kommunikation",
+     "eId": "tit_3/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -2506,15 +2726,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Energie und Kommunikation"
+     "label": "6. Abschnitt: Energie und Kommunikation",
+     "eId": "tit_3/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -2534,15 +2757,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Energie und Kommunikation"
+     "label": "6. Abschnitt: Energie und Kommunikation",
+     "eId": "tit_3/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -2553,15 +2779,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Energie und Kommunikation"
+     "label": "6. Abschnitt: Energie und Kommunikation",
+     "eId": "tit_3/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -2572,15 +2801,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Energie und Kommunikation"
+     "label": "6. Abschnitt: Energie und Kommunikation",
+     "eId": "tit_3/chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -2591,15 +2823,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Wirtschaft"
+     "label": "7. Abschnitt: Wirtschaft",
+     "eId": "tit_3/chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -2610,15 +2845,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Wirtschaft"
+     "label": "7. Abschnitt: Wirtschaft",
+     "eId": "tit_3/chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -2674,15 +2912,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Wirtschaft"
+     "label": "7. Abschnitt: Wirtschaft",
+     "eId": "tit_3/chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -2693,15 +2934,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Wirtschaft"
+     "label": "7. Abschnitt: Wirtschaft",
+     "eId": "tit_3/chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -2712,15 +2956,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Wirtschaft"
+     "label": "7. Abschnitt: Wirtschaft",
+     "eId": "tit_3/chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -2731,15 +2978,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Wirtschaft"
+     "label": "7. Abschnitt: Wirtschaft",
+     "eId": "tit_3/chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -2750,15 +3000,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Wirtschaft"
+     "label": "7. Abschnitt: Wirtschaft",
+     "eId": "tit_3/chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -2769,15 +3022,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Wirtschaft"
+     "label": "7. Abschnitt: Wirtschaft",
+     "eId": "tit_3/chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -2788,15 +3044,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Wirtschaft"
+     "label": "7. Abschnitt: Wirtschaft",
+     "eId": "tit_3/chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -2816,15 +3075,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Wirtschaft"
+     "label": "7. Abschnitt: Wirtschaft",
+     "eId": "tit_3/chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -2844,15 +3106,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Wirtschaft"
+     "label": "7. Abschnitt: Wirtschaft",
+     "eId": "tit_3/chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -2863,15 +3128,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Wirtschaft"
+     "label": "7. Abschnitt: Wirtschaft",
+     "eId": "tit_3/chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -2882,15 +3150,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Wirtschaft"
+     "label": "7. Abschnitt: Wirtschaft",
+     "eId": "tit_3/chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -2931,15 +3202,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Wirtschaft"
+     "label": "7. Abschnitt: Wirtschaft",
+     "eId": "tit_3/chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -2950,15 +3224,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -2969,15 +3246,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -2988,15 +3268,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -3016,15 +3299,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -3035,15 +3321,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -3175,15 +3464,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -3203,15 +3495,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -3222,15 +3517,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -3241,15 +3539,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -3260,15 +3561,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -3279,15 +3583,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -3339,15 +3646,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -3388,15 +3698,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -3416,15 +3729,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "9. Abschnitt: Aufenthalt und Niederlassung von Ausländerinnen und Ausländern"
+     "label": "9. Abschnitt: Aufenthalt und Niederlassung von Ausländerinnen und Ausländern",
+     "eId": "tit_3/chap_2/sec_9"
     }
    ],
    "marginalie": [
@@ -3608,15 +3924,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "10. Abschnitt: Zivilrecht, Strafrecht, Messwesen"
+     "label": "10. Abschnitt: Zivilrecht, Strafrecht, Messwesen",
+     "eId": "tit_3/chap_2/sec_10"
     }
    ],
    "marginalie": [
@@ -3665,15 +3984,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "10. Abschnitt: Zivilrecht, Strafrecht, Messwesen"
+     "label": "10. Abschnitt: Zivilrecht, Strafrecht, Messwesen",
+     "eId": "tit_3/chap_2/sec_10"
     }
    ],
    "marginalie": [
@@ -3746,15 +4068,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "10. Abschnitt: Zivilrecht, Strafrecht, Messwesen"
+     "label": "10. Abschnitt: Zivilrecht, Strafrecht, Messwesen",
+     "eId": "tit_3/chap_2/sec_10"
     }
    ],
    "marginalie": [
@@ -3765,15 +4090,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "10. Abschnitt: Zivilrecht, Strafrecht, Messwesen"
+     "label": "10. Abschnitt: Zivilrecht, Strafrecht, Messwesen",
+     "eId": "tit_3/chap_2/sec_10"
     }
    ],
    "marginalie": [
@@ -3784,11 +4112,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzordnung"
+     "label": "3. Kapitel: Finanzordnung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3833,11 +4163,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzordnung"
+     "label": "3. Kapitel: Finanzordnung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3848,11 +4180,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzordnung"
+     "label": "3. Kapitel: Finanzordnung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3956,11 +4290,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzordnung"
+     "label": "3. Kapitel: Finanzordnung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -3971,11 +4307,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzordnung"
+     "label": "3. Kapitel: Finanzordnung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -4145,11 +4483,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzordnung"
+     "label": "3. Kapitel: Finanzordnung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -4225,11 +4565,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzordnung"
+     "label": "3. Kapitel: Finanzordnung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -4270,11 +4612,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzordnung"
+     "label": "3. Kapitel: Finanzordnung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -4285,11 +4629,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzordnung"
+     "label": "3. Kapitel: Finanzordnung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -4300,11 +4646,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzordnung"
+     "label": "3. Kapitel: Finanzordnung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -4345,11 +4693,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Volk und Stände"
+     "label": "4. Titel: Volk und Stände",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -4360,11 +4710,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Volk und Stände"
+     "label": "4. Titel: Volk und Stände",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -4375,11 +4727,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Volk und Stände"
+     "label": "4. Titel: Volk und Stände",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Initiative und Referendum"
+     "label": "2. Kapitel: Initiative und Referendum",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -4432,11 +4786,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Volk und Stände"
+     "label": "4. Titel: Volk und Stände",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Initiative und Referendum"
+     "label": "2. Kapitel: Initiative und Referendum",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -4481,11 +4837,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Volk und Stände"
+     "label": "4. Titel: Volk und Stände",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Initiative und Referendum"
+     "label": "2. Kapitel: Initiative und Referendum",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -4586,11 +4944,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Volk und Stände"
+     "label": "4. Titel: Volk und Stände",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Initiative und Referendum"
+     "label": "2. Kapitel: Initiative und Referendum",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -4723,11 +5083,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Volk und Stände"
+     "label": "4. Titel: Volk und Stände",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Initiative und Referendum"
+     "label": "2. Kapitel: Initiative und Referendum",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -4738,11 +5100,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -4753,11 +5117,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -4768,11 +5134,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -4783,11 +5151,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -4798,11 +5168,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -4813,15 +5185,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4832,15 +5207,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4851,15 +5229,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4870,15 +5251,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4889,15 +5273,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4908,15 +5295,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4927,15 +5317,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4946,15 +5339,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4965,15 +5361,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -5090,15 +5489,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -5109,15 +5511,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -5128,15 +5533,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -5213,15 +5621,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -5232,15 +5643,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -5251,15 +5665,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verfahren"
+     "label": "2. Abschnitt: Verfahren",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -5270,15 +5687,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuständigkeiten"
+     "label": "3. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5289,15 +5709,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuständigkeiten"
+     "label": "3. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5308,15 +5731,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuständigkeiten"
+     "label": "3. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5327,15 +5753,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuständigkeiten"
+     "label": "3. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5346,15 +5775,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuständigkeiten"
+     "label": "3. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5365,15 +5797,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuständigkeiten"
+     "label": "3. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5384,15 +5819,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuständigkeiten"
+     "label": "3. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5403,15 +5841,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuständigkeiten"
+     "label": "3. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5422,15 +5863,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuständigkeiten"
+     "label": "3. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5441,15 +5885,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuständigkeiten"
+     "label": "3. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5460,15 +5907,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Bundesversammlung"
+     "label": "2. Kapitel: Bundesversammlung",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Zuständigkeiten"
+     "label": "3. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5479,15 +5929,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bundesrat und Bundesverwaltung"
+     "label": "3. Kapitel: Bundesrat und Bundesverwaltung",
+     "eId": "tit_5/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation und Verfahren"
+     "label": "1. Abschnitt: Organisation und Verfahren",
+     "eId": "tit_5/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5498,15 +5951,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bundesrat und Bundesverwaltung"
+     "label": "3. Kapitel: Bundesrat und Bundesverwaltung",
+     "eId": "tit_5/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation und Verfahren"
+     "label": "1. Abschnitt: Organisation und Verfahren",
+     "eId": "tit_5/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5575,15 +6031,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bundesrat und Bundesverwaltung"
+     "label": "3. Kapitel: Bundesrat und Bundesverwaltung",
+     "eId": "tit_5/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation und Verfahren"
+     "label": "1. Abschnitt: Organisation und Verfahren",
+     "eId": "tit_5/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5594,15 +6053,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bundesrat und Bundesverwaltung"
+     "label": "3. Kapitel: Bundesrat und Bundesverwaltung",
+     "eId": "tit_5/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation und Verfahren"
+     "label": "1. Abschnitt: Organisation und Verfahren",
+     "eId": "tit_5/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5613,15 +6075,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bundesrat und Bundesverwaltung"
+     "label": "3. Kapitel: Bundesrat und Bundesverwaltung",
+     "eId": "tit_5/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation und Verfahren"
+     "label": "1. Abschnitt: Organisation und Verfahren",
+     "eId": "tit_5/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5632,15 +6097,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bundesrat und Bundesverwaltung"
+     "label": "3. Kapitel: Bundesrat und Bundesverwaltung",
+     "eId": "tit_5/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation und Verfahren"
+     "label": "1. Abschnitt: Organisation und Verfahren",
+     "eId": "tit_5/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5651,15 +6119,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bundesrat und Bundesverwaltung"
+     "label": "3. Kapitel: Bundesrat und Bundesverwaltung",
+     "eId": "tit_5/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zuständigkeiten"
+     "label": "2. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5670,15 +6141,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bundesrat und Bundesverwaltung"
+     "label": "3. Kapitel: Bundesrat und Bundesverwaltung",
+     "eId": "tit_5/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zuständigkeiten"
+     "label": "2. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5689,15 +6163,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bundesrat und Bundesverwaltung"
+     "label": "3. Kapitel: Bundesrat und Bundesverwaltung",
+     "eId": "tit_5/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zuständigkeiten"
+     "label": "2. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5708,15 +6185,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bundesrat und Bundesverwaltung"
+     "label": "3. Kapitel: Bundesrat und Bundesverwaltung",
+     "eId": "tit_5/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zuständigkeiten"
+     "label": "2. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5727,15 +6207,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bundesrat und Bundesverwaltung"
+     "label": "3. Kapitel: Bundesrat und Bundesverwaltung",
+     "eId": "tit_5/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zuständigkeiten"
+     "label": "2. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5746,15 +6229,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bundesrat und Bundesverwaltung"
+     "label": "3. Kapitel: Bundesrat und Bundesverwaltung",
+     "eId": "tit_5/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zuständigkeiten"
+     "label": "2. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5765,15 +6251,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bundesrat und Bundesverwaltung"
+     "label": "3. Kapitel: Bundesrat und Bundesverwaltung",
+     "eId": "tit_5/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zuständigkeiten"
+     "label": "2. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5784,15 +6273,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bundesrat und Bundesverwaltung"
+     "label": "3. Kapitel: Bundesrat und Bundesverwaltung",
+     "eId": "tit_5/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zuständigkeiten"
+     "label": "2. Abschnitt: Zuständigkeiten",
+     "eId": "tit_5/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5803,11 +6295,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Bundesgericht und andere richterliche Behörden"
+     "label": "4. Kapitel: Bundesgericht und andere richterliche Behörden",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -5857,11 +6351,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Bundesgericht und andere richterliche Behörden"
+     "label": "4. Kapitel: Bundesgericht und andere richterliche Behörden",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -5930,11 +6426,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Bundesgericht und andere richterliche Behörden"
+     "label": "4. Kapitel: Bundesgericht und andere richterliche Behörden",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -5945,11 +6443,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Bundesgericht und andere richterliche Behörden"
+     "label": "4. Kapitel: Bundesgericht und andere richterliche Behörden",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -5960,11 +6460,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Revision der Bundesverfassung und Übergangsbestimmungen"
+     "label": "6. Titel: Revision der Bundesverfassung und Übergangsbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Revision"
+     "label": "1. Kapitel: Revision",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -5975,11 +6477,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Revision der Bundesverfassung und Übergangsbestimmungen"
+     "label": "6. Titel: Revision der Bundesverfassung und Übergangsbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Revision"
+     "label": "1. Kapitel: Revision",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -5990,11 +6494,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Revision der Bundesverfassung und Übergangsbestimmungen"
+     "label": "6. Titel: Revision der Bundesverfassung und Übergangsbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Revision"
+     "label": "1. Kapitel: Revision",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -6005,11 +6511,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Revision der Bundesverfassung und Übergangsbestimmungen"
+     "label": "6. Titel: Revision der Bundesverfassung und Übergangsbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Revision"
+     "label": "1. Kapitel: Revision",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -6020,11 +6528,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Revision der Bundesverfassung und Übergangsbestimmungen"
+     "label": "6. Titel: Revision der Bundesverfassung und Übergangsbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Übergangsbestimmungen"
+     "label": "2. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -6615,11 +7125,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Revision der Bundesverfassung und Übergangsbestimmungen"
+     "label": "6. Titel: Revision der Bundesverfassung und Übergangsbestimmungen",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Übergangsbestimmungen"
+     "label": "2. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -7217,15 +7729,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Wirtschaft"
+     "label": "7. Abschnitt: Wirtschaft",
+     "eId": "tit_3/chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -7270,11 +7785,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -7326,15 +7843,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -7375,15 +7895,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -7431,15 +7954,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -7487,15 +8013,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -7540,15 +8069,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -7600,15 +8132,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -7653,15 +8188,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -7702,15 +8240,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit"
+     "label": "8. Abschnitt: Wohnen, Arbeit, soziale Sicherheit und Gesundheit",
+     "eId": "tit_3/chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -7747,15 +8288,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "9. Abschnitt: Aufenthalt und Niederlassung von Ausländerinnen und Ausländern"
+     "label": "9. Abschnitt: Aufenthalt und Niederlassung von Ausländerinnen und Ausländern",
+     "eId": "tit_3/chap_2/sec_9"
     }
    ],
    "marginalie": [
@@ -7811,15 +8355,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "10. Abschnitt: Zivilrecht, Strafrecht, Messwesen"
+     "label": "10. Abschnitt: Zivilrecht, Strafrecht, Messwesen",
+     "eId": "tit_3/chap_2/sec_10"
     }
    ],
    "marginalie": [],
@@ -7862,15 +8409,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "10. Abschnitt: Zivilrecht, Strafrecht, Messwesen"
+     "label": "10. Abschnitt: Zivilrecht, Strafrecht, Messwesen",
+     "eId": "tit_3/chap_2/sec_10"
     }
    ],
    "marginalie": [
@@ -7915,15 +8465,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "10. Abschnitt: Zivilrecht, Strafrecht, Messwesen"
+     "label": "10. Abschnitt: Zivilrecht, Strafrecht, Messwesen",
+     "eId": "tit_3/chap_2/sec_10"
     }
    ],
    "marginalie": [
@@ -7972,11 +8525,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzordnung"
+     "label": "3. Kapitel: Finanzordnung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -8017,11 +8572,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Volk und Stände"
+     "label": "4. Titel: Volk und Stände",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Initiative und Referendum"
+     "label": "2. Kapitel: Initiative und Referendum",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [],
@@ -8088,11 +8645,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Volk und Stände"
+     "label": "4. Titel: Volk und Stände",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Initiative und Referendum"
+     "label": "2. Kapitel: Initiative und Referendum",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -8177,11 +8736,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Volk und Stände"
+     "label": "4. Titel: Volk und Stände",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Initiative und Referendum"
+     "label": "2. Kapitel: Initiative und Referendum",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -8234,11 +8795,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Bundesgericht und andere richterliche Behörden"
+     "label": "4. Kapitel: Bundesgericht und andere richterliche Behörden",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -8291,11 +8854,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Bundesgericht und andere richterliche Behörden"
+     "label": "4. Kapitel: Bundesgericht und andere richterliche Behörden",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -8306,11 +8871,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Bundesbehörden"
+     "label": "5. Titel: Bundesbehörden",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Bundesgericht und andere richterliche Behörden"
+     "label": "4. Kapitel: Bundesgericht und andere richterliche Behörden",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -8321,11 +8888,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele"
+     "label": "2. Titel: Grundrechte, Bürgerrechte und Sozialziele",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundrechte"
+     "label": "1. Kapitel: Grundrechte",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -8374,15 +8943,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhältnis von Bund und Kantonen"
+     "label": "1. Kapitel: Verhältnis von Bund und Kantonen",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Aufgaben von Bund und Kantonen"
+     "label": "1. Abschnitt: Aufgaben von Bund und Kantonen",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -8423,15 +8995,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verhältnis von Bund und Kantonen"
+     "label": "1. Kapitel: Verhältnis von Bund und Kantonen",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zusammenwirken von Bund und Kantonen"
+     "label": "2. Abschnitt: Zusammenwirken von Bund und Kantonen",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -8536,7 +9111,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -8577,15 +9153,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bildung, Forschung und Kultur"
+     "label": "3. Abschnitt: Bildung, Forschung und Kultur",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -8643,15 +9222,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bildung, Forschung und Kultur"
+     "label": "3. Abschnitt: Bildung, Forschung und Kultur",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -8696,15 +9278,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bildung, Forschung und Kultur"
+     "label": "3. Abschnitt: Bildung, Forschung und Kultur",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -8749,15 +9334,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Bildung, Forschung und Kultur"
+     "label": "3. Abschnitt: Bildung, Forschung und Kultur",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -8806,15 +9394,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Umwelt und Raumplanung"
+     "label": "4. Abschnitt: Umwelt und Raumplanung",
+     "eId": "tit_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -8855,15 +9446,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Umwelt und Raumplanung"
+     "label": "4. Abschnitt: Umwelt und Raumplanung",
+     "eId": "tit_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -8915,15 +9509,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Öffentliche Werke und Verkehr"
+     "label": "5. Abschnitt: Öffentliche Werke und Verkehr",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -8976,15 +9573,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Öffentliche Werke und Verkehr"
+     "label": "5. Abschnitt: Öffentliche Werke und Verkehr",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -9025,15 +9625,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Öffentliche Werke und Verkehr"
+     "label": "5. Abschnitt: Öffentliche Werke und Verkehr",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -9093,15 +9696,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bund, Kantone und Gemeinden"
+     "label": "3. Titel: Bund, Kantone und Gemeinden",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Zuständigkeiten"
+     "label": "2. Kapitel: Zuständigkeiten",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Öffentliche Werke und Verkehr"
+     "label": "5. Abschnitt: Öffentliche Werke und Verkehr",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [

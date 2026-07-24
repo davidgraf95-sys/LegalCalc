@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "810.21",
   "titel": "Bundesgesetz über die Transplantation von Organen, Geweben und Zellen",
@@ -55,7 +55,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -66,7 +67,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -77,7 +79,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -106,7 +109,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -117,7 +121,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -128,11 +133,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Unentgeltlichkeit und Handelsverbot"
+     "label": "1. Abschnitt: Unentgeltlichkeit und Handelsverbot",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -161,11 +168,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Unentgeltlichkeit und Handelsverbot"
+     "label": "1. Abschnitt: Unentgeltlichkeit und Handelsverbot",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -194,11 +203,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entnahme von Organen, Geweben oder Zellen bei verstorbenen Personen"
+     "label": "2. Abschnitt: Entnahme von Organen, Geweben oder Zellen bei verstorbenen Personen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -231,11 +242,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entnahme von Organen, Geweben oder Zellen bei verstorbenen Personen"
+     "label": "2. Abschnitt: Entnahme von Organen, Geweben oder Zellen bei verstorbenen Personen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -246,11 +259,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entnahme von Organen, Geweben oder Zellen bei verstorbenen Personen"
+     "label": "2. Abschnitt: Entnahme von Organen, Geweben oder Zellen bei verstorbenen Personen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -283,11 +298,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Entnahme von Organen, Geweben oder Zellen bei verstorbenen Personen"
+     "label": "2. Abschnitt: Entnahme von Organen, Geweben oder Zellen bei verstorbenen Personen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -298,11 +315,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Entnahme von Organen, Geweben oder Zellen bei lebenden Personen"
+     "label": "3. Abschnitt: Entnahme von Organen, Geweben oder Zellen bei lebenden Personen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -331,11 +350,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Entnahme von Organen, Geweben oder Zellen bei lebenden Personen"
+     "label": "3. Abschnitt: Entnahme von Organen, Geweben oder Zellen bei lebenden Personen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -364,11 +385,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Entnahme von Organen, Geweben oder Zellen bei lebenden Personen"
+     "label": "3. Abschnitt: Entnahme von Organen, Geweben oder Zellen bei lebenden Personen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -441,11 +464,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Entnahme von Organen, Geweben oder Zellen bei lebenden Personen"
+     "label": "3. Abschnitt: Entnahme von Organen, Geweben oder Zellen bei lebenden Personen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -456,11 +481,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Zuteilung von Organen"
+     "label": "4. Abschnitt: Zuteilung von Organen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -471,11 +498,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Zuteilung von Organen"
+     "label": "4. Abschnitt: Zuteilung von Organen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -564,11 +593,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Zuteilung von Organen"
+     "label": "4. Abschnitt: Zuteilung von Organen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -579,11 +610,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Zuteilung von Organen"
+     "label": "4. Abschnitt: Zuteilung von Organen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -594,11 +627,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Zuteilung von Organen"
+     "label": "4. Abschnitt: Zuteilung von Organen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -609,11 +644,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Zuteilung von Organen"
+     "label": "4. Abschnitt: Zuteilung von Organen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -642,11 +679,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Zuteilung von Organen"
+     "label": "4. Abschnitt: Zuteilung von Organen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -657,11 +696,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Zuteilung von Organen"
+     "label": "4. Abschnitt: Zuteilung von Organen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -694,11 +735,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Entnahme, Lagerung, Ein- und Ausfuhr, Aufbereitung"
+     "label": "5. Abschnitt: Entnahme, Lagerung, Ein- und Ausfuhr, Aufbereitung",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -731,11 +774,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Entnahme, Lagerung, Ein- und Ausfuhr, Aufbereitung"
+     "label": "5. Abschnitt: Entnahme, Lagerung, Ein- und Ausfuhr, Aufbereitung",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -746,11 +791,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Entnahme, Lagerung, Ein- und Ausfuhr, Aufbereitung"
+     "label": "5. Abschnitt: Entnahme, Lagerung, Ein- und Ausfuhr, Aufbereitung",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -761,11 +808,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Transplantation"
+     "label": "6. Abschnitt: Transplantation",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -798,11 +847,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Transplantation"
+     "label": "6. Abschnitt: Transplantation",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -813,11 +864,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Transplantation"
+     "label": "6. Abschnitt: Transplantation",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -828,11 +881,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: S Sorgfaltspflichten"
+     "label": "7. Abschnitt: S Sorgfaltspflichten",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -843,11 +898,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: S Sorgfaltspflichten"
+     "label": "7. Abschnitt: S Sorgfaltspflichten",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -858,11 +915,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: S Sorgfaltspflichten"
+     "label": "7. Abschnitt: S Sorgfaltspflichten",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -873,11 +932,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: S Sorgfaltspflichten"
+     "label": "7. Abschnitt: S Sorgfaltspflichten",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -888,11 +949,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: S Sorgfaltspflichten"
+     "label": "7. Abschnitt: S Sorgfaltspflichten",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -903,11 +966,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: S Sorgfaltspflichten"
+     "label": "7. Abschnitt: S Sorgfaltspflichten",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -918,11 +983,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Klinische Versuche"
+     "label": "8. Abschnitt: Klinische Versuche",
+     "eId": "chap_2/sec_8"
     }
    ],
    "marginalie": [],
@@ -962,11 +1029,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Umgang mit embryonalen oder fötalen menschlichen Geweben oder Zellen"
+     "label": "9. Abschnitt: Umgang mit embryonalen oder fötalen menschlichen Geweben oder Zellen",
+     "eId": "chap_2/sec_9"
     }
    ],
    "marginalie": [
@@ -977,11 +1046,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Umgang mit embryonalen oder fötalen menschlichen Geweben oder Zellen"
+     "label": "9. Abschnitt: Umgang mit embryonalen oder fötalen menschlichen Geweben oder Zellen",
+     "eId": "chap_2/sec_9"
     }
    ],
    "marginalie": [
@@ -992,11 +1063,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Umgang mit embryonalen oder fötalen menschlichen Geweben oder Zellen"
+     "label": "9. Abschnitt: Umgang mit embryonalen oder fötalen menschlichen Geweben oder Zellen",
+     "eId": "chap_2/sec_9"
     }
    ],
    "marginalie": [
@@ -1007,11 +1080,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Umgang mit embryonalen oder fötalen menschlichen Geweben oder Zellen"
+     "label": "9. Abschnitt: Umgang mit embryonalen oder fötalen menschlichen Geweben oder Zellen",
+     "eId": "chap_2/sec_9"
     }
    ],
    "marginalie": [
@@ -1022,11 +1097,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Umgang mit embryonalen oder fötalen menschlichen Geweben oder Zellen"
+     "label": "9. Abschnitt: Umgang mit embryonalen oder fötalen menschlichen Geweben oder Zellen",
+     "eId": "chap_2/sec_9"
     }
    ],
    "marginalie": [
@@ -1037,11 +1114,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Umgang mit embryonalen oder fötalen menschlichen Geweben oder Zellen"
+     "label": "9. Abschnitt: Umgang mit embryonalen oder fötalen menschlichen Geweben oder Zellen",
+     "eId": "chap_2/sec_9"
     }
    ],
    "marginalie": [
@@ -1052,7 +1131,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Tierische Organe, Gewebe und Zellen"
+     "label": "3. Kapitel: Tierische Organe, Gewebe und Zellen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1063,7 +1143,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Tierische Organe, Gewebe und Zellen"
+     "label": "3. Kapitel: Tierische Organe, Gewebe und Zellen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1074,7 +1155,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Tierische Organe, Gewebe und Zellen"
+     "label": "3. Kapitel: Tierische Organe, Gewebe und Zellen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1085,7 +1167,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Tierische Organe, Gewebe und Zellen"
+     "label": "3. Kapitel: Tierische Organe, Gewebe und Zellen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1096,7 +1179,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Tierische Organe, Gewebe und Zellen"
+     "label": "3. Kapitel: Tierische Organe, Gewebe und Zellen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1107,7 +1191,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Tierische Organe, Gewebe und Zellen"
+     "label": "3. Kapitel: Tierische Organe, Gewebe und Zellen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1118,7 +1203,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Transplantatprodukte"
+     "label": "4. Kapitel: Transplantatprodukte",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [],
@@ -1202,11 +1288,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1217,11 +1305,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1232,11 +1322,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1247,11 +1339,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1280,11 +1374,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1337,11 +1433,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1352,11 +1450,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kantone"
+     "label": "2. Abschnitt: Kantone",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1385,11 +1485,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Schweigepflicht und Datenbekanntgabe"
+     "label": "3. Abschnitt: Schweigepflicht und Datenbekanntgabe",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1400,11 +1502,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Schweigepflicht und Datenbekanntgabe"
+     "label": "3. Abschnitt: Schweigepflicht und Datenbekanntgabe",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1415,11 +1519,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Schweigepflicht und Datenbekanntgabe"
+     "label": "3. Abschnitt: Schweigepflicht und Datenbekanntgabe",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1430,11 +1536,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Schweigepflicht und Datenbekanntgabe"
+     "label": "3. Abschnitt: Schweigepflicht und Datenbekanntgabe",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1445,11 +1553,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Information der Öffentlichkeit"
+     "label": "4. Abschnitt: Information der Öffentlichkeit",
+     "eId": "chap_5/sec_4"
     }
    ],
    "marginalie": [],
@@ -1520,11 +1630,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Stammzellenregister"
+     "label": "5. Abschnitt: Stammzellenregister",
+     "eId": "chap_5/sec_5"
     }
    ],
    "marginalie": []
@@ -1533,11 +1645,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Kontrolle und Massnahmen"
+     "label": "6. Abschnitt: Kontrolle und Massnahmen",
+     "eId": "chap_5/sec_6"
     }
    ],
    "marginalie": [
@@ -1548,11 +1662,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Kontrolle und Massnahmen"
+     "label": "6. Abschnitt: Kontrolle und Massnahmen",
+     "eId": "chap_5/sec_6"
     }
    ],
    "marginalie": [
@@ -1563,11 +1679,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Kontrolle und Massnahmen"
+     "label": "6. Abschnitt: Kontrolle und Massnahmen",
+     "eId": "chap_5/sec_6"
     }
    ],
    "marginalie": [
@@ -1578,11 +1696,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Finanzierung"
+     "label": "7. Abschnitt: Finanzierung",
+     "eId": "chap_5/sec_7"
     }
    ],
    "marginalie": [
@@ -1593,11 +1713,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Finanzierung"
+     "label": "7. Abschnitt: Finanzierung",
+     "eId": "chap_5/sec_7"
     }
    ],
    "marginalie": [
@@ -1608,11 +1730,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vollzug"
+     "label": "5. Kapitel: Vollzug",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Rechtsschutz"
+     "label": "8. Abschnitt: Rechtsschutz",
+     "eId": "chap_5/sec_8"
     }
    ],
    "marginalie": [],
@@ -1639,7 +1763,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Strafbestimmungen"
+     "label": "6. Kapitel: Strafbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1817,7 +1942,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Strafbestimmungen"
+     "label": "6. Kapitel: Strafbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1923,7 +2049,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Strafbestimmungen"
+     "label": "6. Kapitel: Strafbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1965,7 +2092,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2007,7 +2135,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2033,7 +2162,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2066,7 +2196,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2086,11 +2217,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Nachverfolgung des Gesundheitszustands von Lebendspenderinnen und Lebendspendern"
+     "label": "3a. Abschnitt: Nachverfolgung des Gesundheitszustands von Lebendspenderinnen und Lebendspendern",
+     "eId": "chap_2/sec_3_a"
     }
    ],
    "marginalie": [
@@ -2124,11 +2257,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Nachverfolgung des Gesundheitszustands von Lebendspenderinnen und Lebendspendern"
+     "label": "3a. Abschnitt: Nachverfolgung des Gesundheitszustands von Lebendspenderinnen und Lebendspendern",
+     "eId": "chap_2/sec_3_a"
     }
    ],
    "marginalie": [
@@ -2154,11 +2289,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen"
+     "label": "2. Kapitel: Menschliche Organe, Gewebe und Zellen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Nachverfolgung des Gesundheitszustands von Lebendspenderinnen und Lebendspendern"
+     "label": "3a. Abschnitt: Nachverfolgung des Gesundheitszustands von Lebendspenderinnen und Lebendspendern",
+     "eId": "chap_2/sec_3_a"
     }
    ],
    "marginalie": [

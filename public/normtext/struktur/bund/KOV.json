@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "281.32",
   "titel": "Verordnung über die Geschäftsführung der Konkursämter",
@@ -67,11 +67,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Allgemeine Bestimmungen"
+     "label": "I. Allgemeine Bestimmungen",
+     "eId": "lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -96,11 +98,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Allgemeine Bestimmungen"
+     "label": "I. Allgemeine Bestimmungen",
+     "eId": "lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -137,11 +141,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Allgemeine Bestimmungen"
+     "label": "I. Allgemeine Bestimmungen",
+     "eId": "lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -161,11 +167,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Allgemeine Bestimmungen"
+     "label": "I. Allgemeine Bestimmungen",
+     "eId": "lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -185,11 +193,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Allgemeine Bestimmungen"
+     "label": "I. Allgemeine Bestimmungen",
+     "eId": "lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -226,11 +236,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Allgemeine Bestimmungen"
+     "label": "I. Allgemeine Bestimmungen",
+     "eId": "lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -241,11 +253,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Allgemeine Bestimmungen"
+     "label": "I. Allgemeine Bestimmungen",
+     "eId": "lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -256,11 +270,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Protokollführung"
+     "label": "II. Protokollführung",
+     "eId": "lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -281,11 +297,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Protokollführung"
+     "label": "II. Protokollführung",
+     "eId": "lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -297,11 +315,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Protokollführung"
+     "label": "II. Protokollführung",
+     "eId": "lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -346,11 +366,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Protokollführung"
+     "label": "II. Protokollführung",
+     "eId": "lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -384,11 +406,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "III. Elektronische Datenverarbeitung"
+     "label": "III. Elektronische Datenverarbeitung",
+     "eId": "lvl_A/lvl_III"
     }
    ],
    "marginalie": [
@@ -426,11 +450,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "IV. Ordnung und Aufbewahrung der Akten"
+     "label": "IV. Ordnung und Aufbewahrung der Akten",
+     "eId": "lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -477,11 +503,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "IV. Ordnung und Aufbewahrung der Akten"
+     "label": "IV. Ordnung und Aufbewahrung der Akten",
+     "eId": "lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -507,11 +535,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "IV. Ordnung und Aufbewahrung der Akten"
+     "label": "IV. Ordnung und Aufbewahrung der Akten",
+     "eId": "lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -562,11 +592,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "V. Buch-, Kassa- und Rechnungsführung"
+     "label": "V. Buch-, Kassa- und Rechnungsführung",
+     "eId": "lvl_A/lvl_V"
     }
    ],
    "marginalie": [
@@ -587,11 +619,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "V. Buch-, Kassa- und Rechnungsführung"
+     "label": "V. Buch-, Kassa- und Rechnungsführung",
+     "eId": "lvl_A/lvl_V"
     }
    ],
    "marginalie": [
@@ -603,11 +637,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "V. Buch-, Kassa- und Rechnungsführung"
+     "label": "V. Buch-, Kassa- und Rechnungsführung",
+     "eId": "lvl_A/lvl_V"
     }
    ],
    "marginalie": [
@@ -619,11 +655,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "V. Buch-, Kassa- und Rechnungsführung"
+     "label": "V. Buch-, Kassa- und Rechnungsführung",
+     "eId": "lvl_A/lvl_V"
     }
    ],
    "marginalie": [
@@ -634,11 +672,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "V. Buch-, Kassa- und Rechnungsführung"
+     "label": "V. Buch-, Kassa- und Rechnungsführung",
+     "eId": "lvl_A/lvl_V"
     }
    ],
    "marginalie": [
@@ -649,11 +689,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "V. Buch-, Kassa- und Rechnungsführung"
+     "label": "V. Buch-, Kassa- und Rechnungsführung",
+     "eId": "lvl_A/lvl_V"
     }
    ],
    "marginalie": [
@@ -673,11 +715,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "V. Buch-, Kassa- und Rechnungsführung"
+     "label": "V. Buch-, Kassa- und Rechnungsführung",
+     "eId": "lvl_A/lvl_V"
     }
    ],
    "marginalie": [
@@ -688,11 +732,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "V. Buch-, Kassa- und Rechnungsführung"
+     "label": "V. Buch-, Kassa- und Rechnungsführung",
+     "eId": "lvl_A/lvl_V"
     }
    ],
    "marginalie": [
@@ -703,11 +749,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "V. Buch-, Kassa- und Rechnungsführung"
+     "label": "V. Buch-, Kassa- und Rechnungsführung",
+     "eId": "lvl_A/lvl_V"
     }
    ],
    "marginalie": [
@@ -718,11 +766,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -774,11 +824,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -804,11 +856,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -820,11 +874,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -850,11 +906,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -880,11 +938,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -905,11 +965,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -935,11 +997,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -951,11 +1015,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -981,11 +1047,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -1011,11 +1079,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -1040,11 +1110,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -1055,11 +1127,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -1097,11 +1171,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -1126,11 +1202,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -1155,11 +1233,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "II. Schuldenruf"
+     "label": "II. Schuldenruf",
+     "eId": "lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -1217,11 +1297,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "II. Schuldenruf"
+     "label": "II. Schuldenruf",
+     "eId": "lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -1246,11 +1328,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -1275,11 +1359,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -1317,11 +1403,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -1346,11 +1434,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -1376,11 +1466,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -1406,11 +1498,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -1436,11 +1530,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -1467,11 +1563,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -1484,11 +1582,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -1515,11 +1615,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -1546,11 +1648,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -1576,11 +1680,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -1606,11 +1712,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -1649,11 +1757,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger",
+     "eId": "lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1664,11 +1774,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger",
+     "eId": "lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1694,11 +1806,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger",
+     "eId": "lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1724,11 +1838,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger",
+     "eId": "lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1754,11 +1870,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger",
+     "eId": "lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1784,11 +1902,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger",
+     "eId": "lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1814,11 +1934,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger",
+     "eId": "lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1844,11 +1966,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger",
+     "eId": "lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1875,11 +1999,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger",
+     "eId": "lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1891,11 +2017,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger",
+     "eId": "lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1907,11 +2035,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger",
+     "eId": "lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1958,11 +2088,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger",
+     "eId": "lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1975,11 +2107,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger",
+     "eId": "lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -1991,11 +2125,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger",
+     "eId": "lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2021,11 +2157,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger",
+     "eId": "lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2037,11 +2175,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen Kollokation der Gläubiger",
+     "eId": "lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2053,11 +2193,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "lvl_B/lvl_V"
     }
    ],
    "marginalie": [
@@ -2082,11 +2224,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "lvl_B/lvl_V"
     }
    ],
    "marginalie": [
@@ -2107,11 +2251,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "lvl_B/lvl_V"
     }
    ],
    "marginalie": [
@@ -2123,11 +2269,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "lvl_B/lvl_V"
     }
    ],
    "marginalie": [
@@ -2164,11 +2312,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "lvl_B/lvl_V"
     }
    ],
    "marginalie": [
@@ -2208,11 +2358,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "lvl_B/lvl_V"
     }
    ],
    "marginalie": [
@@ -2238,11 +2390,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "lvl_B/lvl_V"
     }
    ],
    "marginalie": [
@@ -2269,11 +2423,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "lvl_B/lvl_V"
     }
    ],
    "marginalie": [
@@ -2299,11 +2455,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "lvl_B/lvl_V"
     }
    ],
    "marginalie": [
@@ -2329,11 +2487,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "lvl_B/lvl_V"
     }
    ],
    "marginalie": [
@@ -2344,11 +2504,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "lvl_B/lvl_V"
     }
    ],
    "marginalie": [
@@ -2373,11 +2535,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "lvl_B/lvl_VI"
     }
    ],
    "marginalie": [
@@ -2388,11 +2552,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "lvl_B/lvl_VI"
     }
    ],
    "marginalie": [
@@ -2405,11 +2571,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "lvl_B/lvl_VI"
     }
    ],
    "marginalie": [
@@ -2450,11 +2618,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "lvl_B/lvl_VI"
     }
    ],
    "marginalie": [
@@ -2480,11 +2650,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "lvl_B/lvl_VI"
     }
    ],
    "marginalie": [
@@ -2496,11 +2668,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "lvl_B/lvl_VI"
     }
    ],
    "marginalie": [
@@ -2525,11 +2699,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "lvl_B/lvl_VI"
     }
    ],
    "marginalie": [
@@ -2540,11 +2716,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "lvl_B/lvl_VI"
     }
    ],
    "marginalie": [
@@ -2569,11 +2747,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "lvl_B/lvl_VI"
     }
    ],
    "marginalie": [
@@ -2598,11 +2778,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "lvl_B/lvl_VI"
     }
    ],
    "marginalie": [
@@ -2627,11 +2809,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "VII. Schluss des Konkursverfahrens"
+     "label": "VII. Schluss des Konkursverfahrens",
+     "eId": "lvl_B/lvl_VII"
     }
    ],
    "marginalie": [
@@ -2642,11 +2826,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "VII. Schluss des Konkursverfahrens"
+     "label": "VII. Schluss des Konkursverfahrens",
+     "eId": "lvl_B/lvl_VII"
     }
    ],
    "marginalie": [
@@ -2657,11 +2843,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "VII. Schluss des Konkursverfahrens"
+     "label": "VII. Schluss des Konkursverfahrens",
+     "eId": "lvl_B/lvl_VII"
     }
    ],
    "marginalie": [
@@ -2686,11 +2874,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "VII. Schluss des Konkursverfahrens"
+     "label": "VII. Schluss des Konkursverfahrens",
+     "eId": "lvl_B/lvl_VII"
     }
    ],
    "marginalie": [
@@ -2716,11 +2906,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "VIII. Summarisches Verfahren"
+     "label": "VIII. Summarisches Verfahren",
+     "eId": "lvl_B/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -2770,7 +2962,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Geschäftsführung der ausseramtlichen Konkursverwaltungen"
+     "label": "C. Geschäftsführung der ausseramtlichen Konkursverwaltungen",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -2804,7 +2997,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Geschäftsführung der ausseramtlichen Konkursverwaltungen"
+     "label": "C. Geschäftsführung der ausseramtlichen Konkursverwaltungen",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -2837,7 +3031,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Schlussbestimmungen"
+     "label": "D. Schlussbestimmungen",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -2857,7 +3052,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Schlussbestimmungen"
+     "label": "D. Schlussbestimmungen",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -2883,11 +3079,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "IV. Ordnung und Aufbewahrung der Akten"
+     "label": "IV. Ordnung und Aufbewahrung der Akten",
+     "eId": "lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2962,11 +3160,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Protokoll-, Akten- und Rechnungswesen"
+     "label": "A. Protokoll-, Akten- und Rechnungswesen",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "V. Buch-, Kassa- und Rechnungsführung"
+     "label": "V. Buch-, Kassa- und Rechnungsführung",
+     "eId": "lvl_A/lvl_V"
     }
    ],
    "marginalie": [
@@ -2991,11 +3191,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verfahren in den einzelnen Stadien des Konkurses"
+     "label": "B. Verfahren in den einzelnen Stadien des Konkurses",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [

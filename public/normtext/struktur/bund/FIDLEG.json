@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "950.1",
   "titel": "Bundesgesetz über die Finanzdienstleistungen",
@@ -54,7 +54,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -65,7 +66,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -102,7 +104,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -191,7 +194,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -286,7 +290,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -297,11 +302,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Erforderliche Kenntnisse"
+     "label": "1. Kapitel: Erforderliche Kenntnisse",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": []
@@ -310,15 +317,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhaltensregeln"
+     "label": "2. Kapitel: Verhaltensregeln",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Grundsatz"
+     "label": "1. Abschnitt: Grundsatz",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": []
@@ -327,15 +337,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhaltensregeln"
+     "label": "2. Kapitel: Verhaltensregeln",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Informationspflicht"
+     "label": "2. Abschnitt: Informationspflicht",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -346,15 +359,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhaltensregeln"
+     "label": "2. Kapitel: Verhaltensregeln",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Informationspflicht"
+     "label": "2. Abschnitt: Informationspflicht",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -365,15 +381,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhaltensregeln"
+     "label": "2. Kapitel: Verhaltensregeln",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Angemessenheit und Eignung von Finanzdienstleistungen"
+     "label": "3. Abschnitt: Angemessenheit und Eignung von Finanzdienstleistungen",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -384,15 +403,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhaltensregeln"
+     "label": "2. Kapitel: Verhaltensregeln",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Angemessenheit und Eignung von Finanzdienstleistungen"
+     "label": "3. Abschnitt: Angemessenheit und Eignung von Finanzdienstleistungen",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -403,15 +425,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhaltensregeln"
+     "label": "2. Kapitel: Verhaltensregeln",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Angemessenheit und Eignung von Finanzdienstleistungen"
+     "label": "3. Abschnitt: Angemessenheit und Eignung von Finanzdienstleistungen",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -422,15 +447,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhaltensregeln"
+     "label": "2. Kapitel: Verhaltensregeln",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Angemessenheit und Eignung von Finanzdienstleistungen"
+     "label": "3. Abschnitt: Angemessenheit und Eignung von Finanzdienstleistungen",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -441,15 +469,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhaltensregeln"
+     "label": "2. Kapitel: Verhaltensregeln",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Angemessenheit und Eignung von Finanzdienstleistungen"
+     "label": "3. Abschnitt: Angemessenheit und Eignung von Finanzdienstleistungen",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -460,15 +491,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhaltensregeln"
+     "label": "2. Kapitel: Verhaltensregeln",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Dokumentation und Rechenschaft"
+     "label": "4. Abschnitt: Dokumentation und Rechenschaft",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -479,15 +513,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhaltensregeln"
+     "label": "2. Kapitel: Verhaltensregeln",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Dokumentation und Rechenschaft"
+     "label": "4. Abschnitt: Dokumentation und Rechenschaft",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -498,15 +535,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhaltensregeln"
+     "label": "2. Kapitel: Verhaltensregeln",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Transparenz und Sorgfalt bei Kundenaufträgen"
+     "label": "5. Abschnitt: Transparenz und Sorgfalt bei Kundenaufträgen",
+     "eId": "tit_2/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -517,15 +557,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhaltensregeln"
+     "label": "2. Kapitel: Verhaltensregeln",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Transparenz und Sorgfalt bei Kundenaufträgen"
+     "label": "5. Abschnitt: Transparenz und Sorgfalt bei Kundenaufträgen",
+     "eId": "tit_2/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -536,15 +579,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhaltensregeln"
+     "label": "2. Kapitel: Verhaltensregeln",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Transparenz und Sorgfalt bei Kundenaufträgen"
+     "label": "5. Abschnitt: Transparenz und Sorgfalt bei Kundenaufträgen",
+     "eId": "tit_2/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -555,15 +601,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verhaltensregeln"
+     "label": "2. Kapitel: Verhaltensregeln",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Institutionelle und professionelle Kunden"
+     "label": "6. Abschnitt: Institutionelle und professionelle Kunden",
+     "eId": "tit_2/chap_2/sec_6"
     }
    ],
    "marginalie": []
@@ -572,15 +621,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Organisation"
+     "label": "3. Kapitel: Organisation",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisatorische Massnahmen"
+     "label": "1. Abschnitt: Organisatorische Massnahmen",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -591,15 +643,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Organisation"
+     "label": "3. Kapitel: Organisation",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisatorische Massnahmen"
+     "label": "1. Abschnitt: Organisatorische Massnahmen",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -624,15 +679,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Organisation"
+     "label": "3. Kapitel: Organisation",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisatorische Massnahmen"
+     "label": "1. Abschnitt: Organisatorische Massnahmen",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -643,15 +701,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Organisation"
+     "label": "3. Kapitel: Organisation",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisatorische Massnahmen"
+     "label": "1. Abschnitt: Organisatorische Massnahmen",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -662,15 +723,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Organisation"
+     "label": "3. Kapitel: Organisation",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Interessenkonflikte"
+     "label": "2. Abschnitt: Interessenkonflikte",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -681,15 +745,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Organisation"
+     "label": "3. Kapitel: Organisation",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Interessenkonflikte"
+     "label": "2. Abschnitt: Interessenkonflikte",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -700,15 +767,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Organisation"
+     "label": "3. Kapitel: Organisation",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Interessenkonflikte"
+     "label": "2. Abschnitt: Interessenkonflikte",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -719,11 +789,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Beraterregister"
+     "label": "4. Kapitel: Beraterregister",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -748,11 +820,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Beraterregister"
+     "label": "4. Kapitel: Beraterregister",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -817,11 +891,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Beraterregister"
+     "label": "4. Kapitel: Beraterregister",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -832,11 +908,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Beraterregister"
+     "label": "4. Kapitel: Beraterregister",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -847,11 +925,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Beraterregister"
+     "label": "4. Kapitel: Beraterregister",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -862,11 +942,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Beraterregister"
+     "label": "4. Kapitel: Beraterregister",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -891,11 +973,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen"
+     "label": "2. Titel: Anforderungen für das Erbringen von Finanzdienstleistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Beraterregister"
+     "label": "4. Kapitel: Beraterregister",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -921,15 +1005,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -994,15 +1081,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -1013,15 +1103,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -1032,15 +1125,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -1051,15 +1147,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -1070,15 +1169,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anforderungen"
+     "label": "2. Abschnitt: Anforderungen",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1089,15 +1191,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anforderungen"
+     "label": "2. Abschnitt: Anforderungen",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1108,15 +1213,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anforderungen"
+     "label": "2. Abschnitt: Anforderungen",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1127,15 +1235,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anforderungen"
+     "label": "2. Abschnitt: Anforderungen",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1146,15 +1257,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anforderungen"
+     "label": "2. Abschnitt: Anforderungen",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1165,15 +1279,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anforderungen"
+     "label": "2. Abschnitt: Anforderungen",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1210,15 +1327,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anforderungen"
+     "label": "2. Abschnitt: Anforderungen",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1229,15 +1349,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Erleichterungen"
+     "label": "3. Abschnitt: Erleichterungen",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": []
@@ -1246,15 +1369,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Kollektive Kapitalanlagen"
+     "label": "4. Abschnitt: Kollektive Kapitalanlagen",
+     "eId": "tit_3/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1291,15 +1417,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Kollektive Kapitalanlagen"
+     "label": "4. Abschnitt: Kollektive Kapitalanlagen",
+     "eId": "tit_3/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1324,15 +1453,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Kollektive Kapitalanlagen"
+     "label": "4. Abschnitt: Kollektive Kapitalanlagen",
+     "eId": "tit_3/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1373,15 +1505,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Prüfung des Prospekts"
+     "label": "5. Abschnitt: Prüfung des Prospekts",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1430,15 +1565,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Prüfung des Prospekts"
+     "label": "5. Abschnitt: Prüfung des Prospekts",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1449,15 +1587,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Prüfung des Prospekts"
+     "label": "5. Abschnitt: Prüfung des Prospekts",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1482,15 +1623,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Prüfung des Prospekts"
+     "label": "5. Abschnitt: Prüfung des Prospekts",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1501,15 +1645,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Prüfung des Prospekts"
+     "label": "5. Abschnitt: Prüfung des Prospekts",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1546,15 +1693,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Prüfung des Prospekts"
+     "label": "5. Abschnitt: Prüfung des Prospekts",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1565,15 +1715,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Prospekt für Effekten"
+     "label": "1. Kapitel: Prospekt für Effekten",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Prüfung des Prospekts"
+     "label": "5. Abschnitt: Prüfung des Prospekts",
+     "eId": "tit_3/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1598,11 +1751,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Basisinformationsblatt für Finanzinstrumente"
+     "label": "2. Kapitel: Basisinformationsblatt für Finanzinstrumente",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1613,11 +1768,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Basisinformationsblatt für Finanzinstrumente"
+     "label": "2. Kapitel: Basisinformationsblatt für Finanzinstrumente",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1628,11 +1785,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Basisinformationsblatt für Finanzinstrumente"
+     "label": "2. Kapitel: Basisinformationsblatt für Finanzinstrumente",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1643,11 +1802,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Basisinformationsblatt für Finanzinstrumente"
+     "label": "2. Kapitel: Basisinformationsblatt für Finanzinstrumente",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1658,11 +1819,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Basisinformationsblatt für Finanzinstrumente"
+     "label": "2. Kapitel: Basisinformationsblatt für Finanzinstrumente",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1673,11 +1836,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Basisinformationsblatt für Finanzinstrumente"
+     "label": "2. Kapitel: Basisinformationsblatt für Finanzinstrumente",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1688,11 +1853,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veröffentlichung"
+     "label": "3. Kapitel: Veröffentlichung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -1703,11 +1870,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veröffentlichung"
+     "label": "3. Kapitel: Veröffentlichung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -1718,11 +1887,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veröffentlichung"
+     "label": "3. Kapitel: Veröffentlichung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -1733,11 +1904,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Veröffentlichung"
+     "label": "3. Kapitel: Veröffentlichung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -1748,11 +1921,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Werbung"
+     "label": "4. Kapitel: Werbung",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": []
@@ -1761,11 +1936,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Haftung"
+     "label": "5. Kapitel: Haftung",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": []
@@ -1774,11 +1951,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Anbieten von strukturierten Produkten und Bilden von Sondervermögen"
+     "label": "6. Kapitel: Anbieten von strukturierten Produkten und Bilden von Sondervermögen",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -1839,11 +2018,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Anbieten von Finanzinstrumenten"
+     "label": "3. Titel: Anbieten von Finanzinstrumenten",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Anbieten von strukturierten Produkten und Bilden von Sondervermögen"
+     "label": "6. Kapitel: Anbieten von strukturierten Produkten und Bilden von Sondervermögen",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -1880,7 +2061,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Herausgabe von Dokumenten"
+     "label": "4. Titel: Herausgabe von Dokumenten",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1891,7 +2073,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Herausgabe von Dokumenten"
+     "label": "4. Titel: Herausgabe von Dokumenten",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1902,11 +2085,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Ombudsstellen"
+     "label": "5. Titel: Ombudsstellen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vermittlung"
+     "label": "1. Kapitel: Vermittlung",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -1917,11 +2102,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Ombudsstellen"
+     "label": "5. Titel: Ombudsstellen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vermittlung"
+     "label": "1. Kapitel: Vermittlung",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -1932,11 +2119,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Ombudsstellen"
+     "label": "5. Titel: Ombudsstellen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vermittlung"
+     "label": "1. Kapitel: Vermittlung",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -1961,11 +2150,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Ombudsstellen"
+     "label": "5. Titel: Ombudsstellen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Pflichten der Finanzdienstleister"
+     "label": "2. Kapitel: Pflichten der Finanzdienstleister",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -1994,11 +2185,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Ombudsstellen"
+     "label": "5. Titel: Ombudsstellen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Pflichten der Finanzdienstleister"
+     "label": "2. Kapitel: Pflichten der Finanzdienstleister",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -2009,11 +2202,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Ombudsstellen"
+     "label": "5. Titel: Ombudsstellen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Pflichten der Finanzdienstleister"
+     "label": "2. Kapitel: Pflichten der Finanzdienstleister",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -2024,11 +2219,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Ombudsstellen"
+     "label": "5. Titel: Ombudsstellen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Pflichten der Finanzdienstleister"
+     "label": "2. Kapitel: Pflichten der Finanzdienstleister",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -2039,11 +2236,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Ombudsstellen"
+     "label": "5. Titel: Ombudsstellen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aufnahme und Ausschluss"
+     "label": "3. Kapitel: Aufnahme und Ausschluss",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -2054,11 +2253,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Ombudsstellen"
+     "label": "5. Titel: Ombudsstellen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aufnahme und Ausschluss"
+     "label": "3. Kapitel: Aufnahme und Ausschluss",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -2069,11 +2270,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Ombudsstellen"
+     "label": "5. Titel: Ombudsstellen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aufnahme und Ausschluss"
+     "label": "3. Kapitel: Aufnahme und Ausschluss",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -2084,11 +2287,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Ombudsstellen"
+     "label": "5. Titel: Ombudsstellen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Anerkennung und Veröffentlichung"
+     "label": "4. Kapitel: Anerkennung und Veröffentlichung",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -2099,11 +2304,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Ombudsstellen"
+     "label": "5. Titel: Ombudsstellen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Anerkennung und Veröffentlichung"
+     "label": "4. Kapitel: Anerkennung und Veröffentlichung",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -2114,11 +2321,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Ombudsstellen"
+     "label": "5. Titel: Ombudsstellen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Anerkennung und Veröffentlichung"
+     "label": "4. Kapitel: Anerkennung und Veröffentlichung",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -2129,7 +2338,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Aufsicht und Informationsaustausch"
+     "label": "6. Titel: Aufsicht und Informationsaustausch",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -2140,7 +2350,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Aufsicht und Informationsaustausch"
+     "label": "6. Titel: Aufsicht und Informationsaustausch",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -2151,7 +2362,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Strafbestimmungen"
+     "label": "7. Titel: Strafbestimmungen",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [
@@ -2162,7 +2374,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Strafbestimmungen"
+     "label": "7. Titel: Strafbestimmungen",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [
@@ -2173,7 +2386,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Strafbestimmungen"
+     "label": "7. Titel: Strafbestimmungen",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [
@@ -2184,7 +2398,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Strafbestimmungen"
+     "label": "7. Titel: Strafbestimmungen",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [
@@ -2210,7 +2425,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     }
    ],
    "marginalie": [
@@ -2221,7 +2437,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     }
    ],
    "marginalie": [
@@ -2232,7 +2449,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     }
    ],
    "marginalie": [
@@ -2243,7 +2461,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     }
    ],
    "marginalie": [

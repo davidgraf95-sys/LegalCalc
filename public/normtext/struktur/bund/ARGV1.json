@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "822.111",
   "titel": "Verordnung 1 zum Arbeitsgesetz",
@@ -83,11 +83,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Begriffe"
+     "label": "1. Abschnitt: Begriffe",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -98,11 +100,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Begriffe"
+     "label": "1. Abschnitt: Begriffe",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -113,11 +117,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Betrieblicher Geltungsbereich"
+     "label": "2. Abschnitt: Betrieblicher Geltungsbereich",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [],
@@ -140,11 +146,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Betrieblicher Geltungsbereich"
+     "label": "2. Abschnitt: Betrieblicher Geltungsbereich",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -155,11 +163,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ausnahmen vom betrieblichen Geltungsbereich"
+     "label": "3. Abschnitt: Ausnahmen vom betrieblichen Geltungsbereich",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -170,11 +180,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ausnahmen vom betrieblichen Geltungsbereich"
+     "label": "3. Abschnitt: Ausnahmen vom betrieblichen Geltungsbereich",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -199,11 +211,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ausnahmen vom betrieblichen Geltungsbereich"
+     "label": "3. Abschnitt: Ausnahmen vom betrieblichen Geltungsbereich",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -228,11 +242,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Ausnahmen vom persönlichen Geltungsbereich"
+     "label": "4. Abschnitt: Ausnahmen vom persönlichen Geltungsbereich",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -257,11 +273,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Ausnahmen vom persönlichen Geltungsbereich"
+     "label": "4. Abschnitt: Ausnahmen vom persönlichen Geltungsbereich",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -272,11 +290,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Ausnahmen vom persönlichen Geltungsbereich"
+     "label": "4. Abschnitt: Ausnahmen vom persönlichen Geltungsbereich",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -287,11 +307,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Ausnahmen vom persönlichen Geltungsbereich"
+     "label": "4. Abschnitt: Ausnahmen vom persönlichen Geltungsbereich",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -302,11 +324,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Ausnahmen vom persönlichen Geltungsbereich"
+     "label": "4. Abschnitt: Ausnahmen vom persönlichen Geltungsbereich",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -343,11 +367,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -384,11 +410,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -399,11 +427,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -414,11 +444,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -443,11 +475,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -458,11 +492,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pausen und Ruhezeit"
+     "label": "2. Abschnitt: Pausen und Ruhezeit",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -473,11 +509,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pausen und Ruhezeit"
+     "label": "2. Abschnitt: Pausen und Ruhezeit",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -488,11 +526,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pausen und Ruhezeit"
+     "label": "2. Abschnitt: Pausen und Ruhezeit",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -503,11 +543,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pausen und Ruhezeit"
+     "label": "2. Abschnitt: Pausen und Ruhezeit",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -518,11 +560,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Wöchentliche Höchstarbeitszeit"
+     "label": "3. Abschnitt: Wöchentliche Höchstarbeitszeit",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -533,11 +577,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Wöchentliche Höchstarbeitszeit"
+     "label": "3. Abschnitt: Wöchentliche Höchstarbeitszeit",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -548,11 +594,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Wöchentliche Höchstarbeitszeit"
+     "label": "3. Abschnitt: Wöchentliche Höchstarbeitszeit",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -563,11 +611,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Überzeitarbeit"
+     "label": "4. Abschnitt: Überzeitarbeit",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -578,11 +628,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Überzeitarbeit"
+     "label": "4. Abschnitt: Überzeitarbeit",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -593,11 +645,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Voraussetzungen für Nacht- und Sonntagsarbeit und den ununterbrochenen Betrieb"
+     "label": "5. Abschnitt: Voraussetzungen für Nacht- und Sonntagsarbeit und den ununterbrochenen Betrieb",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -634,11 +688,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Voraussetzungen für Nacht- und Sonntagsarbeit und den ununterbrochenen Betrieb"
+     "label": "5. Abschnitt: Voraussetzungen für Nacht- und Sonntagsarbeit und den ununterbrochenen Betrieb",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -663,11 +719,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Besondere Formen der Nachtarbeit"
+     "label": "6. Abschnitt: Besondere Formen der Nachtarbeit",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -678,11 +736,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Besondere Formen der Nachtarbeit"
+     "label": "6. Abschnitt: Besondere Formen der Nachtarbeit",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -743,11 +803,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Lohn- und Zeitzuschlag"
+     "label": "7. Abschnitt: Lohn- und Zeitzuschlag",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -758,11 +820,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Lohn- und Zeitzuschlag"
+     "label": "7. Abschnitt: Lohn- und Zeitzuschlag",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -773,11 +837,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Lohn- und Zeitzuschlag"
+     "label": "7. Abschnitt: Lohn- und Zeitzuschlag",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -788,11 +854,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Schichtarbeit"
+     "label": "8. Abschnitt: Schichtarbeit",
+     "eId": "chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -817,11 +885,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Schichtarbeit"
+     "label": "8. Abschnitt: Schichtarbeit",
+     "eId": "chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -832,11 +902,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Ununterbrochener Betrieb"
+     "label": "9. Abschnitt: Ununterbrochener Betrieb",
+     "eId": "chap_2/sec_9"
     }
    ],
    "marginalie": [
@@ -847,11 +919,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Ununterbrochener Betrieb"
+     "label": "9. Abschnitt: Ununterbrochener Betrieb",
+     "eId": "chap_2/sec_9"
     }
    ],
    "marginalie": [
@@ -862,11 +936,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Ununterbrochener Betrieb"
+     "label": "9. Abschnitt: Ununterbrochener Betrieb",
+     "eId": "chap_2/sec_9"
     }
    ],
    "marginalie": [
@@ -877,11 +953,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Ununterbrochener Betrieb"
+     "label": "9. Abschnitt: Ununterbrochener Betrieb",
+     "eId": "chap_2/sec_9"
     }
    ],
    "marginalie": [
@@ -906,11 +984,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "10. Abschnitt: Arbeitszeitbewilligungen"
+     "label": "10. Abschnitt: Arbeitszeitbewilligungen",
+     "eId": "chap_2/sec_10"
     }
    ],
    "marginalie": [
@@ -935,11 +1015,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "10. Abschnitt: Arbeitszeitbewilligungen"
+     "label": "10. Abschnitt: Arbeitszeitbewilligungen",
+     "eId": "chap_2/sec_10"
     }
    ],
    "marginalie": [
@@ -977,11 +1059,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "10. Abschnitt: Arbeitszeitbewilligungen"
+     "label": "10. Abschnitt: Arbeitszeitbewilligungen",
+     "eId": "chap_2/sec_10"
     }
    ],
    "marginalie": [
@@ -1006,11 +1090,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Massnahmen bei Nachtarbeit"
+     "label": "3. Kapitel: Massnahmen bei Nachtarbeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Medizinische Untersuchung und Beratung"
+     "label": "1. Abschnitt: Medizinische Untersuchung und Beratung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1021,11 +1107,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Massnahmen bei Nachtarbeit"
+     "label": "3. Kapitel: Massnahmen bei Nachtarbeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Medizinische Untersuchung und Beratung"
+     "label": "1. Abschnitt: Medizinische Untersuchung und Beratung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1036,11 +1124,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Massnahmen bei Nachtarbeit"
+     "label": "3. Kapitel: Massnahmen bei Nachtarbeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Medizinische Untersuchung und Beratung"
+     "label": "1. Abschnitt: Medizinische Untersuchung und Beratung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1091,11 +1181,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Massnahmen bei Nachtarbeit"
+     "label": "3. Kapitel: Massnahmen bei Nachtarbeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Weitere Massnahmen"
+     "label": "2. Abschnitt: Weitere Massnahmen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": []
@@ -1104,11 +1196,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Sonderschutz von Frauen"
+     "label": "5. Kapitel: Sonderschutz von Frauen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Beschäftigung bei Mutterschaft"
+     "label": "1. Abschnitt: Beschäftigung bei Mutterschaft",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1133,11 +1227,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Sonderschutz von Frauen"
+     "label": "5. Kapitel: Sonderschutz von Frauen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Beschäftigung bei Mutterschaft"
+     "label": "1. Abschnitt: Beschäftigung bei Mutterschaft",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1148,11 +1244,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Sonderschutz von Frauen"
+     "label": "5. Kapitel: Sonderschutz von Frauen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gesundheitsschutz bei Mutterschaft"
+     "label": "2. Abschnitt: Gesundheitsschutz bei Mutterschaft",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1189,11 +1287,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Sonderschutz von Frauen"
+     "label": "5. Kapitel: Sonderschutz von Frauen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gesundheitsschutz bei Mutterschaft"
+     "label": "2. Abschnitt: Gesundheitsschutz bei Mutterschaft",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1232,11 +1332,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Sonderschutz von Frauen"
+     "label": "5. Kapitel: Sonderschutz von Frauen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Beschäftigungseinschränkungen und -verbote"
+     "label": "3. Abschnitt: Beschäftigungseinschränkungen und -verbote",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1247,11 +1349,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Sonderschutz von Frauen"
+     "label": "5. Kapitel: Sonderschutz von Frauen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Beschäftigungseinschränkungen und -verbote"
+     "label": "3. Abschnitt: Beschäftigungseinschränkungen und -verbote",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1276,11 +1380,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Sonderschutz von Frauen"
+     "label": "5. Kapitel: Sonderschutz von Frauen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Beschäftigungseinschränkungen und -verbote"
+     "label": "3. Abschnitt: Beschäftigungseinschränkungen und -verbote",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1318,11 +1424,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Betriebsordnung"
+     "label": "1. Abschnitt: Betriebsordnung",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1348,11 +1456,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Betriebsordnung"
+     "label": "1. Abschnitt: Betriebsordnung",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1377,11 +1487,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Weitere Pflichten gegenüber Arbeitnehmern und Arbeitnehmerinnen"
+     "label": "2. Abschnitt: Weitere Pflichten gegenüber Arbeitnehmern und Arbeitnehmerinnen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1392,11 +1504,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Weitere Pflichten gegenüber Arbeitnehmern und Arbeitnehmerinnen"
+     "label": "2. Abschnitt: Weitere Pflichten gegenüber Arbeitnehmern und Arbeitnehmerinnen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1407,11 +1521,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Weitere Pflichten gegenüber Arbeitnehmern und Arbeitnehmerinnen"
+     "label": "2. Abschnitt: Weitere Pflichten gegenüber Arbeitnehmern und Arbeitnehmerinnen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1422,11 +1538,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Pflichten gegenüber Vollzugs- und Aufsichtsorganen"
+     "label": "3. Abschnitt: Pflichten gegenüber Vollzugs- und Aufsichtsorganen",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -1437,11 +1555,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Pflichten gegenüber Vollzugs- und Aufsichtsorganen"
+     "label": "3. Abschnitt: Pflichten gegenüber Vollzugs- und Aufsichtsorganen",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -1452,11 +1572,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Pflichten gegenüber Vollzugs- und Aufsichtsorganen"
+     "label": "3. Abschnitt: Pflichten gegenüber Vollzugs- und Aufsichtsorganen",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -1467,11 +1589,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Aufgaben und Organisation der Behörden"
+     "label": "7. Kapitel: Aufgaben und Organisation der Behörden",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1509,11 +1633,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Aufgaben und Organisation der Behörden"
+     "label": "7. Kapitel: Aufgaben und Organisation der Behörden",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [],
@@ -1536,11 +1662,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Aufgaben und Organisation der Behörden"
+     "label": "7. Kapitel: Aufgaben und Organisation der Behörden",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1565,11 +1693,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Aufgaben und Organisation der Behörden"
+     "label": "7. Kapitel: Aufgaben und Organisation der Behörden",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bund"
+     "label": "1. Abschnitt: Bund",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1580,11 +1710,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Aufgaben und Organisation der Behörden"
+     "label": "7. Kapitel: Aufgaben und Organisation der Behörden",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kantone"
+     "label": "2. Abschnitt: Kantone",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1595,11 +1727,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Aufgaben und Organisation der Behörden"
+     "label": "7. Kapitel: Aufgaben und Organisation der Behörden",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kantone"
+     "label": "2. Abschnitt: Kantone",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1624,11 +1758,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Aufgaben und Organisation der Behörden"
+     "label": "7. Kapitel: Aufgaben und Organisation der Behörden",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Eidgenössische Arbeitskommission"
+     "label": "3. Abschnitt: Eidgenössische Arbeitskommission",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [],
@@ -1651,11 +1787,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Datenschutz und Datenverwaltung"
+     "label": "8. Kapitel: Datenschutz und Datenverwaltung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Schweigepflicht, Datenbekanntgabe und Auskunftsrecht"
+     "label": "1. Abschnitt: Schweigepflicht, Datenbekanntgabe und Auskunftsrecht",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -1666,11 +1804,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Datenschutz und Datenverwaltung"
+     "label": "8. Kapitel: Datenschutz und Datenverwaltung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Schweigepflicht, Datenbekanntgabe und Auskunftsrecht"
+     "label": "1. Abschnitt: Schweigepflicht, Datenbekanntgabe und Auskunftsrecht",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -1681,11 +1821,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Datenschutz und Datenverwaltung"
+     "label": "8. Kapitel: Datenschutz und Datenverwaltung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Schweigepflicht, Datenbekanntgabe und Auskunftsrecht"
+     "label": "1. Abschnitt: Schweigepflicht, Datenbekanntgabe und Auskunftsrecht",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -1696,11 +1838,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Datenschutz und Datenverwaltung"
+     "label": "8. Kapitel: Datenschutz und Datenverwaltung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informations- und Dokumentationssysteme"
+     "label": "2. Abschnitt: Informations- und Dokumentationssysteme",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -1827,11 +1971,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Datenschutz und Datenverwaltung"
+     "label": "8. Kapitel: Datenschutz und Datenverwaltung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informations- und Dokumentationssysteme"
+     "label": "2. Abschnitt: Informations- und Dokumentationssysteme",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -1856,11 +2002,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Datenschutz und Datenverwaltung"
+     "label": "8. Kapitel: Datenschutz und Datenverwaltung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informations- und Dokumentationssysteme"
+     "label": "2. Abschnitt: Informations- und Dokumentationssysteme",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -1885,11 +2033,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Datenschutz und Datenverwaltung"
+     "label": "8. Kapitel: Datenschutz und Datenverwaltung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informations- und Dokumentationssysteme"
+     "label": "2. Abschnitt: Informations- und Dokumentationssysteme",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -1900,11 +2050,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Datenschutz und Datenverwaltung"
+     "label": "8. Kapitel: Datenschutz und Datenverwaltung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informations- und Dokumentationssysteme"
+     "label": "2. Abschnitt: Informations- und Dokumentationssysteme",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -1929,11 +2081,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Datenschutz und Datenverwaltung"
+     "label": "8. Kapitel: Datenschutz und Datenverwaltung",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informations- und Dokumentationssysteme"
+     "label": "2. Abschnitt: Informations- und Dokumentationssysteme",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -1958,11 +2112,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Aufhebung bisherigen Rechts"
+     "label": "1. Abschnitt: Aufhebung bisherigen Rechts",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [],
@@ -1990,11 +2146,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [
@@ -2005,11 +2163,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [],
@@ -2032,11 +2192,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Inkrafttreten"
+     "label": "3. Abschnitt: Inkrafttreten",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [],
@@ -2059,11 +2221,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Arbeits- und Ruhezeiten"
+     "label": "2. Kapitel: Arbeits- und Ruhezeiten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Lohn- und Zeitzuschlag"
+     "label": "7. Abschnitt: Lohn- und Zeitzuschlag",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -2088,7 +2252,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: …"
+     "label": "4. Kapitel: …",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [],
@@ -2111,11 +2276,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Betrieblicher Geltungsbereich"
+     "label": "2. Abschnitt: Betrieblicher Geltungsbereich",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2140,11 +2307,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Pflichten gegenüber Vollzugs- und Aufsichtsorganen"
+     "label": "3. Abschnitt: Pflichten gegenüber Vollzugs- und Aufsichtsorganen",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2169,11 +2338,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "6. Kapitel: Besondere Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Pflichten gegenüber Vollzugs- und Aufsichtsorganen"
+     "label": "3. Abschnitt: Pflichten gegenüber Vollzugs- und Aufsichtsorganen",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [

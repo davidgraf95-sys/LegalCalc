@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "232.121",
   "titel": "Verordnung über den Schutz von Design",
@@ -67,7 +67,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -116,7 +117,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -127,7 +129,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -152,7 +155,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -177,7 +181,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -202,7 +207,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -213,7 +219,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -238,11 +245,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -267,11 +276,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -336,11 +347,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -351,11 +364,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -380,11 +395,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -395,11 +412,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -424,11 +443,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -453,11 +474,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -468,11 +491,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -497,11 +522,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -550,11 +577,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -579,11 +608,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -620,11 +651,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verlängerung der Schutzdauer"
+     "label": "2. Abschnitt: Verlängerung der Schutzdauer",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -649,11 +682,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verlängerung der Schutzdauer"
+     "label": "2. Abschnitt: Verlängerung der Schutzdauer",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -694,11 +729,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Register"
+     "label": "3. Kapitel: Aktenheft und Register",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Das Aktenheft"
+     "label": "1. Abschnitt: Das Aktenheft",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -735,11 +772,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Register"
+     "label": "3. Kapitel: Aktenheft und Register",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Das Aktenheft"
+     "label": "1. Abschnitt: Das Aktenheft",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -764,11 +803,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Register"
+     "label": "3. Kapitel: Aktenheft und Register",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Das Aktenheft"
+     "label": "1. Abschnitt: Das Aktenheft",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -805,11 +846,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Register"
+     "label": "3. Kapitel: Aktenheft und Register",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Das Register"
+     "label": "2. Abschnitt: Das Register",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -858,11 +901,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Register"
+     "label": "3. Kapitel: Aktenheft und Register",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Das Register"
+     "label": "2. Abschnitt: Das Register",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -899,11 +944,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Register"
+     "label": "3. Kapitel: Aktenheft und Register",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Änderungen der Designeintragung"
+     "label": "3. Abschnitt: Änderungen der Designeintragung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -928,11 +975,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Register"
+     "label": "3. Kapitel: Aktenheft und Register",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Änderungen der Designeintragung"
+     "label": "3. Abschnitt: Änderungen der Designeintragung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -957,11 +1006,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Register"
+     "label": "3. Kapitel: Aktenheft und Register",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Änderungen der Designeintragung"
+     "label": "3. Abschnitt: Änderungen der Designeintragung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -986,11 +1037,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Register"
+     "label": "3. Kapitel: Aktenheft und Register",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Änderungen der Designeintragung"
+     "label": "3. Abschnitt: Änderungen der Designeintragung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1001,11 +1054,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Register"
+     "label": "3. Kapitel: Aktenheft und Register",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Änderungen der Designeintragung"
+     "label": "3. Abschnitt: Änderungen der Designeintragung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1030,11 +1085,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Register"
+     "label": "3. Kapitel: Aktenheft und Register",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Änderungen der Designeintragung"
+     "label": "3. Abschnitt: Änderungen der Designeintragung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -1069,11 +1126,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Register"
+     "label": "3. Kapitel: Aktenheft und Register",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Änderungen der Designeintragung"
+     "label": "3. Abschnitt: Änderungen der Designeintragung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -1096,11 +1155,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Register"
+     "label": "3. Kapitel: Aktenheft und Register",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Löschung des Designs"
+     "label": "4. Abschnitt: Löschung des Designs",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [],
@@ -1123,7 +1184,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Veröffentlichungen des IGE"
+     "label": "4. Kapitel: Veröffentlichungen des IGE",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1134,7 +1196,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Veröffentlichungen des IGE"
+     "label": "4. Kapitel: Veröffentlichungen des IGE",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1159,7 +1222,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1185,7 +1249,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1196,7 +1261,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1207,7 +1273,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1244,7 +1311,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1298,7 +1366,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1309,7 +1378,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1320,7 +1390,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1331,11 +1402,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Hinterlegung und Eintragung"
+     "label": "2. Kapitel: Hinterlegung und Eintragung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verlängerung der Schutzdauer"
+     "label": "2. Abschnitt: Verlängerung der Schutzdauer",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1360,7 +1433,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1371,7 +1445,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1382,7 +1457,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1393,7 +1469,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1404,7 +1481,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1415,7 +1493,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "5. Kapitel: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1426,7 +1505,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -1453,7 +1533,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [

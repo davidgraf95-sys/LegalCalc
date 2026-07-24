@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "641.20",
   "titel": "Bundesgesetz über die Mehrwertsteuer",
@@ -54,7 +54,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -83,7 +84,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -94,7 +96,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -183,7 +186,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -240,7 +244,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -269,7 +274,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -280,7 +286,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -325,7 +332,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -370,7 +378,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -381,11 +390,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuersubjekt"
+     "label": "1. Kapitel: Steuersubjekt",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -542,11 +553,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuersubjekt"
+     "label": "1. Kapitel: Steuersubjekt",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -557,11 +570,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuersubjekt"
+     "label": "1. Kapitel: Steuersubjekt",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -590,11 +605,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuersubjekt"
+     "label": "1. Kapitel: Steuersubjekt",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -623,11 +640,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuersubjekt"
+     "label": "1. Kapitel: Steuersubjekt",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -672,11 +691,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuersubjekt"
+     "label": "1. Kapitel: Steuersubjekt",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -765,11 +786,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuersubjekt"
+     "label": "1. Kapitel: Steuersubjekt",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -780,11 +803,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuersubjekt"
+     "label": "1. Kapitel: Steuersubjekt",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -795,11 +820,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Steuerobjekt"
+     "label": "2. Kapitel: Steuerobjekt",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -832,11 +859,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Steuerobjekt"
+     "label": "2. Kapitel: Steuerobjekt",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -847,11 +876,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Steuerobjekt"
+     "label": "2. Kapitel: Steuerobjekt",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -862,11 +893,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Steuerobjekt"
+     "label": "2. Kapitel: Steuerobjekt",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1359,11 +1392,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Steuerobjekt"
+     "label": "2. Kapitel: Steuerobjekt",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1408,11 +1443,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Steuerobjekt"
+     "label": "2. Kapitel: Steuerobjekt",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1573,11 +1610,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bemessungsgrundlage und Steuersätze"
+     "label": "3. Kapitel: Bemessungsgrundlage und Steuersätze",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1606,11 +1645,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bemessungsgrundlage und Steuersätze"
+     "label": "3. Kapitel: Bemessungsgrundlage und Steuersätze",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1756,11 +1797,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechnungsstellung und Steuerausweis"
+     "label": "4. Kapitel: Rechnungsstellung und Steuerausweis",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -1789,11 +1832,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechnungsstellung und Steuerausweis"
+     "label": "4. Kapitel: Rechnungsstellung und Steuerausweis",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -1838,11 +1883,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Vorsteuerabzug"
+     "label": "5. Kapitel: Vorsteuerabzug",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -1883,11 +1930,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Vorsteuerabzug"
+     "label": "5. Kapitel: Vorsteuerabzug",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -1960,11 +2009,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Vorsteuerabzug"
+     "label": "5. Kapitel: Vorsteuerabzug",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -1975,11 +2026,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Vorsteuerabzug"
+     "label": "5. Kapitel: Vorsteuerabzug",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -1990,11 +2043,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Vorsteuerabzug"
+     "label": "5. Kapitel: Vorsteuerabzug",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -2005,11 +2060,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Vorsteuerabzug"
+     "label": "5. Kapitel: Vorsteuerabzug",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -2020,15 +2077,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zeitliche Bemessung"
+     "label": "1. Abschnitt: Zeitliche Bemessung",
+     "eId": "tit_2/chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2053,15 +2113,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zeitliche Bemessung"
+     "label": "1. Abschnitt: Zeitliche Bemessung",
+     "eId": "tit_2/chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2106,15 +2169,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Umfang der Steuerforderung und Meldeverfahren"
+     "label": "2. Abschnitt: Umfang der Steuerforderung und Meldeverfahren",
+     "eId": "tit_2/chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2125,15 +2191,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Umfang der Steuerforderung und Meldeverfahren"
+     "label": "2. Abschnitt: Umfang der Steuerforderung und Meldeverfahren",
+     "eId": "tit_2/chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2174,15 +2243,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Umfang der Steuerforderung und Meldeverfahren"
+     "label": "2. Abschnitt: Umfang der Steuerforderung und Meldeverfahren",
+     "eId": "tit_2/chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2251,15 +2323,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung"
+     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2270,15 +2345,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung"
+     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2307,15 +2385,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung"
+     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2326,15 +2407,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung"
+     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2345,15 +2429,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung"
+     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2364,15 +2451,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung"
+     "label": "3. Abschnitt: Entstehung, Änderung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2401,7 +2491,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bezugsteuer"
+     "label": "3. Titel: Bezugsteuer",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -2510,7 +2601,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bezugsteuer"
+     "label": "3. Titel: Bezugsteuer",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -2521,7 +2613,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bezugsteuer"
+     "label": "3. Titel: Bezugsteuer",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -2532,7 +2625,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bezugsteuer"
+     "label": "3. Titel: Bezugsteuer",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -2543,7 +2637,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bezugsteuer"
+     "label": "3. Titel: Bezugsteuer",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -2554,7 +2649,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2565,7 +2661,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2634,7 +2731,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2691,7 +2789,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2748,7 +2847,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2813,7 +2913,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2838,7 +2939,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2863,7 +2965,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2874,7 +2977,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2947,7 +3051,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2972,7 +3077,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2997,7 +3103,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -3034,7 +3141,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -3045,7 +3153,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -3074,7 +3183,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Einfuhrsteuer"
+     "label": "4. Titel: Einfuhrsteuer",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -3099,11 +3209,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "1. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3132,11 +3244,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person"
+     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3177,11 +3291,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person"
+     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3226,11 +3342,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person"
+     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3241,11 +3359,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person"
+     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3256,11 +3376,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person"
+     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3301,11 +3423,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person"
+     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3316,11 +3440,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person"
+     "label": "2. Kapitel: Rechte und Pflichten der steuerpflichtigen Person",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -3331,11 +3457,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Auskunftspflicht von Drittpersonen"
+     "label": "3. Kapitel: Auskunftspflicht von Drittpersonen",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [],
@@ -3362,15 +3490,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Geheimhaltung und Amtshilfe"
+     "label": "1. Abschnitt: Geheimhaltung und Amtshilfe",
+     "eId": "tit_5/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3432,15 +3563,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Geheimhaltung und Amtshilfe"
+     "label": "1. Abschnitt: Geheimhaltung und Amtshilfe",
+     "eId": "tit_5/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3493,15 +3627,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Datenschutz"
+     "label": "2. Abschnitt: Datenschutz",
+     "eId": "tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -3607,15 +3744,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
+     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung",
+     "eId": "tit_5/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3645,15 +3785,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
+     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung",
+     "eId": "tit_5/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3742,15 +3885,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
+     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung",
+     "eId": "tit_5/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3761,15 +3907,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
+     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung",
+     "eId": "tit_5/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3780,11 +3929,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren"
+     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren",
+     "eId": "tit_5/chap_5"
     }
    ],
    "marginalie": [
@@ -3809,11 +3960,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren"
+     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren",
+     "eId": "tit_5/chap_5"
     }
    ],
    "marginalie": [
@@ -3824,11 +3977,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren"
+     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren",
+     "eId": "tit_5/chap_5"
     }
    ],
    "marginalie": [
@@ -3839,11 +3994,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren"
+     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren",
+     "eId": "tit_5/chap_5"
     }
    ],
    "marginalie": [
@@ -3854,11 +4011,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren"
+     "label": "5. Kapitel: Verfügungs- und Rechtsmittelverfahren",
+     "eId": "tit_5/chap_5"
     }
    ],
    "marginalie": [
@@ -3884,11 +4043,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Bezug"
+     "label": "6. Kapitel: Bezug",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -3945,11 +4106,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Bezug"
+     "label": "6. Kapitel: Bezug",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -3978,11 +4141,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Bezug"
+     "label": "6. Kapitel: Bezug",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -4027,11 +4192,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Bezug"
+     "label": "6. Kapitel: Bezug",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -4092,11 +4259,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Bezug"
+     "label": "6. Kapitel: Bezug",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -4107,11 +4276,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Bezug"
+     "label": "6. Kapitel: Bezug",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -4136,11 +4307,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Bezug"
+     "label": "6. Kapitel: Bezug",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -4169,11 +4342,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Steuersicherung"
+     "label": "7. Kapitel: Steuersicherung",
+     "eId": "tit_5/chap_7"
     }
    ],
    "marginalie": [
@@ -4214,11 +4389,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Steuersicherung"
+     "label": "7. Kapitel: Steuersicherung",
+     "eId": "tit_5/chap_7"
     }
    ],
    "marginalie": [
@@ -4247,11 +4424,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Steuersicherung"
+     "label": "7. Kapitel: Steuersicherung",
+     "eId": "tit_5/chap_7"
     }
    ],
    "marginalie": [
@@ -4262,7 +4441,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4273,7 +4453,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4298,7 +4479,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4309,7 +4491,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4320,7 +4503,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4346,7 +4530,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4371,7 +4556,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4396,7 +4582,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4433,7 +4620,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4444,7 +4632,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4517,7 +4706,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Strafbestimmungen"
+     "label": "6. Titel: Strafbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4542,11 +4732,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Ausführungsbestimmungen"
+     "label": "1. Kapitel: Ausführungsbestimmungen",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -4603,11 +4795,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Ausführungsbestimmungen"
+     "label": "1. Kapitel: Ausführungsbestimmungen",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -4636,11 +4830,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Ausführungsbestimmungen"
+     "label": "1. Kapitel: Ausführungsbestimmungen",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -4669,11 +4865,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Aufhebung und Änderung bisherigen Rechts"
+     "label": "2. Kapitel: Aufhebung und Änderung bisherigen Rechts",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -4743,11 +4941,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Aufhebung und Änderung bisherigen Rechts"
+     "label": "2. Kapitel: Aufhebung und Änderung bisherigen Rechts",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -4773,11 +4973,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_7/chap_3"
     }
    ],
    "marginalie": [
@@ -4788,11 +4990,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_7/chap_3"
     }
    ],
    "marginalie": [
@@ -4803,11 +5007,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_7/chap_3"
     }
    ],
    "marginalie": [
@@ -4818,11 +5024,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_7/chap_3"
     }
    ],
    "marginalie": [
@@ -4851,11 +5059,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Referendum und Inkrafttreten"
+     "label": "4. Kapitel: Referendum und Inkrafttreten",
+     "eId": "tit_7/chap_4"
     }
    ],
    "marginalie": [],
@@ -4890,11 +5100,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_7/chap_3"
     }
    ],
    "marginalie": [
@@ -4927,11 +5139,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_7/chap_3"
     }
    ],
    "marginalie": [
@@ -4960,11 +5174,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Steuerobjekt"
+     "label": "2. Kapitel: Steuerobjekt",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -4993,11 +5209,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Bemessungsgrundlage und Steuersätze"
+     "label": "3. Kapitel: Bemessungsgrundlage und Steuersätze",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -5026,11 +5244,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Vorsteuerabzug"
+     "label": "5. Kapitel: Vorsteuerabzug",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -5059,15 +5279,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Inlandsteuer"
+     "label": "2. Titel: Inlandsteuer",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung"
+     "label": "6. Kapitel: Ermittlung, Entstehung und Verjährung der Steuerforderung",
+     "eId": "tit_2/chap_6"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zeitliche Bemessung"
+     "label": "1. Abschnitt: Zeitliche Bemessung",
+     "eId": "tit_2/chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -5096,7 +5319,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bezugsteuer"
+     "label": "3. Titel: Bezugsteuer",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -5125,11 +5349,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Verfahrensbestimmungen"
+     "label": "1. Kapitel: Allgemeine Verfahrensbestimmungen",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -5158,15 +5384,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Geheimhaltung und Amtshilfe"
+     "label": "1. Abschnitt: Geheimhaltung und Amtshilfe",
+     "eId": "tit_5/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -5207,15 +5436,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Datenschutz"
+     "label": "2. Abschnitt: Datenschutz",
+     "eId": "tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -5292,15 +5524,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Datenschutz"
+     "label": "2. Abschnitt: Datenschutz",
+     "eId": "tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -5357,15 +5592,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Datenschutz"
+     "label": "2. Abschnitt: Datenschutz",
+     "eId": "tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -5394,15 +5632,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Datenschutz"
+     "label": "2. Abschnitt: Datenschutz",
+     "eId": "tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -5431,15 +5672,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Rechte und Pflichten der Behörden"
+     "label": "4. Kapitel: Rechte und Pflichten der Behörden",
+     "eId": "tit_5/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung"
+     "label": "3. Abschnitt: Sicherstellung der korrekten Steuerentrichtung",
+     "eId": "tit_5/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -5468,11 +5712,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Bezug"
+     "label": "6. Kapitel: Bezug",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -5501,11 +5747,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer"
+     "label": "5. Titel: Verfahrensrecht für die Inland- und die Bezugsteuer",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Steuersicherung"
+     "label": "7. Kapitel: Steuersicherung",
+     "eId": "tit_5/chap_7"
     }
    ],
    "marginalie": [

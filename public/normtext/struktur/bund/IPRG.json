@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "291",
   "titel": "Bundesgesetz über das Internationale Privatrecht",
@@ -86,11 +86,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Geltungsbereich"
+     "label": "1. Abschnitt: Geltungsbereich",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": []
@@ -99,11 +101,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -114,11 +118,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -129,11 +135,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -144,11 +152,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -209,11 +219,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -242,11 +254,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -257,11 +271,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -272,11 +288,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -306,11 +324,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -356,11 +376,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -416,11 +438,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -450,11 +474,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anwendbares Recht"
+     "label": "3. Abschnitt: Anwendbares Recht",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -465,11 +491,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anwendbares Recht"
+     "label": "3. Abschnitt: Anwendbares Recht",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -480,11 +508,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anwendbares Recht"
+     "label": "3. Abschnitt: Anwendbares Recht",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -495,11 +525,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anwendbares Recht"
+     "label": "3. Abschnitt: Anwendbares Recht",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -510,11 +542,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anwendbares Recht"
+     "label": "3. Abschnitt: Anwendbares Recht",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -525,11 +559,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anwendbares Recht"
+     "label": "3. Abschnitt: Anwendbares Recht",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -540,11 +576,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anwendbares Recht"
+     "label": "3. Abschnitt: Anwendbares Recht",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -555,11 +593,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wohnsitz, Sitz und Staatsangehörigkeit"
+     "label": "4. Abschnitt: Wohnsitz, Sitz und Staatsangehörigkeit",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -585,11 +625,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wohnsitz, Sitz und Staatsangehörigkeit"
+     "label": "4. Abschnitt: Wohnsitz, Sitz und Staatsangehörigkeit",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -618,11 +660,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wohnsitz, Sitz und Staatsangehörigkeit"
+     "label": "4. Abschnitt: Wohnsitz, Sitz und Staatsangehörigkeit",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -633,11 +677,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wohnsitz, Sitz und Staatsangehörigkeit"
+     "label": "4. Abschnitt: Wohnsitz, Sitz und Staatsangehörigkeit",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -648,11 +694,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wohnsitz, Sitz und Staatsangehörigkeit"
+     "label": "4. Abschnitt: Wohnsitz, Sitz und Staatsangehörigkeit",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -743,11 +791,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Anerkennung und Vollstreckung ausländischer Entscheidungen"
+     "label": "5. Abschnitt: Anerkennung und Vollstreckung ausländischer Entscheidungen",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -759,11 +809,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Anerkennung und Vollstreckung ausländischer Entscheidungen"
+     "label": "5. Abschnitt: Anerkennung und Vollstreckung ausländischer Entscheidungen",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -775,11 +827,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Anerkennung und Vollstreckung ausländischer Entscheidungen"
+     "label": "5. Abschnitt: Anerkennung und Vollstreckung ausländischer Entscheidungen",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -791,11 +845,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Anerkennung und Vollstreckung ausländischer Entscheidungen"
+     "label": "5. Abschnitt: Anerkennung und Vollstreckung ausländischer Entscheidungen",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -806,11 +862,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Anerkennung und Vollstreckung ausländischer Entscheidungen"
+     "label": "5. Abschnitt: Anerkennung und Vollstreckung ausländischer Entscheidungen",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -821,11 +879,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Anerkennung und Vollstreckung ausländischer Entscheidungen"
+     "label": "5. Abschnitt: Anerkennung und Vollstreckung ausländischer Entscheidungen",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -836,11 +896,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Anerkennung und Vollstreckung ausländischer Entscheidungen"
+     "label": "5. Abschnitt: Anerkennung und Vollstreckung ausländischer Entscheidungen",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -851,11 +913,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Anerkennung und Vollstreckung ausländischer Entscheidungen"
+     "label": "5. Abschnitt: Anerkennung und Vollstreckung ausländischer Entscheidungen",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -866,7 +930,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Natürliche Personen"
+     "label": "2. Kapitel: Natürliche Personen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -877,7 +942,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Natürliche Personen"
+     "label": "2. Kapitel: Natürliche Personen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -888,7 +954,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Natürliche Personen"
+     "label": "2. Kapitel: Natürliche Personen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -900,7 +967,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Natürliche Personen"
+     "label": "2. Kapitel: Natürliche Personen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -912,7 +980,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Natürliche Personen"
+     "label": "2. Kapitel: Natürliche Personen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -924,7 +993,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Natürliche Personen"
+     "label": "2. Kapitel: Natürliche Personen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -936,7 +1006,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Natürliche Personen"
+     "label": "2. Kapitel: Natürliche Personen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -948,7 +1019,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Natürliche Personen"
+     "label": "2. Kapitel: Natürliche Personen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -960,7 +1032,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Natürliche Personen"
+     "label": "2. Kapitel: Natürliche Personen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -972,7 +1045,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Natürliche Personen"
+     "label": "2. Kapitel: Natürliche Personen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -984,11 +1058,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eheschliessung"
+     "label": "1. Abschnitt: Eheschliessung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1041,11 +1117,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eheschliessung"
+     "label": "1. Abschnitt: Eheschliessung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1074,11 +1152,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eheschliessung"
+     "label": "1. Abschnitt: Eheschliessung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1151,11 +1231,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wirkungen der Ehe im Allgemeinen"
+     "label": "2. Abschnitt: Wirkungen der Ehe im Allgemeinen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1167,11 +1249,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wirkungen der Ehe im Allgemeinen"
+     "label": "2. Abschnitt: Wirkungen der Ehe im Allgemeinen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1183,11 +1267,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wirkungen der Ehe im Allgemeinen"
+     "label": "2. Abschnitt: Wirkungen der Ehe im Allgemeinen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1199,11 +1285,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wirkungen der Ehe im Allgemeinen"
+     "label": "2. Abschnitt: Wirkungen der Ehe im Allgemeinen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1231,11 +1319,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wirkungen der Ehe im Allgemeinen"
+     "label": "2. Abschnitt: Wirkungen der Ehe im Allgemeinen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1268,11 +1358,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ehegüterrecht"
+     "label": "3. Abschnitt: Ehegüterrecht",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1321,11 +1413,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ehegüterrecht"
+     "label": "3. Abschnitt: Ehegüterrecht",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1380,11 +1474,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ehegüterrecht"
+     "label": "3. Abschnitt: Ehegüterrecht",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1397,11 +1493,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ehegüterrecht"
+     "label": "3. Abschnitt: Ehegüterrecht",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1414,11 +1512,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ehegüterrecht"
+     "label": "3. Abschnitt: Ehegüterrecht",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1431,11 +1531,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ehegüterrecht"
+     "label": "3. Abschnitt: Ehegüterrecht",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1447,11 +1549,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ehegüterrecht"
+     "label": "3. Abschnitt: Ehegüterrecht",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1463,11 +1567,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ehegüterrecht"
+     "label": "3. Abschnitt: Ehegüterrecht",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1496,11 +1602,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Scheidung und Trennung"
+     "label": "4. Abschnitt: Scheidung und Trennung",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1512,11 +1620,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Scheidung und Trennung"
+     "label": "4. Abschnitt: Scheidung und Trennung",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1528,11 +1638,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Scheidung und Trennung"
+     "label": "4. Abschnitt: Scheidung und Trennung",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1561,11 +1673,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Scheidung und Trennung"
+     "label": "4. Abschnitt: Scheidung und Trennung",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1576,11 +1690,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Scheidung und Trennung"
+     "label": "4. Abschnitt: Scheidung und Trennung",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1641,11 +1757,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Scheidung und Trennung"
+     "label": "4. Abschnitt: Scheidung und Trennung",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1710,11 +1828,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Scheidung und Trennung"
+     "label": "4. Abschnitt: Scheidung und Trennung",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1747,11 +1867,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Entstehung des Kindesverhältnisses durch Abstammung"
+     "label": "1. Abschnitt: Entstehung des Kindesverhältnisses durch Abstammung",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1763,11 +1885,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Entstehung des Kindesverhältnisses durch Abstammung"
+     "label": "1. Abschnitt: Entstehung des Kindesverhältnisses durch Abstammung",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1779,11 +1903,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Entstehung des Kindesverhältnisses durch Abstammung"
+     "label": "1. Abschnitt: Entstehung des Kindesverhältnisses durch Abstammung",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1795,11 +1921,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Entstehung des Kindesverhältnisses durch Abstammung"
+     "label": "1. Abschnitt: Entstehung des Kindesverhältnisses durch Abstammung",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1811,11 +1939,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Entstehung des Kindesverhältnisses durch Abstammung"
+     "label": "1. Abschnitt: Entstehung des Kindesverhältnisses durch Abstammung",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1826,11 +1956,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anerkennung"
+     "label": "2. Abschnitt: Anerkennung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1841,11 +1973,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anerkennung"
+     "label": "2. Abschnitt: Anerkennung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1856,11 +1990,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anerkennung"
+     "label": "2. Abschnitt: Anerkennung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1871,11 +2007,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anerkennung"
+     "label": "2. Abschnitt: Anerkennung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1886,11 +2024,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Adoption"
+     "label": "3. Abschnitt: Adoption",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1902,11 +2042,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Adoption"
+     "label": "3. Abschnitt: Adoption",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1918,11 +2060,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Adoption"
+     "label": "3. Abschnitt: Adoption",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1933,11 +2077,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Adoption"
+     "label": "3. Abschnitt: Adoption",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1948,11 +2094,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wirkungen des Kindesverhältnisses"
+     "label": "4. Abschnitt: Wirkungen des Kindesverhältnisses",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1964,11 +2112,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wirkungen des Kindesverhältnisses"
+     "label": "4. Abschnitt: Wirkungen des Kindesverhältnisses",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1980,11 +2130,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wirkungen des Kindesverhältnisses"
+     "label": "4. Abschnitt: Wirkungen des Kindesverhältnisses",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1996,11 +2148,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wirkungen des Kindesverhältnisses"
+     "label": "4. Abschnitt: Wirkungen des Kindesverhältnisses",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2012,11 +2166,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wirkungen des Kindesverhältnisses"
+     "label": "4. Abschnitt: Wirkungen des Kindesverhältnisses",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2043,11 +2199,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Kindesrecht"
+     "label": "4. Kapitel: Kindesrecht",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Wirkungen des Kindesverhältnisses"
+     "label": "4. Abschnitt: Wirkungen des Kindesverhältnisses",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2058,7 +2216,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Vormundschaft, Erwachsenenschutz und andere Schutzmassnahmen"
+     "label": "5. Kapitel: Vormundschaft, Erwachsenenschutz und andere Schutzmassnahmen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [],
@@ -2128,7 +2287,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Erbrecht"
+     "label": "6. Kapitel: Erbrecht",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2158,7 +2318,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Erbrecht"
+     "label": "6. Kapitel: Erbrecht",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2204,7 +2365,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Erbrecht"
+     "label": "6. Kapitel: Erbrecht",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2234,7 +2396,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Erbrecht"
+     "label": "6. Kapitel: Erbrecht",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2264,7 +2427,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Erbrecht"
+     "label": "6. Kapitel: Erbrecht",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2327,7 +2491,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Erbrecht"
+     "label": "6. Kapitel: Erbrecht",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2357,7 +2522,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Erbrecht"
+     "label": "6. Kapitel: Erbrecht",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2387,7 +2553,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Erbrecht"
+     "label": "6. Kapitel: Erbrecht",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2414,7 +2581,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Erbrecht"
+     "label": "6. Kapitel: Erbrecht",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2444,7 +2612,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Erbrecht"
+     "label": "6. Kapitel: Erbrecht",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2474,7 +2643,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Erbrecht"
+     "label": "6. Kapitel: Erbrecht",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2551,7 +2721,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Sachenrecht"
+     "label": "7. Kapitel: Sachenrecht",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2563,7 +2734,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Sachenrecht"
+     "label": "7. Kapitel: Sachenrecht",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2593,7 +2765,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Sachenrecht"
+     "label": "7. Kapitel: Sachenrecht",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2605,7 +2778,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Sachenrecht"
+     "label": "7. Kapitel: Sachenrecht",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2618,7 +2792,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Sachenrecht"
+     "label": "7. Kapitel: Sachenrecht",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2631,7 +2806,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Sachenrecht"
+     "label": "7. Kapitel: Sachenrecht",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2644,7 +2820,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Sachenrecht"
+     "label": "7. Kapitel: Sachenrecht",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2657,7 +2834,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Sachenrecht"
+     "label": "7. Kapitel: Sachenrecht",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2670,7 +2848,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Sachenrecht"
+     "label": "7. Kapitel: Sachenrecht",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2701,7 +2880,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Sachenrecht"
+     "label": "7. Kapitel: Sachenrecht",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2732,7 +2912,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Sachenrecht"
+     "label": "7. Kapitel: Sachenrecht",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2745,7 +2926,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Sachenrecht"
+     "label": "7. Kapitel: Sachenrecht",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2774,7 +2956,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Immaterialgüterrecht"
+     "label": "8. Kapitel: Immaterialgüterrecht",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2835,7 +3018,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Immaterialgüterrecht"
+     "label": "8. Kapitel: Immaterialgüterrecht",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2846,7 +3030,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Immaterialgüterrecht"
+     "label": "8. Kapitel: Immaterialgüterrecht",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2875,11 +3060,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verträge"
+     "label": "1. Abschnitt: Verträge",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -2910,11 +3097,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verträge"
+     "label": "1. Abschnitt: Verträge",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -2944,11 +3133,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verträge"
+     "label": "1. Abschnitt: Verträge",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -2960,11 +3151,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verträge"
+     "label": "1. Abschnitt: Verträge",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -2994,11 +3187,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verträge"
+     "label": "1. Abschnitt: Verträge",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -3011,11 +3206,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verträge"
+     "label": "1. Abschnitt: Verträge",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -3028,11 +3225,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verträge"
+     "label": "1. Abschnitt: Verträge",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -3060,11 +3259,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verträge"
+     "label": "1. Abschnitt: Verträge",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -3077,11 +3278,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verträge"
+     "label": "1. Abschnitt: Verträge",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -3094,11 +3297,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verträge"
+     "label": "1. Abschnitt: Verträge",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -3111,11 +3316,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verträge"
+     "label": "1. Abschnitt: Verträge",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -3128,11 +3335,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verträge"
+     "label": "1. Abschnitt: Verträge",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -3145,11 +3354,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verträge"
+     "label": "1. Abschnitt: Verträge",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -3162,11 +3373,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verträge"
+     "label": "1. Abschnitt: Verträge",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -3179,11 +3392,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verträge"
+     "label": "1. Abschnitt: Verträge",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [
@@ -3196,11 +3411,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ungerechtfertigte Bereicherung"
+     "label": "2. Abschnitt: Ungerechtfertigte Bereicherung",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [
@@ -3229,11 +3446,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ungerechtfertigte Bereicherung"
+     "label": "2. Abschnitt: Ungerechtfertigte Bereicherung",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [
@@ -3244,11 +3463,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Unerlaubte Handlungen"
+     "label": "3. Abschnitt: Unerlaubte Handlungen",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -3294,11 +3515,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Unerlaubte Handlungen"
+     "label": "3. Abschnitt: Unerlaubte Handlungen",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -3358,11 +3581,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Unerlaubte Handlungen"
+     "label": "3. Abschnitt: Unerlaubte Handlungen",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -3374,11 +3599,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Unerlaubte Handlungen"
+     "label": "3. Abschnitt: Unerlaubte Handlungen",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -3391,11 +3618,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Unerlaubte Handlungen"
+     "label": "3. Abschnitt: Unerlaubte Handlungen",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -3408,11 +3637,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Unerlaubte Handlungen"
+     "label": "3. Abschnitt: Unerlaubte Handlungen",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -3441,11 +3672,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Unerlaubte Handlungen"
+     "label": "3. Abschnitt: Unerlaubte Handlungen",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -3458,11 +3691,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Unerlaubte Handlungen"
+     "label": "3. Abschnitt: Unerlaubte Handlungen",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -3475,11 +3710,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Unerlaubte Handlungen"
+     "label": "3. Abschnitt: Unerlaubte Handlungen",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -3492,11 +3729,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Unerlaubte Handlungen"
+     "label": "3. Abschnitt: Unerlaubte Handlungen",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -3509,11 +3748,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Unerlaubte Handlungen"
+     "label": "3. Abschnitt: Unerlaubte Handlungen",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -3544,11 +3785,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Unerlaubte Handlungen"
+     "label": "3. Abschnitt: Unerlaubte Handlungen",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -3561,11 +3804,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Unerlaubte Handlungen"
+     "label": "3. Abschnitt: Unerlaubte Handlungen",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -3578,11 +3823,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Unerlaubte Handlungen"
+     "label": "3. Abschnitt: Unerlaubte Handlungen",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -3594,11 +3841,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "4. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_9/sec_4"
     }
    ],
    "marginalie": [
@@ -3610,11 +3859,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "4. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_9/sec_4"
     }
    ],
    "marginalie": [
@@ -3626,11 +3877,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "4. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_9/sec_4"
     }
    ],
    "marginalie": [
@@ -3642,11 +3895,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "4. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_9/sec_4"
     }
    ],
    "marginalie": [
@@ -3658,11 +3913,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "4. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_9/sec_4"
     }
    ],
    "marginalie": [
@@ -3673,11 +3930,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "4. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_9/sec_4"
     }
    ],
    "marginalie": [
@@ -3688,11 +3947,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Ausländische Entscheidungen"
+     "label": "5. Abschnitt: Ausländische Entscheidungen",
+     "eId": "chap_9/sec_5"
     }
    ],
    "marginalie": [],
@@ -3735,7 +3996,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -3746,7 +4008,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -3784,7 +4047,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -3796,7 +4060,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -3808,7 +4073,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -3820,7 +4086,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -3832,7 +4099,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -3844,7 +4112,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -3856,7 +4125,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -3868,7 +4138,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -3880,7 +4151,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -3891,7 +4163,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -3923,7 +4196,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -3988,7 +4262,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4084,7 +4359,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4168,7 +4444,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4198,7 +4475,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Konkurs und Nachlassvertrag"
+     "label": "11. Kapitel: Konkurs und Nachlassvertrag",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4240,7 +4518,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Konkurs und Nachlassvertrag"
+     "label": "11. Kapitel: Konkurs und Nachlassvertrag",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4286,7 +4565,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Konkurs und Nachlassvertrag"
+     "label": "11. Kapitel: Konkurs und Nachlassvertrag",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4331,7 +4611,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Konkurs und Nachlassvertrag"
+     "label": "11. Kapitel: Konkurs und Nachlassvertrag",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4368,7 +4649,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Konkurs und Nachlassvertrag"
+     "label": "11. Kapitel: Konkurs und Nachlassvertrag",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4398,7 +4680,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Konkurs und Nachlassvertrag"
+     "label": "11. Kapitel: Konkurs und Nachlassvertrag",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4441,7 +4724,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Konkurs und Nachlassvertrag"
+     "label": "11. Kapitel: Konkurs und Nachlassvertrag",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4500,7 +4784,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Konkurs und Nachlassvertrag"
+     "label": "11. Kapitel: Konkurs und Nachlassvertrag",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4513,7 +4798,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Konkurs und Nachlassvertrag"
+     "label": "11. Kapitel: Konkurs und Nachlassvertrag",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4557,7 +4843,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Konkurs und Nachlassvertrag"
+     "label": "11. Kapitel: Konkurs und Nachlassvertrag",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4587,7 +4874,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -4661,7 +4949,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -4672,7 +4961,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -4734,7 +5024,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -4764,7 +5055,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -4860,7 +5152,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -4889,7 +5182,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -4935,7 +5229,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -4981,7 +5276,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -5027,7 +5323,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -5039,7 +5336,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -5072,7 +5370,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -5119,7 +5418,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -5131,7 +5431,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -5178,7 +5479,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -5241,7 +5543,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -5285,7 +5588,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -5327,7 +5631,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -5389,7 +5694,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -5416,11 +5722,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Aufhebung und Änderung des geltenden Bundesrechts"
+     "label": "1. Abschnitt: Aufhebung und Änderung des geltenden Bundesrechts",
+     "eId": "chap_13/sec_1"
     }
    ],
    "marginalie": []
@@ -5429,11 +5737,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_2"
     }
    ],
    "marginalie": [
@@ -5444,11 +5754,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_2"
     }
    ],
    "marginalie": [
@@ -5460,11 +5772,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_2"
     }
    ],
    "marginalie": [
@@ -5476,11 +5790,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_2"
     }
    ],
    "marginalie": [
@@ -5492,11 +5808,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Referendum und Inkrafttreten"
+     "label": "3. Abschnitt: Referendum und Inkrafttreten",
+     "eId": "chap_13/sec_3"
     }
    ],
    "marginalie": [],
@@ -5514,7 +5832,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7a. Kapitel: Intermediärverwahrte Wertpapiere"
+     "label": "7a. Kapitel: Intermediärverwahrte Wertpapiere",
+     "eId": "chap_7_a"
     }
    ],
    "marginalie": [
@@ -5574,7 +5893,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7a. Kapitel: Intermediärverwahrte Wertpapiere"
+     "label": "7a. Kapitel: Intermediärverwahrte Wertpapiere",
+     "eId": "chap_7_a"
     }
    ],
    "marginalie": [
@@ -5585,7 +5905,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7a. Kapitel: Intermediärverwahrte Wertpapiere"
+     "label": "7a. Kapitel: Intermediärverwahrte Wertpapiere",
+     "eId": "chap_7_a"
     }
    ],
    "marginalie": [
@@ -5612,7 +5933,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7a. Kapitel: Intermediärverwahrte Wertpapiere"
+     "label": "7a. Kapitel: Intermediärverwahrte Wertpapiere",
+     "eId": "chap_7_a"
     }
    ],
    "marginalie": [
@@ -5623,11 +5945,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -5690,11 +6014,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -5746,11 +6072,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -5780,11 +6108,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Unerlaubte Handlungen"
+     "label": "3. Abschnitt: Unerlaubte Handlungen",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -5823,11 +6153,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Unerlaubte Handlungen"
+     "label": "3. Abschnitt: Unerlaubte Handlungen",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": [
@@ -5871,11 +6203,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Obligationenrecht"
+     "label": "9. Kapitel: Obligationenrecht",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "4. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_9/sec_4"
     }
    ],
    "marginalie": [
@@ -5905,7 +6239,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9a. Kapitel: Trusts"
+     "label": "9a. Kapitel: Trusts",
+     "eId": "chap_9_a"
     }
    ],
    "marginalie": [
@@ -5949,7 +6284,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9a. Kapitel: Trusts"
+     "label": "9a. Kapitel: Trusts",
+     "eId": "chap_9_a"
     }
    ],
    "marginalie": [
@@ -5960,7 +6296,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9a. Kapitel: Trusts"
+     "label": "9a. Kapitel: Trusts",
+     "eId": "chap_9_a"
     }
    ],
    "marginalie": [
@@ -5986,7 +6323,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9a. Kapitel: Trusts"
+     "label": "9a. Kapitel: Trusts",
+     "eId": "chap_9_a"
     }
    ],
    "marginalie": [
@@ -5997,7 +6335,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9a. Kapitel: Trusts"
+     "label": "9a. Kapitel: Trusts",
+     "eId": "chap_9_a"
     }
    ],
    "marginalie": [
@@ -6008,7 +6347,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -6039,7 +6379,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -6083,7 +6424,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -6114,7 +6456,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -6144,7 +6487,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -6188,7 +6532,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Gesellschaftsrecht"
+     "label": "10. Kapitel: Gesellschaftsrecht",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -6219,7 +6564,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Konkurs und Nachlassvertrag"
+     "label": "11. Kapitel: Konkurs und Nachlassvertrag",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -6249,7 +6595,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Konkurs und Nachlassvertrag"
+     "label": "11. Kapitel: Konkurs und Nachlassvertrag",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -6278,7 +6625,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Konkurs und Nachlassvertrag"
+     "label": "11. Kapitel: Konkurs und Nachlassvertrag",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -6307,7 +6655,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -6338,7 +6687,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -6368,7 +6718,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -6398,7 +6749,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -6428,7 +6780,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit"
+     "label": "12. Kapitel: Internationale Schiedsgerichtsbarkeit",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -6458,11 +6811,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_2"
     }
    ],
    "marginalie": [
@@ -6500,11 +6855,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_2"
     }
    ],
    "marginalie": [
@@ -6534,11 +6891,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_2"
     }
    ],
    "marginalie": [
@@ -6568,7 +6927,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Natürliche Personen"
+     "label": "2. Kapitel: Natürliche Personen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -6597,11 +6957,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eheschliessung"
+     "label": "1. Abschnitt: Eheschliessung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -6638,11 +7000,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Eherecht"
+     "label": "3. Kapitel: Eherecht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Scheidung und Trennung"
+     "label": "4. Abschnitt: Scheidung und Trennung",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -6676,7 +7040,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Eingetragene Partnerschaft"
+     "label": "3a. Kapitel: Eingetragene Partnerschaft",
+     "eId": "chap_3_a"
     }
    ],
    "marginalie": [
@@ -6743,7 +7108,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Eingetragene Partnerschaft"
+     "label": "3a. Kapitel: Eingetragene Partnerschaft",
+     "eId": "chap_3_a"
     }
    ],
    "marginalie": [
@@ -6776,7 +7142,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Eingetragene Partnerschaft"
+     "label": "3a. Kapitel: Eingetragene Partnerschaft",
+     "eId": "chap_3_a"
     }
    ],
    "marginalie": [
@@ -6809,7 +7176,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Eingetragene Partnerschaft"
+     "label": "3a. Kapitel: Eingetragene Partnerschaft",
+     "eId": "chap_3_a"
     }
    ],
    "marginalie": [
@@ -6842,7 +7210,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Erbrecht"
+     "label": "6. Kapitel: Erbrecht",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -6872,7 +7241,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Erbrecht"
+     "label": "6. Kapitel: Erbrecht",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -6902,11 +7272,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -6935,11 +7307,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -6968,11 +7342,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gemeinsame Bestimmungen"
+     "label": "1. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -7001,7 +7377,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Erbrecht"
+     "label": "6. Kapitel: Erbrecht",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -7031,7 +7408,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Erbrecht"
+     "label": "6. Kapitel: Erbrecht",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -7061,7 +7439,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Sachenrecht"
+     "label": "7. Kapitel: Sachenrecht",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [

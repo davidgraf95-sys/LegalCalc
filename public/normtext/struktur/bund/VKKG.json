@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "221.214.11",
   "titel": "Verordnung zum Konsumkreditgesetz",
@@ -67,7 +67,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Höchstzinssatz"
+     "label": "1. Abschnitt: Höchstzinssatz",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [],
@@ -90,7 +91,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Informationsstelle für Konsumkredit"
+     "label": "2. Abschnitt: Informationsstelle für Konsumkredit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -115,7 +117,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Informationsstelle für Konsumkredit"
+     "label": "2. Abschnitt: Informationsstelle für Konsumkredit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -140,7 +143,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Bewilligungsvoraussetzungen für Kreditgewährung und Kreditvermittlung"
+     "label": "3. Abschnitt: Bewilligungsvoraussetzungen für Kreditgewährung und Kreditvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -151,7 +155,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Bewilligungsvoraussetzungen für Kreditgewährung und Kreditvermittlung"
+     "label": "3. Abschnitt: Bewilligungsvoraussetzungen für Kreditgewährung und Kreditvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -162,7 +167,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Bewilligungsvoraussetzungen für Kreditgewährung und Kreditvermittlung"
+     "label": "3. Abschnitt: Bewilligungsvoraussetzungen für Kreditgewährung und Kreditvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -199,7 +205,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Bewilligungsvoraussetzungen für Kreditgewährung und Kreditvermittlung"
+     "label": "3. Abschnitt: Bewilligungsvoraussetzungen für Kreditgewährung und Kreditvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -224,7 +231,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Bewilligungsvoraussetzungen für Kreditgewährung und Kreditvermittlung"
+     "label": "3. Abschnitt: Bewilligungsvoraussetzungen für Kreditgewährung und Kreditvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -235,7 +243,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Schlussbestimmungen"
+     "label": "4. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -246,7 +255,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Schlussbestimmungen"
+     "label": "4. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -272,7 +282,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Schlussbestimmungen"
+     "label": "4. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -283,7 +294,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Informationsstelle für Konsumkredit"
+     "label": "2. Abschnitt: Informationsstelle für Konsumkredit",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -308,7 +320,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Bewilligungsvoraussetzungen für Kreditgewährung und Kreditvermittlung"
+     "label": "3. Abschnitt: Bewilligungsvoraussetzungen für Kreditgewährung und Kreditvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -337,7 +350,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Bewilligungsvoraussetzungen für Kreditgewährung und Kreditvermittlung"
+     "label": "3. Abschnitt: Bewilligungsvoraussetzungen für Kreditgewährung und Kreditvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -362,7 +376,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Bewilligungsvoraussetzungen für Kreditgewährung und Kreditvermittlung"
+     "label": "3. Abschnitt: Bewilligungsvoraussetzungen für Kreditgewährung und Kreditvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -387,7 +402,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Schlussbestimmungen"
+     "label": "4. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -412,7 +428,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Schlussbestimmungen"
+     "label": "4. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "281.42",
   "titel": "Verordnung des Bundesgerichts über die Zwangsverwertung von Grundstücken",
@@ -53,7 +53,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Allgemeine Bestimmungen"
+     "label": "Allgemeine Bestimmungen",
+     "eId": "lvl_u1"
     }
    ],
    "marginalie": [
@@ -102,7 +103,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Allgemeine Bestimmungen"
+     "label": "Allgemeine Bestimmungen",
+     "eId": "lvl_u1"
     }
    ],
    "marginalie": [
@@ -127,7 +129,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Allgemeine Bestimmungen"
+     "label": "Allgemeine Bestimmungen",
+     "eId": "lvl_u1"
     }
    ],
    "marginalie": [
@@ -153,7 +156,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Allgemeine Bestimmungen"
+     "label": "Allgemeine Bestimmungen",
+     "eId": "lvl_u1"
     }
    ],
    "marginalie": [
@@ -165,7 +169,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Allgemeine Bestimmungen"
+     "label": "Allgemeine Bestimmungen",
+     "eId": "lvl_u1"
     }
    ],
    "marginalie": [
@@ -368,7 +373,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Allgemeine Bestimmungen"
+     "label": "Allgemeine Bestimmungen",
+     "eId": "lvl_u1"
     }
    ],
    "marginalie": [
@@ -456,7 +462,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Allgemeine Bestimmungen"
+     "label": "Allgemeine Bestimmungen",
+     "eId": "lvl_u1"
     }
    ],
    "marginalie": [
@@ -483,15 +490,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "1. Pfändungsvollzug"
+     "label": "1. Pfändungsvollzug",
+     "eId": "lvl_A/lvl_I/lvl_1"
     }
    ],
    "marginalie": [
@@ -502,15 +512,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "1. Pfändungsvollzug"
+     "label": "1. Pfändungsvollzug",
+     "eId": "lvl_A/lvl_I/lvl_1"
     }
    ],
    "marginalie": [
@@ -535,15 +548,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "1. Pfändungsvollzug"
+     "label": "1. Pfändungsvollzug",
+     "eId": "lvl_A/lvl_I/lvl_1"
     }
    ],
    "marginalie": [
@@ -592,15 +608,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "1. Pfändungsvollzug"
+     "label": "1. Pfändungsvollzug",
+     "eId": "lvl_A/lvl_I/lvl_1"
     }
    ],
    "marginalie": [
@@ -638,15 +657,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "1. Pfändungsvollzug"
+     "label": "1. Pfändungsvollzug",
+     "eId": "lvl_A/lvl_I/lvl_1"
     }
    ],
    "marginalie": [
@@ -658,15 +680,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "1. Pfändungsvollzug"
+     "label": "1. Pfändungsvollzug",
+     "eId": "lvl_A/lvl_I/lvl_1"
     }
    ],
    "marginalie": [
@@ -704,15 +729,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "1. Pfändungsvollzug"
+     "label": "1. Pfändungsvollzug",
+     "eId": "lvl_A/lvl_I/lvl_1"
     }
    ],
    "marginalie": [
@@ -723,15 +751,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "1. Pfändungsvollzug"
+     "label": "1. Pfändungsvollzug",
+     "eId": "lvl_A/lvl_I/lvl_1"
     }
    ],
    "marginalie": [
@@ -828,15 +859,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "2. Verwaltung"
+     "label": "2. Verwaltung",
+     "eId": "lvl_A/lvl_I/lvl_2"
     }
    ],
    "marginalie": [
@@ -861,15 +895,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "2. Verwaltung"
+     "label": "2. Verwaltung",
+     "eId": "lvl_A/lvl_I/lvl_2"
     }
    ],
    "marginalie": [
@@ -881,15 +918,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "2. Verwaltung"
+     "label": "2. Verwaltung",
+     "eId": "lvl_A/lvl_I/lvl_2"
     }
    ],
    "marginalie": [
@@ -915,15 +955,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "2. Verwaltung"
+     "label": "2. Verwaltung",
+     "eId": "lvl_A/lvl_I/lvl_2"
     }
    ],
    "marginalie": [
@@ -934,15 +977,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "2. Verwaltung"
+     "label": "2. Verwaltung",
+     "eId": "lvl_A/lvl_I/lvl_2"
     }
    ],
    "marginalie": [
@@ -968,15 +1014,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "2. Verwaltung"
+     "label": "2. Verwaltung",
+     "eId": "lvl_A/lvl_I/lvl_2"
     }
    ],
    "marginalie": [
@@ -988,15 +1037,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "2. Verwaltung"
+     "label": "2. Verwaltung",
+     "eId": "lvl_A/lvl_I/lvl_2"
     }
    ],
    "marginalie": [
@@ -1021,15 +1073,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "3. Pfändung eines Miteigentumsanteils"
+     "label": "3. Pfändung eines Miteigentumsanteils",
+     "eId": "lvl_A/lvl_I/lvl_3"
     }
    ],
    "marginalie": [
@@ -1091,15 +1146,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "4. Requisitorialpfändung"
+     "label": "4. Requisitorialpfändung",
+     "eId": "lvl_A/lvl_I/lvl_4"
     }
    ],
    "marginalie": [],
@@ -1135,19 +1193,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "A. Allgemeine Vorschriften"
+     "label": "A. Allgemeine Vorschriften",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_A"
     }
    ],
    "marginalie": [
@@ -1185,19 +1247,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "A. Allgemeine Vorschriften"
+     "label": "A. Allgemeine Vorschriften",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_A"
     }
    ],
    "marginalie": [
@@ -1222,19 +1288,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "A. Allgemeine Vorschriften"
+     "label": "A. Allgemeine Vorschriften",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_A"
     }
    ],
    "marginalie": [
@@ -1245,19 +1315,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "A. Allgemeine Vorschriften"
+     "label": "A. Allgemeine Vorschriften",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_A"
     }
    ],
    "marginalie": [
@@ -1268,19 +1342,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "A. Allgemeine Vorschriften"
+     "label": "A. Allgemeine Vorschriften",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_A"
     }
    ],
    "marginalie": [
@@ -1330,19 +1408,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "A. Allgemeine Vorschriften"
+     "label": "A. Allgemeine Vorschriften",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_A"
     }
    ],
    "marginalie": [
@@ -1416,19 +1498,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "A. Allgemeine Vorschriften"
+     "label": "A. Allgemeine Vorschriften",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_A"
     }
    ],
    "marginalie": [
@@ -1440,19 +1526,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "A. Allgemeine Vorschriften"
+     "label": "A. Allgemeine Vorschriften",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_A"
     }
    ],
    "marginalie": [
@@ -1477,19 +1567,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "B. Lastenverzeichnis"
+     "label": "B. Lastenverzeichnis",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_B"
     }
    ],
    "marginalie": [
@@ -1500,19 +1594,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "B. Lastenverzeichnis"
+     "label": "B. Lastenverzeichnis",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_B"
     }
    ],
    "marginalie": [
@@ -1538,19 +1636,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "B. Lastenverzeichnis"
+     "label": "B. Lastenverzeichnis",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_B"
     }
    ],
    "marginalie": [
@@ -1576,19 +1678,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "B. Lastenverzeichnis"
+     "label": "B. Lastenverzeichnis",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_B"
     }
    ],
    "marginalie": [
@@ -1600,19 +1706,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "B. Lastenverzeichnis"
+     "label": "B. Lastenverzeichnis",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_B"
     }
    ],
    "marginalie": [
@@ -1649,19 +1759,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "B. Lastenverzeichnis"
+     "label": "B. Lastenverzeichnis",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_B"
     }
    ],
    "marginalie": [
@@ -1687,19 +1801,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "B. Lastenverzeichnis"
+     "label": "B. Lastenverzeichnis",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_B"
     }
    ],
    "marginalie": [
@@ -1725,19 +1843,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "B. Lastenverzeichnis"
+     "label": "B. Lastenverzeichnis",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_B"
     }
    ],
    "marginalie": [
@@ -1749,19 +1871,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "B. Lastenverzeichnis"
+     "label": "B. Lastenverzeichnis",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_B"
     }
    ],
    "marginalie": [
@@ -1787,19 +1913,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "B. Lastenverzeichnis"
+     "label": "B. Lastenverzeichnis",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_B"
     }
    ],
    "marginalie": [
@@ -1826,19 +1956,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "B. Lastenverzeichnis"
+     "label": "B. Lastenverzeichnis",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_B"
     }
    ],
    "marginalie": [
@@ -1865,19 +1999,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "B. Lastenverzeichnis"
+     "label": "B. Lastenverzeichnis",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_B"
     }
    ],
    "marginalie": [
@@ -1888,19 +2026,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "C. Steigerungsbedingungen"
+     "label": "C. Steigerungsbedingungen",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_C"
     }
    ],
    "marginalie": [
@@ -1926,19 +2068,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "C. Steigerungsbedingungen"
+     "label": "C. Steigerungsbedingungen",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_C"
     }
    ],
    "marginalie": [
@@ -1965,19 +2111,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "C. Steigerungsbedingungen"
+     "label": "C. Steigerungsbedingungen",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_C"
     }
    ],
    "marginalie": [
@@ -1990,19 +2140,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "C. Steigerungsbedingungen"
+     "label": "C. Steigerungsbedingungen",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_C"
     }
    ],
    "marginalie": [
@@ -2015,19 +2169,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "C. Steigerungsbedingungen"
+     "label": "C. Steigerungsbedingungen",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_C"
     }
    ],
    "marginalie": [
@@ -2090,19 +2248,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "C. Steigerungsbedingungen"
+     "label": "C. Steigerungsbedingungen",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_C"
     }
    ],
    "marginalie": [
@@ -2142,19 +2304,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "C. Steigerungsbedingungen"
+     "label": "C. Steigerungsbedingungen",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_C"
     }
    ],
    "marginalie": [
@@ -2193,19 +2359,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "1. Vorbereitungsverfahren"
+     "label": "1. Vorbereitungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_1"
     },
     {
      "ebene": 4,
-     "label": "C. Steigerungsbedingungen"
+     "label": "C. Steigerungsbedingungen",
+     "eId": "lvl_A/lvl_II/lvl_1/lvl_C"
     }
    ],
    "marginalie": [
@@ -2216,19 +2386,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "A. Voraussetzungen des Zuschlags"
+     "label": "A. Voraussetzungen des Zuschlags",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_A"
     }
    ],
    "marginalie": [
@@ -2265,19 +2439,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "A. Voraussetzungen des Zuschlags"
+     "label": "A. Voraussetzungen des Zuschlags",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_A"
     }
    ],
    "marginalie": [
@@ -2303,19 +2481,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "A. Voraussetzungen des Zuschlags"
+     "label": "A. Voraussetzungen des Zuschlags",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_A"
     }
    ],
    "marginalie": [
@@ -2341,19 +2523,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "B. Steigerungsverfahren"
+     "label": "B. Steigerungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -2374,19 +2560,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "B. Steigerungsverfahren"
+     "label": "B. Steigerungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -2412,19 +2602,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "B. Steigerungsverfahren"
+     "label": "B. Steigerungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -2450,19 +2644,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "B. Steigerungsverfahren"
+     "label": "B. Steigerungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -2474,19 +2672,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "B. Steigerungsverfahren"
+     "label": "B. Steigerungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -2498,19 +2700,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "B. Steigerungsverfahren"
+     "label": "B. Steigerungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -2535,19 +2741,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "B. Steigerungsverfahren"
+     "label": "B. Steigerungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -2573,19 +2783,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "B. Steigerungsverfahren"
+     "label": "B. Steigerungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -2610,19 +2824,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "B. Steigerungsverfahren"
+     "label": "B. Steigerungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -2648,19 +2866,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "B. Steigerungsverfahren"
+     "label": "B. Steigerungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -2686,19 +2908,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "B. Steigerungsverfahren"
+     "label": "B. Steigerungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -2724,19 +2950,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "B. Steigerungsverfahren"
+     "label": "B. Steigerungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -2748,19 +2978,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "B. Steigerungsverfahren"
+     "label": "B. Steigerungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -2786,19 +3020,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "B. Steigerungsverfahren"
+     "label": "B. Steigerungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -2810,19 +3048,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "B. Steigerungsverfahren"
+     "label": "B. Steigerungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -2834,19 +3076,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "B. Steigerungsverfahren"
+     "label": "B. Steigerungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -2896,19 +3142,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "B. Steigerungsverfahren"
+     "label": "B. Steigerungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -2945,15 +3195,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "3. Verwertung eines Miteigentumsanteils"
+     "label": "3. Verwertung eines Miteigentumsanteils",
+     "eId": "lvl_A/lvl_II/lvl_3"
     }
    ],
    "marginalie": [
@@ -2991,15 +3244,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "4. Requisitorialverwertungen"
+     "label": "4. Requisitorialverwertungen",
+     "eId": "lvl_A/lvl_II/lvl_4"
     }
    ],
    "marginalie": [
@@ -3038,15 +3294,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "4. Requisitorialverwertungen"
+     "label": "4. Requisitorialverwertungen",
+     "eId": "lvl_A/lvl_II/lvl_4"
     }
    ],
    "marginalie": [
@@ -3083,15 +3342,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "4. Requisitorialverwertungen"
+     "label": "4. Requisitorialverwertungen",
+     "eId": "lvl_A/lvl_II/lvl_4"
     }
    ],
    "marginalie": [
@@ -3102,15 +3364,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "4. Requisitorialverwertungen"
+     "label": "4. Requisitorialverwertungen",
+     "eId": "lvl_A/lvl_II/lvl_4"
     }
    ],
    "marginalie": [
@@ -3121,15 +3386,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "4. Requisitorialverwertungen"
+     "label": "4. Requisitorialverwertungen",
+     "eId": "lvl_A/lvl_II/lvl_4"
     }
    ],
    "marginalie": [
@@ -3167,11 +3435,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "III. Verteilung"
+     "label": "III. Verteilung",
+     "eId": "lvl_A/lvl_III"
     }
    ],
    "marginalie": [
@@ -3182,11 +3452,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "III. Verteilung"
+     "label": "III. Verteilung",
+     "eId": "lvl_A/lvl_III"
     }
    ],
    "marginalie": [
@@ -3211,11 +3483,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "III. Verteilung"
+     "label": "III. Verteilung",
+     "eId": "lvl_A/lvl_III"
     }
    ],
    "marginalie": [
@@ -3241,11 +3515,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "III. Verteilung"
+     "label": "III. Verteilung",
+     "eId": "lvl_A/lvl_III"
     }
    ],
    "marginalie": [
@@ -3271,11 +3547,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "III. Verteilung"
+     "label": "III. Verteilung",
+     "eId": "lvl_A/lvl_III"
     }
    ],
    "marginalie": [
@@ -3315,11 +3593,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "III. Verteilung"
+     "label": "III. Verteilung",
+     "eId": "lvl_A/lvl_III"
     }
    ],
    "marginalie": [
@@ -3344,11 +3624,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Vorverfahren"
+     "label": "I. Vorverfahren",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -3373,11 +3655,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Vorverfahren"
+     "label": "I. Vorverfahren",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -3416,11 +3700,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Vorverfahren"
+     "label": "I. Vorverfahren",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -3432,11 +3718,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Vorverfahren"
+     "label": "I. Vorverfahren",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -3512,11 +3800,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Vorverfahren"
+     "label": "I. Vorverfahren",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -3555,11 +3845,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Vorverfahren"
+     "label": "I. Vorverfahren",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -3596,11 +3888,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Vorverfahren"
+     "label": "I. Vorverfahren",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -3638,11 +3932,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Vorverfahren"
+     "label": "I. Vorverfahren",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -3692,11 +3988,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Vorverfahren"
+     "label": "I. Vorverfahren",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -3734,11 +4032,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Vorverfahren"
+     "label": "I. Vorverfahren",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -3750,11 +4050,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Vorverfahren"
+     "label": "I. Vorverfahren",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -3781,11 +4083,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "I. Vorverfahren"
+     "label": "I. Vorverfahren",
+     "eId": "lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -3813,11 +4117,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -3855,11 +4161,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -3921,11 +4229,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -3951,11 +4261,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -3994,11 +4306,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -4023,11 +4337,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -4053,11 +4369,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -4084,11 +4402,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -4139,11 +4459,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -4183,11 +4505,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -4227,11 +4551,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -4258,11 +4584,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -4313,11 +4641,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -4330,11 +4660,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -4347,11 +4679,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -4364,11 +4698,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verteilung"
+     "label": "III. Verteilung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -4393,11 +4729,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verteilung"
+     "label": "III. Verteilung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -4434,11 +4772,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verteilung"
+     "label": "III. Verteilung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -4449,11 +4789,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verteilung"
+     "label": "III. Verteilung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -4464,11 +4806,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verteilung"
+     "label": "III. Verteilung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -4505,11 +4849,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verteilung"
+     "label": "III. Verteilung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -4546,11 +4892,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verteilung"
+     "label": "III. Verteilung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -4561,11 +4909,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verteilung"
+     "label": "III. Verteilung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -4576,11 +4926,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verteilung"
+     "label": "III. Verteilung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -4606,11 +4958,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "III. Verteilung"
+     "label": "III. Verteilung",
+     "eId": "lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -4636,7 +4990,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -4662,7 +5017,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -4700,7 +5056,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -4712,7 +5069,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -4750,7 +5108,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -4776,7 +5135,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -4788,7 +5148,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -4826,7 +5187,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -4888,7 +5250,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -4938,7 +5301,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -4950,7 +5314,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -4962,11 +5327,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Verwertung im Pfandverwertungsverfahren"
+     "label": "B. Verwertung im Pfandverwertungsverfahren",
+     "eId": "lvl_B"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -5021,7 +5388,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -5085,7 +5453,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -5113,7 +5482,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -5165,7 +5535,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -5230,7 +5601,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -5258,7 +5630,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -5299,7 +5672,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -5351,7 +5725,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Verwertung im Konkursverfahren"
+     "label": "C. Verwertung im Konkursverfahren",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -5377,15 +5752,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "3. Pfändung eines Miteigentumsanteils"
+     "label": "3. Pfändung eines Miteigentumsanteils",
+     "eId": "lvl_A/lvl_I/lvl_3"
     }
    ],
    "marginalie": [
@@ -5434,15 +5812,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "3. Pfändung eines Miteigentumsanteils"
+     "label": "3. Pfändung eines Miteigentumsanteils",
+     "eId": "lvl_A/lvl_I/lvl_3"
     }
    ],
    "marginalie": [
@@ -5479,15 +5860,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "3. Pfändung eines Miteigentumsanteils"
+     "label": "3. Pfändung eines Miteigentumsanteils",
+     "eId": "lvl_A/lvl_I/lvl_3"
     }
    ],
    "marginalie": [
@@ -5512,15 +5896,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "lvl_A/lvl_I"
     },
     {
      "ebene": 3,
-     "label": "3. Pfändung eines Miteigentumsanteils"
+     "label": "3. Pfändung eines Miteigentumsanteils",
+     "eId": "lvl_A/lvl_I/lvl_3"
     }
    ],
    "marginalie": [
@@ -5545,19 +5932,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "2. Steigerungsakt und Zuschlag"
+     "label": "2. Steigerungsakt und Zuschlag",
+     "eId": "lvl_A/lvl_II/lvl_2"
     },
     {
      "ebene": 4,
-     "label": "B. Steigerungsverfahren"
+     "label": "B. Steigerungsverfahren",
+     "eId": "lvl_A/lvl_II/lvl_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -5599,15 +5990,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "3. Verwertung eines Miteigentumsanteils"
+     "label": "3. Verwertung eines Miteigentumsanteils",
+     "eId": "lvl_A/lvl_II/lvl_3"
     }
    ],
    "marginalie": [
@@ -5633,15 +6027,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "3. Verwertung eines Miteigentumsanteils"
+     "label": "3. Verwertung eines Miteigentumsanteils",
+     "eId": "lvl_A/lvl_II/lvl_3"
     }
    ],
    "marginalie": [
@@ -5667,15 +6064,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "3. Verwertung eines Miteigentumsanteils"
+     "label": "3. Verwertung eines Miteigentumsanteils",
+     "eId": "lvl_A/lvl_II/lvl_3"
     }
    ],
    "marginalie": [
@@ -5701,15 +6101,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "3. Verwertung eines Miteigentumsanteils"
+     "label": "3. Verwertung eines Miteigentumsanteils",
+     "eId": "lvl_A/lvl_II/lvl_3"
     }
    ],
    "marginalie": [
@@ -5735,15 +6138,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "3. Verwertung eines Miteigentumsanteils"
+     "label": "3. Verwertung eines Miteigentumsanteils",
+     "eId": "lvl_A/lvl_II/lvl_3"
     }
    ],
    "marginalie": [
@@ -5793,15 +6199,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "3. Verwertung eines Miteigentumsanteils"
+     "label": "3. Verwertung eines Miteigentumsanteils",
+     "eId": "lvl_A/lvl_II/lvl_3"
     }
    ],
    "marginalie": [
@@ -5827,15 +6236,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "3. Verwertung eines Miteigentumsanteils"
+     "label": "3. Verwertung eines Miteigentumsanteils",
+     "eId": "lvl_A/lvl_II/lvl_3"
     }
    ],
    "marginalie": [
@@ -5884,15 +6296,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "3. Verwertung eines Miteigentumsanteils"
+     "label": "3. Verwertung eines Miteigentumsanteils",
+     "eId": "lvl_A/lvl_II/lvl_3"
     }
    ],
    "marginalie": [
@@ -5917,15 +6332,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "3. Verwertung eines Miteigentumsanteils"
+     "label": "3. Verwertung eines Miteigentumsanteils",
+     "eId": "lvl_A/lvl_II/lvl_3"
     }
    ],
    "marginalie": [
@@ -5950,15 +6368,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "lvl_A/lvl_II"
     },
     {
      "ebene": 3,
-     "label": "5. Versteigerung eines Miteigentumsanteils auf Anordnung des Richters"
+     "label": "5. Versteigerung eines Miteigentumsanteils auf Anordnung des Richters",
+     "eId": "lvl_A/lvl_II/lvl_5"
     }
    ],
    "marginalie": [],
@@ -6006,11 +6427,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Verwertung im Pfändungsverfahren"
+     "label": "A. Verwertung im Pfändungsverfahren",
+     "eId": "lvl_A"
     },
     {
      "ebene": 2,
-     "label": "III. Verteilung"
+     "label": "III. Verteilung",
+     "eId": "lvl_A/lvl_III"
     }
    ],
    "marginalie": [
@@ -6035,7 +6458,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Schlussbestimmungen"
+     "label": "Schlussbestimmungen",
+     "eId": "disp_u1"
     }
    ],
    "marginalie": [],
@@ -6053,7 +6477,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Schlussbestimmungen"
+     "label": "Schlussbestimmungen",
+     "eId": "disp_u1"
     }
    ],
    "marginalie": [],

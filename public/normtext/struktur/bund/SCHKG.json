@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "281.1",
   "titel": "Bundesgesetz über Schuldbetreibung und Konkurs",
@@ -79,11 +79,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -113,11 +115,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -147,11 +151,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -181,11 +187,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -214,11 +222,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -248,11 +258,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -282,11 +294,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -316,11 +330,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -350,11 +366,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -365,11 +383,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -430,11 +450,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -512,11 +534,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -527,11 +551,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -544,11 +570,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -595,11 +623,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -661,11 +691,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -676,11 +708,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -726,11 +760,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -760,11 +796,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -808,11 +846,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -824,11 +864,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -840,11 +882,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -873,11 +917,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -907,11 +953,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -923,11 +971,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -957,11 +1007,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -1007,11 +1059,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -1041,11 +1095,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -1074,11 +1130,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -1107,11 +1165,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -1140,11 +1200,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "II. Verschiedene Vorschriften"
+     "label": "II. Verschiedene Vorschriften",
+     "eId": "tit_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -1188,11 +1250,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "II. Verschiedene Vorschriften"
+     "label": "II. Verschiedene Vorschriften",
+     "eId": "tit_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -1270,11 +1334,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "II. Verschiedene Vorschriften"
+     "label": "II. Verschiedene Vorschriften",
+     "eId": "tit_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -1336,11 +1402,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "II. Verschiedene Vorschriften"
+     "label": "II. Verschiedene Vorschriften",
+     "eId": "tit_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -1399,11 +1467,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "II. Verschiedene Vorschriften"
+     "label": "II. Verschiedene Vorschriften",
+     "eId": "tit_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -1433,11 +1503,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "II. Verschiedene Vorschriften"
+     "label": "II. Verschiedene Vorschriften",
+     "eId": "tit_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -1448,11 +1520,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "II. Verschiedene Vorschriften"
+     "label": "II. Verschiedene Vorschriften",
+     "eId": "tit_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -1501,11 +1575,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "I. Arten der Schuldbetreibung"
+     "label": "I. Arten der Schuldbetreibung",
+     "eId": "tit_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1516,11 +1592,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "I. Arten der Schuldbetreibung"
+     "label": "I. Arten der Schuldbetreibung",
+     "eId": "tit_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1661,11 +1739,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "I. Arten der Schuldbetreibung"
+     "label": "I. Arten der Schuldbetreibung",
+     "eId": "tit_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1695,11 +1775,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "I. Arten der Schuldbetreibung"
+     "label": "I. Arten der Schuldbetreibung",
+     "eId": "tit_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1728,11 +1810,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "I. Arten der Schuldbetreibung"
+     "label": "I. Arten der Schuldbetreibung",
+     "eId": "tit_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1761,11 +1845,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "I. Arten der Schuldbetreibung"
+     "label": "I. Arten der Schuldbetreibung",
+     "eId": "tit_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1867,11 +1953,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "I. Arten der Schuldbetreibung"
+     "label": "I. Arten der Schuldbetreibung",
+     "eId": "tit_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1915,11 +2003,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "I. Arten der Schuldbetreibung"
+     "label": "I. Arten der Schuldbetreibung",
+     "eId": "tit_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1963,11 +2053,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "II. Ort der Betreibung"
+     "label": "II. Ort der Betreibung",
+     "eId": "tit_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2016,11 +2108,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "II. Ort der Betreibung"
+     "label": "II. Ort der Betreibung",
+     "eId": "tit_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2049,11 +2143,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "II. Ort der Betreibung"
+     "label": "II. Ort der Betreibung",
+     "eId": "tit_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2065,11 +2161,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "II. Ort der Betreibung"
+     "label": "II. Ort der Betreibung",
+     "eId": "tit_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2103,11 +2201,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "II. Ort der Betreibung"
+     "label": "II. Ort der Betreibung",
+     "eId": "tit_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2119,11 +2219,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "II. Ort der Betreibung"
+     "label": "II. Ort der Betreibung",
+     "eId": "tit_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2185,11 +2287,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "II. Ort der Betreibung"
+     "label": "II. Ort der Betreibung",
+     "eId": "tit_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2220,11 +2324,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "II. Ort der Betreibung"
+     "label": "II. Ort der Betreibung",
+     "eId": "tit_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2235,11 +2341,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "II. Ort der Betreibung"
+     "label": "II. Ort der Betreibung",
+     "eId": "tit_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2250,11 +2358,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "II. Ort der Betreibung"
+     "label": "II. Ort der Betreibung",
+     "eId": "tit_2/lvl_II"
     }
    ],
    "marginalie": [
@@ -2265,11 +2375,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
+     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand",
+     "eId": "tit_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2344,11 +2456,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
+     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand",
+     "eId": "tit_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2440,11 +2554,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
+     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand",
+     "eId": "tit_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2474,11 +2590,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
+     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand",
+     "eId": "tit_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2524,11 +2642,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
+     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand",
+     "eId": "tit_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2559,11 +2679,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
+     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand",
+     "eId": "tit_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2575,11 +2697,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
+     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand",
+     "eId": "tit_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2609,11 +2733,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
+     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand",
+     "eId": "tit_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2642,11 +2768,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "IV. Zustellung der Betreibungsurkunden"
+     "label": "IV. Zustellung der Betreibungsurkunden",
+     "eId": "tit_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2657,11 +2785,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "IV. Zustellung der Betreibungsurkunden"
+     "label": "IV. Zustellung der Betreibungsurkunden",
+     "eId": "tit_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2726,11 +2856,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "IV. Zustellung der Betreibungsurkunden"
+     "label": "IV. Zustellung der Betreibungsurkunden",
+     "eId": "tit_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2791,11 +2923,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "V. Anhebung der Betreibung"
+     "label": "V. Anhebung der Betreibung",
+     "eId": "tit_2/lvl_V"
     }
    ],
    "marginalie": [
@@ -2828,11 +2962,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "V. Anhebung der Betreibung"
+     "label": "V. Anhebung der Betreibung",
+     "eId": "tit_2/lvl_V"
     }
    ],
    "marginalie": [
@@ -2843,11 +2979,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -2869,11 +3007,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -2903,11 +3043,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -2937,11 +3079,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -2971,11 +3115,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -3008,11 +3154,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -3058,11 +3206,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -3092,11 +3242,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -3108,11 +3260,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -3190,11 +3344,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -3206,11 +3362,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -3240,11 +3398,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -3413,11 +3573,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -3477,11 +3639,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -3494,11 +3658,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -3561,11 +3727,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -3595,11 +3763,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -3629,11 +3799,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -3691,11 +3863,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -3706,11 +3880,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "IX. Fortsetzung der Betreibung"
+     "label": "IX. Fortsetzung der Betreibung",
+     "eId": "tit_2/lvl_IX"
     }
    ],
    "marginalie": [],
@@ -3754,11 +3930,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -3804,11 +3982,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -3820,11 +4000,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -3879,11 +4061,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -4304,11 +4488,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -4358,11 +4544,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -4412,11 +4600,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -4479,11 +4669,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -4545,11 +4737,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -4560,11 +4754,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -4606,11 +4802,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -4622,11 +4820,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -4638,11 +4838,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -4673,11 +4875,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -4728,11 +4932,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -4763,11 +4969,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -4779,11 +4987,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -4813,11 +5023,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -4860,11 +5072,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -4895,11 +5109,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -4930,11 +5146,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -4981,11 +5199,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -5015,11 +5235,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -5155,11 +5377,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -5171,11 +5395,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -5205,11 +5431,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -5239,11 +5467,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -5273,11 +5503,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -5307,11 +5539,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -5323,11 +5557,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -5339,11 +5575,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -5373,11 +5611,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -5389,11 +5629,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -5405,11 +5647,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -5440,11 +5684,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -5535,11 +5781,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -5586,11 +5834,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -5621,11 +5871,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -5652,11 +5904,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -5683,11 +5937,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -5718,11 +5974,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -5794,11 +6052,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -5877,11 +6137,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -5911,11 +6173,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -5957,11 +6221,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -5991,11 +6257,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -6008,11 +6276,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -6056,11 +6326,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -6104,11 +6376,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -6143,11 +6417,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -6198,11 +6474,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -6233,11 +6511,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -6268,11 +6548,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -6303,11 +6585,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -6338,11 +6622,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -6372,11 +6658,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -6422,11 +6710,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -6456,11 +6746,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -6491,11 +6783,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -6526,11 +6820,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -6593,11 +6889,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -6660,11 +6958,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -6714,7 +7014,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Betreibung auf Pfandverwertung"
+     "label": "Vierter Titel: Betreibung auf Pfandverwertung",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -6785,7 +7086,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Betreibung auf Pfandverwertung"
+     "label": "Vierter Titel: Betreibung auf Pfandverwertung",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -6856,7 +7158,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Betreibung auf Pfandverwertung"
+     "label": "Vierter Titel: Betreibung auf Pfandverwertung",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -6980,7 +7283,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Betreibung auf Pfandverwertung"
+     "label": "Vierter Titel: Betreibung auf Pfandverwertung",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -7009,7 +7313,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Betreibung auf Pfandverwertung"
+     "label": "Vierter Titel: Betreibung auf Pfandverwertung",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -7039,7 +7344,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Betreibung auf Pfandverwertung"
+     "label": "Vierter Titel: Betreibung auf Pfandverwertung",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -7069,7 +7375,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Betreibung auf Pfandverwertung"
+     "label": "Vierter Titel: Betreibung auf Pfandverwertung",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -7115,7 +7422,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Betreibung auf Pfandverwertung"
+     "label": "Vierter Titel: Betreibung auf Pfandverwertung",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -7190,11 +7498,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -7224,11 +7534,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -7274,11 +7586,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -7324,11 +7638,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -7340,11 +7656,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -7374,11 +7692,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -7422,11 +7742,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -7457,11 +7779,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -7491,11 +7815,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -7507,11 +7833,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -7523,11 +7851,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -7557,11 +7887,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -7573,11 +7905,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -7607,11 +7941,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -7641,11 +7977,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -7692,11 +8030,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -7739,11 +8079,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -7754,11 +8096,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -7807,11 +8151,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "II. Wechselbetreibung"
+     "label": "II. Wechselbetreibung",
+     "eId": "tit_5/lvl_II"
     }
    ],
    "marginalie": [
@@ -7822,11 +8168,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "II. Wechselbetreibung"
+     "label": "II. Wechselbetreibung",
+     "eId": "tit_5/lvl_II"
     }
    ],
    "marginalie": [
@@ -7891,11 +8239,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "II. Wechselbetreibung"
+     "label": "II. Wechselbetreibung",
+     "eId": "tit_5/lvl_II"
     }
    ],
    "marginalie": [
@@ -7925,11 +8275,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "II. Wechselbetreibung"
+     "label": "II. Wechselbetreibung",
+     "eId": "tit_5/lvl_II"
     }
    ],
    "marginalie": [
@@ -7941,11 +8293,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "II. Wechselbetreibung"
+     "label": "II. Wechselbetreibung",
+     "eId": "tit_5/lvl_II"
     }
    ],
    "marginalie": [
@@ -7975,11 +8329,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "II. Wechselbetreibung"
+     "label": "II. Wechselbetreibung",
+     "eId": "tit_5/lvl_II"
     }
    ],
    "marginalie": [
@@ -8022,11 +8378,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "II. Wechselbetreibung"
+     "label": "II. Wechselbetreibung",
+     "eId": "tit_5/lvl_II"
     }
    ],
    "marginalie": [
@@ -8060,11 +8418,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "II. Wechselbetreibung"
+     "label": "II. Wechselbetreibung",
+     "eId": "tit_5/lvl_II"
     }
    ],
    "marginalie": [
@@ -8094,11 +8454,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "II. Wechselbetreibung"
+     "label": "II. Wechselbetreibung",
+     "eId": "tit_5/lvl_II"
     }
    ],
    "marginalie": [
@@ -8142,11 +8504,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "II. Wechselbetreibung"
+     "label": "II. Wechselbetreibung",
+     "eId": "tit_5/lvl_II"
     }
    ],
    "marginalie": [
@@ -8158,11 +8522,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "II. Wechselbetreibung"
+     "label": "II. Wechselbetreibung",
+     "eId": "tit_5/lvl_II"
     }
    ],
    "marginalie": [
@@ -8173,11 +8539,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "II. Wechselbetreibung"
+     "label": "II. Wechselbetreibung",
+     "eId": "tit_5/lvl_II"
     }
    ],
    "marginalie": [
@@ -8188,11 +8556,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "II. Wechselbetreibung"
+     "label": "II. Wechselbetreibung",
+     "eId": "tit_5/lvl_II"
     }
    ],
    "marginalie": [
@@ -8221,11 +8591,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "III. Konkurseröffnung ohne vorgängige Betreibung"
+     "label": "III. Konkurseröffnung ohne vorgängige Betreibung",
+     "eId": "tit_5/lvl_III"
     }
    ],
    "marginalie": [
@@ -8254,11 +8626,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "III. Konkurseröffnung ohne vorgängige Betreibung"
+     "label": "III. Konkurseröffnung ohne vorgängige Betreibung",
+     "eId": "tit_5/lvl_III"
     }
    ],
    "marginalie": [
@@ -8287,11 +8661,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "III. Konkurseröffnung ohne vorgängige Betreibung"
+     "label": "III. Konkurseröffnung ohne vorgängige Betreibung",
+     "eId": "tit_5/lvl_III"
     }
    ],
    "marginalie": [
@@ -8320,11 +8696,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "III. Konkurseröffnung ohne vorgängige Betreibung"
+     "label": "III. Konkurseröffnung ohne vorgängige Betreibung",
+     "eId": "tit_5/lvl_III"
     }
    ],
    "marginalie": [
@@ -8366,11 +8744,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "III. Konkurseröffnung ohne vorgängige Betreibung"
+     "label": "III. Konkurseröffnung ohne vorgängige Betreibung",
+     "eId": "tit_5/lvl_III"
     }
    ],
    "marginalie": [
@@ -8399,11 +8779,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "IV. Widerruf des Konkurses"
+     "label": "IV. Widerruf des Konkurses",
+     "eId": "tit_5/lvl_IV"
     }
    ],
    "marginalie": [
@@ -8432,11 +8814,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "IV. Widerruf des Konkurses"
+     "label": "IV. Widerruf des Konkurses",
+     "eId": "tit_5/lvl_IV"
     }
    ],
    "marginalie": [
@@ -8465,11 +8849,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners"
+     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners",
+     "eId": "tit_6/lvl_I"
     }
    ],
    "marginalie": [
@@ -8515,11 +8901,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners"
+     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners",
+     "eId": "tit_6/lvl_I"
     }
    ],
    "marginalie": [
@@ -8531,11 +8919,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners"
+     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners",
+     "eId": "tit_6/lvl_I"
     }
    ],
    "marginalie": [
@@ -8565,11 +8955,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners"
+     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners",
+     "eId": "tit_6/lvl_I"
     }
    ],
    "marginalie": [
@@ -8581,11 +8973,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners"
+     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners",
+     "eId": "tit_6/lvl_I"
     }
    ],
    "marginalie": [
@@ -8597,11 +8991,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners"
+     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners",
+     "eId": "tit_6/lvl_I"
     }
    ],
    "marginalie": [
@@ -8613,11 +9009,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners"
+     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners",
+     "eId": "tit_6/lvl_I"
     }
    ],
    "marginalie": [
@@ -8629,11 +9027,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners"
+     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners",
+     "eId": "tit_6/lvl_I"
     }
    ],
    "marginalie": [
@@ -8644,11 +9044,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners"
+     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners",
+     "eId": "tit_6/lvl_I"
     }
    ],
    "marginalie": [
@@ -8659,11 +9061,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners"
+     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners",
+     "eId": "tit_6/lvl_I"
     }
    ],
    "marginalie": [
@@ -8692,11 +9096,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners"
+     "label": "I. Wirkungen des Konkurses auf das Vermögen des Schuldners",
+     "eId": "tit_6/lvl_I"
     }
    ],
    "marginalie": [
@@ -8725,11 +9131,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger"
+     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger",
+     "eId": "tit_6/lvl_II"
     }
    ],
    "marginalie": [
@@ -8762,11 +9170,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger"
+     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger",
+     "eId": "tit_6/lvl_II"
     }
    ],
    "marginalie": [
@@ -8795,11 +9205,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger"
+     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger",
+     "eId": "tit_6/lvl_II"
     }
    ],
    "marginalie": [
@@ -8841,11 +9253,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger"
+     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger",
+     "eId": "tit_6/lvl_II"
     }
    ],
    "marginalie": [
@@ -8932,11 +9346,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger"
+     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger",
+     "eId": "tit_6/lvl_II"
     }
    ],
    "marginalie": [
@@ -8947,11 +9363,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger"
+     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger",
+     "eId": "tit_6/lvl_II"
     }
    ],
    "marginalie": [
@@ -9041,11 +9459,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger"
+     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger",
+     "eId": "tit_6/lvl_II"
     }
    ],
    "marginalie": [
@@ -9076,11 +9496,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger"
+     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger",
+     "eId": "tit_6/lvl_II"
     }
    ],
    "marginalie": [
@@ -9123,11 +9545,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger"
+     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger",
+     "eId": "tit_6/lvl_II"
     }
    ],
    "marginalie": [
@@ -9139,11 +9563,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger"
+     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger",
+     "eId": "tit_6/lvl_II"
     }
    ],
    "marginalie": [
@@ -9155,11 +9581,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger"
+     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger",
+     "eId": "tit_6/lvl_II"
     }
    ],
    "marginalie": [
@@ -9189,11 +9617,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger"
+     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger",
+     "eId": "tit_6/lvl_II"
     }
    ],
    "marginalie": [
@@ -9495,11 +9925,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger"
+     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger",
+     "eId": "tit_6/lvl_II"
     }
    ],
    "marginalie": [
@@ -9510,11 +9942,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "tit_7/lvl_I"
     }
    ],
    "marginalie": [
@@ -9560,11 +9994,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "tit_7/lvl_I"
     }
    ],
    "marginalie": [
@@ -9606,11 +10042,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "tit_7/lvl_I"
     }
    ],
    "marginalie": [
@@ -9621,11 +10059,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "tit_7/lvl_I"
     }
    ],
    "marginalie": [
@@ -9636,11 +10076,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "tit_7/lvl_I"
     }
    ],
    "marginalie": [
@@ -9652,11 +10094,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "tit_7/lvl_I"
     }
    ],
    "marginalie": [
@@ -9686,11 +10130,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "tit_7/lvl_I"
     }
    ],
    "marginalie": [
@@ -9701,11 +10147,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "tit_7/lvl_I"
     }
    ],
    "marginalie": [
@@ -9716,11 +10164,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "tit_7/lvl_I"
     }
    ],
    "marginalie": [
@@ -9778,11 +10228,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "tit_7/lvl_I"
     }
    ],
    "marginalie": [
@@ -9856,11 +10308,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "tit_7/lvl_I"
     }
    ],
    "marginalie": [
@@ -9889,11 +10343,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "II. Schuldenruf"
+     "label": "II. Schuldenruf",
+     "eId": "tit_7/lvl_II"
     }
    ],
    "marginalie": [
@@ -10023,11 +10479,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "II. Schuldenruf"
+     "label": "II. Schuldenruf",
+     "eId": "tit_7/lvl_II"
     }
    ],
    "marginalie": [
@@ -10056,11 +10514,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "II. Schuldenruf"
+     "label": "II. Schuldenruf",
+     "eId": "tit_7/lvl_II"
     }
    ],
    "marginalie": [
@@ -10093,11 +10553,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "tit_7/lvl_III"
     }
    ],
    "marginalie": [
@@ -10127,11 +10589,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "tit_7/lvl_III"
     }
    ],
    "marginalie": [
@@ -10161,11 +10625,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "tit_7/lvl_III"
     }
    ],
    "marginalie": [
@@ -10196,11 +10662,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "tit_7/lvl_III"
     }
    ],
    "marginalie": [
@@ -10231,11 +10699,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "tit_7/lvl_III"
     }
    ],
    "marginalie": [
@@ -10265,11 +10735,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "tit_7/lvl_III"
     }
    ],
    "marginalie": [
@@ -10281,11 +10753,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "tit_7/lvl_III"
     }
    ],
    "marginalie": [
@@ -10315,11 +10789,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "tit_7/lvl_III"
     }
    ],
    "marginalie": [
@@ -10349,11 +10825,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "tit_7/lvl_III"
     }
    ],
    "marginalie": [
@@ -10383,11 +10861,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen. Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen. Kollokation der Gläubiger",
+     "eId": "tit_7/lvl_IV"
     }
    ],
    "marginalie": [
@@ -10398,11 +10878,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen. Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen. Kollokation der Gläubiger",
+     "eId": "tit_7/lvl_IV"
     }
    ],
    "marginalie": [
@@ -10413,11 +10895,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen. Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen. Kollokation der Gläubiger",
+     "eId": "tit_7/lvl_IV"
     }
    ],
    "marginalie": [
@@ -10446,11 +10930,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen. Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen. Kollokation der Gläubiger",
+     "eId": "tit_7/lvl_IV"
     }
    ],
    "marginalie": [
@@ -10480,11 +10966,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen. Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen. Kollokation der Gläubiger",
+     "eId": "tit_7/lvl_IV"
     }
    ],
    "marginalie": [
@@ -10496,11 +10984,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen. Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen. Kollokation der Gläubiger",
+     "eId": "tit_7/lvl_IV"
     }
    ],
    "marginalie": [
@@ -10530,11 +11020,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen. Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen. Kollokation der Gläubiger",
+     "eId": "tit_7/lvl_IV"
     }
    ],
    "marginalie": [
@@ -10580,11 +11072,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "IV. Erwahrung der Konkursforderungen. Kollokation der Gläubiger"
+     "label": "IV. Erwahrung der Konkursforderungen. Kollokation der Gläubiger",
+     "eId": "tit_7/lvl_IV"
     }
    ],
    "marginalie": [
@@ -10596,11 +11090,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "tit_7/lvl_V"
     }
    ],
    "marginalie": [
@@ -10646,11 +11142,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "tit_7/lvl_V"
     }
    ],
    "marginalie": [
@@ -10662,11 +11160,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "tit_7/lvl_V"
     }
    ],
    "marginalie": [
@@ -10696,11 +11196,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "tit_7/lvl_V"
     }
    ],
    "marginalie": [
@@ -10729,11 +11231,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "tit_7/lvl_V"
     }
    ],
    "marginalie": [
@@ -10778,11 +11282,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "tit_7/lvl_V"
     }
    ],
    "marginalie": [
@@ -10794,11 +11300,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "tit_7/lvl_V"
     }
    ],
    "marginalie": [
@@ -10840,11 +11348,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "tit_7/lvl_V"
     }
    ],
    "marginalie": [
@@ -10874,11 +11384,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "tit_7/lvl_V"
     }
    ],
    "marginalie": [
@@ -10907,11 +11419,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "tit_7/lvl_VI"
     }
    ],
    "marginalie": [
@@ -10922,11 +11436,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "tit_7/lvl_VI"
     }
    ],
    "marginalie": [
@@ -10955,11 +11471,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "tit_7/lvl_VI"
     }
    ],
    "marginalie": [
@@ -10970,11 +11488,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "tit_7/lvl_VI"
     }
    ],
    "marginalie": [
@@ -10985,11 +11505,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "tit_7/lvl_VI"
     }
    ],
    "marginalie": [
@@ -11035,11 +11557,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "tit_7/lvl_VI"
     }
    ],
    "marginalie": [
@@ -11068,11 +11592,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "tit_7/lvl_VI"
     }
    ],
    "marginalie": [
@@ -11083,11 +11609,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "VII. Schluss des Konkursverfahrens"
+     "label": "VII. Schluss des Konkursverfahrens",
+     "eId": "tit_7/lvl_VII"
     }
    ],
    "marginalie": [
@@ -11098,11 +11626,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "VII. Schluss des Konkursverfahrens"
+     "label": "VII. Schluss des Konkursverfahrens",
+     "eId": "tit_7/lvl_VII"
     }
    ],
    "marginalie": [
@@ -11131,11 +11661,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "VII. Schluss des Konkursverfahrens"
+     "label": "VII. Schluss des Konkursverfahrens",
+     "eId": "tit_7/lvl_VII"
     }
    ],
    "marginalie": [
@@ -11164,7 +11696,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Arrest"
+     "label": "Achter Titel: Arrest",
+     "eId": "tit_8"
     }
    ],
    "marginalie": [
@@ -11270,7 +11803,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Arrest"
+     "label": "Achter Titel: Arrest",
+     "eId": "tit_8"
     }
    ],
    "marginalie": [
@@ -11315,7 +11849,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Arrest"
+     "label": "Achter Titel: Arrest",
+     "eId": "tit_8"
     }
    ],
    "marginalie": [
@@ -11344,7 +11879,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Arrest"
+     "label": "Achter Titel: Arrest",
+     "eId": "tit_8"
     }
    ],
    "marginalie": [
@@ -11373,7 +11909,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Arrest"
+     "label": "Achter Titel: Arrest",
+     "eId": "tit_8"
     }
    ],
    "marginalie": [
@@ -11402,7 +11939,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Arrest"
+     "label": "Achter Titel: Arrest",
+     "eId": "tit_8"
     }
    ],
    "marginalie": [
@@ -11431,7 +11969,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Arrest"
+     "label": "Achter Titel: Arrest",
+     "eId": "tit_8"
     }
    ],
    "marginalie": [
@@ -11461,7 +12000,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Arrest"
+     "label": "Achter Titel: Arrest",
+     "eId": "tit_8"
     }
    ],
    "marginalie": [
@@ -11503,7 +12043,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Arrest"
+     "label": "Achter Titel: Arrest",
+     "eId": "tit_8"
     }
    ],
    "marginalie": [
@@ -11606,7 +12147,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Arrest"
+     "label": "Achter Titel: Arrest",
+     "eId": "tit_8"
     }
    ],
    "marginalie": [
@@ -11635,7 +12177,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Arrest"
+     "label": "Achter Titel: Arrest",
+     "eId": "tit_8"
     }
    ],
    "marginalie": [
@@ -11646,7 +12189,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Besondere Bestimmungen über Miete und Pacht"
+     "label": "Neunter Titel: Besondere Bestimmungen über Miete und Pacht",
+     "eId": "tit_9"
     }
    ],
    "marginalie": [],
@@ -11673,7 +12217,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Besondere Bestimmungen über Miete und Pacht"
+     "label": "Neunter Titel: Besondere Bestimmungen über Miete und Pacht",
+     "eId": "tit_9"
     }
    ],
    "marginalie": [
@@ -11715,7 +12260,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Besondere Bestimmungen über Miete und Pacht"
+     "label": "Neunter Titel: Besondere Bestimmungen über Miete und Pacht",
+     "eId": "tit_9"
     }
    ],
    "marginalie": [
@@ -11745,7 +12291,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Anfechtung"
+     "label": "Zehnter Titel: Anfechtung",
+     "eId": "tit_10"
     }
    ],
    "marginalie": [
@@ -11892,7 +12439,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Anfechtung"
+     "label": "Zehnter Titel: Anfechtung",
+     "eId": "tit_10"
     }
    ],
    "marginalie": [
@@ -11954,7 +12502,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Anfechtung"
+     "label": "Zehnter Titel: Anfechtung",
+     "eId": "tit_10"
     }
    ],
    "marginalie": [
@@ -12032,7 +12581,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Anfechtung"
+     "label": "Zehnter Titel: Anfechtung",
+     "eId": "tit_10"
     }
    ],
    "marginalie": [
@@ -12078,7 +12628,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Anfechtung"
+     "label": "Zehnter Titel: Anfechtung",
+     "eId": "tit_10"
     }
    ],
    "marginalie": [
@@ -12108,7 +12659,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Anfechtung"
+     "label": "Zehnter Titel: Anfechtung",
+     "eId": "tit_10"
     }
    ],
    "marginalie": [
@@ -12138,7 +12690,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Anfechtung"
+     "label": "Zehnter Titel: Anfechtung",
+     "eId": "tit_10"
     }
    ],
    "marginalie": [
@@ -12149,7 +12702,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Anfechtung"
+     "label": "Zehnter Titel: Anfechtung",
+     "eId": "tit_10"
     }
    ],
    "marginalie": [
@@ -12191,11 +12745,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -12241,11 +12797,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -12275,11 +12833,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -12329,11 +12889,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -12363,11 +12925,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -12397,11 +12961,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -12431,11 +12997,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -12483,11 +13051,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -12517,11 +13087,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -12551,11 +13123,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -12585,11 +13159,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -12632,11 +13208,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -12666,11 +13244,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag"
+     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag",
+     "eId": "tit_11/lvl_II"
     }
    ],
    "marginalie": [
@@ -12722,11 +13302,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag"
+     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag",
+     "eId": "tit_11/lvl_II"
     }
    ],
    "marginalie": [
@@ -12756,11 +13338,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag"
+     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag",
+     "eId": "tit_11/lvl_II"
     }
    ],
    "marginalie": [
@@ -12803,11 +13387,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag"
+     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag",
+     "eId": "tit_11/lvl_II"
     }
    ],
    "marginalie": [
@@ -12837,11 +13423,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag"
+     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag",
+     "eId": "tit_11/lvl_II"
     }
    ],
    "marginalie": [
@@ -12871,11 +13459,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag"
+     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag",
+     "eId": "tit_11/lvl_II"
     }
    ],
    "marginalie": [
@@ -12906,11 +13496,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag"
+     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag",
+     "eId": "tit_11/lvl_II"
     }
    ],
    "marginalie": [
@@ -12923,11 +13515,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag"
+     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag",
+     "eId": "tit_11/lvl_II"
     }
    ],
    "marginalie": [
@@ -12956,11 +13550,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag"
+     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag",
+     "eId": "tit_11/lvl_II"
     }
    ],
    "marginalie": [
@@ -12986,11 +13582,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "III. Ordentlicher Nachlassvertrag"
+     "label": "III. Ordentlicher Nachlassvertrag",
+     "eId": "tit_11/lvl_III"
     }
    ],
    "marginalie": [
@@ -13019,11 +13617,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "III. Ordentlicher Nachlassvertrag"
+     "label": "III. Ordentlicher Nachlassvertrag",
+     "eId": "tit_11/lvl_III"
     }
    ],
    "marginalie": [
@@ -13034,11 +13634,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "III. Ordentlicher Nachlassvertrag"
+     "label": "III. Ordentlicher Nachlassvertrag",
+     "eId": "tit_11/lvl_III"
     }
    ],
    "marginalie": [
@@ -13049,11 +13651,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "IV. Nachlassvertrag mit Vermögensabtretung"
+     "label": "IV. Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_11/lvl_IV"
     }
    ],
    "marginalie": [
@@ -13064,11 +13668,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "IV. Nachlassvertrag mit Vermögensabtretung"
+     "label": "IV. Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_11/lvl_IV"
     }
    ],
    "marginalie": [
@@ -13113,11 +13719,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "IV. Nachlassvertrag mit Vermögensabtretung"
+     "label": "IV. Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_11/lvl_IV"
     }
    ],
    "marginalie": [
@@ -13150,11 +13758,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "IV. Nachlassvertrag mit Vermögensabtretung"
+     "label": "IV. Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_11/lvl_IV"
     }
    ],
    "marginalie": [
@@ -13165,11 +13775,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "IV. Nachlassvertrag mit Vermögensabtretung"
+     "label": "IV. Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_11/lvl_IV"
     }
    ],
    "marginalie": [
@@ -13180,11 +13792,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "IV. Nachlassvertrag mit Vermögensabtretung"
+     "label": "IV. Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_11/lvl_IV"
     }
    ],
    "marginalie": [
@@ -13196,11 +13810,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "IV. Nachlassvertrag mit Vermögensabtretung"
+     "label": "IV. Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_11/lvl_IV"
     }
    ],
    "marginalie": [
@@ -13212,11 +13828,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "IV. Nachlassvertrag mit Vermögensabtretung"
+     "label": "IV. Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_11/lvl_IV"
     }
    ],
    "marginalie": [
@@ -13243,11 +13861,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "IV. Nachlassvertrag mit Vermögensabtretung"
+     "label": "IV. Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_11/lvl_IV"
     }
    ],
    "marginalie": [
@@ -13259,11 +13879,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "IV. Nachlassvertrag mit Vermögensabtretung"
+     "label": "IV. Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_11/lvl_IV"
     }
    ],
    "marginalie": [
@@ -13275,11 +13897,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "IV. Nachlassvertrag mit Vermögensabtretung"
+     "label": "IV. Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_11/lvl_IV"
     }
    ],
    "marginalie": [
@@ -13291,11 +13915,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "IV. Nachlassvertrag mit Vermögensabtretung"
+     "label": "IV. Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_11/lvl_IV"
     }
    ],
    "marginalie": [
@@ -13307,11 +13933,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "IV. Nachlassvertrag mit Vermögensabtretung"
+     "label": "IV. Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_11/lvl_IV"
     }
    ],
    "marginalie": [
@@ -13323,11 +13951,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "IV. Nachlassvertrag mit Vermögensabtretung"
+     "label": "IV. Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_11/lvl_IV"
     }
    ],
    "marginalie": [
@@ -13338,11 +13968,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "IV. Nachlassvertrag mit Vermögensabtretung"
+     "label": "IV. Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_11/lvl_IV"
     }
    ],
    "marginalie": [
@@ -13371,11 +14003,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "V. Nachlassvertrag im Konkurs"
+     "label": "V. Nachlassvertrag im Konkurs",
+     "eId": "tit_11/lvl_V"
     }
    ],
    "marginalie": [],
@@ -13402,11 +14036,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "VI. Einvernehmliche private Schuldenbereinigung"
+     "label": "VI. Einvernehmliche private Schuldenbereinigung",
+     "eId": "tit_11/lvl_VI"
     }
    ],
    "marginalie": [
@@ -13417,11 +14053,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "VI. Einvernehmliche private Schuldenbereinigung"
+     "label": "VI. Einvernehmliche private Schuldenbereinigung",
+     "eId": "tit_11/lvl_VI"
     }
    ],
    "marginalie": [
@@ -13454,11 +14092,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "VI. Einvernehmliche private Schuldenbereinigung"
+     "label": "VI. Einvernehmliche private Schuldenbereinigung",
+     "eId": "tit_11/lvl_VI"
     }
    ],
    "marginalie": [
@@ -13469,11 +14109,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "VI. Einvernehmliche private Schuldenbereinigung"
+     "label": "VI. Einvernehmliche private Schuldenbereinigung",
+     "eId": "tit_11/lvl_VI"
     }
    ],
    "marginalie": [
@@ -13484,7 +14126,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Titel: Notstundung"
+     "label": "Zwölfter Titel: Notstundung",
+     "eId": "tit_12"
     }
    ],
    "marginalie": [
@@ -13518,7 +14161,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Titel: Notstundung"
+     "label": "Zwölfter Titel: Notstundung",
+     "eId": "tit_12"
     }
    ],
    "marginalie": [
@@ -13530,7 +14174,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Titel: Notstundung"
+     "label": "Zwölfter Titel: Notstundung",
+     "eId": "tit_12"
     }
    ],
    "marginalie": [
@@ -13542,7 +14187,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Titel: Notstundung"
+     "label": "Zwölfter Titel: Notstundung",
+     "eId": "tit_12"
     }
    ],
    "marginalie": [
@@ -13618,7 +14264,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Titel: Notstundung"
+     "label": "Zwölfter Titel: Notstundung",
+     "eId": "tit_12"
     }
    ],
    "marginalie": [
@@ -13630,7 +14277,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Titel: Notstundung"
+     "label": "Zwölfter Titel: Notstundung",
+     "eId": "tit_12"
     }
    ],
    "marginalie": [
@@ -13642,7 +14290,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Titel: Notstundung"
+     "label": "Zwölfter Titel: Notstundung",
+     "eId": "tit_12"
     }
    ],
    "marginalie": [
@@ -13669,7 +14318,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Titel: Notstundung"
+     "label": "Zwölfter Titel: Notstundung",
+     "eId": "tit_12"
     }
    ],
    "marginalie": [
@@ -13682,7 +14332,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Titel: Notstundung"
+     "label": "Zwölfter Titel: Notstundung",
+     "eId": "tit_12"
     }
    ],
    "marginalie": [
@@ -13695,7 +14346,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Titel: Notstundung"
+     "label": "Zwölfter Titel: Notstundung",
+     "eId": "tit_12"
     }
    ],
    "marginalie": [
@@ -13707,7 +14359,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Titel: Notstundung"
+     "label": "Zwölfter Titel: Notstundung",
+     "eId": "tit_12"
     }
    ],
    "marginalie": [
@@ -13718,7 +14371,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Titel: Notstundung"
+     "label": "Zwölfter Titel: Notstundung",
+     "eId": "tit_12"
     }
    ],
    "marginalie": [
@@ -13747,7 +14401,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Titel: Notstundung"
+     "label": "Zwölfter Titel: Notstundung",
+     "eId": "tit_12"
     }
    ],
    "marginalie": [
@@ -13758,7 +14413,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Titel: Notstundung"
+     "label": "Zwölfter Titel: Notstundung",
+     "eId": "tit_12"
     }
    ],
    "marginalie": [
@@ -13787,7 +14443,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dreizehnter Titel: Schlussbestimmungen"
+     "label": "Dreizehnter Titel: Schlussbestimmungen",
+     "eId": "tit_13"
     }
    ],
    "marginalie": [
@@ -13830,7 +14487,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dreizehnter Titel: Schlussbestimmungen"
+     "label": "Dreizehnter Titel: Schlussbestimmungen",
+     "eId": "tit_13"
     }
    ],
    "marginalie": [
@@ -13860,11 +14518,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -13894,11 +14554,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -13928,11 +14590,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -13962,11 +14626,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -13996,11 +14662,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "II. Verwertung"
+     "label": "II. Verwertung",
+     "eId": "tit_3/lvl_II"
     }
    ],
    "marginalie": [
@@ -14031,7 +14699,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Betreibung auf Pfandverwertung"
+     "label": "Vierter Titel: Betreibung auf Pfandverwertung",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -14076,11 +14745,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -14167,11 +14838,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Betreibung auf Konkurs"
+     "label": "Fünfter Titel: Betreibung auf Konkurs",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "I. Ordentliche Konkursbetreibung"
+     "label": "I. Ordentliche Konkursbetreibung",
+     "eId": "tit_5/lvl_I"
     }
    ],
    "marginalie": [
@@ -14242,11 +14915,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -14357,11 +15032,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Konkursrecht"
+     "label": "Sechster Titel: Konkursrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger"
+     "label": "II. Wirkungen des Konkurses auf die Rechte der Gläubiger",
+     "eId": "tit_6/lvl_II"
     }
    ],
    "marginalie": [
@@ -14390,11 +15067,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "tit_7/lvl_I"
     }
    ],
    "marginalie": [
@@ -14423,11 +15102,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens"
+     "label": "I. Feststellung der Konkursmasse und Bestimmung des Verfahrens",
+     "eId": "tit_7/lvl_I"
     }
    ],
    "marginalie": [
@@ -14457,11 +15138,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "tit_7/lvl_III"
     }
    ],
    "marginalie": [
@@ -14495,11 +15178,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "III. Verwaltung"
+     "label": "III. Verwaltung",
+     "eId": "tit_7/lvl_III"
     }
    ],
    "marginalie": [
@@ -14533,11 +15218,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "V. Verwertung"
+     "label": "V. Verwertung",
+     "eId": "tit_7/lvl_V"
     }
    ],
    "marginalie": [
@@ -14566,11 +15253,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "tit_7/lvl_VI"
     }
    ],
    "marginalie": [
@@ -14632,11 +15321,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Konkursverfahren"
+     "label": "Siebenter Titel: Konkursverfahren",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "VI. Verteilung"
+     "label": "VI. Verteilung",
+     "eId": "tit_7/lvl_VI"
     }
    ],
    "marginalie": [
@@ -14666,7 +15357,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titelbis: Besondere Bestimmungen bei Trustverhältnissen"
+     "label": "Neunter Titelbis: Besondere Bestimmungen bei Trustverhältnissen",
+     "eId": "tit_9_bis"
     }
    ],
    "marginalie": [
@@ -14709,7 +15401,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titelbis: Besondere Bestimmungen bei Trustverhältnissen"
+     "label": "Neunter Titelbis: Besondere Bestimmungen bei Trustverhältnissen",
+     "eId": "tit_9_bis"
     }
    ],
    "marginalie": [
@@ -14720,7 +15413,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Anfechtung"
+     "label": "Zehnter Titel: Anfechtung",
+     "eId": "tit_10"
     }
    ],
    "marginalie": [
@@ -14758,11 +15452,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -14812,11 +15508,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -14846,11 +15544,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -14880,11 +15580,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -14914,11 +15616,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -14948,11 +15652,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -14982,11 +15688,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -15029,11 +15737,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -15076,11 +15786,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -15110,11 +15822,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -15144,11 +15858,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "I. Nachlassstundung"
+     "label": "I. Nachlassstundung",
+     "eId": "tit_11/lvl_I"
     }
    ],
    "marginalie": [
@@ -15160,11 +15876,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Nachlassverfahren"
+     "label": "Elfter Titel: Nachlassverfahren",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag"
+     "label": "II. Allgemeine Bestimmungen über den Nachlassvertrag",
+     "eId": "tit_11/lvl_II"
     }
    ],
    "marginalie": [
@@ -15176,11 +15894,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -15223,11 +15943,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "II. Verschiedene Vorschriften"
+     "label": "II. Verschiedene Vorschriften",
+     "eId": "tit_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -15277,11 +15999,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -15310,11 +16034,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
+     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand",
+     "eId": "tit_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -15402,11 +16128,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
+     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand",
+     "eId": "tit_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -15462,11 +16190,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
+     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand",
+     "eId": "tit_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -15509,11 +16239,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
+     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand",
+     "eId": "tit_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -15589,11 +16321,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand"
+     "label": "III. Geschlossene Zeiten, Betreibungsferien und Rechtsstillstand",
+     "eId": "tit_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -15628,11 +16362,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VI. Betreibung eines in Gütergemeinschaft lebenden Ehegatten"
+     "label": "VI. Betreibung eines in Gütergemeinschaft lebenden Ehegatten",
+     "eId": "tit_2/lvl_VI"
     }
    ],
    "marginalie": [
@@ -15722,11 +16458,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VI. Betreibung eines in Gütergemeinschaft lebenden Ehegatten"
+     "label": "VI. Betreibung eines in Gütergemeinschaft lebenden Ehegatten",
+     "eId": "tit_2/lvl_VI"
     }
    ],
    "marginalie": [
@@ -15775,11 +16513,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VII. Betreibung bei gesetzlicher Vertretung oder Beistandschaft"
+     "label": "VII. Betreibung bei gesetzlicher Vertretung oder Beistandschaft",
+     "eId": "tit_2/lvl_VII"
     }
    ],
    "marginalie": [
@@ -15838,11 +16578,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VII. Betreibung bei gesetzlicher Vertretung oder Beistandschaft"
+     "label": "VII. Betreibung bei gesetzlicher Vertretung oder Beistandschaft",
+     "eId": "tit_2/lvl_VII"
     }
    ],
    "marginalie": [
@@ -15871,11 +16613,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VII. Betreibung bei gesetzlicher Vertretung oder Beistandschaft"
+     "label": "VII. Betreibung bei gesetzlicher Vertretung oder Beistandschaft",
+     "eId": "tit_2/lvl_VII"
     }
    ],
    "marginalie": [
@@ -15886,11 +16630,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Schuldbetreibung"
+     "label": "Zweiter Titel: Schuldbetreibung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag"
+     "label": "VIII. Zahlungsbefehl und Rechtsvorschlag",
+     "eId": "tit_2/lvl_VIII"
     }
    ],
    "marginalie": [
@@ -15973,11 +16719,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "I. Organisation"
+     "label": "I. Organisation",
+     "eId": "tit_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -16046,11 +16794,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Betreibung auf Pfändung"
+     "label": "Dritter Titel: Betreibung auf Pfändung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "I. Pfändung"
+     "label": "I. Pfändung",
+     "eId": "tit_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -16089,7 +16839,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Schlussbestimmungen der Änderung vom 16. Dezember 1994"
+     "label": "Schlussbestimmungen der Änderung vom 16. Dezember 1994",
+     "eId": "disp_u1"
     }
    ],
    "marginalie": [
@@ -16119,7 +16870,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Schlussbestimmungen der Änderung vom 16. Dezember 1994"
+     "label": "Schlussbestimmungen der Änderung vom 16. Dezember 1994",
+     "eId": "disp_u1"
     }
    ],
    "marginalie": [
@@ -16145,7 +16897,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Schlussbestimmungen der Änderung vom 16. Dezember 1994"
+     "label": "Schlussbestimmungen der Änderung vom 16. Dezember 1994",
+     "eId": "disp_u1"
     }
    ],
    "marginalie": [
@@ -16156,7 +16909,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Schlussbestimmungen der Änderung vom 16. Dezember 1994"
+     "label": "Schlussbestimmungen der Änderung vom 16. Dezember 1994",
+     "eId": "disp_u1"
     }
    ],
    "marginalie": [
