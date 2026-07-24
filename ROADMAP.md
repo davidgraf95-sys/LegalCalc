@@ -519,7 +519,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 > Reihenfolge nach Praxis-Hebel × Machbarkeit ohne Fachzeit × Abhängigkeiten. Alles `[OF]`, sofern
 > nicht vermerkt. Details + Bau-Auflagen je Werkzeug: «Funktions-Katalog» unten + jeweilige `FAHRPLAN-*.md`.
 
-<!-- @queue: QS-TOK, W2·12-HYGIENE, W2·5b, W2·5d, W2·5h-GESETZ-UI, W2·5i-HIST-ANSICHT, W2·13-KANTONE, W2·7-BEZUG, W2·6b-MAT-FINMA -->
+<!-- @queue: QS-TOK, W2·5b, W2·5d, W2·5h-GESETZ-UI, W2·5i-HIST-ANSICHT, W2·13-KANTONE, W2·7-BEZUG, W2·6b-MAT-FINMA -->
 <!-- ^ SSoT der Bau-Reihenfolge (Einbau 24.7.2026): plan:next wertet die @queue VOR der
      Dokumentreihenfolge aus; Integrität erzwingt check:plan Regel 8 (tote/erledigte IDs rot,
      Prosa-«OBERSTER» muss dem Queue-Kopf entsprechen). Priorität ändern = NUR diese Zeile
@@ -540,6 +540,12 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 > 10.7.2026, Pakete P0–P5). **Start = P0/T2 Token-Baseline (Messung zuerst)**, dann Pakete in
 > Plan-Reihenfolge. Die Feature-Reihenfolge danach steht in der **`@queue`-Zeile oben** (SSoT);
 > abgelöste Fassung wörtlich → `ROADMAP-CHRONIK.md` → Steuerungs-Prosa (24.7.2026).
+> **Stand 24.7.2026 (Nachmessung, Session III): autonomer Bau-Rest LEER** — T1/T2/T3/T5/T6/T7/
+> T9/T15/T17/T18/T19 + Dispatch-Template + `map`/`zeige`/`fahrplan` sind gebaut (Belege:
+> FAHRPLAN §Stand + Repo-Nachmessung); die verbleibenden Posten laufen NUR mit separatem Go
+> David (§8 Ziff. 4: T10 · T12-Stufe-2 · T14 · T16 · T20-je-Einsatz) bzw. sind als
+> unwirtschaftlich zurückgestellt (T13-Rest auf Risikopfaden). Eine Bau-Session ohne dieses
+> Go nimmt direkt den nächsten Queue-Schritt.
 
 > **■ Fokus-Dekret 24.7.2026 (David, §14-Intake — 14 Anmerkungen, präzisiert die
 > Feature-Reihenfolge oben): die Gesetzesdarstellung steht im Vordergrund.** Reihenfolge:
@@ -1213,8 +1219,13 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   **§14-Intake 20.7.2026 (David):** Bedienungsanleitung/Onboarding für LexMetrik — Ersteinstieg «was kann das Werkzeug», je Rubrik ein Kurzpfad; kein eigener FAHRPLAN, Detail inline in `FAHRPLAN-UX-PUNKTELISTE.md`.
   <!-- @meta id: W2·9 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: FAHRPLAN-UX-PUNKTELISTE.md -->
   **alt-Punkt → Code-Pfad → Status**, *bevor* Restpunkte C2/C5 angefasst werden.
-- [ ] **12 · Code- & Bibliothek-Hygiene** *(Auftrag David 12.7.2026, `[OF]`; Ultracode-Audit
-  <!-- @meta id: W2·12-HYGIENE · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/data/tarif, src/lib/vorlagen/datum.ts, src/pages/gesetz-leser/inhalt.tsx, src/components/forms, bibliothek/INDEX.md, scripts/bibliothek-check.sh] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-CODE-HYGIENE.md -->
+- [x] **12 · Code- & Bibliothek-Hygiene** *(Auftrag David 12.7.2026, `[OF]`; Ultracode-Audit
+  <!-- @meta id: W2·12-HYGIENE · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-CODE-HYGIENE.md -->
+  **ABGESCHLOSSEN 24.7.2026** — alle baubaren Einheiten H-1…H-14 + B24 ✅ (zuletzt B24
+  inhalt.tsx-Split 1494→781 Z., PR #338 `b56b9193`; H-3 No-op, Git-Stand bereits sauber).
+  Status-Log je Einheit: `FAHRPLAN-CODE-HYGIENE.md §S`. Gesperrt-/Eskaliert-Posten laufen
+  ausserhalb weiter: Alt-Engine-Ablösung Gründungsgebühren (Entscheid-Queue David) ·
+  NE-Umzugsprüfung + Fedlex-Wiedervorlagen (Currency-Slot, «Pflege & Termine»).
   41 Befunde + 3 Kritik-Linsen mit Repo-Stichproben)* — 14 Bau-Einheiten **H-1…H-14** in
   Risikoklassen-Reihenfolge: P0 Doku-/Git-Hygiene (Bibliothek-Wahrheits-Sweep inkl.
   SH-Doppel-Wahrheit §5/S8, check-Scope, 16 gemergte Branches) → P1 verhaltensneutraler Code
