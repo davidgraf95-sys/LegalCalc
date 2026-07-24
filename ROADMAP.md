@@ -287,6 +287,17 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   die Gesundheit dieser Automatik wird neu von **`QS-AUTOMATIK`** überwacht (dort ist `fedlex-frische.yml` rot).
 - **Geräte-Last / Performance** *(QS-PERF, `[OF]`, neu 30.6.2026 — Leitprinzip 7 + CLAUDE.md §15)*.
   **§14-Intake 20.7.2026 (David):** TBT-Budget `/gesetze/bund/OR` (#28) — VOR jeder Feature-Zuschreibung Nullprobe + Streuung (Dispatch §0 Ziff. 3): das Budget ist der einzige Job mit Rot im Sample, die Rausch-Rotquote allein erklärt den Grossteil. Lighthouse-Median n≥3 statt Einzelwert gehört in `scripts/perf/` (Worktree `lm-ci`).
+  **§14-Intake 24.7.2026 (David, «ja nimm den pfad-filter als intake auf»): CI-Pfad-Filter für
+  Doku-/Plan-PRs.** Anlass gemessen: reine Plan-/Doku-PRs (#332/#333, nur `*.md` + `scripts/plan/`)
+  durchlaufen die vollen Browser-Smoke-Shards + Perf-Budget (~20–25 min Wall-Clock je Push, plus
+  Flake-Reruns wie A35 auf Shard 3), obwohl kein `src/`-/`public/`-Pfad berührt ist. **Bau:** In
+  `ci.yml` Browser-Smoke + Perf-Budget hinter einen Pfad-Filter legen (laufen nur bei Berührung von
+  `src/`, `public/`, `index.html`, `vite.config*`, `tailwind.config*`, `package*.json`, `e2e/`,
+  `scripts/` AUSSER `scripts/plan/`); bei Nicht-Lauf **protokolliertes SKIP** (§6 Ziff. 7 lit. b —
+  sichtbarer Job-Status «skipped wegen Pfad-Filter», nie still grün; `check:ci-laeufe`-Verträglichkeit
+  prüfen). Tore-Job (tsc/vitest/golden/lint/checks) läuft IMMER. Sabotage-Probe: ein `src/`-Diff muss
+  die Shards nachweislich wieder auslösen. Abgrenzung: Shard-Neupackung bleibt der eigene, an den
+  Merge-Queue-Entscheid gekoppelte Posten (s. u.) — hier nur die Auslöse-Bedingung.
   <!-- @meta id: QS-PERF · status: wip · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: FAHRPLAN-PERFORMANCE.md -->
   Lexmetrik soll Computer **nicht merklich langsamer** machen, **ohne Logikverlust** (Treue gewinnt
   immer). Detailquelle: **`FAHRPLAN-PERFORMANCE.md`** (ultracode-Audit 30.6.2026, 25 verifizierte,
