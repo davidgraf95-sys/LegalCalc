@@ -513,9 +513,9 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
      Dokumentreihenfolge aus; Integrität erzwingt check:plan Regel 8 (tote/erledigte IDs rot,
      Prosa-«OBERSTER» muss dem Queue-Kopf entsprechen). Priorität ändern = NUR diese Zeile
      ändern, nicht Prosa. Begründung je Schritt in den Dekret-Blöcken darunter.
-     Annahme (David-bestätigbar): QS-TOK bleibt vor dem Fokus-Dekret 24.7. an der Spitze
-     (Dekret 10.7. nie widerrufen); zieht David die Gesetzesdarstellung vor, W2·12-HYGIENE
-     an den Kopf dieser Zeile setzen. -->
+     Präzedenz QS-TOK vor Gesetzesdarstellung: von David BESTÄTIGT (Chat 24.7.2026, «nein
+     passt»); will er später die Gesetzesdarstellung vorziehen, W2·12-HYGIENE an den Kopf
+     dieser Zeile setzen. -->
 
 > **⬆ OBERSTER OFFENER SCHRITT (Priorisierung David 10.7.2026): `QS-TOK` Token-Ökonomie des
 > Agenten-Baus.** Wortlaut David (Chat 10.7.2026): «oberster schritt soll sein den token verbrauch
