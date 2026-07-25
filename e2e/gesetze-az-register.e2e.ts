@@ -146,6 +146,10 @@ test.describe('IA-3 · Perf/CLS + Mobil (§11.6.5/§11.6.9)', () => {
     await expect(page.getByText(/Titel unter «G»/)).toBeVisible({ timeout: 15_000 })
     await page.getByRole('searchbox', { name: 'A–Z-Register filtern (Titel oder Kürzel)' }).fill('gesetz')
     await expect(page.getByText(/Treffer im Register für/)).toBeVisible({ timeout: 15_000 })
+    // Innen-Scroll der Register-Liste: Scrollen ist KEIN «recent input» — hier
+    // darf strukturell nichts nachwachsen (CI-Befund PR #347: die früheren
+    // content-visibility-Zeilen wuchsen genau so input-frei ein).
+    await page.getByRole('region', { name: 'Register-Liste' }).evaluate((el) => { el.scrollTop = el.scrollHeight / 2 })
     await page.waitForTimeout(600)
 
     const cls = await page.evaluate(() => (window as unknown as { __cls: number }).__cls)

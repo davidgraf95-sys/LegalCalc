@@ -6,11 +6,16 @@
 // auf die HeaderSuche; dieses Feld filtert nur die Register-Liste).
 //
 // Perf (§15/R-PERF-5): Lazy-je-Buchstabe — es rendert IMMER nur die gewählte
-// Buchstaben-Klasse (grösste: V mit ~589 Titeln), nie alle 1469; die Zeilen
-// tragen zusätzlich content-visibility (az-zeile-cv, §15.1-Virtualisierung ohne
-// DOM-Removal). Alle Listen-Wechsel folgen direkt auf eine Nutzer-Eingabe
-// (input-exkludiert) ⇒ kein CLS-Beitrag; der Block steht am ENDE des
-// Landeplatzes und wächst nur nach unten (§15.2).
+// Buchstaben-Klasse (grösste: V mit ~589 Titeln), nie alle 1469. CLS 0 durch
+// RESERVIERTEN Platz (§15.2, CI-Befund PR #347): die Ergebnisliste lebt in einem
+// Scroll-Container mit KONSTANTER Höhe — Klassen-/Filter-Wechsel ändern nur den
+// Inhalt, nie die Aussengeometrie (Footer/Umfeld stehen still, egal wie spät der
+// Commit auf langsamer Hardware landet; die 500-ms-Input-Gnade trägt dort nicht).
+// BEWUSST kein content-visibility auf den Zeilen: dessen Platzhalter-Schätzung
+// (contain-intrinsic-size) wurde asynchron auf die echte Zeilenhöhe korrigiert —
+// genau die input-freien LI-Shifts, die das CLS-Tor in CI rot machten (Quellen-
+// Attribution 25.7.2026: prev 44px → cur 29/50px). Ein einziger synchroner
+// Layout-Pass je Commit ist hier billiger und shift-frei.
 //
 // Mobil kollabiert (§3.1 «keine Wucherung», §11.5-DoD): auf schmalen Viewports
 // startet die Sektion zugeklappt (Disclosure-Button, aria-expanded).
@@ -39,7 +44,7 @@ function AzZeile({ e }: { e: BrowseErlass }) {
       </span>
     </>
   );
-  const cls = 'az-zeile-cv group/az grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-3 rounded px-2 py-1 text-body-s no-underline hover:bg-brass-100/30 transition-colors';
+  const cls = 'group/az grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-3 rounded px-2 py-1 text-body-s no-underline hover:bg-brass-100/30 transition-colors';
   return istLesbar(e)
     ? <Link to={basePath} className={cls}>{inhalt}</Link>
     : <a href={e.quelleUrl} target="_blank" rel="noopener noreferrer" className={cls}>{inhalt}</a>;
@@ -137,24 +142,55 @@ export function AzRegister({ erlasse }: { erlasse: BrowseErlass[] }) {
             </ul>
           </nav>
 
-          {liste ? (
-            <div className="space-y-2">
-              <p aria-live="polite" className="text-xs text-ink-500">
-                {filtert
-                  ? <><span className="num">{liste.length}</span> {liste.length === 1 ? 'Treffer' : 'Treffer'} im Register für «{filter.trim()}»</>
-                  : <><span className="num">{liste.length}</span> {liste.length === 1 ? 'Titel' : 'Titel'} unter «{buchstabe}»</>}
-              </p>
-              {liste.length > 0 && (
-                <ul className="m-0 list-none space-y-0.5 p-0">
+          {/* §15.2 (CI-Befund PR #347): Status-Zeile mit FESTER Höhe + Liste in
+              einem Scroll-Container mit KONSTANTER Höhe — jeder Klassen-/Filter-
+              Wechsel ändert nur den Inhalt, nie die Aussengeometrie. So gibt es
+              strukturell keinen input-freien Shift, auch wenn ein Commit auf
+              langsamer Hardware erst nach der 500-ms-Input-Gnade landet. */}
+          <div className="space-y-2">
+            {/* Der innere span ist je Status-Text ein FRISCHER Knoten (key):
+                Chrome zählt das Umschreiben eines bestehenden Text-Knotens als
+                layout-shift (Quellen-Attribution 25.7.: «#text …»», 0.0013,
+                auf langsamer Hardware input-frei) — ein neu eingefügter Knoten
+                in einer fix hohen Zeile (h-5) shiftet dagegen strukturell nie. */}
+            <p aria-live="polite" className="h-5 truncate text-xs text-ink-500">
+              <span key={liste ? (filtert ? `f:${filter.trim()}:${liste.length}` : `b:${buchstabe}:${liste.length}`) : 'leer'}>
+                {liste
+                  ? (filtert
+                    ? <><span className="num">{liste.length}</span> Treffer im Register für «{filter.trim()}»</>
+                    : <><span className="num">{liste.length}</span> Titel unter «{buchstabe}»</>)
+                  : <>Buchstaben wählen oder filtern — alle Ebenen (Bund, Kantone, International), jeder Titel führt in den Volltext.</>}
+              </span>
+            </p>
+            {/* Scrollbare Region: tastatur-erreichbar (tabIndex, axe
+                scrollable-region-focusable) und benannt. Die Höhe ist ein
+                Skalen-Wert (h-96) und bleibt in JEDEM Zustand gleich. */}
+            <div
+              role="region"
+              aria-label="Register-Liste"
+              tabIndex={0}
+              className="h-96 overflow-y-auto overscroll-contain rounded border border-line/70 p-2"
+            >
+              {liste && liste.length > 0 ? (
+                <ul
+                  /* Remount je Sicht (CI-Befund PR #347, Rest-Shift): OHNE den
+                     key reusen React-Keys (e.key) LI-Knoten über den Sichten-
+                     Wechsel (Klasse ↔ Filter) hinweg — überlebende Knoten
+                     WANDERN dann im Scroll-Container (layout-shift), und auf
+                     langsamer Hardware landet der Commit nach der 500-ms-
+                     Input-Gnade. Frische Knoten je Sicht shiften nie. */
+                  key={filtert ? `f:${filter.trim()}` : `b:${buchstabe}`}
+                  className="m-0 list-none space-y-0.5 p-0"
+                >
                   {liste.map((e) => <li key={e.key}><AzZeile e={e} /></li>)}
                 </ul>
+              ) : (
+                <p className="px-2 py-1 text-body-s text-ink-500">
+                  {liste ? 'Kein Titel im Register gefunden.' : 'Noch nichts gewählt — die Liste erscheint hier.'}
+                </p>
               )}
             </div>
-          ) : (
-            <p className="text-body-s text-ink-500">
-              Buchstaben wählen oder filtern — alle Ebenen (Bund, Kantone, International), jeder Titel führt direkt in den Volltext.
-            </p>
-          )}
+          </div>
         </div>
       )}
     </section>
