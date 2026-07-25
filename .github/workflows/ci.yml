@@ -5,30 +5,23 @@
 # golden/lexmetrik-golden.json; Abweichung = fachliche Änderung, die mit
 # `npm run golden` + Begründung im selben Commit deklariert sein muss.
 #
-# ─── O-3.3 · e2e-Sharding gegen CI-Starvation (Forensik 17.7.) ───────────────
-# Früher lief ALLES (tsc → Tests → Lint → Build → Node-Checks → Browser-Smoke →
-# Perf) als EIN Job `tore`; die Playwright-e2e-Wand (39 Specs, `workers: 1`) war
-# darin die serielle Engstelle. Auf dem 2-Kern-Free-Runner rissen unter CPU-Last
-# reihum schwere Specs das Test-Timeout (a11y/leser-linien-kanon — lokal grün,
-# ~12–19 s), bei >3 parallelen PR-Läufen wurde es Roulette. Jetzt:
-#   1) `tore` baut dist EINMAL und legt es als Artefakt ab (kein 3× Bauen);
-#   2) `e2e` fährt Playwright als 3er-Matrix (je eigener vite-preview,
-#      `E2E_PORT` bleibt env-konfigurierbar) → je Job ~⅓ der Wand, weniger
-#      Contention, ohne die Parallelität in EINEN Runner zurückzuholen;
-#      VERTEILUNG NACH GEMESSENER DAUER (Shard-Balancing 19.7.): Playwrights
-#      `--shard=i/3` verteilt nach TEST-ZAHL in Alphabet-Reihenfolge — die
-#      schweren OR-Reader-Specs (leser-*, gesetze.e2e, norm-sprung) klumpten so
-#      alle in Shard 2 (22–42 min; Shard 1/3 nur 7–11 min), und die lange
-#      Chromium-Session auf dem gestarveten Runner riss dann Einzel-Budgets.
-#      Statt Alphabet packt jetzt `e2e/shard-gruppen.json` drei dauer-gleiche
-#      Gruppen (LPT aus lokal gemessenen Spec-Dauern, je ~212 s, Spread <0.1 %,
-#      schwere Specs verteilt). Der Union-Wächter (`check:e2e-shards`, auch in
-#      `tore`/`check:seriell`) beweist vor den Shards: Gruppen == `playwright
-#      --list` — kein Test doppelt, keiner verloren. Reine Verteilung, kein
-#      Test/Assertion/Timeout/Umfang berührt (§6.3);
-#   3) `perf` misst §15-Budgets ERST, wenn Bau + alle e2e-Shards grün sind
-#      (`needs: [tore, e2e]`) — die «Tempo zählt nur bei grüner Treue»-Kopplung
-#      ist damit job-übergreifend härter als die frühere Schritt-Reihenfolge.
+# ─── CI-Topologie (26.7.2026, «flüssiger»-Umbau; Historie O-3.3 in git) ──────
+# Kritischer Pfad vorher ~21–30 min: `tore` (5.5 min, seriell: tsc→Tests→Lint→
+# Build→alle Node-Checks) blockierte die e2e-Shards, und die 3er-Matrix war
+# nach LOKALEN Dauern gepackt, die nicht auf den CI-Runner skalieren (gemessen
+# 11.8/15.5/21.0 min statt je ~7). Jetzt:
+#   1) `bau` baut dist EINMAL und lädt es als Artefakt hoch — mehr nicht.
+#      e2e-Shards und `tore` starten direkt danach PARALLEL;
+#   2) `e2e` fährt 8 dauer-balancierte Gruppen (LPT aus CI-GEMESSENEN
+#      Spec-Dauern, e2e/shard-gruppen.json, je ~5.4–6.4 min Testzeit).
+#      Der Union-Wächter (`check:e2e-shards`, auch in `check:seriell`) beweist
+#      vor den Shards: Gruppen == `playwright --list` — kein Test doppelt,
+#      keiner verloren. Reine Verteilung, kein Test/Timeout/Umfang (§6.3);
+#   3) `tore` fährt alle Node-Tore gegen das heruntergeladene dist —
+#      unverändert im Umfang (R1-Lehre: Tore streichen ist die falsche
+#      Vereinfachung), nur nicht mehr VOR den e2e-Shards;
+#   4) `perf` misst §15-Budgets nur noch auf main/merge_group (Entscheid David
+#      26.7.2026), weiterhin ERST nach grüner Treue (`needs: [tore, e2e]`).
 name: CI
 
 on:
@@ -51,8 +44,33 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  bau:
+    name: Bau (dist-Artefakt)
+    runs-on: ubuntu-latest
+    env:
+      TZ: Europe/Zurich
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # gen:suchindex + tsc -b + vite build + prerender — tsc-Fehler reissen
+      # hier die ganze Kette, bevor tore/e2e überhaupt starten.
+      - name: Build
+        run: npm run build
+      - name: dist-Artefakt hochladen (für tore + e2e-Shards + perf)
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 1
+          include-hidden-files: true
+
   tore:
     name: Tore (tsc · Tests · Lint · Build · Checks)
+    needs: bau
     runs-on: ubuntu-latest
     env:
       # Produkt-Zeitzone: Engines geben teils Date-Instants zurück (z. B.
@@ -82,14 +100,18 @@ jobs:
         run: npm run check:merge-schutz
       - name: Plan-Inventar-Konsistenz (Node-only, günstig — darum vor tsc/Build)
         run: npm run check:plan
-      - name: TypeScript (tsc -b)
-        run: npx tsc -b
+      # tsc -b läuft im bau-Job (Teil von npm run build); dist kommt als
+      # Artefakt — die dist-lesenden Tore (Smoke, SEO-Index, …) sehen dieselbe
+      # Umgebung wie vor dem Split, nur ohne zweiten Build.
+      - name: dist-Artefakt herunterladen (aus `bau`, nicht neu bauen)
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
       - name: Tests (volle Ausgabe)
         run: npm test
       - name: Lint (volle Ausgabe, nie tail!)
         run: npm run lint
-      - name: Build
-        run: npm run build
       - name: Katalog-Inventur
         run: npm run check:inventur
       - name: Bibliotheks-Standards (S1–S10)
@@ -147,27 +169,16 @@ jobs:
         run: npm run check:pdf && npm run check:pdf-quellen && npm run check:bilder
       - name: SEO-Index · Verfall-UI
         run: npm run check:seo-index && npm run check:verfall-ui
-      # dist EINMAL bauen, an e2e-Shards + perf weitergeben (O-3.3): der teure
-      # Build-Schritt (gen:suchindex + tsc + vite build + prerender) läuft nur
-      # hier; die Folgejobs holen dist als Artefakt statt 3× zu bauen.
-      - name: dist-Artefakt hochladen (für e2e-Shards + perf)
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: dist
-          retention-days: 1
-          include-hidden-files: true
-
   e2e:
-    name: Browser-Smoke Shard ${{ matrix.gruppe }}/3 (Playwright)
-    needs: tore
+    name: Browser-Smoke Shard ${{ matrix.gruppe }}/8 (Playwright)
+    needs: bau
     runs-on: ubuntu-latest
     env:
       TZ: Europe/Zurich
     strategy:
       fail-fast: false
       matrix:
-        gruppe: [1, 2, 3]
+        gruppe: [1, 2, 3, 4, 5, 6, 7, 8]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -182,7 +193,7 @@ jobs:
       # bevor eine unbalancierte oder lückenhafte Verteilung Tests verschluckt.
       - name: e2e-Shard-Union-Wächter (Gruppen == playwright --list)
         run: npm run check:e2e-shards
-      - name: dist-Artefakt herunterladen (aus `tore`, nicht neu bauen)
+      - name: dist-Artefakt herunterladen (aus `bau`, nicht neu bauen)
         uses: actions/download-artifact@v4
         with:
           name: dist
@@ -197,8 +208,8 @@ jobs:
       # `npm run preview` serviert das heruntergeladene dist/ (kein Rebuild);
       # jeder Job fährt nur die Specs SEINER dauer-gepackten Gruppe seriell
       # (workers:1 bleibt, damit die Contention NICHT in EINEN Runner zurückkehrt)
-      # → e2e-Wand gedrittelt UND dauer-balanciert (je ~212 s statt 7–42 min).
-      - name: Browser-Smoke (Playwright, e2e/ gegen dist — Gruppe ${{ matrix.gruppe }}/3)
+      # → e2e-Wand geachtelt UND nach CI-Messwerten balanciert (~5.4–6.4 min).
+      - name: Browser-Smoke (Playwright, e2e/ gegen dist — Gruppe ${{ matrix.gruppe }}/8)
         run: npm run test:e2e:gruppe -- ${{ matrix.gruppe }}
       # Per-Spec-CI-Dauern sichern (auch bei rotem Shard — gerade dann sind sie
       # interessant). Damit lässt sich `e2e/shard-gruppen.json` künftig gegen
@@ -216,9 +227,11 @@ jobs:
   perf:
     name: Perf-Budget (§15 — nur bei grüner Treue)
     # §15-Gegenkopplung «Tempo zählt nur, wenn die Treue grün bleibt»: perf läuft
-    # ERST, wenn Bau (tore) UND alle e2e-Shards grün sind. Früher erzwang die
-    # Schritt-Reihenfolge im Monojob dasselbe; mit `needs` ist es job-übergreifend
-    # explizit — ein rotes e2e-Shard hält die Perf-Messung zurück.
+    # ERST, wenn Tore UND alle e2e-Shards grün sind — ein rotes Shard hält die
+    # Messung zurück. Seit 26.7.2026 (Entscheid David) nur noch auf main/
+    # merge_group statt auf jedem PR-Lauf: das §15-Budget wird weiterhin bei
+    # jedem Deploy-Stand gemessen, hängt aber nicht mehr am kritischen PR-Pfad.
+    if: github.event_name != 'pull_request'
     needs: [tore, e2e]
     runs-on: ubuntu-latest
     env:
@@ -230,7 +243,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: dist-Artefakt herunterladen (aus `tore`, nicht neu bauen)
+      - name: dist-Artefakt herunterladen (aus `bau`, nicht neu bauen)
         uses: actions/download-artifact@v4
         with:
           name: dist
