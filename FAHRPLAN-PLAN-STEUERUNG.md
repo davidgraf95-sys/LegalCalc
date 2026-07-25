@@ -288,55 +288,10 @@ Nach der Erst-Befüllung gilt: **Plan == Realität**, und der Wächter hält es 
 
 ---
 
-## Plan-Cockpit (`QS-COCKPIT`) — interaktive Steuer-Oberfläche *(Entscheid David 26.7.2026)*
-
-Auftrag David (Chat 26.7.2026): ein Interface, «wo ich den fahrplan interaktiv steuern kann
-und aktuell sehe was gebaut wird». Design im selben Chat abgenommen (Änderung: Bau-Prompt in
-die **Zwischenablage** statt Terminal-Öffnen). Überholt die frühere YAGNI-Zeile «Kein
-Web-UI/Dashboard» — die dortige Kern-Doktrin (keine zweite Quelle) bleibt unangetastet.
-
-**Form.** Lokal im Repo: `scripts/cockpit/server.ts` (vite-node, nur an `localhost` gebunden,
-Port 5199) + statisches UI ohne Framework. Start `npm run cockpit`. Kein Prod-Code, berührt
-`src/` nicht.
-
-**Live-Sicht (lesen).**
-- Watcher auf `ROADMAP.md` → `parse.ts`/`aufloesen.ts` **direkt importiert** (null Drift zu
-  `plan:next`) → Push ins UI per Server-Sent-Events: Queue, oberster Schritt, Buckets, Slot.
-- Kachel **PRs + CI**: `gh pr list --json` mit Check-Rollup, Poll ~60 s; `gh` fehlt/offline ⇒
-  Kachel degradiert zu «nicht verfügbar», Plan-Teil läuft weiter.
-- Kachel **Worktrees**: `git worktree list --porcelain` + Abgleich mit den `kollision`-Feldern
-  der wip-/ready-Schritte — zeigt, welche Flächen belegt sind (§12).
-
-**Steuer-Aktion 1: @queue umsortieren (einziger Schreibweg).**
-- UI-Umsortierung → Server ersetzt **ausschliesslich die `@queue`-Zeile**, lässt `check:plan`
-  laufen; rot ⇒ Änderung verwerfen + Fehler anzeigen; grün ⇒ Commit mit Pathspec nur
-  `ROADMAP.md`, Trailer `Roadmap: QS-COCKPIT`-frei (reine Steuerung: `docs(plan): …`).
-- Wechselt der **Queue-Kopf**, verlangt Regel 8 die passende «⬆ OBERSTER»-Prosa-Zeile:
-  Bestätigungsdialog zeigt beide Edits, dann ein gemeinsamer Commit. Kein Auto-Push; Push
-  bleibt Knopf.
-
-**Steuer-Aktion 2: Bau-Prompt in die Zwischenablage.**
-- Knopf «Bauen» je ready-Schritt kopiert den Dispatch-Prompt: `fahrplan`-Slice des Schritts +
-  §14.7-Vertrauensgrenze (wörtlich) + Worktree-Anweisung. David fügt ihn selbst in eine neue
-  Claude-Session ein — bewusst kein automatischer Session-Start.
-- Vorher Kollisions-Precheck gegen aktive Worktrees; Überlappung ⇒ Warnhinweis im Dialog.
-
-**Sicherheit & Grenzen.** Nur localhost, keine Secrets, keine GitHub-Schreibrechte (Lesen via
-`gh` reicht). Statusänderungen einzelner Schritte (`plan:set status=…`) bleiben in V1 bewusst
-draussen — das machen die Bau-Sessions selbst; das Cockpit ordnet und dispatcht.
-
-**Tests & DoD.** Queue-Rewriter mit Unit-Tests nach dem Muster der `scripts/plan/`-Tests
-(inkl. Kopf-Wechsel + Prosa-Nachzug); `check:plan` als Integrationstor nach jedem Write;
-ein Tor-Beweis «rot bei kaputter Queue» (§6.7). Golden entfällt (kein Prod-Verhalten).
-DoD zusätzlich: Python-Vorläufer (`scripts/cowork/plan-cockpit-*.py`) als abgelöst markiert.
-
----
-
 ## Bewusst NICHT im Scope (YAGNI)
 
 - Keine separate `plan.json`/DB (s. Leitentscheid).
-- ~~Kein Web-UI/Dashboard — `plan:next` druckt Text.~~ **Überholt 26.7.2026:** Web-Cockpit als
-  `QS-COCKPIT` beauftragt (§Plan-Cockpit oben); die Doktrin «keine zweite Quelle» gilt dort weiter.
+- Kein Web-UI/Dashboard — `plan:next` druckt Text.
 - Keine automatische ROADMAP-Generierung aus den Etiketten (Prosa bleibt handgeschrieben).
 - Keine CI-Verdrahtung (`check:plan` bleibt **lokal**, wie die Geschwister-Tore).
 - Kein Fix der CLAUDE.md-«Wellen 1–13»-Drift (fremde Datei) — nur notiert.
