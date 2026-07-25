@@ -780,8 +780,16 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
       Verweisfarbe (`hover:border-brass-400`, brass-Hover-Familie vereinheitlicht).
       Kontrast gemessen (sage 4.48/3.84 ≥3:1), golden byte-gleich, CLS 0. V2 §2 F5,
       DESIGN-REGLEMENT §4b-B Abschluss.
-  - [ ] **DEFER FN-5/M14** wortgenaue Marker: hinter QS-PERF/U-POSITION, separates
-    David-Go (Entscheid 10.7.). V2 §2 F1.
+  - [ ] **FN-5/M14** wortgenaue Fussnoten-Marker (XL). V2 §2 F1. **BAU-AUFTRAG STEHT
+    (David 25.7.2026, wörtlich: «vermerke 3 im bauplan, dass nächste session es am
+    richtigen ort macht»)** — das frühere separate David-Go ist erteilt, die
+    Sequenz-Vorbedingungen (QS-PERF, U-POSITION) sind erfüllt. **Nächste Bau-Session
+    nimmt FN-5 als EIGENE Einheit** (nicht nebenbei): Extraktor-Offset/Platzhalter im
+    Haupt-Snapshot = Risikopfad `scripts/normtext` mit grossem deklariertem §6.3-
+    Snapshot-Diff ⇒ volle adversariale Gegenprüfung (Skill »gegenpruefung«), Differ-
+    Beweis (nur Marker-Positions-Felder, kein Textverlust), Wortlaut-Stichproben je
+    Defektklasse gegen den Fedlex-Cache, Reader-Render (FnRef am Wort-Offset) + CLS.
+    Bis dahin bleibt der Marker am Absatz-/Item-Ende (ausgewiesene Rest-Ungenauigkeit).
 
   **Nachzug-Welle A29–A40 (David 16.7.2026 — BAU-GO in derselben Session: «run till
   dry» + «und dann wie immer alles mit opus bauen»):** eingeordnet in
