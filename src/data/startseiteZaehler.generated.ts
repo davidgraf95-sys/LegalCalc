@@ -11,6 +11,9 @@ export interface StartseiteZaehler {
   gesetzeKantonVolltext: number;
   /** Bund + Kanton im Volltext. */
   gesetzeVolltext: number;
+  /** IA-7: erfasste Erlasse JE Kanton (alle Manifest-Einträge der Ebene kanton —
+   *  dieselbe Zählregel wie die IA-2-Badges/`kantonAnzahl` in Gesetze.tsx). */
+  kantonErlassZahlen: Record<string, number>;
   /** Gerichtsentscheide im Volltext (Nicht-Verweise). */
   rechtsprechungVolltext: number;
   /** Erfasste amtliche Materialien (Behördenpublikationen, nur-live-link). */
@@ -31,6 +34,34 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
   "gesetzeBundVolltext": 227,
   "gesetzeKantonVolltext": 1231,
   "gesetzeVolltext": 1458,
+  "kantonErlassZahlen": {
+    "AG": 4,
+    "AI": 4,
+    "AR": 266,
+    "BE": 5,
+    "BL": 5,
+    "BS": 859,
+    "FR": 6,
+    "GE": 4,
+    "GL": 5,
+    "GR": 6,
+    "JU": 7,
+    "LU": 5,
+    "NE": 4,
+    "NW": 4,
+    "OW": 3,
+    "SG": 5,
+    "SH": 3,
+    "SO": 2,
+    "SZ": 4,
+    "TG": 4,
+    "TI": 5,
+    "UR": 1,
+    "VD": 7,
+    "VS": 6,
+    "ZG": 4,
+    "ZH": 3
+  },
   "rechtsprechungVolltext": 5093,
   "materialien": 1549,
   "rechner": 23,
