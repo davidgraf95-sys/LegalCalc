@@ -1785,6 +1785,28 @@ Je Einheit gilt die **A9-DoD-Zeile (§10.4) wörtlich** (CPU-Throttle 6×, CLS 0
 
 ### 11.10 · Ausführungsvermerke der §11-Einheiten
 
+**IA-5 + Y-A-Mini ✅ GEBAUT + GEMERGT 25.7.2026 (Fable 5, PR #352, Squash `faf7028d`).**
+`?ansicht=rechtsgebiet` → kanonisch `?gliederung=rechtsgebiet` (Alias bleibt auflösbar,
+Parse-Normalisierung, kein Redirect); 4. Einstiegskachel demoted (Y-A, David 16.7. JA) —
+Landeplatz = 3 Kacheln + A–Z-Register, Zugang über A15-Gliederungs-Umschalter. Bindende
+Erreichbarkeits-Pins unangepasst grün; nur URL-FORM-Assertions deklariert angepasst.
+Prerender-Markup byte-identisch (Kachel lebt im Client-JS).
+
+**IA-6 ✅ GEBAUT + GEMERGT 25.7.2026 (Fable 5, PR #353, Squash `767aeb96`).** Stufe 1:
+`rel=canonical`+`og:url` der /international-Seite → Säule `?ebene=international`
+(`kanonischerPfad`-Override in seo.ts, eine Quelle §5); Sidebar-Gruppen-Kopf vereinheitlicht;
+5 Hash-Anker regressions-bewiesen (neue e2e 8/8). Prerender-Diff exakt 63 Routen-Seiten ×
+1 Sidebar-href + international.html-Head. Vormerkung Y-C: Canonical-Kette der Query-Säule.
+Nachtrag auf dem Branch: **A35-Clear-Prädikat 15s→45s** (deklarierte Infra-Kalibrierung —
+der Highlight-Clear braucht real ~16–17 s; Assertion unverändert scharf).
+
+**IA-7 ✅ GEBAUT + GEMERGT 25.7.2026 (Fable 5, PR #355, Squash `da73c754`) — §11 DAMIT
+KOMPLETT (IA-1…IA-7 + Y-A/Y-B; offen nur Y-C Stufe 2).** Erlass-Zahl-Badges an den 26
+Sidebar-Kantonslinks (IA-2-Pill-Muster, O4-aria, 0-Fall «keine Erlasse, dünn»); Daten
+build-time (`kantonErlassZahlen` in gen-startseite-zaehler, Drift-Tor check:zaehler);
+erfassungsgrad.ts nur konsumiert. Prerender 8164/8164 identisch (Badge hinter eingeklappter
+Gruppe, atomar beim Aufklappen, CLS 0).
+
 **IA-3 · A–Z-/Kürzel-Register ✅ GEBAUT + GEMERGT 25.7.2026 (Fable 5, Worktree `lm-ia3`,
 PR #347, Squash `15a7eac8`).** Buchstaben-Leiste + title-only-Filter auf dem geladenen
 `register.json` (kein zweiter Index, K10); Einsortierung DIN 5007-1 (NFD-Faltung Ä→A,
