@@ -14,8 +14,15 @@
 # dieser Zwilling meldete aber nur «Tore …» — die 3 Playwright-Shards und
 # «Perf-Budget» wurden bei .md-only-PRs NIE gemeldet, darum hingen reine
 # .md-PRs (#318, #320) permanent unmergbar. Deshalb unten je ein No-op-
-# Zwilling für die Shard- und Perf-Kontexte (byte-genaue Job-Namen).
+# Zwilling für die Shard-Kontexte (byte-genaue Job-Namen).
 # «Vercel» braucht KEINEN Zwilling — die App-Integration meldet sich selbst.
+#
+# NACHGEZOGEN 26.7.2026 (CI-Umbau #367): Kontextnamen «Tore (Tests · Lint ·
+# Checks)» + Shards 1–8/8. Der Perf-Zwilling BLEIBT, solange «Perf-Budget»
+# Required-Kontext ist (Stand 26.7.: David hat ihn behalten): der echte
+# perf-Job läuft auf PRs nie mehr (if != pull_request), bei md-only-PRs
+# meldet nur dieser Zwilling den Kontext. Zwillinge hier IMMER synchron mit
+# ci.yml + Branch-Schutz ändern.
 name: CI (Doku-No-op)
 
 on:
@@ -26,7 +33,7 @@ on:
 jobs:
   tore:
     # Job-Name MUSS exakt dem Required-Check-Kontext aus ci.yml entsprechen:
-    name: Tore (tsc · Tests · Lint · Build · Checks)
+    name: Tore (Tests · Lint · Checks)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -41,19 +48,20 @@ jobs:
 
   # Zwilling der Playwright-Shards aus ci.yml (Job `e2e`): dort triggert der
   # Lauf wegen paths-ignore **.md nie, der Required-Kontext bliebe ungemeldet.
-  # Job-Namen MÜSSEN exakt «Browser-Smoke Shard X/3 (Playwright)» ergeben —
-  # gleiche Matrix (gruppe: [1, 2, 3]) wie in ci.yml.
+  # Job-Namen MÜSSEN exakt «Browser-Smoke Shard X/8 (Playwright)» ergeben —
+  # gleiche Matrix (gruppe: [1..8]) wie in ci.yml.
   e2e:
-    name: Browser-Smoke Shard ${{ matrix.gruppe }}/3 (Playwright)
+    name: Browser-Smoke Shard ${{ matrix.gruppe }}/8 (Playwright)
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        gruppe: [1, 2, 3]
+        gruppe: [1, 2, 3, 4, 5, 6, 7, 8]
     steps:
-      - run: echo "Reine Doku-Änderung — Browser-Smoke Shard ${{ matrix.gruppe }}/3 nicht betroffen, Zwilling meldet grün."
+      - run: echo "Reine Doku-Änderung — Browser-Smoke Shard ${{ matrix.gruppe }}/8 nicht betroffen, Zwilling meldet grün."
 
-  # Zwilling von `perf` aus ci.yml — Job-Name exakt der Required-Kontext.
+  # Zwilling von `perf` aus ci.yml — nötig, solange «Perf-Budget» Required ist:
+  # der echte Job läuft nur noch auf main/merge_group, meldet auf PRs also nie.
   perf:
     name: Perf-Budget (§15 — nur bei grüner Treue)
     runs-on: ubuntu-latest
