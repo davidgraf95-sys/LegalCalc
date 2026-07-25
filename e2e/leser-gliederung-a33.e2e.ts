@@ -33,6 +33,30 @@ async function aktivLabel(page: Page): Promise<string> {
     return el ? (el.textContent ?? '').trim() : ''
   })
 }
+// Deterministischer Warte-Anker (Flake-Härtung 25.7.2026): der [data-toc]-Container
+// gilt als eingeschwungen, wenn sein scrollTop `ruheMs` lang unverändert bleibt —
+// ersetzt feste Sleeps, die unter Runner-Last zu kurz ODER unnötig lang sind. Läuft
+// page-seitig in EINER evaluate-Reise (statt vieler CDP-Roundtrips unter Last).
+async function tocSettle(page: Page, ruheMs: number, deadlineMs: number): Promise<number> {
+  return page.evaluate(
+    async ({ ruheMs, deadlineMs }) => {
+      const c = document.querySelector('[data-toc]') as HTMLElement | null
+      if (!c) return -1
+      const start = Date.now()
+      let letzter = c.scrollTop
+      let ruhigSeit = Date.now()
+      for (;;) {
+        await new Promise((r) => setTimeout(r, 60))
+        if (c.scrollTop !== letzter) {
+          letzter = c.scrollTop
+          ruhigSeit = Date.now()
+        } else if (Date.now() - ruhigSeit >= ruheMs) return c.scrollTop
+        if (Date.now() - start >= deadlineMs) return c.scrollTop
+      }
+    },
+    { ruheMs, deadlineMs },
+  )
+}
 
 test.describe('A33 — Ruhige Gliederung (Scroll-Spy / TOC)', () => {
   // ── F1: Lese-Scroll führt den TOC nur per Rand-Nudge nach, keine ½-Container-Sprünge ──
@@ -115,41 +139,141 @@ test.describe('A33 — Ruhige Gliederung (Scroll-Spy / TOC)', () => {
 
   // ── F2 / V1: Wer selbst in der Gliederung blättert, behält seine Position ──
   test('F2/V1 — manuelles TOC-Blättern wird nicht zurückgerissen', async ({ page }) => {
-    // Runner-Budgets 19.7.: F2/V1-Notdach explizit 180 s (zuvor 120 s), analog zu F1 —
-    // reales Wheel-Scrollen auf der schweren OR-Seite streut auf langsamen 2-vCPU-Runner-
-    // Instanzen; das Notdach greift nur bei Überschreitung (§6.3, kein Assertion-Change).
+    // ── Flake-Härtung 25.7.2026 (5 CI-Timeouts 24./25.7., Runs 30132692179,
+    // 30135493089 u. a.; stets im Rerun geheilt, lokal grün — aber unter 6× CPU-
+    // Drossel + 4 parallelen Workern lokal REPRODUZIERT: 4/4 Läufe rissen das
+    // 180-s-Dach, wandernd bei mouse.wheel, boundingBox oder page.evaluate).
+    // Ursache: REALE mouse.wheel-Events auf der 2000-Artikel-OR-Seite (je Wheel
+    // ein content-visibility-/Akkordeon-Reflow-Sturm, 8 Wheels + feste Sleeps)
+    // — unter Last blockiert der Seiten-Main-Thread, jeder nächste CDP-Roundtrip
+    // hängt. Härtung OHNE Schwächung der Prüfaussage («nach manuellem TOC-
+    // Blättern reisst der Scroll-Spy-Mitscroll die TOC-Position innerhalb des
+    // 1,5-s-Guard-Fensters NICHT zurück»):
+    //  1. Programmatisches Scrollen statt mouse.wheel: der Scroll-Spy ist
+    //     IntersectionObserver-basiert (inhalt-hooks.tsx) und sieht programma-
+    //     tisches Scrollen identisch; der F2-Guard wird über ein ECHTES
+    //     wheel-Event am [data-toc]-Container armiert — exakt der Listener-Pfad
+    //     des Nutzers (`wheel`-Listener, passive; prüft kein isTrusted).
+    //  2. Deterministische Warte-Anker statt fester Sleeps: (a) tocSettle
+    //     (scrollTop 400 ms ruhig) vor der Baseline, (b) expect.poll auf die
+    //     Highlight-Wanderung als BEWEIS, dass der Spy den Artikelwechsel
+    //     verarbeitet hat und der Mitscroll-Effekt mit neuen aktivIds LIEF
+    //     (die alte Fassung hat das nie verifiziert — grün-durch-Inaktivität
+    //     war möglich; die Härtung macht die Prüfung hier SCHÄRFER).
+    //  3. Messung als page-seitiger scroll-Listener über das VOLLE 1,5-s-Guard-
+    //     Fenster (gleiche Date.now()-Uhr wie der Guard selbst): maxDelta ALLER
+    //     TOC-Eigenbewegungen im Fenster — schärfer als der alte Einmal-Read bei
+    //     ~470 ms und immun gegen Host-Uhr-Drift unter Last.
+    //  4. Fenster-Validierung: ein Messlauf zählt nur, wenn der Artikelwechsel
+    //     nachweislich INNERHALB des Fensters ankam (< 1300 ms, Marge für den
+    //     F3-tocBaum-Nachlauf ≤ 200 ms unterhalb der 1500-ms-Grenze); sonst wird
+    //     der Versuch wiederholt statt eine Timing-Lüge grün zu prüfen.
+    // Die Assertion bleibt unverändert scharf: Δ < 24 px, keine Konsolenfehler.
     test.setTimeout(180_000)
+    // Opt-in-Drossel NUR für lokale Flake-Proben (Beweislauf --repeat-each unter
+    // Last, Sabotage-Probe §6.7); in CI und im Normallauf unset → kein Effekt.
+    const drossel = Number(process.env.A33_CPU_DROSSEL ?? '0')
+    if (drossel > 1) {
+      const cdp = await page.context().newCDPSession(page)
+      await cdp.send('Emulation.setCPUThrottlingRate', { rate: drossel })
+    }
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 820 })
     await page.goto('/gesetze/bund/OR')
     await expect(page.locator('article[id^="art-"]').first()).toBeVisible({ timeout: 20000 })
     await expect(page.locator('[data-toc]')).toBeVisible({ timeout: 10000 })
 
-    // In den Erlass scrollen (aktiver Zweig existiert), TOC einschwingen lassen.
-    // CI-Härtung 18.7.: 10 → 7 Wheels (7 × 500 = 3500 px reicht, um tief in den OR
-    // zu scrollen und den TOC scrollbar zu machen); die F2-Logik (Guard hält die
-    // Blätter-Position, Δ < 24 px) ist von der Warmlauf-Distanz unabhängig.
-    await page.mouse.move(950, 420)
-    for (let i = 0; i < 7; i++) { await page.mouse.wheel(0, 500); await page.waitForTimeout(90) }
-    await page.waitForTimeout(500)
+    // In den Erlass scrollen (aktiver Zweig existiert, TOC wird scrollbar) — in
+    // EINEM programmatischen Schritt auf dieselbe Zielposition wie zuvor
+    // (3500 px; «7 × 500 = 3500 px reicht», CI-Härtung 18.7.). Anker statt
+    // Sleep: aktiver Eintrag vorhanden UND TOC scrollbar.
+    await page.evaluate(() => { document.scrollingElement!.scrollTop = 3500 })
+    await expect
+      .poll(
+        () =>
+          page.evaluate(() => {
+            const c = document.querySelector('[data-toc]') as HTMLElement | null
+            return !!c && c.scrollHeight > c.clientHeight && !!c.querySelector('[data-toc-aktiv]')
+          }),
+        { timeout: 30000 },
+      )
+      .toBe(true)
 
-    // Der Nutzer blättert JETZT selbst in der Gliederung: Maus über den TOC, wheeln.
-    // Das armiert den Interaktions-Guard (F2) und verschiebt die TOC-Position.
-    const tocBox = await page.locator('[data-toc]').boundingBox()
-    expect(tocBox).not.toBeNull()
-    await page.mouse.move(tocBox!.x + tocBox!.width / 2, tocBox!.y + tocBox!.height / 2)
-    await page.mouse.wheel(0, 260)
-    await page.waitForTimeout(120)
-    const nachBlaettern = await tocScrollTop(page)
+    // Bis zu 5 Messversuche; der erste, dessen Artikelwechsel im Guard-Fenster
+    // lag, liefert den Messwert. (Unter extremer Last kann ein Versuch das
+    // Fenster verfehlen — die Δ-Prüfung wäre dann eine Timing-Lüge; wiederholen.)
+    let messung: { maxDelta: number } | null = null
+    const verfehlt: string[] = []
+    for (let versuch = 0; versuch < 5 && !messung; versuch++) {
+      // TOC einschwingen lassen (deterministisch statt Sleep).
+      await tocSettle(page, 400, 20000)
+      // Der Nutzer blättert JETZT selbst in der Gliederung: wheel-Event am
+      // [data-toc]-Container armiert den Guard (identischer Listener-Pfad wie
+      // beim Nutzer), die Blätter-Bewegung +260 px wie zuvor. Ab hier proto-
+      // kolliert ein scroll-Listener JEDE TOC-Eigenbewegung im 1,5-s-Fenster.
+      const vorher = await page.evaluate(() => {
+        const c = document.querySelector('[data-toc]') as HTMLElement
+        c.dispatchEvent(new WheelEvent('wheel', { deltaY: 260, bubbles: true }))
+        c.scrollTop += 260
+        const top0 = c.scrollTop
+        const t0 = Date.now()
+        const w = window as unknown as { __a33F2?: { t0: number; lese: () => number } }
+        let maxDelta = 0
+        const beobachte = (): void => {
+          if (Date.now() - t0 <= 1500) maxDelta = Math.max(maxDelta, Math.abs(c.scrollTop - top0))
+        }
+        c.addEventListener('scroll', beobachte, { passive: true })
+        w.__a33F2 = {
+          t0,
+          lese: () => {
+            c.removeEventListener('scroll', beobachte)
+            return maxDelta
+          },
+        }
+        const a = c.querySelectorAll('[data-toc-aktiv]')
+        const el = a[a.length - 1] as HTMLElement | undefined
+        return { top: top0, label: el ? (el.textContent ?? '').trim() : '' }
+      })
 
-    // Sofort eine Lese-Scroll-Interaktion (Artikelwechsel) auslösen — INNERHALB des
-    // 1,5-s-Guards. Vorher riss der Mitscroll-Effekt die TOC-Position um ~311 px zurück.
-    await page.mouse.move(950, 420)
-    await page.mouse.wheel(0, 240)
-    await page.waitForTimeout(350) // < 1500 ms Guard
-    const nachLeseScroll = await tocScrollTop(page)
+      // Sofort eine Lese-Scroll-Interaktion (Artikelwechsel) auslösen — INNER-
+      // HALB des Guards. Programmatisch (der Spy sieht es identisch); +450 px
+      // kreuzt auf der OR-Seite sicher eine Artikelgrenze. Vorher riss der
+      // Mitscroll-Effekt die TOC-Position um ~311 px zurück.
+      await page.evaluate(() => { document.scrollingElement!.scrollTop += 450 })
+      // Deterministischer Anker: der Highlight ist gewandert → der Spy hat den
+      // Wechsel verarbeitet, der Mitscroll-Effekt lief mit neuen aktivIds.
+      let gewandert = true
+      try {
+        await expect
+          .poll(() => aktivLabel(page), { timeout: 4000, intervals: [80, 120, 200] })
+          .not.toBe(vorher.label)
+      } catch {
+        gewandert = false
+      }
+      // Fenster-Validierung + Messwert: page-seitige Uhr (dieselbe wie der
+      // Guard). Das Fenster VOLL auslaufen lassen, damit auch ein SPÄTER Rück-
+      // riss innerhalb der 1,5 s erfasst würde — dann maxDelta lesen.
+      const ergebnis = await page.evaluate(async () => {
+        const w = window as unknown as { __a33F2?: { t0: number; lese: () => number } }
+        const s = w.__a33F2
+        if (!s) return null
+        const ankerMs = Date.now() - s.t0
+        const rest = s.t0 + 1500 - Date.now()
+        if (rest > 0) await new Promise((r) => setTimeout(r, rest + 50))
+        return { ankerMs, maxDelta: s.lese() }
+      })
+      if (ergebnis && gewandert && ergebnis.ankerMs < 1300) {
+        messung = { maxDelta: ergebnis.maxDelta }
+      } else {
+        verfehlt.push(`Versuch ${versuch + 1}: gewandert=${gewandert}, Anker@${ergebnis?.ankerMs ?? '—'}ms`)
+      }
+    }
 
-    expect(Math.abs(nachLeseScroll - nachBlaettern), `Blätter-Position gehalten (Δ ${Math.abs(nachLeseScroll - nachBlaettern)}px)`).toBeLessThan(24)
+    expect(messung, `kein Messlauf traf das Guard-Fenster (${verfehlt.join(' · ')})`).not.toBeNull()
+    expect(
+      messung!.maxDelta,
+      `Blätter-Position gehalten (max Δ im 1,5-s-Guard-Fenster ${messung!.maxDelta}px)`,
+    ).toBeLessThan(24)
     expect(fehler).toEqual([])
   })
 
