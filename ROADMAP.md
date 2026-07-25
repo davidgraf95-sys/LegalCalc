@@ -497,6 +497,19 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   **`W2·5h-GESETZ-UI`** (Gesetzes-Fläche) an diesem Fundament. Detailquelle: **`FAHRPLAN-UI-QUALITAET.md`**.
   **DoD je Teil-Schritt:** §13-Tore grün (`check:farbwelt`, axe) · golden byte-gleich, wo die Änderung
   verhaltensrelevant ist. Trailer `Roadmap: QS-UI`.
+- [ ] **`QS-COCKPIT` — Plan-Cockpit: interaktive Steuer-Oberfläche** *(Auftrag David 26.7.2026 · `[OF]` · lokales Werkzeug, kein Prod-Code)*
+  <!-- @meta id: QS-COCKPIT · status: ready · of: ja · blocker: null · dep: [] · kollision: [package.json] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-PLAN-STEUERUNG.md -->
+  Lokales Web-Cockpit (`npm run cockpit`) über der bestehenden Plan-Maschinerie (`scripts/plan/`):
+  **Live-Sicht** (plan:next-Buckets per Watcher auf `ROADMAP.md` + SSE · offene PRs mit CI-Status via
+  `gh` · Worktrees/Branches inkl. belegter Kollisionsflächen aus den `@meta`-Feldern) und **zwei
+  Steuer-Aktionen**: (1) **@queue umsortieren** — Schreibweg ausschliesslich über die `@queue`-Zeile,
+  danach `check:plan`, Commit (Pathspec nur `ROADMAP.md`) nur bei grün; wechselt der Queue-Kopf, zieht
+  ein Bestätigungsdialog die «⬆ OBERSTER»-Prosa-Zeile mechanisch mit (Regel 8); (2) **Bau-Prompt in die
+  Zwischenablage** (Entscheid David 26.7.: Zwischenablage statt Terminal-Öffnen) — Dispatch aus
+  `fahrplan`-Slice + §14.7-Klausel, mit Kollisions-Warnung gegen aktive Worktrees. `ROADMAP.md` bleibt
+  einzige Quelle (§5): das Cockpit ist Projektion + Fernbedienung, nie zweite Wahrheit. Löst das
+  gitignorierte Python-Vorläufer-Cockpit (`scripts/cowork/`) ab. Design abgenommen (David 26.7.2026,
+  Chat). Detail: **`FAHRPLAN-PLAN-STEUERUNG.md` §Plan-Cockpit**. Trailer `Roadmap: QS-COCKPIT`.
 
 ---
 

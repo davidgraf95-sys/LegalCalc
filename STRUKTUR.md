@@ -21,6 +21,13 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 26.7.2026 (§14-Intake) — QS-COCKPIT verortet: Plan-Cockpit als interaktive Steuer-Oberfläche (PR #368, Auto-Merge gesetzt)
+**Auftrag David:** «separates produkt oder interface … wo ich den fahrplan interaktiv steuern kann und aktuell sehe was gebaut wird». Design im Chat entwickelt und abgenommen (Änderung David: Bau-Prompt in die **Zwischenablage** statt Terminal-Öffnen).
+- **Verortung statt Neubau daneben (Ziff. 3):** kein neuer Root-Fahrplan — Spec als §Plan-Cockpit in `FAHRPLAN-PLAN-STEUERUNG.md` (dort YAGNI-Zeile «Kein Web-UI» als überholt markiert, §5-Doktrin bleibt); ROADMAP-Schritt `QS-COCKPIT` im Querschnitt-Band; ID in `scripts/plan/inventar.ts`.
+- **Kern des Designs:** lokaler Server (`npm run cockpit`, vite-node, localhost) importiert `parse.ts`/`aufloesen.ts` direkt (null Drift zu `plan:next`); Live-Sicht Buckets/PRs+CI/Worktrees; einziger Schreibweg = `@queue`-Zeile, `check:plan`-gegated, Kopf-Wechsel zieht «⬆ OBERSTER»-Prosa per Dialog mit; Bau-Knopf kopiert Dispatch-Prompt (fahrplan-Slice + §14.7) in die Zwischenablage. Löst `scripts/cowork/plan-cockpit-*.py` ab.
+- **Beweis:** `check:plan` erst ROT (ID nicht im Inventar — Tor griff), nach Registrierung grün; `plan:next` zeigt QS-COCKPIT im Querschnitt-Band, oberster Schritt unverändert QS-TOK. Commit `264d62c6`.
+- **Nebenbefund (gemeldet, nicht angefasst):** PR #367 (e2e-Achtelung) hängt trotz Auto-Merge + 14 grünen Checks auf `BLOCKED` — die Branch-Protection verlangt noch die alten Required-Kontexte `Browser-Smoke Shard 1/3–3/3`, die es dort nicht mehr gibt. Entscheid David ausstehend (Weg 1: nur `Merge-Schutz` required · Weg 2: acht neue Shard-Namen).
+
 ## Session 25.7.2026 (W2·5) — Kanton-Volltext im Suchindex: 54 444 Artikel statt 25 389, Ranking-Regression gefunden und behoben (PR #365, offen)
 **Auftrag David:** erst PR #364 landen (erledigt, `dd624ee7` auf main), dann W2·5-Restposten «Kanton-Volltext im Index nachziehen». Auflagen: Ebene nirgends mehr hartcodiert · kantonaler Treffer als kantonal erkennbar mit Kanton · Index-Grösse messen und melden statt still kürzen · kein Erlass darf stillschweigend wegfallen. W2·5b/5c/5d/5g/5h/5i und die zehn unverlinkten FAHRPLAN-Dateien unberührt gelassen.
 - **Ebene ist jetzt Parameter, nicht Literal.** `EBENEN = ['bund','kanton']` → `baueEbenenIndex(ebene)` → `baueIndex()`; Artefakt `public/such-index/artikel-bund.json` → `artikel.json` (Prod-Smoke-Pfad mitgezogen). **54 444 Artikel: Bund 25 389 + Kanton 29 055 aus allen 26 Kantonen** (1 231 kantonale Erlasse).

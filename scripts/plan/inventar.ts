@@ -26,4 +26,7 @@ export const INVENTAR: readonly string[] = [
 
   // §14-Intake 24.7.2026 (Anmerkungs-Session David): Verzahnungs-Fundament + FINMA-Materialien.
   'W2·7-BEZUG', 'W2·6b-MAT-FINMA',
+
+  // §14-Intake 26.7.2026 (Auftrag David, Chat): Plan-Cockpit — interaktive Steuer-Oberfläche.
+  'QS-COCKPIT',
 ];
