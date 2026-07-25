@@ -738,8 +738,12 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
     bewiesen (nur additiv, 0 Verlust). Gegenprüfung gegen Fedlex bestanden; Detail V2 §2 F1. V2 §2 F1.
   - [x] **A20** (FN-3): Präambel-Fussnoten inline (nach U-VERWEIS-Merge). V2 §2 F1.
     **✅ GEBAUT 12.7.2026 (`feat/v2-fn3`, PR #212).** Detail §10.8.
-  - [ ] **A21** (FN-4): Absatz-Zuordnung Alt-Form (bündelt mit A19-Regen). V2 §2 F1.
-    **Bau-Go David ausstehend.**
+  - [x] **A21** (FN-4): Absatz-Zuordnung Alt-Form. V2 §2 F1. **✅ ERLEDIGT OHNE BAU 25.7.2026
+    (PR #354, Blanko-Go 24.7.):** Defekt nicht mehr reproduzierbar — der P1-a/b-Pin-Refresh
+    (11.7.) ersetzte die Aspose-Alt-Form; Korpus-Audit 230 Caches: 0 fn-Definitionen ohne
+    Backlink, 0 Fussnoten mit absatz=null in nummeriertem Absatz; Regeneration byte-identisch
+    (git diff leer). Statt Nichts-Fix: e2e-Wächter `fussnote-absatz-altform` (Sabotage-Probe
+    §6.7) + FN-4-Vermerk in V2 §2 F1. FN-5/M14 (wortgenau, XL) als Task-Chip verortet.
   - [x] **A22** (K-1+K-2): Kopf nützlicher + Fussnoten-Anwahl. V2 §2 F2. **K-2 ✅ GEBAUT
     11.7.2026 (`feat/v2-kopf-pr`, PR #194) — Fussnoten-Chip. K-1 ✅ GEBAUT 12.7.2026
     (`feat/v2-k1`, PR #213, `9e7e505b`): «in Kraft seit» im Erlass-Kopf, build-time SPARQL

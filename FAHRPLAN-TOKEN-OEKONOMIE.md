@@ -128,7 +128,7 @@ Ausreisser, nicht Volumentreiber (nur 2 Mega-Sessions). Nächste Messung: Mean/M
 - **check:plan geheilt** — `QS-TOK` fehlte in `scripts/plan/inventar.ts` (seit #171), rötete die gate-Kette für alle; registriert, grün.
 - **T1 ✅** — STRUKTUR-Rotation mechanisiert (`.claude/hooks/struktur-rotieren.py`, SessionStart-Hook + `npm run struktur:rotieren`) inkl. **T7-K Teil 2 Re-Akkumulations-Wächter**. Dogfood: 34 Karten ≤6.7. rotiert, STRUKTUR.md 139.4→35.6 KB (Budget 60), Byte-Bilanz belegt (0 Inhaltsverlust), idempotent.
 - **T3 ✅** — FAHRPLAN-§-Slice-CLI (`npm run fahrplan`), ToC immer dabei; GESETZES-UX §10-Slice 60.6 KB vs. 119.5 KB Ganzdatei.
-- **T16 offen** — CLAUDE.md-§7-Detail in `paths`-Rule: §8 Ziff. 4 «nicht ohne separates Go David» (+ Probelauf-Vorbedingung); Leitplanke «CLAUDE.md im Zweifel nicht anfassen». Bleibt liegen.
+- **T16 offen (Go liegt vor, bewusst vertagt)** — CLAUDE.md-§7-Detail in `paths`-Rule: Davids Blanko-Go 24.7.2026 hebt das §8-Ziff.-4-Gate; die Kampagne 24./25.7. hat den Umbau trotzdem NICHT am Kampagnen-Ende gemacht (T19-Cache-Hygiene «CLAUDE.md nicht mid-Kampagne» + chirurgisches Risiko am Governance-File bei erschöpftem Kontext). Nächste FRISCHE Session mit freiem Kopf: §7-Elaboration (~4,7 KB) extrahieren, Probelauf-Vorbedingung beachten. Die §9-Faktenkorrektur (Required-Kontext steht) wurde 25.7. separat eingepflegt.
 - **T19 ✅** — Warn-Injektion aus SessionStart-Kette entfernt (Präfix byte-stabil; Beleg 1101→0 Byte); Schutzfunktion trägt `struktur-rotieren.py`, Audit als `npm run struktur:aktuell`. Stand-Details oben.
 - Übrige §§4–§7 (T4/T5/T6/T8/T9/T11/T12/T13/T14/T15/T17/T18/T10) unverändert offen, je Reihenfolge §8.
 

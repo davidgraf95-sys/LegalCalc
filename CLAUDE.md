@@ -222,10 +222,12 @@ Hook `tor-schutz.py` vor Merge-Kommandos **und** in `ci.yml`). Das Verdikt brauc
 eine prüfbare Form und einen Zuwachs im committeten Gegenprüfungs-Register — ein
 Trailer allein ist eine Behauptung über eine Prüfung, kein Nachweis. `--auto` ist
 auf Risikopfaden ganz gesperrt (es prüft nur den Stand beim Aktivieren).
-**Reichweite ehrlich (§8):** der Hook greift nur mit dieser `settings.json`; die
-harte, maschinenunabhängige Schranke entsteht erst, wenn `check:merge-schutz` als
-**Required Check** in den Branch-Regeln steht — dieser Handschritt ist offen
-(DAVID-GATE). Vorfall PR #309.
+**Reichweite (Stand 25.7.2026):** die harte, maschinenunabhängige Schranke STEHT —
+`check:merge-schutz` läuft als dedizierter CI-Job «Merge-Schutz (Required-Kontext)»
+(ci.yml + echter Doku-Zwilling, PR #345) und ist **Required Check** in den
+Branch-Regeln (per API gesetzt unter Davids Blanko-Go 24.7., Read-back-verifiziert);
+ein entfernter Job hinterlässt einen «expected»-Block. Der lokale Hook bleibt als
+erste Verteidigungslinie. Vorfall PR #309.
 
 ## §10 Wachstum folgt dem Rahmen
 
