@@ -964,6 +964,12 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   **DoD:** H0-Verdikt mit Korpus-Zahlen **vor** H1 · `check:normtext`/`check:historie` · golden byte-gleich
   (§6/§15 — kein Fussnoten-Verlust in KEINER der drei Ansichten) · axe · `check:perf-budget`.
   Trailer `Roadmap: W2·5i-HIST-ANSICHT`.
+  **H0 ✅ 25.7.2026 (Fable 5): VERDIKT BESTANDEN** — 37'849 Fussnoten korpusweit klassifiziert,
+  Substanz→ausgeblendet empirisch 0.008–0.04 % (≪ 5 %-Schwelle; Stichprobe n=300 gelabelt +
+  Vollscan aller 25'367 AENDERUNG); Kanton nur 11 % Historie (Nutzen = Bund-Fläche). H1 darf
+  gebaut werden, Auflagen 1–5 in `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`
+  (nur AENDERUNG ausblendbar · Klassifikation build-seitig ⇒ Risiko-Pfad/Gegenprüfung ·
+  ZITAT-Behandlung = David-Entscheid). Messwerkzeug `scripts/analyse/hist-h0.ts`.
 - [d] **5j-TABELLEN · Tabellen in Gesetzen lesbar machen** *(§14-Intake 20.7.2026, David: **ausdrücklich «später»**)*
   <!-- @meta id: W2·5j-TABELLEN · status: parked · of: ja · blocker: david-spaeter-tabellen · dep: [] · kollision: [src/components/normtext/ArtikelBody.tsx, src/pages/gesetz-leser/inhalt.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZES-UX.md -->
   Beispiel `/gesetze/kanton/BS-154.810#art-29`. **Datenlage erhoben — die Daten sind GUT:** strukturiert als

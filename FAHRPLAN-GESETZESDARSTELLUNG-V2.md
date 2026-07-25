@@ -200,6 +200,20 @@ sauber trennbar sind. Vor jeder UI-Zeile ist zu erheben:
 der Fussnoten falsch einordnet, blendet Normtext-Information aus und verletzt die §15-Funktions-Treue.
 Ein ehrliches «nicht trennbar» ist ein gültiges Ergebnis dieses Schritts.
 
+**H0 ✅ GEMESSEN 25.7.2026 (Fable 5) — VERDIKT: BESTANDEN, H1 darf gebaut werden.**
+Korpusweit (37'849 Fussnoten, 227 Bund- + 1'189 Kanton-Sidecars), deterministischer
+Regel-Klassifikator `scripts/analyse/hist-h0.ts` (Seed-Stichprobe reproduzierbar):
+AENDERUNG 67.0 % · VERWEIS 27.3 % · GRAUZONE 1.1 % (inkl. Hochrechnung ~2–2.6 %) ·
+ZITAT 1.7 % · UNKLAR 2.8 %. **Sicherheitsrichtung Substanz→ausgeblendet: 0/60 in der
+gelabelten Stichprobe (n=300) + Vollscan aller 25'367 AENDERUNG-Fälle → 2 klare
+(+9 grenzwertige) Fehler ≈ 0.008–0.04 % ≪ 5 %-Schwelle.** OR-Konsistenzprobe zur
+Intake-Zahl (789/75 vs. 778/77) ✓. Kanton ≠ Bund: nur 11.1 % Historie kantonal —
+Nutzen des Umschalters liegt auf der Bund-Fläche. Vollbericht + bindende
+H1-Auflagen (nur AENDERUNG ausblendbar; 2 bekannte Fehlerfälle in die Regeln;
+Klassifikation build-seitig = Risiko-Pfad mit Gegenprüfung; ZITAT-Behandlung =
+David-Entscheid): `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`; gelabelte
+Stichprobe `docs/ux-audit-2026-07/hist-h0/stichprobe-300-gelabelt.json`.
+
 ### §7.4 Fassungs-Fundament (gilt über diesen Schritt hinaus)
 David, 20.7.2026: das Fundament für historische Gesetzesfassungen soll bei **jeder** Normtext-Arbeit
 mitgedacht werden — nicht erst, wenn die Zeitmaschine (`W2·5g-ZEIT`, geparkt) gebaut wird. Verankert
