@@ -6,6 +6,7 @@
       "entscheid-verweis-praezision.e2e.ts",
       "fremdgesetz-verweis-aig.e2e.ts",
       "gesetze-ia-v2-walks.e2e.ts",
+      "gesetze-ia5-rechtsgebiet-kanon.e2e.ts",
       "gesetze-marginalie.e2e.ts",
       "gesetze-pdf-download.e2e.ts",
       "gesetze-ux-g3a.e2e.ts",
