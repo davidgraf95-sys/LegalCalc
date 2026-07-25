@@ -48,3 +48,31 @@ test.describe('IA-5 — ?ansicht=rechtsgebiet → kanonisch ?gliederung=rechtsge
     await expect(page).not.toHaveURL(/kt=BS/)
   })
 })
+
+// Y-A (§11.8, David 16.7.2026 Auswahl-Dialog: JA) — die 4. Einstiegskachel
+// «Rechtsgebiet» wird zum reinen Gliederungs-Modus demoted: der Zugang lebt im
+// bestehenden Gliederungs-Umschalter (A15/A14), die Kachel verschwindet aus der
+// Einstiegs-Reihe. A15 bleibt bindend: die Alt-URL löst weiter auf (Tests oben
+// + die unangepassten Pins in gesetze-uebersicht-u.e2e.ts / g6-Overflow).
+test.describe('Y-A — Demotion: Einstiegs-Reihe ohne 4. Kachel, Zugang im Umschalter', () => {
+  test('Landeplatz: drei Ebenen-Kacheln, KEINE «Nach Rechtsgebiet & Thema»-Kachel', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.goto('/gesetze')
+    const main = page.getByRole('main')
+    await expect(main.getByRole('button', { name: /Bundesrecht/ })).toBeVisible()
+    await expect(main.getByRole('button', { name: /kantonale Erlasse/ })).toBeVisible()
+    await expect(main.getByRole('button', { name: /Staatsverträge/ })).toBeVisible()
+    await expect(main.getByRole('button', { name: /Nach Rechtsgebiet & Thema/ })).toHaveCount(0)
+    expect(fehler).toEqual([])
+  })
+
+  test('Zugang über die bestehende Gliederungs-Umschaltung: Bund → Rechtsgebiet', async ({ page }) => {
+    await page.goto('/gesetze')
+    const main = page.getByRole('main')
+    await main.getByRole('button', { name: /Bundesrecht/ }).click()
+    await main.getByRole('group', { name: 'Gliederung' }).getByRole('button', { name: 'Rechtsgebiet' }).click()
+    await expect(page).toHaveURL(/gliederung=rechtsgebiet/)
+    await expect(main.getByRole('heading', { name: 'Querschnitts-Themen' })).toBeVisible()
+    await expect(main.getByRole('heading', { name: 'Grundgerüst nach Rechtsgebiet' })).toBeVisible()
+  })
+})

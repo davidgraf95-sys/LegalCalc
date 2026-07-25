@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams, useLocation, Link } from 'react-router-dom';
 import { SeitenKopf } from '../components/layout/SeitenKopf';
 import { InternationalRubriken } from '../components/normtext/InternationalRubriken';
-import { RechtsgebietSicht, RechtsgebietEinstieg } from '../components/normtext/RechtsgebietSicht';
+import { RechtsgebietSicht } from '../components/normtext/RechtsgebietSicht';
 import {
   GliederungUmschalter, RelevanzGitter, KantonRelevanzListe,
   KantonGebietGruppen, IntlRechtsgebietSicht,
@@ -213,16 +213,6 @@ export function Gesetze() {
     p.delete('ansicht');
     setParams(p, { replace: true });
   };
-  // IA-5: die vierte Tür führt direkt in den kanonischen Zustand — dieselbe
-  // Sicht, die der Gliederungs-Umschalter der Bund-Säule trägt (A15-Mechanik).
-  const setzeThemen = () => {
-    const p = new URLSearchParams(params);
-    p.set('ebene', 'bund');
-    p.set('gliederung', 'rechtsgebiet');
-    p.delete('ansicht');
-    p.delete('kt');
-    setParams(p, { replace: true });
-  };
   const zurUebersicht = () => {
     const p = new URLSearchParams(params);
     p.delete('ebene');
@@ -370,8 +360,11 @@ export function Gesetze() {
                 onWahl={setzeEbene}
                 onBefehl={() => { if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('lm:suche-fokus')); }}
               />
-              {/* G6 · §4.4 — vierte Tür: die zweite Gliederung nach Rechtsgebiet/Thema. */}
-              <RechtsgebietEinstieg onWahl={setzeThemen} />
+              {/* Y-A (§11.8, David 16.7.2026 Auswahl-Dialog: JA): die frühere 4.
+                  Einstiegskachel «Nach Rechtsgebiet & Thema» ist zum reinen
+                  Gliederungs-Modus demoted — der Zugang lebt im Gliederungs-
+                  Umschalter der Säulen (A15/A14); `?ansicht=rechtsgebiet` bleibt
+                  auflösbarer Alias (IA-5, A15: Tür NICHT entfernt). */}
               {/* IA-3 (§11.5): A–Z-Register am ENDE des Landeplatzes — wächst nur
                   nach unten (§15.2), alle Listen-Wechsel sind input-getrieben. */}
               <AzRegister erlasse={erlasse} />

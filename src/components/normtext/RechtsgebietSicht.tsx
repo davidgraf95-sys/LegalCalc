@@ -133,29 +133,10 @@ function Grundgeruest({ erlasse }: { erlasse: BrowseErlass[] }) {
   );
 }
 
-// Landeplatz-Einstieg (§4.1): eine gleichwertige, aber eigenständige vierte
-// Tür neben den drei Ebenen-Kacheln — die zweite Gliederung quer zu Bund/
-// Kanton/International. Bewusst als volle Zeile (nicht als vierte Ebenen-Kachel),
-// weil es KEINE Ebene ist, sondern eine andere Achse.
-export function RechtsgebietEinstieg({ onWahl }: { onWahl: () => void }) {
-  return (
-    <button
-      type="button"
-      onClick={onWahl}
-      className="lc-card group flex w-full items-center gap-3 p-5 text-left transition-colors hover:border-brass-400"
-    >
-      <span className="min-w-0 flex-1">
-        <span className="font-sans font-semibold text-ink-900 text-h3 tracking-tight group-hover:text-brass-700 transition-colors">
-          Nach Rechtsgebiet &amp; Thema
-        </span>
-        <span className="block text-body-s text-ink-500">
-          Zweite Gliederung quer durch die Bundesgesetze — kanzleirelevante Praxisfelder (Arbeit, Miete, Steuern …) plus das vollständige Grundgerüst nach Rechtsgebiet.
-        </span>
-      </span>
-      <span aria-hidden className="shrink-0 text-body-s font-medium text-brass-700">Öffnen →</span>
-    </button>
-  );
-}
+// Y-A (§11.8, David 16.7.2026 Auswahl-Dialog: JA): der frühere Landeplatz-
+// Einstieg `RechtsgebietEinstieg` (4. Kachel) ist entfernt — die Sicht ist ein
+// reiner Gliederungs-Modus im A15-Umschalter; `?ansicht=rechtsgebiet` bleibt
+// auflösbarer Alias auf `?gliederung=rechtsgebiet` (IA-5, §11.4 Ziff. 2).
 
 export function RechtsgebietSicht({ erlasse }: { erlasse: BrowseErlass[] }) {
   // Querschnitt = Bund (dort ist rechtsgebiet je Erlass deklariert, §7); Kanton
