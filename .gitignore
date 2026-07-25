@@ -87,3 +87,9 @@ abnahme/design-d5/*.png
 
 # Playwright-JSON-Report (CI-Artefakt für das Shard-Balancing, nie committen)
 playwright-report.json
+
+# Cowork-Statuswerkzeug (betreibt David ausserhalb dieses Repos — gehört nicht
+# zum Produkt, nie committen)
+COWORK.md
+COWORK-KURZ.md
+scripts/cowork/
