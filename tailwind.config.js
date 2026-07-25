@@ -128,7 +128,15 @@ export default {
       // reservierten Platz, statt Platz zu schaffen → kein Shift. Reserviert nur
       // Platz, versteckt/kürzt nichts (§15/2); Artikel ohne Historie-Eintrag
       // (und Erlasse ganz ohne Shard) gewinnen etwas Weissraum am Fuss.
-      minHeight: { 'modul-news': '12.5rem', 'modul-zuletzt': '4.5rem', 'titel-2z': '2.35em', 'hist-zeile': '1.5rem' },
+      // `inhalt-region` (Footer-CLS /gesetze, David 25.7.2026, §15.2): EIN
+      // Rahmen um die drei exklusiven Inhalts-Zustände der Übersicht
+      // (Landeplatz / Trefferregion / Ebenen-Panel) reserviert von Anfang an
+      // gut eine Viewport-Höhe (100svh minus Kopf-Chrom ≈ 8rem) — der
+      // Ergebnis-Swap beim Tippen/Löschen zieht den Footer damit nie in den
+      // Viewport (Nullprobe 25.7.: FOOTER-Shift ~0.0496 unter Drossel 6×;
+      // Beweis e2e/gesetze-footer-cls.e2e.ts). svh = kleinste Viewport-Höhe
+      // (mobil stabil). Reserviert nur Platz, versteckt/kürzt nichts (§15.2).
+      minHeight: { 'modul-news': '12.5rem', 'modul-zuletzt': '4.5rem', 'titel-2z': '2.35em', 'hist-zeile': '1.5rem', 'inhalt-region': 'calc(100svh - 8rem)' },
       // E4-Korrektur (David 25.7.2026): der frühere `toc-kontext`-33vh-Slot-
       // Token ist ERSATZLOS entfernt — er klemmte das Gliederungs-Sichtfenster
       // ein («aktuell schneidet es gliederung ab»). Das Kontext-Panel steht

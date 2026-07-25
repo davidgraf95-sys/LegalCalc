@@ -5,6 +5,7 @@
       "ag-gruendung-wizard.e2e.ts",
       "entscheid-verweis-praezision.e2e.ts",
       "fremdgesetz-verweis-aig.e2e.ts",
+      "gesetze-footer-cls.e2e.ts",
       "gesetze-ia-v2-walks.e2e.ts",
       "gesetze-ia5-rechtsgebiet-kanon.e2e.ts",
       "gesetze-ia7-sidebar-badges.e2e.ts",

@@ -346,6 +346,16 @@ export function Gesetze() {
             </div>
           </div>
 
+          {/* Footer-CLS (§15.2, David 25.7.2026): EIN Rahmen um die drei
+              exklusiven Inhalts-Zustände (Landeplatz / Trefferregion /
+              Ebenen-Panel) reserviert von Anfang an gut eine Viewport-Höhe
+              (Token `inhalt-region`, §13) — der Ergebnis-Swap beim Tippen/
+              Löschen zog sonst den FOOTER in den Viewport (input-adjazenter
+              Shift ~0.0496, Nullprobe 25.7. unter Drossel 6×; Beweis
+              e2e/gesetze-footer-cls.e2e.ts). Reine Platz-Reservierung: kein
+              Zustand entfernt, kein Inhalt gekürzt (§15: Defer/Layout ändert
+              das WANN/WO, nie das WAS). */}
+          <div className="min-h-inhalt-region">
           {/* Landeplatz (G4 · §4.1): drei gleichwertige Einstiegskacheln mit
               Kurz-Statistik statt stillem Bund-Default. Prominenter Sprung-/
               Such-Hinweis (Cmd/Ctrl-K, §4.2) darüber. */}
@@ -568,6 +578,7 @@ export function Gesetze() {
           )}
           </div>
           )}
+          </div>
         </>
       )}
     </div>
