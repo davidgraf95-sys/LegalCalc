@@ -31,6 +31,11 @@ import { KantonAuswahl } from './gesetze-teile/KantonAuswahl';
 // IA-3 (§11.5): A–Z-/Kürzel-Register — Browse-Zwilling zum Norm-Sprung auf dem
 // Landeplatz; rechnet auf dem BEREITS geladenen Manifest (kein zweiter Index, K10).
 import { AzRegister } from './gesetze-teile/AzRegister';
+// IA-4 (§11.5): Scope des lokalen Browse-Filterfelds — Default = aktive Ebene,
+// der Chip «auf alle Ebenen erweitern» weitet mit EINEM Klick (O5). Reine
+// Teilmengen-Bildung auf dem geladenen Manifest (kein dritter Suchpfad, A5;
+// kein zweiter Index, K10). Logik testbar in gesetze-teile/filter-scope.ts.
+import { loeseFilterScope, scopeLabel, scopeBasis } from './gesetze-teile/filter-scope';
 
 type Ebene = 'bund' | 'kanton' | 'international';
 
@@ -144,10 +149,11 @@ export function Gesetze() {
   // SSR-sicher als Lazy-Init (Prerender hat keine Query → leer).
   const [suche, setSuche] = useState(() =>
     typeof window === 'undefined' ? '' : new URLSearchParams(window.location.search).get('q') ?? '');
-  // N6: ist ein einzelner Kanton gewählt, sucht die Trefferliste standardmässig
-  // NUR in diesem Kanton (auf der BS-Seite erwartet man BS-Treffer, nicht Bund +
-  // alle 25 anderen Kantone). Ein sichtbarer Umschalter weitet auf «Alle» aus.
-  const [nurKanton, setNurKanton] = useState(true);
+  // IA-4 (§11.5, verallgemeinert N6): der Filter-Scope folgt der aktiven Ebene
+  // (Säule bzw. gewählter Kanton — auf der BS-Seite erwartet man BS-Treffer,
+  // nicht Bund + alle 25 anderen Kantone). Der Chip «auf alle Ebenen erweitern»
+  // am Feld weitet mit EINEM Klick; client-only State, kein neuer Index (K10).
+  const [alleEbenen, setAlleEbenen] = useState(false);
 
   // Ebene (Bund/Kantone) UND der gewählte Kanton liegen in der URL (?ebene= / ?kt=)
   // — so verlinkt die App-Shell-Seitenleiste direkt auf den Kantone-Tab bzw. einen
@@ -167,6 +173,9 @@ export function Gesetze() {
     : ebeneParam === 'bund' ? 'bund' : null;
   const ebene: Ebene = gewaehlt ?? 'bund';
   const kanton = gewaehlt === 'kanton' ? params.get('kt') : null;
+  // IA-4: wirksamer Scope des lokalen Filterfelds (Default = aktive Ebene;
+  // Landeplatz/Rechtsgebiets-Sicht = alle Ebenen; Chip weitet).
+  const filterScope = loeseFilterScope(gewaehlt, kanton, alleEbenen);
   // Rechtsgebiets-Sicht (G6 · §4.4): zweite, achsen-orthogonale Gliederung. Eigener
   // Zustand `?ansicht=rechtsgebiet` (nicht Teil der Ebene) — vom Landeplatz
   // erreichbar, mit «← Übersicht» wieder verlassen.
@@ -294,14 +303,41 @@ export function Gesetze() {
                 {gewaehlt !== null && <Segment aktiv={ebene} onWahl={setzeEbene} />}
               </div>
             ) : <span />}
-            <input
-              type="search"
-              value={suche}
-              onChange={(e) => setSuche(e.target.value)}
-              placeholder="Suchen — Kürzel, Titel, SR-Nr. …"
-              aria-label="Gesetze durchsuchen — Bund, Kantone & International (Kürzel, Titel, SR-Nr.)"
-              className="lc-input h-11 py-0 text-body-s w-full max-w-sm"
-            />
+            {/* IA-4 (§11.5/O5): Scope-Label + Chip sind von Anfang an im Layout
+                (§15.2, kein CLS) und programmatisch mit dem Input verknüpft
+                (aria-describedby). Der Chip ändert nur den SCOPE des BESTEHENDEN
+                Filters — kein dritter Suchpfad (A5), kein zweiter Index (K10). */}
+            <div className="w-full max-w-sm space-y-1.5">
+              <input
+                type="search"
+                value={suche}
+                onChange={(e) => setSuche(e.target.value)}
+                placeholder="Suchen — Kürzel, Titel, SR-Nr. …"
+                aria-label="Gesetze durchsuchen (Kürzel, Titel, SR-Nr.)"
+                aria-describedby="gesetze-filter-scope"
+                className="lc-input h-11 py-0 text-body-s w-full"
+              />
+              <p id="gesetze-filter-scope" className="m-0 flex min-h-5 flex-wrap items-center gap-x-2 gap-y-1 text-xs text-ink-500">
+                <span>{scopeLabel(filterScope, (k) => KANTON_NAMEN[k] ?? k)}</span>
+                {/* Chip nur, wo ein enger Default-Scope existiert (aktive Säule/
+                    Kanton) — auf dem Landeplatz ist «alle Ebenen» bereits der
+                    Scope, ein Chip wäre wirkungslos (§3.1 keine Wucherung). */}
+                {gewaehlt !== null && (
+                  <button
+                    type="button"
+                    aria-pressed={alleEbenen}
+                    onClick={() => setAlleEbenen((a) => !a)}
+                    className={`rounded border px-2 py-0.5 text-xs font-medium transition-colors ${
+                      alleEbenen
+                        ? 'border-brass-400 bg-brass-100 text-brass-800'
+                        : 'border-line text-ink-500 hover:border-brass-400 hover:text-brass-700'
+                    }`}
+                  >
+                    auf alle Ebenen erweitern
+                  </button>
+                )}
+              </p>
+            </div>
           </div>
 
           {/* Landeplatz (G4 · §4.1): drei gleichwertige Einstiegskacheln mit
@@ -332,32 +368,20 @@ export function Gesetze() {
             <RechtsgebietSicht erlasse={erlasse} />
           )}
 
-          {/* Suche: global über Bund UND Kantone — oder (N6) auf den gewählten
-              Kanton eingegrenzt, wenn ein Kanton aktiv ist und «Nur …» gewählt ist. */}
+          {/* Suche im wirksamen Scope (IA-4, verallgemeinert N6): Default ist
+              die aktive Ebene (Säule/Kanton), der Chip AM FELD weitet auf alle
+              Ebenen — der frühere Trefferlisten-Umschalter «Nur …/Alle» ist
+              darin aufgegangen (EIN Control, §3.1 keine Wucherung). */}
           {suche.trim() && (() => {
-            const aufKanton = !!kanton && nurKanton;
-            const basis = aufKanton ? erlasse.filter((e) => e.kanton === kanton) : erlasse;
+            const aufKanton = filterScope.art === 'kanton';
+            const basis = scopeBasis(erlasse, filterScope);
             const treffer = filtern(basis, suche);
             const bund = treffer.filter((e) => e.ebene === 'bund' && !istIntl(e));
             const kant = treffer.filter((e) => e.ebene === 'kanton');
             const intl = treffer.filter(istIntl);
             return (
               <div className="space-y-8">
-                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1.5">
-                  <p className="text-body-s text-ink-500"><span className="num">{treffer.length}</span> Treffer für «{suche.trim()}»</p>
-                  {kanton && (
-                    <div role="group" aria-label="Suchbereich" className="inline-flex rounded-md border border-line bg-paper-sunken/50 p-0.5 text-xs">
-                      <button type="button" onClick={() => setNurKanton(true)} aria-pressed={nurKanton}
-                        className={`rounded px-2 py-0.5 font-medium transition-colors ${nurKanton ? 'bg-paper text-ink-900 shadow-sm' : 'text-ink-500 hover:text-ink-800'}`}>
-                        Nur {KANTON_NAMEN[kanton] ?? kanton}
-                      </button>
-                      <button type="button" onClick={() => setNurKanton(false)} aria-pressed={!nurKanton}
-                        className={`rounded px-2 py-0.5 font-medium transition-colors ${!nurKanton ? 'bg-paper text-ink-900 shadow-sm' : 'text-ink-500 hover:text-ink-800'}`}>
-                        Alle
-                      </button>
-                    </div>
-                  )}
-                </div>
+                <p className="text-body-s text-ink-500"><span className="num">{treffer.length}</span> Treffer für «{suche.trim()}»</p>
                 {bund.length > 0 && (
                   <section className="space-y-3">
                     <h2 className="lc-overline">Bund <span className="text-ink-500">· {bund.length}</span></h2>

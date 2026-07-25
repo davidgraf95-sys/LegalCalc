@@ -100,15 +100,26 @@ export function AzRegister({ erlasse }: { erlasse: BrowseErlass[] }) {
       {offen && (
         <div id="az-register-panel" className="space-y-4">
           {/* Titel/Kürzel-Filter — filtert NUR dieses Register (kein dritter
-              Suchpfad, A5); der Artikel-Sprung bleibt in der HeaderSuche. */}
-          <input
-            type="search"
-            value={filter}
-            onChange={(e) => { setFilter(e.target.value); if (e.target.value.trim()) setBuchstabe(null); }}
-            placeholder="Im Register filtern — Titel oder Kürzel …"
-            aria-label="A–Z-Register filtern (Titel oder Kürzel)"
-            className="lc-input h-11 w-full max-w-sm py-0 text-body-s"
-          />
+              Suchpfad, A5); der Artikel-Sprung bleibt in der HeaderSuche.
+              IA-4 (§11.5/O5): ehrliches Scope-Label, programmatisch verknüpft
+              (aria-describedby), von Anfang an im Layout (§15.2, kein CLS).
+              BEWUSST KEIN Chip «auf alle Ebenen erweitern»: das Register liegt
+              bereits über allen Ebenen (register.json = Bund + Kantone +
+              International) — ein Chip wäre wirkungslos (§3.1 keine Wucherung). */}
+          <div className="w-full max-w-sm space-y-1.5">
+            <input
+              type="search"
+              value={filter}
+              onChange={(e) => { setFilter(e.target.value); if (e.target.value.trim()) setBuchstabe(null); }}
+              placeholder="Im Register filtern — Titel oder Kürzel …"
+              aria-label="A–Z-Register filtern (Titel oder Kürzel)"
+              aria-describedby="az-register-scope"
+              className="lc-input h-11 w-full py-0 text-body-s"
+            />
+            <p id="az-register-scope" className="m-0 min-h-5 text-xs text-ink-500">
+              Filtert: alle Ebenen (Bund, Kantone, International) — nur dieses Register.
+            </p>
+          </div>
 
           {/* Buchstaben-Leiste: Navigation, tastatur-bedienbar (native Buttons,
               Fokus über globales :focus-visible); leere Klassen deaktiviert,
@@ -159,7 +170,7 @@ export function AzRegister({ erlasse }: { erlasse: BrowseErlass[] }) {
                   ? (filtert
                     ? <><span className="num">{liste.length}</span> Treffer im Register für «{filter.trim()}»</>
                     : <><span className="num">{liste.length}</span> Titel unter «{buchstabe}»</>)
-                  : <>Buchstaben wählen oder filtern — alle Ebenen (Bund, Kantone, International), jeder Titel führt in den Volltext.</>}
+                  : <>Buchstaben wählen oder filtern — jeder Titel führt in den Volltext.</>}
               </span>
             </p>
             {/* Scrollbare Region: tastatur-erreichbar (tabIndex, axe
