@@ -1576,6 +1576,17 @@ A38/D-Kette und A39/PR-B/PR-C laufen als eigene Stränge (andere Flächen).
 Je Einheit gilt die A9-DoD-Zeile (§10.4) wörtlich; Risiko-Einheiten (E1, A39,
 A40-Anteil) mit Gegenprüfungs-Quittung.
 
+**Status E4/A32+A36 ✅ (25.7.2026, Worktree `lm-e4`, PR #346, Squash `cf6e53a0` — Bau: Fable 5):**
+A32: KontextPanel in jeder 2-Spalten-Ansicht neu UNTERHALB des Gliederungsbaums (TOC-Spalte,
+Slot-Token `h-toc-kontext` 33vh ab erstem Render reserviert, Panel blendet erst nach Ladung ein
+— CLS 0 by construction, e2e @6×-Drossel); Mobil/Drawer + schmales Pane ehrlich am Leseende
+(nie im Drawer versteckt). A36: ZGB-TOC-Kuration render-seitig (`kuratiereTocSektionen` in
+`berechnungen.ts`, exakter Identitäts-Match; 74 `disp_u2_art_*`-Token nur aus dem TOC-Baum,
+Lesespalte/Anker/Ctrl+F/Print vollständig — §15-Treue, Substanz-Probe im Test). Kein
+Sidecar-/Generator-Umbau, kein Risikopfad. Gate voll grün, golden byte-gleich, e2e 26/26
+unangepasst + neues `leser-kontext-e4`. Screenshot-Serie 390–1920; 33vh-Deckel =
+Gestaltungsentscheid zur David-Sichtprüfung. **Damit ist die E-Reihe E1–E7 KOMPLETT.**
+
 **Status E7/A33 ✅ (17.7.2026, Worktree `lm-a33`, Branch `fix/a33-gliederung`):**
 Ultracode-Audit + Fix-Einheit gebaut. Bestätigte Root-Causes: **RC1** TOC-Mitscroll
 zentrierte animiert (½ Container, `smooth`) statt zu nudgen, ohne Nutzer-Sperre
@@ -1774,6 +1785,25 @@ Je Einheit gilt die **A9-DoD-Zeile (§10.4) wörtlich** (CPU-Throttle 6×, CLS 0
 
 ### 11.10 · Ausführungsvermerke der §11-Einheiten
 
+**IA-3 · A–Z-/Kürzel-Register ✅ GEBAUT + GEMERGT 25.7.2026 (Fable 5, Worktree `lm-ia3`,
+PR #347, Squash `15a7eac8`).** Buchstaben-Leiste + title-only-Filter auf dem geladenen
+`register.json` (kein zweiter Index, K10); Einsortierung DIN 5007-1 (NFD-Faltung Ä→A,
+Nicht-Buchstaben → Sammelklasse «0–9»); Lazy-je-Buchstabe; Mobil kollabiert; H1-Budget-Beweis
+2 Interaktionen (e2e); Prerender byte-neutral gemessen. **CI-Härtungs-Story:** eigenes
+CLS-Tor riss in CI (0.0657 @6× — lokal grün); Attribution fand DREI Quellen (cv-Platzhalter-
+Einwachsen · React-Key-Wanderer beim Sichten-Wechsel · Status-Text-Shift) → Fix §15.2
+(Scroll-Region konstanter Höhe, cv von Zeilen entfernt, `ul` je Sicht ge-keyt, Status-Zeile
+fix) OHNE Tor-Aufweichung; 6/6 grün @6×-Drossel. Bekannter a33-F2/V1-Contention-Flake riss
+zweimal quer (Rerun heilte; Härtung als Task-Chip verortet).
+
+**IA-4 · Scope-Chip ✅ GEBAUT + GEMERGT 25.7.2026 (Fable 5, Worktree `lm-ia4`, PR #350,
+Squash `e33737a9`).** Übersichts-Filter: Scope-Label + Chip «auf alle Ebenen erweitern»
+(alter untestierter «Nur X/Alle»-Umschalter darin aufgegangen); A–Z-Register bewusst nur
+ehrliches Label (filtert bereits alle Ebenen — kein wirkungsloser Chip, §3.1). **Deklarierte
+kleine Verhaltensänderung:** Tippen in aktiver Säule filtert default die Säule (vorher still
+global, ungepinnt) — Spec-Wortlaut §11.5. e2e 86/86 bestehend unangepasst + 5 neue;
+CLS-Nullprobe attribuierte vorbestehenden Footer-Shift (Task-Chip verortet).
+
 **IA-2 · Erfassungsgrad sichtbar ✅ GEBAUT 16.7.2026 (Opus, Worktree `feat/ia2-erfassungsgrad`).**
 Neue SSoT `src/lib/normtext/erfassungsgrad.ts` (dokumentiert-deterministisch nach
 A14, §8 «nie raten»): `erfassungsgrad(kanton, n)` → `vollstaendig` NUR bei
@@ -1866,16 +1896,25 @@ dem steuerungs-Querverweis «§12 Ziff. 2» = Pathspec-Commit-Konvention).
 
 ### 12.5 · Bau-Go-Status & David-Gate (ans ENDE)
 
-- **EID-1 (Enabler):** verhaltensneutral/additiv, Risiko-Pfad-abgesichert (`check:gegenpruefung`
-  + Golden byte-gleich) — **sofort baubar, sobald Bau-Go erteilt.** Kein Produkt-Entscheid nötig.
-- **EID-2 (Deep-Links):** fügt eine sichtbare Reader-Oberfläche hinzu (Link «amtliche Fassung
-  an genau dieser Stelle») → **David-Gate: Platzierung/Wortlaut/Sichtbarkeit** (Artikel-Zeile
-  vs. Sektions-Kopf) vor Bau vorlegen (§Y-Verfahren).
-- **EID-3 (Folge-Härtungen):** **David-Gate** — Teil (a) re-öffnet die A27/§11.7-Entscheidung
-  (SektionKontextKopf); nur mit ausdrücklichem Entscheid. Teil (b) optional, niedrige Priorität.
-- **Gesamt-Bau-Go (Ausführung der Einheiten):** ausstehend — dieser Abschnitt ist der Intake
-  (David-GO 17.7. = Aufnahme als Bau-Einheit), die Ausführung folgt der Fahrplan-Sequenz mit
-  den obigen Gates.
+- **EID-1 ✅ GEBAUT + GEGENGEPRÜFT + GEMERGT 25.7.2026** (Fable-Bau/Opus-Prüfung, Worktree
+  `lm-eid1`, PR #348, Squash `f761b2db`): `gliederung[].eId?` additiv (54 118 Felder, 227
+  Sidecars; Differ 227/227 byte-gleich nach eId+Stempel-Entfernung; Konsumregel «unmittelbar
+  folgendes Heading», 9 NHG-h7-Fälle sauber verworfen, Doppel-Section synthetisch belegt).
+  Gegenprüfung: 15 970-eId-Kongruenz-Stichprobe über 11 Erlasse, 0 Fehl-Bindung; Register-Hash
+  `ff543f71`. **Bekannte Grenze:** Annex-Sections (separater Anhang-Pfad) noch ohne eId.
+- **EID-2 ✅ GEBAUT + GEGENGEPRÜFT + GEMERGT 25.7.2026** (PR #349, Squash `15d413f4`):
+  «amtliche Fassung ↗» hover-dezent an Artikel-Aktionszeile UND SektionKopf-Titelzeile
+  (ELI-Form; Artikel-Fragment verbatim aus Snapshot-quelleUrl = eine Wahrheit §5; Null-Gates
+  Kanton/aufgehoben/`__N`/Nicht-ELI/ohne-Fragment; 13 eId-lose Erlasse sektions-linkfrei §8;
+  a11y tastaturerreichbar, CLS-frei). Gegenprüfung: 20+ Soll-vor-Ist-Proben live gegen Fedlex,
+  Register-Hash `23f5f954`. **David-Gate Platzierung wurde unter dem Blanko-Go 24.7.
+  orchestrator-entschieden (konservativ) — Sichtprüfung David erbeten** (Screenshots im PR).
+  Notizen ohne Defekt: Paritäts-Sweep-Doku überbehauptet (tautologisch für Haupttext);
+  `ELI_FORM`-Präfix-Regex-Härtung = Kandidat bei nächster Berührung. Folge-Anpassung §6.3:
+  1 ambiger e2e-Locator präzisiert (g3b-anhang; Sweep: einziger von 50).
+- **EID-3 (Folge-Härtungen):** Teil (a) re-öffnet die A27/§11.7-Entscheidung
+  (SektionKontextKopf) — bleibt trotz Blanko-Go bewusst liegen (David hat A27 inhaltlich
+  entschieden; Re-Öffnung nur auf ausdrücklichen Wunsch). Teil (b) optional, niedrig.
 
 ---
 
