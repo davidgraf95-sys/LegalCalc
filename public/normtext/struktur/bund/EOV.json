@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "834.11",
   "titel": "Erwerbsersatzverordnung",
@@ -68,11 +68,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anspruch auf Entschädigung"
+     "label": "1. Abschnitt: Anspruch auf Entschädigung",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -83,11 +85,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anspruch auf Entschädigung"
+     "label": "1. Abschnitt: Anspruch auf Entschädigung",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -98,11 +102,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anspruch auf Entschädigung"
+     "label": "1. Abschnitt: Anspruch auf Entschädigung",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -127,11 +133,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berechnung der Entschädigung"
+     "label": "2. Abschnitt: Berechnung der Entschädigung",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -258,11 +266,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berechnung der Entschädigung"
+     "label": "2. Abschnitt: Berechnung der Entschädigung",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -287,11 +297,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berechnung der Entschädigung"
+     "label": "2. Abschnitt: Berechnung der Entschädigung",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -302,11 +314,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berechnung der Entschädigung"
+     "label": "2. Abschnitt: Berechnung der Entschädigung",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -381,11 +395,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berechnung der Entschädigung"
+     "label": "2. Abschnitt: Berechnung der Entschädigung",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -396,11 +412,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berechnung der Entschädigung"
+     "label": "2. Abschnitt: Berechnung der Entschädigung",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -411,11 +429,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berechnung der Entschädigung"
+     "label": "2. Abschnitt: Berechnung der Entschädigung",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -426,11 +446,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berechnung der Entschädigung"
+     "label": "2. Abschnitt: Berechnung der Entschädigung",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -441,11 +463,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zulage für Betreuungskosten"
+     "label": "3. Abschnitt: Zulage für Betreuungskosten",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -456,11 +480,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zulage für Betreuungskosten"
+     "label": "3. Abschnitt: Zulage für Betreuungskosten",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -471,11 +497,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Betriebszulage für mitarbeitende Familienmitglieder in einem Landwirtschaftsbetrieb"
+     "label": "4. Abschnitt: Betriebszulage für mitarbeitende Familienmitglieder in einem Landwirtschaftsbetrieb",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": [],
@@ -499,11 +527,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Geltendmachung des Anspruchs"
+     "label": "5. Abschnitt: Geltendmachung des Anspruchs",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -571,11 +601,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Geltendmachung des Anspruchs"
+     "label": "5. Abschnitt: Geltendmachung des Anspruchs",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -607,11 +639,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Geltendmachung des Anspruchs"
+     "label": "5. Abschnitt: Geltendmachung des Anspruchs",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -636,11 +670,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Geltendmachung des Anspruchs"
+     "label": "5. Abschnitt: Geltendmachung des Anspruchs",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -665,11 +701,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Geltendmachung des Anspruchs"
+     "label": "5. Abschnitt: Geltendmachung des Anspruchs",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -694,11 +732,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Festsetzung und Auszahlung der Entschädigung"
+     "label": "6. Abschnitt: Festsetzung und Auszahlung der Entschädigung",
+     "eId": "chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -709,11 +749,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Festsetzung und Auszahlung der Entschädigung"
+     "label": "6. Abschnitt: Festsetzung und Auszahlung der Entschädigung",
+     "eId": "chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -751,11 +793,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Festsetzung und Auszahlung der Entschädigung"
+     "label": "6. Abschnitt: Festsetzung und Auszahlung der Entschädigung",
+     "eId": "chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -781,11 +825,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils"
+     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Beginn und Ende des Anspruchs auf Entschädigung"
+     "label": "1. Abschnitt: Beginn und Ende des Anspruchs auf Entschädigung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -823,11 +869,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils"
+     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Beginn und Ende des Anspruchs auf Entschädigung"
+     "label": "1. Abschnitt: Beginn und Ende des Anspruchs auf Entschädigung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -852,11 +900,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils"
+     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Beginn und Ende des Anspruchs auf Entschädigung"
+     "label": "1. Abschnitt: Beginn und Ende des Anspruchs auf Entschädigung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -893,11 +943,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils"
+     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Mindestversicherungsdauer"
+     "label": "2. Abschnitt: Mindestversicherungsdauer",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -962,11 +1014,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils"
+     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Mindestversicherungsdauer"
+     "label": "2. Abschnitt: Mindestversicherungsdauer",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1004,11 +1058,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils"
+     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Mindesterwerbsdauer"
+     "label": "3. Abschnitt: Mindesterwerbsdauer",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1073,11 +1129,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils"
+     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Mindesterwerbsdauer"
+     "label": "3. Abschnitt: Mindesterwerbsdauer",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1163,11 +1221,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils"
+     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Mindesterwerbsdauer"
+     "label": "3. Abschnitt: Mindesterwerbsdauer",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1217,11 +1277,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils"
+     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Berechnung der Entschädigung"
+     "label": "4. Abschnitt: Berechnung der Entschädigung",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1345,11 +1407,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils"
+     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Berechnung der Entschädigung"
+     "label": "4. Abschnitt: Berechnung der Entschädigung",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1374,11 +1438,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils"
+     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Berechnung der Entschädigung"
+     "label": "4. Abschnitt: Berechnung der Entschädigung",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1403,11 +1469,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils"
+     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Geltendmachung des Anspruchs, Festsetzung und Auszahlung der Entschädigung"
+     "label": "5. Abschnitt: Geltendmachung des Anspruchs, Festsetzung und Auszahlung der Entschädigung",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -1432,11 +1500,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils"
+     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Geltendmachung des Anspruchs, Festsetzung und Auszahlung der Entschädigung"
+     "label": "5. Abschnitt: Geltendmachung des Anspruchs, Festsetzung und Auszahlung der Entschädigung",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -1513,7 +1583,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Gemeinsame Bestimmungen"
+     "label": "3. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1551,7 +1622,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Gemeinsame Bestimmungen"
+     "label": "3. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1615,7 +1687,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Gemeinsame Bestimmungen"
+     "label": "3. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1666,7 +1739,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Gemeinsame Bestimmungen"
+     "label": "3. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1677,7 +1751,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Gemeinsame Bestimmungen"
+     "label": "3. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1704,7 +1779,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Gemeinsame Bestimmungen"
+     "label": "3. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1715,7 +1791,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Gemeinsame Bestimmungen"
+     "label": "3. Kapitel: Gemeinsame Bestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1754,7 +1831,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1779,7 +1857,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1880,7 +1959,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1906,7 +1986,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1917,7 +1998,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1928,11 +2010,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Geltendmachung des Anspruchs"
+     "label": "5. Abschnitt: Geltendmachung des Anspruchs",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1957,11 +2041,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5a. Abschnitt: Informationssystem"
+     "label": "5a. Abschnitt: Informationssystem",
+     "eId": "chap_1/sec_5_a"
     }
    ],
    "marginalie": [
@@ -1987,11 +2073,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5a. Abschnitt: Informationssystem"
+     "label": "5a. Abschnitt: Informationssystem",
+     "eId": "chap_1/sec_5_a"
     }
    ],
    "marginalie": [
@@ -2002,11 +2090,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5a. Abschnitt: Informationssystem"
+     "label": "5a. Abschnitt: Informationssystem",
+     "eId": "chap_1/sec_5_a"
     }
    ],
    "marginalie": [
@@ -2017,11 +2107,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5a. Abschnitt: Informationssystem"
+     "label": "5a. Abschnitt: Informationssystem",
+     "eId": "chap_1/sec_5_a"
     }
    ],
    "marginalie": [
@@ -2032,11 +2124,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Entschädigung für Dienstleistende"
+     "label": "1. Kapitel: Entschädigung für Dienstleistende",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5a. Abschnitt: Informationssystem"
+     "label": "5a. Abschnitt: Informationssystem",
+     "eId": "chap_1/sec_5_a"
     }
    ],
    "marginalie": [
@@ -2047,11 +2141,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils"
+     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Mindesterwerbsdauer"
+     "label": "3. Abschnitt: Mindesterwerbsdauer",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2076,11 +2172,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils"
+     "label": "2. Kapitel: Entschädigung bei Mutterschaft und Entschädigung des andern Elternteils",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Geltendmachung des Anspruchs, Festsetzung und Auszahlung der Entschädigung"
+     "label": "5. Abschnitt: Geltendmachung des Anspruchs, Festsetzung und Auszahlung der Entschädigung",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -2121,11 +2219,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes"
+     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes",
+     "eId": "chap_2_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anspruch von Pflegeeltern, Stiefeltern sowie von der arbeitslosen oder arbeitsunfähigen Mutter oder dem arbeitslosen oder arbeitsunfähigen andern Elternteil"
+     "label": "1. Abschnitt: Anspruch von Pflegeeltern, Stiefeltern sowie von der arbeitslosen oder arbeitsunfähigen Mutter oder dem arbeitslosen oder arbeitsunfähigen andern Elternteil",
+     "eId": "chap_2_a/sec_1"
     }
    ],
    "marginalie": [
@@ -2164,11 +2264,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes"
+     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes",
+     "eId": "chap_2_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anspruch von Pflegeeltern, Stiefeltern sowie von der arbeitslosen oder arbeitsunfähigen Mutter oder dem arbeitslosen oder arbeitsunfähigen andern Elternteil"
+     "label": "1. Abschnitt: Anspruch von Pflegeeltern, Stiefeltern sowie von der arbeitslosen oder arbeitsunfähigen Mutter oder dem arbeitslosen oder arbeitsunfähigen andern Elternteil",
+     "eId": "chap_2_a/sec_1"
     }
    ],
    "marginalie": [
@@ -2179,11 +2281,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes"
+     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes",
+     "eId": "chap_2_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anspruch von Pflegeeltern, Stiefeltern sowie von der arbeitslosen oder arbeitsunfähigen Mutter oder dem arbeitslosen oder arbeitsunfähigen andern Elternteil"
+     "label": "1. Abschnitt: Anspruch von Pflegeeltern, Stiefeltern sowie von der arbeitslosen oder arbeitsunfähigen Mutter oder dem arbeitslosen oder arbeitsunfähigen andern Elternteil",
+     "eId": "chap_2_a/sec_1"
     }
    ],
    "marginalie": [
@@ -2208,11 +2312,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes"
+     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes",
+     "eId": "chap_2_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anspruch von Pflegeeltern, Stiefeltern sowie von der arbeitslosen oder arbeitsunfähigen Mutter oder dem arbeitslosen oder arbeitsunfähigen andern Elternteil"
+     "label": "1. Abschnitt: Anspruch von Pflegeeltern, Stiefeltern sowie von der arbeitslosen oder arbeitsunfähigen Mutter oder dem arbeitslosen oder arbeitsunfähigen andern Elternteil",
+     "eId": "chap_2_a/sec_1"
     }
    ],
    "marginalie": [
@@ -2250,11 +2356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes"
+     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes",
+     "eId": "chap_2_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berechnung der Entschädigung"
+     "label": "2. Abschnitt: Berechnung der Entschädigung",
+     "eId": "chap_2_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2265,11 +2373,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes"
+     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes",
+     "eId": "chap_2_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berechnung der Entschädigung"
+     "label": "2. Abschnitt: Berechnung der Entschädigung",
+     "eId": "chap_2_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2331,11 +2441,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes"
+     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes",
+     "eId": "chap_2_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berechnung der Entschädigung"
+     "label": "2. Abschnitt: Berechnung der Entschädigung",
+     "eId": "chap_2_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2360,11 +2472,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes"
+     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes",
+     "eId": "chap_2_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berechnung der Entschädigung"
+     "label": "2. Abschnitt: Berechnung der Entschädigung",
+     "eId": "chap_2_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2389,11 +2503,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes"
+     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes",
+     "eId": "chap_2_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Geltendmachung des Anspruchs, Festsetzung und Auszahlung der Entschädigung"
+     "label": "3. Abschnitt: Geltendmachung des Anspruchs, Festsetzung und Auszahlung der Entschädigung",
+     "eId": "chap_2_a/sec_3"
     }
    ],
    "marginalie": [
@@ -2404,11 +2520,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes"
+     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes",
+     "eId": "chap_2_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Geltendmachung des Anspruchs, Festsetzung und Auszahlung der Entschädigung"
+     "label": "3. Abschnitt: Geltendmachung des Anspruchs, Festsetzung und Auszahlung der Entschädigung",
+     "eId": "chap_2_a/sec_3"
     }
    ],
    "marginalie": [
@@ -2419,11 +2537,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes"
+     "label": "2a. Kapitel: Entschädigung für die Betreuung eines wegen Krankheit oder Unfall gesundheitlich schwer beeinträchtigten Kindes",
+     "eId": "chap_2_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Geltendmachung des Anspruchs, Festsetzung und Auszahlung der Entschädigung"
+     "label": "3. Abschnitt: Geltendmachung des Anspruchs, Festsetzung und Auszahlung der Entschädigung",
+     "eId": "chap_2_a/sec_3"
     }
    ],
    "marginalie": [
@@ -2461,11 +2581,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2b. Kapitel: Adoptionsentschädigung"
+     "label": "2b. Kapitel: Adoptionsentschädigung",
+     "eId": "chap_2_b"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Mindestversicherungsdauer und Mindesterwerbsdauer"
+     "label": "1. Abschnitt: Mindestversicherungsdauer und Mindesterwerbsdauer",
+     "eId": "chap_2_b/sec_1"
     }
    ],
    "marginalie": [
@@ -2491,11 +2613,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2b. Kapitel: Adoptionsentschädigung"
+     "label": "2b. Kapitel: Adoptionsentschädigung",
+     "eId": "chap_2_b"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Mindestversicherungsdauer und Mindesterwerbsdauer"
+     "label": "1. Abschnitt: Mindestversicherungsdauer und Mindesterwerbsdauer",
+     "eId": "chap_2_b/sec_1"
     }
    ],
    "marginalie": [
@@ -2506,11 +2630,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2b. Kapitel: Adoptionsentschädigung"
+     "label": "2b. Kapitel: Adoptionsentschädigung",
+     "eId": "chap_2_b"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berechnung der Entschädigung"
+     "label": "2. Abschnitt: Berechnung der Entschädigung",
+     "eId": "chap_2_b/sec_2"
     }
    ],
    "marginalie": [
@@ -2548,11 +2674,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2b. Kapitel: Adoptionsentschädigung"
+     "label": "2b. Kapitel: Adoptionsentschädigung",
+     "eId": "chap_2_b"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berechnung der Entschädigung"
+     "label": "2. Abschnitt: Berechnung der Entschädigung",
+     "eId": "chap_2_b/sec_2"
     }
    ],
    "marginalie": [
@@ -2563,11 +2691,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2b. Kapitel: Adoptionsentschädigung"
+     "label": "2b. Kapitel: Adoptionsentschädigung",
+     "eId": "chap_2_b"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Berechnung der Entschädigung"
+     "label": "2. Abschnitt: Berechnung der Entschädigung",
+     "eId": "chap_2_b/sec_2"
     }
    ],
    "marginalie": [
@@ -2578,11 +2708,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2b. Kapitel: Adoptionsentschädigung"
+     "label": "2b. Kapitel: Adoptionsentschädigung",
+     "eId": "chap_2_b"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Geltendmachung des Anspruchs, Festsetzung und Auszahlung der Entschädigung"
+     "label": "3. Abschnitt: Geltendmachung des Anspruchs, Festsetzung und Auszahlung der Entschädigung",
+     "eId": "chap_2_b/sec_3"
     }
    ],
    "marginalie": [
@@ -2593,11 +2725,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2b. Kapitel: Adoptionsentschädigung"
+     "label": "2b. Kapitel: Adoptionsentschädigung",
+     "eId": "chap_2_b"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Geltendmachung des Anspruchs, Festsetzung und Auszahlung der Entschädigung"
+     "label": "3. Abschnitt: Geltendmachung des Anspruchs, Festsetzung und Auszahlung der Entschädigung",
+     "eId": "chap_2_b/sec_3"
     }
    ],
    "marginalie": [
@@ -2608,11 +2742,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2b. Kapitel: Adoptionsentschädigung"
+     "label": "2b. Kapitel: Adoptionsentschädigung",
+     "eId": "chap_2_b"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Geltendmachung des Anspruchs, Festsetzung und Auszahlung der Entschädigung"
+     "label": "3. Abschnitt: Geltendmachung des Anspruchs, Festsetzung und Auszahlung der Entschädigung",
+     "eId": "chap_2_b/sec_3"
     }
    ],
    "marginalie": [

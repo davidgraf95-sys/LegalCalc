@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "812.213",
   "titel": "Medizinprodukteverordnung",
@@ -125,11 +125,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Geltungsbereich und Ausnahmen"
+     "label": "1. Abschnitt: Geltungsbereich und Ausnahmen",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -140,11 +142,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Geltungsbereich und Ausnahmen"
+     "label": "1. Abschnitt: Geltungsbereich und Ausnahmen",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -181,11 +185,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Begriffe und Verweise auf Europäisches Recht"
+     "label": "2. Abschnitt: Begriffe und Verweise auf Europäisches Recht",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -210,11 +216,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Begriffe und Verweise auf Europäisches Recht"
+     "label": "2. Abschnitt: Begriffe und Verweise auf Europäisches Recht",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -265,11 +273,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Begriffe und Verweise auf Europäisches Recht"
+     "label": "2. Abschnitt: Begriffe und Verweise auf Europäisches Recht",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -289,11 +299,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme"
+     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anforderungen"
+     "label": "1. Abschnitt: Anforderungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -374,11 +386,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme"
+     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anforderungen"
+     "label": "1. Abschnitt: Anforderungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -439,11 +453,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme"
+     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anforderungen"
+     "label": "1. Abschnitt: Anforderungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -476,11 +492,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme"
+     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anforderungen"
+     "label": "1. Abschnitt: Anforderungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -500,11 +518,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme"
+     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anforderungen"
+     "label": "1. Abschnitt: Anforderungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -524,11 +544,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme"
+     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anforderungen"
+     "label": "1. Abschnitt: Anforderungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -548,11 +570,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme"
+     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anforderungen"
+     "label": "1. Abschnitt: Anforderungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -563,11 +587,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme"
+     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anforderungen"
+     "label": "1. Abschnitt: Anforderungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -624,11 +650,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme"
+     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Anforderungen"
+     "label": "1. Abschnitt: Anforderungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -655,11 +683,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme"
+     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Klassifizierung, Produktinformation und Produktidentifikation"
+     "label": "2. Abschnitt: Klassifizierung, Produktinformation und Produktidentifikation",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -705,11 +735,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme"
+     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Klassifizierung, Produktinformation und Produktidentifikation"
+     "label": "2. Abschnitt: Klassifizierung, Produktinformation und Produktidentifikation",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -753,11 +785,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme"
+     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Klassifizierung, Produktinformation und Produktidentifikation"
+     "label": "2. Abschnitt: Klassifizierung, Produktinformation und Produktidentifikation",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -839,11 +873,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme"
+     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Meldepflichten und Informationen"
+     "label": "3. Abschnitt: Meldepflichten und Informationen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -880,11 +916,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme"
+     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Meldepflichten und Informationen"
+     "label": "3. Abschnitt: Meldepflichten und Informationen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -904,11 +942,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme"
+     "label": "2. Kapitel: Bereitstellung auf dem Markt und Inbetriebnahme",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Meldepflichten und Informationen"
+     "label": "3. Abschnitt: Meldepflichten und Informationen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -935,11 +975,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Konformitätsbewertung, -bescheinigung und -erklärung"
+     "label": "3. Kapitel: Konformitätsbewertung, -bescheinigung und -erklärung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Konformitätsbewertung"
+     "label": "1. Abschnitt: Konformitätsbewertung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -999,11 +1041,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Konformitätsbewertung, -bescheinigung und -erklärung"
+     "label": "3. Kapitel: Konformitätsbewertung, -bescheinigung und -erklärung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Konformitätsbewertung"
+     "label": "1. Abschnitt: Konformitätsbewertung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1028,11 +1072,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Konformitätsbewertung, -bescheinigung und -erklärung"
+     "label": "3. Kapitel: Konformitätsbewertung, -bescheinigung und -erklärung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Konformitätsbewertung"
+     "label": "1. Abschnitt: Konformitätsbewertung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1061,11 +1107,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Konformitätsbewertung, -bescheinigung und -erklärung"
+     "label": "3. Kapitel: Konformitätsbewertung, -bescheinigung und -erklärung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Konformitätsbewertung"
+     "label": "1. Abschnitt: Konformitätsbewertung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1097,11 +1145,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Konformitätsbewertung, -bescheinigung und -erklärung"
+     "label": "3. Kapitel: Konformitätsbewertung, -bescheinigung und -erklärung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konformitätsbescheinigung"
+     "label": "2. Abschnitt: Konformitätsbescheinigung",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1140,11 +1190,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Konformitätsbewertung, -bescheinigung und -erklärung"
+     "label": "3. Kapitel: Konformitätsbewertung, -bescheinigung und -erklärung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konformitätsbescheinigung"
+     "label": "2. Abschnitt: Konformitätsbescheinigung",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1155,11 +1207,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Konformitätsbewertung, -bescheinigung und -erklärung"
+     "label": "3. Kapitel: Konformitätsbewertung, -bescheinigung und -erklärung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konformitätsbescheinigung"
+     "label": "2. Abschnitt: Konformitätsbescheinigung",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1170,11 +1224,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Konformitätsbewertung, -bescheinigung und -erklärung"
+     "label": "3. Kapitel: Konformitätsbewertung, -bescheinigung und -erklärung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konformitätsbescheinigung"
+     "label": "2. Abschnitt: Konformitätsbescheinigung",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1218,11 +1274,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Konformitätsbewertung, -bescheinigung und -erklärung"
+     "label": "3. Kapitel: Konformitätsbewertung, -bescheinigung und -erklärung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Konformitätserklärung"
+     "label": "3. Abschnitt: Konformitätserklärung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -1247,7 +1305,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Anforderungen an die Gewebe und Zellen menschlichen Ursprungs, die in Produkten enthalten sind oder zur Herstellung von Produkten verwendet werden"
+     "label": "4. Kapitel: Anforderungen an die Gewebe und Zellen menschlichen Ursprungs, die in Produkten enthalten sind oder zur Herstellung von Produkten verwendet werden",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1273,7 +1332,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Anforderungen an die Gewebe und Zellen menschlichen Ursprungs, die in Produkten enthalten sind oder zur Herstellung von Produkten verwendet werden"
+     "label": "4. Kapitel: Anforderungen an die Gewebe und Zellen menschlichen Ursprungs, die in Produkten enthalten sind oder zur Herstellung von Produkten verwendet werden",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1312,7 +1372,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Anforderungen an die Gewebe und Zellen menschlichen Ursprungs, die in Produkten enthalten sind oder zur Herstellung von Produkten verwendet werden"
+     "label": "4. Kapitel: Anforderungen an die Gewebe und Zellen menschlichen Ursprungs, die in Produkten enthalten sind oder zur Herstellung von Produkten verwendet werden",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1351,11 +1412,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bezeichnete Stellen"
+     "label": "5. Kapitel: Bezeichnete Stellen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bezeichnung"
+     "label": "1. Abschnitt: Bezeichnung",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1387,11 +1450,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bezeichnete Stellen"
+     "label": "5. Kapitel: Bezeichnete Stellen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bezeichnung"
+     "label": "1. Abschnitt: Bezeichnung",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1402,11 +1467,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bezeichnete Stellen"
+     "label": "5. Kapitel: Bezeichnete Stellen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bezeichnung"
+     "label": "1. Abschnitt: Bezeichnung",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1417,11 +1484,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bezeichnete Stellen"
+     "label": "5. Kapitel: Bezeichnete Stellen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bezeichnung"
+     "label": "1. Abschnitt: Bezeichnung",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1432,11 +1501,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bezeichnete Stellen"
+     "label": "5. Kapitel: Bezeichnete Stellen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bezeichnung"
+     "label": "1. Abschnitt: Bezeichnung",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1456,11 +1527,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bezeichnete Stellen"
+     "label": "5. Kapitel: Bezeichnete Stellen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bezeichnung"
+     "label": "1. Abschnitt: Bezeichnung",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1480,11 +1553,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bezeichnete Stellen"
+     "label": "5. Kapitel: Bezeichnete Stellen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bezeichnung"
+     "label": "1. Abschnitt: Bezeichnung",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1495,11 +1570,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bezeichnete Stellen"
+     "label": "5. Kapitel: Bezeichnete Stellen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einstellung der Konformitätsbewertungstätigkeit"
+     "label": "2. Abschnitt: Einstellung der Konformitätsbewertungstätigkeit",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": []
@@ -1508,11 +1585,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bezeichnete Stellen"
+     "label": "5. Kapitel: Bezeichnete Stellen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Suspendierung, Einschränkung oder Widerruf der Bezeichnung"
+     "label": "3. Abschnitt: Suspendierung, Einschränkung oder Widerruf der Bezeichnung",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1523,11 +1602,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bezeichnete Stellen"
+     "label": "5. Kapitel: Bezeichnete Stellen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Suspendierung, Einschränkung oder Widerruf der Bezeichnung"
+     "label": "3. Abschnitt: Suspendierung, Einschränkung oder Widerruf der Bezeichnung",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1538,11 +1619,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bezeichnete Stellen"
+     "label": "5. Kapitel: Bezeichnete Stellen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Suspendierung, Einschränkung oder Widerruf der Bezeichnung"
+     "label": "3. Abschnitt: Suspendierung, Einschränkung oder Widerruf der Bezeichnung",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1567,11 +1650,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bezeichnete Stellen"
+     "label": "5. Kapitel: Bezeichnete Stellen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Suspendierung, Einschränkung oder Widerruf der Bezeichnung"
+     "label": "3. Abschnitt: Suspendierung, Einschränkung oder Widerruf der Bezeichnung",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1582,11 +1667,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bezeichnete Stellen"
+     "label": "5. Kapitel: Bezeichnete Stellen",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Überwachung und Neubewertung der bezeichneten Stellen"
+     "label": "4. Abschnitt: Überwachung und Neubewertung der bezeichneten Stellen",
+     "eId": "chap_5/sec_4"
     }
    ],
    "marginalie": [],
@@ -1611,11 +1698,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure"
+     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Hersteller"
+     "label": "1. Abschnitt: Hersteller",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1642,11 +1731,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure"
+     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Hersteller"
+     "label": "1. Abschnitt: Hersteller",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1673,11 +1764,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure"
+     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Hersteller"
+     "label": "1. Abschnitt: Hersteller",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1688,11 +1781,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure"
+     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Hersteller"
+     "label": "1. Abschnitt: Hersteller",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1712,11 +1807,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure"
+     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Hersteller"
+     "label": "1. Abschnitt: Hersteller",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1737,11 +1834,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure"
+     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bevollmächtigter"
+     "label": "2. Abschnitt: Bevollmächtigter",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1785,11 +1884,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure"
+     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bevollmächtigter"
+     "label": "2. Abschnitt: Bevollmächtigter",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1800,11 +1901,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure"
+     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Importeur"
+     "label": "3. Abschnitt: Importeur",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [],
@@ -1822,11 +1925,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure"
+     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Händler"
+     "label": "4. Abschnitt: Händler",
+     "eId": "chap_6/sec_4"
     }
    ],
    "marginalie": [],
@@ -1844,11 +1949,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure"
+     "label": "6. Kapitel: Vorschriften für Wirtschaftsakteure",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Registrierung von Wirtschaftsakteuren"
+     "label": "5. Abschnitt: Registrierung von Wirtschaftsakteuren",
+     "eId": "chap_6/sec_5"
     }
    ],
    "marginalie": [],
@@ -1915,11 +2022,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Produktebeobachtung"
+     "label": "7. Kapitel: Produktebeobachtung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Überwachung nach dem Inverkehrbringen"
+     "label": "1. Abschnitt: Überwachung nach dem Inverkehrbringen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1939,11 +2048,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Produktebeobachtung"
+     "label": "7. Kapitel: Produktebeobachtung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Überwachung nach dem Inverkehrbringen"
+     "label": "1. Abschnitt: Überwachung nach dem Inverkehrbringen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1954,11 +2065,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Produktebeobachtung"
+     "label": "7. Kapitel: Produktebeobachtung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Überwachung nach dem Inverkehrbringen"
+     "label": "1. Abschnitt: Überwachung nach dem Inverkehrbringen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1979,11 +2092,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Produktebeobachtung"
+     "label": "7. Kapitel: Produktebeobachtung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Überwachung nach dem Inverkehrbringen"
+     "label": "1. Abschnitt: Überwachung nach dem Inverkehrbringen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -2003,11 +2118,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Produktebeobachtung"
+     "label": "7. Kapitel: Produktebeobachtung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sicherheitsbericht"
+     "label": "2. Abschnitt: Sicherheitsbericht",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -2018,11 +2135,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Produktebeobachtung"
+     "label": "7. Kapitel: Produktebeobachtung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sicherheitsbericht"
+     "label": "2. Abschnitt: Sicherheitsbericht",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -2042,11 +2161,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Produktebeobachtung"
+     "label": "7. Kapitel: Produktebeobachtung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sicherheitsbericht"
+     "label": "2. Abschnitt: Sicherheitsbericht",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -2071,11 +2192,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Produktebeobachtung"
+     "label": "7. Kapitel: Produktebeobachtung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Kurzbericht über Sicherheit und klinische Leistung"
+     "label": "3. Abschnitt: Kurzbericht über Sicherheit und klinische Leistung",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [],
@@ -2117,11 +2240,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Produktebeobachtung"
+     "label": "7. Kapitel: Produktebeobachtung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Rückverfolgbarkeit und Erfassung der Produktidentifikation"
+     "label": "4. Abschnitt: Rückverfolgbarkeit und Erfassung der Produktidentifikation",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -2146,11 +2271,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Produktebeobachtung"
+     "label": "7. Kapitel: Produktebeobachtung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Rückverfolgbarkeit und Erfassung der Produktidentifikation"
+     "label": "4. Abschnitt: Rückverfolgbarkeit und Erfassung der Produktidentifikation",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -2175,11 +2302,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Produktebeobachtung"
+     "label": "7. Kapitel: Produktebeobachtung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Vigilance"
+     "label": "5. Abschnitt: Vigilance",
+     "eId": "chap_7/sec_5"
     }
    ],
    "marginalie": [
@@ -2235,11 +2364,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Produktebeobachtung"
+     "label": "7. Kapitel: Produktebeobachtung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Vigilance"
+     "label": "5. Abschnitt: Vigilance",
+     "eId": "chap_7/sec_5"
     }
    ],
    "marginalie": [
@@ -2250,7 +2381,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Umgang mit Produkten"
+     "label": "8. Kapitel: Umgang mit Produkten",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2261,7 +2393,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Umgang mit Produkten"
+     "label": "8. Kapitel: Umgang mit Produkten",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2286,7 +2419,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Umgang mit Produkten"
+     "label": "8. Kapitel: Umgang mit Produkten",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2323,7 +2457,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Umgang mit Produkten"
+     "label": "8. Kapitel: Umgang mit Produkten",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2349,7 +2484,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Umgang mit Produkten"
+     "label": "8. Kapitel: Umgang mit Produkten",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2360,7 +2496,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Umgang mit Produkten"
+     "label": "8. Kapitel: Umgang mit Produkten",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2380,7 +2517,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Umgang mit Produkten"
+     "label": "8. Kapitel: Umgang mit Produkten",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2391,7 +2529,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Marktüberwachung"
+     "label": "9. Kapitel: Marktüberwachung",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2423,7 +2562,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Marktüberwachung"
+     "label": "9. Kapitel: Marktüberwachung",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2434,7 +2574,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Marktüberwachung"
+     "label": "9. Kapitel: Marktüberwachung",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2466,7 +2607,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Marktüberwachung"
+     "label": "9. Kapitel: Marktüberwachung",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2491,11 +2633,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Datenbearbeitung"
+     "label": "10. Kapitel: Datenbearbeitung",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Datenbearbeitung im Allgemeinen"
+     "label": "1. Abschnitt: Datenbearbeitung im Allgemeinen",
+     "eId": "chap_10/sec_1"
     }
    ],
    "marginalie": [
@@ -2506,11 +2650,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Datenbearbeitung"
+     "label": "10. Kapitel: Datenbearbeitung",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Datenbearbeitung im Allgemeinen"
+     "label": "1. Abschnitt: Datenbearbeitung im Allgemeinen",
+     "eId": "chap_10/sec_1"
     }
    ],
    "marginalie": [
@@ -2521,11 +2667,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Datenbearbeitung"
+     "label": "10. Kapitel: Datenbearbeitung",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Datenbearbeitung im Allgemeinen"
+     "label": "1. Abschnitt: Datenbearbeitung im Allgemeinen",
+     "eId": "chap_10/sec_1"
     }
    ],
    "marginalie": [
@@ -2536,11 +2684,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Datenbearbeitung"
+     "label": "10. Kapitel: Datenbearbeitung",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Datenbearbeitung im Allgemeinen"
+     "label": "1. Abschnitt: Datenbearbeitung im Allgemeinen",
+     "eId": "chap_10/sec_1"
     }
    ],
    "marginalie": [
@@ -2551,11 +2701,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Datenbearbeitung"
+     "label": "10. Kapitel: Datenbearbeitung",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Medizinprodukte"
+     "label": "2. Abschnitt: Informationssystem Medizinprodukte",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -2566,11 +2718,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Datenbearbeitung"
+     "label": "10. Kapitel: Datenbearbeitung",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Medizinprodukte"
+     "label": "2. Abschnitt: Informationssystem Medizinprodukte",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -2620,11 +2774,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Datenbearbeitung"
+     "label": "10. Kapitel: Datenbearbeitung",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Medizinprodukte"
+     "label": "2. Abschnitt: Informationssystem Medizinprodukte",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -2635,11 +2791,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Datenbearbeitung"
+     "label": "10. Kapitel: Datenbearbeitung",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Medizinprodukte"
+     "label": "2. Abschnitt: Informationssystem Medizinprodukte",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -2664,11 +2822,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Datenbearbeitung"
+     "label": "10. Kapitel: Datenbearbeitung",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Medizinprodukte"
+     "label": "2. Abschnitt: Informationssystem Medizinprodukte",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -2679,11 +2839,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Datenbearbeitung"
+     "label": "10. Kapitel: Datenbearbeitung",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Medizinprodukte"
+     "label": "2. Abschnitt: Informationssystem Medizinprodukte",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -2694,11 +2856,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Datenbearbeitung"
+     "label": "10. Kapitel: Datenbearbeitung",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Medizinprodukte"
+     "label": "2. Abschnitt: Informationssystem Medizinprodukte",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -2709,11 +2873,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Datenbearbeitung"
+     "label": "10. Kapitel: Datenbearbeitung",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Medizinprodukte"
+     "label": "2. Abschnitt: Informationssystem Medizinprodukte",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -2733,11 +2899,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Datenbearbeitung"
+     "label": "10. Kapitel: Datenbearbeitung",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Medizinprodukte"
+     "label": "2. Abschnitt: Informationssystem Medizinprodukte",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -2748,11 +2916,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Datenbearbeitung"
+     "label": "10. Kapitel: Datenbearbeitung",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Informationssystem Medizinprodukte"
+     "label": "2. Abschnitt: Informationssystem Medizinprodukte",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -2791,11 +2961,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_11/sec_1"
     }
    ],
    "marginalie": [
@@ -2820,11 +2992,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_11/sec_1"
     }
    ],
    "marginalie": [
@@ -2835,11 +3009,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_11/sec_1"
     }
    ],
    "marginalie": [
@@ -2873,11 +3049,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_11/sec_1"
     }
    ],
    "marginalie": [
@@ -2902,11 +3080,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_11/sec_1"
     }
    ],
    "marginalie": [
@@ -2931,11 +3111,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_11/sec_1"
     }
    ],
    "marginalie": [
@@ -2962,11 +3144,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_11/sec_2"
     }
    ],
    "marginalie": [
@@ -3035,11 +3219,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_11/sec_2"
     }
    ],
    "marginalie": [
@@ -3083,11 +3269,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_11/sec_2"
     }
    ],
    "marginalie": [
@@ -3119,11 +3307,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_11/sec_2"
     }
    ],
    "marginalie": [
@@ -3144,11 +3334,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_11/sec_2"
     }
    ],
    "marginalie": [
@@ -3168,11 +3360,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_11/sec_2"
     }
    ],
    "marginalie": [
@@ -3183,11 +3377,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_11/sec_2"
     }
    ],
    "marginalie": [],
@@ -3210,11 +3406,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_11/sec_2"
     }
    ],
    "marginalie": [
@@ -3259,11 +3457,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_11/sec_2"
     }
    ],
    "marginalie": [
@@ -3350,11 +3550,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_11/sec_2"
     }
    ],
    "marginalie": [
@@ -3441,11 +3643,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_11/sec_2"
     }
    ],
    "marginalie": [],
@@ -3468,11 +3672,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_11/sec_2"
     }
    ],
    "marginalie": [
@@ -3497,11 +3703,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_11/sec_2"
     }
    ],
    "marginalie": [
@@ -3526,11 +3734,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_11/sec_2"
     }
    ],
    "marginalie": [
@@ -3563,11 +3773,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Schlussbestimmungen"
+     "label": "11. Kapitel: Schlussbestimmungen",
+     "eId": "chap_11"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen"
+     "label": "2. Abschnitt: Aufhebung anderer Erlasse und Übergangsbestimmungen",
+     "eId": "chap_11/sec_2"
     }
    ],
    "marginalie": [],
@@ -3594,7 +3806,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Marktüberwachung"
+     "label": "9. Kapitel: Marktüberwachung",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3619,7 +3832,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Marktüberwachung"
+     "label": "9. Kapitel: Marktüberwachung",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [

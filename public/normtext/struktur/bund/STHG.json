@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "642.14",
   "titel": "Bundesgesetz über die Harmonisierung der direkten Steuern der Kantone und Gemeinden",
@@ -91,7 +91,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -102,7 +103,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -113,11 +115,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuerpflicht"
+     "label": "1. Kapitel: Steuerpflicht",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -162,11 +166,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuerpflicht"
+     "label": "1. Kapitel: Steuerpflicht",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -275,11 +281,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuerpflicht"
+     "label": "1. Kapitel: Steuerpflicht",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -290,11 +298,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuerpflicht"
+     "label": "1. Kapitel: Steuerpflicht",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -323,15 +333,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Einkommenssteuer"
+     "label": "2. Kapitel: Einkommenssteuer",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Einkünfte"
+     "label": "1. Abschnitt: Einkünfte",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -688,15 +701,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Einkommenssteuer"
+     "label": "2. Kapitel: Einkommenssteuer",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Einkünfte"
+     "label": "1. Abschnitt: Einkünfte",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -857,15 +873,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Einkommenssteuer"
+     "label": "2. Kapitel: Einkommenssteuer",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Abzüge"
+     "label": "2. Abschnitt: Abzüge",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1158,15 +1177,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Einkommenssteuer"
+     "label": "2. Kapitel: Einkommenssteuer",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Abzüge"
+     "label": "2. Abschnitt: Abzüge",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1295,15 +1317,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Einkommenssteuer"
+     "label": "2. Kapitel: Einkommenssteuer",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Steuerberechnung"
+     "label": "3. Abschnitt: Steuerberechnung",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [],
@@ -1386,11 +1411,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Grundstückgewinnsteuer"
+     "label": "3. Kapitel: Grundstückgewinnsteuer",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [],
@@ -1457,11 +1484,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Vermögenssteuer"
+     "label": "4. Kapitel: Vermögenssteuer",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -1490,11 +1519,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Vermögenssteuer"
+     "label": "4. Kapitel: Vermögenssteuer",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -1543,11 +1574,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Zeitliche Bemessung"
+     "label": "5. Kapitel: Zeitliche Bemessung",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -1576,11 +1609,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Zeitliche Bemessung"
+     "label": "5. Kapitel: Zeitliche Bemessung",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -1609,11 +1644,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Zeitliche Bemessung"
+     "label": "5. Kapitel: Zeitliche Bemessung",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -1642,11 +1679,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Zeitliche Bemessung"
+     "label": "5. Kapitel: Zeitliche Bemessung",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -1675,11 +1714,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Zeitliche Bemessung"
+     "label": "5. Kapitel: Zeitliche Bemessung",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -1690,11 +1731,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuerpflicht"
+     "label": "1. Kapitel: Steuerpflicht",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1751,11 +1794,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuerpflicht"
+     "label": "1. Kapitel: Steuerpflicht",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1800,11 +1845,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuerpflicht"
+     "label": "1. Kapitel: Steuerpflicht",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1833,11 +1880,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuerpflicht"
+     "label": "1. Kapitel: Steuerpflicht",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1950,15 +1999,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Gewinnsteuer"
+     "label": "2. Kapitel: Gewinnsteuer",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Steuerobjekt"
+     "label": "1. Abschnitt: Steuerobjekt",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2131,15 +2183,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Gewinnsteuer"
+     "label": "2. Kapitel: Gewinnsteuer",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Steuerobjekt"
+     "label": "1. Abschnitt: Steuerobjekt",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2292,15 +2347,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Gewinnsteuer"
+     "label": "2. Kapitel: Gewinnsteuer",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Steuerobjekt"
+     "label": "1. Abschnitt: Steuerobjekt",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2345,15 +2403,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Gewinnsteuer"
+     "label": "2. Kapitel: Gewinnsteuer",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Steuerberechnung"
+     "label": "2. Abschnitt: Steuerberechnung",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2364,15 +2425,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Gewinnsteuer"
+     "label": "2. Kapitel: Gewinnsteuer",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Steuerberechnung"
+     "label": "2. Abschnitt: Steuerberechnung",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2514,11 +2578,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Kapitalsteuer"
+     "label": "3. Kapitel: Kapitalsteuer",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2587,11 +2653,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Kapitalsteuer"
+     "label": "3. Kapitel: Kapitalsteuer",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2620,11 +2688,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Zeitliche Bemessung"
+     "label": "4. Kapitel: Zeitliche Bemessung",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [],
@@ -2675,11 +2745,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen"
+     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton"
+     "label": "1. Kapitel: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2720,11 +2792,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen"
+     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton"
+     "label": "1. Kapitel: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2765,11 +2839,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen"
+     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton"
+     "label": "1. Kapitel: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [],
@@ -2796,11 +2872,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen"
+     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+     "label": "2. Kapitel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -2994,11 +3072,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen"
+     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+     "label": "2. Kapitel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3027,11 +3107,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen"
+     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Pflichten des Schuldners der steuerbaren Leistung"
+     "label": "3. Kapitel: Pflichten des Schuldners der steuerbaren Leistung",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [],
@@ -3090,11 +3172,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen"
+     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Örtliche Zuständigkeit und interkantonales Verhältnis"
+     "label": "4. Kapitel: Örtliche Zuständigkeit und interkantonales Verhältnis",
+     "eId": "tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -3124,11 +3208,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren"
+     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3165,11 +3251,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren"
+     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3180,11 +3268,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren"
+     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3195,11 +3285,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren"
+     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3276,11 +3368,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren"
+     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3309,11 +3403,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren"
+     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3324,11 +3420,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren"
+     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3405,11 +3503,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren"
+     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3420,11 +3520,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren"
+     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3435,11 +3537,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren"
+     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3450,11 +3554,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren"
+     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -3531,11 +3637,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rekursverfahren"
+     "label": "2. Kapitel: Rekursverfahren",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": []
@@ -3544,11 +3652,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Änderungen rechtskräftiger Verfügungen und Entscheide"
+     "label": "3. Kapitel: Änderungen rechtskräftiger Verfügungen und Entscheide",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -3559,11 +3669,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Änderungen rechtskräftiger Verfügungen und Entscheide"
+     "label": "3. Kapitel: Änderungen rechtskräftiger Verfügungen und Entscheide",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -3574,11 +3686,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Änderungen rechtskräftiger Verfügungen und Entscheide"
+     "label": "3. Kapitel: Änderungen rechtskräftiger Verfügungen und Entscheide",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -3627,11 +3741,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Inventar"
+     "label": "4. Kapitel: Inventar",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": []
@@ -3640,11 +3756,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Steuerstrafrecht"
+     "label": "Sechster Titel: Steuerstrafrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verletzung von Verfahrenspflichten und Steuerhinterziehung"
+     "label": "1. Kapitel: Verletzung von Verfahrenspflichten und Steuerhinterziehung",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -3674,11 +3792,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Steuerstrafrecht"
+     "label": "Sechster Titel: Steuerstrafrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verletzung von Verfahrenspflichten und Steuerhinterziehung"
+     "label": "1. Kapitel: Verletzung von Verfahrenspflichten und Steuerhinterziehung",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -3788,11 +3908,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Steuerstrafrecht"
+     "label": "Sechster Titel: Steuerstrafrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verletzung von Verfahrenspflichten und Steuerhinterziehung"
+     "label": "1. Kapitel: Verletzung von Verfahrenspflichten und Steuerhinterziehung",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -3845,11 +3967,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Steuerstrafrecht"
+     "label": "Sechster Titel: Steuerstrafrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verletzung von Verfahrenspflichten und Steuerhinterziehung"
+     "label": "1. Kapitel: Verletzung von Verfahrenspflichten und Steuerhinterziehung",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -3878,11 +4002,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Steuerstrafrecht"
+     "label": "Sechster Titel: Steuerstrafrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Steuervergehen"
+     "label": "2. Kapitel: Steuervergehen",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -3963,11 +4089,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Steuerstrafrecht"
+     "label": "Sechster Titel: Steuerstrafrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Steuervergehen"
+     "label": "2. Kapitel: Steuervergehen",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -3996,11 +4124,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Steuerstrafrecht"
+     "label": "Sechster Titel: Steuerstrafrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Steuervergehen"
+     "label": "2. Kapitel: Steuervergehen",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -4034,11 +4164,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [
@@ -4067,11 +4199,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [
@@ -4116,11 +4250,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [
@@ -4177,11 +4313,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Vollzug und Änderung des geltenden Rechts"
+     "label": "2. Kapitel: Vollzug und Änderung des geltenden Rechts",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -4211,11 +4349,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Vollzug und Änderung des geltenden Rechts"
+     "label": "2. Kapitel: Vollzug und Änderung des geltenden Rechts",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -4241,11 +4381,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_3"
     }
    ],
    "marginalie": [
@@ -4303,11 +4445,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_3"
     }
    ],
    "marginalie": [
@@ -4318,11 +4462,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_3"
     }
    ],
    "marginalie": [
@@ -4364,11 +4510,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Referendum und Inkrafttreten"
+     "label": "4. Kapitel: Referendum und Inkrafttreten",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [],
@@ -4386,15 +4534,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Einkommenssteuer"
+     "label": "2. Kapitel: Einkommenssteuer",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Abzüge"
+     "label": "2. Abschnitt: Abzüge",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4427,11 +4578,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Vermögenssteuer"
+     "label": "4. Kapitel: Vermögenssteuer",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -4460,15 +4613,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Gewinnsteuer"
+     "label": "2. Kapitel: Gewinnsteuer",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Steuerobjekt"
+     "label": "1. Abschnitt: Steuerobjekt",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4573,15 +4729,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Gewinnsteuer"
+     "label": "2. Kapitel: Gewinnsteuer",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Steuerobjekt"
+     "label": "1. Abschnitt: Steuerobjekt",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4614,15 +4773,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Gewinnsteuer"
+     "label": "2. Kapitel: Gewinnsteuer",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Steuerobjekt"
+     "label": "1. Abschnitt: Steuerobjekt",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4655,15 +4817,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Gewinnsteuer"
+     "label": "2. Kapitel: Gewinnsteuer",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Steuerobjekt"
+     "label": "1. Abschnitt: Steuerobjekt",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4696,15 +4861,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Gewinnsteuer"
+     "label": "2. Kapitel: Gewinnsteuer",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Steuerobjekt"
+     "label": "1. Abschnitt: Steuerobjekt",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4749,15 +4917,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Gewinnsteuer"
+     "label": "2. Kapitel: Gewinnsteuer",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Steuerobjekt"
+     "label": "1. Abschnitt: Steuerobjekt",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4790,15 +4961,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Gewinnsteuer"
+     "label": "2. Kapitel: Gewinnsteuer",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Steuerobjekt"
+     "label": "1. Abschnitt: Steuerobjekt",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4831,15 +5005,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Gewinnsteuer"
+     "label": "2. Kapitel: Gewinnsteuer",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Steuerobjekt"
+     "label": "1. Abschnitt: Steuerobjekt",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4868,11 +5045,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Steuern der juristischen Personen"
+     "label": "Dritter Titel: Steuern der juristischen Personen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Kapitalsteuer"
+     "label": "3. Kapitel: Kapitalsteuer",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -4901,11 +5080,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen"
+     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton"
+     "label": "1. Kapitel: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -4934,11 +5115,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen"
+     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton"
+     "label": "1. Kapitel: Natürliche Personen mit steuerrechtlichem Wohnsitz oder Aufenthalt im Kanton",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -4967,11 +5150,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen"
+     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+     "label": "2. Kapitel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -5000,11 +5185,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen"
+     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+     "label": "2. Kapitel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -5033,11 +5220,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen"
+     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz"
+     "label": "2. Kapitel: Natürliche Personen ohne steuerrechtlichen Wohnsitz oder Aufenthalt in der Schweiz sowie juristische Personen ohne Sitz oder tatsächliche Verwaltung in der Schweiz",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -5066,11 +5255,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen"
+     "label": "Vierter Titel: Quellensteuern für natürliche und juristische Personen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Örtliche Zuständigkeit und interkantonales Verhältnis"
+     "label": "4. Kapitel: Örtliche Zuständigkeit und interkantonales Verhältnis",
+     "eId": "tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -5081,11 +5272,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren"
+     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -5114,11 +5307,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren"
+     "label": "1. Kapitel: Verfahrensgrundsätze und Veranlagungsverfahren",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -5147,11 +5342,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuerpflicht"
+     "label": "1. Kapitel: Steuerpflicht",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5193,11 +5390,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Steuerpflicht"
+     "label": "1. Kapitel: Steuerpflicht",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -5242,11 +5441,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Verfahrensrecht"
+     "label": "Fünfter Titel: Verfahrensrecht",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Änderungen rechtskräftiger Verfügungen und Entscheide"
+     "label": "3. Kapitel: Änderungen rechtskräftiger Verfügungen und Entscheide",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -5275,11 +5476,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Steuerstrafrecht"
+     "label": "Sechster Titel: Steuerstrafrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verletzung von Verfahrenspflichten und Steuerhinterziehung"
+     "label": "1. Kapitel: Verletzung von Verfahrenspflichten und Steuerhinterziehung",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -5312,11 +5515,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Steuerstrafrecht"
+     "label": "Sechster Titel: Steuerstrafrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verletzung von Verfahrenspflichten und Steuerhinterziehung"
+     "label": "1. Kapitel: Verletzung von Verfahrenspflichten und Steuerhinterziehung",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -5361,11 +5566,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Steuerstrafrecht"
+     "label": "Sechster Titel: Steuerstrafrecht",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Verletzung von Verfahrenspflichten und Steuerhinterziehung"
+     "label": "1. Kapitel: Verletzung von Verfahrenspflichten und Steuerhinterziehung",
+     "eId": "tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -5434,7 +5641,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebter Titel: …"
+     "label": "Siebter Titel: …",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [],
@@ -5461,11 +5669,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -5500,11 +5710,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -5535,11 +5747,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -5574,11 +5788,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -5613,11 +5829,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -5652,11 +5870,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -5691,11 +5911,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -5734,11 +5956,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -5773,11 +5997,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -5816,11 +6042,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -5859,11 +6087,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -5902,11 +6132,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -5941,11 +6173,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -5980,11 +6214,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -6019,11 +6255,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -6058,11 +6296,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -6101,11 +6341,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -6140,11 +6382,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -6179,11 +6423,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -6218,11 +6464,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [
@@ -6263,11 +6511,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -6302,11 +6552,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -6341,11 +6593,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -6380,11 +6634,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [
@@ -6425,11 +6681,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -6464,11 +6722,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -6503,11 +6763,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Durchführung durch die Kantone"
+     "label": "1. Kapitel: Durchführung durch die Kantone",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -6542,11 +6804,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_3"
     }
    ],
    "marginalie": [
@@ -6571,11 +6835,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_3"
     }
    ],
    "marginalie": [],
@@ -6610,11 +6876,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_3"
     }
    ],
    "marginalie": [
@@ -6659,11 +6927,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_3"
     }
    ],
    "marginalie": [
@@ -6692,11 +6962,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_3"
     }
    ],
    "marginalie": [
@@ -6738,11 +7010,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_3"
     }
    ],
    "marginalie": [
@@ -6771,11 +7045,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Schlussbestimmungen"
+     "label": "Achter Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Übergangsbestimmungen"
+     "label": "3. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_3"
     }
    ],
    "marginalie": [
@@ -6840,15 +7116,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Einkommenssteuer"
+     "label": "2. Kapitel: Einkommenssteuer",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Einkünfte"
+     "label": "1. Abschnitt: Einkünfte",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -6897,15 +7176,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Einkommenssteuer"
+     "label": "2. Kapitel: Einkommenssteuer",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Einkünfte"
+     "label": "1. Abschnitt: Einkünfte",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -6982,15 +7264,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Einkommenssteuer"
+     "label": "2. Kapitel: Einkommenssteuer",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Einkünfte"
+     "label": "1. Abschnitt: Einkünfte",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -7019,15 +7304,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Einkommenssteuer"
+     "label": "2. Kapitel: Einkommenssteuer",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Einkünfte"
+     "label": "1. Abschnitt: Einkünfte",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -7056,15 +7344,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Einkommenssteuer"
+     "label": "2. Kapitel: Einkommenssteuer",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Einkünfte"
+     "label": "1. Abschnitt: Einkünfte",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -7093,15 +7384,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Einkommenssteuer"
+     "label": "2. Kapitel: Einkommenssteuer",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Einkünfte"
+     "label": "1. Abschnitt: Einkünfte",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -7130,15 +7424,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Steuern der natürlichen Personen"
+     "label": "Zweiter Titel: Steuern der natürlichen Personen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Einkommenssteuer"
+     "label": "2. Kapitel: Einkommenssteuer",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Einkünfte"
+     "label": "1. Abschnitt: Einkünfte",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [

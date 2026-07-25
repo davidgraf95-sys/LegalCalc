@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "833.11",
   "titel": "Verordnung über die Militärversicherung",
@@ -69,7 +69,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -170,7 +171,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -208,7 +210,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -245,7 +248,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -283,7 +287,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -320,7 +325,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -442,7 +448,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -481,7 +488,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -506,7 +514,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -533,7 +542,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -595,7 +605,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -669,7 +680,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -708,7 +720,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -758,7 +771,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -844,7 +858,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -881,7 +896,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -919,7 +935,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -930,7 +947,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -941,7 +959,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1016,7 +1035,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1079,7 +1099,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1116,7 +1137,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1127,7 +1149,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1165,7 +1188,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1202,7 +1226,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1227,7 +1252,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1252,7 +1278,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1263,7 +1290,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1324,7 +1352,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Verhältnis zu Dritten"
+     "label": "3. Abschnitt: Verhältnis zu Dritten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1349,7 +1378,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Verhältnis zu Dritten"
+     "label": "3. Abschnitt: Verhältnis zu Dritten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1360,7 +1390,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Verhältnis zu Dritten"
+     "label": "3. Abschnitt: Verhältnis zu Dritten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1397,7 +1428,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Verhältnis zu Dritten"
+     "label": "3. Abschnitt: Verhältnis zu Dritten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1446,7 +1478,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege"
+     "label": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1495,7 +1528,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege"
+     "label": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1532,7 +1566,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Datenbekanntgabe"
+     "label": "4a. Abschnitt: Datenbekanntgabe",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [],
@@ -1555,7 +1590,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -1618,7 +1654,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [],
@@ -1641,7 +1678,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [],
@@ -1664,7 +1702,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -1675,7 +1714,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1718,7 +1758,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1772,7 +1813,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1797,7 +1839,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
+     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten",
+     "eId": "sec_2_a"
     }
    ],
    "marginalie": [
@@ -1848,7 +1891,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
+     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten",
+     "eId": "sec_2_a"
     }
    ],
    "marginalie": [
@@ -1873,7 +1917,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
+     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten",
+     "eId": "sec_2_a"
     }
    ],
    "marginalie": [
@@ -1884,7 +1929,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
+     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten",
+     "eId": "sec_2_a"
     }
    ],
    "marginalie": [
@@ -1895,7 +1941,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten"
+     "label": "2a. Abschnitt: Prämien der beruflich Versicherten und der bei der freiwilligen Grundversicherung Versicherten",
+     "eId": "sec_2_a"
     }
    ],
    "marginalie": [
@@ -1906,7 +1953,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege"
+     "label": "4. Abschnitt: Verwaltungsverfahren und Rechtspflege",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1944,7 +1992,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Datenbekanntgabe"
+     "label": "4a. Abschnitt: Datenbekanntgabe",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1983,7 +2032,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Datenbekanntgabe"
+     "label": "4a. Abschnitt: Datenbekanntgabe",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [],
@@ -2006,7 +2056,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Führung der Militärversicherung"
+     "label": "5. Abschnitt: Führung der Militärversicherung",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -2070,7 +2121,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Führung der Militärversicherung"
+     "label": "5. Abschnitt: Führung der Militärversicherung",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [],
@@ -2093,7 +2145,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -2145,7 +2198,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -2212,7 +2266,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung"
+     "label": "1. Abschnitt: Voraussetzungen der Bundeshaftung",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [],
@@ -2239,7 +2294,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Versicherungsleistungen"
+     "label": "2. Abschnitt: Versicherungsleistungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [

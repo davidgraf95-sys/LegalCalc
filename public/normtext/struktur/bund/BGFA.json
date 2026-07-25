@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "935.61",
   "titel": "Bundesgesetz über die Freizügigkeit der Anwältinnen und Anwälte",
@@ -69,7 +69,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -80,7 +81,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -191,7 +193,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -202,7 +205,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Interkantonale Freizügigkeit und kantonales Anwaltsregister"
+     "label": "2. Abschnitt: Interkantonale Freizügigkeit und kantonales Anwaltsregister",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -213,7 +217,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Interkantonale Freizügigkeit und kantonales Anwaltsregister"
+     "label": "2. Abschnitt: Interkantonale Freizügigkeit und kantonales Anwaltsregister",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -224,7 +229,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Interkantonale Freizügigkeit und kantonales Anwaltsregister"
+     "label": "2. Abschnitt: Interkantonale Freizügigkeit und kantonales Anwaltsregister",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -235,7 +241,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Interkantonale Freizügigkeit und kantonales Anwaltsregister"
+     "label": "2. Abschnitt: Interkantonale Freizügigkeit und kantonales Anwaltsregister",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -264,7 +271,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Interkantonale Freizügigkeit und kantonales Anwaltsregister"
+     "label": "2. Abschnitt: Interkantonale Freizügigkeit und kantonales Anwaltsregister",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -306,7 +314,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Interkantonale Freizügigkeit und kantonales Anwaltsregister"
+     "label": "2. Abschnitt: Interkantonale Freizügigkeit und kantonales Anwaltsregister",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -317,7 +326,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Interkantonale Freizügigkeit und kantonales Anwaltsregister"
+     "label": "2. Abschnitt: Interkantonale Freizügigkeit und kantonales Anwaltsregister",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -328,7 +338,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Interkantonale Freizügigkeit und kantonales Anwaltsregister"
+     "label": "2. Abschnitt: Interkantonale Freizügigkeit und kantonales Anwaltsregister",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -339,7 +350,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Berufsregeln und Disziplinaraufsicht"
+     "label": "3. Abschnitt: Berufsregeln und Disziplinaraufsicht",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -368,7 +380,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Berufsregeln und Disziplinaraufsicht"
+     "label": "3. Abschnitt: Berufsregeln und Disziplinaraufsicht",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -379,7 +392,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Berufsregeln und Disziplinaraufsicht"
+     "label": "3. Abschnitt: Berufsregeln und Disziplinaraufsicht",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -390,7 +404,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Berufsregeln und Disziplinaraufsicht"
+     "label": "3. Abschnitt: Berufsregeln und Disziplinaraufsicht",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -419,7 +434,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Berufsregeln und Disziplinaraufsicht"
+     "label": "3. Abschnitt: Berufsregeln und Disziplinaraufsicht",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -430,7 +446,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Berufsregeln und Disziplinaraufsicht"
+     "label": "3. Abschnitt: Berufsregeln und Disziplinaraufsicht",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -441,7 +458,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Berufsregeln und Disziplinaraufsicht"
+     "label": "3. Abschnitt: Berufsregeln und Disziplinaraufsicht",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -452,7 +470,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Berufsregeln und Disziplinaraufsicht"
+     "label": "3. Abschnitt: Berufsregeln und Disziplinaraufsicht",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -463,7 +482,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Berufsregeln und Disziplinaraufsicht"
+     "label": "3. Abschnitt: Berufsregeln und Disziplinaraufsicht",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -474,7 +494,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Ausübung des Anwaltsberufs im freien Dienstleistungsverkehr durch Anwältinnen und Anwälte aus Mitgliedstaaten der EU oder der EFTA"
+     "label": "4. Abschnitt: Ausübung des Anwaltsberufs im freien Dienstleistungsverkehr durch Anwältinnen und Anwälte aus Mitgliedstaaten der EU oder der EFTA",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -485,7 +506,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Ausübung des Anwaltsberufs im freien Dienstleistungsverkehr durch Anwältinnen und Anwälte aus Mitgliedstaaten der EU oder der EFTA"
+     "label": "4. Abschnitt: Ausübung des Anwaltsberufs im freien Dienstleistungsverkehr durch Anwältinnen und Anwälte aus Mitgliedstaaten der EU oder der EFTA",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -496,7 +518,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Ausübung des Anwaltsberufs im freien Dienstleistungsverkehr durch Anwältinnen und Anwälte aus Mitgliedstaaten der EU oder der EFTA"
+     "label": "4. Abschnitt: Ausübung des Anwaltsberufs im freien Dienstleistungsverkehr durch Anwältinnen und Anwälte aus Mitgliedstaaten der EU oder der EFTA",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -507,7 +530,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Ausübung des Anwaltsberufs im freien Dienstleistungsverkehr durch Anwältinnen und Anwälte aus Mitgliedstaaten der EU oder der EFTA"
+     "label": "4. Abschnitt: Ausübung des Anwaltsberufs im freien Dienstleistungsverkehr durch Anwältinnen und Anwälte aus Mitgliedstaaten der EU oder der EFTA",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -518,7 +542,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Ausübung des Anwaltsberufs im freien Dienstleistungsverkehr durch Anwältinnen und Anwälte aus Mitgliedstaaten der EU oder der EFTA"
+     "label": "4. Abschnitt: Ausübung des Anwaltsberufs im freien Dienstleistungsverkehr durch Anwältinnen und Anwälte aus Mitgliedstaaten der EU oder der EFTA",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -529,7 +554,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Ausübung des Anwaltsberufs im freien Dienstleistungsverkehr durch Anwältinnen und Anwälte aus Mitgliedstaaten der EU oder der EFTA"
+     "label": "4. Abschnitt: Ausübung des Anwaltsberufs im freien Dienstleistungsverkehr durch Anwältinnen und Anwälte aus Mitgliedstaaten der EU oder der EFTA",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -540,7 +566,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Ständige Ausübung des Anwaltsberufs durch Anwältinnen und Anwälte aus Mitgliedstaaten der EU oder der EFTA unter ihrer ursprünglichen Berufsbezeichnung"
+     "label": "5. Abschnitt: Ständige Ausübung des Anwaltsberufs durch Anwältinnen und Anwälte aus Mitgliedstaaten der EU oder der EFTA unter ihrer ursprünglichen Berufsbezeichnung",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -551,7 +578,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Ständige Ausübung des Anwaltsberufs durch Anwältinnen und Anwälte aus Mitgliedstaaten der EU oder der EFTA unter ihrer ursprünglichen Berufsbezeichnung"
+     "label": "5. Abschnitt: Ständige Ausübung des Anwaltsberufs durch Anwältinnen und Anwälte aus Mitgliedstaaten der EU oder der EFTA unter ihrer ursprünglichen Berufsbezeichnung",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -562,7 +590,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Ständige Ausübung des Anwaltsberufs durch Anwältinnen und Anwälte aus Mitgliedstaaten der EU oder der EFTA unter ihrer ursprünglichen Berufsbezeichnung"
+     "label": "5. Abschnitt: Ständige Ausübung des Anwaltsberufs durch Anwältinnen und Anwälte aus Mitgliedstaaten der EU oder der EFTA unter ihrer ursprünglichen Berufsbezeichnung",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -573,7 +602,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Eintragung von Anwältinnen und Anwälten aus Mitgliedstaaten der EU oder der EFTA in ein kantonales Anwaltsregister"
+     "label": "6. Abschnitt: Eintragung von Anwältinnen und Anwälten aus Mitgliedstaaten der EU oder der EFTA in ein kantonales Anwaltsregister",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -584,7 +614,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Eintragung von Anwältinnen und Anwälten aus Mitgliedstaaten der EU oder der EFTA in ein kantonales Anwaltsregister"
+     "label": "6. Abschnitt: Eintragung von Anwältinnen und Anwälten aus Mitgliedstaaten der EU oder der EFTA in ein kantonales Anwaltsregister",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -595,7 +626,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Eintragung von Anwältinnen und Anwälten aus Mitgliedstaaten der EU oder der EFTA in ein kantonales Anwaltsregister"
+     "label": "6. Abschnitt: Eintragung von Anwältinnen und Anwälten aus Mitgliedstaaten der EU oder der EFTA in ein kantonales Anwaltsregister",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -606,7 +638,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Eintragung von Anwältinnen und Anwälten aus Mitgliedstaaten der EU oder der EFTA in ein kantonales Anwaltsregister"
+     "label": "6. Abschnitt: Eintragung von Anwältinnen und Anwälten aus Mitgliedstaaten der EU oder der EFTA in ein kantonales Anwaltsregister",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -617,7 +650,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Verfahren"
+     "label": "7. Abschnitt: Verfahren",
+     "eId": "sec_7"
     }
    ],
    "marginalie": []
@@ -626,7 +660,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Schlussbestimmungen"
+     "label": "8. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -652,7 +687,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Schlussbestimmungen"
+     "label": "8. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -663,7 +699,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Schlussbestimmungen"
+     "label": "8. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -717,7 +754,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Interkantonale Freizügigkeit und kantonales Anwaltsregister"
+     "label": "2. Abschnitt: Interkantonale Freizügigkeit und kantonales Anwaltsregister",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -760,7 +798,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7a. Abschnitt: Internationale Verträge"
+     "label": "7a. Abschnitt: Internationale Verträge",
+     "eId": "sec_7_a"
     }
    ],
    "marginalie": [],

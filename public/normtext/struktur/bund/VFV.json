@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "831.111",
   "titel": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung",
@@ -92,7 +92,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Allgemeine Bestimmungen"
+     "label": "A. Allgemeine Bestimmungen",
+     "eId": "lvl_A"
     }
    ],
    "marginalie": [],
@@ -115,7 +116,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Allgemeine Bestimmungen"
+     "label": "A. Allgemeine Bestimmungen",
+     "eId": "lvl_A"
     }
    ],
    "marginalie": [
@@ -140,7 +142,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Allgemeine Bestimmungen"
+     "label": "A. Allgemeine Bestimmungen",
+     "eId": "lvl_A"
     }
    ],
    "marginalie": [
@@ -165,7 +168,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Allgemeine Bestimmungen"
+     "label": "A. Allgemeine Bestimmungen",
+     "eId": "lvl_A"
     }
    ],
    "marginalie": [],
@@ -188,7 +192,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Allgemeine Bestimmungen"
+     "label": "A. Allgemeine Bestimmungen",
+     "eId": "lvl_A"
     }
    ],
    "marginalie": [
@@ -213,7 +218,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "A. Allgemeine Bestimmungen"
+     "label": "A. Allgemeine Bestimmungen",
+     "eId": "lvl_A"
     }
    ],
    "marginalie": [],
@@ -236,7 +242,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Beitritt zur freiwilligen Versicherung"
+     "label": "B. Beitritt zur freiwilligen Versicherung",
+     "eId": "lvl_B"
     }
    ],
    "marginalie": [
@@ -277,7 +284,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Beitritt zur freiwilligen Versicherung"
+     "label": "B. Beitritt zur freiwilligen Versicherung",
+     "eId": "lvl_B"
     }
    ],
    "marginalie": [
@@ -314,7 +322,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Beitritt zur freiwilligen Versicherung"
+     "label": "B. Beitritt zur freiwilligen Versicherung",
+     "eId": "lvl_B"
     }
    ],
    "marginalie": [],
@@ -337,7 +346,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Beitritt zur freiwilligen Versicherung"
+     "label": "B. Beitritt zur freiwilligen Versicherung",
+     "eId": "lvl_B"
     }
    ],
    "marginalie": [],
@@ -360,7 +370,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "B. Beitritt zur freiwilligen Versicherung"
+     "label": "B. Beitritt zur freiwilligen Versicherung",
+     "eId": "lvl_B"
     }
    ],
    "marginalie": [
@@ -385,7 +396,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Rücktritt von der freiwilligen Versicherung und Ausschluss"
+     "label": "C. Rücktritt von der freiwilligen Versicherung und Ausschluss",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -410,7 +422,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "C. Rücktritt von der freiwilligen Versicherung und Ausschluss"
+     "label": "C. Rücktritt von der freiwilligen Versicherung und Ausschluss",
+     "eId": "lvl_C"
     }
    ],
    "marginalie": [
@@ -471,7 +484,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -508,7 +522,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [],
@@ -531,7 +546,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -592,7 +608,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -617,7 +634,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -642,7 +660,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "E. Renten und Taggelder"
+     "label": "E. Renten und Taggelder",
+     "eId": "lvl_E"
     }
    ],
    "marginalie": [
@@ -696,7 +715,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "E. Renten und Taggelder"
+     "label": "E. Renten und Taggelder",
+     "eId": "lvl_E"
     }
    ],
    "marginalie": [
@@ -721,7 +741,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "E. Renten und Taggelder"
+     "label": "E. Renten und Taggelder",
+     "eId": "lvl_E"
     }
    ],
    "marginalie": [
@@ -758,7 +779,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "F. …"
+     "label": "F. …",
+     "eId": "lvl_F"
     }
    ],
    "marginalie": [],
@@ -781,7 +803,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "H. Schlussbestimmungen"
+     "label": "H. Schlussbestimmungen",
+     "eId": "lvl_H"
     }
    ],
    "marginalie": [
@@ -832,7 +855,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "H. Schlussbestimmungen"
+     "label": "H. Schlussbestimmungen",
+     "eId": "lvl_H"
     }
    ],
    "marginalie": [
@@ -857,7 +881,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -919,7 +944,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -948,7 +974,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -973,7 +1000,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -1022,7 +1050,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [],
@@ -1049,7 +1078,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [],
@@ -1076,7 +1106,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "D. Beiträge"
+     "label": "D. Beiträge",
+     "eId": "lvl_D"
     }
    ],
    "marginalie": [
@@ -1121,7 +1152,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "G. …"
+     "label": "G. …",
+     "eId": "lvl_G"
     }
    ],
    "marginalie": [],

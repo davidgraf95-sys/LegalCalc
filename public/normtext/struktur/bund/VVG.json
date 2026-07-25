@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "221.229.1",
   "titel": "Bundesgesetz über den Versicherungsvertrag",
@@ -83,11 +83,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Abschluss des Vertrags"
+     "label": "1. Abschnitt: Abschluss des Vertrags",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -150,11 +152,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Abschluss des Vertrags"
+     "label": "1. Abschnitt: Abschluss des Vertrags",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -165,11 +169,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufklärungspflichten"
+     "label": "2. Abschnitt: Aufklärungspflichten",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -371,11 +377,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufklärungspflichten"
+     "label": "2. Abschnitt: Aufklärungspflichten",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -438,11 +446,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufklärungspflichten"
+     "label": "2. Abschnitt: Aufklärungspflichten",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -472,11 +482,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufklärungspflichten"
+     "label": "2. Abschnitt: Aufklärungspflichten",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -555,11 +567,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufklärungspflichten"
+     "label": "2. Abschnitt: Aufklärungspflichten",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -571,11 +585,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufklärungspflichten"
+     "label": "2. Abschnitt: Aufklärungspflichten",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -621,11 +637,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags"
+     "label": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -671,11 +689,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags"
+     "label": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -704,11 +724,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags"
+     "label": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -738,11 +760,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags"
+     "label": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -772,11 +796,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags"
+     "label": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -822,11 +848,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags"
+     "label": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -837,11 +865,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags"
+     "label": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -852,11 +882,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags"
+     "label": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -885,11 +917,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Prämie"
+     "label": "4. Abschnitt: Prämie",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -952,11 +986,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Prämie"
+     "label": "4. Abschnitt: Prämie",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1018,11 +1054,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Prämie"
+     "label": "4. Abschnitt: Prämie",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1051,11 +1089,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Prämie"
+     "label": "4. Abschnitt: Prämie",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1117,11 +1157,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Änderung des Vertrags"
+     "label": "5. Abschnitt: Änderung des Vertrags",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1167,11 +1209,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Änderung des Vertrags"
+     "label": "5. Abschnitt: Änderung des Vertrags",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1182,11 +1226,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Änderung des Vertrags"
+     "label": "5. Abschnitt: Änderung des Vertrags",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1197,11 +1243,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Änderung des Vertrags"
+     "label": "5. Abschnitt: Änderung des Vertrags",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1212,11 +1260,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Änderung des Vertrags"
+     "label": "5. Abschnitt: Änderung des Vertrags",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1227,11 +1277,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Änderung des Vertrags"
+     "label": "5. Abschnitt: Änderung des Vertrags",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1242,11 +1294,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Änderung des Vertrags"
+     "label": "5. Abschnitt: Änderung des Vertrags",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1275,11 +1329,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Änderung des Vertrags"
+     "label": "5. Abschnitt: Änderung des Vertrags",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -1290,11 +1346,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Beendigung des Vertrags"
+     "label": "6. Abschnitt: Beendigung des Vertrags",
+     "eId": "chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1368,11 +1426,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Beendigung des Vertrags"
+     "label": "6. Abschnitt: Beendigung des Vertrags",
+     "eId": "chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -1429,11 +1489,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses"
+     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses",
+     "eId": "chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -1463,11 +1525,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses"
+     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses",
+     "eId": "chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -1478,11 +1542,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses"
+     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses",
+     "eId": "chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -1493,11 +1559,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses"
+     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses",
+     "eId": "chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -1508,11 +1576,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses"
+     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses",
+     "eId": "chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -1557,11 +1627,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Weitere Bestimmungen"
+     "label": "8. Abschnitt: Weitere Bestimmungen",
+     "eId": "chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -1591,11 +1663,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Weitere Bestimmungen"
+     "label": "8. Abschnitt: Weitere Bestimmungen",
+     "eId": "chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -1624,11 +1698,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Weitere Bestimmungen"
+     "label": "8. Abschnitt: Weitere Bestimmungen",
+     "eId": "chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -1674,11 +1750,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Weitere Bestimmungen"
+     "label": "8. Abschnitt: Weitere Bestimmungen",
+     "eId": "chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -1755,11 +1833,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Weitere Bestimmungen"
+     "label": "8. Abschnitt: Weitere Bestimmungen",
+     "eId": "chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -1770,11 +1850,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sachversicherung"
+     "label": "1. Abschnitt: Sachversicherung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1803,11 +1885,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sachversicherung"
+     "label": "1. Abschnitt: Sachversicherung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1818,11 +1902,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sachversicherung"
+     "label": "1. Abschnitt: Sachversicherung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1887,11 +1973,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sachversicherung"
+     "label": "1. Abschnitt: Sachversicherung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1920,11 +2008,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sachversicherung"
+     "label": "1. Abschnitt: Sachversicherung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1935,11 +2025,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sachversicherung"
+     "label": "1. Abschnitt: Sachversicherung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1950,11 +2042,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sachversicherung"
+     "label": "1. Abschnitt: Sachversicherung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1974,11 +2068,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Haftpflichtversicherung"
+     "label": "2. Abschnitt: Haftpflichtversicherung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2025,11 +2121,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Haftpflichtversicherung"
+     "label": "2. Abschnitt: Haftpflichtversicherung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2075,11 +2173,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2125,11 +2225,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2140,11 +2242,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2173,11 +2277,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2203,11 +2309,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2233,11 +2341,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2249,11 +2359,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2265,11 +2377,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2299,11 +2413,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2350,11 +2466,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2381,11 +2499,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2432,11 +2552,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2467,11 +2589,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2501,11 +2625,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2534,11 +2660,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2567,11 +2695,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2601,11 +2731,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2635,11 +2767,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2686,11 +2820,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2702,11 +2838,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2718,11 +2856,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -2751,11 +2891,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Koordination"
+     "label": "5. Abschnitt: Koordination",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -2784,7 +2926,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zwingende Bestimmungen"
+     "label": "3. Kapitel: Zwingende Bestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2830,7 +2973,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zwingende Bestimmungen"
+     "label": "3. Kapitel: Zwingende Bestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2859,7 +3003,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zwingende Bestimmungen"
+     "label": "3. Kapitel: Zwingende Bestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2870,7 +3015,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -2952,7 +3098,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -3021,7 +3168,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -3050,7 +3198,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -3079,7 +3228,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -3116,7 +3266,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -3153,7 +3304,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Schlussbestimmungen"
+     "label": "4. Kapitel: Schlussbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -3186,11 +3338,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags"
+     "label": "3. Abschnitt: Inhalt und Verbindlichkeit des Vertrags",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -3219,11 +3373,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Prämie"
+     "label": "4. Abschnitt: Prämie",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -3252,11 +3408,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Prämie"
+     "label": "4. Abschnitt: Prämie",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -3285,11 +3443,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Änderung des Vertrags"
+     "label": "5. Abschnitt: Änderung des Vertrags",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -3318,11 +3478,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Abschluss des Vertrags"
+     "label": "1. Abschnitt: Abschluss des Vertrags",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3351,11 +3513,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Abschluss des Vertrags"
+     "label": "1. Abschnitt: Abschluss des Vertrags",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3384,11 +3548,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Beendigung des Vertrags"
+     "label": "6. Abschnitt: Beendigung des Vertrags",
+     "eId": "chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -3446,11 +3612,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Beendigung des Vertrags"
+     "label": "6. Abschnitt: Beendigung des Vertrags",
+     "eId": "chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -3479,11 +3647,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Beendigung des Vertrags"
+     "label": "6. Abschnitt: Beendigung des Vertrags",
+     "eId": "chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -3512,11 +3682,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses"
+     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses",
+     "eId": "chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -3545,11 +3717,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses"
+     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses",
+     "eId": "chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -3578,11 +3752,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses"
+     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses",
+     "eId": "chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -3611,11 +3787,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses"
+     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses",
+     "eId": "chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -3656,11 +3834,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses"
+     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses",
+     "eId": "chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -3701,11 +3881,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufklärungspflichten"
+     "label": "2. Abschnitt: Aufklärungspflichten",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3742,11 +3924,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses"
+     "label": "7. Abschnitt: Eintritt des befürchteten Ereignisses",
+     "eId": "chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -3775,11 +3959,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Weitere Bestimmungen"
+     "label": "8. Abschnitt: Weitere Bestimmungen",
+     "eId": "chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -3828,11 +4014,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Weitere Bestimmungen"
+     "label": "8. Abschnitt: Weitere Bestimmungen",
+     "eId": "chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -3861,11 +4049,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Weitere Bestimmungen"
+     "label": "8. Abschnitt: Weitere Bestimmungen",
+     "eId": "chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -3894,11 +4084,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Weitere Bestimmungen"
+     "label": "8. Abschnitt: Weitere Bestimmungen",
+     "eId": "chap_1/sec_8"
     }
    ],
    "marginalie": [
@@ -3998,11 +4190,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sachversicherung"
+     "label": "1. Abschnitt: Sachversicherung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -4063,11 +4257,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sachversicherung"
+     "label": "1. Abschnitt: Sachversicherung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4096,11 +4292,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sachversicherung"
+     "label": "1. Abschnitt: Sachversicherung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4129,11 +4327,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Haftpflichtversicherung"
+     "label": "2. Abschnitt: Haftpflichtversicherung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4163,11 +4363,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -4196,11 +4398,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -4237,11 +4441,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Lebensversicherung"
+     "label": "3. Abschnitt: Lebensversicherung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -4279,11 +4485,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Unfall- und Krankenversicherung"
+     "label": "4. Abschnitt: Unfall- und Krankenversicherung",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4313,11 +4521,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Unfall- und Krankenversicherung"
+     "label": "4. Abschnitt: Unfall- und Krankenversicherung",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4328,11 +4538,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Besondere Bestimmungen"
+     "label": "2. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Koordination"
+     "label": "5. Abschnitt: Koordination",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -4378,7 +4590,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zwingende Bestimmungen"
+     "label": "3. Kapitel: Zwingende Bestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [

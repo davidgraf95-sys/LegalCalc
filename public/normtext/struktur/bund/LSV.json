@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "814.41",
   "titel": "Lärmschutz-Verordnung",
@@ -42,7 +42,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -79,7 +80,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -90,11 +92,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fahrzeuge, bewegliche Geräte und Maschinen"
+     "label": "2. Kapitel: Fahrzeuge, bewegliche Geräte und Maschinen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Emissionsbegrenzungen bei Fahrzeugen"
+     "label": "1. Abschnitt: Emissionsbegrenzungen bei Fahrzeugen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": []
@@ -103,11 +107,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fahrzeuge, bewegliche Geräte und Maschinen"
+     "label": "2. Kapitel: Fahrzeuge, bewegliche Geräte und Maschinen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Emissionsbegrenzungen bei beweglichen Geräten und Maschinen"
+     "label": "2. Abschnitt: Emissionsbegrenzungen bei beweglichen Geräten und Maschinen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -118,11 +124,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fahrzeuge, bewegliche Geräte und Maschinen"
+     "label": "2. Kapitel: Fahrzeuge, bewegliche Geräte und Maschinen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Emissionsbegrenzungen bei beweglichen Geräten und Maschinen"
+     "label": "2. Abschnitt: Emissionsbegrenzungen bei beweglichen Geräten und Maschinen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -159,11 +167,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Fahrzeuge, bewegliche Geräte und Maschinen"
+     "label": "2. Kapitel: Fahrzeuge, bewegliche Geräte und Maschinen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Emissionsbegrenzungen bei beweglichen Geräten und Maschinen"
+     "label": "2. Abschnitt: Emissionsbegrenzungen bei beweglichen Geräten und Maschinen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -188,7 +198,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Neue und geänderte ortsfeste Anlagen"
+     "label": "3. Kapitel: Neue und geänderte ortsfeste Anlagen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -225,7 +236,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Neue und geänderte ortsfeste Anlagen"
+     "label": "3. Kapitel: Neue und geänderte ortsfeste Anlagen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -262,7 +274,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Neue und geänderte ortsfeste Anlagen"
+     "label": "3. Kapitel: Neue und geänderte ortsfeste Anlagen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -273,7 +286,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Neue und geänderte ortsfeste Anlagen"
+     "label": "3. Kapitel: Neue und geänderte ortsfeste Anlagen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -284,7 +298,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Neue und geänderte ortsfeste Anlagen"
+     "label": "3. Kapitel: Neue und geänderte ortsfeste Anlagen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -295,7 +310,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Neue und geänderte ortsfeste Anlagen"
+     "label": "3. Kapitel: Neue und geänderte ortsfeste Anlagen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -306,11 +322,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bestehende ortsfeste Anlagen"
+     "label": "4. Kapitel: Bestehende ortsfeste Anlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sanierungen und Schallschutzmassnahmen"
+     "label": "1. Abschnitt: Sanierungen und Schallschutzmassnahmen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -321,11 +339,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bestehende ortsfeste Anlagen"
+     "label": "4. Kapitel: Bestehende ortsfeste Anlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sanierungen und Schallschutzmassnahmen"
+     "label": "1. Abschnitt: Sanierungen und Schallschutzmassnahmen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -336,11 +356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bestehende ortsfeste Anlagen"
+     "label": "4. Kapitel: Bestehende ortsfeste Anlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sanierungen und Schallschutzmassnahmen"
+     "label": "1. Abschnitt: Sanierungen und Schallschutzmassnahmen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -351,11 +373,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bestehende ortsfeste Anlagen"
+     "label": "4. Kapitel: Bestehende ortsfeste Anlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sanierungen und Schallschutzmassnahmen"
+     "label": "1. Abschnitt: Sanierungen und Schallschutzmassnahmen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -366,11 +390,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bestehende ortsfeste Anlagen"
+     "label": "4. Kapitel: Bestehende ortsfeste Anlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sanierungen und Schallschutzmassnahmen"
+     "label": "1. Abschnitt: Sanierungen und Schallschutzmassnahmen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -461,11 +487,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bestehende ortsfeste Anlagen"
+     "label": "4. Kapitel: Bestehende ortsfeste Anlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sanierungen und Schallschutzmassnahmen"
+     "label": "1. Abschnitt: Sanierungen und Schallschutzmassnahmen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -476,11 +504,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bestehende ortsfeste Anlagen"
+     "label": "4. Kapitel: Bestehende ortsfeste Anlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sanierungen und Schallschutzmassnahmen"
+     "label": "1. Abschnitt: Sanierungen und Schallschutzmassnahmen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -503,11 +533,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bestehende ortsfeste Anlagen"
+     "label": "4. Kapitel: Bestehende ortsfeste Anlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sanierungen und Schallschutzmassnahmen"
+     "label": "1. Abschnitt: Sanierungen und Schallschutzmassnahmen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -544,11 +576,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bestehende ortsfeste Anlagen"
+     "label": "4. Kapitel: Bestehende ortsfeste Anlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen"
+     "label": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -627,11 +661,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bestehende ortsfeste Anlagen"
+     "label": "4. Kapitel: Bestehende ortsfeste Anlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen"
+     "label": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -668,11 +704,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bestehende ortsfeste Anlagen"
+     "label": "4. Kapitel: Bestehende ortsfeste Anlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen"
+     "label": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -721,11 +759,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bestehende ortsfeste Anlagen"
+     "label": "4. Kapitel: Bestehende ortsfeste Anlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen"
+     "label": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -762,11 +802,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bestehende ortsfeste Anlagen"
+     "label": "4. Kapitel: Bestehende ortsfeste Anlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen"
+     "label": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -777,11 +819,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bestehende ortsfeste Anlagen"
+     "label": "4. Kapitel: Bestehende ortsfeste Anlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen"
+     "label": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -792,11 +836,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bestehende ortsfeste Anlagen"
+     "label": "4. Kapitel: Bestehende ortsfeste Anlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen"
+     "label": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -822,11 +868,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bestehende ortsfeste Anlagen"
+     "label": "4. Kapitel: Bestehende ortsfeste Anlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen"
+     "label": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": []
@@ -835,7 +883,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Anforderungen an Bauzonen und Baubewilligungen in lärmbelasteten Gebieten"
+     "label": "5. Kapitel: Anforderungen an Bauzonen und Baubewilligungen in lärmbelasteten Gebieten",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -860,7 +909,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Anforderungen an Bauzonen und Baubewilligungen in lärmbelasteten Gebieten"
+     "label": "5. Kapitel: Anforderungen an Bauzonen und Baubewilligungen in lärmbelasteten Gebieten",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [],
@@ -883,7 +933,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Anforderungen an Bauzonen und Baubewilligungen in lärmbelasteten Gebieten"
+     "label": "5. Kapitel: Anforderungen an Bauzonen und Baubewilligungen in lärmbelasteten Gebieten",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -932,7 +983,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schallschutz an neuen Gebäuden"
+     "label": "6. Kapitel: Schallschutz an neuen Gebäuden",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -969,7 +1021,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schallschutz an neuen Gebäuden"
+     "label": "6. Kapitel: Schallschutz an neuen Gebäuden",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -980,7 +1033,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schallschutz an neuen Gebäuden"
+     "label": "6. Kapitel: Schallschutz an neuen Gebäuden",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1005,7 +1059,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schallschutz an neuen Gebäuden"
+     "label": "6. Kapitel: Schallschutz an neuen Gebäuden",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1016,11 +1071,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
+     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ermittlung"
+     "label": "1. Abschnitt: Ermittlung",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1070,11 +1127,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
+     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ermittlung"
+     "label": "1. Abschnitt: Ermittlung",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1111,11 +1170,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
+     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ermittlung"
+     "label": "1. Abschnitt: Ermittlung",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1163,11 +1224,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
+     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ermittlung"
+     "label": "1. Abschnitt: Ermittlung",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1204,11 +1267,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
+     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beurteilung"
+     "label": "2. Abschnitt: Beurteilung",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1219,11 +1284,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
+     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beurteilung"
+     "label": "2. Abschnitt: Beurteilung",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1248,11 +1315,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
+     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beurteilung"
+     "label": "2. Abschnitt: Beurteilung",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1263,11 +1332,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
+     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beurteilung"
+     "label": "2. Abschnitt: Beurteilung",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1293,11 +1364,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
+     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Beurteilung"
+     "label": "2. Abschnitt: Beurteilung",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1334,11 +1407,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -1451,11 +1526,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -1494,11 +1571,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [
@@ -1523,11 +1602,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [],
@@ -1550,11 +1631,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [],
@@ -1577,11 +1660,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Inkrafttreten"
+     "label": "3. Abschnitt: Inkrafttreten",
+     "eId": "chap_8/sec_3"
     }
    ],
    "marginalie": []
@@ -1590,11 +1675,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bestehende ortsfeste Anlagen"
+     "label": "4. Kapitel: Bestehende ortsfeste Anlagen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen"
+     "label": "2. Abschnitt: Bundesbeiträge für Sanierungen und Schallschutzmassnahmen bei bestehenden Hauptstrassen und übrigen Strassen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": []
@@ -1603,7 +1690,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Anforderungen an Bauzonen und Baubewilligungen in lärmbelasteten Gebieten"
+     "label": "5. Kapitel: Anforderungen an Bauzonen und Baubewilligungen in lärmbelasteten Gebieten",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [],
@@ -1630,11 +1718,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen"
+     "label": "7. Kapitel: Ermittlung, Beurteilung und Kontrolle der Aussenlärmimmissionen ortsfester Anlagen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ermittlung"
+     "label": "1. Abschnitt: Ermittlung",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1663,11 +1753,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_8/sec_1"
     }
    ],
    "marginalie": [
@@ -1692,11 +1784,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_8/sec_2"
     }
    ],
    "marginalie": [],

@@ -156,7 +156,10 @@ export interface Fussnote {
   absatzIndex?: number;
 }
 export interface ArtikelStruktur {
-  gliederung: Array<{ ebene: number; label: string }>;
+  /** EID-1 (W2·5d §12): optionale Fedlex-Container-eId je Ebene — reine, bei jeder
+   *  Regeneration neu erzeugte Outbound-Daten (ELI-Deep-Link `quelleUrl#<eId>`),
+   *  NIE eigene persistente Anker (§12.1/§12.4, K2/R8). */
+  gliederung: Array<{ ebene: number; label: string; eId?: string }>;
   marginalie: string[];
   /** Amtliche Fussnoten (Änderungs-/AS/BBl-Historie), falls vorhanden. */
   fussnoten?: Fussnote[];

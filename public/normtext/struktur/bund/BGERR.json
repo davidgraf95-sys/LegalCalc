@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "173.110.131",
   "titel": "Reglement für das Bundesgericht",
@@ -42,15 +42,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Leitungsorgane"
+     "label": "1. Kapitel: Leitungsorgane",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Präsidium"
+     "label": "1. Abschnitt: Präsidium",
+     "eId": "tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -61,15 +64,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Leitungsorgane"
+     "label": "1. Kapitel: Leitungsorgane",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Präsidium"
+     "label": "1. Abschnitt: Präsidium",
+     "eId": "tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -80,15 +86,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Leitungsorgane"
+     "label": "1. Kapitel: Leitungsorgane",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Gesamtgericht"
+     "label": "2. Abschnitt: Gesamtgericht",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -113,15 +122,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Leitungsorgane"
+     "label": "1. Kapitel: Leitungsorgane",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Gesamtgericht"
+     "label": "2. Abschnitt: Gesamtgericht",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -146,15 +158,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Leitungsorgane"
+     "label": "1. Kapitel: Leitungsorgane",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Gesamtgericht"
+     "label": "2. Abschnitt: Gesamtgericht",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -180,15 +195,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Leitungsorgane"
+     "label": "1. Kapitel: Leitungsorgane",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Gesamtgericht"
+     "label": "2. Abschnitt: Gesamtgericht",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -199,15 +217,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Leitungsorgane"
+     "label": "1. Kapitel: Leitungsorgane",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Gesamtgericht"
+     "label": "2. Abschnitt: Gesamtgericht",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -218,15 +239,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Leitungsorgane"
+     "label": "1. Kapitel: Leitungsorgane",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Gesamtgericht"
+     "label": "2. Abschnitt: Gesamtgericht",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -237,15 +261,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Leitungsorgane"
+     "label": "1. Kapitel: Leitungsorgane",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Präsidentenkonferenz"
+     "label": "3. Abschnitt: Präsidentenkonferenz",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -256,15 +283,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Leitungsorgane"
+     "label": "1. Kapitel: Leitungsorgane",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Präsidentenkonferenz"
+     "label": "3. Abschnitt: Präsidentenkonferenz",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -289,15 +319,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Leitungsorgane"
+     "label": "1. Kapitel: Leitungsorgane",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Verwaltungskommission"
+     "label": "4. Abschnitt: Verwaltungskommission",
+     "eId": "tit_1/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -308,15 +341,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Leitungsorgane"
+     "label": "1. Kapitel: Leitungsorgane",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Verwaltungskommission"
+     "label": "4. Abschnitt: Verwaltungskommission",
+     "eId": "tit_1/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -353,15 +389,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Leitungsorgane"
+     "label": "1. Kapitel: Leitungsorgane",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Stab der Leitungsorgane"
+     "label": "5. Abschnitt: Stab der Leitungsorgane",
+     "eId": "tit_1/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -372,15 +411,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Leitungsorgane"
+     "label": "1. Kapitel: Leitungsorgane",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Unterschrift und Protokolle"
+     "label": "6. Abschnitt: Unterschrift und Protokolle",
+     "eId": "tit_1/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -391,15 +433,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Leitungsorgane"
+     "label": "1. Kapitel: Leitungsorgane",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Unterschrift und Protokolle"
+     "label": "6. Abschnitt: Unterschrift und Protokolle",
+     "eId": "tit_1/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -410,11 +455,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Nebenamtliche Richter und Richterinnen"
+     "label": "2. Kapitel: Nebenamtliche Richter und Richterinnen",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -425,11 +472,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Nebenamtliche Richter und Richterinnen"
+     "label": "2. Kapitel: Nebenamtliche Richter und Richterinnen",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -454,11 +503,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nebenbeschäftigungen der ordentlichen Richter und Richterinnen"
+     "label": "3. Kapitel: Nebenbeschäftigungen der ordentlichen Richter und Richterinnen",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -469,11 +520,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nebenbeschäftigungen der ordentlichen Richter und Richterinnen"
+     "label": "3. Kapitel: Nebenbeschäftigungen der ordentlichen Richter und Richterinnen",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -484,11 +537,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nebenbeschäftigungen der ordentlichen Richter und Richterinnen"
+     "label": "3. Kapitel: Nebenbeschäftigungen der ordentlichen Richter und Richterinnen",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -499,11 +554,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nebenbeschäftigungen der ordentlichen Richter und Richterinnen"
+     "label": "3. Kapitel: Nebenbeschäftigungen der ordentlichen Richter und Richterinnen",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -514,11 +571,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nebenbeschäftigungen der ordentlichen Richter und Richterinnen"
+     "label": "3. Kapitel: Nebenbeschäftigungen der ordentlichen Richter und Richterinnen",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -529,11 +588,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Nebenbeschäftigungen der ordentlichen Richter und Richterinnen"
+     "label": "3. Kapitel: Nebenbeschäftigungen der ordentlichen Richter und Richterinnen",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -544,11 +605,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Konfliktregelung"
+     "label": "4. Kapitel: Konfliktregelung",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -573,11 +636,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine organisatorische Bestimmungen"
+     "label": "1. Titel: Allgemeine organisatorische Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Konfliktregelung"
+     "label": "4. Kapitel: Konfliktregelung",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -588,15 +653,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Abteilungen"
+     "label": "1. Kapitel: Abteilungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -717,15 +785,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Abteilungen"
+     "label": "1. Kapitel: Abteilungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -750,15 +821,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Abteilungen"
+     "label": "1. Kapitel: Abteilungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -769,15 +843,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Abteilungen"
+     "label": "1. Kapitel: Abteilungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Die acht Abteilungen"
+     "label": "2. Abschnitt: Die acht Abteilungen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -852,15 +929,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Abteilungen"
+     "label": "1. Kapitel: Abteilungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Die acht Abteilungen"
+     "label": "2. Abschnitt: Die acht Abteilungen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -911,15 +991,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Abteilungen"
+     "label": "1. Kapitel: Abteilungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Die acht Abteilungen"
+     "label": "2. Abschnitt: Die acht Abteilungen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -982,15 +1065,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Abteilungen"
+     "label": "1. Kapitel: Abteilungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Die acht Abteilungen"
+     "label": "2. Abschnitt: Die acht Abteilungen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1077,15 +1163,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Abteilungen"
+     "label": "1. Kapitel: Abteilungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Die acht Abteilungen"
+     "label": "2. Abschnitt: Die acht Abteilungen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1141,15 +1230,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Abteilungen"
+     "label": "1. Kapitel: Abteilungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Die acht Abteilungen"
+     "label": "2. Abschnitt: Die acht Abteilungen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1197,15 +1289,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Abteilungen"
+     "label": "1. Kapitel: Abteilungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Die acht Abteilungen"
+     "label": "2. Abschnitt: Die acht Abteilungen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1230,15 +1325,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Abteilungen"
+     "label": "1. Kapitel: Abteilungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Abgrenzung und Zusammenarbeit"
+     "label": "3. Abschnitt: Abgrenzung und Zusammenarbeit",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1263,15 +1361,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Abteilungen"
+     "label": "1. Kapitel: Abteilungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Abgrenzung und Zusammenarbeit"
+     "label": "3. Abschnitt: Abgrenzung und Zusammenarbeit",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1296,11 +1397,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Gerichtsschreiber und Gerichtsschreiberinnen"
+     "label": "2. Kapitel: Gerichtsschreiber und Gerichtsschreiberinnen",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1311,11 +1414,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Gerichtsschreiber und Gerichtsschreiberinnen"
+     "label": "2. Kapitel: Gerichtsschreiber und Gerichtsschreiberinnen",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1326,15 +1431,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Spruchkörper, Verfahren und Gerichtsbetrieb"
+     "label": "3. Kapitel: Spruchkörper, Verfahren und Gerichtsbetrieb",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Spruchkörper"
+     "label": "1. Abschnitt: Spruchkörper",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1359,15 +1467,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Spruchkörper, Verfahren und Gerichtsbetrieb"
+     "label": "3. Kapitel: Spruchkörper, Verfahren und Gerichtsbetrieb",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Spruchkörper"
+     "label": "1. Abschnitt: Spruchkörper",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [],
@@ -1390,15 +1501,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Spruchkörper, Verfahren und Gerichtsbetrieb"
+     "label": "3. Kapitel: Spruchkörper, Verfahren und Gerichtsbetrieb",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Spruchkörper"
+     "label": "1. Abschnitt: Spruchkörper",
+     "eId": "tit_2/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1423,15 +1537,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Spruchkörper, Verfahren und Gerichtsbetrieb"
+     "label": "3. Kapitel: Spruchkörper, Verfahren und Gerichtsbetrieb",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verfahren und Gerichtsbetrieb"
+     "label": "2. Abschnitt: Verfahren und Gerichtsbetrieb",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1442,15 +1559,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Spruchkörper, Verfahren und Gerichtsbetrieb"
+     "label": "3. Kapitel: Spruchkörper, Verfahren und Gerichtsbetrieb",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verfahren und Gerichtsbetrieb"
+     "label": "2. Abschnitt: Verfahren und Gerichtsbetrieb",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1461,15 +1581,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Spruchkörper, Verfahren und Gerichtsbetrieb"
+     "label": "3. Kapitel: Spruchkörper, Verfahren und Gerichtsbetrieb",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verfahren und Gerichtsbetrieb"
+     "label": "2. Abschnitt: Verfahren und Gerichtsbetrieb",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1480,15 +1603,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Spruchkörper, Verfahren und Gerichtsbetrieb"
+     "label": "3. Kapitel: Spruchkörper, Verfahren und Gerichtsbetrieb",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verfahren und Gerichtsbetrieb"
+     "label": "2. Abschnitt: Verfahren und Gerichtsbetrieb",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1499,15 +1625,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Spruchkörper, Verfahren und Gerichtsbetrieb"
+     "label": "3. Kapitel: Spruchkörper, Verfahren und Gerichtsbetrieb",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verfahren und Gerichtsbetrieb"
+     "label": "2. Abschnitt: Verfahren und Gerichtsbetrieb",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1567,15 +1696,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Spruchkörper, Verfahren und Gerichtsbetrieb"
+     "label": "3. Kapitel: Spruchkörper, Verfahren und Gerichtsbetrieb",
+     "eId": "tit_2/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verfahren und Gerichtsbetrieb"
+     "label": "2. Abschnitt: Verfahren und Gerichtsbetrieb",
+     "eId": "tit_2/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1586,11 +1718,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsverwaltung und Rekurskommission"
+     "label": "3. Titel: Gerichtsverwaltung und Rekurskommission",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Generalsekretariat und Dienste"
+     "label": "1. Kapitel: Generalsekretariat und Dienste",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1616,11 +1750,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsverwaltung und Rekurskommission"
+     "label": "3. Titel: Gerichtsverwaltung und Rekurskommission",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Generalsekretariat und Dienste"
+     "label": "1. Kapitel: Generalsekretariat und Dienste",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1631,11 +1767,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsverwaltung und Rekurskommission"
+     "label": "3. Titel: Gerichtsverwaltung und Rekurskommission",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Generalsekretariat und Dienste"
+     "label": "1. Kapitel: Generalsekretariat und Dienste",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1646,11 +1784,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsverwaltung und Rekurskommission"
+     "label": "3. Titel: Gerichtsverwaltung und Rekurskommission",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Generalsekretariat und Dienste"
+     "label": "1. Kapitel: Generalsekretariat und Dienste",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1661,11 +1801,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsverwaltung und Rekurskommission"
+     "label": "3. Titel: Gerichtsverwaltung und Rekurskommission",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Generalsekretariat und Dienste"
+     "label": "1. Kapitel: Generalsekretariat und Dienste",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1676,11 +1818,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsverwaltung und Rekurskommission"
+     "label": "3. Titel: Gerichtsverwaltung und Rekurskommission",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rekurskommission"
+     "label": "2. Kapitel: Rekurskommission",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1717,11 +1861,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsverwaltung und Rekurskommission"
+     "label": "3. Titel: Gerichtsverwaltung und Rekurskommission",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rekurskommission"
+     "label": "2. Kapitel: Rekurskommission",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1834,11 +1980,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Gerichtsverwaltung und Rekurskommission"
+     "label": "3. Titel: Gerichtsverwaltung und Rekurskommission",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Rekurskommission"
+     "label": "2. Kapitel: Rekurskommission",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1865,7 +2013,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Information und Datenschutz"
+     "label": "4. Titel: Information und Datenschutz",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1891,7 +2040,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Information und Datenschutz"
+     "label": "4. Titel: Information und Datenschutz",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1902,7 +2052,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Information und Datenschutz"
+     "label": "4. Titel: Information und Datenschutz",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1913,7 +2064,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Information und Datenschutz"
+     "label": "4. Titel: Information und Datenschutz",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1924,7 +2076,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Information und Datenschutz"
+     "label": "4. Titel: Information und Datenschutz",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1935,7 +2088,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Information und Datenschutz"
+     "label": "4. Titel: Information und Datenschutz",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1946,7 +2100,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Information und Datenschutz"
+     "label": "4. Titel: Information und Datenschutz",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1957,7 +2112,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Information und Datenschutz"
+     "label": "4. Titel: Information und Datenschutz",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -2016,7 +2172,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Schlussbestimmungen"
+     "label": "5. Titel: Schlussbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -2113,7 +2270,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Schlussbestimmungen"
+     "label": "5. Titel: Schlussbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -2142,7 +2300,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Schlussbestimmungen"
+     "label": "5. Titel: Schlussbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -2153,15 +2312,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Organisation der Rechtsprechung"
+     "label": "2. Titel: Organisation der Rechtsprechung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Abteilungen"
+     "label": "1. Kapitel: Abteilungen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Die acht Abteilungen"
+     "label": "2. Abschnitt: Die acht Abteilungen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2190,7 +2352,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Information und Datenschutz"
+     "label": "4. Titel: Information und Datenschutz",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [

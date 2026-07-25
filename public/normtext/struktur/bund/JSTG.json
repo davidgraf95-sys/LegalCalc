@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "311.1",
   "titel": "Bundesgesetz über das Jugendstrafrecht",
@@ -50,7 +50,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze und Geltungsbereich"
+     "label": "1. Kapitel: Grundsätze und Geltungsbereich",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -180,7 +181,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze und Geltungsbereich"
+     "label": "1. Kapitel: Grundsätze und Geltungsbereich",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -191,7 +193,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze und Geltungsbereich"
+     "label": "1. Kapitel: Grundsätze und Geltungsbereich",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -250,7 +253,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze und Geltungsbereich"
+     "label": "1. Kapitel: Grundsätze und Geltungsbereich",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -280,7 +284,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Untersuchung"
+     "label": "2. Kapitel: Untersuchung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -291,7 +296,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Untersuchung"
+     "label": "2. Kapitel: Untersuchung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -320,11 +326,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Voraussetzungen"
+     "label": "1. Abschnitt: Allgemeine Voraussetzungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -353,11 +361,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Voraussetzungen"
+     "label": "1. Abschnitt: Allgemeine Voraussetzungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -368,11 +378,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schutzmassnahmen"
+     "label": "2. Abschnitt: Schutzmassnahmen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -417,11 +429,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schutzmassnahmen"
+     "label": "2. Abschnitt: Schutzmassnahmen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -479,11 +493,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schutzmassnahmen"
+     "label": "2. Abschnitt: Schutzmassnahmen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -512,11 +528,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schutzmassnahmen"
+     "label": "2. Abschnitt: Schutzmassnahmen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -574,11 +592,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schutzmassnahmen"
+     "label": "2. Abschnitt: Schutzmassnahmen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -637,11 +657,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schutzmassnahmen"
+     "label": "2. Abschnitt: Schutzmassnahmen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -652,11 +674,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schutzmassnahmen"
+     "label": "2. Abschnitt: Schutzmassnahmen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -667,11 +691,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schutzmassnahmen"
+     "label": "2. Abschnitt: Schutzmassnahmen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -781,11 +807,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schutzmassnahmen"
+     "label": "2. Abschnitt: Schutzmassnahmen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -796,11 +824,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafen"
+     "label": "3. Abschnitt: Strafen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -853,11 +883,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafen"
+     "label": "3. Abschnitt: Strafen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -868,11 +900,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafen"
+     "label": "3. Abschnitt: Strafen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -883,11 +917,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafen"
+     "label": "3. Abschnitt: Strafen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -898,11 +934,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafen"
+     "label": "3. Abschnitt: Strafen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -928,11 +966,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafen"
+     "label": "3. Abschnitt: Strafen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -943,11 +983,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafen"
+     "label": "3. Abschnitt: Strafen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1009,11 +1051,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafen"
+     "label": "3. Abschnitt: Strafen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1054,11 +1098,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafen"
+     "label": "3. Abschnitt: Strafen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1069,11 +1115,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafen"
+     "label": "3. Abschnitt: Strafen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1084,11 +1132,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafen"
+     "label": "3. Abschnitt: Strafen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1114,11 +1164,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafen"
+     "label": "3. Abschnitt: Strafen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1160,11 +1212,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafen"
+     "label": "3. Abschnitt: Strafen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1175,11 +1229,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafen"
+     "label": "3. Abschnitt: Strafen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1190,11 +1246,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafen"
+     "label": "3. Abschnitt: Strafen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1205,7 +1263,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verjährung"
+     "label": "4. Kapitel: Verjährung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1295,7 +1354,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verjährung"
+     "label": "4. Kapitel: Verjährung",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1306,7 +1366,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Ergänzende Bestimmungen des Bundesrates"
+     "label": "5. Kapitel: Ergänzende Bestimmungen des Bundesrates",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [],
@@ -1358,11 +1419,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Änderung bisherigen Rechts"
+     "label": "1. Abschnitt: Änderung bisherigen Rechts",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [],
@@ -1386,11 +1449,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1431,11 +1496,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1472,11 +1539,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1501,11 +1570,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1516,11 +1587,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Referendum und Inkrafttreten"
+     "label": "3. Abschnitt: Referendum und Inkrafttreten",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [],
@@ -1562,11 +1635,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schutzmassnahmen"
+     "label": "2. Abschnitt: Schutzmassnahmen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1595,11 +1670,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schutzmassnahmen"
+     "label": "2. Abschnitt: Schutzmassnahmen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1641,11 +1718,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schutzmassnahmen"
+     "label": "2. Abschnitt: Schutzmassnahmen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1687,11 +1766,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schutzmassnahmen"
+     "label": "2. Abschnitt: Schutzmassnahmen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1745,11 +1826,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafen"
+     "label": "3. Abschnitt: Strafen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1791,11 +1874,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Schutzmassnahmen und Strafen"
+     "label": "3. Kapitel: Schutzmassnahmen und Strafen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafen"
+     "label": "3. Abschnitt: Strafen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1849,7 +1934,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Ergänzende Bestimmungen des Bundesrates"
+     "label": "5. Kapitel: Ergänzende Bestimmungen des Bundesrates",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [],
@@ -1880,11 +1966,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Übergangsbestimmung zur Änderung vom 19. Juni 2015"
+     "label": "2a. Abschnitt: Übergangsbestimmung zur Änderung vom 19. Juni 2015",
+     "eId": "chap_6/sec_2_a"
     }
    ],
    "marginalie": [],
@@ -1912,7 +2000,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Untersuchung"
+     "label": "2. Kapitel: Untersuchung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [],

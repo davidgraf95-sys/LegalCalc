@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "211.221.36",
   "titel": "Verordnung über die Adoption",
@@ -54,7 +54,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -65,7 +66,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -76,7 +78,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -87,7 +90,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Aufnahme von Kindern zur Adoption"
+     "label": "2. Abschnitt: Aufnahme von Kindern zur Adoption",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -98,7 +102,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Aufnahme von Kindern zur Adoption"
+     "label": "2. Abschnitt: Aufnahme von Kindern zur Adoption",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -123,7 +128,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Aufnahme von Kindern zur Adoption"
+     "label": "2. Abschnitt: Aufnahme von Kindern zur Adoption",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -134,7 +140,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Aufnahme von Kindern zur Adoption"
+     "label": "2. Abschnitt: Aufnahme von Kindern zur Adoption",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -145,7 +152,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Aufnahme von Kindern zur Adoption"
+     "label": "2. Abschnitt: Aufnahme von Kindern zur Adoption",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -156,7 +164,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Aufnahme von Kindern zur Adoption"
+     "label": "2. Abschnitt: Aufnahme von Kindern zur Adoption",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -176,7 +185,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Aufnahme von Kindern zur Adoption"
+     "label": "2. Abschnitt: Aufnahme von Kindern zur Adoption",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -187,7 +197,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Aufnahme von Kindern zur Adoption"
+     "label": "2. Abschnitt: Aufnahme von Kindern zur Adoption",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -212,7 +223,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Adoptionsvermittlung"
+     "label": "3. Abschnitt: Adoptionsvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -223,7 +235,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Adoptionsvermittlung"
+     "label": "3. Abschnitt: Adoptionsvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -234,7 +247,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Adoptionsvermittlung"
+     "label": "3. Abschnitt: Adoptionsvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -245,7 +259,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Adoptionsvermittlung"
+     "label": "3. Abschnitt: Adoptionsvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -256,7 +271,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Adoptionsvermittlung"
+     "label": "3. Abschnitt: Adoptionsvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -267,7 +283,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Adoptionsvermittlung"
+     "label": "3. Abschnitt: Adoptionsvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -278,7 +295,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Adoptionsvermittlung"
+     "label": "3. Abschnitt: Adoptionsvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -289,7 +307,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Adoptionsvermittlung"
+     "label": "3. Abschnitt: Adoptionsvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -300,7 +319,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Adoptionsvermittlung"
+     "label": "3. Abschnitt: Adoptionsvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -311,7 +331,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Adoptionsvermittlung"
+     "label": "3. Abschnitt: Adoptionsvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -322,7 +343,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Adoptionsvermittlung"
+     "label": "3. Abschnitt: Adoptionsvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -333,7 +355,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Adoptionsvermittlung"
+     "label": "3. Abschnitt: Adoptionsvermittlung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -344,7 +367,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Gebühren bei internationalen Adoptionen"
+     "label": "4. Abschnitt: Gebühren bei internationalen Adoptionen",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -370,7 +394,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Gebühren bei internationalen Adoptionen"
+     "label": "4. Abschnitt: Gebühren bei internationalen Adoptionen",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -381,7 +406,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Gebühren bei internationalen Adoptionen"
+     "label": "4. Abschnitt: Gebühren bei internationalen Adoptionen",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -414,7 +440,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Gebühren bei internationalen Adoptionen"
+     "label": "4. Abschnitt: Gebühren bei internationalen Adoptionen",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -425,7 +452,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Schlussbestimmungen"
+     "label": "5. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -436,7 +464,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Schlussbestimmungen"
+     "label": "5. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "814.011",
   "titel": "Verordnung über die Umweltverträglichkeitsprüfung",
@@ -80,11 +80,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gegenstand und Inhalt der Prüfung"
+     "label": "1. Abschnitt: Gegenstand und Inhalt der Prüfung",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -109,11 +111,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gegenstand und Inhalt der Prüfung"
+     "label": "1. Abschnitt: Gegenstand und Inhalt der Prüfung",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -124,11 +128,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gegenstand und Inhalt der Prüfung"
+     "label": "1. Abschnitt: Gegenstand und Inhalt der Prüfung",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -153,11 +159,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gegenstand und Inhalt der Prüfung"
+     "label": "1. Abschnitt: Gegenstand und Inhalt der Prüfung",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -168,11 +176,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahrensgrundsätze"
+     "label": "2. Abschnitt: Verfahrensgrundsätze",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -197,11 +207,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verfahrensgrundsätze"
+     "label": "2. Abschnitt: Verfahrensgrundsätze",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -212,7 +224,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bericht über die Auswirkungen der Anlage auf die Umwelt"
+     "label": "2. Kapitel: Bericht über die Auswirkungen der Anlage auf die Umwelt",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -237,7 +250,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bericht über die Auswirkungen der Anlage auf die Umwelt"
+     "label": "2. Kapitel: Bericht über die Auswirkungen der Anlage auf die Umwelt",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -262,7 +276,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bericht über die Auswirkungen der Anlage auf die Umwelt"
+     "label": "2. Kapitel: Bericht über die Auswirkungen der Anlage auf die Umwelt",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -299,7 +314,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bericht über die Auswirkungen der Anlage auf die Umwelt"
+     "label": "2. Kapitel: Bericht über die Auswirkungen der Anlage auf die Umwelt",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -348,7 +364,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bericht über die Auswirkungen der Anlage auf die Umwelt"
+     "label": "2. Kapitel: Bericht über die Auswirkungen der Anlage auf die Umwelt",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -359,7 +376,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufgaben der Umweltschutzfachstellen"
+     "label": "3. Kapitel: Aufgaben der Umweltschutzfachstellen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -397,7 +415,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufgaben der Umweltschutzfachstellen"
+     "label": "3. Kapitel: Aufgaben der Umweltschutzfachstellen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -434,11 +453,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aufgaben der zuständigen Behörde"
+     "label": "4. Kapitel: Aufgaben der zuständigen Behörde",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vorbereitung der Prüfung"
+     "label": "1. Abschnitt: Vorbereitung der Prüfung",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -475,11 +496,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aufgaben der zuständigen Behörde"
+     "label": "4. Kapitel: Aufgaben der zuständigen Behörde",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vorbereitung der Prüfung"
+     "label": "1. Abschnitt: Vorbereitung der Prüfung",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -490,11 +513,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aufgaben der zuständigen Behörde"
+     "label": "4. Kapitel: Aufgaben der zuständigen Behörde",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vorbereitung der Prüfung"
+     "label": "1. Abschnitt: Vorbereitung der Prüfung",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -505,11 +530,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aufgaben der zuständigen Behörde"
+     "label": "4. Kapitel: Aufgaben der zuständigen Behörde",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Durchführung der Prüfung und Entscheid über die Anlage"
+     "label": "2. Abschnitt: Durchführung der Prüfung und Entscheid über die Anlage",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -559,11 +586,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aufgaben der zuständigen Behörde"
+     "label": "4. Kapitel: Aufgaben der zuständigen Behörde",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Durchführung der Prüfung und Entscheid über die Anlage"
+     "label": "2. Abschnitt: Durchführung der Prüfung und Entscheid über die Anlage",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -574,11 +603,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aufgaben der zuständigen Behörde"
+     "label": "4. Kapitel: Aufgaben der zuständigen Behörde",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Durchführung der Prüfung und Entscheid über die Anlage"
+     "label": "2. Abschnitt: Durchführung der Prüfung und Entscheid über die Anlage",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -589,11 +620,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aufgaben der zuständigen Behörde"
+     "label": "4. Kapitel: Aufgaben der zuständigen Behörde",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Durchführung der Prüfung und Entscheid über die Anlage"
+     "label": "2. Abschnitt: Durchführung der Prüfung und Entscheid über die Anlage",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -618,7 +651,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Koordination mit anderen Bewilligungen und mit Subventionsentscheiden"
+     "label": "5. Kapitel: Koordination mit anderen Bewilligungen und mit Subventionsentscheiden",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -715,7 +749,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Koordination mit anderen Bewilligungen und mit Subventionsentscheiden"
+     "label": "5. Kapitel: Koordination mit anderen Bewilligungen und mit Subventionsentscheiden",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -776,7 +811,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -802,7 +838,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -827,7 +864,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -838,7 +876,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufgaben der Umweltschutzfachstellen"
+     "label": "3. Kapitel: Aufgaben der Umweltschutzfachstellen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -863,7 +902,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufgaben der Umweltschutzfachstellen"
+     "label": "3. Kapitel: Aufgaben der Umweltschutzfachstellen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -900,7 +940,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufgaben der Umweltschutzfachstellen"
+     "label": "3. Kapitel: Aufgaben der Umweltschutzfachstellen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -927,11 +968,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aufgaben der zuständigen Behörde"
+     "label": "4. Kapitel: Aufgaben der zuständigen Behörde",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Durchführung der Prüfung und Entscheid über die Anlage"
+     "label": "2. Abschnitt: Durchführung der Prüfung und Entscheid über die Anlage",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -969,11 +1012,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: UVP im grenzüberschreitenden Rahmen"
+     "label": "3. Abschnitt: UVP im grenzüberschreitenden Rahmen",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": [],
@@ -997,7 +1042,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bericht über die Auswirkungen der Anlage auf die Umwelt"
+     "label": "2. Kapitel: Bericht über die Auswirkungen der Anlage auf die Umwelt",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [

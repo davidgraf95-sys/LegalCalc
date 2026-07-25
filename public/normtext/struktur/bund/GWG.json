@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "955.0",
   "titel": "Bundesgesetz über die Bekämpfung der Geldwäscherei und der Terrorismusfinanzierung",
@@ -88,7 +88,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -131,7 +132,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -567,11 +569,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
+     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -683,11 +687,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
+     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -736,11 +742,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
+     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -751,11 +759,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
+     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -833,11 +843,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
+     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -870,11 +882,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
+     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -904,11 +918,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht"
+     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1134,11 +1150,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht"
+     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1220,11 +1238,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht"
+     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1299,11 +1319,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1470,11 +1492,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [],
@@ -1501,11 +1525,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1538,11 +1564,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1745,11 +1773,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Meldepflicht der Aufsichtsbehörden und der Aufsichtsorganisationen"
+     "label": "2. Abschnitt: Meldepflicht der Aufsichtsbehörden und der Aufsichtsorganisationen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -1915,11 +1945,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 2"
+     "label": "3. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 2",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -1967,11 +1999,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3"
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [
@@ -2125,11 +2159,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3"
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [],
@@ -2156,11 +2192,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3"
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [
@@ -2206,11 +2244,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Meldestelle für Geldwäscherei"
+     "label": "4. Abschnitt: Meldestelle für Geldwäscherei",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [],
@@ -2402,11 +2442,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Selbstregulierungsorganisationen"
+     "label": "5. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -2496,11 +2538,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Selbstregulierungsorganisationen"
+     "label": "5. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -2511,11 +2555,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Selbstregulierungsorganisationen"
+     "label": "5. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -2544,11 +2590,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Selbstregulierungsorganisationen"
+     "label": "5. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -2694,11 +2742,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Selbstregulierungsorganisationen"
+     "label": "5. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -2780,11 +2830,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Amtshilfe"
+     "label": "4. Kapitel: Amtshilfe",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zusammenarbeit inländischer Behörden"
+     "label": "1. Abschnitt: Zusammenarbeit inländischer Behörden",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2929,11 +2981,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Amtshilfe"
+     "label": "4. Kapitel: Amtshilfe",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zusammenarbeit mit ausländischen Behörden"
+     "label": "2. Abschnitt: Zusammenarbeit mit ausländischen Behörden",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2978,11 +3032,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Amtshilfe"
+     "label": "4. Kapitel: Amtshilfe",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zusammenarbeit mit ausländischen Behörden"
+     "label": "2. Abschnitt: Zusammenarbeit mit ausländischen Behörden",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -3011,11 +3067,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Amtshilfe"
+     "label": "4. Kapitel: Amtshilfe",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zusammenarbeit mit ausländischen Behörden"
+     "label": "2. Abschnitt: Zusammenarbeit mit ausländischen Behörden",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -3097,7 +3155,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bearbeitung von Personendaten"
+     "label": "5. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3140,7 +3199,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bearbeitung von Personendaten"
+     "label": "5. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3263,7 +3323,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bearbeitung von Personendaten"
+     "label": "5. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3338,7 +3399,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Strafbestimmungen und Rechtspflege"
+     "label": "6. Kapitel: Strafbestimmungen und Rechtspflege",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -3365,7 +3427,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Strafbestimmungen und Rechtspflege"
+     "label": "6. Kapitel: Strafbestimmungen und Rechtspflege",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -3410,7 +3473,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Strafbestimmungen und Rechtspflege"
+     "label": "6. Kapitel: Strafbestimmungen und Rechtspflege",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -3443,7 +3507,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3496,7 +3561,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3558,7 +3624,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3569,7 +3636,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3589,11 +3657,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht"
+     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -3753,11 +3823,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Herausgabe von Informationen"
+     "label": "3. Abschnitt: Herausgabe von Informationen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [],
@@ -3830,11 +3902,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3"
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [
@@ -3863,11 +3937,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3"
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [],
@@ -3906,11 +3982,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3"
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [],
@@ -3945,11 +4023,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3"
+     "label": "3a. Abschnitt: Aufsicht über die Finanzintermediäre nach Artikel 2 Absatz 3",
+     "eId": "chap_3/sec_3_a"
     }
    ],
    "marginalie": [],
@@ -3976,11 +4056,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3b. Abschnitt: Weiterleitung von Daten über terroristische Aktivitäten"
+     "label": "3b. Abschnitt: Weiterleitung von Daten über terroristische Aktivitäten",
+     "eId": "chap_3/sec_3_b"
     }
    ],
    "marginalie": [],
@@ -4115,11 +4197,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Selbstregulierungsorganisationen"
+     "label": "5. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -4178,11 +4262,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Selbstregulierungsorganisationen"
+     "label": "5. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -4235,11 +4321,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Amtshilfe"
+     "label": "4. Kapitel: Amtshilfe",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zusammenarbeit inländischer Behörden"
+     "label": "1. Abschnitt: Zusammenarbeit inländischer Behörden",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -4357,11 +4445,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Amtshilfe"
+     "label": "4. Kapitel: Amtshilfe",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Zusammenarbeit mit den Aufsichtsorganisationen und den Selbstregulierungsorganisationen"
+     "label": "1a. Abschnitt: Zusammenarbeit mit den Aufsichtsorganisationen und den Selbstregulierungsorganisationen",
+     "eId": "chap_4/sec_1_a"
     }
    ],
    "marginalie": [],
@@ -4393,7 +4483,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -4422,11 +4513,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Amtshilfe"
+     "label": "4. Kapitel: Amtshilfe",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zusammenarbeit mit ausländischen Behörden"
+     "label": "2. Abschnitt: Zusammenarbeit mit ausländischen Behörden",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -4469,7 +4562,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bearbeitung von Personendaten"
+     "label": "5. Kapitel: Bearbeitung von Personendaten",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4514,7 +4608,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Strafbestimmungen und Rechtspflege"
+     "label": "6. Kapitel: Strafbestimmungen und Rechtspflege",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -4541,11 +4636,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre"
+     "label": "1. Abschnitt: Sorgfaltspflichten der Finanzintermediäre",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4574,11 +4671,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Sorgfaltspflichten der Händlerinnen und Händler"
+     "label": "1a. Abschnitt: Sorgfaltspflichten der Händlerinnen und Händler",
+     "eId": "chap_2/sec_1_a"
     }
    ],
    "marginalie": [],
@@ -4635,11 +4734,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht"
+     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4701,11 +4802,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Pflichten"
+     "label": "2. Kapitel: Pflichten",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht"
+     "label": "2. Abschnitt: Pflichten bei Geldwäschereiverdacht",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [

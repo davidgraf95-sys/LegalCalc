@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "831.441.1",
   "titel": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge",
@@ -80,11 +80,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge"
+     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Angemessenheit"
+     "label": "1. Abschnitt: Angemessenheit",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -122,11 +124,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Versicherter Personenkreis und koordinierter Lohn"
+     "label": "1. Abschnitt: Versicherter Personenkreis und koordinierter Lohn",
+     "eId": "chap_1_a/sec_1"
     }
    ],
    "marginalie": [
@@ -168,11 +172,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Versicherter Personenkreis und koordinierter Lohn"
+     "label": "1. Abschnitt: Versicherter Personenkreis und koordinierter Lohn",
+     "eId": "chap_1_a/sec_1"
     }
    ],
    "marginalie": [
@@ -183,11 +189,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Versicherter Personenkreis und koordinierter Lohn"
+     "label": "1. Abschnitt: Versicherter Personenkreis und koordinierter Lohn",
+     "eId": "chap_1_a/sec_1"
     }
    ],
    "marginalie": [
@@ -225,11 +233,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Versicherter Personenkreis und koordinierter Lohn"
+     "label": "1. Abschnitt: Versicherter Personenkreis und koordinierter Lohn",
+     "eId": "chap_1_a/sec_1"
     }
    ],
    "marginalie": [
@@ -254,11 +264,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Versicherter Personenkreis und koordinierter Lohn"
+     "label": "1. Abschnitt: Versicherter Personenkreis und koordinierter Lohn",
+     "eId": "chap_1_a/sec_1"
     }
    ],
    "marginalie": [
@@ -295,11 +307,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anschlusspflicht des Arbeitgebers"
+     "label": "2. Abschnitt: Anschlusspflicht des Arbeitgebers",
+     "eId": "chap_1_a/sec_2"
     }
    ],
    "marginalie": [
@@ -310,11 +324,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anschlusspflicht des Arbeitgebers"
+     "label": "2. Abschnitt: Anschlusspflicht des Arbeitgebers",
+     "eId": "chap_1_a/sec_2"
     }
    ],
    "marginalie": [],
@@ -341,11 +357,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anschlusspflicht des Arbeitgebers"
+     "label": "2. Abschnitt: Anschlusspflicht des Arbeitgebers",
+     "eId": "chap_1_a/sec_2"
     }
    ],
    "marginalie": [
@@ -430,11 +448,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anschlusspflicht des Arbeitgebers"
+     "label": "2. Abschnitt: Anschlusspflicht des Arbeitgebers",
+     "eId": "chap_1_a/sec_2"
     }
    ],
    "marginalie": [
@@ -459,11 +479,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Individuelle Alterskonten und Freizügigkeitsleistungen"
+     "label": "3. Abschnitt: Individuelle Alterskonten und Freizügigkeitsleistungen",
+     "eId": "chap_1_a/sec_3"
     }
    ],
    "marginalie": [
@@ -488,11 +510,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Individuelle Alterskonten und Freizügigkeitsleistungen"
+     "label": "3. Abschnitt: Individuelle Alterskonten und Freizügigkeitsleistungen",
+     "eId": "chap_1_a/sec_3"
     }
    ],
    "marginalie": [
@@ -669,11 +693,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Individuelle Alterskonten und Freizügigkeitsleistungen"
+     "label": "3. Abschnitt: Individuelle Alterskonten und Freizügigkeitsleistungen",
+     "eId": "chap_1_a/sec_3"
     }
    ],
    "marginalie": [
@@ -684,11 +710,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Individuelle Alterskonten und Freizügigkeitsleistungen"
+     "label": "3. Abschnitt: Individuelle Alterskonten und Freizügigkeitsleistungen",
+     "eId": "chap_1_a/sec_3"
     }
    ],
    "marginalie": [
@@ -732,11 +760,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Individuelle Alterskonten und Freizügigkeitsleistungen"
+     "label": "3. Abschnitt: Individuelle Alterskonten und Freizügigkeitsleistungen",
+     "eId": "chap_1_a/sec_3"
     }
    ],
    "marginalie": [
@@ -777,11 +807,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Individuelle Alterskonten und Freizügigkeitsleistungen"
+     "label": "3. Abschnitt: Individuelle Alterskonten und Freizügigkeitsleistungen",
+     "eId": "chap_1_a/sec_3"
     }
    ],
    "marginalie": [
@@ -818,11 +850,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "3b. Abschnitt: Übernahme von Rentnerbeständen und rentnerlastigen Beständen"
+     "label": "3b. Abschnitt: Übernahme von Rentnerbeständen und rentnerlastigen Beständen",
+     "eId": "chap_1_a/sec_3_b"
     }
    ],
    "marginalie": [
@@ -860,11 +894,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Versicherungsleistungen"
+     "label": "4. Abschnitt: Versicherungsleistungen",
+     "eId": "chap_1_a/sec_4"
     }
    ],
    "marginalie": [
@@ -908,11 +944,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Versicherungsleistungen"
+     "label": "4. Abschnitt: Versicherungsleistungen",
+     "eId": "chap_1_a/sec_4"
     }
    ],
    "marginalie": [
@@ -937,11 +975,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Versicherungsleistungen"
+     "label": "4. Abschnitt: Versicherungsleistungen",
+     "eId": "chap_1_a/sec_4"
     }
    ],
    "marginalie": [
@@ -978,11 +1018,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Koordination mit anderen Leistungen und Einkünften"
+     "label": "6. Abschnitt: Koordination mit anderen Leistungen und Einkünften",
+     "eId": "chap_1_a/sec_6"
     }
    ],
    "marginalie": [
@@ -1056,11 +1098,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Koordination mit anderen Leistungen und Einkünften"
+     "label": "6. Abschnitt: Koordination mit anderen Leistungen und Einkünften",
+     "eId": "chap_1_a/sec_6"
     }
    ],
    "marginalie": [
@@ -1189,11 +1233,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Koordination mit anderen Leistungen und Einkünften"
+     "label": "6. Abschnitt: Koordination mit anderen Leistungen und Einkünften",
+     "eId": "chap_1_a/sec_6"
     }
    ],
    "marginalie": [
@@ -1225,11 +1271,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Rückgriff"
+     "label": "7. Abschnitt: Rückgriff",
+     "eId": "chap_1_a/sec_7"
     }
    ],
    "marginalie": [
@@ -1259,7 +1307,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Freiwillige Versicherung"
+     "label": "2. Kapitel: Freiwillige Versicherung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1270,7 +1319,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Freiwillige Versicherung"
+     "label": "2. Kapitel: Freiwillige Versicherung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1281,7 +1331,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Freiwillige Versicherung"
+     "label": "2. Kapitel: Freiwillige Versicherung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1292,7 +1343,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Freiwillige Versicherung"
+     "label": "2. Kapitel: Freiwillige Versicherung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1303,7 +1355,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Freiwillige Versicherung"
+     "label": "2. Kapitel: Freiwillige Versicherung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1314,11 +1367,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Organisation"
+     "label": "3. Kapitel: Organisation",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Oberstes Organ"
+     "label": "1. Abschnitt: Oberstes Organ",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [],
@@ -1342,11 +1397,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Organisation"
+     "label": "3. Kapitel: Organisation",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Revisionsstelle"
+     "label": "2. Abschnitt: Revisionsstelle",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1384,11 +1441,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Organisation"
+     "label": "3. Kapitel: Organisation",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Revisionsstelle"
+     "label": "2. Abschnitt: Revisionsstelle",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1413,11 +1472,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Organisation"
+     "label": "3. Kapitel: Organisation",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Revisionsstelle"
+     "label": "2. Abschnitt: Revisionsstelle",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1454,11 +1515,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Organisation"
+     "label": "3. Kapitel: Organisation",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Experte für berufliche Vorsorge"
+     "label": "3. Abschnitt: Experte für berufliche Vorsorge",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -1494,11 +1557,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Organisation"
+     "label": "3. Kapitel: Organisation",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Experte für berufliche Vorsorge"
+     "label": "3. Abschnitt: Experte für berufliche Vorsorge",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -1525,11 +1590,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Organisation"
+     "label": "3. Kapitel: Organisation",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Experte für berufliche Vorsorge"
+     "label": "3. Abschnitt: Experte für berufliche Vorsorge",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -1552,11 +1619,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Organisation"
+     "label": "3. Kapitel: Organisation",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Experte für berufliche Vorsorge"
+     "label": "3. Abschnitt: Experte für berufliche Vorsorge",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1581,11 +1650,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Organisation"
+     "label": "3. Kapitel: Organisation",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Experte für berufliche Vorsorge"
+     "label": "3. Abschnitt: Experte für berufliche Vorsorge",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1610,11 +1681,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Finanzierung der Vorsorgeeinrichtungen"
+     "label": "1. Abschnitt: Finanzierung der Vorsorgeeinrichtungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1625,11 +1698,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Finanzierung der Vorsorgeeinrichtungen"
+     "label": "1. Abschnitt: Finanzierung der Vorsorgeeinrichtungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1654,11 +1729,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Finanzierung der Vorsorgeeinrichtungen"
+     "label": "1. Abschnitt: Finanzierung der Vorsorgeeinrichtungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1707,11 +1784,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Finanzierung der Vorsorgeeinrichtungen"
+     "label": "1. Abschnitt: Finanzierung der Vorsorgeeinrichtungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -1734,11 +1813,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Finanzierung der Vorsorgeeinrichtungen"
+     "label": "1. Abschnitt: Finanzierung der Vorsorgeeinrichtungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1763,11 +1844,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rechnungswesen und Rechnungslegung"
+     "label": "2. Abschnitt: Rechnungswesen und Rechnungslegung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1872,11 +1955,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rechnungswesen und Rechnungslegung"
+     "label": "2. Abschnitt: Rechnungswesen und Rechnungslegung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1901,11 +1986,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlage des Vermögens"
+     "label": "3. Abschnitt: Anlage des Vermögens",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1942,11 +2029,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlage des Vermögens"
+     "label": "3. Abschnitt: Anlage des Vermögens",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -2051,11 +2140,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlage des Vermögens"
+     "label": "3. Abschnitt: Anlage des Vermögens",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -2066,11 +2157,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlage des Vermögens"
+     "label": "3. Abschnitt: Anlage des Vermögens",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -2081,11 +2174,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlage des Vermögens"
+     "label": "3. Abschnitt: Anlage des Vermögens",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -2210,11 +2305,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlage des Vermögens"
+     "label": "3. Abschnitt: Anlage des Vermögens",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -2239,11 +2336,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlage des Vermögens"
+     "label": "3. Abschnitt: Anlage des Vermögens",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -2304,11 +2403,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlage des Vermögens"
+     "label": "3. Abschnitt: Anlage des Vermögens",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -2369,11 +2470,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlage des Vermögens"
+     "label": "3. Abschnitt: Anlage des Vermögens",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -2422,11 +2525,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlage des Vermögens"
+     "label": "3. Abschnitt: Anlage des Vermögens",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -2499,11 +2604,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlage des Vermögens"
+     "label": "3. Abschnitt: Anlage des Vermögens",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -2540,11 +2647,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlage des Vermögens"
+     "label": "3. Abschnitt: Anlage des Vermögens",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [],
@@ -2567,11 +2676,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Aufhebung und Änderung bisherigen Rechts"
+     "label": "1. Abschnitt: Aufhebung und Änderung bisherigen Rechts",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -2610,11 +2721,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Aufhebung und Änderung bisherigen Rechts"
+     "label": "1. Abschnitt: Aufhebung und Änderung bisherigen Rechts",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [],
@@ -2637,11 +2750,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Inkrafttreten"
+     "label": "2. Abschnitt: Inkrafttreten",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": []
@@ -2650,11 +2765,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Individuelle Alterskonten und Freizügigkeitsleistungen"
+     "label": "3. Abschnitt: Individuelle Alterskonten und Freizügigkeitsleistungen",
+     "eId": "chap_1_a/sec_3"
     }
    ],
    "marginalie": [],
@@ -2685,11 +2802,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Individuelle Alterskonten und Freizügigkeitsleistungen"
+     "label": "3. Abschnitt: Individuelle Alterskonten und Freizügigkeitsleistungen",
+     "eId": "chap_1_a/sec_3"
     }
    ],
    "marginalie": [
@@ -2714,11 +2833,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Individuelle Alterskonten und Freizügigkeitsleistungen"
+     "label": "3. Abschnitt: Individuelle Alterskonten und Freizügigkeitsleistungen",
+     "eId": "chap_1_a/sec_3"
     }
    ],
    "marginalie": [
@@ -2743,11 +2864,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Auflösung von Verträgen"
+     "label": "3a. Abschnitt: Auflösung von Verträgen",
+     "eId": "chap_1_a/sec_3_a"
     }
    ],
    "marginalie": [
@@ -2797,11 +2920,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Auflösung von Verträgen"
+     "label": "3a. Abschnitt: Auflösung von Verträgen",
+     "eId": "chap_1_a/sec_3_a"
     }
    ],
    "marginalie": [
@@ -2812,11 +2937,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "3b. Abschnitt: Übernahme von Rentnerbeständen und rentnerlastigen Beständen"
+     "label": "3b. Abschnitt: Übernahme von Rentnerbeständen und rentnerlastigen Beständen",
+     "eId": "chap_1_a/sec_3_b"
     }
    ],
    "marginalie": [
@@ -2841,11 +2968,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge"
+     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Angemessenheit"
+     "label": "1. Abschnitt: Angemessenheit",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2856,11 +2985,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge"
+     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Angemessenheit"
+     "label": "1. Abschnitt: Angemessenheit",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2871,11 +3002,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge"
+     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kollektivität"
+     "label": "2. Abschnitt: Kollektivität",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2886,11 +3019,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge"
+     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kollektivität"
+     "label": "2. Abschnitt: Kollektivität",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2901,11 +3036,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge"
+     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kollektivität"
+     "label": "2. Abschnitt: Kollektivität",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2930,11 +3067,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge"
+     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Gleichbehandlung"
+     "label": "3. Abschnitt: Gleichbehandlung",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": []
@@ -2943,11 +3082,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge"
+     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Planmässigkeit"
+     "label": "4. Abschnitt: Planmässigkeit",
+     "eId": "chap_1/sec_4"
     }
    ],
    "marginalie": []
@@ -2956,11 +3097,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge"
+     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Versicherungsprinzip"
+     "label": "5. Abschnitt: Versicherungsprinzip",
+     "eId": "chap_1/sec_5"
     }
    ],
    "marginalie": [],
@@ -2990,11 +3133,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge"
+     "label": "1. Kapitel: Grundsätze der beruflichen Vorsorge",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Mindestalter für den Altersrücktritt"
+     "label": "6. Abschnitt: Mindestalter für den Altersrücktritt",
+     "eId": "chap_1/sec_6"
     }
    ],
    "marginalie": [],
@@ -3012,11 +3157,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Versicherter Personenkreis und koordinierter Lohn"
+     "label": "1. Abschnitt: Versicherter Personenkreis und koordinierter Lohn",
+     "eId": "chap_1_a/sec_1"
     }
    ],
    "marginalie": [
@@ -3092,11 +3239,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Versicherter Personenkreis und koordinierter Lohn"
+     "label": "1. Abschnitt: Versicherter Personenkreis und koordinierter Lohn",
+     "eId": "chap_1_a/sec_1"
     }
    ],
    "marginalie": [
@@ -3121,11 +3270,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Versicherungsleistungen"
+     "label": "4. Abschnitt: Versicherungsleistungen",
+     "eId": "chap_1_a/sec_4"
     }
    ],
    "marginalie": [
@@ -3154,11 +3305,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: …"
+     "label": "5. Abschnitt: …",
+     "eId": "chap_1_a/sec_5"
     }
    ],
    "marginalie": [],
@@ -3185,11 +3338,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Koordination mit anderen Leistungen und Einkünften"
+     "label": "6. Abschnitt: Koordination mit anderen Leistungen und Einkünften",
+     "eId": "chap_1_a/sec_6"
     }
    ],
    "marginalie": [
@@ -3286,11 +3441,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Koordination mit anderen Leistungen und Einkünften"
+     "label": "6. Abschnitt: Koordination mit anderen Leistungen und Einkünften",
+     "eId": "chap_1_a/sec_6"
     }
    ],
    "marginalie": [
@@ -3339,11 +3496,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Koordination mit anderen Leistungen und Einkünften"
+     "label": "6. Abschnitt: Koordination mit anderen Leistungen und Einkünften",
+     "eId": "chap_1_a/sec_6"
     }
    ],
    "marginalie": [
@@ -3392,11 +3551,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Rückgriff"
+     "label": "7. Abschnitt: Rückgriff",
+     "eId": "chap_1_a/sec_7"
     }
    ],
    "marginalie": [
@@ -3407,11 +3568,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Rückgriff"
+     "label": "7. Abschnitt: Rückgriff",
+     "eId": "chap_1_a/sec_7"
     }
    ],
    "marginalie": [
@@ -3436,11 +3599,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Rückgriff"
+     "label": "7. Abschnitt: Rückgriff",
+     "eId": "chap_1_a/sec_7"
     }
    ],
    "marginalie": [
@@ -3477,11 +3642,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Rückgriff"
+     "label": "7. Abschnitt: Rückgriff",
+     "eId": "chap_1_a/sec_7"
     }
    ],
    "marginalie": [
@@ -3507,11 +3674,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Rückgriff"
+     "label": "7. Abschnitt: Rückgriff",
+     "eId": "chap_1_a/sec_7"
     }
    ],
    "marginalie": [
@@ -3549,11 +3718,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Rückgriff"
+     "label": "7. Abschnitt: Rückgriff",
+     "eId": "chap_1_a/sec_7"
     }
    ],
    "marginalie": [
@@ -3564,11 +3735,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Verfahren bei Teil- oder Gesamtliquidation"
+     "label": "8. Abschnitt: Verfahren bei Teil- oder Gesamtliquidation",
+     "eId": "chap_1_a/sec_8"
     }
    ],
    "marginalie": [
@@ -3662,11 +3835,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Verfahren bei Teil- oder Gesamtliquidation"
+     "label": "8. Abschnitt: Verfahren bei Teil- oder Gesamtliquidation",
+     "eId": "chap_1_a/sec_8"
     }
    ],
    "marginalie": [
@@ -3703,11 +3878,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Aufbewahrung von Vorsorgeunterlagen"
+     "label": "9. Abschnitt: Aufbewahrung von Vorsorgeunterlagen",
+     "eId": "chap_1_a/sec_9"
     }
    ],
    "marginalie": [
@@ -3773,11 +3950,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Aufbewahrung von Vorsorgeunterlagen"
+     "label": "9. Abschnitt: Aufbewahrung von Vorsorgeunterlagen",
+     "eId": "chap_1_a/sec_9"
     }
    ],
    "marginalie": [
@@ -3788,11 +3967,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Aufbewahrung von Vorsorgeunterlagen"
+     "label": "9. Abschnitt: Aufbewahrung von Vorsorgeunterlagen",
+     "eId": "chap_1_a/sec_9"
     }
    ],
    "marginalie": [
@@ -3803,11 +3984,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Organisation"
+     "label": "3. Kapitel: Organisation",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Revisionsstelle"
+     "label": "2. Abschnitt: Revisionsstelle",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3868,11 +4051,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer"
+     "label": "1a. Kapitel: Obligatorische Versicherung der Arbeitnehmer",
+     "eId": "chap_1_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Versicherter Personenkreis und koordinierter Lohn"
+     "label": "1. Abschnitt: Versicherter Personenkreis und koordinierter Lohn",
+     "eId": "chap_1_a/sec_1"
     }
    ],
    "marginalie": [
@@ -3913,11 +4098,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Organisation"
+     "label": "3. Kapitel: Organisation",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Experte für berufliche Vorsorge"
+     "label": "3. Abschnitt: Experte für berufliche Vorsorge",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -3954,11 +4141,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Finanzierung der Vorsorgeeinrichtungen"
+     "label": "1. Abschnitt: Finanzierung der Vorsorgeeinrichtungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3983,11 +4172,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Finanzierung der Vorsorgeeinrichtungen"
+     "label": "1. Abschnitt: Finanzierung der Vorsorgeeinrichtungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -4012,11 +4203,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Finanzierung der Vorsorgeeinrichtungen"
+     "label": "1. Abschnitt: Finanzierung der Vorsorgeeinrichtungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -4043,11 +4236,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rechnungswesen und Rechnungslegung"
+     "label": "2. Abschnitt: Rechnungswesen und Rechnungslegung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -4120,11 +4315,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Transparenz"
+     "label": "2a. Abschnitt: Transparenz",
+     "eId": "chap_4/sec_2_a"
     }
    ],
    "marginalie": [
@@ -4162,11 +4359,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Transparenz"
+     "label": "2a. Abschnitt: Transparenz",
+     "eId": "chap_4/sec_2_a"
     }
    ],
    "marginalie": [
@@ -4191,11 +4390,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Transparenz"
+     "label": "2a. Abschnitt: Transparenz",
+     "eId": "chap_4/sec_2_a"
     }
    ],
    "marginalie": [],
@@ -4218,11 +4419,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Transparenz"
+     "label": "2a. Abschnitt: Transparenz",
+     "eId": "chap_4/sec_2_a"
     }
    ],
    "marginalie": [
@@ -4251,11 +4454,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Integrität und Loyalität der Verantwortlichen"
+     "label": "2b. Abschnitt: Integrität und Loyalität der Verantwortlichen",
+     "eId": "chap_4/sec_2_b"
     }
    ],
    "marginalie": [
@@ -4398,11 +4603,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Integrität und Loyalität der Verantwortlichen"
+     "label": "2b. Abschnitt: Integrität und Loyalität der Verantwortlichen",
+     "eId": "chap_4/sec_2_b"
     }
    ],
    "marginalie": [
@@ -4427,11 +4634,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Integrität und Loyalität der Verantwortlichen"
+     "label": "2b. Abschnitt: Integrität und Loyalität der Verantwortlichen",
+     "eId": "chap_4/sec_2_b"
     }
    ],
    "marginalie": [
@@ -4442,11 +4651,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Integrität und Loyalität der Verantwortlichen"
+     "label": "2b. Abschnitt: Integrität und Loyalität der Verantwortlichen",
+     "eId": "chap_4/sec_2_b"
     }
    ],
    "marginalie": [
@@ -4457,11 +4668,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Integrität und Loyalität der Verantwortlichen"
+     "label": "2b. Abschnitt: Integrität und Loyalität der Verantwortlichen",
+     "eId": "chap_4/sec_2_b"
     }
    ],
    "marginalie": [
@@ -4472,11 +4685,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Integrität und Loyalität der Verantwortlichen"
+     "label": "2b. Abschnitt: Integrität und Loyalität der Verantwortlichen",
+     "eId": "chap_4/sec_2_b"
     }
    ],
    "marginalie": [
@@ -4487,11 +4702,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Integrität und Loyalität der Verantwortlichen"
+     "label": "2b. Abschnitt: Integrität und Loyalität der Verantwortlichen",
+     "eId": "chap_4/sec_2_b"
     }
    ],
    "marginalie": [
@@ -4502,11 +4719,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlage des Vermögens"
+     "label": "3. Abschnitt: Anlage des Vermögens",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -4543,11 +4762,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlage des Vermögens"
+     "label": "3. Abschnitt: Anlage des Vermögens",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -4572,11 +4793,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlage des Vermögens"
+     "label": "3. Abschnitt: Anlage des Vermögens",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -4601,11 +4824,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlage des Vermögens"
+     "label": "3. Abschnitt: Anlage des Vermögens",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -4654,11 +4879,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlage des Vermögens"
+     "label": "3. Abschnitt: Anlage des Vermögens",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -4695,11 +4922,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Finanzierung"
+     "label": "4. Kapitel: Finanzierung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anlage des Vermögens"
+     "label": "3. Abschnitt: Anlage des Vermögens",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -4736,7 +4965,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Einkauf, versicherbarer Lohn und versicherbares Einkommen"
+     "label": "5. Kapitel: Einkauf, versicherbarer Lohn und versicherbares Einkommen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4802,7 +5032,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Einkauf, versicherbarer Lohn und versicherbares Einkommen"
+     "label": "5. Kapitel: Einkauf, versicherbarer Lohn und versicherbares Einkommen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4827,7 +5058,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Einkauf, versicherbarer Lohn und versicherbares Einkommen"
+     "label": "5. Kapitel: Einkauf, versicherbarer Lohn und versicherbares Einkommen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4838,7 +5070,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Einkauf, versicherbarer Lohn und versicherbares Einkommen"
+     "label": "5. Kapitel: Einkauf, versicherbarer Lohn und versicherbares Einkommen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4849,7 +5082,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4911,7 +5145,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4936,11 +5171,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Aufhebung und Änderung bisherigen Rechts"
+     "label": "1. Abschnitt: Aufhebung und Änderung bisherigen Rechts",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -5030,11 +5267,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Ausführungsbestimmungen zu Buchstabe e der Übergangsbestimmungen der 1. BVG-Revision"
+     "label": "1a. Abschnitt: Ausführungsbestimmungen zu Buchstabe e der Übergangsbestimmungen der 1. BVG-Revision",
+     "eId": "chap_7/sec_1_a"
     }
    ],
    "marginalie": [],
@@ -5062,11 +5301,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1b. Abschnitt: Übergangsbestimmungen der Ausführungsbestimmungen von Buchstabe e der Übergangsbestimmungen der 1. BVG-Revision"
+     "label": "1b. Abschnitt: Übergangsbestimmungen der Ausführungsbestimmungen von Buchstabe e der Übergangsbestimmungen der 1. BVG-Revision",
+     "eId": "chap_7/sec_1_b"
     }
    ],
    "marginalie": [
@@ -5096,11 +5337,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1b. Abschnitt: Übergangsbestimmungen der Ausführungsbestimmungen von Buchstabe e der Übergangsbestimmungen der 1. BVG-Revision"
+     "label": "1b. Abschnitt: Übergangsbestimmungen der Ausführungsbestimmungen von Buchstabe e der Übergangsbestimmungen der 1. BVG-Revision",
+     "eId": "chap_7/sec_1_b"
     }
    ],
    "marginalie": [
@@ -5111,11 +5354,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1c. Abschnitt: Ausführungsbestimmung zu Buchstabe a Buchstaben a–d der Übergangsbestimmungen der Änderung vom 17. Dezember 2021 des AHVG"
+     "label": "1c. Abschnitt: Ausführungsbestimmung zu Buchstabe a Buchstaben a–d der Übergangsbestimmungen der Änderung vom 17. Dezember 2021 des AHVG",
+     "eId": "chap_7/sec_1_c"
     }
    ],
    "marginalie": [],

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "822.115",
   "titel": "Verordnung 5 zum Arbeitsgesetz",
@@ -41,7 +41,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -52,7 +53,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -63,7 +65,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -88,7 +91,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Besondere Tätigkeiten"
+     "label": "2. Abschnitt: Besondere Tätigkeiten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -113,7 +117,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Besondere Tätigkeiten"
+     "label": "2. Abschnitt: Besondere Tätigkeiten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -150,7 +155,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Besondere Tätigkeiten"
+     "label": "2. Abschnitt: Besondere Tätigkeiten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -161,7 +167,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Besondere Tätigkeiten"
+     "label": "2. Abschnitt: Besondere Tätigkeiten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -172,7 +179,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Besondere Tätigkeiten"
+     "label": "2. Abschnitt: Besondere Tätigkeiten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -210,7 +218,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Beschäftigung schulentlassener Jugendlicher unter 15 Jahren"
+     "label": "3. Abschnitt: Beschäftigung schulentlassener Jugendlicher unter 15 Jahren",
+     "eId": "sec_3"
     }
    ],
    "marginalie": []
@@ -219,7 +228,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Arbeits- und Ruhezeit"
+     "label": "4. Abschnitt: Arbeits- und Ruhezeit",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -230,7 +240,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Arbeits- und Ruhezeit"
+     "label": "4. Abschnitt: Arbeits- und Ruhezeit",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -241,7 +252,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Arbeits- und Ruhezeit"
+     "label": "4. Abschnitt: Arbeits- und Ruhezeit",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -252,7 +264,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Arbeits- und Ruhezeit"
+     "label": "4. Abschnitt: Arbeits- und Ruhezeit",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -263,7 +276,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Arbeits- und Ruhezeit"
+     "label": "4. Abschnitt: Arbeits- und Ruhezeit",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -274,7 +288,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Arbeits- und Ruhezeit"
+     "label": "4. Abschnitt: Arbeits- und Ruhezeit",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -299,7 +314,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Arbeits- und Ruhezeit"
+     "label": "4. Abschnitt: Arbeits- und Ruhezeit",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -310,7 +326,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Arbeits- und Ruhezeit"
+     "label": "4. Abschnitt: Arbeits- und Ruhezeit",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -321,7 +338,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Ärztliches Zeugnis"
+     "label": "5. Abschnitt: Ärztliches Zeugnis",
+     "eId": "sec_5"
     }
    ],
    "marginalie": []
@@ -330,7 +348,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Pflicht des Arbeitgebers zur Information und Anleitung"
+     "label": "6. Abschnitt: Pflicht des Arbeitgebers zur Information und Anleitung",
+     "eId": "sec_6"
     }
    ],
    "marginalie": []
@@ -339,7 +358,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Aufgaben und Organisation der Behörden"
+     "label": "7. Abschnitt: Aufgaben und Organisation der Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -350,7 +370,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Aufgaben und Organisation der Behörden"
+     "label": "7. Abschnitt: Aufgaben und Organisation der Behörden",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -375,7 +396,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Schlussbestimmungen"
+     "label": "8. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -414,7 +436,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Schlussbestimmungen"
+     "label": "8. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -425,7 +448,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Schlussbestimmungen"
+     "label": "8. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [],
@@ -452,7 +476,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Besondere Tätigkeiten"
+     "label": "2. Abschnitt: Besondere Tätigkeiten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -501,7 +526,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Besondere Tätigkeiten"
+     "label": "2. Abschnitt: Besondere Tätigkeiten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [

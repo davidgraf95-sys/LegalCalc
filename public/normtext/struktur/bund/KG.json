@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "251",
   "titel": "Bundesgesetz über Kartelle und andere Wettbewerbsbeschränkungen",
@@ -92,7 +92,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -103,7 +104,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -136,7 +138,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -182,7 +185,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -231,11 +235,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Materiellrechtliche Bestimmungen"
+     "label": "2. Kapitel: Materiellrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Unzulässige Wettbewerbsbeschränkungen"
+     "label": "1. Abschnitt: Unzulässige Wettbewerbsbeschränkungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -268,11 +274,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Materiellrechtliche Bestimmungen"
+     "label": "2. Kapitel: Materiellrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Unzulässige Wettbewerbsbeschränkungen"
+     "label": "1. Abschnitt: Unzulässige Wettbewerbsbeschränkungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -305,11 +313,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Materiellrechtliche Bestimmungen"
+     "label": "2. Kapitel: Materiellrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Unzulässige Wettbewerbsbeschränkungen"
+     "label": "1. Abschnitt: Unzulässige Wettbewerbsbeschränkungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -370,11 +380,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Materiellrechtliche Bestimmungen"
+     "label": "2. Kapitel: Materiellrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Unzulässige Wettbewerbsbeschränkungen"
+     "label": "1. Abschnitt: Unzulässige Wettbewerbsbeschränkungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -385,11 +397,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Materiellrechtliche Bestimmungen"
+     "label": "2. Kapitel: Materiellrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Unternehmenszusammenschlüsse"
+     "label": "2. Abschnitt: Unternehmenszusammenschlüsse",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -455,11 +469,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Materiellrechtliche Bestimmungen"
+     "label": "2. Kapitel: Materiellrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Unternehmenszusammenschlüsse"
+     "label": "2. Abschnitt: Unternehmenszusammenschlüsse",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -501,11 +517,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Materiellrechtliche Bestimmungen"
+     "label": "2. Kapitel: Materiellrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Unternehmenszusammenschlüsse"
+     "label": "2. Abschnitt: Unternehmenszusammenschlüsse",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -516,7 +534,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zivilrechtliches Verfahren"
+     "label": "3. Kapitel: Zivilrechtliches Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -542,7 +561,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zivilrechtliches Verfahren"
+     "label": "3. Kapitel: Zivilrechtliches Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -553,7 +573,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zivilrechtliches Verfahren"
+     "label": "3. Kapitel: Zivilrechtliches Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -580,7 +601,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zivilrechtliches Verfahren"
+     "label": "3. Kapitel: Zivilrechtliches Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -591,11 +613,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Wettbewerbsbehörden"
+     "label": "1. Abschnitt: Wettbewerbsbehörden",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -648,11 +672,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Wettbewerbsbehörden"
+     "label": "1. Abschnitt: Wettbewerbsbehörden",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -677,11 +703,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Wettbewerbsbehörden"
+     "label": "1. Abschnitt: Wettbewerbsbehörden",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -692,11 +720,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Wettbewerbsbehörden"
+     "label": "1. Abschnitt: Wettbewerbsbehörden",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -707,11 +737,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Wettbewerbsbehörden"
+     "label": "1. Abschnitt: Wettbewerbsbehörden",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -737,11 +769,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Wettbewerbsbehörden"
+     "label": "1. Abschnitt: Wettbewerbsbehörden",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -752,11 +786,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Wettbewerbsbehörden"
+     "label": "1. Abschnitt: Wettbewerbsbehörden",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -767,11 +803,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Wettbewerbsbehörden"
+     "label": "1. Abschnitt: Wettbewerbsbehörden",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -782,11 +820,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Untersuchung von Wettbewerbsbeschränkungen"
+     "label": "2. Abschnitt: Untersuchung von Wettbewerbsbeschränkungen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -797,11 +837,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Untersuchung von Wettbewerbsbeschränkungen"
+     "label": "2. Abschnitt: Untersuchung von Wettbewerbsbeschränkungen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -834,11 +876,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Untersuchung von Wettbewerbsbeschränkungen"
+     "label": "2. Abschnitt: Untersuchung von Wettbewerbsbeschränkungen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -849,11 +893,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Untersuchung von Wettbewerbsbeschränkungen"
+     "label": "2. Abschnitt: Untersuchung von Wettbewerbsbeschränkungen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -864,11 +910,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Untersuchung von Wettbewerbsbeschränkungen"
+     "label": "2. Abschnitt: Untersuchung von Wettbewerbsbeschränkungen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -879,11 +927,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Untersuchung von Wettbewerbsbeschränkungen"
+     "label": "2. Abschnitt: Untersuchung von Wettbewerbsbeschränkungen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -936,11 +986,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Prüfung von Unternehmenszusammenschlüssen"
+     "label": "3. Abschnitt: Prüfung von Unternehmenszusammenschlüssen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -951,11 +1003,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Prüfung von Unternehmenszusammenschlüssen"
+     "label": "3. Abschnitt: Prüfung von Unternehmenszusammenschlüssen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -966,11 +1020,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Prüfung von Unternehmenszusammenschlüssen"
+     "label": "3. Abschnitt: Prüfung von Unternehmenszusammenschlüssen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -981,11 +1037,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Prüfung von Unternehmenszusammenschlüssen"
+     "label": "3. Abschnitt: Prüfung von Unternehmenszusammenschlüssen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -996,11 +1054,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Prüfung von Unternehmenszusammenschlüssen"
+     "label": "3. Abschnitt: Prüfung von Unternehmenszusammenschlüssen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1053,11 +1113,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Prüfung von Unternehmenszusammenschlüssen"
+     "label": "3. Abschnitt: Prüfung von Unternehmenszusammenschlüssen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1068,11 +1130,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Prüfung von Unternehmenszusammenschlüssen"
+     "label": "3. Abschnitt: Prüfung von Unternehmenszusammenschlüssen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1083,11 +1147,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Verfahren und Rechtsschutz"
+     "label": "4. Abschnitt: Verfahren und Rechtsschutz",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1114,11 +1180,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Verfahren und Rechtsschutz"
+     "label": "4. Abschnitt: Verfahren und Rechtsschutz",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1162,11 +1230,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Verfahren und Rechtsschutz"
+     "label": "4. Abschnitt: Verfahren und Rechtsschutz",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1177,11 +1247,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Verfahren und Rechtsschutz"
+     "label": "4. Abschnitt: Verfahren und Rechtsschutz",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1240,11 +1312,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Verfahren und Rechtsschutz"
+     "label": "4. Abschnitt: Verfahren und Rechtsschutz",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1270,11 +1344,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Verfahren und Rechtsschutz"
+     "label": "4. Abschnitt: Verfahren und Rechtsschutz",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [],
@@ -1305,11 +1381,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Übrige Aufgaben und Befugnisse der Wettbewerbsbehörden"
+     "label": "5. Abschnitt: Übrige Aufgaben und Befugnisse der Wettbewerbsbehörden",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -1320,11 +1398,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Übrige Aufgaben und Befugnisse der Wettbewerbsbehörden"
+     "label": "5. Abschnitt: Übrige Aufgaben und Befugnisse der Wettbewerbsbehörden",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -1335,11 +1415,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Übrige Aufgaben und Befugnisse der Wettbewerbsbehörden"
+     "label": "5. Abschnitt: Übrige Aufgaben und Befugnisse der Wettbewerbsbehörden",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -1372,11 +1454,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Übrige Aufgaben und Befugnisse der Wettbewerbsbehörden"
+     "label": "5. Abschnitt: Übrige Aufgaben und Befugnisse der Wettbewerbsbehörden",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -1387,11 +1471,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Übrige Aufgaben und Befugnisse der Wettbewerbsbehörden"
+     "label": "5. Abschnitt: Übrige Aufgaben und Befugnisse der Wettbewerbsbehörden",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -1402,11 +1488,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Verwaltungssanktionen"
+     "label": "6. Abschnitt: Verwaltungssanktionen",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -1439,11 +1527,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Verwaltungssanktionen"
+     "label": "6. Abschnitt: Verwaltungssanktionen",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -1454,11 +1544,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Verwaltungssanktionen"
+     "label": "6. Abschnitt: Verwaltungssanktionen",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -1469,11 +1561,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Verwaltungssanktionen"
+     "label": "6. Abschnitt: Verwaltungssanktionen",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -1526,7 +1620,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Strafsanktionen"
+     "label": "5. Kapitel: Strafsanktionen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1537,7 +1632,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Strafsanktionen"
+     "label": "5. Kapitel: Strafsanktionen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1548,7 +1644,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Strafsanktionen"
+     "label": "5. Kapitel: Strafsanktionen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1577,7 +1674,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Strafsanktionen"
+     "label": "5. Kapitel: Strafsanktionen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1603,7 +1701,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ausführung internationaler Abkommen"
+     "label": "6. Kapitel: Ausführung internationaler Abkommen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1614,7 +1713,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Ausführung internationaler Abkommen"
+     "label": "6. Kapitel: Ausführung internationaler Abkommen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1625,7 +1725,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -1636,7 +1737,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -1666,7 +1768,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -1695,7 +1798,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Schlussbestimmungen"
+     "label": "7. Kapitel: Schlussbestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -1706,7 +1810,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zivilrechtliches Verfahren"
+     "label": "3. Kapitel: Zivilrechtliches Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -1733,11 +1838,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Verfahren und Rechtsschutz"
+     "label": "4. Abschnitt: Verfahren und Rechtsschutz",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1783,11 +1890,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Verfahren und Rechtsschutz"
+     "label": "4. Abschnitt: Verfahren und Rechtsschutz",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1816,11 +1925,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Verwaltungssanktionen"
+     "label": "6. Abschnitt: Verwaltungssanktionen",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [
@@ -1877,11 +1988,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren"
+     "label": "4. Kapitel: Verwaltungsrechtliches Verfahren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Gebühren"
+     "label": "7. Abschnitt: Gebühren",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [],
@@ -1913,7 +2026,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Evaluation"
+     "label": "6a. Kapitel: Evaluation",
+     "eId": "chap_6_a"
     }
    ],
    "marginalie": [],

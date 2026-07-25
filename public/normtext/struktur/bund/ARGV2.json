@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "822.112",
   "titel": "Verordnung 2 zum Arbeitsgesetz",
@@ -42,7 +42,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Gegenstand und Begriffe"
+     "label": "1. Abschnitt: Gegenstand und Begriffe",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -53,7 +54,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Gegenstand und Begriffe"
+     "label": "1. Abschnitt: Gegenstand und Begriffe",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -79,7 +81,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Sonderbestimmungen"
+     "label": "2. Abschnitt: Sonderbestimmungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -90,7 +93,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Sonderbestimmungen"
+     "label": "2. Abschnitt: Sonderbestimmungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -101,7 +105,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Sonderbestimmungen"
+     "label": "2. Abschnitt: Sonderbestimmungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -112,7 +117,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Sonderbestimmungen"
+     "label": "2. Abschnitt: Sonderbestimmungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -123,7 +129,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Sonderbestimmungen"
+     "label": "2. Abschnitt: Sonderbestimmungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -148,7 +155,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Sonderbestimmungen"
+     "label": "2. Abschnitt: Sonderbestimmungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -173,7 +181,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Sonderbestimmungen"
+     "label": "2. Abschnitt: Sonderbestimmungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -184,7 +193,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Sonderbestimmungen"
+     "label": "2. Abschnitt: Sonderbestimmungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -209,7 +219,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Sonderbestimmungen"
+     "label": "2. Abschnitt: Sonderbestimmungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -220,7 +231,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Sonderbestimmungen"
+     "label": "2. Abschnitt: Sonderbestimmungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -273,7 +285,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Sonderbestimmungen"
+     "label": "2. Abschnitt: Sonderbestimmungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -284,7 +297,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Sonderbestimmungen"
+     "label": "2. Abschnitt: Sonderbestimmungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -321,7 +335,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -346,7 +361,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -371,7 +387,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -382,7 +399,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -407,7 +425,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -418,7 +437,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -443,7 +463,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -468,7 +489,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -493,7 +515,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -530,7 +553,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -584,7 +608,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -645,7 +670,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -718,7 +744,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -743,7 +770,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -754,7 +782,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -765,7 +794,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -790,7 +820,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -827,7 +858,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -852,7 +884,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -863,7 +896,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -888,7 +922,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -925,7 +960,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -936,7 +972,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -947,7 +984,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -972,7 +1010,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -983,7 +1022,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1008,7 +1048,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1033,7 +1074,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1058,7 +1100,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1083,7 +1126,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1094,7 +1138,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1119,7 +1164,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1130,7 +1176,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1155,7 +1202,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1193,7 +1241,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1204,7 +1253,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1215,7 +1265,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1240,7 +1291,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1265,7 +1317,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Schlussbestimmungen"
+     "label": "4. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1291,7 +1344,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Schlussbestimmungen"
+     "label": "4. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [],
@@ -1314,7 +1368,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Schlussbestimmungen"
+     "label": "4. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1325,7 +1380,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1350,7 +1406,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1375,7 +1432,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1413,7 +1471,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1438,7 +1497,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1463,7 +1523,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1492,7 +1553,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1541,7 +1603,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1570,7 +1633,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1608,7 +1672,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1633,7 +1698,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1671,7 +1737,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1722,7 +1789,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [],
@@ -1749,7 +1817,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1787,7 +1856,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1807,7 +1877,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1832,7 +1903,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer"
+     "label": "3. Abschnitt: Unterstellte Betriebsarten und Arbeitnehmer",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1857,7 +1929,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Sonderbestimmungen"
+     "label": "2. Abschnitt: Sonderbestimmungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1882,7 +1955,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Sonderbestimmungen"
+     "label": "2. Abschnitt: Sonderbestimmungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [

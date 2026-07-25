@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "831.201",
   "titel": "Verordnung über die Invalidenversicherung",
@@ -79,7 +79,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen und die Beiträge"
+     "label": "Erster Abschnitt: Die versicherten Personen und die Beiträge",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -118,11 +119,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -160,11 +163,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -189,11 +194,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [],
@@ -216,11 +223,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -257,11 +266,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -346,11 +357,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -375,11 +388,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "C. …"
+     "label": "C. …",
+     "eId": "chap_2/lvl_C"
     }
    ],
    "marginalie": [],
@@ -402,11 +417,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilfsmittel"
+     "label": "D. Die Hilfsmittel",
+     "eId": "chap_2/lvl_D"
     }
    ],
    "marginalie": [
@@ -515,11 +532,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -544,11 +563,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -597,11 +618,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -626,11 +649,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [],
@@ -653,11 +678,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -778,11 +805,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -843,11 +872,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "F. Verschiedene Bestimmungen"
+     "label": "F. Verschiedene Bestimmungen",
+     "eId": "chap_2/lvl_F"
     }
    ],
    "marginalie": [],
@@ -870,11 +901,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "G. Wahlrecht, Zusammenarbeit und Tarife"
+     "label": "G. Wahlrecht, Zusammenarbeit und Tarife",
+     "eId": "chap_2/lvl_G"
     }
    ],
    "marginalie": [
@@ -936,15 +969,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Bemessung des Invaliditätsgrades"
+     "label": "I. Bemessung des Invaliditätsgrades",
+     "eId": "chap_3/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -993,15 +1029,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Bemessung des Invaliditätsgrades"
+     "label": "I. Bemessung des Invaliditätsgrades",
+     "eId": "chap_3/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -1026,15 +1065,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Bemessung des Invaliditätsgrades"
+     "label": "I. Bemessung des Invaliditätsgrades",
+     "eId": "chap_3/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -1083,15 +1125,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Verschiedene Bestimmungen"
+     "label": "II. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -1140,15 +1185,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Verschiedene Bestimmungen"
+     "label": "II. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_A/lvl_II"
     }
    ],
    "marginalie": [],
@@ -1175,15 +1223,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "III. Übergangsleistung"
+     "label": "III. Übergangsleistung",
+     "eId": "chap_3/lvl_A/lvl_III"
     }
    ],
    "marginalie": [
@@ -1221,15 +1272,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "III. Übergangsleistung"
+     "label": "III. Übergangsleistung",
+     "eId": "chap_3/lvl_A/lvl_III"
     }
    ],
    "marginalie": [
@@ -1254,11 +1308,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -1307,11 +1363,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [],
@@ -1334,11 +1392,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "C. Die ausserordentlichen Renten"
+     "label": "C. Die ausserordentlichen Renten",
+     "eId": "chap_3/lvl_C"
     }
    ],
    "marginalie": [],
@@ -1374,11 +1434,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilflosenentschädigung"
+     "label": "D. Die Hilflosenentschädigung",
+     "eId": "chap_3/lvl_D"
     }
    ],
    "marginalie": [
@@ -1439,11 +1501,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilflosenentschädigung"
+     "label": "D. Die Hilflosenentschädigung",
+     "eId": "chap_3/lvl_D"
     }
    ],
    "marginalie": [
@@ -1504,11 +1568,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilflosenentschädigung"
+     "label": "D. Die Hilflosenentschädigung",
+     "eId": "chap_3/lvl_D"
     }
    ],
    "marginalie": [
@@ -1533,11 +1599,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilflosenentschädigung"
+     "label": "D. Die Hilflosenentschädigung",
+     "eId": "chap_3/lvl_D"
     }
    ],
    "marginalie": [
@@ -1598,11 +1666,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilflosenentschädigung"
+     "label": "D. Die Hilflosenentschädigung",
+     "eId": "chap_3/lvl_D"
     }
    ],
    "marginalie": [
@@ -1627,15 +1697,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "A. Die IV‑Stellen"
+     "label": "A. Die IV‑Stellen",
+     "eId": "chap_4/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Zuständigkeit"
+     "label": "I. Zuständigkeit",
+     "eId": "chap_4/lvl_A/lvl_I"
     }
    ],
    "marginalie": [],
@@ -1719,15 +1792,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "A. Die IV‑Stellen"
+     "label": "A. Die IV‑Stellen",
+     "eId": "chap_4/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Aufgaben"
+     "label": "II. Aufgaben",
+     "eId": "chap_4/lvl_A/lvl_II"
     }
    ],
    "marginalie": [],
@@ -1918,15 +1994,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "A. Die IV‑Stellen"
+     "label": "A. Die IV‑Stellen",
+     "eId": "chap_4/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "III. Finanzielles"
+     "label": "III. Finanzielles",
+     "eId": "chap_4/lvl_A/lvl_III"
     }
    ],
    "marginalie": []
@@ -1935,15 +2014,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "A. Die IV‑Stellen"
+     "label": "A. Die IV‑Stellen",
+     "eId": "chap_4/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. IV-Stelle für Versicherte im Ausland"
+     "label": "IV. IV-Stelle für Versicherte im Ausland",
+     "eId": "chap_4/lvl_A/lvl_IV"
     }
    ],
    "marginalie": []
@@ -1952,11 +2034,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Ausgleichskassen"
+     "label": "B. Die Ausgleichskassen",
+     "eId": "chap_4/lvl_B"
     }
    ],
    "marginalie": [
@@ -2007,11 +2091,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Ausgleichskassen"
+     "label": "B. Die Ausgleichskassen",
+     "eId": "chap_4/lvl_B"
     }
    ],
    "marginalie": [],
@@ -2034,11 +2120,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "B. Die Ausgleichskassen"
+     "label": "B. Die Ausgleichskassen",
+     "eId": "chap_4/lvl_B"
     }
    ],
    "marginalie": [
@@ -2049,11 +2137,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "C. Regionale ärztliche Dienste"
+     "label": "C. Regionale ärztliche Dienste",
+     "eId": "chap_4/lvl_C"
     }
    ],
    "marginalie": [
@@ -2103,11 +2193,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "C. Regionale ärztliche Dienste"
+     "label": "C. Regionale ärztliche Dienste",
+     "eId": "chap_4/lvl_C"
     }
    ],
    "marginalie": [
@@ -2132,11 +2224,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "C. Regionale ärztliche Dienste"
+     "label": "C. Regionale ärztliche Dienste",
+     "eId": "chap_4/lvl_C"
     }
    ],
    "marginalie": [
@@ -2173,11 +2267,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Aufsicht"
+     "label": "D. Aufsicht",
+     "eId": "chap_4/lvl_D"
     }
    ],
    "marginalie": [
@@ -2215,11 +2311,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Aufsicht"
+     "label": "D. Aufsicht",
+     "eId": "chap_4/lvl_D"
     }
    ],
    "marginalie": [
@@ -2244,11 +2342,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Aufsicht"
+     "label": "D. Aufsicht",
+     "eId": "chap_4/lvl_D"
     }
    ],
    "marginalie": [
@@ -2285,11 +2385,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Aufsicht"
+     "label": "D. Aufsicht",
+     "eId": "chap_4/lvl_D"
     }
    ],
    "marginalie": [
@@ -2338,11 +2440,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Aufsicht"
+     "label": "D. Aufsicht",
+     "eId": "chap_4/lvl_D"
     }
    ],
    "marginalie": [
@@ -2391,11 +2495,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Aufsicht"
+     "label": "D. Aufsicht",
+     "eId": "chap_4/lvl_D"
     }
    ],
    "marginalie": [
@@ -2432,11 +2538,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Aufsicht"
+     "label": "D. Aufsicht",
+     "eId": "chap_4/lvl_D"
     }
    ],
    "marginalie": [
@@ -2461,11 +2569,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Aufsicht"
+     "label": "D. Aufsicht",
+     "eId": "chap_4/lvl_D"
     }
    ],
    "marginalie": [
@@ -2490,11 +2600,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "A. Die Anmeldung"
+     "label": "A. Die Anmeldung",
+     "eId": "chap_5/lvl_A"
     }
    ],
    "marginalie": [
@@ -2531,11 +2643,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "A. Die Anmeldung"
+     "label": "A. Die Anmeldung",
+     "eId": "chap_5/lvl_A"
     }
    ],
    "marginalie": [
@@ -2592,11 +2706,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "A. Die Anmeldung"
+     "label": "A. Die Anmeldung",
+     "eId": "chap_5/lvl_A"
     }
    ],
    "marginalie": [
@@ -2621,11 +2737,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "A. Die Anmeldung"
+     "label": "A. Die Anmeldung",
+     "eId": "chap_5/lvl_A"
     }
    ],
    "marginalie": [
@@ -2650,11 +2768,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Die Abklärung der Verhältnisse"
+     "label": "B. Die Abklärung der Verhältnisse",
+     "eId": "chap_5/lvl_B"
     }
    ],
    "marginalie": [
@@ -2715,11 +2835,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Die Abklärung der Verhältnisse"
+     "label": "B. Die Abklärung der Verhältnisse",
+     "eId": "chap_5/lvl_B"
     }
    ],
    "marginalie": [],
@@ -2742,11 +2864,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Die Abklärung der Verhältnisse"
+     "label": "B. Die Abklärung der Verhältnisse",
+     "eId": "chap_5/lvl_B"
     }
    ],
    "marginalie": [],
@@ -2769,11 +2893,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Die Abklärung der Verhältnisse"
+     "label": "B. Die Abklärung der Verhältnisse",
+     "eId": "chap_5/lvl_B"
     }
    ],
    "marginalie": [],
@@ -2796,11 +2922,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Die Abklärung der Verhältnisse"
+     "label": "B. Die Abklärung der Verhältnisse",
+     "eId": "chap_5/lvl_B"
     }
    ],
    "marginalie": [],
@@ -2823,11 +2951,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Festsetzung der Leistungen"
+     "label": "C. Festsetzung der Leistungen",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [
@@ -2864,11 +2994,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Festsetzung der Leistungen"
+     "label": "C. Festsetzung der Leistungen",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [],
@@ -2891,11 +3023,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Festsetzung der Leistungen"
+     "label": "C. Festsetzung der Leistungen",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [
@@ -3044,11 +3178,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Festsetzung der Leistungen"
+     "label": "C. Festsetzung der Leistungen",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [
@@ -3073,15 +3209,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten"
+     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten",
+     "eId": "chap_5/lvl_D/lvl_I"
     }
    ],
    "marginalie": [
@@ -3183,15 +3322,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten"
+     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten",
+     "eId": "chap_5/lvl_D/lvl_I"
     }
    ],
    "marginalie": [
@@ -3240,15 +3382,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "II. Taggelder"
+     "label": "II. Taggelder",
+     "eId": "chap_5/lvl_D/lvl_II"
     }
    ],
    "marginalie": [
@@ -3333,15 +3478,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "II. Taggelder"
+     "label": "II. Taggelder",
+     "eId": "chap_5/lvl_D/lvl_II"
     }
    ],
    "marginalie": [
@@ -3378,15 +3526,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "III. Renten, Hilflosenentschädigung und Assistenzbeitrag"
+     "label": "III. Renten, Hilflosenentschädigung und Assistenzbeitrag",
+     "eId": "chap_5/lvl_D/lvl_III"
     }
    ],
    "marginalie": [
@@ -3448,15 +3599,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "III. Renten, Hilflosenentschädigung und Assistenzbeitrag"
+     "label": "III. Renten, Hilflosenentschädigung und Assistenzbeitrag",
+     "eId": "chap_5/lvl_D/lvl_III"
     }
    ],
    "marginalie": [
@@ -3505,15 +3659,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "IV. Gemeinsame Bestimmungen"
+     "label": "IV. Gemeinsame Bestimmungen",
+     "eId": "chap_5/lvl_D/lvl_IV"
     }
    ],
    "marginalie": [],
@@ -3536,15 +3693,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "IV. Gemeinsame Bestimmungen"
+     "label": "IV. Gemeinsame Bestimmungen",
+     "eId": "chap_5/lvl_D/lvl_IV"
     }
    ],
    "marginalie": [
@@ -3597,11 +3757,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "Dbis. …"
+     "label": "Dbis. …",
+     "eId": "chap_5/lvl_D_bis"
     }
    ],
    "marginalie": [],
@@ -3641,11 +3803,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages"
+     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages",
+     "eId": "chap_5/lvl_E"
     }
    ],
    "marginalie": [
@@ -3670,11 +3834,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages"
+     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages",
+     "eId": "chap_5/lvl_E"
     }
    ],
    "marginalie": [
@@ -3723,7 +3889,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3774,7 +3941,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3847,7 +4015,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3896,7 +4065,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -3919,7 +4089,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -3942,7 +4113,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3971,7 +4143,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -4000,7 +4173,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -4053,7 +4227,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -4076,7 +4251,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4113,7 +4289,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -4136,7 +4313,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4197,7 +4375,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Neunter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -4233,7 +4412,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Neunter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -4256,7 +4436,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Neunter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -4297,7 +4478,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -4324,7 +4506,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -4351,7 +4534,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -4374,7 +4558,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -4401,7 +4586,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -4428,7 +4614,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4493,7 +4680,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4546,7 +4734,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4571,7 +4760,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -4598,7 +4788,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -4621,11 +4812,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilfsmittel"
+     "label": "D. Die Hilfsmittel",
+     "eId": "chap_2/lvl_D"
     }
    ],
    "marginalie": [
@@ -4654,11 +4847,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilfsmittel"
+     "label": "D. Die Hilfsmittel",
+     "eId": "chap_2/lvl_D"
     }
    ],
    "marginalie": [
@@ -4683,11 +4878,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilfsmittel"
+     "label": "D. Die Hilfsmittel",
+     "eId": "chap_2/lvl_D"
     }
    ],
    "marginalie": [
@@ -4716,11 +4913,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilfsmittel"
+     "label": "D. Die Hilfsmittel",
+     "eId": "chap_2/lvl_D"
     }
    ],
    "marginalie": [],
@@ -4743,11 +4942,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -4776,7 +4977,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Die versicherten Personen und die Beiträge"
+     "label": "Erster Abschnitt: Die versicherten Personen und die Beiträge",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -4817,11 +5019,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "A. Drohende Invalidität"
+     "label": "A. Drohende Invalidität",
+     "eId": "chap_2/lvl_A"
     }
    ],
    "marginalie": [],
@@ -4858,7 +5062,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt b: Massnahmen der Frühintervention"
+     "label": "Erster Abschnitt b: Massnahmen der Frühintervention",
+     "eId": "chap_1_b"
     }
    ],
    "marginalie": [
@@ -4869,7 +5074,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Früherfassung"
+     "label": "Erster Abschnitt a: Früherfassung",
+     "eId": "chap_1_a"
     }
    ],
    "marginalie": [
@@ -4880,7 +5086,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Früherfassung"
+     "label": "Erster Abschnitt a: Früherfassung",
+     "eId": "chap_1_a"
     }
    ],
    "marginalie": [],
@@ -4903,7 +5110,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt b: Massnahmen der Frühintervention"
+     "label": "Erster Abschnitt b: Massnahmen der Frühintervention",
+     "eId": "chap_1_b"
     }
    ],
    "marginalie": [
@@ -4940,7 +5148,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt b: Massnahmen der Frühintervention"
+     "label": "Erster Abschnitt b: Massnahmen der Frühintervention",
+     "eId": "chap_1_b"
     }
    ],
    "marginalie": [
@@ -4978,7 +5187,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt a: Früherfassung"
+     "label": "Erster Abschnitt a: Früherfassung",
+     "eId": "chap_1_a"
     }
    ],
    "marginalie": [
@@ -5016,11 +5226,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [],
@@ -5047,11 +5259,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5156,11 +5370,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5202,11 +5418,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5243,11 +5461,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5276,11 +5496,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5321,11 +5543,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5354,11 +5578,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5411,11 +5637,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5468,11 +5696,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5501,11 +5731,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5622,11 +5854,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5655,11 +5889,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [
@@ -5688,11 +5924,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [],
@@ -5719,11 +5957,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "F. Verschiedene Bestimmungen"
+     "label": "F. Verschiedene Bestimmungen",
+     "eId": "chap_2/lvl_F"
     }
    ],
    "marginalie": [
@@ -5760,11 +6000,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "F. Verschiedene Bestimmungen"
+     "label": "F. Verschiedene Bestimmungen",
+     "eId": "chap_2/lvl_F"
     }
    ],
    "marginalie": [
@@ -5801,11 +6043,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "E. Die Taggelder"
+     "label": "E. Die Taggelder",
+     "eId": "chap_2/lvl_E"
     }
    ],
    "marginalie": [],
@@ -5832,11 +6076,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "F. Verschiedene Bestimmungen"
+     "label": "F. Verschiedene Bestimmungen",
+     "eId": "chap_2/lvl_F"
     }
    ],
    "marginalie": [
@@ -5865,11 +6111,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "F. Verschiedene Bestimmungen"
+     "label": "F. Verschiedene Bestimmungen",
+     "eId": "chap_2/lvl_F"
     }
    ],
    "marginalie": [
@@ -5906,11 +6154,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "G. Wahlrecht, Zusammenarbeit und Tarife"
+     "label": "G. Wahlrecht, Zusammenarbeit und Tarife",
+     "eId": "chap_2/lvl_G"
     }
    ],
    "marginalie": [
@@ -5971,11 +6221,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "G. Wahlrecht, Zusammenarbeit und Tarife"
+     "label": "G. Wahlrecht, Zusammenarbeit und Tarife",
+     "eId": "chap_2/lvl_G"
     }
    ],
    "marginalie": [
@@ -6000,11 +6252,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "G. Wahlrecht, Zusammenarbeit und Tarife"
+     "label": "G. Wahlrecht, Zusammenarbeit und Tarife",
+     "eId": "chap_2/lvl_G"
     }
    ],
    "marginalie": [
@@ -6029,15 +6283,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Bemessung des Invaliditätsgrades"
+     "label": "I. Bemessung des Invaliditätsgrades",
+     "eId": "chap_3/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -6088,11 +6345,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "G. Wahlrecht, Zusammenarbeit und Tarife"
+     "label": "G. Wahlrecht, Zusammenarbeit und Tarife",
+     "eId": "chap_2/lvl_G"
     }
    ],
    "marginalie": [
@@ -6117,11 +6376,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "G. Wahlrecht, Zusammenarbeit und Tarife"
+     "label": "G. Wahlrecht, Zusammenarbeit und Tarife",
+     "eId": "chap_2/lvl_G"
     }
    ],
    "marginalie": [
@@ -6158,15 +6419,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Bemessung des Invaliditätsgrades"
+     "label": "I. Bemessung des Invaliditätsgrades",
+     "eId": "chap_3/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -6207,15 +6471,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Bemessung des Invaliditätsgrades"
+     "label": "I. Bemessung des Invaliditätsgrades",
+     "eId": "chap_3/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -6244,15 +6511,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Verschiedene Bestimmungen"
+     "label": "II. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_A/lvl_II"
     }
    ],
    "marginalie": [],
@@ -6279,15 +6549,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Verschiedene Bestimmungen"
+     "label": "II. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -6316,15 +6589,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Verschiedene Bestimmungen"
+     "label": "II. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -6366,15 +6642,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Verschiedene Bestimmungen"
+     "label": "II. Verschiedene Bestimmungen",
+     "eId": "chap_3/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -6399,11 +6678,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -6428,11 +6709,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -6457,15 +6740,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "chap_3/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "III. Übergangsleistung"
+     "label": "III. Übergangsleistung",
+     "eId": "chap_3/lvl_A/lvl_III"
     }
    ],
    "marginalie": [],
@@ -6492,11 +6778,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -6538,11 +6826,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -6595,11 +6885,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -6636,11 +6928,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilflosenentschädigung"
+     "label": "D. Die Hilflosenentschädigung",
+     "eId": "chap_3/lvl_D"
     }
    ],
    "marginalie": [
@@ -6725,11 +7019,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "D. Die Hilflosenentschädigung"
+     "label": "D. Die Hilflosenentschädigung",
+     "eId": "chap_3/lvl_D"
     }
    ],
    "marginalie": [
@@ -6766,11 +7062,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -6808,11 +7106,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -6823,11 +7123,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -6838,11 +7140,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -6853,11 +7157,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -6882,11 +7188,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -6923,11 +7231,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -6938,11 +7248,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -6967,11 +7279,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -7020,11 +7334,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "E. Der Assistenzbeitrag"
+     "label": "E. Der Assistenzbeitrag",
+     "eId": "chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -7073,11 +7389,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "F. Das Verhältnis zur Unfallversicherung und zur Militärversicherung"
+     "label": "F. Das Verhältnis zur Unfallversicherung und zur Militärversicherung",
+     "eId": "chap_3/lvl_F"
     }
    ],
    "marginalie": [],
@@ -7157,11 +7475,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag"
+     "label": "Dritter Abschnitt: Die Renten, die Hilflosenentschädigung und der Assistenzbeitrag",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "F. Das Verhältnis zur Unfallversicherung und zur Militärversicherung"
+     "label": "F. Das Verhältnis zur Unfallversicherung und zur Militärversicherung",
+     "eId": "chap_3/lvl_F"
     }
    ],
    "marginalie": [],
@@ -7188,11 +7508,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -7221,11 +7543,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -7262,11 +7586,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -7307,11 +7633,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -7336,11 +7664,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [],
@@ -7367,11 +7697,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -7396,11 +7728,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -7437,11 +7771,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -7490,11 +7826,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -7523,15 +7861,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "A. Die IV‑Stellen"
+     "label": "A. Die IV‑Stellen",
+     "eId": "chap_4/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Aufgaben"
+     "label": "II. Aufgaben",
+     "eId": "chap_4/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -7556,15 +7897,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "A. Die IV‑Stellen"
+     "label": "A. Die IV‑Stellen",
+     "eId": "chap_4/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Aufgaben"
+     "label": "II. Aufgaben",
+     "eId": "chap_4/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -7589,11 +7933,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -7618,11 +7964,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [],
@@ -7649,11 +7997,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung"
+     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung",
+     "eId": "chap_2/lvl_A_ter"
     }
    ],
    "marginalie": [
@@ -7678,11 +8028,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung"
+     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung",
+     "eId": "chap_2/lvl_A_ter"
     }
    ],
    "marginalie": [
@@ -7707,11 +8059,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung"
+     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung",
+     "eId": "chap_2/lvl_A_ter"
     }
    ],
    "marginalie": [
@@ -7749,11 +8103,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung"
+     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung",
+     "eId": "chap_2/lvl_A_ter"
     }
    ],
    "marginalie": [
@@ -7778,11 +8134,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung"
+     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung",
+     "eId": "chap_2/lvl_A_ter"
     }
    ],
    "marginalie": [],
@@ -7805,11 +8163,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung"
+     "label": "Ater. Integrationsmassnahmen zur Vorbereitung auf die berufliche Eingliederung",
+     "eId": "chap_2/lvl_A_ter"
     }
    ],
    "marginalie": [
@@ -7882,11 +8242,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "Abis. Medizinische Massnahmen"
+     "label": "Abis. Medizinische Massnahmen",
+     "eId": "chap_2/lvl_A_bis"
     }
    ],
    "marginalie": [
@@ -7911,11 +8273,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "D. Aufsicht"
+     "label": "D. Aufsicht",
+     "eId": "chap_4/lvl_D"
     }
    ],
    "marginalie": [],
@@ -7938,11 +8302,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -7983,11 +8349,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -8012,11 +8380,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -8045,11 +8415,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -8074,11 +8446,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -8103,11 +8477,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "B. Die Massnahmen beruflicher Art"
+     "label": "B. Die Massnahmen beruflicher Art",
+     "eId": "chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -8160,11 +8536,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Die Abklärung der Verhältnisse"
+     "label": "B. Die Abklärung der Verhältnisse",
+     "eId": "chap_5/lvl_B"
     }
    ],
    "marginalie": [
@@ -8217,11 +8595,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Die Abklärung der Verhältnisse"
+     "label": "B. Die Abklärung der Verhältnisse",
+     "eId": "chap_5/lvl_B"
     }
    ],
    "marginalie": [
@@ -8246,11 +8626,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Festsetzung der Leistungen"
+     "label": "C. Festsetzung der Leistungen",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [
@@ -8328,11 +8710,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Festsetzung der Leistungen"
+     "label": "C. Festsetzung der Leistungen",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [
@@ -8369,11 +8753,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Festsetzung der Leistungen"
+     "label": "C. Festsetzung der Leistungen",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [],
@@ -8396,11 +8782,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Festsetzung der Leistungen"
+     "label": "C. Festsetzung der Leistungen",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [
@@ -8441,11 +8829,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Festsetzung der Leistungen"
+     "label": "C. Festsetzung der Leistungen",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [
@@ -8523,15 +8913,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten"
+     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten",
+     "eId": "chap_5/lvl_D/lvl_I"
     }
    ],
    "marginalie": [
@@ -8560,15 +8953,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten"
+     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten",
+     "eId": "chap_5/lvl_D/lvl_I"
     }
    ],
    "marginalie": [
@@ -8633,15 +9029,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten"
+     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten",
+     "eId": "chap_5/lvl_D/lvl_I"
     }
    ],
    "marginalie": [
@@ -8679,15 +9078,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten"
+     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten",
+     "eId": "chap_5/lvl_D/lvl_I"
     }
    ],
    "marginalie": [
@@ -8712,15 +9114,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten"
+     "label": "I. Eingliederungs- und Abklärungsmassnahmen, Reisekosten",
+     "eId": "chap_5/lvl_D/lvl_I"
     }
    ],
    "marginalie": [
@@ -8757,15 +9162,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "II. Taggelder"
+     "label": "II. Taggelder",
+     "eId": "chap_5/lvl_D/lvl_II"
     }
    ],
    "marginalie": [
@@ -8830,15 +9238,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "D. Die Ausrichtung der Leistungen"
+     "label": "D. Die Ausrichtung der Leistungen",
+     "eId": "chap_5/lvl_D"
     },
     {
      "ebene": 3,
-     "label": "IV. Gemeinsame Bestimmungen"
+     "label": "IV. Gemeinsame Bestimmungen",
+     "eId": "chap_5/lvl_D/lvl_IV"
     }
    ],
    "marginalie": [
@@ -8887,11 +9298,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "Dbis. …"
+     "label": "Dbis. …",
+     "eId": "chap_5/lvl_D_bis"
     }
    ],
    "marginalie": [],
@@ -8918,11 +9331,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages"
+     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages",
+     "eId": "chap_5/lvl_E"
     }
    ],
    "marginalie": [
@@ -8960,11 +9375,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages"
+     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages",
+     "eId": "chap_5/lvl_E"
     }
    ],
    "marginalie": [
@@ -8993,11 +9410,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Das Verfahren"
+     "label": "Fünfter Abschnitt: Das Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages"
+     "label": "E. Die Revision der Renten, der Hilflosenentschädigung und des Assistenzbeitrages",
+     "eId": "chap_5/lvl_E"
     }
    ],
    "marginalie": [
@@ -9086,7 +9505,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt a: Das Verhältnis zur Unfallversicherung in Bezug auf Personen nach Artikel 1a Absatz 1 Buchstabe c UVG"
+     "label": "Sechster Abschnitt a: Das Verhältnis zur Unfallversicherung in Bezug auf Personen nach Artikel 1a Absatz 1 Buchstabe c UVG",
+     "eId": "chap_6_a"
     }
    ],
    "marginalie": [
@@ -9111,7 +9531,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Das Verhältnis zur Krankenversicherung"
+     "label": "Sechster Abschnitt: Das Verhältnis zur Krankenversicherung",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -9136,7 +9557,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Das Verhältnis zur Krankenversicherung"
+     "label": "Sechster Abschnitt: Das Verhältnis zur Krankenversicherung",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [],
@@ -9159,7 +9581,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt a: Das Verhältnis zur Unfallversicherung in Bezug auf Personen nach Artikel 1a Absatz 1 Buchstabe c UVG"
+     "label": "Sechster Abschnitt a: Das Verhältnis zur Unfallversicherung in Bezug auf Personen nach Artikel 1a Absatz 1 Buchstabe c UVG",
+     "eId": "chap_6_a"
     }
    ],
    "marginalie": [
@@ -9184,7 +9607,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt a: Das Verhältnis zur Unfallversicherung in Bezug auf Personen nach Artikel 1a Absatz 1 Buchstabe c UVG"
+     "label": "Sechster Abschnitt a: Das Verhältnis zur Unfallversicherung in Bezug auf Personen nach Artikel 1a Absatz 1 Buchstabe c UVG",
+     "eId": "chap_6_a"
     }
    ],
    "marginalie": [
@@ -9223,7 +9647,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Das Verhältnis zur Krankenversicherung"
+     "label": "Sechster Abschnitt: Das Verhältnis zur Krankenversicherung",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -9261,7 +9686,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -9288,7 +9714,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9357,11 +9784,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Eingliederung"
+     "label": "Zweiter Abschnitt: Eingliederung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "C. …"
+     "label": "C. …",
+     "eId": "chap_2/lvl_C"
     }
    ],
    "marginalie": [],
@@ -9384,7 +9813,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9409,7 +9839,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -9436,7 +9867,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -9463,7 +9895,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -9486,7 +9919,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9511,7 +9945,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9560,7 +9995,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9585,7 +10021,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9610,7 +10047,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9647,7 +10085,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Siebenter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -9672,7 +10111,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe"
+     "label": "Achter Abschnitt: Die Beiträge zur Förderung der Invalidenhilfe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],

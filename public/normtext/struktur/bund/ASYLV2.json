@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "142.312",
   "titel": "Asylverordnung 2 über Finanzierungsfragen",
@@ -42,7 +42,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Gegenstand"
+     "label": "1. Titel: Gegenstand",
+     "eId": "tit_1"
     }
    ],
    "marginalie": []
@@ -51,15 +52,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Sozialhilfe und Nothilfe"
+     "label": "2. Titel: Sozialhilfe und Nothilfe",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge"
+     "label": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -138,15 +142,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Sozialhilfe und Nothilfe"
+     "label": "2. Titel: Sozialhilfe und Nothilfe",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge"
+     "label": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -255,15 +262,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Sozialhilfe und Nothilfe"
+     "label": "2. Titel: Sozialhilfe und Nothilfe",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge"
+     "label": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -288,15 +298,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Sozialhilfe und Nothilfe"
+     "label": "2. Titel: Sozialhilfe und Nothilfe",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge"
+     "label": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -383,15 +396,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Sozialhilfe und Nothilfe"
+     "label": "2. Titel: Sozialhilfe und Nothilfe",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge"
+     "label": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Kinderzulagen"
+     "label": "2. Abschnitt: Kinderzulagen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -416,15 +432,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Sozialhilfe und Nothilfe"
+     "label": "2. Titel: Sozialhilfe und Nothilfe",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge"
+     "label": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Kinderzulagen"
+     "label": "2. Abschnitt: Kinderzulagen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -462,11 +481,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Sozialhilfe und Nothilfe"
+     "label": "2. Titel: Sozialhilfe und Nothilfe",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
+     "label": "2. Kapitel: Sonderabgabe auf Vermögenswerten",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -503,11 +524,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Sozialhilfe und Nothilfe"
+     "label": "2. Titel: Sozialhilfe und Nothilfe",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
+     "label": "2. Kapitel: Sonderabgabe auf Vermögenswerten",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -532,11 +555,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Sozialhilfe und Nothilfe"
+     "label": "2. Titel: Sozialhilfe und Nothilfe",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
+     "label": "2. Kapitel: Sonderabgabe auf Vermögenswerten",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -574,11 +599,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Sozialhilfe und Nothilfe"
+     "label": "2. Titel: Sozialhilfe und Nothilfe",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
+     "label": "2. Kapitel: Sonderabgabe auf Vermögenswerten",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -627,11 +654,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Sozialhilfe und Nothilfe"
+     "label": "2. Titel: Sozialhilfe und Nothilfe",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
+     "label": "2. Kapitel: Sonderabgabe auf Vermögenswerten",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [],
@@ -654,11 +683,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Sozialhilfe und Nothilfe"
+     "label": "2. Titel: Sozialhilfe und Nothilfe",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
+     "label": "2. Kapitel: Sonderabgabe auf Vermögenswerten",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -695,11 +726,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Sozialhilfe und Nothilfe"
+     "label": "2. Titel: Sozialhilfe und Nothilfe",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
+     "label": "2. Kapitel: Sonderabgabe auf Vermögenswerten",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": []
@@ -708,15 +741,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sozial- und Nothilfe"
+     "label": "1. Kapitel: Sozial- und Nothilfe",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Asylsuchende, vorläufig Aufgenommene und Schutzbedürftige ohne Aufenthaltsbewilligung"
+     "label": "1. Abschnitt: Asylsuchende, vorläufig Aufgenommene und Schutzbedürftige ohne Aufenthaltsbewilligung",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -884,15 +920,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sozial- und Nothilfe"
+     "label": "1. Kapitel: Sozial- und Nothilfe",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Asylsuchende, vorläufig Aufgenommene und Schutzbedürftige ohne Aufenthaltsbewilligung"
+     "label": "1. Abschnitt: Asylsuchende, vorläufig Aufgenommene und Schutzbedürftige ohne Aufenthaltsbewilligung",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -912,15 +951,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sozial- und Nothilfe"
+     "label": "1. Kapitel: Sozial- und Nothilfe",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Asylsuchende, vorläufig Aufgenommene und Schutzbedürftige ohne Aufenthaltsbewilligung"
+     "label": "1. Abschnitt: Asylsuchende, vorläufig Aufgenommene und Schutzbedürftige ohne Aufenthaltsbewilligung",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -1027,15 +1069,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sozial- und Nothilfe"
+     "label": "1. Kapitel: Sozial- und Nothilfe",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Asylsuchende, vorläufig Aufgenommene und Schutzbedürftige ohne Aufenthaltsbewilligung"
+     "label": "1. Abschnitt: Asylsuchende, vorläufig Aufgenommene und Schutzbedürftige ohne Aufenthaltsbewilligung",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -1133,15 +1178,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sozial- und Nothilfe"
+     "label": "1. Kapitel: Sozial- und Nothilfe",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Flüchtlinge, vorläufig aufgenommene Flüchtlinge, Staatenlose und Schutzbedürftige mit Aufenthaltsbewilligung"
+     "label": "2. Abschnitt: Flüchtlinge, vorläufig aufgenommene Flüchtlinge, Staatenlose und Schutzbedürftige mit Aufenthaltsbewilligung",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1305,15 +1353,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sozial- und Nothilfe"
+     "label": "1. Kapitel: Sozial- und Nothilfe",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Flüchtlinge, vorläufig aufgenommene Flüchtlinge, Staatenlose und Schutzbedürftige mit Aufenthaltsbewilligung"
+     "label": "2. Abschnitt: Flüchtlinge, vorläufig aufgenommene Flüchtlinge, Staatenlose und Schutzbedürftige mit Aufenthaltsbewilligung",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1333,15 +1384,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sozial- und Nothilfe"
+     "label": "1. Kapitel: Sozial- und Nothilfe",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Flüchtlinge, vorläufig aufgenommene Flüchtlinge, Staatenlose und Schutzbedürftige mit Aufenthaltsbewilligung"
+     "label": "2. Abschnitt: Flüchtlinge, vorläufig aufgenommene Flüchtlinge, Staatenlose und Schutzbedürftige mit Aufenthaltsbewilligung",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1447,15 +1501,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sozial- und Nothilfe"
+     "label": "1. Kapitel: Sozial- und Nothilfe",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Flüchtlinge, vorläufig aufgenommene Flüchtlinge, Staatenlose und Schutzbedürftige mit Aufenthaltsbewilligung"
+     "label": "2. Abschnitt: Flüchtlinge, vorläufig aufgenommene Flüchtlinge, Staatenlose und Schutzbedürftige mit Aufenthaltsbewilligung",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1493,15 +1550,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sozial- und Nothilfe"
+     "label": "1. Kapitel: Sozial- und Nothilfe",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Nothilfe"
+     "label": "3. Abschnitt: Nothilfe",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1526,15 +1586,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sozial- und Nothilfe"
+     "label": "1. Kapitel: Sozial- und Nothilfe",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Nothilfe"
+     "label": "3. Abschnitt: Nothilfe",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1583,15 +1646,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sozial- und Nothilfe"
+     "label": "1. Kapitel: Sozial- und Nothilfe",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Nothilfe"
+     "label": "3. Abschnitt: Nothilfe",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1616,11 +1682,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verwaltungskosten"
+     "label": "2. Kapitel: Verwaltungskosten",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1695,11 +1763,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Verwaltungskosten"
+     "label": "2. Kapitel: Verwaltungskosten",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1710,15 +1780,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzierung von Kollektivunterkünften"
+     "label": "3. Kapitel: Finanzierung von Kollektivunterkünften",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Die vergütbaren Kosten"
+     "label": "1. Abschnitt: Die vergütbaren Kosten",
+     "eId": "tit_3/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1729,15 +1802,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzierung von Kollektivunterkünften"
+     "label": "3. Kapitel: Finanzierung von Kollektivunterkünften",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Die vergütbaren Kosten"
+     "label": "1. Abschnitt: Die vergütbaren Kosten",
+     "eId": "tit_3/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1748,15 +1824,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzierung von Kollektivunterkünften"
+     "label": "3. Kapitel: Finanzierung von Kollektivunterkünften",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Die vergütbaren Kosten"
+     "label": "1. Abschnitt: Die vergütbaren Kosten",
+     "eId": "tit_3/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1767,15 +1846,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzierung von Kollektivunterkünften"
+     "label": "3. Kapitel: Finanzierung von Kollektivunterkünften",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Die vergütbaren Kosten"
+     "label": "1. Abschnitt: Die vergütbaren Kosten",
+     "eId": "tit_3/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1786,15 +1868,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzierung von Kollektivunterkünften"
+     "label": "3. Kapitel: Finanzierung von Kollektivunterkünften",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Das Bewilligungsverfahren"
+     "label": "2. Abschnitt: Das Bewilligungsverfahren",
+     "eId": "tit_3/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1805,15 +1890,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzierung von Kollektivunterkünften"
+     "label": "3. Kapitel: Finanzierung von Kollektivunterkünften",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Das Bewilligungsverfahren"
+     "label": "2. Abschnitt: Das Bewilligungsverfahren",
+     "eId": "tit_3/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1824,15 +1912,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzierung von Kollektivunterkünften"
+     "label": "3. Kapitel: Finanzierung von Kollektivunterkünften",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Auszahlung und Rückerstattung"
+     "label": "3. Abschnitt: Auszahlung und Rückerstattung",
+     "eId": "tit_3/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1843,15 +1934,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Finanzierung von Kollektivunterkünften"
+     "label": "3. Kapitel: Finanzierung von Kollektivunterkünften",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Auszahlung und Rückerstattung"
+     "label": "3. Abschnitt: Auszahlung und Rückerstattung",
+     "eId": "tit_3/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1876,15 +1970,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Sicherheitskosten"
+     "label": "1. Abschnitt: Sicherheitskosten",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -1956,15 +2053,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1a. Abschnitt: Einrichtungen für traumatisierte Personen"
+     "label": "1a. Abschnitt: Einrichtungen für traumatisierte Personen",
+     "eId": "tit_3/chap_4/sec_1_a"
     }
    ],
    "marginalie": [],
@@ -2000,15 +2100,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1a. Abschnitt: Einrichtungen für traumatisierte Personen"
+     "label": "1a. Abschnitt: Einrichtungen für traumatisierte Personen",
+     "eId": "tit_3/chap_4/sec_1_a"
     }
    ],
    "marginalie": [],
@@ -2031,15 +2134,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Entscheidvorbereitung durch die Kantone"
+     "label": "2. Abschnitt: Entscheidvorbereitung durch die Kantone",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2077,15 +2183,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Entscheidvorbereitung durch die Kantone"
+     "label": "2. Abschnitt: Entscheidvorbereitung durch die Kantone",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2110,15 +2219,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Entscheidvorbereitung durch die Kantone"
+     "label": "2. Abschnitt: Entscheidvorbereitung durch die Kantone",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2129,15 +2241,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Entscheidvorbereitung durch die Kantone"
+     "label": "2. Abschnitt: Entscheidvorbereitung durch die Kantone",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2148,15 +2263,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Entscheidvorbereitung durch die Kantone"
+     "label": "2. Abschnitt: Entscheidvorbereitung durch die Kantone",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2167,15 +2285,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Internationale Zusammenarbeit: Grundsätze"
+     "label": "3. Abschnitt: Internationale Zusammenarbeit: Grundsätze",
+     "eId": "tit_3/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -2273,15 +2394,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Internationale Zusammenarbeit: Grundsätze"
+     "label": "3. Abschnitt: Internationale Zusammenarbeit: Grundsätze",
+     "eId": "tit_3/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -2306,15 +2430,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Kosten für die Ein- und Ausreise"
+     "label": "5. Kapitel: Kosten für die Ein- und Ausreise",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Einreisekosten"
+     "label": "1. Abschnitt: Einreisekosten",
+     "eId": "tit_3/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -2384,15 +2511,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Kosten für die Ein- und Ausreise"
+     "label": "5. Kapitel: Kosten für die Ein- und Ausreise",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausreisekosten"
+     "label": "2. Abschnitt: Ausreisekosten",
+     "eId": "tit_3/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2417,15 +2547,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Kosten für die Ein- und Ausreise"
+     "label": "5. Kapitel: Kosten für die Ein- und Ausreise",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausreisekosten"
+     "label": "2. Abschnitt: Ausreisekosten",
+     "eId": "tit_3/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2450,15 +2583,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Kosten für die Ein- und Ausreise"
+     "label": "5. Kapitel: Kosten für die Ein- und Ausreise",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausreisekosten"
+     "label": "2. Abschnitt: Ausreisekosten",
+     "eId": "tit_3/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2483,15 +2619,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Kosten für die Ein- und Ausreise"
+     "label": "5. Kapitel: Kosten für die Ein- und Ausreise",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausreisekosten"
+     "label": "2. Abschnitt: Ausreisekosten",
+     "eId": "tit_3/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2516,15 +2655,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Kosten für die Ein- und Ausreise"
+     "label": "5. Kapitel: Kosten für die Ein- und Ausreise",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausreisekosten"
+     "label": "2. Abschnitt: Ausreisekosten",
+     "eId": "tit_3/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2562,15 +2704,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Kosten für die Ein- und Ausreise"
+     "label": "5. Kapitel: Kosten für die Ein- und Ausreise",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausreisekosten"
+     "label": "2. Abschnitt: Ausreisekosten",
+     "eId": "tit_3/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2692,15 +2837,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Kosten für die Ein- und Ausreise"
+     "label": "5. Kapitel: Kosten für die Ein- und Ausreise",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausreisekosten"
+     "label": "2. Abschnitt: Ausreisekosten",
+     "eId": "tit_3/chap_5/sec_2"
     }
    ],
    "marginalie": [],
@@ -2723,15 +2871,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Kosten für die Ein- und Ausreise"
+     "label": "5. Kapitel: Kosten für die Ein- und Ausreise",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausreisekosten"
+     "label": "2. Abschnitt: Ausreisekosten",
+     "eId": "tit_3/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2742,15 +2893,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2775,15 +2929,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2822,15 +2979,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2915,15 +3075,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Rückkehrberatung"
+     "label": "2. Abschnitt: Rückkehrberatung",
+     "eId": "tit_3/chap_6/sec_2"
     }
    ],
    "marginalie": [],
@@ -2947,15 +3110,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Rückkehrberatung"
+     "label": "2. Abschnitt: Rückkehrberatung",
+     "eId": "tit_3/chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2995,15 +3161,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Rückkehrberatung"
+     "label": "2. Abschnitt: Rückkehrberatung",
+     "eId": "tit_3/chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -3028,15 +3197,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Rückkehrberatung"
+     "label": "2. Abschnitt: Rückkehrberatung",
+     "eId": "tit_3/chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -3086,15 +3258,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Programme im Ausland"
+     "label": "3. Abschnitt: Programme im Ausland",
+     "eId": "tit_3/chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -3144,15 +3319,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Programme im Ausland"
+     "label": "3. Abschnitt: Programme im Ausland",
+     "eId": "tit_3/chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -3177,15 +3355,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Individuelle Rückkehrhilfe"
+     "label": "4. Abschnitt: Individuelle Rückkehrhilfe",
+     "eId": "tit_3/chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -3211,15 +3392,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Individuelle Rückkehrhilfe"
+     "label": "4. Abschnitt: Individuelle Rückkehrhilfe",
+     "eId": "tit_3/chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -3280,15 +3464,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Individuelle Rückkehrhilfe"
+     "label": "4. Abschnitt: Individuelle Rückkehrhilfe",
+     "eId": "tit_3/chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -3299,15 +3486,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Individuelle Rückkehrhilfe"
+     "label": "4. Abschnitt: Individuelle Rückkehrhilfe",
+     "eId": "tit_3/chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -3332,15 +3522,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Individuelle Rückkehrhilfe"
+     "label": "4. Abschnitt: Individuelle Rückkehrhilfe",
+     "eId": "tit_3/chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -3365,15 +3558,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Individuelle Rückkehrhilfe"
+     "label": "4. Abschnitt: Individuelle Rückkehrhilfe",
+     "eId": "tit_3/chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -3398,7 +3594,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Schlussbestimmungen"
+     "label": "4. Titel: Schlussbestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -3440,7 +3637,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Schlussbestimmungen"
+     "label": "4. Titel: Schlussbestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -3451,7 +3649,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Schlussbestimmungen"
+     "label": "4. Titel: Schlussbestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -3500,11 +3699,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Sozialhilfe und Nothilfe"
+     "label": "2. Titel: Sozialhilfe und Nothilfe",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
+     "label": "2. Kapitel: Sonderabgabe auf Vermögenswerten",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [],
@@ -3527,15 +3728,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sozial- und Nothilfe"
+     "label": "1. Kapitel: Sozial- und Nothilfe",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Asylsuchende, vorläufig Aufgenommene und Schutzbedürftige ohne Aufenthaltsbewilligung"
+     "label": "1. Abschnitt: Asylsuchende, vorläufig Aufgenommene und Schutzbedürftige ohne Aufenthaltsbewilligung",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -3562,15 +3766,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sozial- und Nothilfe"
+     "label": "1. Kapitel: Sozial- und Nothilfe",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Flüchtlinge, vorläufig aufgenommene Flüchtlinge, Staatenlose und Schutzbedürftige mit Aufenthaltsbewilligung"
+     "label": "2. Abschnitt: Flüchtlinge, vorläufig aufgenommene Flüchtlinge, Staatenlose und Schutzbedürftige mit Aufenthaltsbewilligung",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3595,15 +3802,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sozial- und Nothilfe"
+     "label": "1. Kapitel: Sozial- und Nothilfe",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Flüchtlinge, vorläufig aufgenommene Flüchtlinge, Staatenlose und Schutzbedürftige mit Aufenthaltsbewilligung"
+     "label": "2. Abschnitt: Flüchtlinge, vorläufig aufgenommene Flüchtlinge, Staatenlose und Schutzbedürftige mit Aufenthaltsbewilligung",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -3628,15 +3838,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Sozial- und Nothilfe"
+     "label": "1. Kapitel: Sozial- und Nothilfe",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Nothilfe"
+     "label": "3. Abschnitt: Nothilfe",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -3661,15 +3874,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Sicherheitskosten"
+     "label": "1. Abschnitt: Sicherheitskosten",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -3692,15 +3908,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Internationale Zusammenarbeit: Grundsätze"
+     "label": "3. Abschnitt: Internationale Zusammenarbeit: Grundsätze",
+     "eId": "tit_3/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3725,15 +3944,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration"
+     "label": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration",
+     "eId": "tit_3/chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -3759,15 +3981,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration"
+     "label": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration",
+     "eId": "tit_3/chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -3778,15 +4003,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration"
+     "label": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration",
+     "eId": "tit_3/chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -3811,15 +4039,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration"
+     "label": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration",
+     "eId": "tit_3/chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -3830,15 +4061,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration"
+     "label": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration",
+     "eId": "tit_3/chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -3849,15 +4083,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration"
+     "label": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration",
+     "eId": "tit_3/chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -3868,15 +4105,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Weitere Beiträge"
+     "label": "4. Kapitel: Weitere Beiträge",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration"
+     "label": "4. Abschnitt: Internationale Zusammenarbeit: Besondere Bestimmungen für Verpflichtungskredite Migration",
+     "eId": "tit_3/chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -3887,15 +4127,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Kosten für die Ein- und Ausreise"
+     "label": "5. Kapitel: Kosten für die Ein- und Ausreise",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Einreisekosten"
+     "label": "1. Abschnitt: Einreisekosten",
+     "eId": "tit_3/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -3920,15 +4163,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Kosten für die Ein- und Ausreise"
+     "label": "5. Kapitel: Kosten für die Ein- und Ausreise",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausreisekosten"
+     "label": "2. Abschnitt: Ausreisekosten",
+     "eId": "tit_3/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -3978,15 +4224,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Kosten für die Ein- und Ausreise"
+     "label": "5. Kapitel: Kosten für die Ein- und Ausreise",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausreisekosten"
+     "label": "2. Abschnitt: Ausreisekosten",
+     "eId": "tit_3/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -4024,15 +4273,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Kosten für die Ein- und Ausreise"
+     "label": "5. Kapitel: Kosten für die Ein- und Ausreise",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausreisekosten"
+     "label": "2. Abschnitt: Ausreisekosten",
+     "eId": "tit_3/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -4135,15 +4387,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Kosten für die Ein- und Ausreise"
+     "label": "5. Kapitel: Kosten für die Ein- und Ausreise",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausreisekosten"
+     "label": "2. Abschnitt: Ausreisekosten",
+     "eId": "tit_3/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -4230,15 +4485,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Kosten für die Ein- und Ausreise"
+     "label": "5. Kapitel: Kosten für die Ein- und Ausreise",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausreisekosten"
+     "label": "2. Abschnitt: Ausreisekosten",
+     "eId": "tit_3/chap_5/sec_2"
     }
    ],
    "marginalie": [],
@@ -4261,15 +4519,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Kosten für die Ein- und Ausreise"
+     "label": "5. Kapitel: Kosten für die Ein- und Ausreise",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausreisekosten"
+     "label": "2. Abschnitt: Ausreisekosten",
+     "eId": "tit_3/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -4310,15 +4571,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Sozialhilfe und Nothilfe"
+     "label": "2. Titel: Sozialhilfe und Nothilfe",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge"
+     "label": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -4343,15 +4607,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Sozialhilfe und Nothilfe"
+     "label": "2. Titel: Sozialhilfe und Nothilfe",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge"
+     "label": "1. Kapitel: Festsetzung und Ausrichtung der Sozialhilfe, der Nothilfe und der entsprechenden Bundesbeiträge",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -4394,15 +4661,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Rückkehrberatung"
+     "label": "2. Abschnitt: Rückkehrberatung",
+     "eId": "tit_3/chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -4427,15 +4697,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Rückkehrberatung"
+     "label": "2. Abschnitt: Rückkehrberatung",
+     "eId": "tit_3/chap_6/sec_2"
     }
    ],
    "marginalie": []
@@ -4444,15 +4717,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Individuelle Rückkehrhilfe"
+     "label": "4. Abschnitt: Individuelle Rückkehrhilfe",
+     "eId": "tit_3/chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -4477,15 +4753,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung"
+     "label": "6. Kapitel: Rückkehrhilfe und Wiedereingliederung",
+     "eId": "tit_3/chap_6"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Individuelle Rückkehrhilfe"
+     "label": "4. Abschnitt: Individuelle Rückkehrhilfe",
+     "eId": "tit_3/chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -4522,11 +4801,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Bundesbeiträge"
+     "label": "3. Titel: Bundesbeiträge",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: …"
+     "label": "7. Kapitel: …",
+     "eId": "tit_3/chap_7"
     }
    ],
    "marginalie": [],
@@ -4549,11 +4830,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Sozialhilfe und Nothilfe"
+     "label": "2. Titel: Sozialhilfe und Nothilfe",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Sonderabgabe auf Vermögenswerten"
+     "label": "2. Kapitel: Sonderabgabe auf Vermögenswerten",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [],

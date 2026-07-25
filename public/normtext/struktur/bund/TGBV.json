@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "211.432.11",
   "titel": "Technische Verordnung des EJPD und des VBS über das Grundbuch",
@@ -80,7 +80,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Gegenstand"
+     "label": "1. Abschnitt: Gegenstand",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [],
@@ -163,7 +164,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Zuständigkeiten"
+     "label": "2. Abschnitt: Zuständigkeiten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -248,7 +250,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Zuständigkeiten"
+     "label": "2. Abschnitt: Zuständigkeiten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -259,7 +262,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Zuständigkeiten"
+     "label": "2. Abschnitt: Zuständigkeiten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -270,7 +274,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Zuständigkeiten"
+     "label": "2. Abschnitt: Zuständigkeiten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -295,7 +300,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Zuständigkeiten"
+     "label": "2. Abschnitt: Zuständigkeiten",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -332,7 +338,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Datenbeschreibungssprachen"
+     "label": "3. Abschnitt: Datenbeschreibungssprachen",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [],
@@ -350,7 +357,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Das Datenmodell für das Grundbuch"
+     "label": "4. Abschnitt: Das Datenmodell für das Grundbuch",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [],
@@ -373,7 +381,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Das Datenmodell für den Datenaustausch zwischen der amtlichen Vermessung und dem Grundbuch"
+     "label": "5. Abschnitt: Das Datenmodell für den Datenaustausch zwischen der amtlichen Vermessung und dem Grundbuch",
+     "eId": "sec_5"
     }
    ],
    "marginalie": []
@@ -382,7 +391,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Die Schnittstelle für den Bezug und den Austausch von Grundbuchdaten"
+     "label": "6. Abschnitt: Die Schnittstelle für den Bezug und den Austausch von Grundbuchdaten",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [],
@@ -417,7 +427,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Die Schnittstelle für den Datenaustausch zwischen der amtlichen Vermessung und dem Grundbuch"
+     "label": "7. Abschnitt: Die Schnittstelle für den Datenaustausch zwischen der amtlichen Vermessung und dem Grundbuch",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -438,7 +449,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Die Schnittstelle für den Datenaustausch zwischen der amtlichen Vermessung und dem Grundbuch"
+     "label": "7. Abschnitt: Die Schnittstelle für den Datenaustausch zwischen der amtlichen Vermessung und dem Grundbuch",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -449,7 +461,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Anforderungen an die Informatiksysteme"
+     "label": "8. Abschnitt: Anforderungen an die Informatiksysteme",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -460,7 +473,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Anforderungen an die Informatiksysteme"
+     "label": "8. Abschnitt: Anforderungen an die Informatiksysteme",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -471,7 +485,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Anforderungen an die Informatiksysteme"
+     "label": "8. Abschnitt: Anforderungen an die Informatiksysteme",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -482,7 +497,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Die eidgenössische Grundstücksidentifikation"
+     "label": "9. Abschnitt: Die eidgenössische Grundstücksidentifikation",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [
@@ -493,7 +509,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Die eidgenössische Grundstücksidentifikation"
+     "label": "9. Abschnitt: Die eidgenössische Grundstücksidentifikation",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [
@@ -504,7 +521,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt: Datenformate von Dokumenten für den elektronischen Geschäftsverkehr mit den Grundbuchämtern"
+     "label": "10. Abschnitt: Datenformate von Dokumenten für den elektronischen Geschäftsverkehr mit den Grundbuchämtern",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -565,7 +583,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt: Datenformate von Dokumenten für den elektronischen Geschäftsverkehr mit den Grundbuchämtern"
+     "label": "10. Abschnitt: Datenformate von Dokumenten für den elektronischen Geschäftsverkehr mit den Grundbuchämtern",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -626,7 +645,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Abschnitt: Datenformate von Dokumenten für den elektronischen Geschäftsverkehr mit den Grundbuchämtern"
+     "label": "10. Abschnitt: Datenformate von Dokumenten für den elektronischen Geschäftsverkehr mit den Grundbuchämtern",
+     "eId": "sec_10"
     }
    ],
    "marginalie": [
@@ -663,7 +683,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Abschnitt: Alternative Übermittlungsverfahren"
+     "label": "11. Abschnitt: Alternative Übermittlungsverfahren",
+     "eId": "sec_11"
     }
    ],
    "marginalie": [
@@ -707,7 +728,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Abschnitt: Alternative Übermittlungsverfahren"
+     "label": "11. Abschnitt: Alternative Übermittlungsverfahren",
+     "eId": "sec_11"
     }
    ],
    "marginalie": [
@@ -732,7 +754,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Abschnitt: Langzeitsicherung"
+     "label": "12. Abschnitt: Langzeitsicherung",
+     "eId": "sec_12"
     }
    ],
    "marginalie": [],
@@ -755,7 +778,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Abschnitt: Mindestanforderungen an die Betriebssicherheit der Grundbuchsysteme"
+     "label": "13. Abschnitt: Mindestanforderungen an die Betriebssicherheit der Grundbuchsysteme",
+     "eId": "sec_13"
     }
    ],
    "marginalie": []
@@ -764,7 +788,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Abschnitt: Schlussbestimmungen"
+     "label": "14. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_14"
     }
    ],
    "marginalie": [
@@ -790,7 +815,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Abschnitt: Schlussbestimmungen"
+     "label": "14. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_14"
     }
    ],
    "marginalie": [
@@ -801,7 +827,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Abschnitt: Schlussbestimmungen"
+     "label": "14. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_14"
     }
    ],
    "marginalie": [
@@ -812,7 +839,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Abschnitt: Die Schnittstelle zum Suchindex des Grundstücksuchdienstes"
+     "label": "6a. Abschnitt: Die Schnittstelle zum Suchindex des Grundstücksuchdienstes",
+     "eId": "sec_6_a"
     }
    ],
    "marginalie": [
@@ -838,7 +866,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Abschnitt: Die Schnittstelle zum Suchindex des Grundstücksuchdienstes"
+     "label": "6a. Abschnitt: Die Schnittstelle zum Suchindex des Grundstücksuchdienstes",
+     "eId": "sec_6_a"
     }
    ],
    "marginalie": [
@@ -849,7 +878,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11a. Abschnitt: Technische Anforderungen an die Schnittstelle für Abfragen über den Grundstücksuchdienst und Bewilligung zur Verwendung der Schnittstelle"
+     "label": "11a. Abschnitt: Technische Anforderungen an die Schnittstelle für Abfragen über den Grundstücksuchdienst und Bewilligung zur Verwendung der Schnittstelle",
+     "eId": "sec_11_a"
     }
    ],
    "marginalie": [
@@ -875,7 +905,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11a. Abschnitt: Technische Anforderungen an die Schnittstelle für Abfragen über den Grundstücksuchdienst und Bewilligung zur Verwendung der Schnittstelle"
+     "label": "11a. Abschnitt: Technische Anforderungen an die Schnittstelle für Abfragen über den Grundstücksuchdienst und Bewilligung zur Verwendung der Schnittstelle",
+     "eId": "sec_11_a"
     }
    ],
    "marginalie": [
@@ -886,7 +917,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Abschnitt: Schlussbestimmungen"
+     "label": "14. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_14"
     }
    ],
    "marginalie": [
@@ -911,7 +943,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "14. Abschnitt: Schlussbestimmungen"
+     "label": "14. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_14"
     }
    ],
    "marginalie": [
@@ -956,7 +989,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Abschnitt: Plan für das Grundbuch"
+     "label": "3a. Abschnitt: Plan für das Grundbuch",
+     "eId": "sec_3_a"
     }
    ],
    "marginalie": [
@@ -1006,7 +1040,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Abschnitt: Plan für das Grundbuch"
+     "label": "3a. Abschnitt: Plan für das Grundbuch",
+     "eId": "sec_3_a"
     }
    ],
    "marginalie": [
@@ -1017,7 +1052,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3b. Abschnitt: Dokumente der amtlichen Vermessung für die Grundbuchführung"
+     "label": "3b. Abschnitt: Dokumente der amtlichen Vermessung für die Grundbuchführung",
+     "eId": "sec_3_b"
     }
    ],
    "marginalie": [
@@ -1067,7 +1103,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3b. Abschnitt: Dokumente der amtlichen Vermessung für die Grundbuchführung"
+     "label": "3b. Abschnitt: Dokumente der amtlichen Vermessung für die Grundbuchführung",
+     "eId": "sec_3_b"
     }
    ],
    "marginalie": [
@@ -1078,7 +1115,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Verfahren der Übernahme und Aktualisierung von Daten; Protokollierung"
+     "label": "4a. Abschnitt: Verfahren der Übernahme und Aktualisierung von Daten; Protokollierung",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1104,7 +1142,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Verfahren der Übernahme und Aktualisierung von Daten; Protokollierung"
+     "label": "4a. Abschnitt: Verfahren der Übernahme und Aktualisierung von Daten; Protokollierung",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [

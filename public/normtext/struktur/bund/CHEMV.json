@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "813.11",
   "titel": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen",
@@ -111,7 +111,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -342,7 +343,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -489,7 +491,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -500,7 +503,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -527,15 +531,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": []
@@ -544,15 +551,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Einstufung von Stoffen und Zubereitungen"
+     "label": "2. Abschnitt: Einstufung von Stoffen und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -584,15 +594,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Einstufung von Stoffen und Zubereitungen"
+     "label": "2. Abschnitt: Einstufung von Stoffen und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -613,15 +626,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen"
+     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -642,15 +658,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen"
+     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -685,15 +704,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen"
+     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -785,15 +807,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen"
+     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -838,15 +863,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen"
+     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -866,15 +894,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen"
+     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [],
@@ -897,15 +928,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen"
+     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -973,15 +1007,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen"
+     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1006,15 +1043,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Expositionsszenarien und Sicherheitsdatenblatt für Stoffe und Zubereitungen"
+     "label": "4. Abschnitt: Expositionsszenarien und Sicherheitsdatenblatt für Stoffe und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1034,15 +1074,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Expositionsszenarien und Sicherheitsdatenblatt für Stoffe und Zubereitungen"
+     "label": "4. Abschnitt: Expositionsszenarien und Sicherheitsdatenblatt für Stoffe und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1063,15 +1106,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Expositionsszenarien und Sicherheitsdatenblatt für Stoffe und Zubereitungen"
+     "label": "4. Abschnitt: Expositionsszenarien und Sicherheitsdatenblatt für Stoffe und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1082,15 +1128,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Expositionsszenarien und Sicherheitsdatenblatt für Stoffe und Zubereitungen"
+     "label": "4. Abschnitt: Expositionsszenarien und Sicherheitsdatenblatt für Stoffe und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1174,15 +1223,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Expositionsszenarien und Sicherheitsdatenblatt für Stoffe und Zubereitungen"
+     "label": "4. Abschnitt: Expositionsszenarien und Sicherheitsdatenblatt für Stoffe und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1193,15 +1245,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Expositionsszenarien und Sicherheitsdatenblatt für Stoffe und Zubereitungen"
+     "label": "4. Abschnitt: Expositionsszenarien und Sicherheitsdatenblatt für Stoffe und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1212,15 +1267,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Expositionsszenarien und Sicherheitsdatenblatt für Stoffe und Zubereitungen"
+     "label": "4. Abschnitt: Expositionsszenarien und Sicherheitsdatenblatt für Stoffe und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1231,15 +1289,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Expositionsszenarien und Sicherheitsdatenblatt für Stoffe und Zubereitungen"
+     "label": "4. Abschnitt: Expositionsszenarien und Sicherheitsdatenblatt für Stoffe und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -1250,15 +1311,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe"
+     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anmeldung neuer Stoffe"
+     "label": "1. Abschnitt: Anmeldung neuer Stoffe",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1269,15 +1333,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe"
+     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anmeldung neuer Stoffe"
+     "label": "1. Abschnitt: Anmeldung neuer Stoffe",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1314,15 +1381,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe"
+     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anmeldung neuer Stoffe"
+     "label": "1. Abschnitt: Anmeldung neuer Stoffe",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1390,15 +1460,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe"
+     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anmeldung neuer Stoffe"
+     "label": "1. Abschnitt: Anmeldung neuer Stoffe",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1466,15 +1539,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe"
+     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anmeldung neuer Stoffe"
+     "label": "1. Abschnitt: Anmeldung neuer Stoffe",
+     "eId": "tit_2/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1495,15 +1571,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe"
+     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verwendung von Daten früherer Anmelderinnen und Schutzdauer für Daten"
+     "label": "2. Abschnitt: Verwendung von Daten früherer Anmelderinnen und Schutzdauer für Daten",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1535,15 +1614,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe"
+     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verwendung von Daten früherer Anmelderinnen und Schutzdauer für Daten"
+     "label": "2. Abschnitt: Verwendung von Daten früherer Anmelderinnen und Schutzdauer für Daten",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1568,15 +1650,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe"
+     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verwendung von Daten früherer Anmelderinnen und Schutzdauer für Daten"
+     "label": "2. Abschnitt: Verwendung von Daten früherer Anmelderinnen und Schutzdauer für Daten",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1613,15 +1698,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe"
+     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verwendung von Daten früherer Anmelderinnen und Schutzdauer für Daten"
+     "label": "2. Abschnitt: Verwendung von Daten früherer Anmelderinnen und Schutzdauer für Daten",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1659,15 +1747,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe"
+     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verwendung von Daten früherer Anmelderinnen und Schutzdauer für Daten"
+     "label": "2. Abschnitt: Verwendung von Daten früherer Anmelderinnen und Schutzdauer für Daten",
+     "eId": "tit_2/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1692,15 +1783,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe"
+     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Mitteilung neuer Stoffe für die produkt- und verfahrensorientierte Forschung und Entwicklung"
+     "label": "3. Abschnitt: Mitteilung neuer Stoffe für die produkt- und verfahrensorientierte Forschung und Entwicklung",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1711,15 +1805,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe"
+     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Mitteilung neuer Stoffe für die produkt- und verfahrensorientierte Forschung und Entwicklung"
+     "label": "3. Abschnitt: Mitteilung neuer Stoffe für die produkt- und verfahrensorientierte Forschung und Entwicklung",
+     "eId": "tit_2/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1730,15 +1827,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe"
+     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Verfahren bei Anmeldung und Mitteilung"
+     "label": "4. Abschnitt: Verfahren bei Anmeldung und Mitteilung",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1749,15 +1849,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe"
+     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Verfahren bei Anmeldung und Mitteilung"
+     "label": "4. Abschnitt: Verfahren bei Anmeldung und Mitteilung",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1768,15 +1871,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe"
+     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Verfahren bei Anmeldung und Mitteilung"
+     "label": "4. Abschnitt: Verfahren bei Anmeldung und Mitteilung",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1787,15 +1893,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe"
+     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Verfahren bei Anmeldung und Mitteilung"
+     "label": "4. Abschnitt: Verfahren bei Anmeldung und Mitteilung",
+     "eId": "tit_2/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1806,15 +1915,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe"
+     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Berechtigung zum Inverkehrbringen"
+     "label": "5. Abschnitt: Berechtigung zum Inverkehrbringen",
+     "eId": "tit_2/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -1825,15 +1937,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe"
+     "label": "2. Kapitel: Anmeldung und Mitteilung neuer Stoffe",
+     "eId": "tit_2/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Berechtigung zum Inverkehrbringen"
+     "label": "5. Abschnitt: Berechtigung zum Inverkehrbringen",
+     "eId": "tit_2/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -1844,11 +1959,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Anforderungen an Prüfungen"
+     "label": "3. Kapitel: Anforderungen an Prüfungen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1873,11 +1990,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Anforderungen an Prüfungen"
+     "label": "3. Kapitel: Anforderungen an Prüfungen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1910,11 +2029,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen"
+     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Berücksichtigung neuer Erkenntnisse für die Beurteilung, Einstufung und Kennzeichnung"
+     "label": "1. Kapitel: Berücksichtigung neuer Erkenntnisse für die Beurteilung, Einstufung und Kennzeichnung",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1925,11 +2046,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen"
+     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Berücksichtigung neuer Erkenntnisse für die Beurteilung, Einstufung und Kennzeichnung"
+     "label": "1. Kapitel: Berücksichtigung neuer Erkenntnisse für die Beurteilung, Einstufung und Kennzeichnung",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1940,11 +2063,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen"
+     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Folgeinformationen und zusätzliche Prüfberichte bei neuen Stoffen"
+     "label": "2. Kapitel: Folgeinformationen und zusätzliche Prüfberichte bei neuen Stoffen",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1955,11 +2080,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen"
+     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Folgeinformationen und zusätzliche Prüfberichte bei neuen Stoffen"
+     "label": "2. Kapitel: Folgeinformationen und zusätzliche Prüfberichte bei neuen Stoffen",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1985,11 +2112,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen"
+     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Meldepflicht"
+     "label": "3. Kapitel: Meldepflicht",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2014,11 +2143,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen"
+     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Meldepflicht"
+     "label": "3. Kapitel: Meldepflicht",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2090,11 +2221,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen"
+     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Meldepflicht"
+     "label": "3. Kapitel: Meldepflicht",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2119,11 +2252,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen"
+     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Meldepflicht"
+     "label": "3. Kapitel: Meldepflicht",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2134,11 +2269,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen"
+     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Meldepflicht"
+     "label": "3. Kapitel: Meldepflicht",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2164,11 +2301,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen"
+     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Meldepflicht"
+     "label": "3. Kapitel: Meldepflicht",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2195,11 +2334,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen"
+     "label": "3. Titel: Pflichten der Herstellerin nach dem Inverkehrbringen",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Meldepflicht"
+     "label": "3. Kapitel: Meldepflicht",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2360,11 +2501,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2375,11 +2518,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2390,11 +2535,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2414,11 +2561,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2429,11 +2578,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2444,11 +2595,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -2468,11 +2621,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Umgang mit Stoffen und Zubereitungen der Gruppen 1 und 2"
+     "label": "2. Kapitel: Umgang mit Stoffen und Zubereitungen der Gruppen 1 und 2",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -2492,11 +2647,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Umgang mit Stoffen und Zubereitungen der Gruppen 1 und 2"
+     "label": "2. Kapitel: Umgang mit Stoffen und Zubereitungen der Gruppen 1 und 2",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -2507,11 +2664,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Umgang mit Stoffen und Zubereitungen der Gruppen 1 und 2"
+     "label": "2. Kapitel: Umgang mit Stoffen und Zubereitungen der Gruppen 1 und 2",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -2522,11 +2681,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Umgang mit Stoffen und Zubereitungen der Gruppen 1 und 2"
+     "label": "2. Kapitel: Umgang mit Stoffen und Zubereitungen der Gruppen 1 und 2",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -2537,11 +2698,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Umgang mit Stoffen und Zubereitungen der Gruppen 1 und 2"
+     "label": "2. Kapitel: Umgang mit Stoffen und Zubereitungen der Gruppen 1 und 2",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -2552,11 +2715,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Umgang mit Stoffen und Zubereitungen der Gruppen 1 und 2"
+     "label": "2. Kapitel: Umgang mit Stoffen und Zubereitungen der Gruppen 1 und 2",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -2582,11 +2747,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Umgang mit Stoffen und Zubereitungen der Gruppen 1 und 2"
+     "label": "2. Kapitel: Umgang mit Stoffen und Zubereitungen der Gruppen 1 und 2",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -2597,11 +2764,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Umgang mit Stoffen und Zubereitungen der Gruppen 1 und 2"
+     "label": "2. Kapitel: Umgang mit Stoffen und Zubereitungen der Gruppen 1 und 2",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -2612,11 +2781,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Umgang mit Stoffen und Zubereitungen der Gruppen 1 und 2"
+     "label": "2. Kapitel: Umgang mit Stoffen und Zubereitungen der Gruppen 1 und 2",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -2627,11 +2798,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umgang mit besonders besorgniserregenden Stoffen"
+     "label": "3. Kapitel: Umgang mit besonders besorgniserregenden Stoffen",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -2664,11 +2837,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen"
+     "label": "4. Titel: Verhaltensregeln im Umgang mit Stoffen, Zubereitungen und Gegenständen",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umgang mit besonders besorgniserregenden Stoffen"
+     "label": "3. Kapitel: Umgang mit besonders besorgniserregenden Stoffen",
+     "eId": "tit_4/chap_3"
     }
    ],
    "marginalie": [
@@ -2679,7 +2854,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Datenbearbeitung"
+     "label": "5. Titel: Datenbearbeitung",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -2792,7 +2968,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Datenbearbeitung"
+     "label": "5. Titel: Datenbearbeitung",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -2842,7 +3019,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Datenbearbeitung"
+     "label": "5. Titel: Datenbearbeitung",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -2970,7 +3148,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Datenbearbeitung"
+     "label": "5. Titel: Datenbearbeitung",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -2995,7 +3174,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Datenbearbeitung"
+     "label": "5. Titel: Datenbearbeitung",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -3006,15 +3186,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Vollzug"
+     "label": "6. Titel: Vollzug",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bund"
+     "label": "1. Kapitel: Bund",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3039,15 +3222,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Vollzug"
+     "label": "6. Titel: Vollzug",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bund"
+     "label": "1. Kapitel: Bund",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3058,15 +3244,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Vollzug"
+     "label": "6. Titel: Vollzug",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bund"
+     "label": "1. Kapitel: Bund",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Organisation"
+     "label": "1. Abschnitt: Organisation",
+     "eId": "tit_6/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3077,15 +3266,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Vollzug"
+     "label": "6. Titel: Vollzug",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bund"
+     "label": "1. Kapitel: Bund",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Überprüfung alter Stoffe"
+     "label": "2. Abschnitt: Überprüfung alter Stoffe",
+     "eId": "tit_6/chap_1/sec_2"
     }
    ],
    "marginalie": [],
@@ -3108,15 +3300,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Vollzug"
+     "label": "6. Titel: Vollzug",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bund"
+     "label": "1. Kapitel: Bund",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Überprüfung der Selbstkontrolle und Überwachung"
+     "label": "3. Abschnitt: Überprüfung der Selbstkontrolle und Überwachung",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -3143,15 +3338,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Vollzug"
+     "label": "6. Titel: Vollzug",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bund"
+     "label": "1. Kapitel: Bund",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Überprüfung der Selbstkontrolle und Überwachung"
+     "label": "3. Abschnitt: Überprüfung der Selbstkontrolle und Überwachung",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -3162,15 +3360,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Vollzug"
+     "label": "6. Titel: Vollzug",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bund"
+     "label": "1. Kapitel: Bund",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Überprüfung der Selbstkontrolle und Überwachung"
+     "label": "3. Abschnitt: Überprüfung der Selbstkontrolle und Überwachung",
+     "eId": "tit_6/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -3181,15 +3382,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Vollzug"
+     "label": "6. Titel: Vollzug",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bund"
+     "label": "1. Kapitel: Bund",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Anpassung der technischen Vorschriften und der Kandidatenliste"
+     "label": "4. Abschnitt: Anpassung der technischen Vorschriften und der Kandidatenliste",
+     "eId": "tit_6/chap_1/sec_4"
     }
    ],
    "marginalie": [],
@@ -3257,15 +3461,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Vollzug"
+     "label": "6. Titel: Vollzug",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bund"
+     "label": "1. Kapitel: Bund",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Übertragung von Aufgaben und Befugnissen an Dritte"
+     "label": "5. Abschnitt: Übertragung von Aufgaben und Befugnissen an Dritte",
+     "eId": "tit_6/chap_1/sec_5"
     }
    ],
    "marginalie": []
@@ -3274,15 +3481,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Vollzug"
+     "label": "6. Titel: Vollzug",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Bund"
+     "label": "1. Kapitel: Bund",
+     "eId": "tit_6/chap_1"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Gebühren"
+     "label": "6. Abschnitt: Gebühren",
+     "eId": "tit_6/chap_1/sec_6"
     }
    ],
    "marginalie": [],
@@ -3307,11 +3517,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Vollzug"
+     "label": "6. Titel: Vollzug",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kantone"
+     "label": "2. Kapitel: Kantone",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -3349,11 +3561,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Vollzug"
+     "label": "6. Titel: Vollzug",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kantone"
+     "label": "2. Kapitel: Kantone",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -3378,11 +3592,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Vollzug"
+     "label": "6. Titel: Vollzug",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kantone"
+     "label": "2. Kapitel: Kantone",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [],
@@ -3405,11 +3621,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Vollzug"
+     "label": "6. Titel: Vollzug",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kantone"
+     "label": "2. Kapitel: Kantone",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -3434,11 +3652,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Aufhebung und Änderung anderer Erlasse"
+     "label": "1. Kapitel: Aufhebung und Änderung anderer Erlasse",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -3508,11 +3728,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Aufhebung und Änderung anderer Erlasse"
+     "label": "1. Kapitel: Aufhebung und Änderung anderer Erlasse",
+     "eId": "tit_7/chap_1"
     }
    ],
    "marginalie": [
@@ -3523,11 +3745,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Übergangsbestimmungen"
+     "label": "2. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [],
@@ -3614,11 +3838,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Inkrafttreten"
+     "label": "3. Kapitel: Inkrafttreten",
+     "eId": "tit_7/chap_3"
     }
    ],
    "marginalie": []
@@ -3627,15 +3853,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen"
+     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -3664,15 +3893,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen"
+     "label": "2. Titel: Voraussetzungen für das Inverkehrbringen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Selbstkontrolle"
+     "label": "1. Kapitel: Selbstkontrolle",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen"
+     "label": "3. Abschnitt: Verpackung und Kennzeichnung von Stoffen und Zubereitungen",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -3708,11 +3940,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Vollzug"
+     "label": "6. Titel: Vollzug",
+     "eId": "tit_6"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kantone"
+     "label": "2. Kapitel: Kantone",
+     "eId": "tit_6/chap_2"
     }
    ],
    "marginalie": [
@@ -3737,11 +3971,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Übergangsbestimmungen"
+     "label": "2. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -3778,11 +4014,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Übergangsbestimmungen"
+     "label": "2. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -3807,11 +4045,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Schlussbestimmungen"
+     "label": "7. Titel: Schlussbestimmungen",
+     "eId": "tit_7"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Übergangsbestimmungen"
+     "label": "2. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_7/chap_2"
     }
    ],
    "marginalie": [

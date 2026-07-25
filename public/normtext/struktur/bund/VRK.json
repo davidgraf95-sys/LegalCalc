@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "0.111",
   "titel": "Wiener Übereinkommen über das Recht der Verträge",
@@ -82,7 +82,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Einleitung"
+     "label": "Teil I Einleitung",
+     "eId": "part_I"
     }
    ],
    "marginalie": [
@@ -93,7 +94,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Einleitung"
+     "label": "Teil I Einleitung",
+     "eId": "part_I"
     }
    ],
    "marginalie": [
@@ -104,7 +106,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Einleitung"
+     "label": "Teil I Einleitung",
+     "eId": "part_I"
     }
    ],
    "marginalie": [
@@ -115,7 +118,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Einleitung"
+     "label": "Teil I Einleitung",
+     "eId": "part_I"
     }
    ],
    "marginalie": [
@@ -126,7 +130,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Einleitung"
+     "label": "Teil I Einleitung",
+     "eId": "part_I"
     }
    ],
    "marginalie": [
@@ -137,11 +142,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Abschluss von Verträgen"
+     "label": "Abschnitt 1 Abschluss von Verträgen",
+     "eId": "part_II/sec_1"
     }
    ],
    "marginalie": [
@@ -152,11 +159,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Abschluss von Verträgen"
+     "label": "Abschnitt 1 Abschluss von Verträgen",
+     "eId": "part_II/sec_1"
     }
    ],
    "marginalie": [
@@ -167,11 +176,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Abschluss von Verträgen"
+     "label": "Abschnitt 1 Abschluss von Verträgen",
+     "eId": "part_II/sec_1"
     }
    ],
    "marginalie": [
@@ -182,11 +193,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Abschluss von Verträgen"
+     "label": "Abschnitt 1 Abschluss von Verträgen",
+     "eId": "part_II/sec_1"
     }
    ],
    "marginalie": [
@@ -197,11 +210,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Abschluss von Verträgen"
+     "label": "Abschnitt 1 Abschluss von Verträgen",
+     "eId": "part_II/sec_1"
     }
    ],
    "marginalie": [
@@ -212,11 +227,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Abschluss von Verträgen"
+     "label": "Abschnitt 1 Abschluss von Verträgen",
+     "eId": "part_II/sec_1"
     }
    ],
    "marginalie": [
@@ -227,11 +244,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Abschluss von Verträgen"
+     "label": "Abschnitt 1 Abschluss von Verträgen",
+     "eId": "part_II/sec_1"
     }
    ],
    "marginalie": [
@@ -242,11 +261,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Abschluss von Verträgen"
+     "label": "Abschnitt 1 Abschluss von Verträgen",
+     "eId": "part_II/sec_1"
     }
    ],
    "marginalie": [
@@ -257,11 +278,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Abschluss von Verträgen"
+     "label": "Abschnitt 1 Abschluss von Verträgen",
+     "eId": "part_II/sec_1"
     }
    ],
    "marginalie": [
@@ -272,11 +295,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Abschluss von Verträgen"
+     "label": "Abschnitt 1 Abschluss von Verträgen",
+     "eId": "part_II/sec_1"
     }
    ],
    "marginalie": [
@@ -287,11 +312,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Abschluss von Verträgen"
+     "label": "Abschnitt 1 Abschluss von Verträgen",
+     "eId": "part_II/sec_1"
     }
    ],
    "marginalie": [
@@ -302,11 +329,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Abschluss von Verträgen"
+     "label": "Abschnitt 1 Abschluss von Verträgen",
+     "eId": "part_II/sec_1"
     }
    ],
    "marginalie": [
@@ -317,11 +346,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Abschluss von Verträgen"
+     "label": "Abschnitt 1 Abschluss von Verträgen",
+     "eId": "part_II/sec_1"
     }
    ],
    "marginalie": [
@@ -332,11 +363,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2 Vorbehalte"
+     "label": "Abschnitt 2 Vorbehalte",
+     "eId": "part_II/sec_2"
     }
    ],
    "marginalie": [
@@ -347,11 +380,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2 Vorbehalte"
+     "label": "Abschnitt 2 Vorbehalte",
+     "eId": "part_II/sec_2"
     }
    ],
    "marginalie": [
@@ -362,11 +397,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2 Vorbehalte"
+     "label": "Abschnitt 2 Vorbehalte",
+     "eId": "part_II/sec_2"
     }
    ],
    "marginalie": [
@@ -377,11 +414,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2 Vorbehalte"
+     "label": "Abschnitt 2 Vorbehalte",
+     "eId": "part_II/sec_2"
     }
    ],
    "marginalie": [
@@ -392,11 +431,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2 Vorbehalte"
+     "label": "Abschnitt 2 Vorbehalte",
+     "eId": "part_II/sec_2"
     }
    ],
    "marginalie": [
@@ -407,11 +448,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3 Inkrafttreten und vorläufige Anwendung von Verträgen"
+     "label": "Abschnitt 3 Inkrafttreten und vorläufige Anwendung von Verträgen",
+     "eId": "part_II/sec_3"
     }
    ],
    "marginalie": [
@@ -422,11 +465,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss und Inkrafttreten von Verträgen"
+     "label": "Teil II Abschluss und Inkrafttreten von Verträgen",
+     "eId": "part_II"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3 Inkrafttreten und vorläufige Anwendung von Verträgen"
+     "label": "Abschnitt 3 Inkrafttreten und vorläufige Anwendung von Verträgen",
+     "eId": "part_II/sec_3"
     }
    ],
    "marginalie": [
@@ -437,11 +482,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen"
+     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Einhaltung von Verträgen"
+     "label": "Abschnitt 1 Einhaltung von Verträgen",
+     "eId": "part_III/sec_1"
     }
    ],
    "marginalie": [
@@ -452,11 +499,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen"
+     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Einhaltung von Verträgen"
+     "label": "Abschnitt 1 Einhaltung von Verträgen",
+     "eId": "part_III/sec_1"
     }
    ],
    "marginalie": [
@@ -467,11 +516,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen"
+     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2 Anwendung von Verträgen"
+     "label": "Abschnitt 2 Anwendung von Verträgen",
+     "eId": "part_III/sec_2"
     }
    ],
    "marginalie": [
@@ -482,11 +533,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen"
+     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2 Anwendung von Verträgen"
+     "label": "Abschnitt 2 Anwendung von Verträgen",
+     "eId": "part_III/sec_2"
     }
    ],
    "marginalie": [
@@ -497,11 +550,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen"
+     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2 Anwendung von Verträgen"
+     "label": "Abschnitt 2 Anwendung von Verträgen",
+     "eId": "part_III/sec_2"
     }
    ],
    "marginalie": [
@@ -512,11 +567,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen"
+     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3 Auslegung von Verträgen"
+     "label": "Abschnitt 3 Auslegung von Verträgen",
+     "eId": "part_III/sec_3"
     }
    ],
    "marginalie": [
@@ -527,11 +584,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen"
+     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3 Auslegung von Verträgen"
+     "label": "Abschnitt 3 Auslegung von Verträgen",
+     "eId": "part_III/sec_3"
     }
    ],
    "marginalie": [
@@ -542,11 +601,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen"
+     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3 Auslegung von Verträgen"
+     "label": "Abschnitt 3 Auslegung von Verträgen",
+     "eId": "part_III/sec_3"
     }
    ],
    "marginalie": [
@@ -557,11 +618,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen"
+     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 4 Verträge und Drittstaaten"
+     "label": "Abschnitt 4 Verträge und Drittstaaten",
+     "eId": "part_III/sec_4"
     }
    ],
    "marginalie": [
@@ -572,11 +635,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen"
+     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 4 Verträge und Drittstaaten"
+     "label": "Abschnitt 4 Verträge und Drittstaaten",
+     "eId": "part_III/sec_4"
     }
    ],
    "marginalie": [
@@ -587,11 +652,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen"
+     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 4 Verträge und Drittstaaten"
+     "label": "Abschnitt 4 Verträge und Drittstaaten",
+     "eId": "part_III/sec_4"
     }
    ],
    "marginalie": [
@@ -602,11 +669,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen"
+     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 4 Verträge und Drittstaaten"
+     "label": "Abschnitt 4 Verträge und Drittstaaten",
+     "eId": "part_III/sec_4"
     }
    ],
    "marginalie": [
@@ -617,11 +686,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen"
+     "label": "Teil III Einhaltung, Anwendung und Auslegung von Verträgen",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 4 Verträge und Drittstaaten"
+     "label": "Abschnitt 4 Verträge und Drittstaaten",
+     "eId": "part_III/sec_4"
     }
    ],
    "marginalie": [
@@ -632,7 +703,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Änderung und Modifikation von Verträgen"
+     "label": "Teil IV Änderung und Modifikation von Verträgen",
+     "eId": "part_IV"
     }
    ],
    "marginalie": [
@@ -643,7 +715,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Änderung und Modifikation von Verträgen"
+     "label": "Teil IV Änderung und Modifikation von Verträgen",
+     "eId": "part_IV"
     }
    ],
    "marginalie": [
@@ -654,7 +727,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Änderung und Modifikation von Verträgen"
+     "label": "Teil IV Änderung und Modifikation von Verträgen",
+     "eId": "part_IV"
     }
    ],
    "marginalie": [
@@ -665,11 +739,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Allgemeine Bestimmungen"
+     "label": "Abschnitt 1 Allgemeine Bestimmungen",
+     "eId": "part_V/sec_1"
     }
    ],
    "marginalie": [
@@ -680,11 +756,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Allgemeine Bestimmungen"
+     "label": "Abschnitt 1 Allgemeine Bestimmungen",
+     "eId": "part_V/sec_1"
     }
    ],
    "marginalie": [
@@ -695,11 +773,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Allgemeine Bestimmungen"
+     "label": "Abschnitt 1 Allgemeine Bestimmungen",
+     "eId": "part_V/sec_1"
     }
    ],
    "marginalie": [
@@ -710,11 +790,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 1 Allgemeine Bestimmungen"
+     "label": "Abschnitt 1 Allgemeine Bestimmungen",
+     "eId": "part_V/sec_1"
     }
    ],
    "marginalie": [
@@ -725,11 +807,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2 Ungültigkeit von Verträgen"
+     "label": "Abschnitt 2 Ungültigkeit von Verträgen",
+     "eId": "part_V/sec_2"
     }
    ],
    "marginalie": [
@@ -740,11 +824,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2 Ungültigkeit von Verträgen"
+     "label": "Abschnitt 2 Ungültigkeit von Verträgen",
+     "eId": "part_V/sec_2"
     }
    ],
    "marginalie": [
@@ -755,11 +841,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2 Ungültigkeit von Verträgen"
+     "label": "Abschnitt 2 Ungültigkeit von Verträgen",
+     "eId": "part_V/sec_2"
     }
    ],
    "marginalie": [
@@ -770,11 +858,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2 Ungültigkeit von Verträgen"
+     "label": "Abschnitt 2 Ungültigkeit von Verträgen",
+     "eId": "part_V/sec_2"
     }
    ],
    "marginalie": [
@@ -785,11 +875,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2 Ungültigkeit von Verträgen"
+     "label": "Abschnitt 2 Ungültigkeit von Verträgen",
+     "eId": "part_V/sec_2"
     }
    ],
    "marginalie": [
@@ -800,11 +892,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2 Ungültigkeit von Verträgen"
+     "label": "Abschnitt 2 Ungültigkeit von Verträgen",
+     "eId": "part_V/sec_2"
     }
    ],
    "marginalie": [
@@ -815,11 +909,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2 Ungültigkeit von Verträgen"
+     "label": "Abschnitt 2 Ungültigkeit von Verträgen",
+     "eId": "part_V/sec_2"
     }
    ],
    "marginalie": [
@@ -830,11 +926,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 2 Ungültigkeit von Verträgen"
+     "label": "Abschnitt 2 Ungültigkeit von Verträgen",
+     "eId": "part_V/sec_2"
     }
    ],
    "marginalie": [
@@ -845,11 +943,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen"
+     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V/sec_3"
     }
    ],
    "marginalie": [
@@ -860,11 +960,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen"
+     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V/sec_3"
     }
    ],
    "marginalie": [
@@ -875,11 +977,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen"
+     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V/sec_3"
     }
    ],
    "marginalie": [
@@ -890,11 +994,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen"
+     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V/sec_3"
     }
    ],
    "marginalie": [
@@ -905,11 +1011,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen"
+     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V/sec_3"
     }
    ],
    "marginalie": [
@@ -920,11 +1028,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen"
+     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V/sec_3"
     }
    ],
    "marginalie": [
@@ -935,11 +1045,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen"
+     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V/sec_3"
     }
    ],
    "marginalie": [
@@ -950,11 +1062,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen"
+     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V/sec_3"
     }
    ],
    "marginalie": [
@@ -965,11 +1079,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen"
+     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V/sec_3"
     }
    ],
    "marginalie": [
@@ -980,11 +1096,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen"
+     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V/sec_3"
     }
    ],
    "marginalie": [
@@ -995,11 +1113,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen"
+     "label": "Abschnitt 3 Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V/sec_3"
     }
    ],
    "marginalie": [
@@ -1010,11 +1130,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 4 Verfahren"
+     "label": "Abschnitt 4 Verfahren",
+     "eId": "part_V/sec_4"
     }
    ],
    "marginalie": [
@@ -1025,11 +1147,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 4 Verfahren"
+     "label": "Abschnitt 4 Verfahren",
+     "eId": "part_V/sec_4"
     }
    ],
    "marginalie": [
@@ -1040,11 +1164,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 4 Verfahren"
+     "label": "Abschnitt 4 Verfahren",
+     "eId": "part_V/sec_4"
     }
    ],
    "marginalie": [
@@ -1055,11 +1181,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 4 Verfahren"
+     "label": "Abschnitt 4 Verfahren",
+     "eId": "part_V/sec_4"
     }
    ],
    "marginalie": [
@@ -1070,11 +1198,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 5 Folgen der Ungültigkeit, der Beendigung oder der Suspendierung eines Vertrags"
+     "label": "Abschnitt 5 Folgen der Ungültigkeit, der Beendigung oder der Suspendierung eines Vertrags",
+     "eId": "part_V/sec_5"
     }
    ],
    "marginalie": [
@@ -1085,11 +1215,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 5 Folgen der Ungültigkeit, der Beendigung oder der Suspendierung eines Vertrags"
+     "label": "Abschnitt 5 Folgen der Ungültigkeit, der Beendigung oder der Suspendierung eines Vertrags",
+     "eId": "part_V/sec_5"
     }
    ],
    "marginalie": [
@@ -1100,11 +1232,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 5 Folgen der Ungültigkeit, der Beendigung oder der Suspendierung eines Vertrags"
+     "label": "Abschnitt 5 Folgen der Ungültigkeit, der Beendigung oder der Suspendierung eines Vertrags",
+     "eId": "part_V/sec_5"
     }
    ],
    "marginalie": [
@@ -1115,11 +1249,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen"
+     "label": "Teil V Ungültigkeit, Beendigung und Suspendierung von Verträgen",
+     "eId": "part_V"
     },
     {
      "ebene": 2,
-     "label": "Abschnitt 5 Folgen der Ungültigkeit, der Beendigung oder der Suspendierung eines Vertrags"
+     "label": "Abschnitt 5 Folgen der Ungültigkeit, der Beendigung oder der Suspendierung eines Vertrags",
+     "eId": "part_V/sec_5"
     }
    ],
    "marginalie": [
@@ -1130,7 +1266,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil VI Verschiedene Bestimmungen"
+     "label": "Teil VI Verschiedene Bestimmungen",
+     "eId": "part_VI"
     }
    ],
    "marginalie": [
@@ -1141,7 +1278,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil VI Verschiedene Bestimmungen"
+     "label": "Teil VI Verschiedene Bestimmungen",
+     "eId": "part_VI"
     }
    ],
    "marginalie": [
@@ -1152,7 +1290,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil VI Verschiedene Bestimmungen"
+     "label": "Teil VI Verschiedene Bestimmungen",
+     "eId": "part_VI"
     }
    ],
    "marginalie": [
@@ -1163,7 +1302,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil VII Verwahrer, Notifikationen, Berichtigungen und Registrierung"
+     "label": "Teil VII Verwahrer, Notifikationen, Berichtigungen und Registrierung",
+     "eId": "part_VII"
     }
    ],
    "marginalie": [
@@ -1174,7 +1314,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil VII Verwahrer, Notifikationen, Berichtigungen und Registrierung"
+     "label": "Teil VII Verwahrer, Notifikationen, Berichtigungen und Registrierung",
+     "eId": "part_VII"
     }
    ],
    "marginalie": [
@@ -1185,7 +1326,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil VII Verwahrer, Notifikationen, Berichtigungen und Registrierung"
+     "label": "Teil VII Verwahrer, Notifikationen, Berichtigungen und Registrierung",
+     "eId": "part_VII"
     }
    ],
    "marginalie": [
@@ -1196,7 +1338,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil VII Verwahrer, Notifikationen, Berichtigungen und Registrierung"
+     "label": "Teil VII Verwahrer, Notifikationen, Berichtigungen und Registrierung",
+     "eId": "part_VII"
     }
    ],
    "marginalie": [
@@ -1207,7 +1350,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil VII Verwahrer, Notifikationen, Berichtigungen und Registrierung"
+     "label": "Teil VII Verwahrer, Notifikationen, Berichtigungen und Registrierung",
+     "eId": "part_VII"
     }
    ],
    "marginalie": [
@@ -1218,7 +1362,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil VIII Schlussbestimmungen"
+     "label": "Teil VIII Schlussbestimmungen",
+     "eId": "part_VIII"
     }
    ],
    "marginalie": [
@@ -1229,7 +1374,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil VIII Schlussbestimmungen"
+     "label": "Teil VIII Schlussbestimmungen",
+     "eId": "part_VIII"
     }
    ],
    "marginalie": [
@@ -1240,7 +1386,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil VIII Schlussbestimmungen"
+     "label": "Teil VIII Schlussbestimmungen",
+     "eId": "part_VIII"
     }
    ],
    "marginalie": [
@@ -1251,7 +1398,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil VIII Schlussbestimmungen"
+     "label": "Teil VIII Schlussbestimmungen",
+     "eId": "part_VIII"
     }
    ],
    "marginalie": [
@@ -1262,7 +1410,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil VIII Schlussbestimmungen"
+     "label": "Teil VIII Schlussbestimmungen",
+     "eId": "part_VIII"
     }
    ],
    "marginalie": [

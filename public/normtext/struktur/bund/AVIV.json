@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "837.02",
   "titel": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung",
@@ -83,7 +83,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Anwendbarkeit des ATSG"
+     "label": "Erster Titel: Anwendbarkeit des ATSG",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -147,7 +148,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel 1a: Beiträge"
+     "label": "Titel 1a: Beiträge",
+     "eId": "tit_1_a"
     }
    ],
    "marginalie": [
@@ -180,15 +182,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -214,15 +219,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -247,15 +255,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -266,15 +277,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -379,15 +393,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -412,15 +429,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -457,15 +477,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -490,15 +513,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -523,15 +549,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -560,15 +589,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -591,15 +623,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -672,15 +707,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -717,15 +755,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -786,15 +827,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -817,15 +861,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -850,15 +897,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
+     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -992,15 +1042,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
+     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1037,15 +1090,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
+     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1070,15 +1126,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
+     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1103,15 +1162,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
+     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1136,15 +1198,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
+     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1233,15 +1298,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
+     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1266,15 +1334,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
+     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1311,15 +1382,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
+     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1344,15 +1418,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
+     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1412,15 +1489,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1445,15 +1525,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1478,15 +1561,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1535,15 +1621,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1580,15 +1669,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1627,15 +1719,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1734,15 +1829,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1779,15 +1877,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1848,15 +1949,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1929,15 +2033,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -2058,15 +2165,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -2091,15 +2201,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -2110,15 +2223,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -2143,15 +2259,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -2236,15 +2355,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -2281,15 +2403,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [],
@@ -2312,15 +2437,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Einstellung in der Anspruchsberechtigung"
+     "label": "4. Abschnitt: Einstellung in der Anspruchsberechtigung",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -2381,15 +2509,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Einstellung in der Anspruchsberechtigung"
+     "label": "4. Abschnitt: Einstellung in der Anspruchsberechtigung",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -2414,11 +2545,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2443,11 +2576,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2472,11 +2607,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2487,11 +2624,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2502,11 +2641,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2559,11 +2700,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2574,11 +2717,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2589,11 +2734,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2604,11 +2751,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2633,11 +2782,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2648,11 +2799,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2663,11 +2816,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2692,11 +2847,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2721,11 +2878,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2762,11 +2921,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2791,11 +2952,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2806,11 +2969,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [],
@@ -2833,11 +2998,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2848,11 +3015,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [],
@@ -2875,11 +3044,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Schlechtwetterentschädigung"
+     "label": "Drittes Kapitel: Schlechtwetterentschädigung",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -2952,11 +3123,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Schlechtwetterentschädigung"
+     "label": "Drittes Kapitel: Schlechtwetterentschädigung",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -2993,11 +3166,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Schlechtwetterentschädigung"
+     "label": "Drittes Kapitel: Schlechtwetterentschädigung",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3008,11 +3183,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Schlechtwetterentschädigung"
+     "label": "Drittes Kapitel: Schlechtwetterentschädigung",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3023,11 +3200,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Schlechtwetterentschädigung"
+     "label": "Drittes Kapitel: Schlechtwetterentschädigung",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3064,11 +3243,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Schlechtwetterentschädigung"
+     "label": "Drittes Kapitel: Schlechtwetterentschädigung",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3079,11 +3260,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Schlechtwetterentschädigung"
+     "label": "Drittes Kapitel: Schlechtwetterentschädigung",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3094,11 +3277,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Schlechtwetterentschädigung"
+     "label": "Drittes Kapitel: Schlechtwetterentschädigung",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [],
@@ -3121,11 +3306,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Insolvenzentschädigung"
+     "label": "Viertes Kapitel: Insolvenzentschädigung",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -3136,11 +3323,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Insolvenzentschädigung"
+     "label": "Viertes Kapitel: Insolvenzentschädigung",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -3165,11 +3354,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Insolvenzentschädigung"
+     "label": "Viertes Kapitel: Insolvenzentschädigung",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [],
@@ -3192,11 +3383,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Insolvenzentschädigung"
+     "label": "Viertes Kapitel: Insolvenzentschädigung",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -3207,11 +3400,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Insolvenzentschädigung"
+     "label": "Viertes Kapitel: Insolvenzentschädigung",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -3301,11 +3496,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Insolvenzentschädigung"
+     "label": "Viertes Kapitel: Insolvenzentschädigung",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -3316,11 +3513,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Insolvenzentschädigung"
+     "label": "Viertes Kapitel: Insolvenzentschädigung",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -3331,11 +3530,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Insolvenzentschädigung"
+     "label": "Viertes Kapitel: Insolvenzentschädigung",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -3346,15 +3547,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung"
+     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -3428,15 +3632,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung"
+     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -3461,15 +3668,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung"
+     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -3494,15 +3704,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung"
+     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -3539,15 +3752,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung"
+     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -3572,15 +3788,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung"
+     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -3605,15 +3824,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung"
+     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -3638,15 +3860,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung"
+     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -3707,15 +3932,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung"
+     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [],
@@ -3738,15 +3966,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung"
+     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -3847,15 +4078,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion"
+     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion",
+     "eId": "tit_2/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -3880,15 +4114,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion"
+     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion",
+     "eId": "tit_2/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -3899,15 +4136,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion"
+     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion",
+     "eId": "tit_2/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -3918,15 +4158,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion"
+     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion",
+     "eId": "tit_2/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -3951,15 +4194,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion"
+     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion",
+     "eId": "tit_2/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -3996,15 +4242,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Weitere Massnahmen"
+     "label": "3. Abschnitt: Weitere Massnahmen",
+     "eId": "tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [],
@@ -4027,15 +4276,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Weitere Massnahmen"
+     "label": "3. Abschnitt: Weitere Massnahmen",
+     "eId": "tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -4096,15 +4348,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Weitere Massnahmen"
+     "label": "3. Abschnitt: Weitere Massnahmen",
+     "eId": "tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -4129,15 +4384,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Weitere Massnahmen"
+     "label": "3. Abschnitt: Weitere Massnahmen",
+     "eId": "tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [],
@@ -4160,15 +4418,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Weitere Massnahmen"
+     "label": "3. Abschnitt: Weitere Massnahmen",
+     "eId": "tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -4217,11 +4478,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenkassen"
+     "label": "Erstes Kapitel: Arbeitslosenkassen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -4232,11 +4495,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenkassen"
+     "label": "Erstes Kapitel: Arbeitslosenkassen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -4261,11 +4526,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenkassen"
+     "label": "Erstes Kapitel: Arbeitslosenkassen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -4290,11 +4557,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenkassen"
+     "label": "Erstes Kapitel: Arbeitslosenkassen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [],
@@ -4317,11 +4586,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenkassen"
+     "label": "Erstes Kapitel: Arbeitslosenkassen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -4346,11 +4617,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenkassen"
+     "label": "Erstes Kapitel: Arbeitslosenkassen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -4387,15 +4660,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ausgleichsstelle"
+     "label": "1. Abschnitt: Ausgleichsstelle",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4444,15 +4720,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ausgleichsstelle"
+     "label": "1. Abschnitt: Ausgleichsstelle",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4525,15 +4804,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ausgleichsstelle"
+     "label": "1. Abschnitt: Ausgleichsstelle",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4586,15 +4868,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ausgleichsstelle"
+     "label": "1. Abschnitt: Ausgleichsstelle",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4605,15 +4890,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ausgleichsstelle"
+     "label": "1. Abschnitt: Ausgleichsstelle",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4624,15 +4912,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ausgleichsstelle"
+     "label": "1. Abschnitt: Ausgleichsstelle",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4657,15 +4948,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ausgleichsstelle"
+     "label": "1. Abschnitt: Ausgleichsstelle",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4702,15 +4996,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ausgleichsstelle"
+     "label": "1. Abschnitt: Ausgleichsstelle",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4721,15 +5018,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ausgleichsstelle"
+     "label": "1. Abschnitt: Ausgleichsstelle",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4740,15 +5040,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausgleichsfonds der Arbeitslosenversicherung"
+     "label": "2. Abschnitt: Ausgleichsfonds der Arbeitslosenversicherung",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4759,15 +5062,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Kantonale Amtsstellen"
+     "label": "3. Abschnitt: Kantonale Amtsstellen",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -4816,15 +5122,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Zentrale Ausgleichsstelle der AHV"
+     "label": "4. Abschnitt: Zentrale Ausgleichsstelle der AHV",
+     "eId": "tit_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -4835,15 +5144,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Aufsichtskommission"
+     "label": "5. Abschnitt: Aufsichtskommission",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [],
@@ -4866,11 +5178,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Finanzierung"
+     "label": "Drittes Kapitel: Finanzierung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -4895,11 +5209,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Finanzierung"
+     "label": "Drittes Kapitel: Finanzierung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [],
@@ -4922,7 +5238,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Verschiedene Bestimmungen"
+     "label": "Vierter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -4947,7 +5264,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Verschiedene Bestimmungen"
+     "label": "Vierter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -4972,7 +5290,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Verschiedene Bestimmungen"
+     "label": "Vierter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -5033,7 +5352,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Verschiedene Bestimmungen"
+     "label": "Vierter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [],
@@ -5056,7 +5376,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Verschiedene Bestimmungen"
+     "label": "Vierter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -5093,7 +5414,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Verschiedene Bestimmungen"
+     "label": "Vierter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [],
@@ -5116,7 +5438,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Schlussbestimmungen"
+     "label": "Fünfter Titel: Schlussbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -5154,7 +5477,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Schlussbestimmungen"
+     "label": "Fünfter Titel: Schlussbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -5192,7 +5516,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Schlussbestimmungen"
+     "label": "Fünfter Titel: Schlussbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -5217,15 +5542,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Weitere Massnahmen"
+     "label": "3. Abschnitt: Weitere Massnahmen",
+     "eId": "tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [],
@@ -5248,15 +5576,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Weitere Massnahmen"
+     "label": "3. Abschnitt: Weitere Massnahmen",
+     "eId": "tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [],
@@ -5283,15 +5614,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Weitere Massnahmen"
+     "label": "3. Abschnitt: Weitere Massnahmen",
+     "eId": "tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [],
@@ -5318,15 +5652,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ausgleichsstelle"
+     "label": "1. Abschnitt: Ausgleichsstelle",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -5363,15 +5700,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ausgleichsstelle"
+     "label": "1. Abschnitt: Ausgleichsstelle",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -5408,15 +5748,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -5441,15 +5784,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -5492,15 +5838,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -5525,15 +5874,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -5583,15 +5935,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -5616,15 +5971,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -5649,15 +6007,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -5682,15 +6043,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -5715,15 +6079,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ausgleichsstelle"
+     "label": "1. Abschnitt: Ausgleichsstelle",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -5748,15 +6115,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ausgleichsstelle"
+     "label": "1. Abschnitt: Ausgleichsstelle",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -5781,15 +6151,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ausgleichsstelle"
+     "label": "1. Abschnitt: Ausgleichsstelle",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -5818,15 +6191,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ausgleichsstelle"
+     "label": "1. Abschnitt: Ausgleichsstelle",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -5849,15 +6225,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Ausgleichsstelle"
+     "label": "1. Abschnitt: Ausgleichsstelle",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -5882,15 +6261,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Kantonale Amtsstellen"
+     "label": "3. Abschnitt: Kantonale Amtsstellen",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5963,15 +6345,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Kantonale Amtsstellen"
+     "label": "3. Abschnitt: Kantonale Amtsstellen",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6012,15 +6397,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Kantonale Amtsstellen"
+     "label": "3. Abschnitt: Kantonale Amtsstellen",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6061,15 +6449,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Kantonale Amtsstellen"
+     "label": "3. Abschnitt: Kantonale Amtsstellen",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6106,15 +6497,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Kantonale Amtsstellen"
+     "label": "3. Abschnitt: Kantonale Amtsstellen",
+     "eId": "tit_3/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -6143,15 +6537,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -6178,15 +6575,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Zentrale Ausgleichsstelle der AHV"
+     "label": "4. Abschnitt: Zentrale Ausgleichsstelle der AHV",
+     "eId": "tit_3/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -6223,15 +6623,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Aufsichtskommission"
+     "label": "5. Abschnitt: Aufsichtskommission",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -6260,15 +6663,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übrige Durchführungsstellen"
+     "label": "Zweites Kapitel: Übrige Durchführungsstellen",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Aufsichtskommission"
+     "label": "5. Abschnitt: Aufsichtskommission",
+     "eId": "tit_3/chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -6293,11 +6699,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Finanzierung"
+     "label": "Drittes Kapitel: Finanzierung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -6351,11 +6759,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Finanzierung"
+     "label": "Drittes Kapitel: Finanzierung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -6397,11 +6807,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Organisation und Finanzierung"
+     "label": "Dritter Titel: Organisation und Finanzierung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Finanzierung"
+     "label": "Drittes Kapitel: Finanzierung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -6442,7 +6854,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Verschiedene Bestimmungen"
+     "label": "Vierter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [],
@@ -6469,7 +6882,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Verschiedene Bestimmungen"
+     "label": "Vierter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -6519,7 +6933,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Verschiedene Bestimmungen"
+     "label": "Vierter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -6568,7 +6983,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Verschiedene Bestimmungen"
+     "label": "Vierter Titel: Verschiedene Bestimmungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -6597,15 +7013,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -6634,7 +7053,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Schlussbestimmungen"
+     "label": "Fünfter Titel: Schlussbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [],
@@ -6661,15 +7081,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
+     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [],
@@ -6696,7 +7119,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Anwendbarkeit des ATSG"
+     "label": "Erster Titel: Anwendbarkeit des ATSG",
+     "eId": "tit_1"
     }
    ],
    "marginalie": [
@@ -6728,15 +7152,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
+     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -6765,15 +7192,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
+     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [],
@@ -6800,15 +7230,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
+     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -6845,15 +7278,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle"
+     "label": "2. Abschnitt: Anmeldung, Beratung und Kontrolle",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [],
@@ -6880,7 +7316,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Titel 1a: Beiträge"
+     "label": "Titel 1a: Beiträge",
+     "eId": "tit_1_a"
     }
    ],
    "marginalie": [
@@ -6900,15 +7337,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -6933,15 +7373,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -6979,15 +7422,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -7012,15 +7458,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -7045,15 +7494,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -7078,15 +7530,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -7171,15 +7626,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -7245,15 +7703,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Entschädigung"
+     "label": "3. Abschnitt: Entschädigung",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [],
@@ -7280,11 +7741,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [],
@@ -7311,11 +7774,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -7340,11 +7805,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -7369,11 +7836,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -7398,11 +7867,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -7427,11 +7898,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -7456,11 +7929,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -7485,11 +7960,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -7514,11 +7991,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -7547,11 +8026,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Kurzarbeitsentschädigung"
+     "label": "Zweites Kapitel: Kurzarbeitsentschädigung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -7576,11 +8057,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Schlechtwetterentschädigung"
+     "label": "Drittes Kapitel: Schlechtwetterentschädigung",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -7605,11 +8088,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Schlechtwetterentschädigung"
+     "label": "Drittes Kapitel: Schlechtwetterentschädigung",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -7634,15 +8119,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Arbeitslosenentschädigung"
+     "label": "Erstes Kapitel: Arbeitslosenentschädigung",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anspruch"
+     "label": "1. Abschnitt: Anspruch",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -7671,11 +8159,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Schlechtwetterentschädigung"
+     "label": "Drittes Kapitel: Schlechtwetterentschädigung",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -7700,11 +8190,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Insolvenzentschädigung"
+     "label": "Viertes Kapitel: Insolvenzentschädigung",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -7733,15 +8225,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung"
+     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -7790,15 +8285,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung"
+     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -7823,15 +8321,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung"
+     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [],
@@ -7858,15 +8359,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung"
+     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -7895,15 +8399,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung"
+     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -7928,15 +8435,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung"
+     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -7973,15 +8483,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung"
+     "label": "1. Abschnitt: Umschulung, Weiterbildung, Eingliederung",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -8111,15 +8624,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion"
+     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion",
+     "eId": "tit_2/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -8148,15 +8664,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion"
+     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion",
+     "eId": "tit_2/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -8229,15 +8748,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion"
+     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion",
+     "eId": "tit_2/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -8291,15 +8813,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion"
+     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion",
+     "eId": "tit_2/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -8352,15 +8877,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion"
+     "label": "2. Abschnitt: Arbeit ausserhalb der Wohnortsregion",
+     "eId": "tit_2/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -8413,15 +8941,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Weitere Massnahmen"
+     "label": "3. Abschnitt: Weitere Massnahmen",
+     "eId": "tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [],
@@ -8448,15 +8979,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Weitere Massnahmen"
+     "label": "3. Abschnitt: Weitere Massnahmen",
+     "eId": "tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -8485,15 +9019,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Weitere Massnahmen"
+     "label": "3. Abschnitt: Weitere Massnahmen",
+     "eId": "tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -8522,15 +9059,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Weitere Massnahmen"
+     "label": "3. Abschnitt: Weitere Massnahmen",
+     "eId": "tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -8559,15 +9099,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Weitere Massnahmen"
+     "label": "3. Abschnitt: Weitere Massnahmen",
+     "eId": "tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [],
@@ -8594,15 +9137,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Leistungen"
+     "label": "Zweiter Titel: Leistungen",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen"
+     "label": "Fünftes Kapitel: Arbeitsmarktliche Massnahmen",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Weitere Massnahmen"
+     "label": "3. Abschnitt: Weitere Massnahmen",
+     "eId": "tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [],

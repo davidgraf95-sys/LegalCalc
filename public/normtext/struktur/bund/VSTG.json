@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "642.21",
   "titel": "Bundesgesetz über die Verrechnungssteuer",
@@ -95,7 +95,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     }
    ],
    "marginalie": [
@@ -136,7 +137,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     }
    ],
    "marginalie": [
@@ -165,7 +167,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     }
    ],
    "marginalie": [
@@ -210,7 +213,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -289,7 +293,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -667,7 +672,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -709,7 +715,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -722,7 +729,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -761,7 +769,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -803,7 +812,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -845,7 +855,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -903,7 +914,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -978,7 +990,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -1045,7 +1058,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -1058,7 +1072,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -1089,7 +1104,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -1204,7 +1220,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -1218,7 +1235,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -1232,7 +1250,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -1291,7 +1310,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -1342,7 +1362,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Steuerrückerstattung"
+     "label": "Zweiter Abschnitt: Steuerrückerstattung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1401,7 +1422,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Steuerrückerstattung"
+     "label": "Zweiter Abschnitt: Steuerrückerstattung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1415,7 +1437,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Steuerrückerstattung"
+     "label": "Zweiter Abschnitt: Steuerrückerstattung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1447,7 +1470,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Steuerrückerstattung"
+     "label": "Zweiter Abschnitt: Steuerrückerstattung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1483,7 +1507,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Steuerrückerstattung"
+     "label": "Zweiter Abschnitt: Steuerrückerstattung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1497,7 +1522,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Steuerrückerstattung"
+     "label": "Zweiter Abschnitt: Steuerrückerstattung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1541,7 +1567,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Steuerrückerstattung"
+     "label": "Zweiter Abschnitt: Steuerrückerstattung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1585,7 +1612,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Steuerrückerstattung"
+     "label": "Zweiter Abschnitt: Steuerrückerstattung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1628,7 +1656,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Steuerrückerstattung"
+     "label": "Zweiter Abschnitt: Steuerrückerstattung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1675,7 +1704,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Steuerrückerstattung"
+     "label": "Zweiter Abschnitt: Steuerrückerstattung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1706,7 +1736,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Steuerrückerstattung"
+     "label": "Zweiter Abschnitt: Steuerrückerstattung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1718,7 +1749,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Steuerrückerstattung"
+     "label": "Zweiter Abschnitt: Steuerrückerstattung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1730,7 +1762,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Steuerrückerstattung"
+     "label": "Zweiter Abschnitt: Steuerrückerstattung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -1741,7 +1774,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1754,7 +1788,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1785,7 +1820,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2035,7 +2071,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2056,7 +2093,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2119,7 +2157,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2154,7 +2193,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2181,7 +2221,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2194,7 +2235,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2230,7 +2272,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2265,7 +2308,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2278,7 +2322,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2292,7 +2337,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2341,7 +2387,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2461,7 +2508,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2475,7 +2523,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2489,7 +2538,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2503,7 +2553,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2516,7 +2567,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2530,7 +2582,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2544,7 +2597,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2558,7 +2612,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2572,7 +2627,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2608,7 +2664,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2620,7 +2677,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2678,7 +2736,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2772,7 +2831,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -2801,7 +2861,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Strafbestimmungen"
+     "label": "Vierter Abschnitt: Strafbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -2844,7 +2905,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Strafbestimmungen"
+     "label": "Vierter Abschnitt: Strafbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -2916,7 +2978,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Strafbestimmungen"
+     "label": "Vierter Abschnitt: Strafbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -2928,7 +2991,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Strafbestimmungen"
+     "label": "Vierter Abschnitt: Strafbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -2958,7 +3022,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Strafbestimmungen"
+     "label": "Vierter Abschnitt: Strafbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -3016,7 +3081,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3037,7 +3103,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3067,7 +3134,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3097,7 +3165,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3117,7 +3186,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3158,7 +3228,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3169,7 +3240,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3189,7 +3261,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -3232,7 +3305,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -3263,7 +3337,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -3294,7 +3369,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -3340,7 +3416,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Behörden und Verfahren"
+     "label": "Dritter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -3383,7 +3460,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Steuererhebung"
+     "label": "Erster Abschnitt: Steuererhebung",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -3502,7 +3580,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Strafbestimmungen"
+     "label": "Vierter Abschnitt: Strafbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -3532,7 +3611,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3570,7 +3650,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3600,7 +3681,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -3634,7 +3716,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Fünfter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [

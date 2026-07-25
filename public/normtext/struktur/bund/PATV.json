@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "232.141",
   "titel": "Verordnung über die Erfindungspatente",
@@ -81,11 +81,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Verkehr mit dem Eidgenössischen Institut für Geistiges Eigentum"
+     "label": "Erstes Kapitel: Verkehr mit dem Eidgenössischen Institut für Geistiges Eigentum",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -176,11 +178,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Verkehr mit dem Eidgenössischen Institut für Geistiges Eigentum"
+     "label": "Erstes Kapitel: Verkehr mit dem Eidgenössischen Institut für Geistiges Eigentum",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -205,11 +209,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Verkehr mit dem Eidgenössischen Institut für Geistiges Eigentum"
+     "label": "Erstes Kapitel: Verkehr mit dem Eidgenössischen Institut für Geistiges Eigentum",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -246,11 +252,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Verkehr mit dem Eidgenössischen Institut für Geistiges Eigentum"
+     "label": "Erstes Kapitel: Verkehr mit dem Eidgenössischen Institut für Geistiges Eigentum",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -335,11 +343,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Verkehr mit dem Eidgenössischen Institut für Geistiges Eigentum"
+     "label": "Erstes Kapitel: Verkehr mit dem Eidgenössischen Institut für Geistiges Eigentum",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -364,11 +374,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Vertretung"
+     "label": "Zweites Kapitel: Vertretung",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [],
@@ -391,11 +403,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Vertretung"
+     "label": "Zweites Kapitel: Vertretung",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [],
@@ -418,11 +432,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Fristen"
+     "label": "Drittes Kapitel: Fristen",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -471,11 +487,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Fristen"
+     "label": "Drittes Kapitel: Fristen",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -549,11 +567,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Fristen"
+     "label": "Drittes Kapitel: Fristen",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -578,11 +598,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Fristen"
+     "label": "Drittes Kapitel: Fristen",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -619,11 +641,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Gebühren"
+     "label": "Viertes Kapitel: Gebühren",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -662,11 +686,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Gebühren"
+     "label": "Viertes Kapitel: Gebühren",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -727,11 +753,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Gebühren"
+     "label": "Viertes Kapitel: Gebühren",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -756,11 +784,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Gebühren"
+     "label": "Viertes Kapitel: Gebühren",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -845,11 +875,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeines"
+     "label": "Erstes Kapitel: Allgemeines",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -874,11 +906,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Allgemeines"
+     "label": "Erstes Kapitel: Allgemeines",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -903,11 +937,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Der Antrag auf Erteilung des Patentes"
+     "label": "Zweites Kapitel: Der Antrag auf Erteilung des Patentes",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -944,11 +980,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Der Antrag auf Erteilung des Patentes"
+     "label": "Zweites Kapitel: Der Antrag auf Erteilung des Patentes",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1021,11 +1059,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Die technischen Unterlagen"
+     "label": "Drittes Kapitel: Die technischen Unterlagen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1099,11 +1139,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Die technischen Unterlagen"
+     "label": "Drittes Kapitel: Die technischen Unterlagen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1176,11 +1218,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Die technischen Unterlagen"
+     "label": "Drittes Kapitel: Die technischen Unterlagen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1218,11 +1262,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Die technischen Unterlagen"
+     "label": "Drittes Kapitel: Die technischen Unterlagen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1283,11 +1329,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Die technischen Unterlagen"
+     "label": "Drittes Kapitel: Die technischen Unterlagen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1312,11 +1360,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Die technischen Unterlagen"
+     "label": "Drittes Kapitel: Die technischen Unterlagen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1377,11 +1427,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Die technischen Unterlagen"
+     "label": "Drittes Kapitel: Die technischen Unterlagen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1406,11 +1458,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Die technischen Unterlagen"
+     "label": "Drittes Kapitel: Die technischen Unterlagen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1483,11 +1537,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Die technischen Unterlagen"
+     "label": "Drittes Kapitel: Die technischen Unterlagen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1512,11 +1568,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Die Erfindernennung"
+     "label": "Viertes Kapitel: Die Erfindernennung",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -1553,11 +1611,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Die Erfindernennung"
+     "label": "Viertes Kapitel: Die Erfindernennung",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -1582,11 +1642,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Die Erfindernennung"
+     "label": "Viertes Kapitel: Die Erfindernennung",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [],
@@ -1609,11 +1671,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Die Erfindernennung"
+     "label": "Viertes Kapitel: Die Erfindernennung",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -1650,11 +1714,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Die Erfindernennung"
+     "label": "Viertes Kapitel: Die Erfindernennung",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -1715,15 +1781,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Priorität und Ausstellungsimmunität"
+     "label": "Fünftes Kapitel: Priorität und Ausstellungsimmunität",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Priorität"
+     "label": "1. Abschnitt: Priorität",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1748,15 +1817,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Priorität und Ausstellungsimmunität"
+     "label": "Fünftes Kapitel: Priorität und Ausstellungsimmunität",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Priorität"
+     "label": "1. Abschnitt: Priorität",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1817,15 +1889,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Priorität und Ausstellungsimmunität"
+     "label": "Fünftes Kapitel: Priorität und Ausstellungsimmunität",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Priorität"
+     "label": "1. Abschnitt: Priorität",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1852,15 +1927,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Priorität und Ausstellungsimmunität"
+     "label": "Fünftes Kapitel: Priorität und Ausstellungsimmunität",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Priorität"
+     "label": "1. Abschnitt: Priorität",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1885,15 +1963,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Priorität und Ausstellungsimmunität"
+     "label": "Fünftes Kapitel: Priorität und Ausstellungsimmunität",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Priorität"
+     "label": "1. Abschnitt: Priorität",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1930,15 +2011,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Priorität und Ausstellungsimmunität"
+     "label": "Fünftes Kapitel: Priorität und Ausstellungsimmunität",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausstellungsimmunität"
+     "label": "2. Abschnitt: Ausstellungsimmunität",
+     "eId": "tit_2/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1949,15 +2033,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Priorität und Ausstellungsimmunität"
+     "label": "Fünftes Kapitel: Priorität und Ausstellungsimmunität",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ausstellungsimmunität"
+     "label": "2. Abschnitt: Ausstellungsimmunität",
+     "eId": "tit_2/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1968,11 +2055,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Eingangs- und Formalprüfung"
+     "label": "Erstes Kapitel: Eingangs- und Formalprüfung",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1998,11 +2087,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Eingangs- und Formalprüfung"
+     "label": "Erstes Kapitel: Eingangs- und Formalprüfung",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -2027,11 +2118,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Eingangs- und Formalprüfung"
+     "label": "Erstes Kapitel: Eingangs- und Formalprüfung",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -2056,11 +2149,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Eingangs- und Formalprüfung"
+     "label": "Erstes Kapitel: Eingangs- und Formalprüfung",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -2071,11 +2166,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Eingangs- und Formalprüfung"
+     "label": "Erstes Kapitel: Eingangs- und Formalprüfung",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -2112,11 +2209,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Eingangs- und Formalprüfung"
+     "label": "Erstes Kapitel: Eingangs- und Formalprüfung",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -2127,11 +2226,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Eingangs- und Formalprüfung"
+     "label": "Erstes Kapitel: Eingangs- und Formalprüfung",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -2156,15 +2257,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Bericht über den Stand der Technik"
+     "label": "Zweites Kapitel: Bericht über den Stand der Technik",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Auf Antrag des Anmelders"
+     "label": "1. Abschnitt: Auf Antrag des Anmelders",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2202,15 +2306,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Bericht über den Stand der Technik"
+     "label": "Zweites Kapitel: Bericht über den Stand der Technik",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Auf Antrag des Anmelders"
+     "label": "1. Abschnitt: Auf Antrag des Anmelders",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2235,15 +2342,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Bericht über den Stand der Technik"
+     "label": "Zweites Kapitel: Bericht über den Stand der Technik",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Auf Antrag des Anmelders"
+     "label": "1. Abschnitt: Auf Antrag des Anmelders",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2269,15 +2379,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Bericht über den Stand der Technik"
+     "label": "Zweites Kapitel: Bericht über den Stand der Technik",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Auf Antrag des Anmelders"
+     "label": "1. Abschnitt: Auf Antrag des Anmelders",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2288,15 +2401,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Bericht über den Stand der Technik"
+     "label": "Zweites Kapitel: Bericht über den Stand der Technik",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Auf Antrag des Anmelders"
+     "label": "1. Abschnitt: Auf Antrag des Anmelders",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2321,15 +2437,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Bericht über den Stand der Technik"
+     "label": "Zweites Kapitel: Bericht über den Stand der Technik",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Auf Antrag des Anmelders"
+     "label": "1. Abschnitt: Auf Antrag des Anmelders",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2354,15 +2473,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Bericht über den Stand der Technik"
+     "label": "Zweites Kapitel: Bericht über den Stand der Technik",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Auf Antrag Dritter"
+     "label": "2. Abschnitt: Auf Antrag Dritter",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2373,11 +2495,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Veröffentlichung der Anmeldung"
+     "label": "Drittes Kapitel: Veröffentlichung der Anmeldung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -2415,11 +2539,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Veröffentlichung der Anmeldung"
+     "label": "Drittes Kapitel: Veröffentlichung der Anmeldung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [],
@@ -2442,15 +2568,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Die Sachprüfung"
+     "label": "Viertes Kapitel: Die Sachprüfung",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2488,15 +2617,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Die Sachprüfung"
+     "label": "Viertes Kapitel: Die Sachprüfung",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2561,15 +2693,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Die Sachprüfung"
+     "label": "Viertes Kapitel: Die Sachprüfung",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2618,15 +2753,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Die Sachprüfung"
+     "label": "Viertes Kapitel: Die Sachprüfung",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2651,15 +2789,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Die Sachprüfung"
+     "label": "Viertes Kapitel: Die Sachprüfung",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2697,15 +2838,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Die Sachprüfung"
+     "label": "Viertes Kapitel: Die Sachprüfung",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Prüfungsgegenstand und -abschluss"
+     "label": "2. Abschnitt: Prüfungsgegenstand und -abschluss",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2742,15 +2886,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Die Sachprüfung"
+     "label": "Viertes Kapitel: Die Sachprüfung",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Prüfungsgegenstand und -abschluss"
+     "label": "2. Abschnitt: Prüfungsgegenstand und -abschluss",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -2773,15 +2920,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Die Sachprüfung"
+     "label": "Viertes Kapitel: Die Sachprüfung",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Prüfungsgegenstand und -abschluss"
+     "label": "2. Abschnitt: Prüfungsgegenstand und -abschluss",
+     "eId": "tit_3/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -2806,11 +2956,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Vorbereitung der Patenterteilung"
+     "label": "Fünftes Kapitel: Vorbereitung der Patenterteilung",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [],
@@ -2846,11 +2998,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Vorbereitung der Patenterteilung"
+     "label": "Fünftes Kapitel: Vorbereitung der Patenterteilung",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [],
@@ -2873,11 +3027,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Vorbereitung der Patenterteilung"
+     "label": "Fünftes Kapitel: Vorbereitung der Patenterteilung",
+     "eId": "tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -2902,11 +3058,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Einspruchsverfahren"
+     "label": "Sechstes Kapitel: Einspruchsverfahren",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -2956,11 +3114,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Einspruchsverfahren"
+     "label": "Sechstes Kapitel: Einspruchsverfahren",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -2985,11 +3145,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Einspruchsverfahren"
+     "label": "Sechstes Kapitel: Einspruchsverfahren",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3000,11 +3162,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Einspruchsverfahren"
+     "label": "Sechstes Kapitel: Einspruchsverfahren",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3015,11 +3179,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Einspruchsverfahren"
+     "label": "Sechstes Kapitel: Einspruchsverfahren",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3080,11 +3246,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Einspruchsverfahren"
+     "label": "Sechstes Kapitel: Einspruchsverfahren",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3095,11 +3263,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Einspruchsverfahren"
+     "label": "Sechstes Kapitel: Einspruchsverfahren",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [],
@@ -3122,11 +3292,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Einspruchsverfahren"
+     "label": "Sechstes Kapitel: Einspruchsverfahren",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3137,11 +3309,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Einspruchsverfahren"
+     "label": "Sechstes Kapitel: Einspruchsverfahren",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3152,11 +3326,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Einspruchsverfahren"
+     "label": "Sechstes Kapitel: Einspruchsverfahren",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3167,11 +3343,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Einspruchsverfahren"
+     "label": "Sechstes Kapitel: Einspruchsverfahren",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3182,11 +3360,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Einspruchsverfahren"
+     "label": "Sechstes Kapitel: Einspruchsverfahren",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3197,11 +3377,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Einspruchsverfahren"
+     "label": "Sechstes Kapitel: Einspruchsverfahren",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3212,11 +3394,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Einspruchsverfahren"
+     "label": "Sechstes Kapitel: Einspruchsverfahren",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3241,11 +3425,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Einspruchsverfahren"
+     "label": "Sechstes Kapitel: Einspruchsverfahren",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3256,11 +3442,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Einspruchsverfahren"
+     "label": "Sechstes Kapitel: Einspruchsverfahren",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3287,11 +3475,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Das Aktenheft"
+     "label": "Erstes Kapitel: Das Aktenheft",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3345,11 +3535,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Das Aktenheft"
+     "label": "Erstes Kapitel: Das Aktenheft",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3470,11 +3662,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Das Aktenheft"
+     "label": "Erstes Kapitel: Das Aktenheft",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [],
@@ -3497,11 +3691,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Das Aktenheft"
+     "label": "Erstes Kapitel: Das Aktenheft",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -3538,11 +3734,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Das Patentregister"
+     "label": "Zweites Kapitel: Das Patentregister",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3583,11 +3781,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Das Patentregister"
+     "label": "Zweites Kapitel: Das Patentregister",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3688,11 +3888,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Das Patentregister"
+     "label": "Zweites Kapitel: Das Patentregister",
+     "eId": "tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3729,15 +3931,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Änderungen"
+     "label": "Drittes Kapitel: Änderungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Änderungen im Bestand des Patentes"
+     "label": "1. Abschnitt: Änderungen im Bestand des Patentes",
+     "eId": "tit_4/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3786,15 +3991,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Änderungen"
+     "label": "Drittes Kapitel: Änderungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Änderungen im Bestand des Patentes"
+     "label": "1. Abschnitt: Änderungen im Bestand des Patentes",
+     "eId": "tit_4/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3819,15 +4027,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Änderungen"
+     "label": "Drittes Kapitel: Änderungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Änderungen im Bestand des Patentes"
+     "label": "1. Abschnitt: Änderungen im Bestand des Patentes",
+     "eId": "tit_4/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3838,15 +4049,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Änderungen"
+     "label": "Drittes Kapitel: Änderungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Änderungen im Bestand des Patentes"
+     "label": "1. Abschnitt: Änderungen im Bestand des Patentes",
+     "eId": "tit_4/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3857,15 +4071,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Änderungen"
+     "label": "Drittes Kapitel: Änderungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Änderungen im Bestand des Patentes"
+     "label": "1. Abschnitt: Änderungen im Bestand des Patentes",
+     "eId": "tit_4/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3876,15 +4093,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Änderungen"
+     "label": "Drittes Kapitel: Änderungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Änderungen im Bestand des Patentes"
+     "label": "1. Abschnitt: Änderungen im Bestand des Patentes",
+     "eId": "tit_4/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3909,15 +4129,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Änderungen"
+     "label": "Drittes Kapitel: Änderungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Änderungen im Bestand des Patentes"
+     "label": "1. Abschnitt: Änderungen im Bestand des Patentes",
+     "eId": "tit_4/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3928,15 +4151,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Änderungen"
+     "label": "Drittes Kapitel: Änderungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Änderungen im Recht auf das Patent und am Patent; Vertreteränderungen"
+     "label": "2. Abschnitt: Änderungen im Recht auf das Patent und am Patent; Vertreteränderungen",
+     "eId": "tit_4/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3961,15 +4187,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Änderungen"
+     "label": "Drittes Kapitel: Änderungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Änderungen im Recht auf das Patent und am Patent; Vertreteränderungen"
+     "label": "2. Abschnitt: Änderungen im Recht auf das Patent und am Patent; Vertreteränderungen",
+     "eId": "tit_4/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -4030,15 +4259,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Änderungen"
+     "label": "Drittes Kapitel: Änderungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Änderungen im Recht auf das Patent und am Patent; Vertreteränderungen"
+     "label": "2. Abschnitt: Änderungen im Recht auf das Patent und am Patent; Vertreteränderungen",
+     "eId": "tit_4/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -4127,15 +4359,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Änderungen"
+     "label": "Drittes Kapitel: Änderungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Änderungen im Recht auf das Patent und am Patent; Vertreteränderungen"
+     "label": "2. Abschnitt: Änderungen im Recht auf das Patent und am Patent; Vertreteränderungen",
+     "eId": "tit_4/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -4160,15 +4395,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Änderungen"
+     "label": "Drittes Kapitel: Änderungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Änderungen im Recht auf das Patent und am Patent; Vertreteränderungen"
+     "label": "2. Abschnitt: Änderungen im Recht auf das Patent und am Patent; Vertreteränderungen",
+     "eId": "tit_4/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -4193,11 +4431,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Veröffentlichungen des IGE"
+     "label": "Viertes Kapitel: Veröffentlichungen des IGE",
+     "eId": "tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -4230,11 +4470,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Veröffentlichungen des IGE"
+     "label": "Viertes Kapitel: Veröffentlichungen des IGE",
+     "eId": "tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -4259,11 +4501,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Beschränkungen im Recht aus dem Patent"
+     "label": "Fünfter Titel: Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Landwirteprivileg"
+     "label": "Erstes Kapitel: Landwirteprivileg",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [],
@@ -4326,11 +4570,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Beschränkungen im Recht aus dem Patent"
+     "label": "Fünfter Titel: Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Zwangslizenzen für die Ausfuhr pharmazeutischer Produkte"
+     "label": "Zweites Kapitel: Zwangslizenzen für die Ausfuhr pharmazeutischer Produkte",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -4356,7 +4602,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -4394,7 +4641,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [],
@@ -4417,7 +4665,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Siebenter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [
@@ -4428,7 +4677,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Siebenter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [
@@ -4478,7 +4728,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Siebenter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [],
@@ -4501,7 +4752,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Siebenter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [
@@ -4538,7 +4790,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Siebenter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [
@@ -4587,11 +4840,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Internationale Patentanmeldungen"
+     "label": "Achter Titel: Internationale Patentanmeldungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Geltungsbereich der Verordnung"
+     "label": "Erstes Kapitel: Geltungsbereich der Verordnung",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": [],
@@ -4614,11 +4869,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Internationale Patentanmeldungen"
+     "label": "Achter Titel: Internationale Patentanmeldungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Das IGE als Anmeldeamt"
+     "label": "Zweites Kapitel: Das IGE als Anmeldeamt",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -4643,11 +4900,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Internationale Patentanmeldungen"
+     "label": "Achter Titel: Internationale Patentanmeldungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Das IGE als Anmeldeamt"
+     "label": "Zweites Kapitel: Das IGE als Anmeldeamt",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -4684,11 +4943,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Internationale Patentanmeldungen"
+     "label": "Achter Titel: Internationale Patentanmeldungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Das IGE als Anmeldeamt"
+     "label": "Zweites Kapitel: Das IGE als Anmeldeamt",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -4726,11 +4987,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Internationale Patentanmeldungen"
+     "label": "Achter Titel: Internationale Patentanmeldungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Das IGE als Bestimmungsamt"
+     "label": "Drittes Kapitel: Das IGE als Bestimmungsamt",
+     "eId": "tit_8/chap_3"
     }
    ],
    "marginalie": [
@@ -4755,11 +5018,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Internationale Patentanmeldungen"
+     "label": "Achter Titel: Internationale Patentanmeldungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Das IGE als Bestimmungsamt"
+     "label": "Drittes Kapitel: Das IGE als Bestimmungsamt",
+     "eId": "tit_8/chap_3"
     }
    ],
    "marginalie": [
@@ -4796,11 +5061,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Internationale Patentanmeldungen"
+     "label": "Achter Titel: Internationale Patentanmeldungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Das IGE als Bestimmungsamt"
+     "label": "Drittes Kapitel: Das IGE als Bestimmungsamt",
+     "eId": "tit_8/chap_3"
     }
    ],
    "marginalie": [
@@ -4839,7 +5106,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Recherchen internationaler Art"
+     "label": "Neunter Titel: Recherchen internationaler Art",
+     "eId": "tit_9"
     }
    ],
    "marginalie": [
@@ -4921,7 +5189,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Neunter Titel: Recherchen internationaler Art"
+     "label": "Neunter Titel: Recherchen internationaler Art",
+     "eId": "tit_9"
     }
    ],
    "marginalie": [
@@ -4946,11 +5215,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dreizehnter Titel: Schlussbestimmungen"
+     "label": "Dreizehnter Titel: Schlussbestimmungen",
+     "eId": "tit_13"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Aufhebung bisherigen Rechts"
+     "label": "Erstes Kapitel: Aufhebung bisherigen Rechts",
+     "eId": "tit_13/chap_1"
     }
    ],
    "marginalie": [],
@@ -5016,11 +5287,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dreizehnter Titel: Schlussbestimmungen"
+     "label": "Dreizehnter Titel: Schlussbestimmungen",
+     "eId": "tit_13"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übergangsbestimmungen"
+     "label": "Zweites Kapitel: Übergangsbestimmungen",
+     "eId": "tit_13/chap_2"
     }
    ],
    "marginalie": [
@@ -5031,11 +5304,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dreizehnter Titel: Schlussbestimmungen"
+     "label": "Dreizehnter Titel: Schlussbestimmungen",
+     "eId": "tit_13"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übergangsbestimmungen"
+     "label": "Zweites Kapitel: Übergangsbestimmungen",
+     "eId": "tit_13/chap_2"
     }
    ],
    "marginalie": [
@@ -5046,11 +5321,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dreizehnter Titel: Schlussbestimmungen"
+     "label": "Dreizehnter Titel: Schlussbestimmungen",
+     "eId": "tit_13"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übergangsbestimmungen"
+     "label": "Zweites Kapitel: Übergangsbestimmungen",
+     "eId": "tit_13/chap_2"
     }
    ],
    "marginalie": [
@@ -5061,11 +5338,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dreizehnter Titel: Schlussbestimmungen"
+     "label": "Dreizehnter Titel: Schlussbestimmungen",
+     "eId": "tit_13"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übergangsbestimmungen"
+     "label": "Zweites Kapitel: Übergangsbestimmungen",
+     "eId": "tit_13/chap_2"
     }
    ],
    "marginalie": [
@@ -5076,11 +5355,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dreizehnter Titel: Schlussbestimmungen"
+     "label": "Dreizehnter Titel: Schlussbestimmungen",
+     "eId": "tit_13"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übergangsbestimmungen"
+     "label": "Zweites Kapitel: Übergangsbestimmungen",
+     "eId": "tit_13/chap_2"
     }
    ],
    "marginalie": [
@@ -5091,11 +5372,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dreizehnter Titel: Schlussbestimmungen"
+     "label": "Dreizehnter Titel: Schlussbestimmungen",
+     "eId": "tit_13"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Übergangsbestimmungen"
+     "label": "Zweites Kapitel: Übergangsbestimmungen",
+     "eId": "tit_13/chap_2"
     }
    ],
    "marginalie": [
@@ -5106,11 +5389,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dreizehnter Titel: Schlussbestimmungen"
+     "label": "Dreizehnter Titel: Schlussbestimmungen",
+     "eId": "tit_13"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Inkrafttreten"
+     "label": "Drittes Kapitel: Inkrafttreten",
+     "eId": "tit_13/chap_3"
     }
    ],
    "marginalie": [],
@@ -5133,15 +5418,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Änderungen"
+     "label": "Drittes Kapitel: Änderungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Änderungen im Recht auf das Patent und am Patent; Vertreteränderungen"
+     "label": "2. Abschnitt: Änderungen im Recht auf das Patent und am Patent; Vertreteränderungen",
+     "eId": "tit_4/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5166,11 +5454,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Beschränkungen im Recht aus dem Patent"
+     "label": "Fünfter Titel: Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Zwangslizenzen für die Ausfuhr pharmazeutischer Produkte"
+     "label": "Zweites Kapitel: Zwangslizenzen für die Ausfuhr pharmazeutischer Produkte",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -5181,11 +5471,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Beschränkungen im Recht aus dem Patent"
+     "label": "Fünfter Titel: Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Zwangslizenzen für die Ausfuhr pharmazeutischer Produkte"
+     "label": "Zweites Kapitel: Zwangslizenzen für die Ausfuhr pharmazeutischer Produkte",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -5196,11 +5488,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Titel: Beschränkungen im Recht aus dem Patent"
+     "label": "Fünfter Titel: Beschränkungen im Recht aus dem Patent",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Zwangslizenzen für die Ausfuhr pharmazeutischer Produkte"
+     "label": "Zweites Kapitel: Zwangslizenzen für die Ausfuhr pharmazeutischer Produkte",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -5211,7 +5505,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5240,7 +5535,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5269,7 +5565,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5298,7 +5595,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5327,7 +5625,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5356,7 +5655,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5385,7 +5685,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5410,7 +5711,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5435,7 +5737,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "Sechster Titel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5486,7 +5789,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Siebenter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [
@@ -5511,7 +5815,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Titel: Europäische Patentanmeldungen und europäische Patente"
+     "label": "Siebenter Titel: Europäische Patentanmeldungen und europäische Patente",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [
@@ -5540,11 +5845,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Fristen"
+     "label": "Drittes Kapitel: Fristen",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [],
@@ -5567,11 +5874,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Internationale Patentanmeldungen"
+     "label": "Achter Titel: Internationale Patentanmeldungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Das IGE als Anmeldeamt"
+     "label": "Zweites Kapitel: Das IGE als Anmeldeamt",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [],
@@ -5598,11 +5907,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Internationale Patentanmeldungen"
+     "label": "Achter Titel: Internationale Patentanmeldungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Das IGE als Anmeldeamt"
+     "label": "Zweites Kapitel: Das IGE als Anmeldeamt",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [
@@ -5640,11 +5951,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Internationale Patentanmeldungen"
+     "label": "Achter Titel: Internationale Patentanmeldungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Das IGE als ausgewähltes Amt"
+     "label": "Viertes Kapitel: Das IGE als ausgewähltes Amt",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [
@@ -5707,11 +6020,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Internationale Patentanmeldungen"
+     "label": "Achter Titel: Internationale Patentanmeldungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Das IGE als ausgewähltes Amt"
+     "label": "Viertes Kapitel: Das IGE als ausgewähltes Amt",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [
@@ -5722,11 +6037,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Achter Titel: Internationale Patentanmeldungen"
+     "label": "Achter Titel: Internationale Patentanmeldungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Das IGE als ausgewähltes Amt"
+     "label": "Viertes Kapitel: Das IGE als ausgewähltes Amt",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [
@@ -5765,11 +6082,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Geltungsbereich"
+     "label": "Erstes Kapitel: Geltungsbereich",
+     "eId": "tit_10/chap_1"
     }
    ],
    "marginalie": [],
@@ -5819,11 +6138,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Gesuch um Erteilung des Zertifikats oder um Verlängerung der Schutzdauer"
+     "label": "Zweites Kapitel: Gesuch um Erteilung des Zertifikats oder um Verlängerung der Schutzdauer",
+     "eId": "tit_10/chap_2"
     }
    ],
    "marginalie": [
@@ -5868,11 +6189,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Gesuch um Erteilung des Zertifikats oder um Verlängerung der Schutzdauer"
+     "label": "Zweites Kapitel: Gesuch um Erteilung des Zertifikats oder um Verlängerung der Schutzdauer",
+     "eId": "tit_10/chap_2"
     }
    ],
    "marginalie": [
@@ -5964,11 +6287,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Gesuch um Erteilung des Zertifikats oder um Verlängerung der Schutzdauer"
+     "label": "Zweites Kapitel: Gesuch um Erteilung des Zertifikats oder um Verlängerung der Schutzdauer",
+     "eId": "tit_10/chap_2"
     }
    ],
    "marginalie": [
@@ -6000,11 +6325,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Prüfung des Gesuchs um Erteilung des Zertifikats oder um Verlängerung der Schutzdauer"
+     "label": "Drittes Kapitel: Prüfung des Gesuchs um Erteilung des Zertifikats oder um Verlängerung der Schutzdauer",
+     "eId": "tit_10/chap_3"
     }
    ],
    "marginalie": [
@@ -6054,11 +6381,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Prüfung des Gesuchs um Erteilung des Zertifikats oder um Verlängerung der Schutzdauer"
+     "label": "Drittes Kapitel: Prüfung des Gesuchs um Erteilung des Zertifikats oder um Verlängerung der Schutzdauer",
+     "eId": "tit_10/chap_3"
     }
    ],
    "marginalie": [
@@ -6083,11 +6412,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Erteilung des Zertifikats und Verlängerung der Schutzdauer"
+     "label": "Viertes Kapitel: Erteilung des Zertifikats und Verlängerung der Schutzdauer",
+     "eId": "tit_10/chap_4"
     }
    ],
    "marginalie": [],
@@ -6118,11 +6449,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Veröffentlichung"
+     "label": "Fünftes Kapitel: Veröffentlichung",
+     "eId": "tit_10/chap_5"
     }
    ],
    "marginalie": [],
@@ -6146,11 +6479,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Aktenheft und Register"
+     "label": "Sechstes Kapitel: Aktenheft und Register",
+     "eId": "tit_10/chap_6"
     }
    ],
    "marginalie": [
@@ -6175,11 +6510,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Aktenheft und Register"
+     "label": "Sechstes Kapitel: Aktenheft und Register",
+     "eId": "tit_10/chap_6"
     }
    ],
    "marginalie": [
@@ -6300,11 +6637,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Siebentes Kapitel: Gebühren"
+     "label": "Siebentes Kapitel: Gebühren",
+     "eId": "tit_10/chap_7"
     }
    ],
    "marginalie": [
@@ -6365,11 +6704,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Siebentes Kapitel: Gebühren"
+     "label": "Siebentes Kapitel: Gebühren",
+     "eId": "tit_10/chap_7"
     }
    ],
    "marginalie": [
@@ -6394,11 +6735,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Achtes Kapitel: Widerruf der Verlängerung der Schutzdauer des Zertifikats"
+     "label": "Achtes Kapitel: Widerruf der Verlängerung der Schutzdauer des Zertifikats",
+     "eId": "tit_10/chap_8"
     }
    ],
    "marginalie": [
@@ -6424,11 +6767,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Achtes Kapitel: Widerruf der Verlängerung der Schutzdauer des Zertifikats"
+     "label": "Achtes Kapitel: Widerruf der Verlängerung der Schutzdauer des Zertifikats",
+     "eId": "tit_10/chap_8"
     }
    ],
    "marginalie": [
@@ -6439,11 +6784,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Achtes Kapitel: Widerruf der Verlängerung der Schutzdauer des Zertifikats"
+     "label": "Achtes Kapitel: Widerruf der Verlängerung der Schutzdauer des Zertifikats",
+     "eId": "tit_10/chap_8"
     }
    ],
    "marginalie": [
@@ -6454,11 +6801,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Achtes Kapitel: Widerruf der Verlängerung der Schutzdauer des Zertifikats"
+     "label": "Achtes Kapitel: Widerruf der Verlängerung der Schutzdauer des Zertifikats",
+     "eId": "tit_10/chap_8"
     }
    ],
    "marginalie": [
@@ -6469,11 +6818,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Achtes Kapitel: Widerruf der Verlängerung der Schutzdauer des Zertifikats"
+     "label": "Achtes Kapitel: Widerruf der Verlängerung der Schutzdauer des Zertifikats",
+     "eId": "tit_10/chap_8"
     }
    ],
    "marginalie": [
@@ -6484,11 +6835,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Achtes Kapitel: Widerruf der Verlängerung der Schutzdauer des Zertifikats"
+     "label": "Achtes Kapitel: Widerruf der Verlängerung der Schutzdauer des Zertifikats",
+     "eId": "tit_10/chap_8"
     }
    ],
    "marginalie": [
@@ -6499,11 +6852,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Zehnter Titel: Ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_10"
     },
     {
      "ebene": 2,
-     "label": "Achtes Kapitel: Widerruf der Verlängerung der Schutzdauer des Zertifikats"
+     "label": "Achtes Kapitel: Widerruf der Verlängerung der Schutzdauer des Zertifikats",
+     "eId": "tit_10/chap_8"
     }
    ],
    "marginalie": [
@@ -6514,11 +6869,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Geltungsbereich"
+     "label": "Erstes Kapitel: Geltungsbereich",
+     "eId": "tit_11/chap_1"
     }
    ],
    "marginalie": [],
@@ -6542,11 +6899,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Gesuch um Erteilung des pädiatrischen Zertifikats"
+     "label": "Zweites Kapitel: Gesuch um Erteilung des pädiatrischen Zertifikats",
+     "eId": "tit_11/chap_2"
     }
    ],
    "marginalie": [
@@ -6566,11 +6925,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Gesuch um Erteilung des pädiatrischen Zertifikats"
+     "label": "Zweites Kapitel: Gesuch um Erteilung des pädiatrischen Zertifikats",
+     "eId": "tit_11/chap_2"
     }
    ],
    "marginalie": [
@@ -6590,11 +6951,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Gesuch um Erteilung des pädiatrischen Zertifikats"
+     "label": "Zweites Kapitel: Gesuch um Erteilung des pädiatrischen Zertifikats",
+     "eId": "tit_11/chap_2"
     }
    ],
    "marginalie": [
@@ -6614,11 +6977,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Prüfung des Gesuchs um Erteilung des pädiatrischen Zertifikats"
+     "label": "Drittes Kapitel: Prüfung des Gesuchs um Erteilung des pädiatrischen Zertifikats",
+     "eId": "tit_11/chap_3"
     }
    ],
    "marginalie": [
@@ -6629,11 +6994,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Prüfung des Gesuchs um Erteilung des pädiatrischen Zertifikats"
+     "label": "Drittes Kapitel: Prüfung des Gesuchs um Erteilung des pädiatrischen Zertifikats",
+     "eId": "tit_11/chap_3"
     }
    ],
    "marginalie": [
@@ -6644,11 +7011,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Erteilung des pädiatrischen Zertifikats"
+     "label": "Viertes Kapitel: Erteilung des pädiatrischen Zertifikats",
+     "eId": "tit_11/chap_4"
     }
    ],
    "marginalie": [],
@@ -6666,7 +7035,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Titel: Ergänzende Schutzzertifikate für Pflanzenschutzmittel"
+     "label": "Zwölfter Titel: Ergänzende Schutzzertifikate für Pflanzenschutzmittel",
+     "eId": "tit_12"
     }
    ],
    "marginalie": [
@@ -6677,11 +7047,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Aktenheft und Register"
+     "label": "Sechstes Kapitel: Aktenheft und Register",
+     "eId": "tit_11/chap_6"
     }
    ],
    "marginalie": [
@@ -6692,11 +7064,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Aktenheft und Register"
+     "label": "Sechstes Kapitel: Aktenheft und Register",
+     "eId": "tit_11/chap_6"
     }
    ],
    "marginalie": [
@@ -6716,7 +7090,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Titel: Ergänzende Schutzzertifikate für Pflanzenschutzmittel"
+     "label": "Zwölfter Titel: Ergänzende Schutzzertifikate für Pflanzenschutzmittel",
+     "eId": "tit_12"
     }
    ],
    "marginalie": [
@@ -6727,7 +7102,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zwölfter Titel: Ergänzende Schutzzertifikate für Pflanzenschutzmittel"
+     "label": "Zwölfter Titel: Ergänzende Schutzzertifikate für Pflanzenschutzmittel",
+     "eId": "tit_12"
     }
    ],
    "marginalie": [
@@ -6753,11 +7129,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel"
+     "label": "Elfter Titel: Pädiatrische ergänzende Schutzzertifikate für Arzneimittel",
+     "eId": "tit_11"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Veröffentlichung"
+     "label": "Fünftes Kapitel: Veröffentlichung",
+     "eId": "tit_11/chap_5"
     }
    ],
    "marginalie": []
@@ -6766,11 +7144,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Gebühren"
+     "label": "Viertes Kapitel: Gebühren",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -6819,11 +7199,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Gebühren"
+     "label": "Viertes Kapitel: Gebühren",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -6848,11 +7230,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Gebühren"
+     "label": "Viertes Kapitel: Gebühren",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -6889,11 +7273,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Gebühren"
+     "label": "Viertes Kapitel: Gebühren",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -6922,11 +7308,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Gebühren"
+     "label": "Viertes Kapitel: Gebühren",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -6955,11 +7343,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Gebühren"
+     "label": "Viertes Kapitel: Gebühren",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [],
@@ -6986,11 +7376,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Die technischen Unterlagen"
+     "label": "Drittes Kapitel: Die technischen Unterlagen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -7015,15 +7407,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Priorität und Ausstellungsimmunität"
+     "label": "Fünftes Kapitel: Priorität und Ausstellungsimmunität",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Priorität"
+     "label": "1. Abschnitt: Priorität",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -7052,15 +7447,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Fünftes Kapitel: Priorität und Ausstellungsimmunität"
+     "label": "Fünftes Kapitel: Priorität und Ausstellungsimmunität",
+     "eId": "tit_2/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Priorität"
+     "label": "1. Abschnitt: Priorität",
+     "eId": "tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -7089,11 +7487,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Sechstes Kapitel: Angaben über die Quelle genetischer Ressourcen und traditionellen Wissens"
+     "label": "Sechstes Kapitel: Angaben über die Quelle genetischer Ressourcen und traditionellen Wissens",
+     "eId": "tit_2/chap_6"
     }
    ],
    "marginalie": [],
@@ -7143,11 +7543,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Siebtes Kapitel: Hinterlegung von biologischem Material"
+     "label": "Siebtes Kapitel: Hinterlegung von biologischem Material",
+     "eId": "tit_2/chap_7"
     }
    ],
    "marginalie": [
@@ -7173,11 +7575,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Siebtes Kapitel: Hinterlegung von biologischem Material"
+     "label": "Siebtes Kapitel: Hinterlegung von biologischem Material",
+     "eId": "tit_2/chap_7"
     }
    ],
    "marginalie": [
@@ -7203,11 +7607,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Siebtes Kapitel: Hinterlegung von biologischem Material"
+     "label": "Siebtes Kapitel: Hinterlegung von biologischem Material",
+     "eId": "tit_2/chap_7"
     }
    ],
    "marginalie": [
@@ -7218,11 +7624,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Siebtes Kapitel: Hinterlegung von biologischem Material"
+     "label": "Siebtes Kapitel: Hinterlegung von biologischem Material",
+     "eId": "tit_2/chap_7"
     }
    ],
    "marginalie": [
@@ -7233,11 +7641,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Siebtes Kapitel: Hinterlegung von biologischem Material"
+     "label": "Siebtes Kapitel: Hinterlegung von biologischem Material",
+     "eId": "tit_2/chap_7"
     }
    ],
    "marginalie": [
@@ -7262,11 +7672,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Siebtes Kapitel: Hinterlegung von biologischem Material"
+     "label": "Siebtes Kapitel: Hinterlegung von biologischem Material",
+     "eId": "tit_2/chap_7"
     }
    ],
    "marginalie": [
@@ -7277,11 +7689,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Siebtes Kapitel: Hinterlegung von biologischem Material"
+     "label": "Siebtes Kapitel: Hinterlegung von biologischem Material",
+     "eId": "tit_2/chap_7"
     }
    ],
    "marginalie": [
@@ -7292,11 +7706,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Siebtes Kapitel: Hinterlegung von biologischem Material"
+     "label": "Siebtes Kapitel: Hinterlegung von biologischem Material",
+     "eId": "tit_2/chap_7"
     }
    ],
    "marginalie": [
@@ -7322,11 +7738,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Titel: Die Anmeldung"
+     "label": "Zweiter Titel: Die Anmeldung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "Siebtes Kapitel: Hinterlegung von biologischem Material"
+     "label": "Siebtes Kapitel: Hinterlegung von biologischem Material",
+     "eId": "tit_2/chap_7"
     }
    ],
    "marginalie": [
@@ -7367,11 +7785,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Eingangs- und Formalprüfung"
+     "label": "Erstes Kapitel: Eingangs- und Formalprüfung",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -7408,11 +7828,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Eingangs- und Formalprüfung"
+     "label": "Erstes Kapitel: Eingangs- und Formalprüfung",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -7423,11 +7845,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Eingangs- und Formalprüfung"
+     "label": "Erstes Kapitel: Eingangs- und Formalprüfung",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -7438,11 +7862,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Eingangs- und Formalprüfung"
+     "label": "Erstes Kapitel: Eingangs- und Formalprüfung",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -7453,11 +7879,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Eingangs- und Formalprüfung"
+     "label": "Erstes Kapitel: Eingangs- und Formalprüfung",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -7468,11 +7896,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Eingangs- und Formalprüfung"
+     "label": "Erstes Kapitel: Eingangs- und Formalprüfung",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -7483,11 +7913,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Eingangs- und Formalprüfung"
+     "label": "Erstes Kapitel: Eingangs- und Formalprüfung",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -7498,11 +7930,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Eingangs- und Formalprüfung"
+     "label": "Erstes Kapitel: Eingangs- und Formalprüfung",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -7539,11 +7973,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Eingangs- und Formalprüfung"
+     "label": "Erstes Kapitel: Eingangs- und Formalprüfung",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -7554,11 +7990,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Verkehr mit dem Eidgenössischen Institut für Geistiges Eigentum"
+     "label": "Erstes Kapitel: Verkehr mit dem Eidgenössischen Institut für Geistiges Eigentum",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -7583,11 +8021,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Verkehr mit dem Eidgenössischen Institut für Geistiges Eigentum"
+     "label": "Erstes Kapitel: Verkehr mit dem Eidgenössischen Institut für Geistiges Eigentum",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -7612,15 +8052,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Bericht über den Stand der Technik"
+     "label": "Zweites Kapitel: Bericht über den Stand der Technik",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Auf Antrag des Anmelders"
+     "label": "1. Abschnitt: Auf Antrag des Anmelders",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -7631,15 +8074,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Bericht über den Stand der Technik"
+     "label": "Zweites Kapitel: Bericht über den Stand der Technik",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Auf Antrag des Anmelders"
+     "label": "1. Abschnitt: Auf Antrag des Anmelders",
+     "eId": "tit_3/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -7666,15 +8112,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Bericht über den Stand der Technik"
+     "label": "Zweites Kapitel: Bericht über den Stand der Technik",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Auf Antrag Dritter"
+     "label": "2. Abschnitt: Auf Antrag Dritter",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -7685,15 +8134,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Bericht über den Stand der Technik"
+     "label": "Zweites Kapitel: Bericht über den Stand der Technik",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Auf Antrag Dritter"
+     "label": "2. Abschnitt: Auf Antrag Dritter",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -7704,15 +8156,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Bericht über den Stand der Technik"
+     "label": "Zweites Kapitel: Bericht über den Stand der Technik",
+     "eId": "tit_3/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Auf Antrag Dritter"
+     "label": "2. Abschnitt: Auf Antrag Dritter",
+     "eId": "tit_3/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -7723,11 +8178,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Veröffentlichung der Anmeldung"
+     "label": "Drittes Kapitel: Veröffentlichung der Anmeldung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -7738,11 +8195,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Veröffentlichung der Anmeldung"
+     "label": "Drittes Kapitel: Veröffentlichung der Anmeldung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -7753,11 +8212,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Veröffentlichung der Anmeldung"
+     "label": "Drittes Kapitel: Veröffentlichung der Anmeldung",
+     "eId": "tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -7806,15 +8267,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Die Sachprüfung"
+     "label": "Viertes Kapitel: Die Sachprüfung",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -7859,15 +8323,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Titel: Prüfung der Anmeldung"
+     "label": "Dritter Titel: Prüfung der Anmeldung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "Viertes Kapitel: Die Sachprüfung"
+     "label": "Viertes Kapitel: Die Sachprüfung",
+     "eId": "tit_3/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "tit_3/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -7908,11 +8375,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Erstes Kapitel: Verkehr mit dem Eidgenössischen Institut für Geistiges Eigentum"
+     "label": "Erstes Kapitel: Verkehr mit dem Eidgenössischen Institut für Geistiges Eigentum",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [],
@@ -7935,11 +8404,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Titel: Allgemeine Bestimmungen"
+     "label": "Erster Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "Zweites Kapitel: Vertretung"
+     "label": "Zweites Kapitel: Vertretung",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [],
@@ -7966,15 +8437,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE"
+     "label": "Vierter Titel: Aktenheft, Patentregister und Veröffentlichungen des IGE",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "Drittes Kapitel: Änderungen"
+     "label": "Drittes Kapitel: Änderungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Änderungen im Bestand des Patentes"
+     "label": "1. Abschnitt: Änderungen im Bestand des Patentes",
+     "eId": "tit_4/chap_3/sec_1"
     }
    ],
    "marginalie": [

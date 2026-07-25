@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "211.112.2",
   "titel": "Zivilstandsverordnung",
@@ -67,7 +67,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -92,7 +93,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -153,7 +155,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -164,7 +167,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -213,7 +217,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -370,7 +375,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -395,7 +401,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gegenstand der Beurkundung"
+     "label": "2. Kapitel: Gegenstand der Beurkundung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -472,7 +479,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gegenstand der Beurkundung"
+     "label": "2. Kapitel: Gegenstand der Beurkundung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -497,7 +505,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gegenstand der Beurkundung"
+     "label": "2. Kapitel: Gegenstand der Beurkundung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -534,7 +543,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gegenstand der Beurkundung"
+     "label": "2. Kapitel: Gegenstand der Beurkundung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -545,7 +555,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gegenstand der Beurkundung"
+     "label": "2. Kapitel: Gegenstand der Beurkundung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -619,7 +630,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gegenstand der Beurkundung"
+     "label": "2. Kapitel: Gegenstand der Beurkundung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -680,7 +692,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gegenstand der Beurkundung"
+     "label": "2. Kapitel: Gegenstand der Beurkundung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -705,7 +718,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gegenstand der Beurkundung"
+     "label": "2. Kapitel: Gegenstand der Beurkundung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -802,11 +816,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -843,11 +859,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -944,11 +962,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -973,11 +993,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1110,11 +1132,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1139,11 +1163,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1168,11 +1194,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1233,11 +1261,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1248,11 +1278,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1325,11 +1357,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Erfassen"
+     "label": "3. Abschnitt: Erfassen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1366,11 +1400,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Erfassen"
+     "label": "3. Abschnitt: Erfassen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1381,11 +1417,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Erfassen"
+     "label": "3. Abschnitt: Erfassen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1458,11 +1496,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Erfassen"
+     "label": "3. Abschnitt: Erfassen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -1485,11 +1525,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Beurkunden"
+     "label": "4. Abschnitt: Beurkunden",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [],
@@ -1513,11 +1555,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Bereinigung"
+     "label": "5. Abschnitt: Bereinigung",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1578,11 +1622,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Bereinigung"
+     "label": "5. Abschnitt: Bereinigung",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1607,11 +1653,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Belege"
+     "label": "6. Abschnitt: Belege",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1648,11 +1696,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Belege"
+     "label": "6. Abschnitt: Belege",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1689,11 +1739,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Belege"
+     "label": "6. Abschnitt: Belege",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1704,11 +1756,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Meldepflichten"
+     "label": "4. Kapitel: Meldepflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Geburt und Tod"
+     "label": "1. Abschnitt: Geburt und Tod",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1757,11 +1811,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Meldepflichten"
+     "label": "4. Kapitel: Meldepflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Geburt und Tod"
+     "label": "1. Abschnitt: Geburt und Tod",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1886,11 +1942,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Meldepflichten"
+     "label": "4. Kapitel: Meldepflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Geburt und Tod"
+     "label": "1. Abschnitt: Geburt und Tod",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1901,11 +1959,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Meldepflichten"
+     "label": "4. Kapitel: Meldepflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Geburt und Tod"
+     "label": "1. Abschnitt: Geburt und Tod",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1930,11 +1990,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Meldepflichten"
+     "label": "4. Kapitel: Meldepflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Geburt und Tod"
+     "label": "1. Abschnitt: Geburt und Tod",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1945,11 +2007,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Meldepflichten"
+     "label": "4. Kapitel: Meldepflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausländische Ereignisse, Erklärungen und Entscheidungen"
+     "label": "2. Abschnitt: Ausländische Ereignisse, Erklärungen und Entscheidungen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": []
@@ -1958,7 +2022,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Amtliche Mitteilungspflichten"
+     "label": "5. Kapitel: Amtliche Mitteilungspflichten",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2031,7 +2096,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Amtliche Mitteilungspflichten"
+     "label": "5. Kapitel: Amtliche Mitteilungspflichten",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2096,7 +2162,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Amtliche Mitteilungspflichten"
+     "label": "5. Kapitel: Amtliche Mitteilungspflichten",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2133,7 +2200,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Amtliche Mitteilungspflichten"
+     "label": "5. Kapitel: Amtliche Mitteilungspflichten",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2206,11 +2274,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2221,11 +2291,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2262,11 +2334,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2327,11 +2401,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2368,11 +2444,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2383,11 +2461,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen"
+     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2460,11 +2540,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen"
+     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2597,11 +2679,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen"
+     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2686,11 +2770,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen"
+     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2739,11 +2825,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen"
+     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2768,11 +2856,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen"
+     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2797,11 +2887,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen"
+     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2826,11 +2918,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen"
+     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2867,11 +2961,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen"
+     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [],
@@ -2894,11 +2990,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bekanntgabe auf Anfrage"
+     "label": "3. Abschnitt: Bekanntgabe auf Anfrage",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2923,11 +3021,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bekanntgabe auf Anfrage"
+     "label": "3. Abschnitt: Bekanntgabe auf Anfrage",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2938,11 +3038,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bekanntgabe auf Anfrage"
+     "label": "3. Abschnitt: Bekanntgabe auf Anfrage",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2967,11 +3069,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bekanntgabe auf Anfrage"
+     "label": "3. Abschnitt: Bekanntgabe auf Anfrage",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2996,11 +3100,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung"
+     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vorbereitungsverfahren"
+     "label": "1. Abschnitt: Vorbereitungsverfahren",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -3037,11 +3143,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung"
+     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vorbereitungsverfahren"
+     "label": "1. Abschnitt: Vorbereitungsverfahren",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -3052,11 +3160,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung"
+     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vorbereitungsverfahren"
+     "label": "1. Abschnitt: Vorbereitungsverfahren",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -3093,11 +3203,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung"
+     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vorbereitungsverfahren"
+     "label": "1. Abschnitt: Vorbereitungsverfahren",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -3230,11 +3342,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung"
+     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vorbereitungsverfahren"
+     "label": "1. Abschnitt: Vorbereitungsverfahren",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -3295,11 +3409,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung"
+     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vorbereitungsverfahren"
+     "label": "1. Abschnitt: Vorbereitungsverfahren",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -3360,11 +3476,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung"
+     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vorbereitungsverfahren"
+     "label": "1. Abschnitt: Vorbereitungsverfahren",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -3389,11 +3507,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung"
+     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vorbereitungsverfahren"
+     "label": "1. Abschnitt: Vorbereitungsverfahren",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -3418,11 +3538,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung"
+     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Trauung"
+     "label": "2. Abschnitt: Trauung",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -3447,11 +3569,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung"
+     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Trauung"
+     "label": "2. Abschnitt: Trauung",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -3501,11 +3625,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung"
+     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Trauung"
+     "label": "2. Abschnitt: Trauung",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -3516,11 +3642,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung"
+     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Eheschliessung von ausländischen Staatsangehörigen"
+     "label": "3. Abschnitt: Eheschliessung von ausländischen Staatsangehörigen",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -3569,11 +3697,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung"
+     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Eheschliessung von ausländischen Staatsangehörigen"
+     "label": "3. Abschnitt: Eheschliessung von ausländischen Staatsangehörigen",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [],
@@ -3596,11 +3726,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung"
+     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Ehefähigkeitszeugnisse"
+     "label": "4. Abschnitt: Ehefähigkeitszeugnisse",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [],
@@ -3623,7 +3755,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Zentrales Personen-Informationssystem"
+     "label": "8. Kapitel: Zentrales Personen-Informationssystem",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3661,7 +3794,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Zentrales Personen-Informationssystem"
+     "label": "8. Kapitel: Zentrales Personen-Informationssystem",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3686,7 +3820,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Zentrales Personen-Informationssystem"
+     "label": "8. Kapitel: Zentrales Personen-Informationssystem",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3711,7 +3846,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Zentrales Personen-Informationssystem"
+     "label": "8. Kapitel: Zentrales Personen-Informationssystem",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3760,7 +3896,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Zentrales Personen-Informationssystem"
+     "label": "8. Kapitel: Zentrales Personen-Informationssystem",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3802,7 +3939,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Datenschutz und Datensicherheit"
+     "label": "9. Kapitel: Datenschutz und Datensicherheit",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3839,7 +3977,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Datenschutz und Datensicherheit"
+     "label": "9. Kapitel: Datenschutz und Datensicherheit",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3850,7 +3989,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Datenschutz und Datensicherheit"
+     "label": "9. Kapitel: Datenschutz und Datensicherheit",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3899,7 +4039,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Aufsicht und Zuständigkeiten der Bundesbehörden"
+     "label": "10. Kapitel: Aufsicht und Zuständigkeiten der Bundesbehörden",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -3985,7 +4126,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Aufsicht und Zuständigkeiten der Bundesbehörden"
+     "label": "10. Kapitel: Aufsicht und Zuständigkeiten der Bundesbehörden",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4034,7 +4176,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Aufsicht und Zuständigkeiten der Bundesbehörden"
+     "label": "10. Kapitel: Aufsicht und Zuständigkeiten der Bundesbehörden",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4059,7 +4202,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Aufsicht und Zuständigkeiten der Bundesbehörden"
+     "label": "10. Kapitel: Aufsicht und Zuständigkeiten der Bundesbehörden",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4070,7 +4214,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Aufsicht und Zuständigkeiten der Bundesbehörden"
+     "label": "10. Kapitel: Aufsicht und Zuständigkeiten der Bundesbehörden",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -4095,7 +4240,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Verfahren und Rechtsmittel"
+     "label": "11. Kapitel: Verfahren und Rechtsmittel",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4192,7 +4338,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Verfahren und Rechtsmittel"
+     "label": "11. Kapitel: Verfahren und Rechtsmittel",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -4241,7 +4388,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Strafbestimmung"
+     "label": "12. Kapitel: Strafbestimmung",
+     "eId": "chap_12"
     }
    ],
    "marginalie": []
@@ -4250,7 +4398,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4275,7 +4424,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4300,7 +4450,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [],
@@ -4323,7 +4474,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4360,7 +4512,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4426,7 +4579,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [],
@@ -4449,7 +4603,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4498,7 +4653,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4595,7 +4751,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4620,7 +4777,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gegenstand der Beurkundung"
+     "label": "2. Kapitel: Gegenstand der Beurkundung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -4645,7 +4803,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gegenstand der Beurkundung"
+     "label": "2. Kapitel: Gegenstand der Beurkundung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -4701,7 +4860,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gegenstand der Beurkundung"
+     "label": "2. Kapitel: Gegenstand der Beurkundung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [],
@@ -4728,7 +4888,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gegenstand der Beurkundung"
+     "label": "2. Kapitel: Gegenstand der Beurkundung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -4753,7 +4914,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gegenstand der Beurkundung"
+     "label": "2. Kapitel: Gegenstand der Beurkundung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -4778,7 +4940,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gegenstand der Beurkundung"
+     "label": "2. Kapitel: Gegenstand der Beurkundung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -4819,11 +4982,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -4900,11 +5065,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5037,11 +5204,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5078,11 +5247,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5107,11 +5278,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -5136,7 +5309,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -5185,11 +5359,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5214,11 +5390,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5267,11 +5445,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Zuständigkeit"
+     "label": "2. Abschnitt: Zuständigkeit",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5296,11 +5476,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verfahren der Beurkundung"
+     "label": "3. Kapitel: Verfahren der Beurkundung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Bereinigung"
+     "label": "5. Abschnitt: Bereinigung",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -5325,11 +5507,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Meldepflichten"
+     "label": "4. Kapitel: Meldepflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Geburt und Tod"
+     "label": "1. Abschnitt: Geburt und Tod",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -5366,11 +5550,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Meldepflichten"
+     "label": "4. Kapitel: Meldepflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Geburt und Tod"
+     "label": "1. Abschnitt: Geburt und Tod",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -5395,11 +5581,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Meldepflichten"
+     "label": "4. Kapitel: Meldepflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Geburt und Tod"
+     "label": "1. Abschnitt: Geburt und Tod",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -5428,11 +5616,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Meldepflichten"
+     "label": "4. Kapitel: Meldepflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Geburt und Tod"
+     "label": "1. Abschnitt: Geburt und Tod",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -5457,11 +5647,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Meldepflichten"
+     "label": "4. Kapitel: Meldepflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Geburt und Tod"
+     "label": "1. Abschnitt: Geburt und Tod",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -5481,11 +5673,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -5534,11 +5728,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -5563,11 +5759,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -5604,11 +5802,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -5657,11 +5857,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen"
+     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -5694,11 +5896,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen"
+     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -5727,11 +5931,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Bekanntgabe der Daten"
+     "label": "6. Kapitel: Bekanntgabe der Daten",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen"
+     "label": "2. Abschnitt: Bekanntgabe von Amtes wegen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -5773,7 +5979,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -5822,11 +6029,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung"
+     "label": "7. Kapitel: Vorbereitung der Eheschliessung und Trauung",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Eheschliessung von ausländischen Staatsangehörigen"
+     "label": "3. Abschnitt: Eheschliessung von ausländischen Staatsangehörigen",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -5903,7 +6112,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe"
+     "label": "7a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe",
+     "eId": "chap_7_a"
     }
    ],
    "marginalie": [],
@@ -5931,7 +6141,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe"
+     "label": "7a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe",
+     "eId": "chap_7_a"
     }
    ],
    "marginalie": [
@@ -5942,7 +6153,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe"
+     "label": "7a. Kapitel: Umwandlung der eingetragenen Partnerschaft in eine Ehe",
+     "eId": "chap_7_a"
     }
    ],
    "marginalie": [
@@ -5953,7 +6165,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Zentrales Personen-Informationssystem"
+     "label": "8. Kapitel: Zentrales Personen-Informationssystem",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -5978,7 +6191,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Zentrales Personen-Informationssystem"
+     "label": "8. Kapitel: Zentrales Personen-Informationssystem",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -6003,7 +6217,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Zentrales Personen-Informationssystem"
+     "label": "8. Kapitel: Zentrales Personen-Informationssystem",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -6028,7 +6243,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gegenstand der Beurkundung"
+     "label": "2. Kapitel: Gegenstand der Beurkundung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -6093,7 +6309,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -6166,7 +6383,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -6219,7 +6437,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -6268,7 +6487,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -6309,7 +6529,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -6334,7 +6555,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [],
@@ -6361,7 +6583,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -6390,7 +6613,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [],
@@ -6417,7 +6641,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -6442,7 +6667,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gegenstand der Beurkundung"
+     "label": "2. Kapitel: Gegenstand der Beurkundung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -6467,7 +6693,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gegenstand der Beurkundung"
+     "label": "2. Kapitel: Gegenstand der Beurkundung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -6504,7 +6731,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gegenstand der Beurkundung"
+     "label": "2. Kapitel: Gegenstand der Beurkundung",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [

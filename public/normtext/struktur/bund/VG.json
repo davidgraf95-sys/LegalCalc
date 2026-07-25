@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "170.32",
   "titel": "Bundesgesetz über die Verantwortlichkeit des Bundes sowie seiner Behördemitglieder und Beamten",
@@ -91,7 +91,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Abschnitt: Geltungsbereich"
+     "label": "I. Abschnitt: Geltungsbereich",
+     "eId": "chap_I"
     }
    ],
    "marginalie": [],
@@ -154,7 +155,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Abschnitt: Geltungsbereich"
+     "label": "I. Abschnitt: Geltungsbereich",
+     "eId": "chap_I"
     }
    ],
    "marginalie": [],
@@ -221,7 +223,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -230,7 +233,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [],
@@ -253,7 +257,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [],
@@ -276,7 +281,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [],
@@ -315,7 +321,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -324,7 +331,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -333,7 +341,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [],
@@ -356,7 +365,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [],
@@ -431,7 +441,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -440,7 +451,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Abschnitt: Die Haftung für Schaden"
+     "label": "II. Abschnitt: Die Haftung für Schaden",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -449,7 +461,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit"
+     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [],
@@ -496,7 +509,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit"
+     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [],
@@ -539,7 +553,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit"
+     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [],
@@ -670,7 +685,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit"
+     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [],
@@ -693,7 +709,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Abschnitt: Die disziplinarische Verantwortlichkeit"
+     "label": "IV. Abschnitt: Die disziplinarische Verantwortlichkeit",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -702,7 +719,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Abschnitt: Die disziplinarische Verantwortlichkeit"
+     "label": "IV. Abschnitt: Die disziplinarische Verantwortlichkeit",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -711,7 +729,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Abschnitt: Die Verantwortlichkeit der mit Aufgaben des Bundes betrauten besonderen Organisationen und ihres Personals"
+     "label": "V. Abschnitt: Die Verantwortlichkeit der mit Aufgaben des Bundes betrauten besonderen Organisationen und ihres Personals",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [],
@@ -766,7 +785,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Abschnitt: Verjährung und Verwirkung"
+     "label": "VI. Abschnitt: Verjährung und Verwirkung",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [],
@@ -841,7 +861,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Abschnitt: Verjährung und Verwirkung"
+     "label": "VI. Abschnitt: Verjährung und Verwirkung",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [],
@@ -868,7 +889,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Abschnitt: Verjährung und Verwirkung"
+     "label": "VI. Abschnitt: Verjährung und Verwirkung",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -877,7 +899,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Abschnitt: Verjährung und Verwirkung"
+     "label": "VI. Abschnitt: Verjährung und Verwirkung",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [],
@@ -904,7 +927,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VII. Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "VII. Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -913,7 +937,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VII. Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "VII. Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -922,7 +947,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VII. Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "VII. Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -931,7 +957,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VII. Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "VII. Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": [],
@@ -1012,7 +1039,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit"
+     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [],
@@ -1107,7 +1135,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit"
+     "label": "III. Abschnitt: Die strafrechtliche Verantwortlichkeit",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [],
@@ -1146,7 +1175,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten"
+     "label": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten",
+     "eId": "chap_V_a"
     }
    ],
    "marginalie": [],
@@ -1227,7 +1257,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten"
+     "label": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten",
+     "eId": "chap_V_a"
     }
    ],
    "marginalie": [],
@@ -1254,7 +1285,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten"
+     "label": "Va. Abschnitt: Haftung für Schäden im Zusammenhang mit dem Betrieb oder der Nutzung der Schengen/Dublin-Informationssysteme oder deren Komponenten",
+     "eId": "chap_V_a"
     }
    ],
    "marginalie": []

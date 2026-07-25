@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "831.10",
   "titel": "Bundesgesetz über die Alters- und Hinterlassenenversicherung",
@@ -88,11 +88,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Anwendbarkeit des ATSG"
+     "label": "Erster Abschnitt: Anwendbarkeit des ATSG",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [],
@@ -153,11 +155,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt a: Die versicherten Personen"
+     "label": "Erster Abschnitt a: Die versicherten Personen",
+     "eId": "part_1/chap_1_a"
     }
    ],
    "marginalie": [
@@ -266,19 +270,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "part_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "A. Die Beiträge der Versicherten"
+     "label": "A. Die Beiträge der Versicherten",
+     "eId": "part_1/chap_2/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "I. Die Beitragspflicht"
+     "label": "I. Die Beitragspflicht",
+     "eId": "part_1/chap_2/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -419,19 +427,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "part_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "A. Die Beiträge der Versicherten"
+     "label": "A. Die Beiträge der Versicherten",
+     "eId": "part_1/chap_2/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "II. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "II. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "part_1/chap_2/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -476,19 +488,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "part_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "A. Die Beiträge der Versicherten"
+     "label": "A. Die Beiträge der Versicherten",
+     "eId": "part_1/chap_2/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "II. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "II. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "part_1/chap_2/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -577,19 +593,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "part_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "A. Die Beiträge der Versicherten"
+     "label": "A. Die Beiträge der Versicherten",
+     "eId": "part_1/chap_2/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "II. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "II. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "part_1/chap_2/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -622,19 +642,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "part_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "A. Die Beiträge der Versicherten"
+     "label": "A. Die Beiträge der Versicherten",
+     "eId": "part_1/chap_2/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "II. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "II. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "part_1/chap_2/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -663,19 +687,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "part_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "A. Die Beiträge der Versicherten"
+     "label": "A. Die Beiträge der Versicherten",
+     "eId": "part_1/chap_2/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "II. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "II. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "part_1/chap_2/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -756,19 +784,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "part_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "A. Die Beiträge der Versicherten"
+     "label": "A. Die Beiträge der Versicherten",
+     "eId": "part_1/chap_2/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "II. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "II. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "part_1/chap_2/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -895,19 +927,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "part_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "A. Die Beiträge der Versicherten"
+     "label": "A. Die Beiträge der Versicherten",
+     "eId": "part_1/chap_2/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "III. Die Beiträge der nichterwerbstätigen Versicherten"
+     "label": "III. Die Beiträge der nichterwerbstätigen Versicherten",
+     "eId": "part_1/chap_2/lvl_A/lvl_III"
     }
    ],
    "marginalie": [],
@@ -1014,19 +1050,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "part_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "A. Die Beiträge der Versicherten"
+     "label": "A. Die Beiträge der Versicherten",
+     "eId": "part_1/chap_2/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "IV. Herabsetzung und Erlass von Beiträgen"
+     "label": "IV. Herabsetzung und Erlass von Beiträgen",
+     "eId": "part_1/chap_2/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [],
@@ -1053,15 +1093,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "part_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "B. Die Beiträge der Arbeitgeber"
+     "label": "B. Die Beiträge der Arbeitgeber",
+     "eId": "part_1/chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -1106,15 +1149,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "part_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "B. Die Beiträge der Arbeitgeber"
+     "label": "B. Die Beiträge der Arbeitgeber",
+     "eId": "part_1/chap_2/lvl_B"
     }
    ],
    "marginalie": [
@@ -1147,15 +1193,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "part_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "C. Der Bezug der Beiträge"
+     "label": "C. Der Bezug der Beiträge",
+     "eId": "part_1/chap_2/lvl_C"
     }
    ],
    "marginalie": [
@@ -1354,15 +1403,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "part_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "C. Der Bezug der Beiträge"
+     "label": "C. Der Bezug der Beiträge",
+     "eId": "part_1/chap_2/lvl_C"
     }
    ],
    "marginalie": [
@@ -1388,15 +1440,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "part_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "C. Der Bezug der Beiträge"
+     "label": "C. Der Bezug der Beiträge",
+     "eId": "part_1/chap_2/lvl_C"
     }
    ],
    "marginalie": [
@@ -1522,15 +1577,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "part_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "C. Der Bezug der Beiträge"
+     "label": "C. Der Bezug der Beiträge",
+     "eId": "part_1/chap_2/lvl_C"
     }
    ],
    "marginalie": [],
@@ -1557,19 +1615,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "part_1/chap_3/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "I. Allgemeines"
+     "label": "I. Allgemeines",
+     "eId": "part_1/chap_3/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -1745,19 +1807,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "part_1/chap_3/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "I. Allgemeines"
+     "label": "I. Allgemeines",
+     "eId": "part_1/chap_3/lvl_A/lvl_I"
     }
    ],
    "marginalie": [],
@@ -1784,19 +1850,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "part_1/chap_3/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "I. Allgemeines"
+     "label": "I. Allgemeines",
+     "eId": "part_1/chap_3/lvl_A/lvl_I"
     }
    ],
    "marginalie": [
@@ -1920,19 +1990,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "part_1/chap_3/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "II. Der Anspruch auf Altersrente"
+     "label": "II. Der Anspruch auf Altersrente",
+     "eId": "part_1/chap_3/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -1961,19 +2035,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "part_1/chap_3/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "II. Der Anspruch auf Altersrente"
+     "label": "II. Der Anspruch auf Altersrente",
+     "eId": "part_1/chap_3/lvl_A/lvl_II"
     }
    ],
    "marginalie": [],
@@ -2000,19 +2078,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "part_1/chap_3/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "III. Der Anspruch auf Witwen- und Witwerrente"
+     "label": "III. Der Anspruch auf Witwen- und Witwerrente",
+     "eId": "part_1/chap_3/lvl_A/lvl_III"
     }
    ],
    "marginalie": [
@@ -2049,19 +2131,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "part_1/chap_3/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "III. Der Anspruch auf Witwen- und Witwerrente"
+     "label": "III. Der Anspruch auf Witwen- und Witwerrente",
+     "eId": "part_1/chap_3/lvl_A/lvl_III"
     }
    ],
    "marginalie": [
@@ -2081,19 +2167,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "part_1/chap_3/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "IV. Der Anspruch auf Waisenrente"
+     "label": "IV. Der Anspruch auf Waisenrente",
+     "eId": "part_1/chap_3/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2122,15 +2212,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     }
    ],
    "marginalie": [
@@ -2175,19 +2268,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "I. Grundlagen der Berechnung der ordentlichen Renten"
+     "label": "I. Grundlagen der Berechnung der ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -2216,19 +2313,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "I. Grundlagen der Berechnung der ordentlichen Renten"
+     "label": "I. Grundlagen der Berechnung der ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -2264,19 +2365,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "I. Grundlagen der Berechnung der ordentlichen Renten"
+     "label": "I. Grundlagen der Berechnung der ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B/lvl_I"
     }
    ],
    "marginalie": [],
@@ -2303,19 +2408,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "I. Grundlagen der Berechnung der ordentlichen Renten"
+     "label": "I. Grundlagen der Berechnung der ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -2351,19 +2460,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "II. Die Vollrenten"
+     "label": "II. Die Vollrenten",
+     "eId": "part_1/chap_3/lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -2404,19 +2517,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "II. Die Vollrenten"
+     "label": "II. Die Vollrenten",
+     "eId": "part_1/chap_3/lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -2477,19 +2594,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "II. Die Vollrenten"
+     "label": "II. Die Vollrenten",
+     "eId": "part_1/chap_3/lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -2518,19 +2639,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "II. Die Vollrenten"
+     "label": "II. Die Vollrenten",
+     "eId": "part_1/chap_3/lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -2559,19 +2684,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "III. Die Teilrenten"
+     "label": "III. Die Teilrenten",
+     "eId": "part_1/chap_3/lvl_B/lvl_III"
     }
    ],
    "marginalie": [
@@ -2640,19 +2769,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "IV. Flexibler Rentenbezug"
+     "label": "IV. Flexibler Rentenbezug",
+     "eId": "part_1/chap_3/lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2682,19 +2815,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "IV. Flexibler Rentenbezug"
+     "label": "IV. Flexibler Rentenbezug",
+     "eId": "part_1/chap_3/lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2705,19 +2842,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "V. Die Kürzung der ordentlichen Renten"
+     "label": "V. Die Kürzung der ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B/lvl_V"
     }
    ],
    "marginalie": [
@@ -2803,15 +2944,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "C. Die ausserordentlichen Renten"
+     "label": "C. Die ausserordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_C"
     }
    ],
    "marginalie": [
@@ -2890,15 +3034,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "C. Die ausserordentlichen Renten"
+     "label": "C. Die ausserordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_C"
     }
    ],
    "marginalie": [
@@ -2976,15 +3123,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "E. Verschiedene Bestimmungen"
+     "label": "E. Verschiedene Bestimmungen",
+     "eId": "part_1/chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -3042,15 +3192,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "E. Verschiedene Bestimmungen"
+     "label": "E. Verschiedene Bestimmungen",
+     "eId": "part_1/chap_3/lvl_E"
     }
    ],
    "marginalie": [],
@@ -3081,15 +3234,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "E. Verschiedene Bestimmungen"
+     "label": "E. Verschiedene Bestimmungen",
+     "eId": "part_1/chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -3147,15 +3303,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "E. Verschiedene Bestimmungen"
+     "label": "E. Verschiedene Bestimmungen",
+     "eId": "part_1/chap_3/lvl_E"
     }
    ],
    "marginalie": [],
@@ -3186,15 +3345,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "E. Verschiedene Bestimmungen"
+     "label": "E. Verschiedene Bestimmungen",
+     "eId": "part_1/chap_3/lvl_E"
     }
    ],
    "marginalie": [],
@@ -3225,15 +3387,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "A. Allgemeines"
+     "label": "A. Allgemeines",
+     "eId": "part_1/chap_4/lvl_A"
     }
    ],
    "marginalie": [
@@ -3276,15 +3441,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "A. Allgemeines"
+     "label": "A. Allgemeines",
+     "eId": "part_1/chap_4/lvl_A"
     }
    ],
    "marginalie": [],
@@ -3311,15 +3479,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "B. Die Arbeitgeber"
+     "label": "B. Die Arbeitgeber",
+     "eId": "part_1/chap_4/lvl_B"
     }
    ],
    "marginalie": [
@@ -3387,15 +3558,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "B. Die Arbeitgeber"
+     "label": "B. Die Arbeitgeber",
+     "eId": "part_1/chap_4/lvl_B"
     }
    ],
    "marginalie": [
@@ -3502,19 +3676,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "I. Die Verbandsausgleichskassen"
+     "label": "I. Die Verbandsausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C/lvl_I"
     }
    ],
    "marginalie": [
@@ -3607,19 +3785,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "I. Die Verbandsausgleichskassen"
+     "label": "I. Die Verbandsausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C/lvl_I"
     }
    ],
    "marginalie": [
@@ -3648,19 +3830,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "I. Die Verbandsausgleichskassen"
+     "label": "I. Die Verbandsausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C/lvl_I"
     }
    ],
    "marginalie": [
@@ -3722,19 +3908,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "I. Die Verbandsausgleichskassen"
+     "label": "I. Die Verbandsausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C/lvl_I"
     }
    ],
    "marginalie": [
@@ -3745,19 +3935,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "I. Die Verbandsausgleichskassen"
+     "label": "I. Die Verbandsausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C/lvl_I"
     }
    ],
    "marginalie": [
@@ -3819,19 +4013,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "I. Die Verbandsausgleichskassen"
+     "label": "I. Die Verbandsausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C/lvl_I"
     }
    ],
    "marginalie": [
@@ -3941,19 +4139,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "I. Die Verbandsausgleichskassen"
+     "label": "I. Die Verbandsausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C/lvl_I"
     }
    ],
    "marginalie": [
@@ -3964,19 +4166,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "I. Die Verbandsausgleichskassen"
+     "label": "I. Die Verbandsausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C/lvl_I"
     }
    ],
    "marginalie": [
@@ -4053,19 +4259,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "II. Die kantonalen Ausgleichskassen"
+     "label": "II. Die kantonalen Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C/lvl_II"
     }
    ],
    "marginalie": [
@@ -4206,19 +4416,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "III. Die Ausgleichskassen des Bundes"
+     "label": "III. Die Ausgleichskassen des Bundes",
+     "eId": "part_1/chap_4/lvl_C/lvl_III"
     }
    ],
    "marginalie": [
@@ -4279,19 +4493,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "IV. Gemeinsame Vorschriften"
+     "label": "IV. Gemeinsame Vorschriften",
+     "eId": "part_1/chap_4/lvl_C/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4456,19 +4674,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "IV. Gemeinsame Vorschriften"
+     "label": "IV. Gemeinsame Vorschriften",
+     "eId": "part_1/chap_4/lvl_C/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4618,19 +4840,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "IV. Gemeinsame Vorschriften"
+     "label": "IV. Gemeinsame Vorschriften",
+     "eId": "part_1/chap_4/lvl_C/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4659,19 +4885,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "IV. Gemeinsame Vorschriften"
+     "label": "IV. Gemeinsame Vorschriften",
+     "eId": "part_1/chap_4/lvl_C/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4700,19 +4930,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "IV. Gemeinsame Vorschriften"
+     "label": "IV. Gemeinsame Vorschriften",
+     "eId": "part_1/chap_4/lvl_C/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4741,19 +4975,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "IV. Gemeinsame Vorschriften"
+     "label": "IV. Gemeinsame Vorschriften",
+     "eId": "part_1/chap_4/lvl_C/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4808,19 +5046,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "IV. Gemeinsame Vorschriften"
+     "label": "IV. Gemeinsame Vorschriften",
+     "eId": "part_1/chap_4/lvl_C/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4894,19 +5136,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "IV. Gemeinsame Vorschriften"
+     "label": "IV. Gemeinsame Vorschriften",
+     "eId": "part_1/chap_4/lvl_C/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4965,15 +5211,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "D. Die Zentrale Ausgleichsstelle"
+     "label": "D. Die Zentrale Ausgleichsstelle",
+     "eId": "part_1/chap_4/lvl_D"
     }
    ],
    "marginalie": [
@@ -5095,15 +5344,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "E. Die Aufsicht des Bundes"
+     "label": "E. Die Aufsicht des Bundes",
+     "eId": "part_1/chap_4/lvl_E"
     }
    ],
    "marginalie": [
@@ -5132,15 +5384,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "E. Die Aufsicht des Bundes"
+     "label": "E. Die Aufsicht des Bundes",
+     "eId": "part_1/chap_4/lvl_E"
     }
    ],
    "marginalie": [
@@ -5221,11 +5476,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Sechster Abschnitt: Die Rechtspflege"
+     "label": "Sechster Abschnitt: Die Rechtspflege",
+     "eId": "part_1/chap_6"
     }
    ],
    "marginalie": [
@@ -5272,11 +5529,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Sechster Abschnitt: Die Rechtspflege"
+     "label": "Sechster Abschnitt: Die Rechtspflege",
+     "eId": "part_1/chap_6"
     }
    ],
    "marginalie": [],
@@ -5307,11 +5566,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Sechster Abschnitt: Die Rechtspflege"
+     "label": "Sechster Abschnitt: Die Rechtspflege",
+     "eId": "part_1/chap_6"
     }
    ],
    "marginalie": [],
@@ -5342,11 +5603,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Siebenter Abschnitt: Strafbestimmungen des ersten Teiles"
+     "label": "Siebenter Abschnitt: Strafbestimmungen des ersten Teiles",
+     "eId": "part_1/chap_7"
     }
    ],
    "marginalie": [
@@ -5498,11 +5761,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Siebenter Abschnitt: Strafbestimmungen des ersten Teiles"
+     "label": "Siebenter Abschnitt: Strafbestimmungen des ersten Teiles",
+     "eId": "part_1/chap_7"
     }
    ],
    "marginalie": [
@@ -5565,11 +5830,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Siebenter Abschnitt: Strafbestimmungen des ersten Teiles"
+     "label": "Siebenter Abschnitt: Strafbestimmungen des ersten Teiles",
+     "eId": "part_1/chap_7"
     }
    ],
    "marginalie": [],
@@ -5596,11 +5863,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Siebenter Abschnitt: Strafbestimmungen des ersten Teiles"
+     "label": "Siebenter Abschnitt: Strafbestimmungen des ersten Teiles",
+     "eId": "part_1/chap_7"
     }
    ],
    "marginalie": [
@@ -5629,11 +5898,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Siebenter Abschnitt: Strafbestimmungen des ersten Teiles"
+     "label": "Siebenter Abschnitt: Strafbestimmungen des ersten Teiles",
+     "eId": "part_1/chap_7"
     }
    ],
    "marginalie": [
@@ -5694,11 +5965,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Achter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Achter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "part_1/chap_8"
     }
    ],
    "marginalie": [],
@@ -5725,11 +5998,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Achter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Achter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "part_1/chap_8"
     }
    ],
    "marginalie": [
@@ -5758,11 +6033,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Achter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Achter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "part_1/chap_8"
     }
    ],
    "marginalie": [],
@@ -5793,11 +6070,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Achter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Achter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "part_1/chap_8"
     }
    ],
    "marginalie": [
@@ -5826,11 +6105,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Achter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Achter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "part_1/chap_8"
     }
    ],
    "marginalie": [],
@@ -5861,11 +6142,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Achter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Achter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "part_1/chap_8"
     }
    ],
    "marginalie": [],
@@ -5892,11 +6175,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Achter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Achter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "part_1/chap_8"
     }
    ],
    "marginalie": [],
@@ -5923,11 +6208,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Achter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Achter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "part_1/chap_8"
     }
    ],
    "marginalie": [],
@@ -5954,11 +6241,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Achter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Achter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "part_1/chap_8"
     }
    ],
    "marginalie": [],
@@ -5985,11 +6274,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Achter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Achter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "part_1/chap_8"
     }
    ],
    "marginalie": [],
@@ -6016,11 +6307,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Die Finanzierung"
+     "label": "Zweiter Teil: Die Finanzierung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Die Aufbringung der Mittel"
+     "label": "Erster Abschnitt: Die Aufbringung der Mittel",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -6161,11 +6454,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Die Finanzierung"
+     "label": "Zweiter Teil: Die Finanzierung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Die Aufbringung der Mittel"
+     "label": "Erster Abschnitt: Die Aufbringung der Mittel",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -6194,11 +6489,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Die Finanzierung"
+     "label": "Zweiter Teil: Die Finanzierung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Die Aufbringung der Mittel"
+     "label": "Erster Abschnitt: Die Aufbringung der Mittel",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -6227,11 +6524,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Die Finanzierung"
+     "label": "Zweiter Teil: Die Finanzierung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Der Ausgleichsfonds der Alters- und Hinterlassenenversicherung"
+     "label": "Zweiter Abschnitt: Der Ausgleichsfonds der Alters- und Hinterlassenenversicherung",
+     "eId": "part_2/chap_2"
     }
    ],
    "marginalie": [
@@ -6313,11 +6612,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Die Finanzierung"
+     "label": "Zweiter Teil: Die Finanzierung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Der Ausgleichsfonds der Alters- und Hinterlassenenversicherung"
+     "label": "Zweiter Abschnitt: Der Ausgleichsfonds der Alters- und Hinterlassenenversicherung",
+     "eId": "part_2/chap_2"
     }
    ],
    "marginalie": [],
@@ -6344,11 +6645,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Die Finanzierung"
+     "label": "Zweiter Teil: Die Finanzierung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Der Ausgleichsfonds der Alters- und Hinterlassenenversicherung"
+     "label": "Zweiter Abschnitt: Der Ausgleichsfonds der Alters- und Hinterlassenenversicherung",
+     "eId": "part_2/chap_2"
     }
    ],
    "marginalie": [
@@ -6391,11 +6694,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Die Finanzierung"
+     "label": "Zweiter Teil: Die Finanzierung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Der Ausgleichsfonds der Alters- und Hinterlassenenversicherung"
+     "label": "Zweiter Abschnitt: Der Ausgleichsfonds der Alters- und Hinterlassenenversicherung",
+     "eId": "part_2/chap_2"
     }
    ],
    "marginalie": [],
@@ -6422,11 +6727,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Die Finanzierung"
+     "label": "Zweiter Teil: Die Finanzierung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: …"
+     "label": "Dritter Abschnitt: …",
+     "eId": "part_2/chap_3"
     }
    ],
    "marginalie": [],
@@ -6453,11 +6760,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Die Finanzierung"
+     "label": "Zweiter Teil: Die Finanzierung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: …"
+     "label": "Dritter Abschnitt: …",
+     "eId": "part_2/chap_3"
     }
    ],
    "marginalie": [],
@@ -6484,7 +6793,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Teil: Schlussbestimmungen"
+     "label": "Fünfter Teil: Schlussbestimmungen",
+     "eId": "part_5"
     }
    ],
    "marginalie": [
@@ -6517,7 +6827,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Teil: Schlussbestimmungen"
+     "label": "Fünfter Teil: Schlussbestimmungen",
+     "eId": "part_5"
     }
    ],
    "marginalie": [],
@@ -6552,11 +6863,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Achter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Achter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "part_1/chap_8"
     }
    ],
    "marginalie": [
@@ -6689,11 +7002,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Achter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Achter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "part_1/chap_8"
     }
    ],
    "marginalie": [],
@@ -6732,11 +7047,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Die Finanzierung"
+     "label": "Zweiter Teil: Die Finanzierung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt: Die Aufbringung der Mittel"
+     "label": "Erster Abschnitt: Die Aufbringung der Mittel",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [],
@@ -6763,11 +7080,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Teil: Die Finanzierung"
+     "label": "Zweiter Teil: Die Finanzierung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: …"
+     "label": "Vierter Abschnitt: …",
+     "eId": "part_2/chap_4"
     }
    ],
    "marginalie": [],
@@ -6794,15 +7113,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "part_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "C. Der Bezug der Beiträge"
+     "label": "C. Der Bezug der Beiträge",
+     "eId": "part_1/chap_2/lvl_C"
     }
    ],
    "marginalie": [
@@ -6847,7 +7169,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Teil: Verhältnis zum europäischen Recht"
+     "label": "Dritter Teil: Verhältnis zum europäischen Recht",
+     "eId": "part_3"
     }
    ],
    "marginalie": [],
@@ -6991,7 +7314,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
+     "label": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV",
+     "eId": "part_4"
     }
    ],
    "marginalie": [
@@ -7021,7 +7345,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
+     "label": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV",
+     "eId": "part_4"
     }
    ],
    "marginalie": [
@@ -7047,7 +7372,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
+     "label": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV",
+     "eId": "part_4"
     }
    ],
    "marginalie": [
@@ -7067,7 +7393,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
+     "label": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV",
+     "eId": "part_4"
     }
    ],
    "marginalie": [
@@ -7078,7 +7405,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
+     "label": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV",
+     "eId": "part_4"
     }
    ],
    "marginalie": [
@@ -7089,7 +7417,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
+     "label": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV",
+     "eId": "part_4"
     }
    ],
    "marginalie": [
@@ -7100,7 +7429,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
+     "label": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV",
+     "eId": "part_4"
     }
    ],
    "marginalie": [
@@ -7111,7 +7441,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV"
+     "label": "Vierter Teil: Systematische Verwendung der AHV-Nummer ausserhalb der AHV",
+     "eId": "part_4"
     }
    ],
    "marginalie": [
@@ -7137,11 +7468,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Erster Abschnitt a: Die versicherten Personen"
+     "label": "Erster Abschnitt a: Die versicherten Personen",
+     "eId": "part_1/chap_1_a"
     }
    ],
    "marginalie": [
@@ -7403,19 +7736,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "part_1/chap_3/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "II. Der Anspruch auf Altersrente"
+     "label": "II. Der Anspruch auf Altersrente",
+     "eId": "part_1/chap_3/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -7512,19 +7849,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "part_1/chap_3/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "II. Der Anspruch auf Altersrente"
+     "label": "II. Der Anspruch auf Altersrente",
+     "eId": "part_1/chap_3/lvl_A/lvl_II"
     }
    ],
    "marginalie": [
@@ -7594,19 +7935,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "part_1/chap_3/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "III. Der Anspruch auf Witwen- und Witwerrente"
+     "label": "III. Der Anspruch auf Witwen- und Witwerrente",
+     "eId": "part_1/chap_3/lvl_A/lvl_III"
     }
    ],
    "marginalie": [
@@ -7626,19 +7971,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "part_1/chap_3/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "III. Der Anspruch auf Witwen- und Witwerrente"
+     "label": "III. Der Anspruch auf Witwen- und Witwerrente",
+     "eId": "part_1/chap_3/lvl_A/lvl_III"
     }
    ],
    "marginalie": [
@@ -7682,19 +8031,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "part_1/chap_3/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "IV. Der Anspruch auf Waisenrente"
+     "label": "IV. Der Anspruch auf Waisenrente",
+     "eId": "part_1/chap_3/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [],
@@ -7721,19 +8074,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "A. Der Rentenanspruch"
+     "label": "A. Der Rentenanspruch",
+     "eId": "part_1/chap_3/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "IV. Der Anspruch auf Waisenrente"
+     "label": "IV. Der Anspruch auf Waisenrente",
+     "eId": "part_1/chap_3/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [
@@ -7784,19 +8141,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "I. Grundlagen der Berechnung der ordentlichen Renten"
+     "label": "I. Grundlagen der Berechnung der ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -7833,19 +8194,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "I. Grundlagen der Berechnung der ordentlichen Renten"
+     "label": "I. Grundlagen der Berechnung der ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -7874,19 +8239,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "I. Grundlagen der Berechnung der ordentlichen Renten"
+     "label": "I. Grundlagen der Berechnung der ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -8043,19 +8412,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "I. Grundlagen der Berechnung der ordentlichen Renten"
+     "label": "I. Grundlagen der Berechnung der ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -8132,19 +8505,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "I. Grundlagen der Berechnung der ordentlichen Renten"
+     "label": "I. Grundlagen der Berechnung der ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -8237,19 +8614,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "I. Grundlagen der Berechnung der ordentlichen Renten"
+     "label": "I. Grundlagen der Berechnung der ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -8286,19 +8667,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "I. Grundlagen der Berechnung der ordentlichen Renten"
+     "label": "I. Grundlagen der Berechnung der ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -8402,19 +8787,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "I. Grundlagen der Berechnung der ordentlichen Renten"
+     "label": "I. Grundlagen der Berechnung der ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -8491,19 +8880,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "I. Grundlagen der Berechnung der ordentlichen Renten"
+     "label": "I. Grundlagen der Berechnung der ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -8641,19 +9034,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "I. Grundlagen der Berechnung der ordentlichen Renten"
+     "label": "I. Grundlagen der Berechnung der ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -8705,19 +9102,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "II. Die Vollrenten"
+     "label": "II. Die Vollrenten",
+     "eId": "part_1/chap_3/lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -8746,19 +9147,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "II. Die Vollrenten"
+     "label": "II. Die Vollrenten",
+     "eId": "part_1/chap_3/lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -8783,19 +9188,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "II. Die Vollrenten"
+     "label": "II. Die Vollrenten",
+     "eId": "part_1/chap_3/lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -8839,19 +9248,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "II. Die Vollrenten"
+     "label": "II. Die Vollrenten",
+     "eId": "part_1/chap_3/lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -8896,19 +9309,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "II. Die Vollrenten"
+     "label": "II. Die Vollrenten",
+     "eId": "part_1/chap_3/lvl_B/lvl_II"
     }
    ],
    "marginalie": [
@@ -8937,19 +9354,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "IV. Flexibler Rentenbezug"
+     "label": "IV. Flexibler Rentenbezug",
+     "eId": "part_1/chap_3/lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -8960,19 +9381,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "IV. Flexibler Rentenbezug"
+     "label": "IV. Flexibler Rentenbezug",
+     "eId": "part_1/chap_3/lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -8983,19 +9408,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "B. Die ordentlichen Renten"
+     "label": "B. Die ordentlichen Renten",
+     "eId": "part_1/chap_3/lvl_B"
     },
     {
      "ebene": 4,
-     "label": "IV. Flexibler Rentenbezug"
+     "label": "IV. Flexibler Rentenbezug",
+     "eId": "part_1/chap_3/lvl_B/lvl_IV"
     }
    ],
    "marginalie": [
@@ -9006,15 +9435,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "D. Die Hilflosenentschädigung, der Assistenzbeitrag und die Hilfsmittel"
+     "label": "D. Die Hilflosenentschädigung, der Assistenzbeitrag und die Hilfsmittel",
+     "eId": "part_1/chap_3/lvl_D"
     }
    ],
    "marginalie": [
@@ -9262,15 +9694,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "D. Die Hilflosenentschädigung, der Assistenzbeitrag und die Hilfsmittel"
+     "label": "D. Die Hilflosenentschädigung, der Assistenzbeitrag und die Hilfsmittel",
+     "eId": "part_1/chap_3/lvl_D"
     }
    ],
    "marginalie": [
@@ -9365,15 +9800,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "E. Verschiedene Bestimmungen"
+     "label": "E. Verschiedene Bestimmungen",
+     "eId": "part_1/chap_3/lvl_E"
     }
    ],
    "marginalie": [
@@ -9419,15 +9857,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "D. Die Hilflosenentschädigung, der Assistenzbeitrag und die Hilfsmittel"
+     "label": "D. Die Hilflosenentschädigung, der Assistenzbeitrag und die Hilfsmittel",
+     "eId": "part_1/chap_3/lvl_D"
     }
    ],
    "marginalie": [
@@ -9478,15 +9919,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Dritter Abschnitt: Die Renten"
+     "label": "Dritter Abschnitt: Die Renten",
+     "eId": "part_1/chap_3"
     },
     {
      "ebene": 3,
-     "label": "E. Verschiedene Bestimmungen"
+     "label": "E. Verschiedene Bestimmungen",
+     "eId": "part_1/chap_3/lvl_E"
     }
    ],
    "marginalie": [],
@@ -9525,15 +9969,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "A. Allgemeines"
+     "label": "A. Allgemeines",
+     "eId": "part_1/chap_4/lvl_A"
     }
    ],
    "marginalie": [
@@ -9562,15 +10009,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "A. Allgemeines"
+     "label": "A. Allgemeines",
+     "eId": "part_1/chap_4/lvl_A"
     }
    ],
    "marginalie": [
@@ -9637,15 +10087,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "A. Allgemeines"
+     "label": "A. Allgemeines",
+     "eId": "part_1/chap_4/lvl_A"
     }
    ],
    "marginalie": [
@@ -9674,15 +10127,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "A. Allgemeines"
+     "label": "A. Allgemeines",
+     "eId": "part_1/chap_4/lvl_A"
     }
    ],
    "marginalie": [
@@ -9711,15 +10167,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "A. Allgemeines"
+     "label": "A. Allgemeines",
+     "eId": "part_1/chap_4/lvl_A"
     }
    ],
    "marginalie": [
@@ -9748,15 +10207,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "A. Allgemeines"
+     "label": "A. Allgemeines",
+     "eId": "part_1/chap_4/lvl_A"
     }
    ],
    "marginalie": [
@@ -9793,15 +10255,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "A. Allgemeines"
+     "label": "A. Allgemeines",
+     "eId": "part_1/chap_4/lvl_A"
     }
    ],
    "marginalie": [
@@ -10166,15 +10631,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "A. Allgemeines"
+     "label": "A. Allgemeines",
+     "eId": "part_1/chap_4/lvl_A"
     }
    ],
    "marginalie": [
@@ -10346,15 +10814,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "A. Allgemeines"
+     "label": "A. Allgemeines",
+     "eId": "part_1/chap_4/lvl_A"
     }
    ],
    "marginalie": [
@@ -10428,15 +10899,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "A. Allgemeines"
+     "label": "A. Allgemeines",
+     "eId": "part_1/chap_4/lvl_A"
     }
    ],
    "marginalie": [],
@@ -10471,19 +10945,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "IV. Gemeinsame Vorschriften"
+     "label": "IV. Gemeinsame Vorschriften",
+     "eId": "part_1/chap_4/lvl_C/lvl_IV"
     }
    ],
    "marginalie": [
@@ -10512,19 +10990,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "IV. Gemeinsame Vorschriften"
+     "label": "IV. Gemeinsame Vorschriften",
+     "eId": "part_1/chap_4/lvl_C/lvl_IV"
     }
    ],
    "marginalie": [
@@ -10566,19 +11048,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "IV. Gemeinsame Vorschriften"
+     "label": "IV. Gemeinsame Vorschriften",
+     "eId": "part_1/chap_4/lvl_C/lvl_IV"
     }
    ],
    "marginalie": [
@@ -10615,19 +11101,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "IV. Gemeinsame Vorschriften"
+     "label": "IV. Gemeinsame Vorschriften",
+     "eId": "part_1/chap_4/lvl_C/lvl_IV"
     }
    ],
    "marginalie": [
@@ -10656,19 +11146,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "IV. Gemeinsame Vorschriften"
+     "label": "IV. Gemeinsame Vorschriften",
+     "eId": "part_1/chap_4/lvl_C/lvl_IV"
     }
    ],
    "marginalie": [
@@ -10697,19 +11191,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "IV. Gemeinsame Vorschriften"
+     "label": "IV. Gemeinsame Vorschriften",
+     "eId": "part_1/chap_4/lvl_C/lvl_IV"
     }
    ],
    "marginalie": [
@@ -10738,19 +11236,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "C. Die Ausgleichskassen"
+     "label": "C. Die Ausgleichskassen",
+     "eId": "part_1/chap_4/lvl_C"
     },
     {
      "ebene": 4,
-     "label": "IV. Gemeinsame Vorschriften"
+     "label": "IV. Gemeinsame Vorschriften",
+     "eId": "part_1/chap_4/lvl_C/lvl_IV"
     }
    ],
    "marginalie": [
@@ -10792,15 +11294,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "D. Die Zentrale Ausgleichsstelle"
+     "label": "D. Die Zentrale Ausgleichsstelle",
+     "eId": "part_1/chap_4/lvl_D"
     }
    ],
    "marginalie": [
@@ -10833,15 +11338,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "E. Die Aufsicht des Bundes"
+     "label": "E. Die Aufsicht des Bundes",
+     "eId": "part_1/chap_4/lvl_E"
     }
    ],
    "marginalie": [
@@ -10870,15 +11378,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Vierter Abschnitt: Die Organisation"
+     "label": "Vierter Abschnitt: Die Organisation",
+     "eId": "part_1/chap_4"
     },
     {
      "ebene": 3,
-     "label": "E. Die Aufsicht des Bundes"
+     "label": "E. Die Aufsicht des Bundes",
+     "eId": "part_1/chap_4/lvl_E"
     }
    ],
    "marginalie": [
@@ -10907,11 +11418,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Fünfter Abschnitt: …"
+     "label": "Fünfter Abschnitt: …",
+     "eId": "part_1/chap_5"
     }
    ],
    "marginalie": [],
@@ -10942,11 +11455,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Sechster Abschnitt: Die Rechtspflege"
+     "label": "Sechster Abschnitt: Die Rechtspflege",
+     "eId": "part_1/chap_6"
     }
    ],
    "marginalie": [
@@ -11057,11 +11572,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Achter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Achter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "part_1/chap_8"
     }
    ],
    "marginalie": [],
@@ -11096,11 +11613,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Achter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Achter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "part_1/chap_8"
     }
    ],
    "marginalie": [
@@ -11129,11 +11648,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Achter Abschnitt: Verschiedene Bestimmungen"
+     "label": "Achter Abschnitt: Verschiedene Bestimmungen",
+     "eId": "part_1/chap_8"
     }
    ],
    "marginalie": [
@@ -11184,19 +11705,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Teil: Die Versicherung"
+     "label": "Erster Teil: Die Versicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Zweiter Abschnitt: Die Beiträge"
+     "label": "Zweiter Abschnitt: Die Beiträge",
+     "eId": "part_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "A. Die Beiträge der Versicherten"
+     "label": "A. Die Beiträge der Versicherten",
+     "eId": "part_1/chap_2/lvl_A"
     },
     {
      "ebene": 4,
-     "label": "II. Die Beiträge der erwerbstätigen Versicherten"
+     "label": "II. Die Beiträge der erwerbstätigen Versicherten",
+     "eId": "part_1/chap_2/lvl_A/lvl_II"
     }
    ],
    "marginalie": [

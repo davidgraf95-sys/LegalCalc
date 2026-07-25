@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "822.11",
   "titel": "Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel",
@@ -100,7 +100,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Geltungsbereich"
+     "label": "I. Geltungsbereich",
+     "eId": "lvl_I"
     }
    ],
    "marginalie": [
@@ -125,7 +126,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Geltungsbereich"
+     "label": "I. Geltungsbereich",
+     "eId": "lvl_I"
     }
    ],
    "marginalie": [
@@ -186,7 +188,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Geltungsbereich"
+     "label": "I. Geltungsbereich",
+     "eId": "lvl_I"
     }
    ],
    "marginalie": [
@@ -297,7 +300,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Geltungsbereich"
+     "label": "I. Geltungsbereich",
+     "eId": "lvl_I"
     }
    ],
    "marginalie": [
@@ -326,7 +330,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Geltungsbereich"
+     "label": "I. Geltungsbereich",
+     "eId": "lvl_I"
     }
    ],
    "marginalie": [
@@ -355,7 +360,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Gesundheitsschutz und Plangenehmigung"
+     "label": "II. Gesundheitsschutz und Plangenehmigung",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [
@@ -446,7 +452,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Gesundheitsschutz und Plangenehmigung"
+     "label": "II. Gesundheitsschutz und Plangenehmigung",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [
@@ -536,7 +543,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Gesundheitsschutz und Plangenehmigung"
+     "label": "II. Gesundheitsschutz und Plangenehmigung",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": [
@@ -569,11 +577,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "1. Arbeitszeit"
+     "label": "1. Arbeitszeit",
+     "eId": "lvl_III/lvl_1"
     }
    ],
    "marginalie": [
@@ -622,11 +632,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "1. Arbeitszeit"
+     "label": "1. Arbeitszeit",
+     "eId": "lvl_III/lvl_1"
     }
    ],
    "marginalie": [
@@ -651,11 +663,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "1. Arbeitszeit"
+     "label": "1. Arbeitszeit",
+     "eId": "lvl_III/lvl_1"
     }
    ],
    "marginalie": [
@@ -666,11 +680,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "1. Arbeitszeit"
+     "label": "1. Arbeitszeit",
+     "eId": "lvl_III/lvl_1"
     }
    ],
    "marginalie": [
@@ -708,11 +724,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "1. Arbeitszeit"
+     "label": "1. Arbeitszeit",
+     "eId": "lvl_III/lvl_1"
     }
    ],
    "marginalie": [
@@ -723,11 +741,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "1. Arbeitszeit"
+     "label": "1. Arbeitszeit",
+     "eId": "lvl_III/lvl_1"
     }
    ],
    "marginalie": [
@@ -752,11 +772,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "2. Ruhezeit"
+     "label": "2. Ruhezeit",
+     "eId": "lvl_III/lvl_2"
     }
    ],
    "marginalie": [
@@ -767,11 +789,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "2. Ruhezeit"
+     "label": "2. Ruhezeit",
+     "eId": "lvl_III/lvl_2"
     }
    ],
    "marginalie": [
@@ -796,11 +820,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "2. Ruhezeit"
+     "label": "2. Ruhezeit",
+     "eId": "lvl_III/lvl_2"
     }
    ],
    "marginalie": [
@@ -825,11 +851,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "2. Ruhezeit"
+     "label": "2. Ruhezeit",
+     "eId": "lvl_III/lvl_2"
     }
    ],
    "marginalie": [
@@ -854,11 +882,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "2. Ruhezeit"
+     "label": "2. Ruhezeit",
+     "eId": "lvl_III/lvl_2"
     }
    ],
    "marginalie": [
@@ -903,11 +933,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "2. Ruhezeit"
+     "label": "2. Ruhezeit",
+     "eId": "lvl_III/lvl_2"
     }
    ],
    "marginalie": [
@@ -932,11 +964,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "2. Ruhezeit"
+     "label": "2. Ruhezeit",
+     "eId": "lvl_III/lvl_2"
     }
    ],
    "marginalie": [
@@ -961,11 +995,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "2. Ruhezeit"
+     "label": "2. Ruhezeit",
+     "eId": "lvl_III/lvl_2"
     }
    ],
    "marginalie": [
@@ -990,11 +1026,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "3. Ununterbrochener Betrieb"
+     "label": "3. Ununterbrochener Betrieb",
+     "eId": "lvl_III/lvl_3"
     }
    ],
    "marginalie": [],
@@ -1030,11 +1068,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "3. Ununterbrochener Betrieb"
+     "label": "3. Ununterbrochener Betrieb",
+     "eId": "lvl_III/lvl_3"
     }
    ],
    "marginalie": [
@@ -1059,11 +1099,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "4. Weitere Vorschriften"
+     "label": "4. Weitere Vorschriften",
+     "eId": "lvl_III/lvl_4"
     }
    ],
    "marginalie": [
@@ -1096,11 +1138,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "4. Weitere Vorschriften"
+     "label": "4. Weitere Vorschriften",
+     "eId": "lvl_III/lvl_4"
     }
    ],
    "marginalie": [
@@ -1125,11 +1169,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "4. Weitere Vorschriften"
+     "label": "4. Weitere Vorschriften",
+     "eId": "lvl_III/lvl_4"
     }
    ],
    "marginalie": [
@@ -1206,11 +1252,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "4. Weitere Vorschriften"
+     "label": "4. Weitere Vorschriften",
+     "eId": "lvl_III/lvl_4"
     }
    ],
    "marginalie": [
@@ -1221,11 +1269,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Sonderschutzvorschriften"
+     "label": "IV. Sonderschutzvorschriften",
+     "eId": "lvl_IV"
     },
     {
      "ebene": 2,
-     "label": "1. Jugendliche Arbeitnehmer"
+     "label": "1. Jugendliche Arbeitnehmer",
+     "eId": "lvl_IV/lvl_1"
     }
    ],
    "marginalie": [
@@ -1267,11 +1317,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Sonderschutzvorschriften"
+     "label": "IV. Sonderschutzvorschriften",
+     "eId": "lvl_IV"
     },
     {
      "ebene": 2,
-     "label": "1. Jugendliche Arbeitnehmer"
+     "label": "1. Jugendliche Arbeitnehmer",
+     "eId": "lvl_IV/lvl_1"
     }
    ],
    "marginalie": [
@@ -1296,11 +1348,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Sonderschutzvorschriften"
+     "label": "IV. Sonderschutzvorschriften",
+     "eId": "lvl_IV"
     },
     {
      "ebene": 2,
-     "label": "1. Jugendliche Arbeitnehmer"
+     "label": "1. Jugendliche Arbeitnehmer",
+     "eId": "lvl_IV/lvl_1"
     }
    ],
    "marginalie": [
@@ -1361,11 +1415,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Sonderschutzvorschriften"
+     "label": "IV. Sonderschutzvorschriften",
+     "eId": "lvl_IV"
     },
     {
      "ebene": 2,
-     "label": "1. Jugendliche Arbeitnehmer"
+     "label": "1. Jugendliche Arbeitnehmer",
+     "eId": "lvl_IV/lvl_1"
     }
    ],
    "marginalie": [
@@ -1394,11 +1450,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Sonderschutzvorschriften"
+     "label": "IV. Sonderschutzvorschriften",
+     "eId": "lvl_IV"
     },
     {
      "ebene": 2,
-     "label": "2. Schwangere Frauen und stillende Mütter"
+     "label": "2. Schwangere Frauen und stillende Mütter",
+     "eId": "lvl_IV/lvl_2"
     }
    ],
    "marginalie": [
@@ -1432,11 +1490,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Sonderschutzvorschriften"
+     "label": "IV. Sonderschutzvorschriften",
+     "eId": "lvl_IV"
     },
     {
      "ebene": 2,
-     "label": "3. Arbeitnehmer mit Familienpflichten"
+     "label": "3. Arbeitnehmer mit Familienpflichten",
+     "eId": "lvl_IV/lvl_3"
     }
    ],
    "marginalie": [],
@@ -1504,7 +1564,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Betriebsordnung"
+     "label": "V. Betriebsordnung",
+     "eId": "lvl_V"
     }
    ],
    "marginalie": [
@@ -1515,7 +1576,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Betriebsordnung"
+     "label": "V. Betriebsordnung",
+     "eId": "lvl_V"
     }
    ],
    "marginalie": [
@@ -1544,7 +1606,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "V. Betriebsordnung"
+     "label": "V. Betriebsordnung",
+     "eId": "lvl_V"
     }
    ],
    "marginalie": [
@@ -1590,11 +1653,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "1. Durchführungsbestimmungen"
+     "label": "1. Durchführungsbestimmungen",
+     "eId": "lvl_VI/lvl_1"
     }
    ],
    "marginalie": []
@@ -1603,11 +1668,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "2. Aufgaben und Organisation der Behörden"
+     "label": "2. Aufgaben und Organisation der Behörden",
+     "eId": "lvl_VI/lvl_2"
     }
    ],
    "marginalie": [
@@ -1618,11 +1685,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "2. Aufgaben und Organisation der Behörden"
+     "label": "2. Aufgaben und Organisation der Behörden",
+     "eId": "lvl_VI/lvl_2"
     }
    ],
    "marginalie": [
@@ -1647,11 +1716,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "2. Aufgaben und Organisation der Behörden"
+     "label": "2. Aufgaben und Organisation der Behörden",
+     "eId": "lvl_VI/lvl_2"
     }
    ],
    "marginalie": [
@@ -1662,11 +1733,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "2. Aufgaben und Organisation der Behörden"
+     "label": "2. Aufgaben und Organisation der Behörden",
+     "eId": "lvl_VI/lvl_2"
     }
    ],
    "marginalie": [
@@ -1695,11 +1768,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "3. Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "3. Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "lvl_VI/lvl_3"
     }
    ],
    "marginalie": [
@@ -1728,11 +1803,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "3. Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "3. Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "lvl_VI/lvl_3"
     }
    ],
    "marginalie": [
@@ -1792,11 +1869,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "3. Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "3. Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "lvl_VI/lvl_3"
     }
    ],
    "marginalie": [
@@ -1821,11 +1900,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "3. Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "3. Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "lvl_VI/lvl_3"
     }
    ],
    "marginalie": [
@@ -1850,11 +1931,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "3. Pflichten der Arbeitgeber und Arbeitnehmer"
+     "label": "3. Pflichten der Arbeitgeber und Arbeitnehmer",
+     "eId": "lvl_VI/lvl_3"
     }
    ],
    "marginalie": [
@@ -1883,11 +1966,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "4. Verwaltungsverfügungen und Verwaltungsmassnahmen"
+     "label": "4. Verwaltungsverfügungen und Verwaltungsmassnahmen",
+     "eId": "lvl_VI/lvl_4"
     }
    ],
    "marginalie": [
@@ -1898,11 +1983,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "4. Verwaltungsverfügungen und Verwaltungsmassnahmen"
+     "label": "4. Verwaltungsverfügungen und Verwaltungsmassnahmen",
+     "eId": "lvl_VI/lvl_4"
     }
    ],
    "marginalie": [
@@ -1928,11 +2015,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "4. Verwaltungsverfügungen und Verwaltungsmassnahmen"
+     "label": "4. Verwaltungsverfügungen und Verwaltungsmassnahmen",
+     "eId": "lvl_VI/lvl_4"
     }
    ],
    "marginalie": [
@@ -1943,11 +2032,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "4. Verwaltungsverfügungen und Verwaltungsmassnahmen"
+     "label": "4. Verwaltungsverfügungen und Verwaltungsmassnahmen",
+     "eId": "lvl_VI/lvl_4"
     }
    ],
    "marginalie": [
@@ -1958,11 +2049,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "4. Verwaltungsverfügungen und Verwaltungsmassnahmen"
+     "label": "4. Verwaltungsverfügungen und Verwaltungsmassnahmen",
+     "eId": "lvl_VI/lvl_4"
     }
    ],
    "marginalie": [
@@ -1973,11 +2066,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "5. Verwaltungsrechtspflege"
+     "label": "5. Verwaltungsrechtspflege",
+     "eId": "lvl_VI/lvl_5"
     }
    ],
    "marginalie": [],
@@ -2008,11 +2103,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "5. Verwaltungsrechtspflege"
+     "label": "5. Verwaltungsrechtspflege",
+     "eId": "lvl_VI/lvl_5"
     }
    ],
    "marginalie": [
@@ -2023,11 +2120,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "5. Verwaltungsrechtspflege"
+     "label": "5. Verwaltungsrechtspflege",
+     "eId": "lvl_VI/lvl_5"
     }
    ],
    "marginalie": [
@@ -2060,11 +2159,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "5. Verwaltungsrechtspflege"
+     "label": "5. Verwaltungsrechtspflege",
+     "eId": "lvl_VI/lvl_5"
     }
    ],
    "marginalie": [
@@ -2097,11 +2198,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "6. Strafbestimmungen"
+     "label": "6. Strafbestimmungen",
+     "eId": "lvl_VI/lvl_6"
     }
    ],
    "marginalie": [
@@ -2147,11 +2250,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "6. Strafbestimmungen"
+     "label": "6. Strafbestimmungen",
+     "eId": "lvl_VI/lvl_6"
     }
    ],
    "marginalie": [
@@ -2184,11 +2289,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "6. Strafbestimmungen"
+     "label": "6. Strafbestimmungen",
+     "eId": "lvl_VI/lvl_6"
     }
    ],
    "marginalie": [
@@ -2245,11 +2352,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "6. Strafbestimmungen"
+     "label": "6. Strafbestimmungen",
+     "eId": "lvl_VI/lvl_6"
     }
    ],
    "marginalie": [
@@ -2275,7 +2384,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VII. Änderung von Bundesgesetzen"
+     "label": "VII. Änderung von Bundesgesetzen",
+     "eId": "lvl_VII"
     }
    ],
    "marginalie": [],
@@ -2315,7 +2425,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VII. Änderung von Bundesgesetzen"
+     "label": "VII. Änderung von Bundesgesetzen",
+     "eId": "lvl_VII"
     }
    ],
    "marginalie": [],
@@ -2338,7 +2449,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VII. Änderung von Bundesgesetzen"
+     "label": "VII. Änderung von Bundesgesetzen",
+     "eId": "lvl_VII"
     }
    ],
    "marginalie": [],
@@ -2365,7 +2477,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VII. Änderung von Bundesgesetzen"
+     "label": "VII. Änderung von Bundesgesetzen",
+     "eId": "lvl_VII"
     }
    ],
    "marginalie": [],
@@ -2392,7 +2505,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VIII. Schluss- und Übergangsbestimmungen"
+     "label": "VIII. Schluss- und Übergangsbestimmungen",
+     "eId": "lvl_VIII"
     }
    ],
    "marginalie": [
@@ -2425,7 +2539,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VIII. Schluss- und Übergangsbestimmungen"
+     "label": "VIII. Schluss- und Übergangsbestimmungen",
+     "eId": "lvl_VIII"
     }
    ],
    "marginalie": [
@@ -2508,7 +2623,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VIII. Schluss- und Übergangsbestimmungen"
+     "label": "VIII. Schluss- und Übergangsbestimmungen",
+     "eId": "lvl_VIII"
     }
    ],
    "marginalie": [
@@ -2554,7 +2670,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VIII. Schluss- und Übergangsbestimmungen"
+     "label": "VIII. Schluss- und Übergangsbestimmungen",
+     "eId": "lvl_VIII"
     }
    ],
    "marginalie": [
@@ -2574,11 +2691,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "2. Ruhezeit"
+     "label": "2. Ruhezeit",
+     "eId": "lvl_III/lvl_2"
     }
    ],
    "marginalie": [
@@ -2603,11 +2722,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "2. Ruhezeit"
+     "label": "2. Ruhezeit",
+     "eId": "lvl_III/lvl_2"
     }
    ],
    "marginalie": [
@@ -2632,11 +2753,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "2. Ruhezeit"
+     "label": "2. Ruhezeit",
+     "eId": "lvl_III/lvl_2"
     }
    ],
    "marginalie": [
@@ -2661,11 +2784,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "2. Ruhezeit"
+     "label": "2. Ruhezeit",
+     "eId": "lvl_III/lvl_2"
     }
    ],
    "marginalie": [
@@ -2690,11 +2815,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "2. Ruhezeit"
+     "label": "2. Ruhezeit",
+     "eId": "lvl_III/lvl_2"
     }
    ],
    "marginalie": [
@@ -2719,11 +2846,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "2. Ruhezeit"
+     "label": "2. Ruhezeit",
+     "eId": "lvl_III/lvl_2"
     }
    ],
    "marginalie": [
@@ -2748,11 +2877,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Arbeits- und Ruhezeit"
+     "label": "III. Arbeits- und Ruhezeit",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "2. Ruhezeit"
+     "label": "2. Ruhezeit",
+     "eId": "lvl_III/lvl_2"
     }
    ],
    "marginalie": [
@@ -2777,11 +2908,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Sonderschutzvorschriften"
+     "label": "IV. Sonderschutzvorschriften",
+     "eId": "lvl_IV"
     },
     {
      "ebene": 2,
-     "label": "1. Jugendliche Arbeitnehmer"
+     "label": "1. Jugendliche Arbeitnehmer",
+     "eId": "lvl_IV/lvl_1"
     }
    ],
    "marginalie": [
@@ -2806,11 +2939,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Sonderschutzvorschriften"
+     "label": "IV. Sonderschutzvorschriften",
+     "eId": "lvl_IV"
     },
     {
      "ebene": 2,
-     "label": "2. Schwangere Frauen und stillende Mütter"
+     "label": "2. Schwangere Frauen und stillende Mütter",
+     "eId": "lvl_IV/lvl_2"
     }
    ],
    "marginalie": [
@@ -2821,11 +2956,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Sonderschutzvorschriften"
+     "label": "IV. Sonderschutzvorschriften",
+     "eId": "lvl_IV"
     },
     {
      "ebene": 2,
-     "label": "2. Schwangere Frauen und stillende Mütter"
+     "label": "2. Schwangere Frauen und stillende Mütter",
+     "eId": "lvl_IV/lvl_2"
     }
    ],
    "marginalie": [
@@ -2836,11 +2973,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Sonderschutzvorschriften"
+     "label": "IV. Sonderschutzvorschriften",
+     "eId": "lvl_IV"
     },
     {
      "ebene": 2,
-     "label": "4. Andere Gruppen von Arbeitnehmern"
+     "label": "4. Andere Gruppen von Arbeitnehmern",
+     "eId": "lvl_IV/lvl_4"
     }
    ],
    "marginalie": [],
@@ -2864,7 +3003,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Geltungsbereich"
+     "label": "I. Geltungsbereich",
+     "eId": "lvl_I"
     }
    ],
    "marginalie": [
@@ -2951,11 +3091,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "2. Aufgaben und Organisation der Behörden"
+     "label": "2. Aufgaben und Organisation der Behörden",
+     "eId": "lvl_VI/lvl_2"
     }
    ],
    "marginalie": [
@@ -2997,11 +3139,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VI. Durchführung des Gesetzes"
+     "label": "VI. Durchführung des Gesetzes",
+     "eId": "lvl_VI"
     },
     {
      "ebene": 2,
-     "label": "2. Aufgaben und Organisation der Behörden"
+     "label": "2. Aufgaben und Organisation der Behörden",
+     "eId": "lvl_VI/lvl_2"
     }
    ],
    "marginalie": [
@@ -3030,7 +3174,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "VII. Änderung von Bundesgesetzen"
+     "label": "VII. Änderung von Bundesgesetzen",
+     "eId": "lvl_VII"
     }
    ],
    "marginalie": [],

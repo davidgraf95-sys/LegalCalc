@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "943.02",
   "titel": "Bundesgesetz über den Binnenmarkt",
@@ -80,7 +80,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Zweck und Gegenstand"
+     "label": "1. Abschnitt: Zweck und Gegenstand",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [],
@@ -107,7 +108,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Grundsätze für den freien Zugang zum Markt"
+     "label": "2. Abschnitt: Grundsätze für den freien Zugang zum Markt",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -200,7 +202,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Grundsätze für den freien Zugang zum Markt"
+     "label": "2. Abschnitt: Grundsätze für den freien Zugang zum Markt",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -229,7 +232,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Grundsätze für den freien Zugang zum Markt"
+     "label": "2. Abschnitt: Grundsätze für den freien Zugang zum Markt",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -287,7 +291,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Grundsätze für den freien Zugang zum Markt"
+     "label": "2. Abschnitt: Grundsätze für den freien Zugang zum Markt",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -341,7 +346,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Grundsätze für den freien Zugang zum Markt"
+     "label": "2. Abschnitt: Grundsätze für den freien Zugang zum Markt",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -352,7 +358,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: ..."
+     "label": "3. Abschnitt: ...",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [],
@@ -379,7 +386,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Empfehlungen und Rechtsschutz"
+     "label": "4. Abschnitt: Empfehlungen und Rechtsschutz",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -408,7 +416,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Empfehlungen und Rechtsschutz"
+     "label": "4. Abschnitt: Empfehlungen und Rechtsschutz",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -489,7 +498,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Empfehlungen und Rechtsschutz"
+     "label": "4. Abschnitt: Empfehlungen und Rechtsschutz",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -500,7 +510,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Schlussbestimmungen"
+     "label": "5. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -511,7 +522,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Schlussbestimmungen"
+     "label": "5. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -531,7 +543,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Empfehlungen und Rechtsschutz"
+     "label": "4. Abschnitt: Empfehlungen und Rechtsschutz",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -560,7 +573,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Empfehlungen und Rechtsschutz"
+     "label": "4. Abschnitt: Empfehlungen und Rechtsschutz",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -589,7 +603,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Empfehlungen und Rechtsschutz"
+     "label": "4. Abschnitt: Empfehlungen und Rechtsschutz",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -618,7 +633,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Empfehlungen und Rechtsschutz"
+     "label": "4. Abschnitt: Empfehlungen und Rechtsschutz",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [

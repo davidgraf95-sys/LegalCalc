@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "0.748.0",
   "titel": "Übereinkommen über die internationale Zivilluftfahrt",
@@ -43,11 +43,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel I Allgemeine Grundsätze und Anwendung des Übereinkommens"
+     "label": "Kapitel I Allgemeine Grundsätze und Anwendung des Übereinkommens",
+     "eId": "part_1/chap_I"
     }
    ],
    "marginalie": [
@@ -58,11 +60,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel I Allgemeine Grundsätze und Anwendung des Übereinkommens"
+     "label": "Kapitel I Allgemeine Grundsätze und Anwendung des Übereinkommens",
+     "eId": "part_1/chap_I"
     }
    ],
    "marginalie": [
@@ -73,11 +77,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel I Allgemeine Grundsätze und Anwendung des Übereinkommens"
+     "label": "Kapitel I Allgemeine Grundsätze und Anwendung des Übereinkommens",
+     "eId": "part_1/chap_I"
     }
    ],
    "marginalie": [
@@ -88,11 +94,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel I Allgemeine Grundsätze und Anwendung des Übereinkommens"
+     "label": "Kapitel I Allgemeine Grundsätze und Anwendung des Übereinkommens",
+     "eId": "part_1/chap_I"
     }
    ],
    "marginalie": [
@@ -103,11 +111,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten"
+     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": [
@@ -118,11 +128,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten"
+     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": [
@@ -133,11 +145,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten"
+     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": [
@@ -148,11 +162,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten"
+     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": [
@@ -163,11 +179,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten"
+     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": [
@@ -178,11 +196,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten"
+     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": [
@@ -193,11 +213,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten"
+     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": [
@@ -208,11 +230,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten"
+     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": [
@@ -223,11 +247,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten"
+     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": [
@@ -238,11 +264,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten"
+     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": [
@@ -253,11 +281,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten"
+     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": [
@@ -268,11 +298,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten"
+     "label": "Kapitel II Flüge über dem Hoheitsgebiet der Vertragsstaaten",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": [
@@ -283,11 +315,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel III Staatszugehörigkeit der Luftfahrzeuge"
+     "label": "Kapitel III Staatszugehörigkeit der Luftfahrzeuge",
+     "eId": "part_1/chap_III"
     }
    ],
    "marginalie": [
@@ -298,11 +332,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel III Staatszugehörigkeit der Luftfahrzeuge"
+     "label": "Kapitel III Staatszugehörigkeit der Luftfahrzeuge",
+     "eId": "part_1/chap_III"
     }
    ],
    "marginalie": [
@@ -313,11 +349,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel III Staatszugehörigkeit der Luftfahrzeuge"
+     "label": "Kapitel III Staatszugehörigkeit der Luftfahrzeuge",
+     "eId": "part_1/chap_III"
     }
    ],
    "marginalie": [
@@ -328,11 +366,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel III Staatszugehörigkeit der Luftfahrzeuge"
+     "label": "Kapitel III Staatszugehörigkeit der Luftfahrzeuge",
+     "eId": "part_1/chap_III"
     }
    ],
    "marginalie": [
@@ -343,11 +383,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel III Staatszugehörigkeit der Luftfahrzeuge"
+     "label": "Kapitel III Staatszugehörigkeit der Luftfahrzeuge",
+     "eId": "part_1/chap_III"
     }
    ],
    "marginalie": [
@@ -358,11 +400,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel IV Massnahmen zur Erleichterung der Luftfahrt"
+     "label": "Kapitel IV Massnahmen zur Erleichterung der Luftfahrt",
+     "eId": "part_1/chap_IV"
     }
    ],
    "marginalie": [
@@ -373,11 +417,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel IV Massnahmen zur Erleichterung der Luftfahrt"
+     "label": "Kapitel IV Massnahmen zur Erleichterung der Luftfahrt",
+     "eId": "part_1/chap_IV"
     }
    ],
    "marginalie": [
@@ -388,11 +434,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel IV Massnahmen zur Erleichterung der Luftfahrt"
+     "label": "Kapitel IV Massnahmen zur Erleichterung der Luftfahrt",
+     "eId": "part_1/chap_IV"
     }
    ],
    "marginalie": [
@@ -403,11 +451,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel IV Massnahmen zur Erleichterung der Luftfahrt"
+     "label": "Kapitel IV Massnahmen zur Erleichterung der Luftfahrt",
+     "eId": "part_1/chap_IV"
     }
    ],
    "marginalie": [
@@ -418,11 +468,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel IV Massnahmen zur Erleichterung der Luftfahrt"
+     "label": "Kapitel IV Massnahmen zur Erleichterung der Luftfahrt",
+     "eId": "part_1/chap_IV"
     }
    ],
    "marginalie": [
@@ -433,11 +485,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel IV Massnahmen zur Erleichterung der Luftfahrt"
+     "label": "Kapitel IV Massnahmen zur Erleichterung der Luftfahrt",
+     "eId": "part_1/chap_IV"
     }
    ],
    "marginalie": [
@@ -468,11 +522,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel IV Massnahmen zur Erleichterung der Luftfahrt"
+     "label": "Kapitel IV Massnahmen zur Erleichterung der Luftfahrt",
+     "eId": "part_1/chap_IV"
     }
    ],
    "marginalie": [
@@ -483,11 +539,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Bedingungen, die in Bezug auf Luftfahrzeuge zu erfüllen sind"
+     "label": "Kapitel V Bedingungen, die in Bezug auf Luftfahrzeuge zu erfüllen sind",
+     "eId": "part_1/chap_V"
     }
    ],
    "marginalie": [
@@ -498,11 +556,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Bedingungen, die in Bezug auf Luftfahrzeuge zu erfüllen sind"
+     "label": "Kapitel V Bedingungen, die in Bezug auf Luftfahrzeuge zu erfüllen sind",
+     "eId": "part_1/chap_V"
     }
    ],
    "marginalie": [
@@ -513,11 +573,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Bedingungen, die in Bezug auf Luftfahrzeuge zu erfüllen sind"
+     "label": "Kapitel V Bedingungen, die in Bezug auf Luftfahrzeuge zu erfüllen sind",
+     "eId": "part_1/chap_V"
     }
    ],
    "marginalie": [
@@ -528,11 +590,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Bedingungen, die in Bezug auf Luftfahrzeuge zu erfüllen sind"
+     "label": "Kapitel V Bedingungen, die in Bezug auf Luftfahrzeuge zu erfüllen sind",
+     "eId": "part_1/chap_V"
     }
    ],
    "marginalie": [
@@ -543,11 +607,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Bedingungen, die in Bezug auf Luftfahrzeuge zu erfüllen sind"
+     "label": "Kapitel V Bedingungen, die in Bezug auf Luftfahrzeuge zu erfüllen sind",
+     "eId": "part_1/chap_V"
     }
    ],
    "marginalie": [
@@ -558,11 +624,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Bedingungen, die in Bezug auf Luftfahrzeuge zu erfüllen sind"
+     "label": "Kapitel V Bedingungen, die in Bezug auf Luftfahrzeuge zu erfüllen sind",
+     "eId": "part_1/chap_V"
     }
    ],
    "marginalie": [
@@ -573,11 +641,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Bedingungen, die in Bezug auf Luftfahrzeuge zu erfüllen sind"
+     "label": "Kapitel V Bedingungen, die in Bezug auf Luftfahrzeuge zu erfüllen sind",
+     "eId": "part_1/chap_V"
     }
    ],
    "marginalie": [
@@ -588,11 +658,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Bedingungen, die in Bezug auf Luftfahrzeuge zu erfüllen sind"
+     "label": "Kapitel V Bedingungen, die in Bezug auf Luftfahrzeuge zu erfüllen sind",
+     "eId": "part_1/chap_V"
     }
    ],
    "marginalie": [
@@ -603,11 +675,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel VI Internationale Normen und Empfehlungen"
+     "label": "Kapitel VI Internationale Normen und Empfehlungen",
+     "eId": "part_1/chap_VI"
     }
    ],
    "marginalie": [
@@ -618,11 +692,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel VI Internationale Normen und Empfehlungen"
+     "label": "Kapitel VI Internationale Normen und Empfehlungen",
+     "eId": "part_1/chap_VI"
     }
    ],
    "marginalie": [
@@ -633,11 +709,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel VI Internationale Normen und Empfehlungen"
+     "label": "Kapitel VI Internationale Normen und Empfehlungen",
+     "eId": "part_1/chap_VI"
     }
    ],
    "marginalie": [
@@ -648,11 +726,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel VI Internationale Normen und Empfehlungen"
+     "label": "Kapitel VI Internationale Normen und Empfehlungen",
+     "eId": "part_1/chap_VI"
     }
    ],
    "marginalie": [
@@ -663,11 +743,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel VI Internationale Normen und Empfehlungen"
+     "label": "Kapitel VI Internationale Normen und Empfehlungen",
+     "eId": "part_1/chap_VI"
     }
    ],
    "marginalie": [
@@ -678,11 +760,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel VI Internationale Normen und Empfehlungen"
+     "label": "Kapitel VI Internationale Normen und Empfehlungen",
+     "eId": "part_1/chap_VI"
     }
    ],
    "marginalie": [
@@ -693,11 +777,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel VII Die Organisation"
+     "label": "Kapitel VII Die Organisation",
+     "eId": "part_2/chap_VII"
     }
    ],
    "marginalie": [
@@ -708,11 +794,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel VII Die Organisation"
+     "label": "Kapitel VII Die Organisation",
+     "eId": "part_2/chap_VII"
     }
    ],
    "marginalie": [
@@ -723,11 +811,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel VII Die Organisation"
+     "label": "Kapitel VII Die Organisation",
+     "eId": "part_2/chap_VII"
     }
    ],
    "marginalie": [
@@ -752,11 +842,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel VII Die Organisation"
+     "label": "Kapitel VII Die Organisation",
+     "eId": "part_2/chap_VII"
     }
    ],
    "marginalie": [
@@ -767,11 +859,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel VII Die Organisation"
+     "label": "Kapitel VII Die Organisation",
+     "eId": "part_2/chap_VII"
     }
    ],
    "marginalie": [
@@ -782,11 +876,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel VIII Die Versammlung"
+     "label": "Kapitel VIII Die Versammlung",
+     "eId": "part_2/chap_VIII"
     }
    ],
    "marginalie": [
@@ -815,11 +911,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel VIII Die Versammlung"
+     "label": "Kapitel VIII Die Versammlung",
+     "eId": "part_2/chap_VIII"
     }
    ],
    "marginalie": [
@@ -844,11 +942,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel IX Der Rat"
+     "label": "Kapitel IX Der Rat",
+     "eId": "part_2/chap_IX"
     }
    ],
    "marginalie": [
@@ -873,11 +973,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel IX Der Rat"
+     "label": "Kapitel IX Der Rat",
+     "eId": "part_2/chap_IX"
     }
    ],
    "marginalie": [
@@ -888,11 +990,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel IX Der Rat"
+     "label": "Kapitel IX Der Rat",
+     "eId": "part_2/chap_IX"
     }
    ],
    "marginalie": [
@@ -903,11 +1007,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel IX Der Rat"
+     "label": "Kapitel IX Der Rat",
+     "eId": "part_2/chap_IX"
     }
    ],
    "marginalie": [
@@ -918,11 +1024,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel IX Der Rat"
+     "label": "Kapitel IX Der Rat",
+     "eId": "part_2/chap_IX"
     }
    ],
    "marginalie": [
@@ -933,11 +1041,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel IX Der Rat"
+     "label": "Kapitel IX Der Rat",
+     "eId": "part_2/chap_IX"
     }
    ],
    "marginalie": [
@@ -948,11 +1058,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel X Die Luftfahrtkommission"
+     "label": "Kapitel X Die Luftfahrtkommission",
+     "eId": "part_2/chap_X"
     }
    ],
    "marginalie": [
@@ -978,11 +1090,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel X Die Luftfahrtkommission"
+     "label": "Kapitel X Die Luftfahrtkommission",
+     "eId": "part_2/chap_X"
     }
    ],
    "marginalie": [
@@ -993,11 +1107,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XI: Personal"
+     "label": "Kapitel XI: Personal",
+     "eId": "part_2/chap_XI"
     }
    ],
    "marginalie": [
@@ -1008,11 +1124,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XI: Personal"
+     "label": "Kapitel XI: Personal",
+     "eId": "part_2/chap_XI"
     }
    ],
    "marginalie": [
@@ -1023,11 +1141,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XI: Personal"
+     "label": "Kapitel XI: Personal",
+     "eId": "part_2/chap_XI"
     }
    ],
    "marginalie": [
@@ -1038,11 +1158,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XII Finanzen"
+     "label": "Kapitel XII Finanzen",
+     "eId": "part_2/chap_XII"
     }
    ],
    "marginalie": [
@@ -1067,11 +1189,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XII Finanzen"
+     "label": "Kapitel XII Finanzen",
+     "eId": "part_2/chap_XII"
     }
    ],
    "marginalie": [
@@ -1082,11 +1206,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XII Finanzen"
+     "label": "Kapitel XII Finanzen",
+     "eId": "part_2/chap_XII"
     }
    ],
    "marginalie": [
@@ -1097,11 +1223,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XIII Andere internationale Vereinbarungen"
+     "label": "Kapitel XIII Andere internationale Vereinbarungen",
+     "eId": "part_2/chap_XIII"
     }
    ],
    "marginalie": [
@@ -1112,11 +1240,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XIII Andere internationale Vereinbarungen"
+     "label": "Kapitel XIII Andere internationale Vereinbarungen",
+     "eId": "part_2/chap_XIII"
     }
    ],
    "marginalie": [
@@ -1127,11 +1257,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Die Internationale Zivilluftfahrtorganisation"
+     "label": "Teil II Die Internationale Zivilluftfahrtorganisation",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XIII Andere internationale Vereinbarungen"
+     "label": "Kapitel XIII Andere internationale Vereinbarungen",
+     "eId": "part_2/chap_XIII"
     }
    ],
    "marginalie": [
@@ -1157,11 +1289,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Internationaler Luftverkehr"
+     "label": "Teil III Internationaler Luftverkehr",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XIV Auskünfte und Berichte"
+     "label": "Kapitel XIV Auskünfte und Berichte",
+     "eId": "part_3/chap_XIV"
     }
    ],
    "marginalie": [
@@ -1172,11 +1306,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Internationaler Luftverkehr"
+     "label": "Teil III Internationaler Luftverkehr",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XV Flughäfen und andere Luftfahrteinrichtungen"
+     "label": "Kapitel XV Flughäfen und andere Luftfahrteinrichtungen",
+     "eId": "part_3/chap_XV"
     }
    ],
    "marginalie": [
@@ -1187,11 +1323,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Internationaler Luftverkehr"
+     "label": "Teil III Internationaler Luftverkehr",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XV Flughäfen und andere Luftfahrteinrichtungen"
+     "label": "Kapitel XV Flughäfen und andere Luftfahrteinrichtungen",
+     "eId": "part_3/chap_XV"
     }
    ],
    "marginalie": [
@@ -1202,11 +1340,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Internationaler Luftverkehr"
+     "label": "Teil III Internationaler Luftverkehr",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XV Flughäfen und andere Luftfahrteinrichtungen"
+     "label": "Kapitel XV Flughäfen und andere Luftfahrteinrichtungen",
+     "eId": "part_3/chap_XV"
     }
    ],
    "marginalie": [
@@ -1217,11 +1357,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Internationaler Luftverkehr"
+     "label": "Teil III Internationaler Luftverkehr",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XV Flughäfen und andere Luftfahrteinrichtungen"
+     "label": "Kapitel XV Flughäfen und andere Luftfahrteinrichtungen",
+     "eId": "part_3/chap_XV"
     }
    ],
    "marginalie": [
@@ -1232,11 +1374,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Internationaler Luftverkehr"
+     "label": "Teil III Internationaler Luftverkehr",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XV Flughäfen und andere Luftfahrteinrichtungen"
+     "label": "Kapitel XV Flughäfen und andere Luftfahrteinrichtungen",
+     "eId": "part_3/chap_XV"
     }
    ],
    "marginalie": [
@@ -1247,11 +1391,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Internationaler Luftverkehr"
+     "label": "Teil III Internationaler Luftverkehr",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XV Flughäfen und andere Luftfahrteinrichtungen"
+     "label": "Kapitel XV Flughäfen und andere Luftfahrteinrichtungen",
+     "eId": "part_3/chap_XV"
     }
    ],
    "marginalie": [
@@ -1262,11 +1408,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Internationaler Luftverkehr"
+     "label": "Teil III Internationaler Luftverkehr",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XV Flughäfen und andere Luftfahrteinrichtungen"
+     "label": "Kapitel XV Flughäfen und andere Luftfahrteinrichtungen",
+     "eId": "part_3/chap_XV"
     }
    ],
    "marginalie": [
@@ -1277,11 +1425,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Internationaler Luftverkehr"
+     "label": "Teil III Internationaler Luftverkehr",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XV Flughäfen und andere Luftfahrteinrichtungen"
+     "label": "Kapitel XV Flughäfen und andere Luftfahrteinrichtungen",
+     "eId": "part_3/chap_XV"
     }
    ],
    "marginalie": [
@@ -1292,11 +1442,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Internationaler Luftverkehr"
+     "label": "Teil III Internationaler Luftverkehr",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XV Flughäfen und andere Luftfahrteinrichtungen"
+     "label": "Kapitel XV Flughäfen und andere Luftfahrteinrichtungen",
+     "eId": "part_3/chap_XV"
     }
    ],
    "marginalie": [
@@ -1307,11 +1459,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Internationaler Luftverkehr"
+     "label": "Teil III Internationaler Luftverkehr",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XVI Betriebsgemeinschaften und Poolverkehr"
+     "label": "Kapitel XVI Betriebsgemeinschaften und Poolverkehr",
+     "eId": "part_3/chap_XVI"
     }
    ],
    "marginalie": [
@@ -1322,11 +1476,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Internationaler Luftverkehr"
+     "label": "Teil III Internationaler Luftverkehr",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XVI Betriebsgemeinschaften und Poolverkehr"
+     "label": "Kapitel XVI Betriebsgemeinschaften und Poolverkehr",
+     "eId": "part_3/chap_XVI"
     }
    ],
    "marginalie": [
@@ -1337,11 +1493,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Internationaler Luftverkehr"
+     "label": "Teil III Internationaler Luftverkehr",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XVI Betriebsgemeinschaften und Poolverkehr"
+     "label": "Kapitel XVI Betriebsgemeinschaften und Poolverkehr",
+     "eId": "part_3/chap_XVI"
     }
    ],
    "marginalie": [
@@ -1352,11 +1510,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XVII Andere Luftfahrtabkommen und ‑vereinbarungen"
+     "label": "Kapitel XVII Andere Luftfahrtabkommen und ‑vereinbarungen",
+     "eId": "part_4/chap_XVII"
     }
    ],
    "marginalie": [
@@ -1367,11 +1527,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XVII Andere Luftfahrtabkommen und ‑vereinbarungen"
+     "label": "Kapitel XVII Andere Luftfahrtabkommen und ‑vereinbarungen",
+     "eId": "part_4/chap_XVII"
     }
    ],
    "marginalie": [
@@ -1382,11 +1544,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XVII Andere Luftfahrtabkommen und ‑vereinbarungen"
+     "label": "Kapitel XVII Andere Luftfahrtabkommen und ‑vereinbarungen",
+     "eId": "part_4/chap_XVII"
     }
    ],
    "marginalie": [
@@ -1397,11 +1561,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XVII Andere Luftfahrtabkommen und ‑vereinbarungen"
+     "label": "Kapitel XVII Andere Luftfahrtabkommen und ‑vereinbarungen",
+     "eId": "part_4/chap_XVII"
     }
    ],
    "marginalie": [
@@ -1412,11 +1578,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XVIII Streitigkeiten und Unterlassungen"
+     "label": "Kapitel XVIII Streitigkeiten und Unterlassungen",
+     "eId": "part_4/chap_XVIII"
     }
    ],
    "marginalie": [
@@ -1443,11 +1611,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XVIII Streitigkeiten und Unterlassungen"
+     "label": "Kapitel XVIII Streitigkeiten und Unterlassungen",
+     "eId": "part_4/chap_XVIII"
     }
    ],
    "marginalie": [
@@ -1474,11 +1644,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XVIII Streitigkeiten und Unterlassungen"
+     "label": "Kapitel XVIII Streitigkeiten und Unterlassungen",
+     "eId": "part_4/chap_XVIII"
     }
    ],
    "marginalie": [
@@ -1489,11 +1661,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XVIII Streitigkeiten und Unterlassungen"
+     "label": "Kapitel XVIII Streitigkeiten und Unterlassungen",
+     "eId": "part_4/chap_XVIII"
     }
    ],
    "marginalie": [
@@ -1504,11 +1678,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XVIII Streitigkeiten und Unterlassungen"
+     "label": "Kapitel XVIII Streitigkeiten und Unterlassungen",
+     "eId": "part_4/chap_XVIII"
     }
    ],
    "marginalie": [
@@ -1519,11 +1695,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XIX Krieg"
+     "label": "Kapitel XIX Krieg",
+     "eId": "part_4/chap_XIX"
     }
    ],
    "marginalie": [
@@ -1534,11 +1712,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XX Anhänge"
+     "label": "Kapitel XX Anhänge",
+     "eId": "part_4/chap_XX"
     }
    ],
    "marginalie": [
@@ -1549,11 +1729,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XXI Ratifikationen, Beitritte, Änderungen und Kündigungen"
+     "label": "Kapitel XXI Ratifikationen, Beitritte, Änderungen und Kündigungen",
+     "eId": "part_4/chap_XXI"
     }
    ],
    "marginalie": [
@@ -1564,11 +1746,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XXI Ratifikationen, Beitritte, Änderungen und Kündigungen"
+     "label": "Kapitel XXI Ratifikationen, Beitritte, Änderungen und Kündigungen",
+     "eId": "part_4/chap_XXI"
     }
    ],
    "marginalie": [
@@ -1579,11 +1763,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XXI Ratifikationen, Beitritte, Änderungen und Kündigungen"
+     "label": "Kapitel XXI Ratifikationen, Beitritte, Änderungen und Kündigungen",
+     "eId": "part_4/chap_XXI"
     }
    ],
    "marginalie": [
@@ -1594,11 +1780,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XXI Ratifikationen, Beitritte, Änderungen und Kündigungen"
+     "label": "Kapitel XXI Ratifikationen, Beitritte, Änderungen und Kündigungen",
+     "eId": "part_4/chap_XXI"
     }
    ],
    "marginalie": [
@@ -1609,11 +1797,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XXI Ratifikationen, Beitritte, Änderungen und Kündigungen"
+     "label": "Kapitel XXI Ratifikationen, Beitritte, Änderungen und Kündigungen",
+     "eId": "part_4/chap_XXI"
     }
    ],
    "marginalie": [
@@ -1624,11 +1814,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XXII Begriffsbestimmungen"
+     "label": "Kapitel XXII Begriffsbestimmungen",
+     "eId": "part_4/chap_XXII"
     }
    ],
    "marginalie": []
@@ -1637,11 +1829,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Luftfahrt"
+     "label": "Teil I Luftfahrt",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel I Allgemeine Grundsätze und Anwendung des Übereinkommens"
+     "label": "Kapitel I Allgemeine Grundsätze und Anwendung des Übereinkommens",
+     "eId": "part_1/chap_I"
     }
    ],
    "marginalie": [],
@@ -1685,11 +1879,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "Kapitel XVII Andere Luftfahrtabkommen und ‑vereinbarungen"
+     "label": "Kapitel XVII Andere Luftfahrtabkommen und ‑vereinbarungen",
+     "eId": "part_4/chap_XVII"
     }
    ],
    "marginalie": [

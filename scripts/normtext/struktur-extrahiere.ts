@@ -25,8 +25,12 @@
 import { ankerZuToken, alleAnhangAnker, extrahiereAnhang } from './extrahiere-fedlex.ts';
 
 export interface ArtikelStruktur {
-  /** Amtliche Gliederung von aussen nach innen (Teil → Titel → Abschnitt …). */
-  gliederung: Array<{ ebene: number; label: string }>;
+  /** Amtliche Gliederung von aussen nach innen (Teil → Titel → Abschnitt …).
+   *  EID-1 (W2·5d §12): `eId` = kumulative Fedlex-Container-eId der Ebene
+   *  (`<section id="part_1/tit_1">`, AKN-Schema) — reine, bei jeder Regeneration
+   *  neu erzeugte OUTBOUND-Daten für ELI-Deep-Links (`quelleUrl#<eId>`), NIE
+   *  eigene persistente Anker (revisions-brüchige Pfade, §12.1/§12.4, K2/R8). */
+  gliederung: Array<{ ebene: number; label: string; eId?: string }>;
   /** Marginalien-Kette (Randtitel) von aussen nach innen. */
   marginalie: string[];
   /** Fussnoten, die an einer Überschrift/einem Randtitel über diesem Artikel
@@ -37,7 +41,9 @@ export interface ArtikelStruktur {
   randtitelFn?: Array<{ fnId: string; label: string; kind: 'g' | 'm' }>;
 }
 
-const TAG = /<(\/?)(div|article|h[1-6])\b([^>]*)>/gi;
+// EID-1: `section` matcht zusätzlich, NUR um die Container-eId (`id="part_1/…"`)
+// mitzuschneiden — Sektionen zählen weiterhin NICHT für das div/article-Nesting.
+const TAG = /<(\/?)(div|article|h[1-6]|section)\b([^>]*)>/gi;
 const CLASS = /\bclass="([^"]*)"/i;
 // M13: Haupttext-Artikel «art_…» ODER Schlusstitel-/UeB-Artikel «disp_uN/art_…»
 // (auch «disp_N/art_…» ohne «u», z.B. VZG). Strukturelle Anker (disp_u1/chap_1,
@@ -167,7 +173,7 @@ function artikelSachtitel(roh: string): string | null {
 }
 
 interface Knoten { iscollaps: boolean; pushed: boolean }
-interface Ktx { kind: 'g' | 'm'; ebene: number; label: string; fnIds: string[]; attached: boolean }
+interface Ktx { kind: 'g' | 'm'; ebene: number; label: string; fnIds: string[]; attached: boolean; eId?: string }
 
 /** Extrahiert je Artikel-Token die Gliederung + Marginalie aus Fedlex-HTML. */
 export function extrahiereStruktur(html: string): Record<string, ArtikelStruktur> {
@@ -175,8 +181,14 @@ export function extrahiereStruktur(html: string): Record<string, ArtikelStruktur
   const divstack: Knoten[] = [];
   const context: Ktx[] = [];
   let pending: Ktx | null = null;
-  let cap: { start: number; tag: string } | null = null;
+  let cap: { start: number; tag: string; eId?: string } | null = null;
   let artId: string | null = null; // aktuell offener Artikel (für die fusionierte h6-Marginalie)
+  // EID-1: Container-eId der zuletzt geöffneten <section id="…">. Fedlex setzt das
+  // Heading UNMITTELBAR nach der Section-Öffnung (korpusweit verifiziert 24.7.2026,
+  // 17'307 Sektionen, 9 NHG-h7-Ausnahmen ohne sichtbares Heading). Jedes ANDERE
+  // dazwischen gematchte Tag verwirft die pending-eId — sie darf nie auf ein
+  // fremdes, späteres Heading leaken (Determinismus §2).
+  let pendingEId: string | null = null;
 
   for (const m of html.matchAll(TAG)) {
     const ist_close = m[1] === '/';
@@ -186,8 +198,14 @@ export function extrahiereStruktur(html: string): Record<string, ArtikelStruktur
 
     if (!ist_close) {
       const istHeading = hatKlasse(attrs, 'heading');
+      if (tag === 'section') {
+        const id = attrs.match(/\bid="([^"]+)"/i);
+        pendingEId = id ? id[1] : null;
+        continue; // Sektionen zählen nicht fürs div/article-Nesting
+      }
       if (/^h[1-6]$/.test(tag) && istHeading) {
-        cap = { start: ende, tag }; // h nicht auf den div-Stack
+        cap = { start: ende, tag, ...(pendingEId ? { eId: pendingEId } : {}) }; // h nicht auf den div-Stack
+        pendingEId = null;
         continue;
       }
       if (tag === 'div' || tag === 'article') {
@@ -207,13 +225,19 @@ export function extrahiereStruktur(html: string): Record<string, ArtikelStruktur
             }
             artId = ankerZuToken(id[1]);
             result[artId] = {
-              gliederung: context.filter((c) => c.kind === 'g').map((c) => ({ ebene: c.ebene, label: c.label })),
+              // EID-1: `eId` additiv NACH den Bestandsfeldern (ebene/label bleiben
+              // byte-gleich in Reihenfolge und Wert; Einträge ohne Section-Wrapper
+              // tragen weiterhin KEIN eId-Feld).
+              gliederung: context
+                .filter((c) => c.kind === 'g')
+                .map((c) => ({ ebene: c.ebene, label: c.label, ...(c.eId ? { eId: c.eId } : {}) })),
               marginalie: context.filter((c) => c.kind === 'm').map((c) => c.label),
               ...(rfn.length ? { randtitelFn: rfn } : {}),
             };
           }
         }
-        if (istHeading) cap = { start: ende, tag: 'div' };
+        if (istHeading) cap = { start: ende, tag: 'div', ...(pendingEId ? { eId: pendingEId } : {}) };
+        pendingEId = null; // EID-1: eId bindet nur an das UNMITTELBAR folgende Heading
         const knoten: Knoten = { iscollaps: hatKlasse(attrs, 'collapseable'), pushed: false };
         if (knoten.iscollaps && pending) { context.push(pending); knoten.pushed = true; pending = null; }
         divstack.push(knoten);
@@ -222,16 +246,18 @@ export function extrahiereStruktur(html: string): Record<string, ArtikelStruktur
     }
 
     // Schliess-Tag
+    pendingEId = null; // EID-1: ein Schliess-Tag vor dem Heading → Section wickelt kein Heading
     if (cap && tag === cap.tag) {
       const roh = html.slice(cap.start, m.index);
       const label = reinText(roh);
       // Fussnoten-Marker AN der Überschrift (vor dem Strippen) erfassen.
       const fnIds = [...roh.matchAll(/href="#(fn-[^"]+)"/gi)].map((x) => x[1]);
+      const capEId = cap.eId;
       cap = null;
       const hm = /^h([1-6])$/.exec(tag);
       if (label && !/^(Art\.|§)\s/.test(label)) {
-        if (hm && Number(hm[1]) < 6) pending = { kind: 'g', ebene: Number(hm[1]), label, fnIds, attached: false };
-        else if (!hm) pending = { kind: 'm', ebene: 0, label, fnIds, attached: false };
+        if (hm && Number(hm[1]) < 6) pending = { kind: 'g', ebene: Number(hm[1]), label, fnIds, attached: false, ...(capEId ? { eId: capEId } : {}) };
+        else if (!hm) pending = { kind: 'm', ebene: 0, label, fnIds, attached: false, ...(capEId ? { eId: capEId } : {}) };
         else pending = null;
       } else {
         // Artikel-eigene h6-Überschrift («Art. N <Sachtitel>», BV/ZPO/StPO-Manier):

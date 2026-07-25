@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "812.121.1",
   "titel": "Verordnung über die Betäubungsmittelkontrolle",
@@ -54,11 +54,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gegenstand und Geltungsbereich"
+     "label": "1. Abschnitt: Gegenstand und Geltungsbereich",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -69,11 +71,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gegenstand und Geltungsbereich"
+     "label": "1. Abschnitt: Gegenstand und Geltungsbereich",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -84,11 +88,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gegenstand und Geltungsbereich"
+     "label": "1. Abschnitt: Gegenstand und Geltungsbereich",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -113,11 +119,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gegenstand und Geltungsbereich"
+     "label": "1. Abschnitt: Gegenstand und Geltungsbereich",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -142,11 +150,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bewilligungsbehörden"
+     "label": "2. Abschnitt: Bewilligungsbehörden",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -195,11 +205,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bewilligungsbehörden"
+     "label": "2. Abschnitt: Bewilligungsbehörden",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -210,11 +222,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bewilligungsbehörden"
+     "label": "2. Abschnitt: Bewilligungsbehörden",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -225,11 +239,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bewilligungsbehörden"
+     "label": "2. Abschnitt: Bewilligungsbehörden",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -240,11 +256,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bewilligungsbehörden"
+     "label": "2. Abschnitt: Bewilligungsbehörden",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -255,11 +273,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sorgfaltspflicht"
+     "label": "3. Abschnitt: Sorgfaltspflicht",
+     "eId": "chap_1/sec_3"
     }
    ],
    "marginalie": []
@@ -268,11 +288,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -310,11 +332,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -363,11 +387,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -392,11 +418,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -419,11 +447,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Gesuch"
+     "label": "2. Abschnitt: Gesuch",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [],
@@ -458,11 +488,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Wirkung und Geltungsdauer"
+     "label": "3. Abschnitt: Wirkung und Geltungsdauer",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -511,11 +543,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Wirkung und Geltungsdauer"
+     "label": "3. Abschnitt: Wirkung und Geltungsdauer",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -540,11 +574,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Wirkung und Geltungsdauer"
+     "label": "3. Abschnitt: Wirkung und Geltungsdauer",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -581,11 +617,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Änderungen, Erlöschen und Entzug"
+     "label": "4. Abschnitt: Änderungen, Erlöschen und Entzug",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -610,11 +648,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Änderungen, Erlöschen und Entzug"
+     "label": "4. Abschnitt: Änderungen, Erlöschen und Entzug",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -651,11 +691,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Änderungen, Erlöschen und Entzug"
+     "label": "4. Abschnitt: Änderungen, Erlöschen und Entzug",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -666,11 +708,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Betriebsbewilligungen"
+     "label": "2. Kapitel: Betriebsbewilligungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Änderungen, Erlöschen und Entzug"
+     "label": "4. Abschnitt: Änderungen, Erlöschen und Entzug",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -707,11 +751,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -722,11 +768,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -787,11 +835,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -802,11 +852,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -817,11 +869,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -832,11 +886,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -847,11 +903,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einfuhr"
+     "label": "2. Abschnitt: Einfuhr",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -876,11 +934,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einfuhr"
+     "label": "2. Abschnitt: Einfuhr",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -891,11 +951,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einfuhr"
+     "label": "2. Abschnitt: Einfuhr",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -906,11 +968,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ausfuhr"
+     "label": "3. Abschnitt: Ausfuhr",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -921,11 +985,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ausfuhr"
+     "label": "3. Abschnitt: Ausfuhr",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -936,11 +1002,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ausfuhr"
+     "label": "3. Abschnitt: Ausfuhr",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -951,11 +1019,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ausfuhr"
+     "label": "3. Abschnitt: Ausfuhr",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -966,11 +1036,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Durchfuhr"
+     "label": "4. Abschnitt: Durchfuhr",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": []
@@ -979,11 +1051,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Zollbehörden"
+     "label": "5. Abschnitt: Zollbehörden",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1013,11 +1087,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Zollbehörden"
+     "label": "5. Abschnitt: Zollbehörden",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1028,11 +1104,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Zollbehörden"
+     "label": "5. Abschnitt: Zollbehörden",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1043,11 +1121,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Zollbehörden"
+     "label": "5. Abschnitt: Zollbehörden",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1058,11 +1138,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Kranke Reisende"
+     "label": "6. Abschnitt: Kranke Reisende",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1087,11 +1169,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Kranke Reisende"
+     "label": "6. Abschnitt: Kranke Reisende",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1102,11 +1186,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel"
+     "label": "3. Kapitel: Ein-, Durch- und Ausfuhr, internationaler Handel",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Kranke Reisende"
+     "label": "6. Abschnitt: Kranke Reisende",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1117,11 +1203,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden"
+     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ärztinnen und Ärzte, Tierärztinnen und Tierärzte, Zahnärztinnen und Zahnärzte"
+     "label": "1. Abschnitt: Ärztinnen und Ärzte, Tierärztinnen und Tierärzte, Zahnärztinnen und Zahnärzte",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1146,11 +1234,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden"
+     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ärztinnen und Ärzte, Tierärztinnen und Tierärzte, Zahnärztinnen und Zahnärzte"
+     "label": "1. Abschnitt: Ärztinnen und Ärzte, Tierärztinnen und Tierärzte, Zahnärztinnen und Zahnärzte",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1161,11 +1251,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden"
+     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ärztinnen und Ärzte, Tierärztinnen und Tierärzte, Zahnärztinnen und Zahnärzte"
+     "label": "1. Abschnitt: Ärztinnen und Ärzte, Tierärztinnen und Tierärzte, Zahnärztinnen und Zahnärzte",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1176,11 +1268,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden"
+     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ärztinnen und Ärzte, Tierärztinnen und Tierärzte, Zahnärztinnen und Zahnärzte"
+     "label": "1. Abschnitt: Ärztinnen und Ärzte, Tierärztinnen und Tierärzte, Zahnärztinnen und Zahnärzte",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1191,11 +1285,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden"
+     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ärztinnen und Ärzte, Tierärztinnen und Tierärzte, Zahnärztinnen und Zahnärzte"
+     "label": "1. Abschnitt: Ärztinnen und Ärzte, Tierärztinnen und Tierärzte, Zahnärztinnen und Zahnärzte",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1206,11 +1302,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden"
+     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ärztinnen und Ärzte, Tierärztinnen und Tierärzte, Zahnärztinnen und Zahnärzte"
+     "label": "1. Abschnitt: Ärztinnen und Ärzte, Tierärztinnen und Tierärzte, Zahnärztinnen und Zahnärzte",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1235,11 +1333,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden"
+     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Ärztinnen und Ärzte, Tierärztinnen und Tierärzte, Zahnärztinnen und Zahnärzte"
+     "label": "1. Abschnitt: Ärztinnen und Ärzte, Tierärztinnen und Tierärzte, Zahnärztinnen und Zahnärzte",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1250,11 +1350,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden"
+     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Apothekerinnen und Apotheker"
+     "label": "2. Abschnitt: Apothekerinnen und Apotheker",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1279,11 +1381,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden"
+     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Apothekerinnen und Apotheker"
+     "label": "2. Abschnitt: Apothekerinnen und Apotheker",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1294,11 +1398,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden"
+     "label": "4. Kapitel: Bezug und Verwendung von Betäubungsmitteln durch Medizinalpersonen, Spitäler, Institute, Organisationen und Behörden",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Spitäler, Institute, Organisationen und Behörden"
+     "label": "3. Abschnitt: Spitäler, Institute, Organisationen und Behörden",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": []
@@ -1307,7 +1413,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufbewahrung und Bezeichnung der Betäubungsmittel"
+     "label": "5. Kapitel: Aufbewahrung und Bezeichnung der Betäubungsmittel",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1318,7 +1425,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufbewahrung und Bezeichnung der Betäubungsmittel"
+     "label": "5. Kapitel: Aufbewahrung und Bezeichnung der Betäubungsmittel",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1329,7 +1437,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufbewahrung und Bezeichnung der Betäubungsmittel"
+     "label": "5. Kapitel: Aufbewahrung und Bezeichnung der Betäubungsmittel",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1340,11 +1449,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Kontrolle"
+     "label": "6. Kapitel: Kontrolle",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Dokumentationspflicht"
+     "label": "1. Abschnitt: Dokumentationspflicht",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1369,11 +1480,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Kontrolle"
+     "label": "6. Kapitel: Kontrolle",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Dokumentationspflicht"
+     "label": "1. Abschnitt: Dokumentationspflicht",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1398,11 +1511,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Kontrolle"
+     "label": "6. Kapitel: Kontrolle",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Dokumentationspflicht"
+     "label": "1. Abschnitt: Dokumentationspflicht",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1413,11 +1528,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Kontrolle"
+     "label": "6. Kapitel: Kontrolle",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Melde- und Belegpflicht für kontrollierte Substanzen"
+     "label": "2. Abschnitt: Melde- und Belegpflicht für kontrollierte Substanzen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1442,11 +1559,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Kontrolle"
+     "label": "6. Kapitel: Kontrolle",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Melde- und Belegpflicht für kontrollierte Substanzen"
+     "label": "2. Abschnitt: Melde- und Belegpflicht für kontrollierte Substanzen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1457,11 +1576,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Kontrolle"
+     "label": "6. Kapitel: Kontrolle",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Melde- und Belegpflicht für kontrollierte Substanzen"
+     "label": "2. Abschnitt: Melde- und Belegpflicht für kontrollierte Substanzen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1472,11 +1593,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Kontrolle"
+     "label": "6. Kapitel: Kontrolle",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Melde- und Belegpflicht für kontrollierte Substanzen"
+     "label": "2. Abschnitt: Melde- und Belegpflicht für kontrollierte Substanzen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1487,11 +1610,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Kontrolle"
+     "label": "6. Kapitel: Kontrolle",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Melde- und Belegpflicht für kontrollierte Substanzen"
+     "label": "2. Abschnitt: Melde- und Belegpflicht für kontrollierte Substanzen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1502,11 +1627,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Kontrolle"
+     "label": "6. Kapitel: Kontrolle",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Melde- und Belegpflicht für kontrollierte Substanzen"
+     "label": "2. Abschnitt: Melde- und Belegpflicht für kontrollierte Substanzen",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1517,11 +1644,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Swissmedic"
+     "label": "1. Abschnitt: Swissmedic",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1558,11 +1687,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Swissmedic"
+     "label": "1. Abschnitt: Swissmedic",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1573,11 +1704,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Swissmedic"
+     "label": "1. Abschnitt: Swissmedic",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1588,11 +1721,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kantone"
+     "label": "2. Abschnitt: Kantone",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1603,11 +1738,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Kantone"
+     "label": "2. Abschnitt: Kantone",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1618,11 +1755,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: EDI und BAG"
+     "label": "3. Abschnitt: EDI und BAG",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -1633,11 +1772,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: EDI und BAG"
+     "label": "3. Abschnitt: EDI und BAG",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -1674,11 +1815,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Zusammenarbeit und Datenübertragung"
+     "label": "4. Abschnitt: Zusammenarbeit und Datenübertragung",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -1689,11 +1832,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Zusammenarbeit und Datenübertragung"
+     "label": "4. Abschnitt: Zusammenarbeit und Datenübertragung",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -1704,11 +1849,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Zusammenarbeit und Datenübertragung"
+     "label": "4. Abschnitt: Zusammenarbeit und Datenübertragung",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -1733,11 +1880,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Zusammenarbeit und Datenübertragung"
+     "label": "4. Abschnitt: Zusammenarbeit und Datenübertragung",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -1748,11 +1897,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Zusammenarbeit und Datenübertragung"
+     "label": "4. Abschnitt: Zusammenarbeit und Datenübertragung",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -1763,11 +1914,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Zusammenarbeit und Datenübertragung"
+     "label": "4. Abschnitt: Zusammenarbeit und Datenübertragung",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -1778,11 +1931,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Zusammenarbeit und Datenübertragung"
+     "label": "4. Abschnitt: Zusammenarbeit und Datenübertragung",
+     "eId": "chap_7/sec_4"
     }
    ],
    "marginalie": [
@@ -1819,11 +1974,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Gebühren"
+     "label": "5. Abschnitt: Gebühren",
+     "eId": "chap_7/sec_5"
     }
    ],
    "marginalie": [],
@@ -1870,7 +2027,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Nationale und Internationale Organisationen"
+     "label": "8. Kapitel: Nationale und Internationale Organisationen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1881,7 +2039,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Nationale und Internationale Organisationen"
+     "label": "8. Kapitel: Nationale und Internationale Organisationen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1892,7 +2051,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Nationale und Internationale Organisationen"
+     "label": "8. Kapitel: Nationale und Internationale Organisationen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1903,7 +2063,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Sanktionen"
+     "label": "9. Kapitel: Sanktionen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -1914,7 +2075,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Sanktionen"
+     "label": "9. Kapitel: Sanktionen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -1939,7 +2101,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -2091,7 +2254,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -2116,7 +2280,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -2127,7 +2292,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -2138,7 +2304,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Einzelanbaubewilligung"
+     "label": "2a. Kapitel: Einzelanbaubewilligung",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -2164,7 +2331,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Einzelanbaubewilligung"
+     "label": "2a. Kapitel: Einzelanbaubewilligung",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -2175,7 +2343,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Einzelanbaubewilligung"
+     "label": "2a. Kapitel: Einzelanbaubewilligung",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -2186,7 +2355,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Einzelanbaubewilligung"
+     "label": "2a. Kapitel: Einzelanbaubewilligung",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -2197,7 +2367,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Einzelanbaubewilligung"
+     "label": "2a. Kapitel: Einzelanbaubewilligung",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -2208,7 +2379,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Einzelanbaubewilligung"
+     "label": "2a. Kapitel: Einzelanbaubewilligung",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -2219,7 +2391,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Einzelanbaubewilligung"
+     "label": "2a. Kapitel: Einzelanbaubewilligung",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -2230,11 +2403,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Kontrolle"
+     "label": "6. Kapitel: Kontrolle",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationssystem über ärztliche Behandlungen mit Betäubungsmitteln des Wirkungstyps Cannabis"
+     "label": "3. Abschnitt: Informationssystem über ärztliche Behandlungen mit Betäubungsmitteln des Wirkungstyps Cannabis",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2260,11 +2435,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Kontrolle"
+     "label": "6. Kapitel: Kontrolle",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationssystem über ärztliche Behandlungen mit Betäubungsmitteln des Wirkungstyps Cannabis"
+     "label": "3. Abschnitt: Informationssystem über ärztliche Behandlungen mit Betäubungsmitteln des Wirkungstyps Cannabis",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2275,11 +2452,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Kontrolle"
+     "label": "6. Kapitel: Kontrolle",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationssystem über ärztliche Behandlungen mit Betäubungsmitteln des Wirkungstyps Cannabis"
+     "label": "3. Abschnitt: Informationssystem über ärztliche Behandlungen mit Betäubungsmitteln des Wirkungstyps Cannabis",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2290,11 +2469,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Kontrolle"
+     "label": "6. Kapitel: Kontrolle",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationssystem über ärztliche Behandlungen mit Betäubungsmitteln des Wirkungstyps Cannabis"
+     "label": "3. Abschnitt: Informationssystem über ärztliche Behandlungen mit Betäubungsmitteln des Wirkungstyps Cannabis",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2305,11 +2486,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Kontrolle"
+     "label": "6. Kapitel: Kontrolle",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationssystem über ärztliche Behandlungen mit Betäubungsmitteln des Wirkungstyps Cannabis"
+     "label": "3. Abschnitt: Informationssystem über ärztliche Behandlungen mit Betäubungsmitteln des Wirkungstyps Cannabis",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2320,11 +2503,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Kontrolle"
+     "label": "6. Kapitel: Kontrolle",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationssystem über ärztliche Behandlungen mit Betäubungsmitteln des Wirkungstyps Cannabis"
+     "label": "3. Abschnitt: Informationssystem über ärztliche Behandlungen mit Betäubungsmitteln des Wirkungstyps Cannabis",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -2335,11 +2520,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bewilligungsbehörden"
+     "label": "2. Abschnitt: Bewilligungsbehörden",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -2364,11 +2551,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4a. Abschnitt: Datenbearbeitung"
+     "label": "4a. Abschnitt: Datenbearbeitung",
+     "eId": "chap_7/sec_4_a"
     }
    ],
    "marginalie": [
@@ -2394,11 +2583,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "4a. Abschnitt: Datenbearbeitung"
+     "label": "4a. Abschnitt: Datenbearbeitung",
+     "eId": "chap_7/sec_4_a"
     }
    ],
    "marginalie": [
@@ -2409,7 +2600,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Schlussbestimmungen"
+     "label": "10. Kapitel: Schlussbestimmungen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [

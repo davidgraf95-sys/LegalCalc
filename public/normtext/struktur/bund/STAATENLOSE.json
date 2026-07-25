@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "0.142.40",
   "titel": "Übereinkommen über die Rechtsstellung der Staatenlosen",
@@ -83,7 +83,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Allgemeine Bestimmungen"
+     "label": "Kapitel I: Allgemeine Bestimmungen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": [
@@ -94,7 +95,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Allgemeine Bestimmungen"
+     "label": "Kapitel I: Allgemeine Bestimmungen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": [
@@ -105,7 +107,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Allgemeine Bestimmungen"
+     "label": "Kapitel I: Allgemeine Bestimmungen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": [
@@ -116,7 +119,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Allgemeine Bestimmungen"
+     "label": "Kapitel I: Allgemeine Bestimmungen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": [
@@ -127,7 +131,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Allgemeine Bestimmungen"
+     "label": "Kapitel I: Allgemeine Bestimmungen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": [
@@ -138,7 +143,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Allgemeine Bestimmungen"
+     "label": "Kapitel I: Allgemeine Bestimmungen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": [
@@ -149,7 +155,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Allgemeine Bestimmungen"
+     "label": "Kapitel I: Allgemeine Bestimmungen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": [
@@ -160,7 +167,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Allgemeine Bestimmungen"
+     "label": "Kapitel I: Allgemeine Bestimmungen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": [
@@ -171,7 +179,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Allgemeine Bestimmungen"
+     "label": "Kapitel I: Allgemeine Bestimmungen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": [
@@ -182,7 +191,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Allgemeine Bestimmungen"
+     "label": "Kapitel I: Allgemeine Bestimmungen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": [
@@ -193,7 +203,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Allgemeine Bestimmungen"
+     "label": "Kapitel I: Allgemeine Bestimmungen",
+     "eId": "chap_I"
     }
    ],
    "marginalie": [
@@ -204,7 +215,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Rechtsstellung"
+     "label": "Kapitel II: Rechtsstellung",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -215,7 +227,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Rechtsstellung"
+     "label": "Kapitel II: Rechtsstellung",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -226,7 +239,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Rechtsstellung"
+     "label": "Kapitel II: Rechtsstellung",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -237,7 +251,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Rechtsstellung"
+     "label": "Kapitel II: Rechtsstellung",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -248,7 +263,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Rechtsstellung"
+     "label": "Kapitel II: Rechtsstellung",
+     "eId": "chap_II"
     }
    ],
    "marginalie": [
@@ -259,7 +275,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Erwerbstätigkeit"
+     "label": "Kapitel III: Erwerbstätigkeit",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -270,7 +287,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Erwerbstätigkeit"
+     "label": "Kapitel III: Erwerbstätigkeit",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -281,7 +299,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Erwerbstätigkeit"
+     "label": "Kapitel III: Erwerbstätigkeit",
+     "eId": "chap_III"
     }
    ],
    "marginalie": [
@@ -292,7 +311,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV: Wohlfahrt"
+     "label": "Kapitel IV: Wohlfahrt",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": [
@@ -303,7 +323,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV: Wohlfahrt"
+     "label": "Kapitel IV: Wohlfahrt",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": [
@@ -314,7 +335,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV: Wohlfahrt"
+     "label": "Kapitel IV: Wohlfahrt",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": [
@@ -325,7 +347,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV: Wohlfahrt"
+     "label": "Kapitel IV: Wohlfahrt",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": [
@@ -336,7 +359,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV: Wohlfahrt"
+     "label": "Kapitel IV: Wohlfahrt",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": [
@@ -347,7 +371,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Administrative Massnahmen"
+     "label": "Kapitel V: Administrative Massnahmen",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [
@@ -358,7 +383,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Administrative Massnahmen"
+     "label": "Kapitel V: Administrative Massnahmen",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [
@@ -369,7 +395,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Administrative Massnahmen"
+     "label": "Kapitel V: Administrative Massnahmen",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [
@@ -380,7 +407,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Administrative Massnahmen"
+     "label": "Kapitel V: Administrative Massnahmen",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [
@@ -391,7 +419,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Administrative Massnahmen"
+     "label": "Kapitel V: Administrative Massnahmen",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [
@@ -402,7 +431,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Administrative Massnahmen"
+     "label": "Kapitel V: Administrative Massnahmen",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [
@@ -413,7 +443,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Administrative Massnahmen"
+     "label": "Kapitel V: Administrative Massnahmen",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [
@@ -424,7 +455,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Administrative Massnahmen"
+     "label": "Kapitel V: Administrative Massnahmen",
+     "eId": "chap_V"
     }
    ],
    "marginalie": [
@@ -435,7 +467,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Schlussbestimmungen"
+     "label": "Kapitel VI: Schlussbestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [
@@ -446,7 +479,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Schlussbestimmungen"
+     "label": "Kapitel VI: Schlussbestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [
@@ -457,7 +491,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Schlussbestimmungen"
+     "label": "Kapitel VI: Schlussbestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [
@@ -468,7 +503,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Schlussbestimmungen"
+     "label": "Kapitel VI: Schlussbestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [
@@ -479,7 +515,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Schlussbestimmungen"
+     "label": "Kapitel VI: Schlussbestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [
@@ -490,7 +527,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Schlussbestimmungen"
+     "label": "Kapitel VI: Schlussbestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [
@@ -501,7 +539,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Schlussbestimmungen"
+     "label": "Kapitel VI: Schlussbestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [
@@ -512,7 +551,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Schlussbestimmungen"
+     "label": "Kapitel VI: Schlussbestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [
@@ -523,7 +563,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Schlussbestimmungen"
+     "label": "Kapitel VI: Schlussbestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [
@@ -534,7 +575,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Schlussbestimmungen"
+     "label": "Kapitel VI: Schlussbestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [

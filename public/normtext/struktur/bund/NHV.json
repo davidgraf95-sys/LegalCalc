@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "451.1",
   "titel": "Verordnung über den Natur- und Heimatschutz",
@@ -83,7 +83,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Naturschutz, Heimatschutz und Denkmalpflege bei Erfüllung von Bundesaufgaben"
+     "label": "1. Abschnitt: Naturschutz, Heimatschutz und Denkmalpflege bei Erfüllung von Bundesaufgaben",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -135,7 +136,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Naturschutz, Heimatschutz und Denkmalpflege bei Erfüllung von Bundesaufgaben"
+     "label": "1. Abschnitt: Naturschutz, Heimatschutz und Denkmalpflege bei Erfüllung von Bundesaufgaben",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -220,7 +222,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Naturschutz, Heimatschutz und Denkmalpflege bei Erfüllung von Bundesaufgaben"
+     "label": "1. Abschnitt: Naturschutz, Heimatschutz und Denkmalpflege bei Erfüllung von Bundesaufgaben",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -258,7 +261,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund"
+     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -296,7 +300,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund"
+     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -321,7 +326,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund"
+     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -346,7 +352,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund"
+     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -419,7 +426,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund"
+     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -444,7 +452,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund"
+     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -493,7 +502,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund"
+     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -518,7 +528,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund"
+     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -556,7 +567,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund"
+     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -605,7 +617,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Schutz der einheimischen Pflanzen- und Tierwelt"
+     "label": "3. Abschnitt: Schutz der einheimischen Pflanzen- und Tierwelt",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -630,7 +643,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Schutz der einheimischen Pflanzen- und Tierwelt"
+     "label": "3. Abschnitt: Schutz der einheimischen Pflanzen- und Tierwelt",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -655,7 +669,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Schutz der einheimischen Pflanzen- und Tierwelt"
+     "label": "3. Abschnitt: Schutz der einheimischen Pflanzen- und Tierwelt",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -697,7 +712,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Schutz der einheimischen Pflanzen- und Tierwelt"
+     "label": "3. Abschnitt: Schutz der einheimischen Pflanzen- und Tierwelt",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -708,7 +724,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Schutz der einheimischen Pflanzen- und Tierwelt"
+     "label": "3. Abschnitt: Schutz der einheimischen Pflanzen- und Tierwelt",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -733,7 +750,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Schutz der einheimischen Pflanzen- und Tierwelt"
+     "label": "3. Abschnitt: Schutz der einheimischen Pflanzen- und Tierwelt",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -770,7 +788,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Schutz der einheimischen Pflanzen- und Tierwelt"
+     "label": "3. Abschnitt: Schutz der einheimischen Pflanzen- und Tierwelt",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -809,7 +828,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Schutz der einheimischen Pflanzen- und Tierwelt"
+     "label": "3. Abschnitt: Schutz der einheimischen Pflanzen- und Tierwelt",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -859,7 +879,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Schutz der einheimischen Pflanzen- und Tierwelt"
+     "label": "3. Abschnitt: Schutz der einheimischen Pflanzen- und Tierwelt",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -885,7 +906,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Abschnitt: Moore und Moorlandschaften von besonderer Schönheit und von nationaler Bedeutung"
+     "label": "3a. Abschnitt: Moore und Moorlandschaften von besonderer Schönheit und von nationaler Bedeutung",
+     "eId": "sec_3_a"
     }
    ],
    "marginalie": [
@@ -946,7 +968,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vollzug"
+     "label": "4. Abschnitt: Vollzug",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -991,7 +1014,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vollzug"
+     "label": "4. Abschnitt: Vollzug",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1040,7 +1064,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vollzug"
+     "label": "4. Abschnitt: Vollzug",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1125,7 +1150,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vollzug"
+     "label": "4. Abschnitt: Vollzug",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1175,7 +1201,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vollzug"
+     "label": "4. Abschnitt: Vollzug",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1237,7 +1264,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Schlussbestimmungen"
+     "label": "5. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -1281,7 +1309,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Schlussbestimmungen"
+     "label": "5. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -1342,7 +1371,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Schlussbestimmungen"
+     "label": "5. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -1353,7 +1383,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund"
+     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1378,7 +1409,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund"
+     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1407,7 +1439,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Abschnitt: Moore und Moorlandschaften von besonderer Schönheit und von nationaler Bedeutung"
+     "label": "3a. Abschnitt: Moore und Moorlandschaften von besonderer Schönheit und von nationaler Bedeutung",
+     "eId": "sec_3_a"
     }
    ],
    "marginalie": [
@@ -1449,7 +1482,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vollzug"
+     "label": "4. Abschnitt: Vollzug",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1474,7 +1508,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vollzug"
+     "label": "4. Abschnitt: Vollzug",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1513,7 +1548,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund"
+     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -1538,7 +1574,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund"
+     "label": "2. Abschnitt: Unterstützung von Naturschutz, Heimatschutz und Denkmalpflege durch den Bund",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [

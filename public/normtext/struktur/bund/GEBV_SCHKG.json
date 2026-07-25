@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "281.35",
   "titel": "Gebührenverordnung zum Bundesgesetz über Schuldbetreibung und Konkurs",
@@ -42,7 +42,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -53,7 +54,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -64,7 +66,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -75,7 +78,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -86,7 +90,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -97,7 +102,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -108,7 +114,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -119,7 +126,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -130,7 +138,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -155,7 +164,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -180,7 +190,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -191,7 +202,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -202,7 +214,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -276,7 +289,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -314,7 +328,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -325,7 +340,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -336,7 +352,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -347,7 +364,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -358,7 +376,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -369,7 +388,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -380,7 +400,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -391,7 +412,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -402,7 +424,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -413,7 +436,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -424,7 +448,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -435,7 +460,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -446,7 +472,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -457,7 +484,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -468,7 +496,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -479,7 +508,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -490,7 +520,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -501,7 +532,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -512,7 +544,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -523,7 +556,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -534,7 +568,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -545,7 +580,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -556,7 +592,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -582,7 +619,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -593,7 +631,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -604,7 +643,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -615,7 +655,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -640,7 +681,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren des Betreibungsamtes"
+     "label": "2. Kapitel: Gebühren des Betreibungsamtes",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -651,7 +693,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Gebühren im Konkursverfahren"
+     "label": "3. Kapitel: Gebühren im Konkursverfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -662,7 +705,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Gebühren im Konkursverfahren"
+     "label": "3. Kapitel: Gebühren im Konkursverfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -673,7 +717,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Gebühren im Konkursverfahren"
+     "label": "3. Kapitel: Gebühren im Konkursverfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -684,7 +729,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Gebühren im Konkursverfahren"
+     "label": "3. Kapitel: Gebühren im Konkursverfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -695,7 +741,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Gebühren im Konkursverfahren"
+     "label": "3. Kapitel: Gebühren im Konkursverfahren",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -706,11 +753,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtsgebühren"
+     "label": "4. Kapitel: Gerichtsgebühren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -748,11 +797,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtsgebühren"
+     "label": "4. Kapitel: Gerichtsgebühren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Betreibungs- und Konkurssachen"
+     "label": "2. Abschnitt: Betreibungs- und Konkurssachen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -763,11 +814,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtsgebühren"
+     "label": "4. Kapitel: Gerichtsgebühren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Betreibungs- und Konkurssachen"
+     "label": "2. Abschnitt: Betreibungs- und Konkurssachen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -778,11 +831,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtsgebühren"
+     "label": "4. Kapitel: Gerichtsgebühren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Betreibungs- und Konkurssachen"
+     "label": "2. Abschnitt: Betreibungs- und Konkurssachen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -793,11 +848,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtsgebühren"
+     "label": "4. Kapitel: Gerichtsgebühren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Nachlassverfahren, Schuldenbereinigung und Notstundung"
+     "label": "3. Abschnitt: Nachlassverfahren, Schuldenbereinigung und Notstundung",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -808,11 +865,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtsgebühren"
+     "label": "4. Kapitel: Gerichtsgebühren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Nachlassverfahren, Schuldenbereinigung und Notstundung"
+     "label": "3. Abschnitt: Nachlassverfahren, Schuldenbereinigung und Notstundung",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -823,11 +882,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtsgebühren"
+     "label": "4. Kapitel: Gerichtsgebühren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Nachlassverfahren, Schuldenbereinigung und Notstundung"
+     "label": "3. Abschnitt: Nachlassverfahren, Schuldenbereinigung und Notstundung",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -838,11 +899,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtsgebühren"
+     "label": "4. Kapitel: Gerichtsgebühren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Nachlassverfahren, Schuldenbereinigung und Notstundung"
+     "label": "3. Abschnitt: Nachlassverfahren, Schuldenbereinigung und Notstundung",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -853,11 +916,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtsgebühren"
+     "label": "4. Kapitel: Gerichtsgebühren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Weiterziehung und Beschwerdeverfahren; Parteientschädigung"
+     "label": "5. Abschnitt: Weiterziehung und Beschwerdeverfahren; Parteientschädigung",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -908,11 +973,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtsgebühren"
+     "label": "4. Kapitel: Gerichtsgebühren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Weiterziehung und Beschwerdeverfahren; Parteientschädigung"
+     "label": "5. Abschnitt: Weiterziehung und Beschwerdeverfahren; Parteientschädigung",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -937,7 +1004,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [],
@@ -988,7 +1056,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [],
@@ -1011,7 +1080,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -1048,7 +1118,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -1073,7 +1144,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -1170,7 +1242,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -1219,11 +1292,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtsgebühren"
+     "label": "4. Kapitel: Gerichtsgebühren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -1246,11 +1321,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Gerichtsgebühren"
+     "label": "4. Kapitel: Gerichtsgebühren",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: …"
+     "label": "4. Abschnitt: …",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [],
@@ -1273,7 +1350,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [

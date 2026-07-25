@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "831.461.3",
   "titel": "Verordnung über die steuerliche Abzugsberechtigung für Beiträge an anerkannte Vorsorgeformen",
@@ -69,7 +69,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Anerkannte Vorsorgeformen"
+     "label": "1. Abschnitt: Anerkannte Vorsorgeformen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -94,7 +95,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Anerkannte Vorsorgeformen"
+     "label": "1. Abschnitt: Anerkannte Vorsorgeformen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -155,7 +157,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Anerkannte Vorsorgeformen"
+     "label": "1. Abschnitt: Anerkannte Vorsorgeformen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -282,7 +285,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Anerkannte Vorsorgeformen"
+     "label": "1. Abschnitt: Anerkannte Vorsorgeformen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -382,7 +386,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Anerkannte Vorsorgeformen"
+     "label": "1. Abschnitt: Anerkannte Vorsorgeformen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -445,7 +450,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Steuerliche Behandlung"
+     "label": "2. Abschnitt: Steuerliche Behandlung",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -456,7 +462,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Steuerliche Behandlung"
+     "label": "2. Abschnitt: Steuerliche Behandlung",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -525,7 +532,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Steuerliche Behandlung"
+     "label": "2. Abschnitt: Steuerliche Behandlung",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -550,7 +558,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Inkrafttreten"
+     "label": "3. Abschnitt: Inkrafttreten",
+     "eId": "sec_3"
     }
    ],
    "marginalie": []
@@ -559,7 +568,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Anerkannte Vorsorgeformen"
+     "label": "1. Abschnitt: Anerkannte Vorsorgeformen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -584,7 +594,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Anerkannte Vorsorgeformen"
+     "label": "1. Abschnitt: Anerkannte Vorsorgeformen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -633,7 +644,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Steuerliche Behandlung"
+     "label": "2. Abschnitt: Steuerliche Behandlung",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -658,7 +670,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Steuerliche Behandlung"
+     "label": "2. Abschnitt: Steuerliche Behandlung",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -683,7 +696,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Abschnitt: Aufbewahrung der Unterlagen und Mitteilung von Vorsorgeangaben"
+     "label": "2a. Abschnitt: Aufbewahrung der Unterlagen und Mitteilung von Vorsorgeangaben",
+     "eId": "sec_2_a"
     }
    ],
    "marginalie": [
@@ -709,7 +723,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Abschnitt: Aufbewahrung der Unterlagen und Mitteilung von Vorsorgeangaben"
+     "label": "2a. Abschnitt: Aufbewahrung der Unterlagen und Mitteilung von Vorsorgeangaben",
+     "eId": "sec_2_a"
     }
    ],
    "marginalie": [

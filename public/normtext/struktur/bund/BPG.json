@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "172.220.1",
   "titel": "Bundespersonalgesetz",
@@ -49,7 +49,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -60,7 +61,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -329,7 +331,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -430,7 +433,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -491,7 +495,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -520,7 +525,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -573,7 +579,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -584,7 +591,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Entstehung, Beendigung und Auflösung des Arbeitsverhältnisses"
+     "label": "2. Abschnitt: Entstehung, Beendigung und Auflösung des Arbeitsverhältnisses",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -629,7 +637,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Entstehung, Beendigung und Auflösung des Arbeitsverhältnisses"
+     "label": "2. Abschnitt: Entstehung, Beendigung und Auflösung des Arbeitsverhältnisses",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -658,7 +667,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Entstehung, Beendigung und Auflösung des Arbeitsverhältnisses"
+     "label": "2. Abschnitt: Entstehung, Beendigung und Auflösung des Arbeitsverhältnisses",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -699,7 +709,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Entstehung, Beendigung und Auflösung des Arbeitsverhältnisses"
+     "label": "2. Abschnitt: Entstehung, Beendigung und Auflösung des Arbeitsverhältnisses",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [],
@@ -726,7 +737,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Entstehung, Beendigung und Auflösung des Arbeitsverhältnisses"
+     "label": "2. Abschnitt: Entstehung, Beendigung und Auflösung des Arbeitsverhältnisses",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -755,7 +767,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Entstehung, Beendigung und Auflösung des Arbeitsverhältnisses"
+     "label": "2. Abschnitt: Entstehung, Beendigung und Auflösung des Arbeitsverhältnisses",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -784,7 +797,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Entstehung, Beendigung und Auflösung des Arbeitsverhältnisses"
+     "label": "2. Abschnitt: Entstehung, Beendigung und Auflösung des Arbeitsverhältnisses",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -825,7 +839,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis"
+     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -874,7 +889,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis"
+     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -885,7 +901,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis"
+     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -940,7 +957,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis"
+     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -951,7 +969,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis"
+     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -980,7 +999,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis"
+     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -991,7 +1011,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis"
+     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1052,7 +1073,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis"
+     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1063,7 +1085,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis"
+     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1074,7 +1097,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis"
+     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1085,7 +1109,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis"
+     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -1114,7 +1139,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis"
+     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [],
@@ -1141,7 +1167,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Abschnitt: Datenbearbeitung"
+     "label": "3a. Abschnitt: Datenbearbeitung",
+     "eId": "sec_3_a"
     }
    ],
    "marginalie": [
@@ -1203,7 +1230,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Abschnitt: Datenbearbeitung"
+     "label": "3a. Abschnitt: Datenbearbeitung",
+     "eId": "sec_3_a"
     }
    ],
    "marginalie": [
@@ -1280,7 +1308,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Massnahmen zu Gunsten des Personals"
+     "label": "4. Abschnitt: Massnahmen zu Gunsten des Personals",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1291,7 +1320,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Massnahmen zu Gunsten des Personals"
+     "label": "4. Abschnitt: Massnahmen zu Gunsten des Personals",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1320,7 +1350,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Massnahmen zu Gunsten des Personals"
+     "label": "4. Abschnitt: Massnahmen zu Gunsten des Personals",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1357,7 +1388,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Massnahmen zu Gunsten des Personals"
+     "label": "4. Abschnitt: Massnahmen zu Gunsten des Personals",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -1368,7 +1400,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Mitwirkung und Sozialpartnerschaft"
+     "label": "5. Abschnitt: Mitwirkung und Sozialpartnerschaft",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [],
@@ -1391,7 +1424,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Verfahren"
+     "label": "6. Abschnitt: Verfahren",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -1452,7 +1486,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Verfahren"
+     "label": "6. Abschnitt: Verfahren",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [],
@@ -1479,7 +1514,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Verfahren"
+     "label": "6. Abschnitt: Verfahren",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -1536,7 +1572,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Ausführungsbestimmungen"
+     "label": "7. Abschnitt: Ausführungsbestimmungen",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1609,7 +1646,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Ausführungsbestimmungen"
+     "label": "7. Abschnitt: Ausführungsbestimmungen",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1654,7 +1692,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Schlussbestimmungen"
+     "label": "8. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -1703,7 +1742,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Schlussbestimmungen"
+     "label": "8. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -1729,7 +1769,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Schlussbestimmungen"
+     "label": "8. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -2006,7 +2047,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Schlussbestimmungen"
+     "label": "8. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -2055,7 +2097,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis"
+     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -2096,7 +2139,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis"
+     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -2137,7 +2181,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis"
+     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -2182,7 +2227,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis"
+     "label": "3. Abschnitt: Rechte und Pflichten aus dem Arbeitsverhältnis",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -2223,7 +2269,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Abschnitt: Datenbearbeitung"
+     "label": "3a. Abschnitt: Datenbearbeitung",
+     "eId": "sec_3_a"
     }
    ],
    "marginalie": [],
@@ -2258,7 +2305,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Abschnitt: Datenbearbeitung"
+     "label": "3a. Abschnitt: Datenbearbeitung",
+     "eId": "sec_3_a"
     }
    ],
    "marginalie": [
@@ -2331,7 +2379,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Abschnitt: Datenbearbeitung"
+     "label": "3a. Abschnitt: Datenbearbeitung",
+     "eId": "sec_3_a"
     }
    ],
    "marginalie": [],
@@ -2366,7 +2415,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4b. Abschnitt: Berufliche Vorsorge"
+     "label": "4b. Abschnitt: Berufliche Vorsorge",
+     "eId": "sec_4_b"
     }
    ],
    "marginalie": [
@@ -2416,7 +2466,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4b. Abschnitt: Berufliche Vorsorge"
+     "label": "4b. Abschnitt: Berufliche Vorsorge",
+     "eId": "sec_4_b"
     }
    ],
    "marginalie": [
@@ -2441,7 +2492,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4b. Abschnitt: Berufliche Vorsorge"
+     "label": "4b. Abschnitt: Berufliche Vorsorge",
+     "eId": "sec_4_b"
     }
    ],
    "marginalie": [
@@ -2498,7 +2550,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4b. Abschnitt: Berufliche Vorsorge"
+     "label": "4b. Abschnitt: Berufliche Vorsorge",
+     "eId": "sec_4_b"
     }
    ],
    "marginalie": [
@@ -2566,7 +2619,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4b. Abschnitt: Berufliche Vorsorge"
+     "label": "4b. Abschnitt: Berufliche Vorsorge",
+     "eId": "sec_4_b"
     }
    ],
    "marginalie": [
@@ -2577,7 +2631,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4b. Abschnitt: Berufliche Vorsorge"
+     "label": "4b. Abschnitt: Berufliche Vorsorge",
+     "eId": "sec_4_b"
     }
    ],
    "marginalie": [
@@ -2588,7 +2643,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4b. Abschnitt: Berufliche Vorsorge"
+     "label": "4b. Abschnitt: Berufliche Vorsorge",
+     "eId": "sec_4_b"
     }
    ],
    "marginalie": [
@@ -2641,7 +2697,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4b. Abschnitt: Berufliche Vorsorge"
+     "label": "4b. Abschnitt: Berufliche Vorsorge",
+     "eId": "sec_4_b"
     }
    ],
    "marginalie": [
@@ -2652,7 +2709,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4b. Abschnitt: Berufliche Vorsorge"
+     "label": "4b. Abschnitt: Berufliche Vorsorge",
+     "eId": "sec_4_b"
     }
    ],
    "marginalie": [
@@ -2677,7 +2735,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4b. Abschnitt: Berufliche Vorsorge"
+     "label": "4b. Abschnitt: Berufliche Vorsorge",
+     "eId": "sec_4_b"
     }
    ],
    "marginalie": [
@@ -2762,7 +2821,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4b. Abschnitt: Berufliche Vorsorge"
+     "label": "4b. Abschnitt: Berufliche Vorsorge",
+     "eId": "sec_4_b"
     }
    ],
    "marginalie": [
@@ -2803,7 +2863,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4b. Abschnitt: Berufliche Vorsorge"
+     "label": "4b. Abschnitt: Berufliche Vorsorge",
+     "eId": "sec_4_b"
     }
    ],
    "marginalie": [
@@ -2828,7 +2889,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4b. Abschnitt: Berufliche Vorsorge"
+     "label": "4b. Abschnitt: Berufliche Vorsorge",
+     "eId": "sec_4_b"
     }
    ],
    "marginalie": [
@@ -2869,7 +2931,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Verfahren"
+     "label": "6. Abschnitt: Verfahren",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -2898,7 +2961,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Verfahren"
+     "label": "6. Abschnitt: Verfahren",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -2927,7 +2991,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Verfahren"
+     "label": "6. Abschnitt: Verfahren",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -2980,7 +3045,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Verfahren"
+     "label": "6. Abschnitt: Verfahren",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -3009,7 +3075,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Schlussbestimmungen"
+     "label": "8. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_8"
     }
    ],
    "marginalie": [
@@ -3070,7 +3137,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [

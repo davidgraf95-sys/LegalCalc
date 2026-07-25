@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "170.512",
   "titel": "Bundesgesetz über die Sammlungen des Bundesrechts und das Bundesblatt",
@@ -54,7 +54,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -133,7 +134,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Amtliche Sammlung des Bundesrechts"
+     "label": "2. Abschnitt: Amtliche Sammlung des Bundesrechts",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -144,7 +146,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Amtliche Sammlung des Bundesrechts"
+     "label": "2. Abschnitt: Amtliche Sammlung des Bundesrechts",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -189,7 +192,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Amtliche Sammlung des Bundesrechts"
+     "label": "2. Abschnitt: Amtliche Sammlung des Bundesrechts",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -234,7 +238,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Amtliche Sammlung des Bundesrechts"
+     "label": "2. Abschnitt: Amtliche Sammlung des Bundesrechts",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -267,7 +272,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Amtliche Sammlung des Bundesrechts"
+     "label": "2. Abschnitt: Amtliche Sammlung des Bundesrechts",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -296,7 +302,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Amtliche Sammlung des Bundesrechts"
+     "label": "2. Abschnitt: Amtliche Sammlung des Bundesrechts",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -325,7 +332,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Amtliche Sammlung des Bundesrechts"
+     "label": "2. Abschnitt: Amtliche Sammlung des Bundesrechts",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -336,7 +344,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Amtliche Sammlung des Bundesrechts"
+     "label": "2. Abschnitt: Amtliche Sammlung des Bundesrechts",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [],
@@ -363,7 +372,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Amtliche Sammlung des Bundesrechts"
+     "label": "2. Abschnitt: Amtliche Sammlung des Bundesrechts",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -440,7 +450,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Systematische Sammlung des Bundesrechts"
+     "label": "3. Abschnitt: Systematische Sammlung des Bundesrechts",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -469,7 +480,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Systematische Sammlung des Bundesrechts"
+     "label": "3. Abschnitt: Systematische Sammlung des Bundesrechts",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -494,7 +506,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Bundesblatt"
+     "label": "4. Abschnitt: Bundesblatt",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [],
@@ -569,7 +582,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -702,7 +716,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -731,7 +746,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -760,7 +776,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [],
@@ -787,7 +804,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -816,7 +834,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -845,7 +864,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -871,7 +891,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -897,7 +918,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -917,7 +939,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Weitere auf der Publikationsplattform veröffentlichte Texte"
+     "label": "4a. Abschnitt: Weitere auf der Publikationsplattform veröffentlichte Texte",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [],
@@ -985,7 +1008,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -1014,7 +1038,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -1043,7 +1068,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -1100,7 +1126,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -1129,7 +1156,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -1158,7 +1186,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [

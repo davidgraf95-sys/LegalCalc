@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "641.10",
   "titel": "Bundesgesetz über die Stempelabgaben",
@@ -72,11 +72,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     },
     {
      "ebene": 2,
-     "label": "I. Gegenstand des Gesetzes"
+     "label": "I. Gegenstand des Gesetzes",
+     "eId": "lvl_u1/lvl_I"
     }
    ],
    "marginalie": [],
@@ -244,11 +246,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     },
     {
      "ebene": 2,
-     "label": "II. …"
+     "label": "II. …",
+     "eId": "lvl_u1/lvl_II"
     }
    ],
    "marginalie": [],
@@ -275,11 +279,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     },
     {
      "ebene": 2,
-     "label": "III. Verhältnis zum kantonalen Recht"
+     "label": "III. Verhältnis zum kantonalen Recht",
+     "eId": "lvl_u1/lvl_III"
     }
    ],
    "marginalie": [],
@@ -555,11 +561,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     },
     {
      "ebene": 2,
-     "label": "IV. Begriffsbestimmungen"
+     "label": "IV. Begriffsbestimmungen",
+     "eId": "lvl_u1/lvl_IV"
     }
    ],
    "marginalie": [],
@@ -660,11 +668,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "I. Gegenstand der Abgabe"
+     "label": "I. Gegenstand der Abgabe",
+     "eId": "chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -801,11 +811,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "I. Gegenstand der Abgabe"
+     "label": "I. Gegenstand der Abgabe",
+     "eId": "chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -1133,11 +1145,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "II. Entstehung der Abgabeforderung"
+     "label": "II. Entstehung der Abgabeforderung",
+     "eId": "chap_1/lvl_II"
     }
    ],
    "marginalie": [],
@@ -1254,11 +1268,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "III. Abgabesätze und Berechnungsgrundlage"
+     "label": "III. Abgabesätze und Berechnungsgrundlage",
+     "eId": "chap_1/lvl_III"
     }
    ],
    "marginalie": [
@@ -1319,11 +1335,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "III. Abgabesätze und Berechnungsgrundlage"
+     "label": "III. Abgabesätze und Berechnungsgrundlage",
+     "eId": "chap_1/lvl_III"
     }
    ],
    "marginalie": [
@@ -1466,11 +1484,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "IV. Abgabepflicht"
+     "label": "IV. Abgabepflicht",
+     "eId": "chap_1/lvl_IV"
     }
    ],
    "marginalie": [],
@@ -1537,11 +1557,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "V. Fälligkeit der Abgabeforderung"
+     "label": "V. Fälligkeit der Abgabeforderung",
+     "eId": "chap_1/lvl_V"
     }
    ],
    "marginalie": [],
@@ -1584,11 +1606,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "VI. Stundung und Erlass der Abgabeforderung"
+     "label": "VI. Stundung und Erlass der Abgabeforderung",
+     "eId": "chap_1/lvl_VI"
     }
    ],
    "marginalie": []
@@ -1597,11 +1621,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "I. Gegenstand der Abgabe"
+     "label": "I. Gegenstand der Abgabe",
+     "eId": "chap_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -1933,11 +1959,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "I. Gegenstand der Abgabe"
+     "label": "I. Gegenstand der Abgabe",
+     "eId": "chap_2/lvl_I"
     }
    ],
    "marginalie": [
@@ -2156,11 +2184,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "II. Entstehung der Abgabeforderung"
+     "label": "II. Entstehung der Abgabeforderung",
+     "eId": "chap_2/lvl_II"
     }
    ],
    "marginalie": []
@@ -2169,11 +2199,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "III. Abgabesatz und Berechnungsgrundlage"
+     "label": "III. Abgabesatz und Berechnungsgrundlage",
+     "eId": "chap_2/lvl_III"
     }
    ],
    "marginalie": [
@@ -2234,11 +2266,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "IV. Abgabepflicht"
+     "label": "IV. Abgabepflicht",
+     "eId": "chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2291,11 +2325,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "IV. Abgabepflicht"
+     "label": "IV. Abgabepflicht",
+     "eId": "chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2324,11 +2360,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "IV. Abgabepflicht"
+     "label": "IV. Abgabepflicht",
+     "eId": "chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -2406,11 +2444,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "V. Fälligkeit der Abgabeforderung"
+     "label": "V. Fälligkeit der Abgabeforderung",
+     "eId": "chap_2/lvl_V"
     }
    ],
    "marginalie": []
@@ -2419,11 +2459,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien"
+     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "I. Gegenstand der Abgabe"
+     "label": "I. Gegenstand der Abgabe",
+     "eId": "chap_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -2434,11 +2476,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien"
+     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "I. Gegenstand der Abgabe"
+     "label": "I. Gegenstand der Abgabe",
+     "eId": "chap_3/lvl_I"
     }
    ],
    "marginalie": [
@@ -2525,11 +2569,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien"
+     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "II. Entstehung der Abgabeforderung"
+     "label": "II. Entstehung der Abgabeforderung",
+     "eId": "chap_3/lvl_II"
     }
    ],
    "marginalie": []
@@ -2538,11 +2584,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien"
+     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "III. Abgabesätze und Berechnungsgrundlage"
+     "label": "III. Abgabesätze und Berechnungsgrundlage",
+     "eId": "chap_3/lvl_III"
     }
    ],
    "marginalie": [],
@@ -2569,11 +2617,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien"
+     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "IV. Abgabepflicht"
+     "label": "IV. Abgabepflicht",
+     "eId": "chap_3/lvl_IV"
     }
    ],
    "marginalie": []
@@ -2582,11 +2632,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien"
+     "label": "Dritter Abschnitt: Abgabe auf Versicherungsprämien",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "V. Fälligkeit der Abgabeforderung"
+     "label": "V. Fälligkeit der Abgabeforderung",
+     "eId": "chap_3/lvl_V"
     }
    ],
    "marginalie": []
@@ -2595,11 +2647,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Gemeinsame Bestimmungen für alle Abgaben"
+     "label": "Vierter Abschnitt: Gemeinsame Bestimmungen für alle Abgaben",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "I. Festsetzung der Abgaben"
+     "label": "I. Festsetzung der Abgaben",
+     "eId": "chap_4/lvl_I"
     }
    ],
    "marginalie": []
@@ -2608,11 +2662,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Gemeinsame Bestimmungen für alle Abgaben"
+     "label": "Vierter Abschnitt: Gemeinsame Bestimmungen für alle Abgaben",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "II. Umrechnung ausländischer Währungen"
+     "label": "II. Umrechnung ausländischer Währungen",
+     "eId": "chap_4/lvl_II"
     }
    ],
    "marginalie": []
@@ -2621,11 +2677,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Gemeinsame Bestimmungen für alle Abgaben"
+     "label": "Vierter Abschnitt: Gemeinsame Bestimmungen für alle Abgaben",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "III. Verzugszins"
+     "label": "III. Verzugszins",
+     "eId": "chap_4/lvl_III"
     }
    ],
    "marginalie": [],
@@ -2666,11 +2724,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Vierter Abschnitt: Gemeinsame Bestimmungen für alle Abgaben"
+     "label": "Vierter Abschnitt: Gemeinsame Bestimmungen für alle Abgaben",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "IV. Verjährung der Abgabeforderung"
+     "label": "IV. Verjährung der Abgabeforderung",
+     "eId": "chap_4/lvl_IV"
     }
    ],
    "marginalie": []
@@ -2679,15 +2739,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "A. Behörden"
+     "label": "A. Behörden",
+     "eId": "chap_5/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Eidgenössische Steuerverwaltung"
+     "label": "I. Eidgenössische Steuerverwaltung",
+     "eId": "chap_5/lvl_A/lvl_I"
     }
    ],
    "marginalie": [],
@@ -2714,15 +2777,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "A. Behörden"
+     "label": "A. Behörden",
+     "eId": "chap_5/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Amtshilfe"
+     "label": "II. Amtshilfe",
+     "eId": "chap_5/lvl_A/lvl_II"
     }
    ],
    "marginalie": [],
@@ -2778,15 +2844,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "A. Behörden"
+     "label": "A. Behörden",
+     "eId": "chap_5/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "III. Schweigepflicht"
+     "label": "III. Schweigepflicht",
+     "eId": "chap_5/lvl_A/lvl_III"
     }
    ],
    "marginalie": [],
@@ -2804,15 +2873,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Abgabeerhebung"
+     "label": "I. Abgabeerhebung",
+     "eId": "chap_5/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -2841,15 +2913,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Abgabeerhebung"
+     "label": "I. Abgabeerhebung",
+     "eId": "chap_5/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -2878,15 +2953,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Abgabeerhebung"
+     "label": "I. Abgabeerhebung",
+     "eId": "chap_5/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -2897,15 +2975,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "I. Abgabeerhebung"
+     "label": "I. Abgabeerhebung",
+     "eId": "chap_5/lvl_B/lvl_I"
     }
    ],
    "marginalie": [
@@ -2931,15 +3012,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "II. Entscheide der ESTV"
+     "label": "II. Entscheide der ESTV",
+     "eId": "chap_5/lvl_B/lvl_II"
     }
    ],
    "marginalie": []
@@ -2948,15 +3032,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "III. Einsprache"
+     "label": "III. Einsprache",
+     "eId": "chap_5/lvl_B/lvl_III"
     }
    ],
    "marginalie": [],
@@ -3000,15 +3087,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "III. Einsprache"
+     "label": "III. Einsprache",
+     "eId": "chap_5/lvl_B/lvl_III"
     }
    ],
    "marginalie": [],
@@ -3035,15 +3125,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "IV. Kosten"
+     "label": "IV. Kosten",
+     "eId": "chap_5/lvl_B/lvl_IV"
     }
    ],
    "marginalie": []
@@ -3052,15 +3145,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "V. Zwangsvollstreckung"
+     "label": "V. Zwangsvollstreckung",
+     "eId": "chap_5/lvl_B/lvl_V"
     }
    ],
    "marginalie": [
@@ -3071,15 +3167,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "V. Zwangsvollstreckung"
+     "label": "V. Zwangsvollstreckung",
+     "eId": "chap_5/lvl_B/lvl_V"
     }
    ],
    "marginalie": [
@@ -3185,11 +3284,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "C. Revision und Erläuterung von Entscheiden"
+     "label": "C. Revision und Erläuterung von Entscheiden",
+     "eId": "chap_5/lvl_C"
     }
    ],
    "marginalie": [],
@@ -3229,15 +3330,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Strafbestimmungen"
+     "label": "Sechster Abschnitt: Strafbestimmungen",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "A. Widerhandlungen"
+     "label": "A. Widerhandlungen",
+     "eId": "chap_6/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "I. Hinterziehung"
+     "label": "I. Hinterziehung",
+     "eId": "chap_6/lvl_A/lvl_I"
     }
    ],
    "marginalie": [],
@@ -3311,15 +3415,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Strafbestimmungen"
+     "label": "Sechster Abschnitt: Strafbestimmungen",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "A. Widerhandlungen"
+     "label": "A. Widerhandlungen",
+     "eId": "chap_6/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "II. Abgabegefährdung"
+     "label": "II. Abgabegefährdung",
+     "eId": "chap_6/lvl_A/lvl_II"
     }
    ],
    "marginalie": [],
@@ -3390,15 +3497,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Strafbestimmungen"
+     "label": "Sechster Abschnitt: Strafbestimmungen",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "A. Widerhandlungen"
+     "label": "A. Widerhandlungen",
+     "eId": "chap_6/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "III. Ordnungswidrigkeiten"
+     "label": "III. Ordnungswidrigkeiten",
+     "eId": "chap_6/lvl_A/lvl_III"
     }
    ],
    "marginalie": []
@@ -3407,11 +3517,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Strafbestimmungen"
+     "label": "Sechster Abschnitt: Strafbestimmungen",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "B. Verhältnis zum Verwaltungsstrafrechtsgesetz"
+     "label": "B. Verhältnis zum Verwaltungsstrafrechtsgesetz",
+     "eId": "chap_6/lvl_B"
     }
    ],
    "marginalie": [],
@@ -3484,11 +3596,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "I. Anrechnung bezahlter Emissionsabgaben"
+     "label": "I. Anrechnung bezahlter Emissionsabgaben",
+     "eId": "chap_7/lvl_I"
     }
    ],
    "marginalie": [],
@@ -3515,11 +3629,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "II. Änderung des Verrechnungssteuergesetzes"
+     "label": "II. Änderung des Verrechnungssteuergesetzes",
+     "eId": "chap_7/lvl_II"
     }
    ],
    "marginalie": [],
@@ -3543,11 +3659,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "III. Aufhebung bisherigen Rechts"
+     "label": "III. Aufhebung bisherigen Rechts",
+     "eId": "chap_7/lvl_III"
     }
    ],
    "marginalie": [],
@@ -3589,11 +3707,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "IV. Vollzug"
+     "label": "IV. Vollzug",
+     "eId": "chap_7/lvl_IV"
     }
    ],
    "marginalie": []
@@ -3602,11 +3722,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen"
+     "label": "Siebenter Abschnitt: Schluss- und Übergangsbestimmungen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "V. Inkrafttreten"
+     "label": "V. Inkrafttreten",
+     "eId": "chap_7/lvl_V"
     }
    ],
    "marginalie": [],
@@ -3624,11 +3746,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "IV. Abgabepflicht"
+     "label": "IV. Abgabepflicht",
+     "eId": "chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -3710,11 +3834,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Zweiter Abschnitt: Umsatzabgabe"
+     "label": "Zweiter Abschnitt: Umsatzabgabe",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "IV. Abgabepflicht"
+     "label": "IV. Abgabepflicht",
+     "eId": "chap_2/lvl_IV"
     }
    ],
    "marginalie": [
@@ -3743,15 +3869,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "A. Behörden"
+     "label": "A. Behörden",
+     "eId": "chap_5/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IIa. Datenbearbeitung"
+     "label": "IIa. Datenbearbeitung",
+     "eId": "chap_5/lvl_A/lvl_II_a"
     }
    ],
    "marginalie": [],
@@ -3779,15 +3908,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "III. Einsprache"
+     "label": "III. Einsprache",
+     "eId": "chap_5/lvl_B/lvl_III"
     }
    ],
    "marginalie": [],
@@ -3822,15 +3954,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Fünfter Abschnitt: Behörden und Verfahren"
+     "label": "Fünfter Abschnitt: Behörden und Verfahren",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "B. Verfahren"
+     "label": "B. Verfahren",
+     "eId": "chap_5/lvl_B"
     },
     {
      "ebene": 3,
-     "label": "IVa. Elektronische Verfahren"
+     "label": "IVa. Elektronische Verfahren",
+     "eId": "chap_5/lvl_B/lvl_IV_a"
     }
    ],
    "marginalie": [],
@@ -3858,15 +3993,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Sechster Abschnitt: Strafbestimmungen"
+     "label": "Sechster Abschnitt: Strafbestimmungen",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "A. Widerhandlungen"
+     "label": "A. Widerhandlungen",
+     "eId": "chap_6/lvl_A"
     },
     {
      "ebene": 3,
-     "label": "IV. Allgemeine Bestimmungen"
+     "label": "IV. Allgemeine Bestimmungen",
+     "eId": "chap_6/lvl_A/lvl_IV"
     }
    ],
    "marginalie": [],
@@ -3893,11 +4031,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "I. Gegenstand der Abgabe"
+     "label": "I. Gegenstand der Abgabe",
+     "eId": "chap_1/lvl_I"
     }
    ],
    "marginalie": [],
@@ -3932,11 +4072,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Erster Abschnitt: Emissionsabgabe"
+     "label": "Erster Abschnitt: Emissionsabgabe",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "III. Abgabesätze und Berechnungsgrundlage"
+     "label": "III. Abgabesätze und Berechnungsgrundlage",
+     "eId": "chap_1/lvl_III"
     }
    ],
    "marginalie": [],

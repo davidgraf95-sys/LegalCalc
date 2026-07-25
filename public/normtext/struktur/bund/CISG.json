@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "0.221.211.1",
   "titel": "Übereinkommen der Vereinten Nationen über Verträge über den internationalen Warenkauf",
@@ -46,11 +46,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen"
+     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel I Anwendungsbereich"
+     "label": "Kapitel I Anwendungsbereich",
+     "eId": "part_1/chap_I"
     }
    ],
    "marginalie": []
@@ -59,11 +61,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen"
+     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel I Anwendungsbereich"
+     "label": "Kapitel I Anwendungsbereich",
+     "eId": "part_1/chap_I"
     }
    ],
    "marginalie": []
@@ -72,11 +76,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen"
+     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel I Anwendungsbereich"
+     "label": "Kapitel I Anwendungsbereich",
+     "eId": "part_1/chap_I"
     }
    ],
    "marginalie": []
@@ -85,11 +91,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen"
+     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel I Anwendungsbereich"
+     "label": "Kapitel I Anwendungsbereich",
+     "eId": "part_1/chap_I"
     }
    ],
    "marginalie": []
@@ -98,11 +106,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen"
+     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel I Anwendungsbereich"
+     "label": "Kapitel I Anwendungsbereich",
+     "eId": "part_1/chap_I"
     }
    ],
    "marginalie": []
@@ -111,11 +121,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen"
+     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel I Anwendungsbereich"
+     "label": "Kapitel I Anwendungsbereich",
+     "eId": "part_1/chap_I"
     }
    ],
    "marginalie": []
@@ -124,11 +136,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen"
+     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Allgemeine Bestimmungen"
+     "label": "Kapitel II Allgemeine Bestimmungen",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": []
@@ -137,11 +151,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen"
+     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Allgemeine Bestimmungen"
+     "label": "Kapitel II Allgemeine Bestimmungen",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": []
@@ -150,11 +166,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen"
+     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Allgemeine Bestimmungen"
+     "label": "Kapitel II Allgemeine Bestimmungen",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": []
@@ -163,11 +181,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen"
+     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Allgemeine Bestimmungen"
+     "label": "Kapitel II Allgemeine Bestimmungen",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": []
@@ -176,11 +196,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen"
+     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Allgemeine Bestimmungen"
+     "label": "Kapitel II Allgemeine Bestimmungen",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": []
@@ -189,11 +211,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen"
+     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Allgemeine Bestimmungen"
+     "label": "Kapitel II Allgemeine Bestimmungen",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": []
@@ -202,11 +226,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen"
+     "label": "Teil I Anwendungsbereich und allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Allgemeine Bestimmungen"
+     "label": "Kapitel II Allgemeine Bestimmungen",
+     "eId": "part_1/chap_II"
     }
    ],
    "marginalie": []
@@ -215,7 +241,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss des Vertrages"
+     "label": "Teil II Abschluss des Vertrages",
+     "eId": "part_II"
     }
    ],
    "marginalie": []
@@ -224,7 +251,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss des Vertrages"
+     "label": "Teil II Abschluss des Vertrages",
+     "eId": "part_II"
     }
    ],
    "marginalie": []
@@ -233,7 +261,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss des Vertrages"
+     "label": "Teil II Abschluss des Vertrages",
+     "eId": "part_II"
     }
    ],
    "marginalie": []
@@ -242,7 +271,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss des Vertrages"
+     "label": "Teil II Abschluss des Vertrages",
+     "eId": "part_II"
     }
    ],
    "marginalie": []
@@ -251,7 +281,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss des Vertrages"
+     "label": "Teil II Abschluss des Vertrages",
+     "eId": "part_II"
     }
    ],
    "marginalie": []
@@ -260,7 +291,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss des Vertrages"
+     "label": "Teil II Abschluss des Vertrages",
+     "eId": "part_II"
     }
    ],
    "marginalie": []
@@ -269,7 +301,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss des Vertrages"
+     "label": "Teil II Abschluss des Vertrages",
+     "eId": "part_II"
     }
    ],
    "marginalie": []
@@ -278,7 +311,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss des Vertrages"
+     "label": "Teil II Abschluss des Vertrages",
+     "eId": "part_II"
     }
    ],
    "marginalie": []
@@ -287,7 +321,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss des Vertrages"
+     "label": "Teil II Abschluss des Vertrages",
+     "eId": "part_II"
     }
    ],
    "marginalie": []
@@ -296,7 +331,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss des Vertrages"
+     "label": "Teil II Abschluss des Vertrages",
+     "eId": "part_II"
     }
    ],
    "marginalie": []
@@ -305,7 +341,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil II Abschluss des Vertrages"
+     "label": "Teil II Abschluss des Vertrages",
+     "eId": "part_II"
     }
    ],
    "marginalie": []
@@ -314,11 +351,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel I Allgemeine Bestimmungen"
+     "label": "Kapitel I Allgemeine Bestimmungen",
+     "eId": "part_III/chap_I"
     }
    ],
    "marginalie": []
@@ -327,11 +366,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel I Allgemeine Bestimmungen"
+     "label": "Kapitel I Allgemeine Bestimmungen",
+     "eId": "part_III/chap_I"
     }
    ],
    "marginalie": []
@@ -340,11 +381,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel I Allgemeine Bestimmungen"
+     "label": "Kapitel I Allgemeine Bestimmungen",
+     "eId": "part_III/chap_I"
     }
    ],
    "marginalie": []
@@ -353,11 +396,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel I Allgemeine Bestimmungen"
+     "label": "Kapitel I Allgemeine Bestimmungen",
+     "eId": "part_III/chap_I"
     }
    ],
    "marginalie": []
@@ -366,11 +411,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel I Allgemeine Bestimmungen"
+     "label": "Kapitel I Allgemeine Bestimmungen",
+     "eId": "part_III/chap_I"
     }
    ],
    "marginalie": []
@@ -379,11 +426,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     }
    ],
    "marginalie": []
@@ -392,15 +441,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt I Lieferung der Ware und Übergabe der Dokumente"
+     "label": "Abschnitt I Lieferung der Ware und Übergabe der Dokumente",
+     "eId": "part_III/chap_II/sec_I"
     }
    ],
    "marginalie": []
@@ -409,15 +461,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt I Lieferung der Ware und Übergabe der Dokumente"
+     "label": "Abschnitt I Lieferung der Ware und Übergabe der Dokumente",
+     "eId": "part_III/chap_II/sec_I"
     }
    ],
    "marginalie": []
@@ -426,15 +481,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt I Lieferung der Ware und Übergabe der Dokumente"
+     "label": "Abschnitt I Lieferung der Ware und Übergabe der Dokumente",
+     "eId": "part_III/chap_II/sec_I"
     }
    ],
    "marginalie": []
@@ -443,15 +501,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt I Lieferung der Ware und Übergabe der Dokumente"
+     "label": "Abschnitt I Lieferung der Ware und Übergabe der Dokumente",
+     "eId": "part_III/chap_II/sec_I"
     }
    ],
    "marginalie": []
@@ -460,15 +521,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter"
+     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter",
+     "eId": "part_III/chap_II/sec_II"
     }
    ],
    "marginalie": []
@@ -477,15 +541,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter"
+     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter",
+     "eId": "part_III/chap_II/sec_II"
     }
    ],
    "marginalie": []
@@ -494,15 +561,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter"
+     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter",
+     "eId": "part_III/chap_II/sec_II"
     }
    ],
    "marginalie": []
@@ -511,15 +581,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter"
+     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter",
+     "eId": "part_III/chap_II/sec_II"
     }
    ],
    "marginalie": []
@@ -528,15 +601,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter"
+     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter",
+     "eId": "part_III/chap_II/sec_II"
     }
    ],
    "marginalie": []
@@ -545,15 +621,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter"
+     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter",
+     "eId": "part_III/chap_II/sec_II"
     }
    ],
    "marginalie": []
@@ -562,15 +641,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter"
+     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter",
+     "eId": "part_III/chap_II/sec_II"
     }
    ],
    "marginalie": []
@@ -579,15 +661,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter"
+     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter",
+     "eId": "part_III/chap_II/sec_II"
     }
    ],
    "marginalie": []
@@ -596,15 +681,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter"
+     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter",
+     "eId": "part_III/chap_II/sec_II"
     }
    ],
    "marginalie": []
@@ -613,15 +701,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter"
+     "label": "Abschnitt II Vertragsmässigkeit der Ware und Rechte oder Ansprüche Dritter",
+     "eId": "part_III/chap_II/sec_II"
     }
    ],
    "marginalie": []
@@ -630,15 +721,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt III Rechte des Käufers wegen Vertragsverletzung durch den Verkäufer"
+     "label": "Abschnitt III Rechte des Käufers wegen Vertragsverletzung durch den Verkäufer",
+     "eId": "part_III/chap_II/sec_III"
     }
    ],
    "marginalie": []
@@ -647,15 +741,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt III Rechte des Käufers wegen Vertragsverletzung durch den Verkäufer"
+     "label": "Abschnitt III Rechte des Käufers wegen Vertragsverletzung durch den Verkäufer",
+     "eId": "part_III/chap_II/sec_III"
     }
    ],
    "marginalie": []
@@ -664,15 +761,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt III Rechte des Käufers wegen Vertragsverletzung durch den Verkäufer"
+     "label": "Abschnitt III Rechte des Käufers wegen Vertragsverletzung durch den Verkäufer",
+     "eId": "part_III/chap_II/sec_III"
     }
    ],
    "marginalie": []
@@ -681,15 +781,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt III Rechte des Käufers wegen Vertragsverletzung durch den Verkäufer"
+     "label": "Abschnitt III Rechte des Käufers wegen Vertragsverletzung durch den Verkäufer",
+     "eId": "part_III/chap_II/sec_III"
     }
    ],
    "marginalie": []
@@ -698,15 +801,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt III Rechte des Käufers wegen Vertragsverletzung durch den Verkäufer"
+     "label": "Abschnitt III Rechte des Käufers wegen Vertragsverletzung durch den Verkäufer",
+     "eId": "part_III/chap_II/sec_III"
     }
    ],
    "marginalie": []
@@ -715,15 +821,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt III Rechte des Käufers wegen Vertragsverletzung durch den Verkäufer"
+     "label": "Abschnitt III Rechte des Käufers wegen Vertragsverletzung durch den Verkäufer",
+     "eId": "part_III/chap_II/sec_III"
     }
    ],
    "marginalie": []
@@ -732,15 +841,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt III Rechte des Käufers wegen Vertragsverletzung durch den Verkäufer"
+     "label": "Abschnitt III Rechte des Käufers wegen Vertragsverletzung durch den Verkäufer",
+     "eId": "part_III/chap_II/sec_III"
     }
    ],
    "marginalie": []
@@ -749,15 +861,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel II Pflichten des Verkäufers"
+     "label": "Kapitel II Pflichten des Verkäufers",
+     "eId": "part_III/chap_II"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt III Rechte des Käufers wegen Vertragsverletzung durch den Verkäufer"
+     "label": "Abschnitt III Rechte des Käufers wegen Vertragsverletzung durch den Verkäufer",
+     "eId": "part_III/chap_II/sec_III"
     }
    ],
    "marginalie": []
@@ -766,11 +881,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel III Pflichten des Käufers"
+     "label": "Kapitel III Pflichten des Käufers",
+     "eId": "part_III/chap_III"
     }
    ],
    "marginalie": []
@@ -779,15 +896,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel III Pflichten des Käufers"
+     "label": "Kapitel III Pflichten des Käufers",
+     "eId": "part_III/chap_III"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt I Zahlung des Kaufpreises"
+     "label": "Abschnitt I Zahlung des Kaufpreises",
+     "eId": "part_III/chap_III/sec_I"
     }
    ],
    "marginalie": []
@@ -796,15 +916,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel III Pflichten des Käufers"
+     "label": "Kapitel III Pflichten des Käufers",
+     "eId": "part_III/chap_III"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt I Zahlung des Kaufpreises"
+     "label": "Abschnitt I Zahlung des Kaufpreises",
+     "eId": "part_III/chap_III/sec_I"
     }
    ],
    "marginalie": []
@@ -813,15 +936,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel III Pflichten des Käufers"
+     "label": "Kapitel III Pflichten des Käufers",
+     "eId": "part_III/chap_III"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt I Zahlung des Kaufpreises"
+     "label": "Abschnitt I Zahlung des Kaufpreises",
+     "eId": "part_III/chap_III/sec_I"
     }
    ],
    "marginalie": []
@@ -830,15 +956,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel III Pflichten des Käufers"
+     "label": "Kapitel III Pflichten des Käufers",
+     "eId": "part_III/chap_III"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt I Zahlung des Kaufpreises"
+     "label": "Abschnitt I Zahlung des Kaufpreises",
+     "eId": "part_III/chap_III/sec_I"
     }
    ],
    "marginalie": []
@@ -847,15 +976,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel III Pflichten des Käufers"
+     "label": "Kapitel III Pflichten des Käufers",
+     "eId": "part_III/chap_III"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt I Zahlung des Kaufpreises"
+     "label": "Abschnitt I Zahlung des Kaufpreises",
+     "eId": "part_III/chap_III/sec_I"
     }
    ],
    "marginalie": []
@@ -864,15 +996,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel III Pflichten des Käufers"
+     "label": "Kapitel III Pflichten des Käufers",
+     "eId": "part_III/chap_III"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt I Zahlung des Kaufpreises"
+     "label": "Abschnitt I Zahlung des Kaufpreises",
+     "eId": "part_III/chap_III/sec_I"
     }
    ],
    "marginalie": []
@@ -881,15 +1016,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel III Pflichten des Käufers"
+     "label": "Kapitel III Pflichten des Käufers",
+     "eId": "part_III/chap_III"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt II Annahme"
+     "label": "Abschnitt II Annahme",
+     "eId": "part_III/chap_III/sec_II"
     }
    ],
    "marginalie": []
@@ -898,15 +1036,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel III Pflichten des Käufers"
+     "label": "Kapitel III Pflichten des Käufers",
+     "eId": "part_III/chap_III"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt III Rechte des Verkäufers wegen Vertragsverletzung durch den Käufer"
+     "label": "Abschnitt III Rechte des Verkäufers wegen Vertragsverletzung durch den Käufer",
+     "eId": "part_III/chap_III/sec_III"
     }
    ],
    "marginalie": []
@@ -915,15 +1056,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel III Pflichten des Käufers"
+     "label": "Kapitel III Pflichten des Käufers",
+     "eId": "part_III/chap_III"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt III Rechte des Verkäufers wegen Vertragsverletzung durch den Käufer"
+     "label": "Abschnitt III Rechte des Verkäufers wegen Vertragsverletzung durch den Käufer",
+     "eId": "part_III/chap_III/sec_III"
     }
    ],
    "marginalie": []
@@ -932,15 +1076,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel III Pflichten des Käufers"
+     "label": "Kapitel III Pflichten des Käufers",
+     "eId": "part_III/chap_III"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt III Rechte des Verkäufers wegen Vertragsverletzung durch den Käufer"
+     "label": "Abschnitt III Rechte des Verkäufers wegen Vertragsverletzung durch den Käufer",
+     "eId": "part_III/chap_III/sec_III"
     }
    ],
    "marginalie": []
@@ -949,15 +1096,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel III Pflichten des Käufers"
+     "label": "Kapitel III Pflichten des Käufers",
+     "eId": "part_III/chap_III"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt III Rechte des Verkäufers wegen Vertragsverletzung durch den Käufer"
+     "label": "Abschnitt III Rechte des Verkäufers wegen Vertragsverletzung durch den Käufer",
+     "eId": "part_III/chap_III/sec_III"
     }
    ],
    "marginalie": []
@@ -966,15 +1116,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel III Pflichten des Käufers"
+     "label": "Kapitel III Pflichten des Käufers",
+     "eId": "part_III/chap_III"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt III Rechte des Verkäufers wegen Vertragsverletzung durch den Käufer"
+     "label": "Abschnitt III Rechte des Verkäufers wegen Vertragsverletzung durch den Käufer",
+     "eId": "part_III/chap_III/sec_III"
     }
    ],
    "marginalie": []
@@ -983,11 +1136,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel IV Übergang der Gefahr"
+     "label": "Kapitel IV Übergang der Gefahr",
+     "eId": "part_III/chap_IV"
     }
    ],
    "marginalie": []
@@ -996,11 +1151,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel IV Übergang der Gefahr"
+     "label": "Kapitel IV Übergang der Gefahr",
+     "eId": "part_III/chap_IV"
     }
    ],
    "marginalie": []
@@ -1009,11 +1166,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel IV Übergang der Gefahr"
+     "label": "Kapitel IV Übergang der Gefahr",
+     "eId": "part_III/chap_IV"
     }
    ],
    "marginalie": []
@@ -1022,11 +1181,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel IV Übergang der Gefahr"
+     "label": "Kapitel IV Übergang der Gefahr",
+     "eId": "part_III/chap_IV"
     }
    ],
    "marginalie": []
@@ -1035,11 +1196,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel IV Übergang der Gefahr"
+     "label": "Kapitel IV Übergang der Gefahr",
+     "eId": "part_III/chap_IV"
     }
    ],
    "marginalie": []
@@ -1048,15 +1211,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers"
+     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers",
+     "eId": "part_III/chap_V"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt I Vorweggenommene Vertragsverletzung und Verträge über aufeinander folgende Lieferungen"
+     "label": "Abschnitt I Vorweggenommene Vertragsverletzung und Verträge über aufeinander folgende Lieferungen",
+     "eId": "part_III/chap_V/sec_I"
     }
    ],
    "marginalie": []
@@ -1065,15 +1231,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers"
+     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers",
+     "eId": "part_III/chap_V"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt I Vorweggenommene Vertragsverletzung und Verträge über aufeinander folgende Lieferungen"
+     "label": "Abschnitt I Vorweggenommene Vertragsverletzung und Verträge über aufeinander folgende Lieferungen",
+     "eId": "part_III/chap_V/sec_I"
     }
    ],
    "marginalie": []
@@ -1082,15 +1251,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers"
+     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers",
+     "eId": "part_III/chap_V"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt I Vorweggenommene Vertragsverletzung und Verträge über aufeinander folgende Lieferungen"
+     "label": "Abschnitt I Vorweggenommene Vertragsverletzung und Verträge über aufeinander folgende Lieferungen",
+     "eId": "part_III/chap_V/sec_I"
     }
    ],
    "marginalie": []
@@ -1099,15 +1271,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers"
+     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers",
+     "eId": "part_III/chap_V"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt II Schadenersatz"
+     "label": "Abschnitt II Schadenersatz",
+     "eId": "part_III/chap_V/sec_II"
     }
    ],
    "marginalie": []
@@ -1116,15 +1291,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers"
+     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers",
+     "eId": "part_III/chap_V"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt II Schadenersatz"
+     "label": "Abschnitt II Schadenersatz",
+     "eId": "part_III/chap_V/sec_II"
     }
    ],
    "marginalie": []
@@ -1133,15 +1311,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers"
+     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers",
+     "eId": "part_III/chap_V"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt II Schadenersatz"
+     "label": "Abschnitt II Schadenersatz",
+     "eId": "part_III/chap_V/sec_II"
     }
    ],
    "marginalie": []
@@ -1150,15 +1331,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers"
+     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers",
+     "eId": "part_III/chap_V"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt II Schadenersatz"
+     "label": "Abschnitt II Schadenersatz",
+     "eId": "part_III/chap_V/sec_II"
     }
    ],
    "marginalie": []
@@ -1167,15 +1351,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers"
+     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers",
+     "eId": "part_III/chap_V"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt III Zinsen"
+     "label": "Abschnitt III Zinsen",
+     "eId": "part_III/chap_V/sec_III"
     }
    ],
    "marginalie": []
@@ -1184,15 +1371,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers"
+     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers",
+     "eId": "part_III/chap_V"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt IV Befreiungen"
+     "label": "Abschnitt IV Befreiungen",
+     "eId": "part_III/chap_V/sec_IV"
     }
    ],
    "marginalie": []
@@ -1201,15 +1391,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers"
+     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers",
+     "eId": "part_III/chap_V"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt IV Befreiungen"
+     "label": "Abschnitt IV Befreiungen",
+     "eId": "part_III/chap_V/sec_IV"
     }
    ],
    "marginalie": []
@@ -1218,15 +1411,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers"
+     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers",
+     "eId": "part_III/chap_V"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt V Wirkungen der Aufhebung"
+     "label": "Abschnitt V Wirkungen der Aufhebung",
+     "eId": "part_III/chap_V/sec_V"
     }
    ],
    "marginalie": []
@@ -1235,15 +1431,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers"
+     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers",
+     "eId": "part_III/chap_V"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt V Wirkungen der Aufhebung"
+     "label": "Abschnitt V Wirkungen der Aufhebung",
+     "eId": "part_III/chap_V/sec_V"
     }
    ],
    "marginalie": []
@@ -1252,15 +1451,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers"
+     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers",
+     "eId": "part_III/chap_V"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt V Wirkungen der Aufhebung"
+     "label": "Abschnitt V Wirkungen der Aufhebung",
+     "eId": "part_III/chap_V/sec_V"
     }
    ],
    "marginalie": []
@@ -1269,15 +1471,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers"
+     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers",
+     "eId": "part_III/chap_V"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt V Wirkungen der Aufhebung"
+     "label": "Abschnitt V Wirkungen der Aufhebung",
+     "eId": "part_III/chap_V/sec_V"
     }
    ],
    "marginalie": []
@@ -1286,15 +1491,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers"
+     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers",
+     "eId": "part_III/chap_V"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt VI Erhaltung der Ware"
+     "label": "Abschnitt VI Erhaltung der Ware",
+     "eId": "part_III/chap_V/sec_VI"
     }
    ],
    "marginalie": []
@@ -1303,15 +1511,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers"
+     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers",
+     "eId": "part_III/chap_V"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt VI Erhaltung der Ware"
+     "label": "Abschnitt VI Erhaltung der Ware",
+     "eId": "part_III/chap_V/sec_VI"
     }
    ],
    "marginalie": []
@@ -1320,15 +1531,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers"
+     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers",
+     "eId": "part_III/chap_V"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt VI Erhaltung der Ware"
+     "label": "Abschnitt VI Erhaltung der Ware",
+     "eId": "part_III/chap_V/sec_VI"
     }
    ],
    "marginalie": []
@@ -1337,15 +1551,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil III Warenkauf"
+     "label": "Teil III Warenkauf",
+     "eId": "part_III"
     },
     {
      "ebene": 2,
-     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers"
+     "label": "Kapitel V Gemeinsame Bestimmungen über die Pflichten des Verkäufers und des Käufers",
+     "eId": "part_III/chap_V"
     },
     {
      "ebene": 3,
-     "label": "Abschnitt VI Erhaltung der Ware"
+     "label": "Abschnitt VI Erhaltung der Ware",
+     "eId": "part_III/chap_V/sec_VI"
     }
    ],
    "marginalie": []
@@ -1354,7 +1571,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_IV"
     }
    ],
    "marginalie": []
@@ -1363,7 +1581,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_IV"
     }
    ],
    "marginalie": []
@@ -1372,7 +1591,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_IV"
     }
    ],
    "marginalie": []
@@ -1381,7 +1601,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_IV"
     }
    ],
    "marginalie": []
@@ -1390,7 +1611,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_IV"
     }
    ],
    "marginalie": []
@@ -1399,7 +1621,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_IV"
     }
    ],
    "marginalie": []
@@ -1408,7 +1631,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_IV"
     }
    ],
    "marginalie": []
@@ -1417,7 +1641,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_IV"
     }
    ],
    "marginalie": []
@@ -1426,7 +1651,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_IV"
     }
    ],
    "marginalie": []
@@ -1435,7 +1661,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_IV"
     }
    ],
    "marginalie": []
@@ -1444,7 +1671,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_IV"
     }
    ],
    "marginalie": []
@@ -1453,7 +1681,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_IV"
     }
    ],
    "marginalie": []
@@ -1462,7 +1691,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Teil IV Schlussbestimmungen"
+     "label": "Teil IV Schlussbestimmungen",
+     "eId": "part_IV"
     }
    ],
    "marginalie": []

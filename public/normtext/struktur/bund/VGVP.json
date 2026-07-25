@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "814.621",
   "titel": "Verordnung über Getränkeverpackungen",
@@ -54,7 +54,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -65,7 +66,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -76,7 +78,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Anforderungen an Getränkeverpackungen"
+     "label": "2. Abschnitt: Anforderungen an Getränkeverpackungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -87,7 +90,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Anforderungen an Getränkeverpackungen"
+     "label": "2. Abschnitt: Anforderungen an Getränkeverpackungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -98,7 +102,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Abgabe und Rücknahme von Getränkeverpackungen"
+     "label": "3. Abschnitt: Abgabe und Rücknahme von Getränkeverpackungen",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -109,7 +114,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Abgabe und Rücknahme von Getränkeverpackungen"
+     "label": "3. Abschnitt: Abgabe und Rücknahme von Getränkeverpackungen",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -120,7 +126,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Abgabe und Rücknahme von Getränkeverpackungen"
+     "label": "3. Abschnitt: Abgabe und Rücknahme von Getränkeverpackungen",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -131,7 +138,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Abgabe und Rücknahme von Getränkeverpackungen"
+     "label": "3. Abschnitt: Abgabe und Rücknahme von Getränkeverpackungen",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -142,7 +150,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vorgezogene Entsorgungsgebühr für Getränkeverpackungen aus Glas"
+     "label": "4. Abschnitt: Vorgezogene Entsorgungsgebühr für Getränkeverpackungen aus Glas",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -167,7 +176,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vorgezogene Entsorgungsgebühr für Getränkeverpackungen aus Glas"
+     "label": "4. Abschnitt: Vorgezogene Entsorgungsgebühr für Getränkeverpackungen aus Glas",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -178,7 +188,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vorgezogene Entsorgungsgebühr für Getränkeverpackungen aus Glas"
+     "label": "4. Abschnitt: Vorgezogene Entsorgungsgebühr für Getränkeverpackungen aus Glas",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -207,7 +218,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vorgezogene Entsorgungsgebühr für Getränkeverpackungen aus Glas"
+     "label": "4. Abschnitt: Vorgezogene Entsorgungsgebühr für Getränkeverpackungen aus Glas",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -232,7 +244,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vorgezogene Entsorgungsgebühr für Getränkeverpackungen aus Glas"
+     "label": "4. Abschnitt: Vorgezogene Entsorgungsgebühr für Getränkeverpackungen aus Glas",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -243,7 +256,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vorgezogene Entsorgungsgebühr für Getränkeverpackungen aus Glas"
+     "label": "4. Abschnitt: Vorgezogene Entsorgungsgebühr für Getränkeverpackungen aus Glas",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -254,7 +268,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vorgezogene Entsorgungsgebühr für Getränkeverpackungen aus Glas"
+     "label": "4. Abschnitt: Vorgezogene Entsorgungsgebühr für Getränkeverpackungen aus Glas",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -279,7 +294,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vorgezogene Entsorgungsgebühr für Getränkeverpackungen aus Glas"
+     "label": "4. Abschnitt: Vorgezogene Entsorgungsgebühr für Getränkeverpackungen aus Glas",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -290,7 +306,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Vorgezogene Entsorgungsgebühr für Getränkeverpackungen aus Glas"
+     "label": "4. Abschnitt: Vorgezogene Entsorgungsgebühr für Getränkeverpackungen aus Glas",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -327,7 +344,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Mitteilungspflichten"
+     "label": "5. Abschnitt: Mitteilungspflichten",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -338,7 +356,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Mitteilungspflichten"
+     "label": "5. Abschnitt: Mitteilungspflichten",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -349,7 +368,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Mitteilungspflichten"
+     "label": "5. Abschnitt: Mitteilungspflichten",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -360,7 +380,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -371,7 +392,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -416,7 +438,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "741.11",
   "titel": "Verkehrsregelnverordnung",
@@ -67,7 +67,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     }
    ],
    "marginalie": [
@@ -176,11 +177,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Fahrregeln"
+     "label": "1. Abschnitt: Allgemeine Fahrregeln",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [
@@ -293,11 +296,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Fahrregeln"
+     "label": "1. Abschnitt: Allgemeine Fahrregeln",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [
@@ -362,11 +367,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Fahrregeln"
+     "label": "1. Abschnitt: Allgemeine Fahrregeln",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [
@@ -403,11 +410,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Fahrregeln"
+     "label": "1. Abschnitt: Allgemeine Fahrregeln",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [
@@ -520,11 +529,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Fahrregeln"
+     "label": "1. Abschnitt: Allgemeine Fahrregeln",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [
@@ -609,11 +620,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -638,11 +651,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -752,11 +767,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -793,11 +810,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -822,11 +841,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -899,11 +920,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -914,11 +937,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -967,11 +992,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -996,11 +1023,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1038,11 +1067,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1103,11 +1134,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1144,11 +1177,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1221,11 +1256,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1250,11 +1287,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1303,11 +1342,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1318,11 +1359,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1333,11 +1376,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1435,11 +1480,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1500,11 +1547,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1529,11 +1578,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [],
@@ -1556,11 +1607,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1621,11 +1674,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sicherungsvorkehren"
+     "label": "3. Abschnitt: Sicherungsvorkehren",
+     "eId": "part_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1687,11 +1742,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sicherungsvorkehren"
+     "label": "3. Abschnitt: Sicherungsvorkehren",
+     "eId": "part_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1741,11 +1798,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sicherungsvorkehren"
+     "label": "3. Abschnitt: Sicherungsvorkehren",
+     "eId": "part_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1782,11 +1841,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sicherungsvorkehren"
+     "label": "3. Abschnitt: Sicherungsvorkehren",
+     "eId": "part_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1811,11 +1872,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sicherungsvorkehren"
+     "label": "3. Abschnitt: Sicherungsvorkehren",
+     "eId": "part_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1840,11 +1903,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sicherungsvorkehren"
+     "label": "3. Abschnitt: Sicherungsvorkehren",
+     "eId": "part_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1869,11 +1934,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Sicherungsvorkehren"
+     "label": "3. Abschnitt: Sicherungsvorkehren",
+     "eId": "part_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1884,11 +1951,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Strassenverhältnisse"
+     "label": "4. Abschnitt: Besondere Strassenverhältnisse",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1937,11 +2006,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Strassenverhältnisse"
+     "label": "4. Abschnitt: Besondere Strassenverhältnisse",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -2034,11 +2105,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Strassenverhältnisse"
+     "label": "4. Abschnitt: Besondere Strassenverhältnisse",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -2049,11 +2122,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Strassenverhältnisse"
+     "label": "4. Abschnitt: Besondere Strassenverhältnisse",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -2115,11 +2190,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Strassenverhältnisse"
+     "label": "4. Abschnitt: Besondere Strassenverhältnisse",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -2156,11 +2233,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Strassenverhältnisse"
+     "label": "4. Abschnitt: Besondere Strassenverhältnisse",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -2225,11 +2304,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Strassenverhältnisse"
+     "label": "4. Abschnitt: Besondere Strassenverhältnisse",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -2316,11 +2397,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Fahrzeugarten"
+     "label": "5. Abschnitt: Besondere Fahrzeugarten",
+     "eId": "part_1/chap_5"
     }
    ],
    "marginalie": [
@@ -2406,11 +2489,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Fahrzeugarten"
+     "label": "5. Abschnitt: Besondere Fahrzeugarten",
+     "eId": "part_1/chap_5"
     }
    ],
    "marginalie": [
@@ -2459,11 +2544,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Fahrzeugarten"
+     "label": "5. Abschnitt: Besondere Fahrzeugarten",
+     "eId": "part_1/chap_5"
     }
    ],
    "marginalie": [],
@@ -2486,11 +2573,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Fahrzeugarten"
+     "label": "5. Abschnitt: Besondere Fahrzeugarten",
+     "eId": "part_1/chap_5"
     }
    ],
    "marginalie": [
@@ -2515,11 +2604,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Regeln für den übrigen Verkehr"
+     "label": "2. Teil: Regeln für den übrigen Verkehr",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Fussgänger"
+     "label": "1. Abschnitt: Fussgänger",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2544,11 +2635,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Regeln für den übrigen Verkehr"
+     "label": "2. Teil: Regeln für den übrigen Verkehr",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Fussgänger"
+     "label": "1. Abschnitt: Fussgänger",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2609,11 +2702,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Regeln für den übrigen Verkehr"
+     "label": "2. Teil: Regeln für den übrigen Verkehr",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Fussgänger"
+     "label": "1. Abschnitt: Fussgänger",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2674,11 +2769,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Regeln für den übrigen Verkehr"
+     "label": "2. Teil: Regeln für den übrigen Verkehr",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Fussgänger"
+     "label": "1. Abschnitt: Fussgänger",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [],
@@ -2701,11 +2798,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Regeln für den übrigen Verkehr"
+     "label": "2. Teil: Regeln für den übrigen Verkehr",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Benützer von fahrzeugähnlichen Geräten"
+     "label": "1a. Abschnitt: Benützer von fahrzeugähnlichen Geräten",
+     "eId": "part_2/chap_1_a"
     }
    ],
    "marginalie": [
@@ -2755,11 +2854,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Regeln für den übrigen Verkehr"
+     "label": "2. Teil: Regeln für den übrigen Verkehr",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Reiter, Tiere"
+     "label": "2. Abschnitt: Reiter, Tiere",
+     "eId": "part_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2770,11 +2871,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Regeln für den übrigen Verkehr"
+     "label": "2. Teil: Regeln für den übrigen Verkehr",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Reiter, Tiere"
+     "label": "2. Abschnitt: Reiter, Tiere",
+     "eId": "part_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2785,11 +2888,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Regeln für den übrigen Verkehr"
+     "label": "2. Teil: Regeln für den übrigen Verkehr",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Reiter, Tiere"
+     "label": "2. Abschnitt: Reiter, Tiere",
+     "eId": "part_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2814,7 +2919,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Verhalten bei Unfällen"
+     "label": "3. Teil: Verhalten bei Unfällen",
+     "eId": "part_3"
     }
    ],
    "marginalie": [
@@ -2839,7 +2945,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Verhalten bei Unfällen"
+     "label": "3. Teil: Verhalten bei Unfällen",
+     "eId": "part_3"
     }
    ],
    "marginalie": [
@@ -2864,7 +2971,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Verhalten bei Unfällen"
+     "label": "3. Teil: Verhalten bei Unfällen",
+     "eId": "part_3"
     }
    ],
    "marginalie": [
@@ -2901,15 +3009,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Betriebssicherheit"
+     "label": "I. Betriebssicherheit",
+     "eId": "part_4/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -2970,15 +3081,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Betriebssicherheit"
+     "label": "I. Betriebssicherheit",
+     "eId": "part_4/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -3084,15 +3198,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "I. Betriebssicherheit"
+     "label": "I. Betriebssicherheit",
+     "eId": "part_4/chap_1/lvl_I"
     }
    ],
    "marginalie": [
@@ -3117,15 +3234,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "II. Mitfahrende"
+     "label": "II. Mitfahrende",
+     "eId": "part_4/chap_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -3186,15 +3306,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "II. Mitfahrende"
+     "label": "II. Mitfahrende",
+     "eId": "part_4/chap_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -3255,15 +3378,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "II. Mitfahrende"
+     "label": "II. Mitfahrende",
+     "eId": "part_4/chap_1/lvl_II"
     }
    ],
    "marginalie": [],
@@ -3286,15 +3412,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "II. Mitfahrende"
+     "label": "II. Mitfahrende",
+     "eId": "part_4/chap_1/lvl_II"
     }
    ],
    "marginalie": [
@@ -3368,15 +3497,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "III. Masse und Gewichte"
+     "label": "III. Masse und Gewichte",
+     "eId": "part_4/chap_1/lvl_III"
     }
    ],
    "marginalie": [
@@ -3441,15 +3573,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "III. Masse und Gewichte"
+     "label": "III. Masse und Gewichte",
+     "eId": "part_4/chap_1/lvl_III"
     }
    ],
    "marginalie": [
@@ -3563,15 +3698,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "III. Masse und Gewichte"
+     "label": "III. Masse und Gewichte",
+     "eId": "part_4/chap_1/lvl_III"
     }
    ],
    "marginalie": [
@@ -3609,15 +3747,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "III. Masse und Gewichte"
+     "label": "III. Masse und Gewichte",
+     "eId": "part_4/chap_1/lvl_III"
     }
    ],
    "marginalie": [
@@ -3892,15 +4033,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "IV. Mitführen von Anhängern, Schleppen"
+     "label": "IV. Mitführen von Anhängern, Schleppen",
+     "eId": "part_4/chap_1/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4021,15 +4165,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "IV. Mitführen von Anhängern, Schleppen"
+     "label": "IV. Mitführen von Anhängern, Schleppen",
+     "eId": "part_4/chap_1/lvl_IV"
     }
    ],
    "marginalie": [],
@@ -4052,15 +4199,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "IV. Mitführen von Anhängern, Schleppen"
+     "label": "IV. Mitführen von Anhängern, Schleppen",
+     "eId": "part_4/chap_1/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4109,15 +4259,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "IV. Mitführen von Anhängern, Schleppen"
+     "label": "IV. Mitführen von Anhängern, Schleppen",
+     "eId": "part_4/chap_1/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4154,15 +4307,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "IV. Mitführen von Anhängern, Schleppen"
+     "label": "IV. Mitführen von Anhängern, Schleppen",
+     "eId": "part_4/chap_1/lvl_IV"
     }
    ],
    "marginalie": [
@@ -4223,15 +4379,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "V. Ladung"
+     "label": "V. Ladung",
+     "eId": "part_4/chap_1/lvl_V"
     }
    ],
    "marginalie": [
@@ -4357,15 +4516,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "V. Ladung"
+     "label": "V. Ladung",
+     "eId": "part_4/chap_1/lvl_V"
     }
    ],
    "marginalie": [
@@ -4440,15 +4602,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "V. Ladung"
+     "label": "V. Ladung",
+     "eId": "part_4/chap_1/lvl_V"
     }
    ],
    "marginalie": [],
@@ -4471,15 +4636,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "VI. Besondere Fälle"
+     "label": "VI. Besondere Fälle",
+     "eId": "part_4/chap_1/lvl_VI"
     }
    ],
    "marginalie": [
@@ -4564,15 +4732,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "VI. Besondere Fälle"
+     "label": "VI. Besondere Fälle",
+     "eId": "part_4/chap_1/lvl_VI"
     }
    ],
    "marginalie": [
@@ -4645,11 +4816,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte"
+     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -4847,11 +5020,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte"
+     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -4982,11 +5157,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte"
+     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -5095,11 +5272,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte"
+     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [],
@@ -5122,11 +5301,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte"
+     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -5175,11 +5356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte"
+     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [],
@@ -5202,11 +5385,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte"
+     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -5217,11 +5402,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte"
+     "label": "2. Abschnitt: Ausnahmefahrzeuge und Ausnahmetransporte",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -5258,11 +5445,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge"
+     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge",
+     "eId": "part_4/chap_3"
     }
    ],
    "marginalie": [
@@ -5376,11 +5565,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge"
+     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge",
+     "eId": "part_4/chap_3"
     }
    ],
    "marginalie": [
@@ -5505,11 +5696,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge"
+     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge",
+     "eId": "part_4/chap_3"
     }
    ],
    "marginalie": [
@@ -5547,11 +5740,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge"
+     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge",
+     "eId": "part_4/chap_3"
     }
    ],
    "marginalie": [
@@ -5576,11 +5771,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge"
+     "label": "3. Abschnitt: Land- und forstwirtschaftliche Fahrzeuge",
+     "eId": "part_4/chap_3"
     }
    ],
    "marginalie": [
@@ -5642,11 +5839,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sonntags- und Nachtfahrverbot"
+     "label": "1. Abschnitt: Sonntags- und Nachtfahrverbot",
+     "eId": "part_5/chap_1"
     }
    ],
    "marginalie": [
@@ -5684,11 +5883,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sonntags- und Nachtfahrverbot"
+     "label": "1. Abschnitt: Sonntags- und Nachtfahrverbot",
+     "eId": "part_5/chap_1"
     }
    ],
    "marginalie": [
@@ -5811,11 +6012,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sonntags- und Nachtfahrverbot"
+     "label": "1. Abschnitt: Sonntags- und Nachtfahrverbot",
+     "eId": "part_5/chap_1"
     }
    ],
    "marginalie": [
@@ -5864,11 +6067,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sportliche Veranstaltungen"
+     "label": "2. Abschnitt: Sportliche Veranstaltungen",
+     "eId": "part_5/chap_2"
     }
    ],
    "marginalie": [],
@@ -5891,11 +6096,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Sportliche Veranstaltungen"
+     "label": "2. Abschnitt: Sportliche Veranstaltungen",
+     "eId": "part_5/chap_2"
     }
    ],
    "marginalie": [
@@ -5924,11 +6131,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Strafbestimmung"
+     "label": "3. Abschnitt: Strafbestimmung",
+     "eId": "part_5/chap_3"
     }
    ],
    "marginalie": [],
@@ -5952,11 +6161,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen"
+     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen",
+     "eId": "part_5/chap_4"
     }
    ],
    "marginalie": [
@@ -5981,11 +6192,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen"
+     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen",
+     "eId": "part_5/chap_4"
     }
    ],
    "marginalie": [
@@ -6028,11 +6241,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen"
+     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen",
+     "eId": "part_5/chap_4"
     }
    ],
    "marginalie": [
@@ -6088,7 +6303,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     }
    ],
    "marginalie": [
@@ -6127,11 +6343,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge"
+     "label": "2. Abschnitt: Einzelne Verkehrsvorgänge",
+     "eId": "part_1/chap_2"
     }
    ],
    "marginalie": [
@@ -6205,11 +6423,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Fahrregeln"
+     "label": "1. Abschnitt: Allgemeine Fahrregeln",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [
@@ -6283,11 +6503,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Fahrregeln"
+     "label": "1. Abschnitt: Allgemeine Fahrregeln",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [
@@ -6396,11 +6618,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Fahrregeln"
+     "label": "1. Abschnitt: Allgemeine Fahrregeln",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [
@@ -6501,11 +6725,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Strassenverhältnisse"
+     "label": "4. Abschnitt: Besondere Strassenverhältnisse",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -6534,11 +6760,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Besondere Strassenverhältnisse"
+     "label": "4. Abschnitt: Besondere Strassenverhältnisse",
+     "eId": "part_1/chap_4"
     }
    ],
    "marginalie": [
@@ -6587,11 +6815,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Besondere Fahrzeugarten"
+     "label": "5. Abschnitt: Besondere Fahrzeugarten",
+     "eId": "part_1/chap_5"
     }
    ],
    "marginalie": [
@@ -6640,11 +6870,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Regeln für den Fahrverkehr"
+     "label": "1. Teil: Regeln für den Fahrverkehr",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Fahrregeln"
+     "label": "1. Abschnitt: Allgemeine Fahrregeln",
+     "eId": "part_1/chap_1"
     }
    ],
    "marginalie": [
@@ -6721,11 +6953,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Regeln für den übrigen Verkehr"
+     "label": "2. Teil: Regeln für den übrigen Verkehr",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Benützer von fahrzeugähnlichen Geräten"
+     "label": "1a. Abschnitt: Benützer von fahrzeugähnlichen Geräten",
+     "eId": "part_2/chap_1_a"
     }
    ],
    "marginalie": [
@@ -6750,15 +6984,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs"
+     "label": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs",
+     "eId": "part_4/chap_1/lvl_I_a"
     }
    ],
    "marginalie": [
@@ -6800,15 +7037,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs"
+     "label": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs",
+     "eId": "part_4/chap_1/lvl_I_a"
     }
    ],
    "marginalie": [
@@ -6833,15 +7073,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs"
+     "label": "Ia. Abgasemissionen, Abgaswartung des Fahrzeugs",
+     "eId": "part_4/chap_1/lvl_I_a"
     }
    ],
    "marginalie": [
@@ -6866,15 +7109,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verwendung der Fahrzeuge"
+     "label": "4. Teil: Verwendung der Fahrzeuge",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_4/chap_1"
     },
     {
      "ebene": 3,
-     "label": "III. Masse und Gewichte"
+     "label": "III. Masse und Gewichte",
+     "eId": "part_4/chap_1/lvl_III"
     }
    ],
    "marginalie": [
@@ -6912,11 +7158,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sonntags- und Nachtfahrverbot"
+     "label": "1. Abschnitt: Sonntags- und Nachtfahrverbot",
+     "eId": "part_5/chap_1"
     }
    ],
    "marginalie": [
@@ -7137,11 +7385,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen"
+     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen",
+     "eId": "part_5/chap_4"
     }
    ],
    "marginalie": [
@@ -7166,11 +7416,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Verschiedene Bestimmungen"
+     "label": "5. Teil: Verschiedene Bestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen"
+     "label": "4. Abschnitt: Übergangs- und Schlussbestimmungen",
+     "eId": "part_5/chap_4"
     }
    ],
    "marginalie": [

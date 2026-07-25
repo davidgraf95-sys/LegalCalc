@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "832.105",
   "titel": "Verordnung über die Versichertenkarte für die obligatorische Krankenpflegeversicherung",
@@ -41,7 +41,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Grundsatz"
+     "label": "1. Abschnitt: Grundsatz",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [],
@@ -76,7 +77,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Technische Anforderungen"
+     "label": "2. Abschnitt: Technische Anforderungen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": []
@@ -85,7 +87,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Daten für die Rechnungstellung"
+     "label": "3. Abschnitt: Daten für die Rechnungstellung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -110,7 +113,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Daten für die Rechnungstellung"
+     "label": "3. Abschnitt: Daten für die Rechnungstellung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -121,7 +125,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Daten für die Rechnungstellung"
+     "label": "3. Abschnitt: Daten für die Rechnungstellung",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -170,7 +175,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Daten nach Artikel 42a Absatz 4 KVG"
+     "label": "4. Abschnitt: Daten nach Artikel 42a Absatz 4 KVG",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -181,7 +187,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Daten nach Artikel 42a Absatz 4 KVG"
+     "label": "4. Abschnitt: Daten nach Artikel 42a Absatz 4 KVG",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -192,7 +199,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Daten nach Artikel 42a Absatz 4 KVG"
+     "label": "4. Abschnitt: Daten nach Artikel 42a Absatz 4 KVG",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -203,7 +211,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Rechte und Pflichten"
+     "label": "5. Abschnitt: Rechte und Pflichten",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -214,7 +223,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Rechte und Pflichten"
+     "label": "5. Abschnitt: Rechte und Pflichten",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -225,7 +235,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Rechte und Pflichten"
+     "label": "5. Abschnitt: Rechte und Pflichten",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -236,7 +247,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Rechte und Pflichten"
+     "label": "5. Abschnitt: Rechte und Pflichten",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -247,7 +259,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Rechte und Pflichten"
+     "label": "5. Abschnitt: Rechte und Pflichten",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [
@@ -258,7 +271,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Rechnungstellung"
+     "label": "6. Abschnitt: Rechnungstellung",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -269,7 +283,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Rechnungstellung"
+     "label": "6. Abschnitt: Rechnungstellung",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -280,7 +295,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Kantonale Modellversuche"
+     "label": "7. Abschnitt: Kantonale Modellversuche",
+     "eId": "sec_7"
     }
    ],
    "marginalie": []
@@ -289,7 +305,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Abschnitt: Technische Standards"
+     "label": "8. Abschnitt: Technische Standards",
+     "eId": "sec_8"
     }
    ],
    "marginalie": []
@@ -298,7 +315,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Schlussbestimmungen"
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [
@@ -324,7 +342,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Schlussbestimmungen"
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [],
@@ -347,7 +366,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Schlussbestimmungen"
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [
@@ -384,7 +404,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Abschnitt: Schlussbestimmungen"
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
     }
    ],
    "marginalie": [

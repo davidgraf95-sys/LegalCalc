@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "836.21",
   "titel": "Verordnung über die Familienzulagen",
@@ -54,7 +54,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -91,7 +92,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -140,7 +142,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -177,7 +180,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -202,7 +206,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -228,7 +233,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -239,7 +245,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -288,7 +295,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -337,7 +345,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige"
+     "label": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -363,7 +372,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige"
+     "label": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -496,7 +506,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige"
+     "label": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -557,7 +568,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige"
+     "label": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -568,7 +580,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige"
+     "label": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -579,7 +592,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige"
+     "label": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -590,7 +604,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Familienausgleichskasse der Eidgenössischen Ausgleichskasse"
+     "label": "3. Abschnitt: Familienausgleichskasse der Eidgenössischen Ausgleichskasse",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [],
@@ -613,7 +628,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Familienzulagenordnung für Nichterwerbstätige"
+     "label": "4. Abschnitt: Familienzulagenordnung für Nichterwerbstätige",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -674,7 +690,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Familienzulagenordnung für Nichterwerbstätige"
+     "label": "4. Abschnitt: Familienzulagenordnung für Nichterwerbstätige",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -700,7 +717,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Familienzulagenordnung für Nichterwerbstätige"
+     "label": "4. Abschnitt: Familienzulagenordnung für Nichterwerbstätige",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -711,7 +729,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Beschwerdebefugnis der Behörden"
+     "label": "5. Abschnitt: Beschwerdebefugnis der Behörden",
+     "eId": "sec_5"
     }
    ],
    "marginalie": []
@@ -720,7 +739,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Statistik"
+     "label": "6. Abschnitt: Statistik",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [],
@@ -755,7 +775,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Schlussbestimmungen"
+     "label": "7. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -780,7 +801,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Schlussbestimmungen"
+     "label": "7. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -791,7 +813,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Schlussbestimmungen"
+     "label": "7. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -802,7 +825,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Schlussbestimmungen"
+     "label": "7. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -813,7 +837,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige"
+     "label": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -838,7 +863,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige"
+     "label": "2. Abschnitt: Familienzulagenordnung für Erwerbstätige",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -863,7 +889,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Familienzulagenordnung für Nichterwerbstätige"
+     "label": "4. Abschnitt: Familienzulagenordnung für Nichterwerbstätige",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -924,7 +951,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Familienzulagenregister"
+     "label": "4a. Abschnitt: Familienzulagenregister",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -974,7 +1002,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Familienzulagenregister"
+     "label": "4a. Abschnitt: Familienzulagenregister",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1024,7 +1053,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Familienzulagenregister"
+     "label": "4a. Abschnitt: Familienzulagenregister",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1035,7 +1065,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Familienzulagenregister"
+     "label": "4a. Abschnitt: Familienzulagenregister",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1046,7 +1077,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Familienzulagenregister"
+     "label": "4a. Abschnitt: Familienzulagenregister",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1057,7 +1089,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Familienzulagenregister"
+     "label": "4a. Abschnitt: Familienzulagenregister",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1068,7 +1101,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Familienzulagenregister"
+     "label": "4a. Abschnitt: Familienzulagenregister",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1079,7 +1113,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Familienzulagenregister"
+     "label": "4a. Abschnitt: Familienzulagenregister",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1176,7 +1211,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Familienzulagenregister"
+     "label": "4a. Abschnitt: Familienzulagenregister",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1187,7 +1223,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Abschnitt: Familienzulagenregister"
+     "label": "4a. Abschnitt: Familienzulagenregister",
+     "eId": "sec_4_a"
     }
    ],
    "marginalie": [
@@ -1224,7 +1261,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Schlussbestimmungen"
+     "label": "7. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [
@@ -1249,7 +1287,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Abschnitt: Schlussbestimmungen"
+     "label": "7. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_7"
     }
    ],
    "marginalie": [

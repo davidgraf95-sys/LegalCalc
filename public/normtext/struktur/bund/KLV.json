@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "832.112.31",
   "titel": "Verordnung des EDI über Leistungen in der obligatorischen Krankenpflegeversicherung",
@@ -67,15 +67,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vergütungspflicht"
+     "label": "1. Abschnitt: Vergütungspflicht",
+     "eId": "tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -123,15 +126,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ärztliche Psychotherapie"
+     "label": "2. Abschnitt: Ärztliche Psychotherapie",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -156,15 +162,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ärztliche Psychotherapie"
+     "label": "2. Abschnitt: Ärztliche Psychotherapie",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -189,15 +198,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Von Chiropraktoren und Chiropraktorinnen verordnete Leistungen"
+     "label": "3. Abschnitt: Von Chiropraktoren und Chiropraktorinnen verordnete Leistungen",
+     "eId": "tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [],
@@ -349,15 +361,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen"
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Physiotherapie"
+     "label": "1. Abschnitt: Physiotherapie",
+     "eId": "tit_1/chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -537,15 +552,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen"
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ergotherapie"
+     "label": "2. Abschnitt: Ergotherapie",
+     "eId": "tit_1/chap_2/sec_2"
     }
    ],
    "marginalie": [],
@@ -677,15 +695,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen"
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim",
+     "eId": "tit_1/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -928,15 +949,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen"
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim",
+     "eId": "tit_1/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -998,15 +1022,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen"
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim",
+     "eId": "tit_1/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1035,15 +1062,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen"
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Logopädie"
+     "label": "4. Abschnitt: Logopädie",
+     "eId": "tit_1/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1081,15 +1111,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen"
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Logopädie"
+     "label": "4. Abschnitt: Logopädie",
+     "eId": "tit_1/chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1126,11 +1159,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Massnahmen der Prävention"
+     "label": "3. Kapitel: Massnahmen der Prävention",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -1169,11 +1204,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Besondere Leistungen bei Mutterschaft"
+     "label": "4. Kapitel: Besondere Leistungen bei Mutterschaft",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1357,11 +1394,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Besondere Leistungen bei Mutterschaft"
+     "label": "4. Kapitel: Besondere Leistungen bei Mutterschaft",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1386,11 +1425,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Besondere Leistungen bei Mutterschaft"
+     "label": "4. Kapitel: Besondere Leistungen bei Mutterschaft",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1428,11 +1469,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Besondere Leistungen bei Mutterschaft"
+     "label": "4. Kapitel: Besondere Leistungen bei Mutterschaft",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -1481,11 +1524,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Zahnärztliche Behandlungen"
+     "label": "5. Kapitel: Zahnärztliche Behandlungen",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -1512,11 +1557,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Zahnärztliche Behandlungen"
+     "label": "5. Kapitel: Zahnärztliche Behandlungen",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -1594,11 +1641,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Zahnärztliche Behandlungen"
+     "label": "5. Kapitel: Zahnärztliche Behandlungen",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -1661,11 +1710,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Mittel und Gegenstände, die der Untersuchung oder Behandlung dienen"
+     "label": "6. Kapitel: Mittel und Gegenstände, die der Untersuchung oder Behandlung dienen",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [
@@ -1703,11 +1754,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Mittel und Gegenstände, die der Untersuchung oder Behandlung dienen"
+     "label": "6. Kapitel: Mittel und Gegenstände, die der Untersuchung oder Behandlung dienen",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [
@@ -1732,11 +1785,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Mittel und Gegenstände, die der Untersuchung oder Behandlung dienen"
+     "label": "6. Kapitel: Mittel und Gegenstände, die der Untersuchung oder Behandlung dienen",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [
@@ -1747,11 +1802,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Mittel und Gegenstände, die der Untersuchung oder Behandlung dienen"
+     "label": "6. Kapitel: Mittel und Gegenstände, die der Untersuchung oder Behandlung dienen",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [
@@ -1762,11 +1819,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Mittel und Gegenstände, die der Untersuchung oder Behandlung dienen"
+     "label": "6. Kapitel: Mittel und Gegenstände, die der Untersuchung oder Behandlung dienen",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [
@@ -1804,11 +1863,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Beitrag an die Kosten von Badekuren sowie an Transport- und Rettungskosten"
+     "label": "7. Kapitel: Beitrag an die Kosten von Badekuren sowie an Transport- und Rettungskosten",
+     "eId": "tit_1/chap_7"
     }
    ],
    "marginalie": [
@@ -1819,11 +1880,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Beitrag an die Kosten von Badekuren sowie an Transport- und Rettungskosten"
+     "label": "7. Kapitel: Beitrag an die Kosten von Badekuren sowie an Transport- und Rettungskosten",
+     "eId": "tit_1/chap_7"
     }
    ],
    "marginalie": [
@@ -1834,11 +1897,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Beitrag an die Kosten von Badekuren sowie an Transport- und Rettungskosten"
+     "label": "7. Kapitel: Beitrag an die Kosten von Badekuren sowie an Transport- und Rettungskosten",
+     "eId": "tit_1/chap_7"
     }
    ],
    "marginalie": [
@@ -1849,15 +1914,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Analysenliste"
+     "label": "1. Abschnitt: Analysenliste",
+     "eId": "tit_1/chap_8/sec_1"
     }
    ],
    "marginalie": [],
@@ -1933,15 +2001,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Arzneimittelliste mit Tarif"
+     "label": "2. Abschnitt: Arzneimittelliste mit Tarif",
+     "eId": "tit_1/chap_8/sec_2"
     }
    ],
    "marginalie": [],
@@ -2001,15 +2072,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -2070,15 +2144,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -2176,15 +2253,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -2209,15 +2289,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -2254,15 +2337,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [],
@@ -2285,15 +2371,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -2330,15 +2419,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -2387,15 +2479,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -2420,15 +2515,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -2457,11 +2555,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen der Leistungserbringung"
+     "label": "2. Titel: Voraussetzungen der Leistungserbringung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: …"
+     "label": "1. Kapitel: …",
+     "eId": "tit_2/chap_1"
     }
    ],
    "marginalie": [],
@@ -2484,11 +2584,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen der Leistungserbringung"
+     "label": "2. Titel: Voraussetzungen der Leistungserbringung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: …"
+     "label": "2. Kapitel: …",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [],
@@ -2511,11 +2613,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen der Leistungserbringung"
+     "label": "2. Titel: Voraussetzungen der Leistungserbringung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: …"
+     "label": "3. Kapitel: …",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [],
@@ -2538,11 +2642,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen der Leistungserbringung"
+     "label": "2. Titel: Voraussetzungen der Leistungserbringung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Laboratorien"
+     "label": "4. Kapitel: Laboratorien",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -2627,11 +2733,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Voraussetzungen der Leistungserbringung"
+     "label": "2. Titel: Voraussetzungen der Leistungserbringung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Laboratorien"
+     "label": "4. Kapitel: Laboratorien",
+     "eId": "tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -2693,7 +2801,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Schlussbestimmungen"
+     "label": "3. Titel: Schlussbestimmungen",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -2910,7 +3019,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Schlussbestimmungen"
+     "label": "3. Titel: Schlussbestimmungen",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [],
@@ -2933,7 +3043,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Schlussbestimmungen"
+     "label": "3. Titel: Schlussbestimmungen",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -2982,15 +3093,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen"
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Neuropsychologie"
+     "label": "5. Abschnitt: Neuropsychologie",
+     "eId": "tit_1/chap_2/sec_5"
     }
    ],
    "marginalie": [],
@@ -3026,15 +3140,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen"
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Psychologische Psychotherapie"
+     "label": "6. Abschnitt: Psychologische Psychotherapie",
+     "eId": "tit_1/chap_2/sec_6"
     }
    ],
    "marginalie": [],
@@ -3086,15 +3203,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen"
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Podologie"
+     "label": "7. Abschnitt: Podologie",
+     "eId": "tit_1/chap_2/sec_7"
     }
    ],
    "marginalie": [],
@@ -3122,11 +3242,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Massnahmen der Prävention"
+     "label": "3. Kapitel: Massnahmen der Prävention",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -3191,11 +3313,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Massnahmen der Prävention"
+     "label": "3. Kapitel: Massnahmen der Prävention",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -3436,11 +3560,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Massnahmen der Prävention"
+     "label": "3. Kapitel: Massnahmen der Prävention",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -3489,11 +3615,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Massnahmen der Prävention"
+     "label": "3. Kapitel: Massnahmen der Prävention",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -3662,11 +3790,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Massnahmen der Prävention"
+     "label": "3. Kapitel: Massnahmen der Prävention",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -3756,11 +3886,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Zahnärztliche Behandlungen"
+     "label": "5. Kapitel: Zahnärztliche Behandlungen",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -3862,11 +3994,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Zahnärztliche Behandlungen"
+     "label": "5. Kapitel: Zahnärztliche Behandlungen",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -3891,11 +4025,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Mittel und Gegenstände, die der Untersuchung oder Behandlung dienen"
+     "label": "6. Kapitel: Mittel und Gegenstände, die der Untersuchung oder Behandlung dienen",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [
@@ -3968,15 +4104,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -4077,15 +4216,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -4132,15 +4274,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -4165,15 +4310,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -4198,15 +4346,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -4244,15 +4395,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -4281,15 +4435,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -4318,15 +4475,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -4386,15 +4546,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -4431,15 +4594,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -4536,15 +4702,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -4581,15 +4750,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -4630,15 +4802,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [],
@@ -4665,15 +4840,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -4710,15 +4888,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [],
@@ -4745,15 +4926,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [],
@@ -4780,15 +4964,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [],
@@ -4815,15 +5002,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -4852,15 +5042,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -4901,15 +5094,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [],
@@ -4940,15 +5136,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -4985,15 +5184,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spezialitätenliste"
+     "label": "3. Abschnitt: Spezialitätenliste",
+     "eId": "tit_1/chap_8/sec_3"
     }
    ],
    "marginalie": [
@@ -5030,15 +5232,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Selbstbehalt bei Arzneimitteln"
+     "label": "4. Abschnitt: Selbstbehalt bei Arzneimitteln",
+     "eId": "tit_1/chap_8/sec_4"
     }
    ],
    "marginalie": [],
@@ -5094,15 +5299,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
+     "label": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall",
+     "eId": "tit_1/chap_8/sec_5"
     }
    ],
    "marginalie": [
@@ -5128,15 +5336,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
+     "label": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall",
+     "eId": "tit_1/chap_8/sec_5"
     }
    ],
    "marginalie": [
@@ -5147,15 +5358,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
+     "label": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall",
+     "eId": "tit_1/chap_8/sec_5"
     }
    ],
    "marginalie": [
@@ -5166,15 +5380,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
+     "label": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall",
+     "eId": "tit_1/chap_8/sec_5"
     }
    ],
    "marginalie": [
@@ -5185,15 +5402,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
+     "label": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall",
+     "eId": "tit_1/chap_8/sec_5"
     }
    ],
    "marginalie": [
@@ -5218,15 +5438,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Analysen und Arzneimittel"
+     "label": "8. Kapitel: Analysen und Arzneimittel",
+     "eId": "tit_1/chap_8"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
+     "label": "5. Abschnitt: Vergütung von Arzneimitteln im Einzelfall",
+     "eId": "tit_1/chap_8/sec_5"
     }
    ],
    "marginalie": [
@@ -5237,15 +5460,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ärztliche Psychotherapie"
+     "label": "2. Abschnitt: Ärztliche Psychotherapie",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [],
@@ -5272,15 +5498,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Ärztliche Psychotherapie"
+     "label": "2. Abschnitt: Ärztliche Psychotherapie",
+     "eId": "tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -5321,15 +5550,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Einschränkung der Kostenübernahme bei bestimmten elektiven Eingriffen"
+     "label": "2a. Abschnitt: Einschränkung der Kostenübernahme bei bestimmten elektiven Eingriffen",
+     "eId": "tit_1/chap_1/sec_2_a"
     }
    ],
    "marginalie": [],
@@ -5397,15 +5629,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Einschränkung der Kostenübernahme bei bestimmten elektiven Eingriffen"
+     "label": "2a. Abschnitt: Einschränkung der Kostenübernahme bei bestimmten elektiven Eingriffen",
+     "eId": "tit_1/chap_1/sec_2_a"
     }
    ],
    "marginalie": [],
@@ -5432,15 +5667,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Pharmazeutische Leistungen"
+     "label": "4. Abschnitt: Pharmazeutische Leistungen",
+     "eId": "tit_1/chap_1/sec_4"
     }
    ],
    "marginalie": [],
@@ -5476,15 +5714,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen"
+     "label": "1. Kapitel: Ärztliche, chiropraktische und pharmazeutische Leistungen",
+     "eId": "tit_1/chap_1"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Ärztliche komplementärmedizinische Leistungen"
+     "label": "5. Abschnitt: Ärztliche komplementärmedizinische Leistungen",
+     "eId": "tit_1/chap_1/sec_5"
     }
    ],
    "marginalie": [],
@@ -5604,15 +5845,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen"
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim",
+     "eId": "tit_1/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5665,15 +5909,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen"
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim",
+     "eId": "tit_1/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5715,15 +5962,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen"
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim",
+     "eId": "tit_1/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5789,15 +6039,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen"
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim",
+     "eId": "tit_1/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5822,15 +6075,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen"
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim",
+     "eId": "tit_1/chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -5869,15 +6125,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen"
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim"
+     "label": "3. Abschnitt: Krankenpflege ambulant oder im Pflegeheim",
+     "eId": "tit_1/chap_2/sec_3"
     }
    ],
    "marginalie": [],
@@ -5908,15 +6167,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen"
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3a. Abschnitt: Ernährungsberatung"
+     "label": "3a. Abschnitt: Ernährungsberatung",
+     "eId": "tit_1/chap_2/sec_3_a"
     }
    ],
    "marginalie": [],
@@ -6019,15 +6281,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Leistungen"
+     "label": "1. Titel: Leistungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen"
+     "label": "2. Kapitel: Auf Anordnung oder im Auftrag eines Arztes oder einer Ärztin erbrachte Leistungen",
+     "eId": "tit_1/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3b. Abschnitt: Diabetesberatung"
+     "label": "3b. Abschnitt: Diabetesberatung",
+     "eId": "tit_1/chap_2/sec_3_b"
     }
    ],
    "marginalie": [],

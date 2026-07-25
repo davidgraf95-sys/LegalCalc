@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "741.51",
   "titel": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr",
@@ -67,7 +67,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     }
    ],
    "marginalie": [
@@ -104,7 +105,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Einleitung"
+     "label": "Einleitung",
+     "eId": "lvl_u1"
     }
    ],
    "marginalie": [
@@ -267,11 +269,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11 Allgemeine Bestimmungen"
+     "label": "11 Allgemeine Bestimmungen",
+     "eId": "lvl_1/lvl_11"
     }
    ],
    "marginalie": [
@@ -454,11 +458,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11 Allgemeine Bestimmungen"
+     "label": "11 Allgemeine Bestimmungen",
+     "eId": "lvl_1/lvl_11"
     }
    ],
    "marginalie": [
@@ -608,11 +614,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11 Allgemeine Bestimmungen"
+     "label": "11 Allgemeine Bestimmungen",
+     "eId": "lvl_1/lvl_11"
     }
    ],
    "marginalie": [
@@ -662,15 +670,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises"
+     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_121"
     }
    ],
    "marginalie": [
@@ -831,15 +842,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises"
+     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_121"
     }
    ],
    "marginalie": [
@@ -904,15 +918,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises"
+     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_121"
     }
    ],
    "marginalie": [
@@ -1001,15 +1018,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises"
+     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_121"
     }
    ],
    "marginalie": [
@@ -1070,15 +1090,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises"
+     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_121"
     }
    ],
    "marginalie": [
@@ -1089,15 +1112,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "122 Gesuch um Erteilung eines Lernfahr- oder Führerausweises"
+     "label": "122 Gesuch um Erteilung eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_122"
     }
    ],
    "marginalie": [
@@ -1200,15 +1226,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "123 Gemeinsame Bestimmungen zum Ablegen der Theorieprüfungen und der praktischen Führerprüfung"
+     "label": "123 Gemeinsame Bestimmungen zum Ablegen der Theorieprüfungen und der praktischen Führerprüfung",
+     "eId": "lvl_1/lvl_12/lvl_123"
     }
    ],
    "marginalie": [
@@ -1219,15 +1248,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "124 Prüfung der Basistheorie und erstmalige Datenerfassung im IVZ-Personen"
+     "label": "124 Prüfung der Basistheorie und erstmalige Datenerfassung im IVZ-Personen",
+     "eId": "lvl_1/lvl_12/lvl_124"
     }
    ],
    "marginalie": [
@@ -1301,15 +1333,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "124 Prüfung der Basistheorie und erstmalige Datenerfassung im IVZ-Personen"
+     "label": "124 Prüfung der Basistheorie und erstmalige Datenerfassung im IVZ-Personen",
+     "eId": "lvl_1/lvl_12/lvl_124"
     }
    ],
    "marginalie": [
@@ -1334,15 +1369,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "125 Lernfahrausweis"
+     "label": "125 Lernfahrausweis",
+     "eId": "lvl_1/lvl_12/lvl_125"
     }
    ],
    "marginalie": [
@@ -1444,15 +1482,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "125 Lernfahrausweis"
+     "label": "125 Lernfahrausweis",
+     "eId": "lvl_1/lvl_12/lvl_125"
     }
    ],
    "marginalie": [
@@ -1477,15 +1518,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "125 Lernfahrausweis"
+     "label": "125 Lernfahrausweis",
+     "eId": "lvl_1/lvl_12/lvl_125"
     }
    ],
    "marginalie": [
@@ -1546,15 +1590,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "126 Fahrausbildung"
+     "label": "126 Fahrausbildung",
+     "eId": "lvl_1/lvl_12/lvl_126"
     }
    ],
    "marginalie": [
@@ -1579,15 +1626,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "126 Fahrausbildung"
+     "label": "126 Fahrausbildung",
+     "eId": "lvl_1/lvl_12/lvl_126"
     }
    ],
    "marginalie": [
@@ -1636,15 +1686,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "126 Fahrausbildung"
+     "label": "126 Fahrausbildung",
+     "eId": "lvl_1/lvl_12/lvl_126"
     }
    ],
    "marginalie": [
@@ -1669,15 +1722,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "127 Prüfung der Zusatztheorie für Führer von Last- und Gesellschaftswagen"
+     "label": "127 Prüfung der Zusatztheorie für Führer von Last- und Gesellschaftswagen",
+     "eId": "lvl_1/lvl_12/lvl_127"
     }
    ],
    "marginalie": [],
@@ -1724,15 +1780,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "128 Praktische Führerprüfung"
+     "label": "128 Praktische Führerprüfung",
+     "eId": "lvl_1/lvl_12/lvl_128"
     }
    ],
    "marginalie": [
@@ -1773,15 +1832,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "128 Praktische Führerprüfung"
+     "label": "128 Praktische Führerprüfung",
+     "eId": "lvl_1/lvl_12/lvl_128"
     }
    ],
    "marginalie": [
@@ -1792,15 +1854,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129 Führerausweis"
+     "label": "129 Führerausweis",
+     "eId": "lvl_1/lvl_12/lvl_129"
     }
    ],
    "marginalie": [
@@ -1849,15 +1914,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129a Berufsmässiger Personentransport mit leichten Personentransportfahrzeugen und schweren Personenwagen"
+     "label": "129a Berufsmässiger Personentransport mit leichten Personentransportfahrzeugen und schweren Personenwagen",
+     "eId": "lvl_1/lvl_12/lvl_129_a"
     }
    ],
    "marginalie": [
@@ -1944,11 +2012,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12a Meldepflichten und verkehrsmedizinische Kontrolluntersuchungen"
+     "label": "12a Meldepflichten und verkehrsmedizinische Kontrolluntersuchungen",
+     "eId": "lvl_1/lvl_12_a"
     }
    ],
    "marginalie": [
@@ -1990,11 +2060,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12a Meldepflichten und verkehrsmedizinische Kontrolluntersuchungen"
+     "label": "12a Meldepflichten und verkehrsmedizinische Kontrolluntersuchungen",
+     "eId": "lvl_1/lvl_12_a"
     }
    ],
    "marginalie": [
@@ -2091,15 +2163,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug"
+     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug",
+     "eId": "lvl_1/lvl_13/lvl_131"
     }
    ],
    "marginalie": [
@@ -2163,15 +2238,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug"
+     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug",
+     "eId": "lvl_1/lvl_13/lvl_131"
     }
    ],
    "marginalie": [
@@ -2212,15 +2290,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug"
+     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug",
+     "eId": "lvl_1/lvl_13/lvl_131"
     }
    ],
    "marginalie": [
@@ -2245,15 +2326,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "132 Ausweisentzug"
+     "label": "132 Ausweisentzug",
+     "eId": "lvl_1/lvl_13/lvl_132"
     }
    ],
    "marginalie": [
@@ -2291,15 +2375,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "132 Ausweisentzug"
+     "label": "132 Ausweisentzug",
+     "eId": "lvl_1/lvl_13/lvl_132"
     }
    ],
    "marginalie": [
@@ -2324,15 +2411,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "132 Ausweisentzug"
+     "label": "132 Ausweisentzug",
+     "eId": "lvl_1/lvl_13/lvl_132"
     }
    ],
    "marginalie": [
@@ -2405,15 +2495,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "132 Ausweisentzug"
+     "label": "132 Ausweisentzug",
+     "eId": "lvl_1/lvl_13/lvl_132"
     }
    ],
    "marginalie": [
@@ -2438,15 +2531,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "132a Massnahmen gegenüber Inhabern des Führerausweises auf Probe"
+     "label": "132a Massnahmen gegenüber Inhabern des Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_13/lvl_132_a"
     }
    ],
    "marginalie": [
@@ -2496,15 +2592,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "132b Fahrverbot und Verwarnung"
+     "label": "132b Fahrverbot und Verwarnung",
+     "eId": "lvl_1/lvl_13/lvl_132_b"
     }
    ],
    "marginalie": [
@@ -2618,15 +2717,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "132b Fahrverbot und Verwarnung"
+     "label": "132b Fahrverbot und Verwarnung",
+     "eId": "lvl_1/lvl_13/lvl_132_b"
     }
    ],
    "marginalie": [
@@ -2651,15 +2753,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "134 Verkehrsunterricht zur Nachschulung"
+     "label": "134 Verkehrsunterricht zur Nachschulung",
+     "eId": "lvl_1/lvl_13/lvl_134"
     }
    ],
    "marginalie": [
@@ -2721,15 +2826,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "134 Verkehrsunterricht zur Nachschulung"
+     "label": "134 Verkehrsunterricht zur Nachschulung",
+     "eId": "lvl_1/lvl_13/lvl_134"
     }
    ],
    "marginalie": [
@@ -2826,11 +2934,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "14 Motorfahrzeugführer aus dem Ausland"
+     "label": "14 Motorfahrzeugführer aus dem Ausland",
+     "eId": "lvl_1/lvl_14"
     }
    ],
    "marginalie": [
@@ -3003,11 +3113,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "14 Motorfahrzeugführer aus dem Ausland"
+     "label": "14 Motorfahrzeugführer aus dem Ausland",
+     "eId": "lvl_1/lvl_14"
     }
    ],
    "marginalie": [
@@ -3056,11 +3168,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "14 Motorfahrzeugführer aus dem Ausland"
+     "label": "14 Motorfahrzeugführer aus dem Ausland",
+     "eId": "lvl_1/lvl_14"
     }
    ],
    "marginalie": [
@@ -3158,11 +3272,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "14 Motorfahrzeugführer aus dem Ausland"
+     "label": "14 Motorfahrzeugführer aus dem Ausland",
+     "eId": "lvl_1/lvl_14"
     }
    ],
    "marginalie": [
@@ -3235,11 +3351,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "14 Motorfahrzeugführer aus dem Ausland"
+     "label": "14 Motorfahrzeugführer aus dem Ausland",
+     "eId": "lvl_1/lvl_14"
     }
    ],
    "marginalie": [
@@ -3288,11 +3406,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen"
+     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen",
+     "eId": "lvl_1/lvl_16"
     }
    ],
    "marginalie": [
@@ -3365,11 +3485,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen"
+     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen",
+     "eId": "lvl_1/lvl_16"
     }
    ],
    "marginalie": [
@@ -3380,11 +3502,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen"
+     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen",
+     "eId": "lvl_1/lvl_16"
     }
    ],
    "marginalie": [
@@ -3421,11 +3545,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen"
+     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen",
+     "eId": "lvl_1/lvl_16"
     }
    ],
    "marginalie": [
@@ -3436,11 +3562,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen"
+     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen",
+     "eId": "lvl_1/lvl_16"
     }
    ],
    "marginalie": [
@@ -3465,11 +3593,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "17 Vermieter von Motorfahrzeugen"
+     "label": "17 Vermieter von Motorfahrzeugen",
+     "eId": "lvl_1/lvl_17"
     }
    ],
    "marginalie": []
@@ -3478,15 +3608,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "211 Zulassung"
+     "label": "211 Zulassung",
+     "eId": "lvl_2/lvl_21/lvl_211"
     }
    ],
    "marginalie": [
@@ -3676,15 +3809,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "211 Zulassung"
+     "label": "211 Zulassung",
+     "eId": "lvl_2/lvl_21/lvl_211"
     }
    ],
    "marginalie": [
@@ -3858,15 +3994,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "212 Fahrzeugausweis"
+     "label": "212 Fahrzeugausweis",
+     "eId": "lvl_2/lvl_21/lvl_212"
     }
    ],
    "marginalie": [
@@ -3877,15 +4016,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "212 Fahrzeugausweis"
+     "label": "212 Fahrzeugausweis",
+     "eId": "lvl_2/lvl_21/lvl_212"
     }
    ],
    "marginalie": [
@@ -3958,15 +4100,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "212 Fahrzeugausweis"
+     "label": "212 Fahrzeugausweis",
+     "eId": "lvl_2/lvl_21/lvl_212"
     }
    ],
    "marginalie": [
@@ -4067,15 +4212,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "212 Fahrzeugausweis"
+     "label": "212 Fahrzeugausweis",
+     "eId": "lvl_2/lvl_21/lvl_212"
     }
    ],
    "marginalie": [
@@ -4130,15 +4278,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "212 Fahrzeugausweis"
+     "label": "212 Fahrzeugausweis",
+     "eId": "lvl_2/lvl_21/lvl_212"
     }
    ],
    "marginalie": [
@@ -4149,15 +4300,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "212 Fahrzeugausweis"
+     "label": "212 Fahrzeugausweis",
+     "eId": "lvl_2/lvl_21/lvl_212"
     }
    ],
    "marginalie": [
@@ -4182,15 +4336,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "212 Fahrzeugausweis"
+     "label": "212 Fahrzeugausweis",
+     "eId": "lvl_2/lvl_21/lvl_212"
     }
    ],
    "marginalie": [
@@ -4229,15 +4386,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "212 Fahrzeugausweis"
+     "label": "212 Fahrzeugausweis",
+     "eId": "lvl_2/lvl_21/lvl_212"
     }
    ],
    "marginalie": [
@@ -4320,15 +4480,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "212 Fahrzeugausweis"
+     "label": "212 Fahrzeugausweis",
+     "eId": "lvl_2/lvl_21/lvl_212"
     }
    ],
    "marginalie": [
@@ -4389,15 +4552,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "213 Kontrollschilder"
+     "label": "213 Kontrollschilder",
+     "eId": "lvl_2/lvl_21/lvl_213"
     }
    ],
    "marginalie": [
@@ -4507,15 +4673,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "213 Kontrollschilder"
+     "label": "213 Kontrollschilder",
+     "eId": "lvl_2/lvl_21/lvl_213"
     }
    ],
    "marginalie": [
@@ -4576,15 +4745,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "213 Kontrollschilder"
+     "label": "213 Kontrollschilder",
+     "eId": "lvl_2/lvl_21/lvl_213"
     }
    ],
    "marginalie": [
@@ -4657,15 +4829,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "213 Kontrollschilder"
+     "label": "213 Kontrollschilder",
+     "eId": "lvl_2/lvl_21/lvl_213"
     }
    ],
    "marginalie": [
@@ -4750,15 +4925,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "213 Kontrollschilder"
+     "label": "213 Kontrollschilder",
+     "eId": "lvl_2/lvl_21/lvl_213"
     }
    ],
    "marginalie": [
@@ -4808,15 +4986,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "213 Kontrollschilder"
+     "label": "213 Kontrollschilder",
+     "eId": "lvl_2/lvl_21/lvl_213"
     }
    ],
    "marginalie": [
@@ -4841,11 +5022,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "22 Prüfungsfahrzeuge"
+     "label": "22 Prüfungsfahrzeuge",
+     "eId": "lvl_2/lvl_22"
     }
    ],
    "marginalie": [
@@ -4883,11 +5066,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "22 Prüfungsfahrzeuge"
+     "label": "22 Prüfungsfahrzeuge",
+     "eId": "lvl_2/lvl_22"
     }
    ],
    "marginalie": [],
@@ -4910,11 +5095,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "23 Motorfahrräder"
+     "label": "23 Motorfahrräder",
+     "eId": "lvl_2/lvl_23"
     }
    ],
    "marginalie": [
@@ -4939,11 +5126,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "23 Motorfahrräder"
+     "label": "23 Motorfahrräder",
+     "eId": "lvl_2/lvl_23"
     }
    ],
    "marginalie": [
@@ -4980,11 +5169,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "23 Motorfahrräder"
+     "label": "23 Motorfahrräder",
+     "eId": "lvl_2/lvl_23"
     }
    ],
    "marginalie": [
@@ -5009,11 +5200,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "23 Motorfahrräder"
+     "label": "23 Motorfahrräder",
+     "eId": "lvl_2/lvl_23"
     }
    ],
    "marginalie": [
@@ -5050,11 +5243,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "23 Motorfahrräder"
+     "label": "23 Motorfahrräder",
+     "eId": "lvl_2/lvl_23"
     }
    ],
    "marginalie": [
@@ -5092,11 +5287,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "23 Motorfahrräder"
+     "label": "23 Motorfahrräder",
+     "eId": "lvl_2/lvl_23"
     }
    ],
    "marginalie": [
@@ -5121,11 +5318,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "23 Motorfahrräder"
+     "label": "23 Motorfahrräder",
+     "eId": "lvl_2/lvl_23"
     }
    ],
    "marginalie": [
@@ -5163,11 +5362,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "23 Motorfahrräder"
+     "label": "23 Motorfahrräder",
+     "eId": "lvl_2/lvl_23"
     }
    ],
    "marginalie": [
@@ -5192,11 +5393,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "24 …"
+     "label": "24 …",
+     "eId": "lvl_2/lvl_24"
     }
    ],
    "marginalie": [],
@@ -5219,15 +5422,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "25 Massnahmen"
+     "label": "25 Massnahmen",
+     "eId": "lvl_2/lvl_25"
     },
     {
      "ebene": 3,
-     "label": "251 Fahrzeugausweisentzug"
+     "label": "251 Fahrzeugausweisentzug",
+     "eId": "lvl_2/lvl_25/lvl_251"
     }
    ],
    "marginalie": [
@@ -5317,15 +5523,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "25 Massnahmen"
+     "label": "25 Massnahmen",
+     "eId": "lvl_2/lvl_25"
     },
     {
      "ebene": 3,
-     "label": "251 Fahrzeugausweisentzug"
+     "label": "251 Fahrzeugausweisentzug",
+     "eId": "lvl_2/lvl_25/lvl_251"
     }
    ],
    "marginalie": [
@@ -5336,15 +5545,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "25 Massnahmen"
+     "label": "25 Massnahmen",
+     "eId": "lvl_2/lvl_25"
     },
     {
      "ebene": 3,
-     "label": "251 Fahrzeugausweisentzug"
+     "label": "251 Fahrzeugausweisentzug",
+     "eId": "lvl_2/lvl_25/lvl_251"
     }
    ],
    "marginalie": [
@@ -5355,15 +5567,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "25 Massnahmen"
+     "label": "25 Massnahmen",
+     "eId": "lvl_2/lvl_25"
     },
     {
      "ebene": 3,
-     "label": "252 Fahrzeuge ohne Ausweis"
+     "label": "252 Fahrzeuge ohne Ausweis",
+     "eId": "lvl_2/lvl_25/lvl_252"
     }
    ],
    "marginalie": [
@@ -5403,15 +5618,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "25 Massnahmen"
+     "label": "25 Massnahmen",
+     "eId": "lvl_2/lvl_25"
     },
     {
      "ebene": 3,
-     "label": "252 Fahrzeuge ohne Ausweis"
+     "label": "252 Fahrzeuge ohne Ausweis",
+     "eId": "lvl_2/lvl_25/lvl_252"
     }
    ],
    "marginalie": [],
@@ -5434,11 +5652,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "26 Ausländische Fahrzeuge"
+     "label": "26 Ausländische Fahrzeuge",
+     "eId": "lvl_2/lvl_26"
     }
    ],
    "marginalie": [
@@ -5498,11 +5718,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "26 Ausländische Fahrzeuge"
+     "label": "26 Ausländische Fahrzeuge",
+     "eId": "lvl_2/lvl_26"
     }
    ],
    "marginalie": [
@@ -5575,11 +5797,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "26 Ausländische Fahrzeuge"
+     "label": "26 Ausländische Fahrzeuge",
+     "eId": "lvl_2/lvl_26"
     }
    ],
    "marginalie": [
@@ -5654,11 +5878,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "26 Ausländische Fahrzeuge"
+     "label": "26 Ausländische Fahrzeuge",
+     "eId": "lvl_2/lvl_26"
     }
    ],
    "marginalie": [
@@ -5669,15 +5895,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "31 Meldewesen"
+     "label": "31 Meldewesen",
+     "eId": "lvl_3/lvl_31"
     },
     {
      "ebene": 3,
-     "label": "311 …"
+     "label": "311 …",
+     "eId": "lvl_3/lvl_31/lvl_311"
     }
    ],
    "marginalie": [],
@@ -5700,15 +5929,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "31 Meldewesen"
+     "label": "31 Meldewesen",
+     "eId": "lvl_3/lvl_31"
     },
     {
      "ebene": 3,
-     "label": "312 Meldung der Ausstellung neuer Ausweise"
+     "label": "312 Meldung der Ausstellung neuer Ausweise",
+     "eId": "lvl_3/lvl_31/lvl_312"
     }
    ],
    "marginalie": [],
@@ -5731,15 +5963,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "31 Meldewesen"
+     "label": "31 Meldewesen",
+     "eId": "lvl_3/lvl_31"
     },
     {
      "ebene": 3,
-     "label": "312 Meldung der Ausstellung neuer Ausweise"
+     "label": "312 Meldung der Ausstellung neuer Ausweise",
+     "eId": "lvl_3/lvl_31/lvl_312"
     }
    ],
    "marginalie": [
@@ -5776,15 +6011,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "31 Meldewesen"
+     "label": "31 Meldewesen",
+     "eId": "lvl_3/lvl_31"
     },
     {
      "ebene": 3,
-     "label": "312 Meldung der Ausstellung neuer Ausweise"
+     "label": "312 Meldung der Ausstellung neuer Ausweise",
+     "eId": "lvl_3/lvl_31/lvl_312"
     }
    ],
    "marginalie": [],
@@ -5807,15 +6045,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "31 Meldewesen"
+     "label": "31 Meldewesen",
+     "eId": "lvl_3/lvl_31"
     },
     {
      "ebene": 3,
-     "label": "312 Meldung der Ausstellung neuer Ausweise"
+     "label": "312 Meldung der Ausstellung neuer Ausweise",
+     "eId": "lvl_3/lvl_31/lvl_312"
     }
    ],
    "marginalie": [
@@ -5853,15 +6094,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "31 Meldewesen"
+     "label": "31 Meldewesen",
+     "eId": "lvl_3/lvl_31"
     },
     {
      "ebene": 3,
-     "label": "313 Meldung von Widerhandlungen und andern Tatsachen"
+     "label": "313 Meldung von Widerhandlungen und andern Tatsachen",
+     "eId": "lvl_3/lvl_31/lvl_313"
     }
    ],
    "marginalie": [
@@ -5922,15 +6166,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "31 Meldewesen"
+     "label": "31 Meldewesen",
+     "eId": "lvl_3/lvl_31"
     },
     {
      "ebene": 3,
-     "label": "313 Meldung von Widerhandlungen und andern Tatsachen"
+     "label": "313 Meldung von Widerhandlungen und andern Tatsachen",
+     "eId": "lvl_3/lvl_31/lvl_313"
     }
    ],
    "marginalie": [],
@@ -5953,11 +6200,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "32 Statistik"
+     "label": "32 Statistik",
+     "eId": "lvl_3/lvl_32"
     }
    ],
    "marginalie": [
@@ -6001,11 +6250,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "32 Statistik"
+     "label": "32 Statistik",
+     "eId": "lvl_3/lvl_32"
     }
    ],
    "marginalie": [],
@@ -6028,11 +6279,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "32 Statistik"
+     "label": "32 Statistik",
+     "eId": "lvl_3/lvl_32"
     }
    ],
    "marginalie": [],
@@ -6055,7 +6308,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4 Strafbestimmungen"
+     "label": "4 Strafbestimmungen",
+     "eId": "lvl_4"
     }
    ],
    "marginalie": [
@@ -6107,7 +6361,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4 Strafbestimmungen"
+     "label": "4 Strafbestimmungen",
+     "eId": "lvl_4"
     }
    ],
    "marginalie": [
@@ -6132,7 +6387,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4 Strafbestimmungen"
+     "label": "4 Strafbestimmungen",
+     "eId": "lvl_4"
     }
    ],
    "marginalie": [
@@ -6171,7 +6427,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4 Strafbestimmungen"
+     "label": "4 Strafbestimmungen",
+     "eId": "lvl_4"
     }
    ],
    "marginalie": [
@@ -6182,7 +6439,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4 Strafbestimmungen"
+     "label": "4 Strafbestimmungen",
+     "eId": "lvl_4"
     }
    ],
    "marginalie": [
@@ -6221,7 +6479,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4 Strafbestimmungen"
+     "label": "4 Strafbestimmungen",
+     "eId": "lvl_4"
     }
    ],
    "marginalie": [
@@ -6259,7 +6518,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4 Strafbestimmungen"
+     "label": "4 Strafbestimmungen",
+     "eId": "lvl_4"
     }
    ],
    "marginalie": [
@@ -6270,7 +6530,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -6491,7 +6752,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -6552,7 +6814,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -6578,7 +6841,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -6772,7 +7036,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -6797,15 +7062,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "25 Massnahmen"
+     "label": "25 Massnahmen",
+     "eId": "lvl_2/lvl_25"
     },
     {
      "ebene": 3,
-     "label": "253 …"
+     "label": "253 …",
+     "eId": "lvl_2/lvl_25/lvl_253"
     }
    ],
    "marginalie": [],
@@ -6828,15 +7096,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "122 Gesuch um Erteilung eines Lernfahr- oder Führerausweises"
+     "label": "122 Gesuch um Erteilung eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_122"
     }
    ],
    "marginalie": [],
@@ -6859,15 +7130,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "122 Gesuch um Erteilung eines Lernfahr- oder Führerausweises"
+     "label": "122 Gesuch um Erteilung eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_122"
     }
    ],
    "marginalie": [
@@ -6892,15 +7166,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "122 Gesuch um Erteilung eines Lernfahr- oder Führerausweises"
+     "label": "122 Gesuch um Erteilung eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_122"
     }
    ],
    "marginalie": [
@@ -6925,15 +7202,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "31 Meldewesen"
+     "label": "31 Meldewesen",
+     "eId": "lvl_3/lvl_31"
     },
     {
      "ebene": 3,
-     "label": "314 …"
+     "label": "314 …",
+     "eId": "lvl_3/lvl_31/lvl_314"
     }
    ],
    "marginalie": [],
@@ -6956,15 +7236,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "123 Gemeinsame Bestimmungen zum Ablegen der Theorieprüfungen und der praktischen Führerprüfung"
+     "label": "123 Gemeinsame Bestimmungen zum Ablegen der Theorieprüfungen und der praktischen Führerprüfung",
+     "eId": "lvl_1/lvl_12/lvl_123"
     }
    ],
    "marginalie": [
@@ -6975,11 +7258,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3 Meldewesen, Statistik, Verkehrskontrollen"
+     "label": "3 Meldewesen, Statistik, Verkehrskontrollen",
+     "eId": "lvl_3"
     },
     {
      "ebene": 2,
-     "label": "32 Statistik"
+     "label": "32 Statistik",
+     "eId": "lvl_3/lvl_32"
     }
    ],
    "marginalie": [],
@@ -7002,7 +7287,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7027,7 +7313,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7052,7 +7339,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7089,7 +7377,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7162,7 +7451,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7187,7 +7477,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7212,7 +7503,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7237,7 +7529,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7266,7 +7559,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7291,7 +7585,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7316,7 +7611,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7341,7 +7637,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7390,7 +7687,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7415,7 +7713,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7454,7 +7753,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [],
@@ -7472,7 +7772,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5 Schlussbestimmungen"
+     "label": "5 Schlussbestimmungen",
+     "eId": "lvl_5"
     }
    ],
    "marginalie": [
@@ -7497,15 +7798,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "125 Lernfahrausweis"
+     "label": "125 Lernfahrausweis",
+     "eId": "lvl_1/lvl_12/lvl_125"
     }
    ],
    "marginalie": [
@@ -7530,15 +7834,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "126 Fahrausbildung"
+     "label": "126 Fahrausbildung",
+     "eId": "lvl_1/lvl_12/lvl_126"
     }
    ],
    "marginalie": [
@@ -7563,15 +7870,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "126 Fahrausbildung"
+     "label": "126 Fahrausbildung",
+     "eId": "lvl_1/lvl_12/lvl_126"
     }
    ],
    "marginalie": [
@@ -7608,15 +7918,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129 Führerausweis"
+     "label": "129 Führerausweis",
+     "eId": "lvl_1/lvl_12/lvl_129"
     }
    ],
    "marginalie": [
@@ -7641,15 +7954,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129 Führerausweis"
+     "label": "129 Führerausweis",
+     "eId": "lvl_1/lvl_12/lvl_129"
     }
    ],
    "marginalie": [
@@ -7674,15 +7990,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129 Führerausweis"
+     "label": "129 Führerausweis",
+     "eId": "lvl_1/lvl_12/lvl_129"
     }
    ],
    "marginalie": [
@@ -7756,15 +8075,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129 Führerausweis"
+     "label": "129 Führerausweis",
+     "eId": "lvl_1/lvl_12/lvl_129"
     }
    ],
    "marginalie": [
@@ -7793,15 +8115,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129 Führerausweis"
+     "label": "129 Führerausweis",
+     "eId": "lvl_1/lvl_12/lvl_129"
     }
    ],
    "marginalie": [
@@ -7826,15 +8151,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129 Führerausweis"
+     "label": "129 Führerausweis",
+     "eId": "lvl_1/lvl_12/lvl_129"
     }
    ],
    "marginalie": [
@@ -7866,15 +8194,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129 Führerausweis"
+     "label": "129 Führerausweis",
+     "eId": "lvl_1/lvl_12/lvl_129"
     }
    ],
    "marginalie": [
@@ -7930,15 +8261,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "129 Führerausweis"
+     "label": "129 Führerausweis",
+     "eId": "lvl_1/lvl_12/lvl_129"
     }
    ],
    "marginalie": [
@@ -7963,11 +8297,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12a Meldepflichten und verkehrsmedizinische Kontrolluntersuchungen"
+     "label": "12a Meldepflichten und verkehrsmedizinische Kontrolluntersuchungen",
+     "eId": "lvl_1/lvl_12_a"
     }
    ],
    "marginalie": [],
@@ -7994,11 +8330,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12a Meldepflichten und verkehrsmedizinische Kontrolluntersuchungen"
+     "label": "12a Meldepflichten und verkehrsmedizinische Kontrolluntersuchungen",
+     "eId": "lvl_1/lvl_12_a"
     }
    ],
    "marginalie": [],
@@ -8025,11 +8363,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe"
+     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_12_b"
     }
    ],
    "marginalie": [
@@ -8067,11 +8407,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe"
+     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_12_b"
     }
    ],
    "marginalie": [
@@ -8096,11 +8438,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe"
+     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_12_b"
     }
    ],
    "marginalie": [
@@ -8125,11 +8469,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe"
+     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_12_b"
     }
    ],
    "marginalie": [
@@ -8154,11 +8500,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe"
+     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_12_b"
     }
    ],
    "marginalie": [
@@ -8208,11 +8556,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe"
+     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_12_b"
     }
    ],
    "marginalie": [
@@ -8223,11 +8573,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe"
+     "label": "12b Weiterausbildung für Inhaber eines Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_12_b"
     }
    ],
    "marginalie": [
@@ -8238,15 +8590,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug"
+     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug",
+     "eId": "lvl_1/lvl_13/lvl_131"
     }
    ],
    "marginalie": [
@@ -8275,15 +8630,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug"
+     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug",
+     "eId": "lvl_1/lvl_13/lvl_131"
     }
    ],
    "marginalie": [
@@ -8312,15 +8670,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug"
+     "label": "131 Neue Führerprüfung, Abklärung der Fahreignung oder der Fahrkompetenz und vorsorglicher Entzug",
+     "eId": "lvl_1/lvl_13/lvl_131"
     }
    ],
    "marginalie": [
@@ -8345,15 +8706,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "132a Massnahmen gegenüber Inhabern des Führerausweises auf Probe"
+     "label": "132a Massnahmen gegenüber Inhabern des Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_13/lvl_132_a"
     }
    ],
    "marginalie": [
@@ -8402,15 +8766,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "132a Massnahmen gegenüber Inhabern des Führerausweises auf Probe"
+     "label": "132a Massnahmen gegenüber Inhabern des Führerausweises auf Probe",
+     "eId": "lvl_1/lvl_13/lvl_132_a"
     }
    ],
    "marginalie": [
@@ -8435,15 +8802,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "13 Massnahmen"
+     "label": "13 Massnahmen",
+     "eId": "lvl_1/lvl_13"
     },
     {
      "ebene": 3,
-     "label": "133 …"
+     "label": "133 …",
+     "eId": "lvl_1/lvl_13/lvl_133"
     }
    ],
    "marginalie": [],
@@ -8466,11 +8836,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "14 Motorfahrzeugführer aus dem Ausland"
+     "label": "14 Motorfahrzeugführer aus dem Ausland",
+     "eId": "lvl_1/lvl_14"
     }
    ],
    "marginalie": [
@@ -8499,11 +8871,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "15 …"
+     "label": "15 …",
+     "eId": "lvl_1/lvl_15"
     }
    ],
    "marginalie": [],
@@ -8526,11 +8900,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8556,11 +8932,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8597,11 +8975,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8612,11 +8992,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8627,11 +9009,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8642,11 +9026,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8657,11 +9043,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8672,11 +9060,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8701,11 +9091,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8716,11 +9108,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8770,11 +9164,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen"
+     "label": "11a Verkehrsmedizinische und verkehrspsychologische Untersuchungen",
+     "eId": "lvl_1/lvl_11_a"
     }
    ],
    "marginalie": [
@@ -8799,15 +9195,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "12 Führerprüfung"
+     "label": "12 Führerprüfung",
+     "eId": "lvl_1/lvl_12"
     },
     {
      "ebene": 3,
-     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises"
+     "label": "121 Voraussetzungen für den Erwerb eines Lernfahr- oder Führerausweises",
+     "eId": "lvl_1/lvl_12/lvl_121"
     }
    ],
    "marginalie": [
@@ -8840,11 +9239,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "15a Moderatoren von Weiterausbildungskursen"
+     "label": "15a Moderatoren von Weiterausbildungskursen",
+     "eId": "lvl_1/lvl_15_a"
     }
    ],
    "marginalie": [
@@ -8870,11 +9271,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "15a Moderatoren von Weiterausbildungskursen"
+     "label": "15a Moderatoren von Weiterausbildungskursen",
+     "eId": "lvl_1/lvl_15_a"
     }
    ],
    "marginalie": [
@@ -8885,11 +9288,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "15a Moderatoren von Weiterausbildungskursen"
+     "label": "15a Moderatoren von Weiterausbildungskursen",
+     "eId": "lvl_1/lvl_15_a"
     }
    ],
    "marginalie": [
@@ -8914,11 +9319,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "15a Moderatoren von Weiterausbildungskursen"
+     "label": "15a Moderatoren von Weiterausbildungskursen",
+     "eId": "lvl_1/lvl_15_a"
     }
    ],
    "marginalie": [
@@ -8955,11 +9362,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "15a Moderatoren von Weiterausbildungskursen"
+     "label": "15a Moderatoren von Weiterausbildungskursen",
+     "eId": "lvl_1/lvl_15_a"
     }
    ],
    "marginalie": [
@@ -8970,11 +9379,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "15a Moderatoren von Weiterausbildungskursen"
+     "label": "15a Moderatoren von Weiterausbildungskursen",
+     "eId": "lvl_1/lvl_15_a"
     }
    ],
    "marginalie": [
@@ -8985,11 +9396,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1 Zulassung von Personen"
+     "label": "1 Zulassung von Personen",
+     "eId": "lvl_1"
     },
     {
      "ebene": 2,
-     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen"
+     "label": "16 Verkehrsexperten für Führer- und Fahrzeugprüfungen",
+     "eId": "lvl_1/lvl_16"
     }
    ],
    "marginalie": [
@@ -9014,15 +9427,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "211 Zulassung"
+     "label": "211 Zulassung",
+     "eId": "lvl_2/lvl_21/lvl_211"
     }
    ],
    "marginalie": [
@@ -9047,15 +9463,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "211 Zulassung"
+     "label": "211 Zulassung",
+     "eId": "lvl_2/lvl_21/lvl_211"
     }
    ],
    "marginalie": [
@@ -9087,15 +9506,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "21 Motorfahrzeuge und ihre Anhänger"
+     "label": "21 Motorfahrzeuge und ihre Anhänger",
+     "eId": "lvl_2/lvl_21"
     },
     {
      "ebene": 3,
-     "label": "213 Kontrollschilder"
+     "label": "213 Kontrollschilder",
+     "eId": "lvl_2/lvl_21/lvl_213"
     }
    ],
    "marginalie": [
@@ -9120,11 +9542,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "22 Prüfungsfahrzeuge"
+     "label": "22 Prüfungsfahrzeuge",
+     "eId": "lvl_2/lvl_22"
     }
    ],
    "marginalie": [
@@ -9153,11 +9577,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2 Fahrzeuge"
+     "label": "2 Fahrzeuge",
+     "eId": "lvl_2"
     },
     {
      "ebene": 2,
-     "label": "24 …"
+     "label": "24 …",
+     "eId": "lvl_2/lvl_24"
     }
    ],
    "marginalie": [],

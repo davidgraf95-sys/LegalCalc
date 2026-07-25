@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "0.211.221.311",
   "titel": "Übereinkommen über den Schutz von Kindern und die Zusammenarbeit auf dem Gebiet der Internationalen Adoption",
@@ -69,7 +69,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Anwendungsbereich des Übereinkommens"
+     "label": "Kapitel I: Anwendungsbereich des Übereinkommens",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -78,7 +79,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Anwendungsbereich des Übereinkommens"
+     "label": "Kapitel I: Anwendungsbereich des Übereinkommens",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -87,7 +89,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel I: Anwendungsbereich des Übereinkommens"
+     "label": "Kapitel I: Anwendungsbereich des Übereinkommens",
+     "eId": "chap_I"
     }
    ],
    "marginalie": []
@@ -96,7 +99,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Voraussetzungen Internationaler Adoption"
+     "label": "Kapitel II: Voraussetzungen Internationaler Adoption",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -105,7 +109,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel II: Voraussetzungen Internationaler Adoption"
+     "label": "Kapitel II: Voraussetzungen Internationaler Adoption",
+     "eId": "chap_II"
     }
    ],
    "marginalie": []
@@ -114,7 +119,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Zentrale Behörden und zugelassene Organisationen"
+     "label": "Kapitel III: Zentrale Behörden und zugelassene Organisationen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -123,7 +129,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Zentrale Behörden und zugelassene Organisationen"
+     "label": "Kapitel III: Zentrale Behörden und zugelassene Organisationen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -132,7 +139,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Zentrale Behörden und zugelassene Organisationen"
+     "label": "Kapitel III: Zentrale Behörden und zugelassene Organisationen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -141,7 +149,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Zentrale Behörden und zugelassene Organisationen"
+     "label": "Kapitel III: Zentrale Behörden und zugelassene Organisationen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -150,7 +159,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Zentrale Behörden und zugelassene Organisationen"
+     "label": "Kapitel III: Zentrale Behörden und zugelassene Organisationen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -159,7 +169,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Zentrale Behörden und zugelassene Organisationen"
+     "label": "Kapitel III: Zentrale Behörden und zugelassene Organisationen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -168,7 +179,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Zentrale Behörden und zugelassene Organisationen"
+     "label": "Kapitel III: Zentrale Behörden und zugelassene Organisationen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -177,7 +189,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel III: Zentrale Behörden und zugelassene Organisationen"
+     "label": "Kapitel III: Zentrale Behörden und zugelassene Organisationen",
+     "eId": "chap_III"
     }
    ],
    "marginalie": []
@@ -186,7 +199,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV: Verfahrensrechtliche Voraussetzungen der Internationalen Adoption"
+     "label": "Kapitel IV: Verfahrensrechtliche Voraussetzungen der Internationalen Adoption",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -195,7 +209,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV: Verfahrensrechtliche Voraussetzungen der Internationalen Adoption"
+     "label": "Kapitel IV: Verfahrensrechtliche Voraussetzungen der Internationalen Adoption",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -204,7 +219,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV: Verfahrensrechtliche Voraussetzungen der Internationalen Adoption"
+     "label": "Kapitel IV: Verfahrensrechtliche Voraussetzungen der Internationalen Adoption",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -213,7 +229,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV: Verfahrensrechtliche Voraussetzungen der Internationalen Adoption"
+     "label": "Kapitel IV: Verfahrensrechtliche Voraussetzungen der Internationalen Adoption",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -222,7 +239,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV: Verfahrensrechtliche Voraussetzungen der Internationalen Adoption"
+     "label": "Kapitel IV: Verfahrensrechtliche Voraussetzungen der Internationalen Adoption",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -231,7 +249,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV: Verfahrensrechtliche Voraussetzungen der Internationalen Adoption"
+     "label": "Kapitel IV: Verfahrensrechtliche Voraussetzungen der Internationalen Adoption",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -240,7 +259,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV: Verfahrensrechtliche Voraussetzungen der Internationalen Adoption"
+     "label": "Kapitel IV: Verfahrensrechtliche Voraussetzungen der Internationalen Adoption",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -249,7 +269,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV: Verfahrensrechtliche Voraussetzungen der Internationalen Adoption"
+     "label": "Kapitel IV: Verfahrensrechtliche Voraussetzungen der Internationalen Adoption",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -258,7 +279,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel IV: Verfahrensrechtliche Voraussetzungen der Internationalen Adoption"
+     "label": "Kapitel IV: Verfahrensrechtliche Voraussetzungen der Internationalen Adoption",
+     "eId": "chap_IV"
     }
    ],
    "marginalie": []
@@ -267,7 +289,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Anerkennung und Wirkungen der Adoption"
+     "label": "Kapitel V: Anerkennung und Wirkungen der Adoption",
+     "eId": "chap_V"
     }
    ],
    "marginalie": []
@@ -276,7 +299,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Anerkennung und Wirkungen der Adoption"
+     "label": "Kapitel V: Anerkennung und Wirkungen der Adoption",
+     "eId": "chap_V"
     }
    ],
    "marginalie": []
@@ -285,7 +309,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Anerkennung und Wirkungen der Adoption"
+     "label": "Kapitel V: Anerkennung und Wirkungen der Adoption",
+     "eId": "chap_V"
     }
    ],
    "marginalie": []
@@ -294,7 +319,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Anerkennung und Wirkungen der Adoption"
+     "label": "Kapitel V: Anerkennung und Wirkungen der Adoption",
+     "eId": "chap_V"
     }
    ],
    "marginalie": []
@@ -303,7 +329,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel V: Anerkennung und Wirkungen der Adoption"
+     "label": "Kapitel V: Anerkennung und Wirkungen der Adoption",
+     "eId": "chap_V"
     }
    ],
    "marginalie": []
@@ -312,7 +339,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Allgemeine Bestimmungen"
+     "label": "Kapitel VI: Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -321,7 +349,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Allgemeine Bestimmungen"
+     "label": "Kapitel VI: Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -330,7 +359,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Allgemeine Bestimmungen"
+     "label": "Kapitel VI: Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -339,7 +369,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Allgemeine Bestimmungen"
+     "label": "Kapitel VI: Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -348,7 +379,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Allgemeine Bestimmungen"
+     "label": "Kapitel VI: Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -357,7 +389,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Allgemeine Bestimmungen"
+     "label": "Kapitel VI: Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -366,7 +399,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Allgemeine Bestimmungen"
+     "label": "Kapitel VI: Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -375,7 +409,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Allgemeine Bestimmungen"
+     "label": "Kapitel VI: Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -384,7 +419,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Allgemeine Bestimmungen"
+     "label": "Kapitel VI: Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -393,7 +429,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Allgemeine Bestimmungen"
+     "label": "Kapitel VI: Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -402,7 +439,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Allgemeine Bestimmungen"
+     "label": "Kapitel VI: Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -411,7 +449,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Allgemeine Bestimmungen"
+     "label": "Kapitel VI: Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -420,7 +459,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Allgemeine Bestimmungen"
+     "label": "Kapitel VI: Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -429,7 +469,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Allgemeine Bestimmungen"
+     "label": "Kapitel VI: Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": [],
@@ -452,7 +493,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VI: Allgemeine Bestimmungen"
+     "label": "Kapitel VI: Allgemeine Bestimmungen",
+     "eId": "chap_VI"
     }
    ],
    "marginalie": []
@@ -461,7 +503,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII: Schlussbestimmungen"
+     "label": "Kapitel VII: Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -470,7 +513,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII: Schlussbestimmungen"
+     "label": "Kapitel VII: Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -479,7 +523,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII: Schlussbestimmungen"
+     "label": "Kapitel VII: Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -488,7 +533,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII: Schlussbestimmungen"
+     "label": "Kapitel VII: Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -497,7 +543,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII: Schlussbestimmungen"
+     "label": "Kapitel VII: Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []
@@ -506,7 +553,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Kapitel VII: Schlussbestimmungen"
+     "label": "Kapitel VII: Schlussbestimmungen",
+     "eId": "chap_VII"
     }
    ],
    "marginalie": []

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "818.101.1",
   "titel": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen",
@@ -41,7 +41,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Begriffe und Notfallpläne"
+     "label": "1. Kapitel: Begriffe und Notfallpläne",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -52,7 +53,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Begriffe und Notfallpläne"
+     "label": "1. Kapitel: Begriffe und Notfallpläne",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -63,11 +65,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Früherkennungs- und Überwachungssysteme"
+     "label": "1. Abschnitt: Früherkennungs- und Überwachungssysteme",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": []
@@ -76,11 +80,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Meldepflicht"
+     "label": "2. Abschnitt: Meldepflicht",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -91,11 +97,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Meldepflicht"
+     "label": "2. Abschnitt: Meldepflicht",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -106,11 +114,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Inhalt der Meldungen"
+     "label": "3. Abschnitt: Inhalt der Meldungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -135,11 +145,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Inhalt der Meldungen"
+     "label": "3. Abschnitt: Inhalt der Meldungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -164,11 +176,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Inhalt der Meldungen"
+     "label": "3. Abschnitt: Inhalt der Meldungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -193,11 +207,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Inhalt der Meldungen"
+     "label": "3. Abschnitt: Inhalt der Meldungen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -222,11 +238,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Bearbeitung der Meldungen"
+     "label": "4. Abschnitt: Bearbeitung der Meldungen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -263,11 +281,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Bearbeitung der Meldungen"
+     "label": "4. Abschnitt: Bearbeitung der Meldungen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -278,11 +298,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Bearbeitung der Meldungen"
+     "label": "4. Abschnitt: Bearbeitung der Meldungen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -319,11 +341,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Bearbeitung der Meldungen"
+     "label": "4. Abschnitt: Bearbeitung der Meldungen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -334,11 +358,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Bearbeitung der Meldungen"
+     "label": "4. Abschnitt: Bearbeitung der Meldungen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -349,11 +375,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Epidemiologische Abklärungen und Bearbeitung der Meldedaten"
+     "label": "5. Abschnitt: Epidemiologische Abklärungen und Bearbeitung der Meldedaten",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -364,11 +392,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Epidemiologische Abklärungen und Bearbeitung der Meldedaten"
+     "label": "5. Abschnitt: Epidemiologische Abklärungen und Bearbeitung der Meldedaten",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -379,11 +409,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Epidemiologische Abklärungen und Bearbeitung der Meldedaten"
+     "label": "5. Abschnitt: Epidemiologische Abklärungen und Bearbeitung der Meldedaten",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -394,11 +426,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Epidemiologische Abklärungen und Bearbeitung der Meldedaten"
+     "label": "5. Abschnitt: Epidemiologische Abklärungen und Bearbeitung der Meldedaten",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -409,11 +443,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Delegationsbestimmungen"
+     "label": "6. Abschnitt: Delegationsbestimmungen",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -424,11 +460,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Delegationsbestimmungen"
+     "label": "6. Abschnitt: Delegationsbestimmungen",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -439,11 +477,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Meldungen zur epidemiologischen Überwachung und zu Forschungszwecken"
+     "label": "7. Abschnitt: Meldungen zur epidemiologischen Überwachung und zu Forschungszwecken",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -454,11 +494,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Meldungen zur epidemiologischen Überwachung und zu Forschungszwecken"
+     "label": "7. Abschnitt: Meldungen zur epidemiologischen Überwachung und zu Forschungszwecken",
+     "eId": "chap_2/sec_7"
     }
    ],
    "marginalie": [
@@ -469,11 +511,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Laboratorien"
+     "label": "8. Abschnitt: Laboratorien",
+     "eId": "chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -484,11 +528,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Erkennung und Überwachung"
+     "label": "2. Kapitel: Erkennung und Überwachung",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Laboratorien"
+     "label": "8. Abschnitt: Laboratorien",
+     "eId": "chap_2/sec_8"
     }
    ],
    "marginalie": [
@@ -499,11 +545,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhütungsmassnahmen"
+     "label": "1. Abschnitt: Verhütungsmassnahmen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -514,11 +562,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhütungsmassnahmen"
+     "label": "1. Abschnitt: Verhütungsmassnahmen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -529,11 +579,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhütungsmassnahmen"
+     "label": "1. Abschnitt: Verhütungsmassnahmen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -544,11 +596,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhütungsmassnahmen"
+     "label": "1. Abschnitt: Verhütungsmassnahmen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -559,11 +613,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhütungsmassnahmen"
+     "label": "1. Abschnitt: Verhütungsmassnahmen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -574,11 +630,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhütungsmassnahmen"
+     "label": "1. Abschnitt: Verhütungsmassnahmen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -589,11 +647,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Verhütungsmassnahmen"
+     "label": "1. Abschnitt: Verhütungsmassnahmen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -654,11 +714,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Impfungen"
+     "label": "2. Abschnitt: Impfungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -669,11 +731,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Impfungen"
+     "label": "2. Abschnitt: Impfungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -684,11 +748,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Impfungen"
+     "label": "2. Abschnitt: Impfungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -699,11 +765,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Impfungen"
+     "label": "2. Abschnitt: Impfungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -714,11 +782,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Impfungen"
+     "label": "2. Abschnitt: Impfungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -729,11 +799,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Impfungen"
+     "label": "2. Abschnitt: Impfungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -744,11 +816,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Impfungen"
+     "label": "2. Abschnitt: Impfungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -759,11 +833,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Impfungen"
+     "label": "2. Abschnitt: Impfungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -774,11 +850,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Impfungen"
+     "label": "2. Abschnitt: Impfungen",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -789,11 +867,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bewilligungspflicht für die Gelbfieberimpfung"
+     "label": "3. Abschnitt: Bewilligungspflicht für die Gelbfieberimpfung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -804,11 +884,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bewilligungspflicht für die Gelbfieberimpfung"
+     "label": "3. Abschnitt: Bewilligungspflicht für die Gelbfieberimpfung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -833,11 +915,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bewilligungspflicht für die Gelbfieberimpfung"
+     "label": "3. Abschnitt: Bewilligungspflicht für die Gelbfieberimpfung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -848,11 +932,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bewilligungspflicht für die Gelbfieberimpfung"
+     "label": "3. Abschnitt: Bewilligungspflicht für die Gelbfieberimpfung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -863,11 +949,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bewilligungspflicht für die Gelbfieberimpfung"
+     "label": "3. Abschnitt: Bewilligungspflicht für die Gelbfieberimpfung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -878,11 +966,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bewilligungspflicht für die Gelbfieberimpfung"
+     "label": "3. Abschnitt: Bewilligungspflicht für die Gelbfieberimpfung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -908,11 +998,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bewilligungspflicht für die Gelbfieberimpfung"
+     "label": "3. Abschnitt: Bewilligungspflicht für die Gelbfieberimpfung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -937,11 +1029,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verhütung"
+     "label": "3. Kapitel: Verhütung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Bewilligungspflicht für die Gelbfieberimpfung"
+     "label": "3. Abschnitt: Bewilligungspflicht für die Gelbfieberimpfung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -952,11 +1046,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr"
+     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -967,11 +1063,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr"
+     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -997,11 +1095,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr"
+     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1012,11 +1112,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr"
+     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1027,11 +1129,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr"
+     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1042,11 +1146,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr"
+     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1057,11 +1163,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr"
+     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1072,11 +1180,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr"
+     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1101,11 +1211,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr"
+     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1116,11 +1228,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr"
+     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1131,11 +1245,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr"
+     "label": "1. Abschnitt: Massnahmen im internationalen Personenverkehr",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1146,11 +1262,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Heilmittel"
+     "label": "2. Abschnitt: Heilmittel",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1161,11 +1279,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Heilmittel"
+     "label": "2. Abschnitt: Heilmittel",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1176,11 +1296,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Heilmittel"
+     "label": "2. Abschnitt: Heilmittel",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1191,11 +1313,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Heilmittel"
+     "label": "2. Abschnitt: Heilmittel",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1206,11 +1330,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Heilmittel"
+     "label": "2. Abschnitt: Heilmittel",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1221,11 +1347,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Warenverkehr"
+     "label": "3. Abschnitt: Warenverkehr",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [],
@@ -1252,11 +1380,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Umgang mit Leichen und Leichentransporte"
+     "label": "4. Abschnitt: Umgang mit Leichen und Leichentransporte",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1267,11 +1397,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Umgang mit Leichen und Leichentransporte"
+     "label": "4. Abschnitt: Umgang mit Leichen und Leichentransporte",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1282,11 +1414,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Umgang mit Leichen und Leichentransporte"
+     "label": "4. Abschnitt: Umgang mit Leichen und Leichentransporte",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1297,11 +1431,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Umgang mit Leichen und Leichentransporte"
+     "label": "4. Abschnitt: Umgang mit Leichen und Leichentransporte",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1312,11 +1448,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Umgang mit Leichen und Leichentransporte"
+     "label": "4. Abschnitt: Umgang mit Leichen und Leichentransporte",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1327,11 +1465,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Umgang mit Leichen und Leichentransporte"
+     "label": "4. Abschnitt: Umgang mit Leichen und Leichentransporte",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1356,11 +1496,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Umgang mit Leichen und Leichentransporte"
+     "label": "4. Abschnitt: Umgang mit Leichen und Leichentransporte",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1371,11 +1513,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Umgang mit Leichen und Leichentransporte"
+     "label": "4. Abschnitt: Umgang mit Leichen und Leichentransporte",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1386,7 +1530,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Finanzhilfen an öffentliche und private Organisationen"
+     "label": "5. Kapitel: Finanzhilfen an öffentliche und private Organisationen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1397,7 +1542,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Finanzhilfen an öffentliche und private Organisationen"
+     "label": "5. Kapitel: Finanzhilfen an öffentliche und private Organisationen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1408,7 +1554,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Finanzhilfen an öffentliche und private Organisationen"
+     "label": "5. Kapitel: Finanzhilfen an öffentliche und private Organisationen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1419,11 +1566,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kantonsärztinnen und Kantonsärzte"
+     "label": "1. Abschnitt: Kantonsärztinnen und Kantonsärzte",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1448,11 +1597,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kantonsärztinnen und Kantonsärzte"
+     "label": "1. Abschnitt: Kantonsärztinnen und Kantonsärzte",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1463,11 +1614,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kantonsärztinnen und Kantonsärzte"
+     "label": "1. Abschnitt: Kantonsärztinnen und Kantonsärzte",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1478,11 +1631,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Koordinationsorgan"
+     "label": "2. Abschnitt: Koordinationsorgan",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1493,11 +1648,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Koordinationsorgan"
+     "label": "2. Abschnitt: Koordinationsorgan",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1508,11 +1665,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Koordinationsorgan"
+     "label": "2. Abschnitt: Koordinationsorgan",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1523,11 +1682,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Koordinationsorgan"
+     "label": "2. Abschnitt: Koordinationsorgan",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1538,11 +1699,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Koordinationsorgan"
+     "label": "2. Abschnitt: Koordinationsorgan",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1553,11 +1716,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Eidgenössische Kommission für Impffragen"
+     "label": "3. Abschnitt: Eidgenössische Kommission für Impffragen",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -1568,11 +1733,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Eidgenössische Kommission für Impffragen"
+     "label": "3. Abschnitt: Eidgenössische Kommission für Impffragen",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -1583,11 +1750,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Eidgenössische Kommission für Impffragen"
+     "label": "3. Abschnitt: Eidgenössische Kommission für Impffragen",
+     "eId": "chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -1598,11 +1767,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Aufbewahrung von Dokumenten und Daten"
+     "label": "4. Abschnitt: Aufbewahrung von Dokumenten und Daten",
+     "eId": "chap_6/sec_4"
     }
    ],
    "marginalie": []
@@ -1611,11 +1782,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Informationssystem"
+     "label": "5. Abschnitt: Informationssystem",
+     "eId": "chap_6/sec_5"
     }
    ],
    "marginalie": [
@@ -1626,11 +1799,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Informationssystem"
+     "label": "5. Abschnitt: Informationssystem",
+     "eId": "chap_6/sec_5"
     }
    ],
    "marginalie": [
@@ -1679,11 +1854,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Informationssystem"
+     "label": "5. Abschnitt: Informationssystem",
+     "eId": "chap_6/sec_5"
     }
    ],
    "marginalie": [
@@ -1732,11 +1909,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Informationssystem"
+     "label": "5. Abschnitt: Informationssystem",
+     "eId": "chap_6/sec_5"
     }
    ],
    "marginalie": [
@@ -1747,11 +1926,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Informationssystem"
+     "label": "5. Abschnitt: Informationssystem",
+     "eId": "chap_6/sec_5"
     }
    ],
    "marginalie": [
@@ -1780,11 +1961,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Informationssystem"
+     "label": "5. Abschnitt: Informationssystem",
+     "eId": "chap_6/sec_5"
     }
    ],
    "marginalie": [
@@ -1809,11 +1992,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Informationssystem"
+     "label": "5. Abschnitt: Informationssystem",
+     "eId": "chap_6/sec_5"
     }
    ],
    "marginalie": [
@@ -1824,11 +2009,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Informationssystem"
+     "label": "5. Abschnitt: Informationssystem",
+     "eId": "chap_6/sec_5"
     }
    ],
    "marginalie": [
@@ -1866,11 +2053,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Informationssystem"
+     "label": "5. Abschnitt: Informationssystem",
+     "eId": "chap_6/sec_5"
     }
    ],
    "marginalie": [
@@ -1896,11 +2085,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Informationssystem"
+     "label": "5. Abschnitt: Informationssystem",
+     "eId": "chap_6/sec_5"
     }
    ],
    "marginalie": [
@@ -1911,11 +2102,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Informationssystem"
+     "label": "5. Abschnitt: Informationssystem",
+     "eId": "chap_6/sec_5"
     }
    ],
    "marginalie": [
@@ -1926,11 +2119,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Gesuch für eine Entschädigung oder eine Genugtuung bei Schäden aus Impffolgen"
+     "label": "6. Abschnitt: Gesuch für eine Entschädigung oder eine Genugtuung bei Schäden aus Impffolgen",
+     "eId": "chap_6/sec_6"
     }
    ],
    "marginalie": [
@@ -1941,11 +2136,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Organisation und Verfahren"
+     "label": "6. Kapitel: Organisation und Verfahren",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Gesuch für eine Entschädigung oder eine Genugtuung bei Schäden aus Impffolgen"
+     "label": "6. Abschnitt: Gesuch für eine Entschädigung oder eine Genugtuung bei Schäden aus Impffolgen",
+     "eId": "chap_6/sec_6"
     }
    ],
    "marginalie": [
@@ -1956,11 +2153,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kantone"
+     "label": "1. Abschnitt: Kantone",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1971,11 +2170,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kantone"
+     "label": "1. Abschnitt: Kantone",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -2000,11 +2201,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kantone"
+     "label": "1. Abschnitt: Kantone",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -2015,11 +2218,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bund"
+     "label": "2. Abschnitt: Bund",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -2030,11 +2235,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug"
+     "label": "7. Kapitel: Vollzug",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bund"
+     "label": "2. Abschnitt: Bund",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -2045,7 +2252,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2206,7 +2414,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2217,7 +2426,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2228,7 +2438,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -2251,7 +2462,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Schlussbestimmungen"
+     "label": "8. Kapitel: Schlussbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2276,11 +2488,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Heilmittel"
+     "label": "2. Abschnitt: Heilmittel",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -2307,11 +2521,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Heilmittel"
+     "label": "2. Abschnitt: Heilmittel",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -2338,11 +2554,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Heilmittel"
+     "label": "2. Abschnitt: Heilmittel",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -2369,11 +2587,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Heilmittel"
+     "label": "2. Abschnitt: Heilmittel",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -2400,11 +2620,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Heilmittel"
+     "label": "2. Abschnitt: Heilmittel",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -2431,11 +2653,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Bekämpfung"
+     "label": "4. Kapitel: Bekämpfung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Heilmittel"
+     "label": "2. Abschnitt: Heilmittel",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [],

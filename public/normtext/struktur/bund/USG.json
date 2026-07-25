@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "814.01",
   "titel": "Bundesgesetz über den Umweltschutz",
@@ -72,11 +72,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen"
+     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundsätze"
+     "label": "1. Kapitel: Grundsätze",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -105,11 +107,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen"
+     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundsätze"
+     "label": "1. Kapitel: Grundsätze",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -120,11 +124,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen"
+     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundsätze"
+     "label": "1. Kapitel: Grundsätze",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -153,11 +159,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen"
+     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundsätze"
+     "label": "1. Kapitel: Grundsätze",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -202,11 +210,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen"
+     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundsätze"
+     "label": "1. Kapitel: Grundsätze",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -217,11 +227,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen"
+     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Grundsätze"
+     "label": "1. Kapitel: Grundsätze",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [],
@@ -248,11 +260,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen"
+     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -517,11 +531,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen"
+     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -532,11 +548,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen"
+     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [],
@@ -567,11 +585,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen"
+     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -616,15 +636,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen"
+     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Emissionen"
+     "label": "1. Abschnitt: Emissionen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -635,15 +658,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen"
+     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Emissionen"
+     "label": "1. Abschnitt: Emissionen",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -654,15 +680,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen"
+     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Immissionen"
+     "label": "2. Abschnitt: Immissionen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -673,15 +702,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen"
+     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Immissionen"
+     "label": "2. Abschnitt: Immissionen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -692,15 +724,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen"
+     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Immissionen"
+     "label": "2. Abschnitt: Immissionen",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -711,15 +746,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen"
+     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Sanierungen"
+     "label": "3. Abschnitt: Sanierungen",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -730,15 +768,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen"
+     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Sanierungen"
+     "label": "3. Abschnitt: Sanierungen",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -767,15 +808,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen"
+     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Sanierungen"
+     "label": "3. Abschnitt: Sanierungen",
+     "eId": "tit_2/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -786,15 +830,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen"
+     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Zusätzliche Vorschriften für den Schutz vor Lärm und Erschütterungen"
+     "label": "4. Abschnitt: Zusätzliche Vorschriften für den Schutz vor Lärm und Erschütterungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -805,15 +852,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen"
+     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Zusätzliche Vorschriften für den Schutz vor Lärm und Erschütterungen"
+     "label": "4. Abschnitt: Zusätzliche Vorschriften für den Schutz vor Lärm und Erschütterungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -824,15 +874,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen"
+     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Zusätzliche Vorschriften für den Schutz vor Lärm und Erschütterungen"
+     "label": "4. Abschnitt: Zusätzliche Vorschriften für den Schutz vor Lärm und Erschütterungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -843,15 +896,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen"
+     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Zusätzliche Vorschriften für den Schutz vor Lärm und Erschütterungen"
+     "label": "4. Abschnitt: Zusätzliche Vorschriften für den Schutz vor Lärm und Erschütterungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -884,15 +940,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen"
+     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Zusätzliche Vorschriften für den Schutz vor Lärm und Erschütterungen"
+     "label": "4. Abschnitt: Zusätzliche Vorschriften für den Schutz vor Lärm und Erschütterungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -903,15 +962,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen"
+     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Zusätzliche Vorschriften für den Schutz vor Lärm und Erschütterungen"
+     "label": "4. Abschnitt: Zusätzliche Vorschriften für den Schutz vor Lärm und Erschütterungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -944,15 +1006,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen"
+     "label": "1. Kapitel: Luftverunreinigungen, Lärm, Erschütterungen und Strahlen",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Zusätzliche Vorschriften für den Schutz vor Lärm und Erschütterungen"
+     "label": "4. Abschnitt: Zusätzliche Vorschriften für den Schutz vor Lärm und Erschütterungen",
+     "eId": "tit_2/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -981,11 +1046,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Umweltgefährdende Stoffe"
+     "label": "2. Kapitel: Umweltgefährdende Stoffe",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1030,11 +1097,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Umweltgefährdende Stoffe"
+     "label": "2. Kapitel: Umweltgefährdende Stoffe",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1083,11 +1152,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Umweltgefährdende Stoffe"
+     "label": "2. Kapitel: Umweltgefährdende Stoffe",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1116,11 +1187,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Umweltgefährdende Stoffe"
+     "label": "2. Kapitel: Umweltgefährdende Stoffe",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1131,15 +1204,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vermeidung und Entsorgung von Abfällen"
+     "label": "1. Abschnitt: Vermeidung und Entsorgung von Abfällen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1169,15 +1245,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Abfallplanung und Entsorgungspflicht"
+     "label": "2. Abschnitt: Abfallplanung und Entsorgungspflicht",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1188,15 +1267,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Finanzierung der Entsorgung"
+     "label": "3. Abschnitt: Finanzierung der Entsorgung",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1207,11 +1289,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Belastungen des Bodens"
+     "label": "5. Kapitel: Belastungen des Bodens",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -1270,11 +1354,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Belastungen des Bodens"
+     "label": "5. Kapitel: Belastungen des Bodens",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -1303,11 +1389,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Belastungen des Bodens"
+     "label": "5. Kapitel: Belastungen des Bodens",
+     "eId": "tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -1318,15 +1406,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vollzug durch die Kantone"
+     "label": "1. Abschnitt: Vollzug durch die Kantone",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -1337,15 +1428,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vollzug durch die Kantone"
+     "label": "1. Abschnitt: Vollzug durch die Kantone",
+     "eId": "tit_3/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -1382,15 +1476,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Vollzug durch den Bund"
+     "label": "2. Abschnitt: Vollzug durch den Bund",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1401,15 +1498,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Vollzug durch den Bund"
+     "label": "2. Abschnitt: Vollzug durch den Bund",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1514,15 +1614,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Vollzug durch den Bund"
+     "label": "2. Abschnitt: Vollzug durch den Bund",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1551,15 +1654,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Vollzug durch den Bund"
+     "label": "2. Abschnitt: Vollzug durch den Bund",
+     "eId": "tit_3/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1636,15 +1742,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug"
+     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1673,15 +1782,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug"
+     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1710,15 +1822,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug"
+     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1747,15 +1862,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug"
+     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1784,15 +1902,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug"
+     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1837,15 +1958,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug"
+     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1926,15 +2050,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug"
+     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -1945,11 +2072,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Förderung"
+     "label": "2. Kapitel: Förderung",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -2042,11 +2171,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Förderung"
+     "label": "2. Kapitel: Förderung",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -2088,11 +2219,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Förderung"
+     "label": "2. Kapitel: Förderung",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -2103,11 +2236,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Förderung"
+     "label": "2. Kapitel: Förderung",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [],
@@ -2134,11 +2269,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Förderung"
+     "label": "2. Kapitel: Förderung",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -2183,15 +2320,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Verfahren"
+     "label": "3. Kapitel: Verfahren",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1a. Abschnitt: Rechtspflege"
+     "label": "1a. Abschnitt: Rechtspflege",
+     "eId": "tit_3/chap_3/sec_1_a"
     }
    ],
    "marginalie": [],
@@ -2267,15 +2407,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Verfahren"
+     "label": "3. Kapitel: Verfahren",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verbandsbeschwerde gegen Verfügungen über Anlagen"
+     "label": "2. Abschnitt: Verbandsbeschwerde gegen Verfügungen über Anlagen",
+     "eId": "tit_3/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2329,15 +2472,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Verfahren"
+     "label": "3. Kapitel: Verfahren",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Behörden- und Gemeindebeschwerde, Enteignung, Kosten von Sicherungs- und Behebungsmassnahmen"
+     "label": "4. Abschnitt: Behörden- und Gemeindebeschwerde, Enteignung, Kosten von Sicherungs- und Behebungsmassnahmen",
+     "eId": "tit_3/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -2403,15 +2549,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Verfahren"
+     "label": "3. Kapitel: Verfahren",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Behörden- und Gemeindebeschwerde, Enteignung, Kosten von Sicherungs- und Behebungsmassnahmen"
+     "label": "4. Abschnitt: Behörden- und Gemeindebeschwerde, Enteignung, Kosten von Sicherungs- und Behebungsmassnahmen",
+     "eId": "tit_3/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -2422,15 +2571,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Verfahren"
+     "label": "3. Kapitel: Verfahren",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Behörden- und Gemeindebeschwerde, Enteignung, Kosten von Sicherungs- und Behebungsmassnahmen"
+     "label": "4. Abschnitt: Behörden- und Gemeindebeschwerde, Enteignung, Kosten von Sicherungs- und Behebungsmassnahmen",
+     "eId": "tit_3/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -2504,15 +2656,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Verfahren"
+     "label": "3. Kapitel: Verfahren",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Informations- und Dokumentationssysteme"
+     "label": "5. Abschnitt: Informations- und Dokumentationssysteme",
+     "eId": "tit_3/chap_3/sec_5"
     }
    ],
    "marginalie": [],
@@ -2540,7 +2695,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Strafbestimmungen"
+     "label": "5. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -2905,7 +3061,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Strafbestimmungen"
+     "label": "5. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -3025,7 +3182,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Strafbestimmungen"
+     "label": "5. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -3075,7 +3233,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [],
@@ -3110,7 +3269,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -3121,7 +3281,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -3150,7 +3311,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -3176,7 +3338,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -3196,11 +3359,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen"
+     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umweltverträglichkeitsprüfung"
+     "label": "3. Kapitel: Umweltverträglichkeitsprüfung",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -3234,11 +3399,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen"
+     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umweltverträglichkeitsprüfung"
+     "label": "3. Kapitel: Umweltverträglichkeitsprüfung",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -3267,11 +3434,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen"
+     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umweltverträglichkeitsprüfung"
+     "label": "3. Kapitel: Umweltverträglichkeitsprüfung",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -3282,11 +3451,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen"
+     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umweltverträglichkeitsprüfung"
+     "label": "3. Kapitel: Umweltverträglichkeitsprüfung",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -3297,11 +3468,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen"
+     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Umweltinformationen"
+     "label": "4. Kapitel: Umweltinformationen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -3331,11 +3504,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen"
+     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Umweltinformationen"
+     "label": "4. Kapitel: Umweltinformationen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -3346,11 +3521,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen"
+     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Umweltinformationen"
+     "label": "4. Kapitel: Umweltinformationen",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -3389,11 +3566,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen"
+     "label": "1. Titel: Grundsätze und allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Schonung der natürlichen Ressourcen und Stärkung der Kreislaufwirtschaft"
+     "label": "5. Kapitel: Schonung der natürlichen Ressourcen und Stärkung der Kreislaufwirtschaft",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [],
@@ -3425,11 +3604,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umgang mit Organismen"
+     "label": "3. Kapitel: Umgang mit Organismen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3480,11 +3661,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umgang mit Organismen"
+     "label": "3. Kapitel: Umgang mit Organismen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3495,11 +3678,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umgang mit Organismen"
+     "label": "3. Kapitel: Umgang mit Organismen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3510,11 +3695,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umgang mit Organismen"
+     "label": "3. Kapitel: Umgang mit Organismen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3525,11 +3712,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umgang mit Organismen"
+     "label": "3. Kapitel: Umgang mit Organismen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3571,11 +3760,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umgang mit Organismen"
+     "label": "3. Kapitel: Umgang mit Organismen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3586,11 +3777,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umgang mit Organismen"
+     "label": "3. Kapitel: Umgang mit Organismen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3601,11 +3794,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umgang mit Organismen"
+     "label": "3. Kapitel: Umgang mit Organismen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3632,11 +3827,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umgang mit Organismen"
+     "label": "3. Kapitel: Umgang mit Organismen",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [],
@@ -3663,15 +3860,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vermeidung und Entsorgung von Abfällen"
+     "label": "1. Abschnitt: Vermeidung und Entsorgung von Abfällen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3682,15 +3882,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vermeidung und Entsorgung von Abfällen"
+     "label": "1. Abschnitt: Vermeidung und Entsorgung von Abfällen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3701,15 +3904,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vermeidung und Entsorgung von Abfällen"
+     "label": "1. Abschnitt: Vermeidung und Entsorgung von Abfällen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3720,15 +3926,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vermeidung und Entsorgung von Abfällen"
+     "label": "1. Abschnitt: Vermeidung und Entsorgung von Abfällen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3761,15 +3970,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vermeidung und Entsorgung von Abfällen"
+     "label": "1. Abschnitt: Vermeidung und Entsorgung von Abfällen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3780,15 +3992,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vermeidung und Entsorgung von Abfällen"
+     "label": "1. Abschnitt: Vermeidung und Entsorgung von Abfällen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3817,15 +4032,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vermeidung und Entsorgung von Abfällen"
+     "label": "1. Abschnitt: Vermeidung und Entsorgung von Abfällen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3854,15 +4072,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Vermeidung und Entsorgung von Abfällen"
+     "label": "1. Abschnitt: Vermeidung und Entsorgung von Abfällen",
+     "eId": "tit_2/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -3873,15 +4094,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Abfallplanung und Entsorgungspflicht"
+     "label": "2. Abschnitt: Abfallplanung und Entsorgungspflicht",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -3892,15 +4116,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Abfallplanung und Entsorgungspflicht"
+     "label": "2. Abschnitt: Abfallplanung und Entsorgungspflicht",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -3929,15 +4156,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Abfallplanung und Entsorgungspflicht"
+     "label": "2. Abschnitt: Abfallplanung und Entsorgungspflicht",
+     "eId": "tit_2/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -3948,15 +4178,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Finanzierung der Entsorgung"
+     "label": "3. Abschnitt: Finanzierung der Entsorgung",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3985,15 +4218,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Finanzierung der Entsorgung"
+     "label": "3. Abschnitt: Finanzierung der Entsorgung",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -4125,15 +4361,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Finanzierung der Entsorgung"
+     "label": "3. Abschnitt: Finanzierung der Entsorgung",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -4166,15 +4405,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Finanzierung der Entsorgung"
+     "label": "3. Abschnitt: Finanzierung der Entsorgung",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -4207,15 +4449,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Finanzierung der Entsorgung"
+     "label": "3. Abschnitt: Finanzierung der Entsorgung",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -4248,15 +4493,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Finanzierung der Entsorgung"
+     "label": "3. Abschnitt: Finanzierung der Entsorgung",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -4289,15 +4537,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Finanzierung der Entsorgung"
+     "label": "3. Abschnitt: Finanzierung der Entsorgung",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -4343,15 +4594,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Finanzierung der Entsorgung"
+     "label": "3. Abschnitt: Finanzierung der Entsorgung",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": [],
@@ -4382,15 +4636,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Finanzierung der Entsorgung"
+     "label": "3. Abschnitt: Finanzierung der Entsorgung",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -4401,15 +4658,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Finanzierung der Entsorgung"
+     "label": "3. Abschnitt: Finanzierung der Entsorgung",
+     "eId": "tit_2/chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -4442,15 +4702,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Sanierung belasteter Standorte"
+     "label": "4. Abschnitt: Sanierung belasteter Standorte",
+     "eId": "tit_2/chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -4532,15 +4795,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Sanierung belasteter Standorte"
+     "label": "4. Abschnitt: Sanierung belasteter Standorte",
+     "eId": "tit_2/chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -4551,15 +4817,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Sanierung belasteter Standorte"
+     "label": "4. Abschnitt: Sanierung belasteter Standorte",
+     "eId": "tit_2/chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -4592,15 +4861,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Sanierung belasteter Standorte"
+     "label": "4. Abschnitt: Sanierung belasteter Standorte",
+     "eId": "tit_2/chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -4690,15 +4962,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Sanierung belasteter Standorte"
+     "label": "4. Abschnitt: Sanierung belasteter Standorte",
+     "eId": "tit_2/chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -4727,15 +5002,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Abfälle"
+     "label": "4. Kapitel: Abfälle",
+     "eId": "tit_2/chap_4"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Sanierung belasteter Standorte"
+     "label": "4. Abschnitt: Sanierung belasteter Standorte",
+     "eId": "tit_2/chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -4764,11 +5042,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Lenkungsabgaben"
+     "label": "6. Kapitel: Lenkungsabgaben",
+     "eId": "tit_2/chap_6"
     }
    ],
    "marginalie": [
@@ -4798,11 +5078,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Lenkungsabgaben"
+     "label": "6. Kapitel: Lenkungsabgaben",
+     "eId": "tit_2/chap_6"
     }
    ],
    "marginalie": [],
@@ -4829,11 +5111,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Lenkungsabgaben"
+     "label": "6. Kapitel: Lenkungsabgaben",
+     "eId": "tit_2/chap_6"
     }
    ],
    "marginalie": [],
@@ -4868,11 +5152,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Lenkungsabgaben"
+     "label": "6. Kapitel: Lenkungsabgaben",
+     "eId": "tit_2/chap_6"
     }
    ],
    "marginalie": [
@@ -4954,15 +5240,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+     "label": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung",
+     "eId": "tit_2/chap_7"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Biogene Treib- und Brennstoffe"
+     "label": "1. Abschnitt: Biogene Treib- und Brennstoffe",
+     "eId": "tit_2/chap_7/sec_1"
     }
    ],
    "marginalie": [],
@@ -5077,15 +5366,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+     "label": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung",
+     "eId": "tit_2/chap_7"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anbau, Abbau und Herstellung von Holz und Holzerzeugnissen sowie von weiteren Rohstoffen und Produkten"
+     "label": "2. Abschnitt: Anbau, Abbau und Herstellung von Holz und Holzerzeugnissen sowie von weiteren Rohstoffen und Produkten",
+     "eId": "tit_2/chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -5136,15 +5428,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+     "label": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung",
+     "eId": "tit_2/chap_7"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anbau, Abbau und Herstellung von Holz und Holzerzeugnissen sowie von weiteren Rohstoffen und Produkten"
+     "label": "2. Abschnitt: Anbau, Abbau und Herstellung von Holz und Holzerzeugnissen sowie von weiteren Rohstoffen und Produkten",
+     "eId": "tit_2/chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -5155,15 +5450,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+     "label": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung",
+     "eId": "tit_2/chap_7"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anbau, Abbau und Herstellung von Holz und Holzerzeugnissen sowie von weiteren Rohstoffen und Produkten"
+     "label": "2. Abschnitt: Anbau, Abbau und Herstellung von Holz und Holzerzeugnissen sowie von weiteren Rohstoffen und Produkten",
+     "eId": "tit_2/chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -5174,15 +5472,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+     "label": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung",
+     "eId": "tit_2/chap_7"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Anbau, Abbau und Herstellung von Holz und Holzerzeugnissen sowie von weiteren Rohstoffen und Produkten"
+     "label": "2. Abschnitt: Anbau, Abbau und Herstellung von Holz und Holzerzeugnissen sowie von weiteren Rohstoffen und Produkten",
+     "eId": "tit_2/chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -5193,15 +5494,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+     "label": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung",
+     "eId": "tit_2/chap_7"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Ressourcenschonende Gestaltung von Produkten und Verpackungen"
+     "label": "3. Abschnitt: Ressourcenschonende Gestaltung von Produkten und Verpackungen",
+     "eId": "tit_2/chap_7/sec_3"
     }
    ],
    "marginalie": [],
@@ -5233,15 +5537,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Begrenzung der Umweltbelastung"
+     "label": "2. Titel: Begrenzung der Umweltbelastung",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung"
+     "label": "7. Kapitel: Reduktion der durch Rohstoffe und Produkte verursachten Umweltbelastung",
+     "eId": "tit_2/chap_7"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Ressourcenschonendes Bauen"
+     "label": "4. Abschnitt: Ressourcenschonendes Bauen",
+     "eId": "tit_2/chap_7/sec_4"
     }
    ],
    "marginalie": [],
@@ -5273,15 +5580,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2a. Abschnitt: Zusammenarbeit mit der Wirtschaft"
+     "label": "2a. Abschnitt: Zusammenarbeit mit der Wirtschaft",
+     "eId": "tit_3/chap_1/sec_2_a"
     }
    ],
    "marginalie": [],
@@ -5329,15 +5639,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug"
+     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -5366,15 +5679,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug"
+     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -5403,15 +5719,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Vollzug"
+     "label": "1. Kapitel: Vollzug",
+     "eId": "tit_3/chap_1"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug"
+     "label": "3. Abschnitt: Besondere Bestimmungen über den Vollzug",
+     "eId": "tit_3/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -5444,11 +5763,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Förderung"
+     "label": "2. Kapitel: Förderung",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -5481,15 +5802,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Verfahren"
+     "label": "3. Kapitel: Verfahren",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Elektronische Kommunikation in Verwaltungsverfahren"
+     "label": "1. Abschnitt: Elektronische Kommunikation in Verwaltungsverfahren",
+     "eId": "tit_3/chap_3/sec_1"
     }
    ],
    "marginalie": [],
@@ -5517,15 +5841,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Verfahren"
+     "label": "3. Kapitel: Verfahren",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verbandsbeschwerde gegen Verfügungen über Anlagen"
+     "label": "2. Abschnitt: Verbandsbeschwerde gegen Verfügungen über Anlagen",
+     "eId": "tit_3/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5558,15 +5885,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Verfahren"
+     "label": "3. Kapitel: Verfahren",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verbandsbeschwerde gegen Verfügungen über Anlagen"
+     "label": "2. Abschnitt: Verbandsbeschwerde gegen Verfügungen über Anlagen",
+     "eId": "tit_3/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5612,15 +5942,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Verfahren"
+     "label": "3. Kapitel: Verfahren",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verbandsbeschwerde gegen Verfügungen über Anlagen"
+     "label": "2. Abschnitt: Verbandsbeschwerde gegen Verfügungen über Anlagen",
+     "eId": "tit_3/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5666,15 +5999,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Verfahren"
+     "label": "3. Kapitel: Verfahren",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verbandsbeschwerde gegen Verfügungen über Anlagen"
+     "label": "2. Abschnitt: Verbandsbeschwerde gegen Verfügungen über Anlagen",
+     "eId": "tit_3/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5707,15 +6043,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Verfahren"
+     "label": "3. Kapitel: Verfahren",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verbandsbeschwerde gegen Verfügungen über Anlagen"
+     "label": "2. Abschnitt: Verbandsbeschwerde gegen Verfügungen über Anlagen",
+     "eId": "tit_3/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5748,15 +6087,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Verfahren"
+     "label": "3. Kapitel: Verfahren",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Verbandsbeschwerde gegen Bewilligungen von Organismen"
+     "label": "3. Abschnitt: Verbandsbeschwerde gegen Bewilligungen von Organismen",
+     "eId": "tit_3/chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -5788,15 +6130,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Vollzug, Förderung und Verfahren"
+     "label": "3. Titel: Vollzug, Förderung und Verfahren",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Verfahren"
+     "label": "3. Kapitel: Verfahren",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Behörden- und Gemeindebeschwerde, Enteignung, Kosten von Sicherungs- und Behebungsmassnahmen"
+     "label": "4. Abschnitt: Behörden- und Gemeindebeschwerde, Enteignung, Kosten von Sicherungs- und Behebungsmassnahmen",
+     "eId": "tit_3/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -5825,7 +6170,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Haftpflicht"
+     "label": "4. Titel: Haftpflicht",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -5932,7 +6278,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Haftpflicht"
+     "label": "4. Titel: Haftpflicht",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -5990,7 +6337,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Haftpflicht"
+     "label": "4. Titel: Haftpflicht",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -6019,7 +6367,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Haftpflicht"
+     "label": "4. Titel: Haftpflicht",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -6061,7 +6410,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Haftpflicht"
+     "label": "4. Titel: Haftpflicht",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -6090,7 +6440,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Strafbestimmungen"
+     "label": "5. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -6127,7 +6478,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Strafbestimmungen"
+     "label": "5. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -6164,7 +6516,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Strafbestimmungen"
+     "label": "5. Titel: Strafbestimmungen",
+     "eId": "tit_5"
     }
    ],
    "marginalie": [
@@ -6193,7 +6546,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schlussbestimmungen"
+     "label": "6. Titel: Schlussbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "142.201",
   "titel": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit",
@@ -69,7 +69,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -131,7 +132,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -142,7 +144,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -153,7 +156,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -178,11 +182,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren"
+     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Verfahrensbestimmungen"
+     "label": "1. Abschnitt: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -207,11 +213,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren"
+     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Verfahrensbestimmungen"
+     "label": "1. Abschnitt: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -222,11 +230,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren"
+     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Verfahrensbestimmungen"
+     "label": "1. Abschnitt: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -237,11 +247,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren"
+     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Verfahrensbestimmungen"
+     "label": "1. Abschnitt: Allgemeine Verfahrensbestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -279,11 +291,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren"
+     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anmelde- und Bewilligungsverfahren bei Aufenthalt ohne Erwerbstätigkeit"
+     "label": "2. Abschnitt: Anmelde- und Bewilligungsverfahren bei Aufenthalt ohne Erwerbstätigkeit",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -294,11 +308,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren"
+     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anmelde- und Bewilligungsverfahren bei Aufenthalt ohne Erwerbstätigkeit"
+     "label": "2. Abschnitt: Anmelde- und Bewilligungsverfahren bei Aufenthalt ohne Erwerbstätigkeit",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -309,11 +325,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren"
+     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Anmelde- und Bewilligungsverfahren bei Aufenthalt ohne Erwerbstätigkeit"
+     "label": "2. Abschnitt: Anmelde- und Bewilligungsverfahren bei Aufenthalt ohne Erwerbstätigkeit",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -339,11 +357,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren"
+     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anmelde- und Bewilligungsverfahren bei Aufenthalt mit Erwerbstätigkeit"
+     "label": "3. Abschnitt: Anmelde- und Bewilligungsverfahren bei Aufenthalt mit Erwerbstätigkeit",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -380,11 +400,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren"
+     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anmelde- und Bewilligungsverfahren bei Aufenthalt mit Erwerbstätigkeit"
+     "label": "3. Abschnitt: Anmelde- und Bewilligungsverfahren bei Aufenthalt mit Erwerbstätigkeit",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -395,11 +417,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren"
+     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anmelde- und Bewilligungsverfahren bei Aufenthalt mit Erwerbstätigkeit"
+     "label": "3. Abschnitt: Anmelde- und Bewilligungsverfahren bei Aufenthalt mit Erwerbstätigkeit",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -437,11 +461,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren"
+     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Allgemeine Anmelde- und Abmeldebestimmungen"
+     "label": "4. Abschnitt: Allgemeine Anmelde- und Abmeldebestimmungen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -452,11 +478,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren"
+     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Allgemeine Anmelde- und Abmeldebestimmungen"
+     "label": "4. Abschnitt: Allgemeine Anmelde- und Abmeldebestimmungen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -467,11 +495,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren"
+     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Allgemeine Anmelde- und Abmeldebestimmungen"
+     "label": "4. Abschnitt: Allgemeine Anmelde- und Abmeldebestimmungen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -482,11 +512,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren"
+     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Allgemeine Anmelde- und Abmeldebestimmungen"
+     "label": "4. Abschnitt: Allgemeine Anmelde- und Abmeldebestimmungen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -497,11 +529,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit"
+     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -576,11 +610,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit"
+     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -655,11 +691,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit"
+     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -685,11 +723,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit"
+     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -700,11 +740,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aus- und Weiterbildung"
+     "label": "2. Abschnitt: Aus- und Weiterbildung",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -753,11 +795,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aus- und Weiterbildung"
+     "label": "2. Abschnitt: Aus- und Weiterbildung",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -768,11 +812,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rentnerinnen und Rentner"
+     "label": "3. Abschnitt: Rentnerinnen und Rentner",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -812,11 +858,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -827,11 +875,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -842,11 +892,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [],
@@ -869,11 +921,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -935,11 +989,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1001,11 +1057,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1102,11 +1160,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1131,11 +1191,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1146,11 +1208,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [],
@@ -1173,11 +1237,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1238,11 +1304,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1267,11 +1335,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1282,11 +1352,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1297,11 +1369,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1312,11 +1386,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1327,11 +1403,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1342,11 +1420,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1371,11 +1451,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1386,11 +1468,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1401,11 +1485,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1416,11 +1502,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1431,11 +1519,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [],
@@ -1458,11 +1548,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1500,11 +1592,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1529,11 +1623,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1571,11 +1667,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1586,11 +1684,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1653,11 +1753,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1682,11 +1784,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Änderung des Aufenthaltszwecks"
+     "label": "5. Abschnitt: Änderung des Aufenthaltszwecks",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": []
@@ -1695,11 +1799,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kurzaufenthaltsbewilligungen"
+     "label": "1. Abschnitt: Kurzaufenthaltsbewilligungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1710,11 +1816,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kurzaufenthaltsbewilligungen"
+     "label": "1. Abschnitt: Kurzaufenthaltsbewilligungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1739,11 +1847,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Kurzaufenthaltsbewilligungen"
+     "label": "1. Abschnitt: Kurzaufenthaltsbewilligungen",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1768,11 +1878,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufenthaltsbewilligungen"
+     "label": "2. Abschnitt: Aufenthaltsbewilligungen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1783,11 +1895,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufenthaltsbewilligungen"
+     "label": "2. Abschnitt: Aufenthaltsbewilligungen",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1798,11 +1912,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Niederlassungsbewilligungen"
+     "label": "3. Abschnitt: Niederlassungsbewilligungen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1827,11 +1943,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Niederlassungsbewilligungen"
+     "label": "3. Abschnitt: Niederlassungsbewilligungen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1856,11 +1974,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Niederlassungsbewilligungen"
+     "label": "3. Abschnitt: Niederlassungsbewilligungen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1909,11 +2029,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Niederlassungsbewilligungen"
+     "label": "3. Abschnitt: Niederlassungsbewilligungen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1938,11 +2060,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Erwerbstätige Asylsuchende, Schutzbedürftige, vorläufig Aufgenommene, Flüchtlinge und Staatenlose"
+     "label": "4. Abschnitt: Erwerbstätige Asylsuchende, Schutzbedürftige, vorläufig Aufgenommene, Flüchtlinge und Staatenlose",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2016,11 +2140,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Erwerbstätige Asylsuchende, Schutzbedürftige, vorläufig Aufgenommene, Flüchtlinge und Staatenlose"
+     "label": "4. Abschnitt: Erwerbstätige Asylsuchende, Schutzbedürftige, vorläufig Aufgenommene, Flüchtlinge und Staatenlose",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -2155,11 +2281,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen"
+     "label": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -2185,11 +2313,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen"
+     "label": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -2200,11 +2330,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen"
+     "label": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -2241,11 +2373,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen"
+     "label": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -2284,11 +2418,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen"
+     "label": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -2339,7 +2475,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Ausländerausweis"
+     "label": "5. Kapitel: Ausländerausweis",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2377,7 +2514,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Ausländerausweis"
+     "label": "5. Kapitel: Ausländerausweis",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2388,7 +2526,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Familiennachzug"
+     "label": "6. Kapitel: Familiennachzug",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2399,7 +2538,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Familiennachzug"
+     "label": "6. Kapitel: Familiennachzug",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2449,7 +2589,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Familiennachzug"
+     "label": "6. Kapitel: Familiennachzug",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2460,7 +2601,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Familiennachzug"
+     "label": "6. Kapitel: Familiennachzug",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2471,7 +2613,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Familiennachzug"
+     "label": "6. Kapitel: Familiennachzug",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2496,7 +2639,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Beendigung des Aufenthalts"
+     "label": "7. Kapitel: Beendigung des Aufenthalts",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2522,7 +2666,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Beendigung des Aufenthalts"
+     "label": "7. Kapitel: Beendigung des Aufenthalts",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2533,7 +2678,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Beendigung des Aufenthalts"
+     "label": "7. Kapitel: Beendigung des Aufenthalts",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -2556,7 +2702,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Beendigung des Aufenthalts"
+     "label": "7. Kapitel: Beendigung des Aufenthalts",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2567,7 +2714,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe"
+     "label": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2617,7 +2765,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Arbeitsmarktlicher Vorentscheid und Zustimmungsverfahren"
+     "label": "9. Kapitel: Arbeitsmarktlicher Vorentscheid und Zustimmungsverfahren",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2642,7 +2791,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Arbeitsmarktlicher Vorentscheid und Zustimmungsverfahren"
+     "label": "9. Kapitel: Arbeitsmarktlicher Vorentscheid und Zustimmungsverfahren",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2653,7 +2803,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Arbeitsmarktlicher Vorentscheid und Zustimmungsverfahren"
+     "label": "9. Kapitel: Arbeitsmarktlicher Vorentscheid und Zustimmungsverfahren",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2702,7 +2853,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Arbeitsmarktlicher Vorentscheid und Zustimmungsverfahren"
+     "label": "9. Kapitel: Arbeitsmarktlicher Vorentscheid und Zustimmungsverfahren",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2727,7 +2879,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Datenschutz"
+     "label": "10. Kapitel: Datenschutz",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -3028,7 +3181,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Zuständigkeiten, Mitteilungen und Fristen"
+     "label": "11. Kapitel: Zuständigkeiten, Mitteilungen und Fristen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3039,7 +3193,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Zuständigkeiten, Mitteilungen und Fristen"
+     "label": "11. Kapitel: Zuständigkeiten, Mitteilungen und Fristen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3050,7 +3205,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Zuständigkeiten, Mitteilungen und Fristen"
+     "label": "11. Kapitel: Zuständigkeiten, Mitteilungen und Fristen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3061,7 +3217,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -3294,7 +3451,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -3305,11 +3463,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren"
+     "label": "2. Kapitel: Anmelde- und Bewilligungsverfahren",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Anmelde- und Bewilligungsverfahren bei Aufenthalt mit Erwerbstätigkeit"
+     "label": "3. Abschnitt: Anmelde- und Bewilligungsverfahren bei Aufenthalt mit Erwerbstätigkeit",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -3334,11 +3494,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit"
+     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3363,11 +3525,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit"
+     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3442,11 +3606,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit"
+     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3484,7 +3650,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich und Begriffe"
+     "label": "1. Kapitel: Geltungsbereich und Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -3537,11 +3704,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit"
+     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3596,11 +3765,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit"
+     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3639,11 +3810,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit"
+     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3681,11 +3854,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit"
+     "label": "1. Abschnitt: Zulassung zu einem Aufenthalt mit Erwerbstätigkeit",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -3710,11 +3885,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -3775,11 +3952,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -3829,11 +4008,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Zulassung"
+     "label": "3. Kapitel: Zulassung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen"
+     "label": "4. Abschnitt: Abweichungen von den Zulassungsvoraussetzungen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -3862,11 +4043,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Niederlassungsbewilligungen"
+     "label": "3. Abschnitt: Niederlassungsbewilligungen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3891,11 +4074,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Niederlassungsbewilligungen"
+     "label": "3. Abschnitt: Niederlassungsbewilligungen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3920,11 +4105,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Erwerbstätige Asylsuchende, Schutzbedürftige, vorläufig Aufgenommene, Flüchtlinge und Staatenlose"
+     "label": "4. Abschnitt: Erwerbstätige Asylsuchende, Schutzbedürftige, vorläufig Aufgenommene, Flüchtlinge und Staatenlose",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -3953,11 +4140,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Erwerbstätige Asylsuchende, Schutzbedürftige, vorläufig Aufgenommene, Flüchtlinge und Staatenlose"
+     "label": "4. Abschnitt: Erwerbstätige Asylsuchende, Schutzbedürftige, vorläufig Aufgenommene, Flüchtlinge und Staatenlose",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -3994,11 +4183,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Erwerbstätige Asylsuchende, Schutzbedürftige, vorläufig Aufgenommene, Flüchtlinge und Staatenlose"
+     "label": "4. Abschnitt: Erwerbstätige Asylsuchende, Schutzbedürftige, vorläufig Aufgenommene, Flüchtlinge und Staatenlose",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -4048,11 +4239,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Regelung des Aufenthalts"
+     "label": "4. Kapitel: Regelung des Aufenthalts",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen"
+     "label": "5. Abschnitt: Örtlicher Geltungsbereich der Bewilligungen und Kantonswechsel von vorläufig aufgenommenen Personen",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [
@@ -4077,7 +4270,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Ausländerausweis"
+     "label": "5. Kapitel: Ausländerausweis",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4139,7 +4333,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Ausländerausweis"
+     "label": "5. Kapitel: Ausländerausweis",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4243,7 +4438,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Ausländerausweis"
+     "label": "5. Kapitel: Ausländerausweis",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4264,7 +4460,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Ausländerausweis"
+     "label": "5. Kapitel: Ausländerausweis",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4412,7 +4609,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Ausländerausweis"
+     "label": "5. Kapitel: Ausländerausweis",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4449,7 +4647,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Ausländerausweis"
+     "label": "5. Kapitel: Ausländerausweis",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4460,7 +4659,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Ausländerausweis"
+     "label": "5. Kapitel: Ausländerausweis",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4497,7 +4697,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Ausländerausweis"
+     "label": "5. Kapitel: Ausländerausweis",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4508,7 +4709,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Ausländerausweis"
+     "label": "5. Kapitel: Ausländerausweis",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4533,7 +4735,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Ausländerausweis"
+     "label": "5. Kapitel: Ausländerausweis",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4565,7 +4768,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Kapitel: Stelle zur Ausfertigung des biometrischen Ausländerausweises"
+     "label": "5a. Kapitel: Stelle zur Ausfertigung des biometrischen Ausländerausweises",
+     "eId": "chap_5_a"
     }
    ],
    "marginalie": [
@@ -4603,7 +4807,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Kapitel: Stelle zur Ausfertigung des biometrischen Ausländerausweises"
+     "label": "5a. Kapitel: Stelle zur Ausfertigung des biometrischen Ausländerausweises",
+     "eId": "chap_5_a"
     }
    ],
    "marginalie": [
@@ -4629,7 +4834,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Familiennachzug"
+     "label": "6. Kapitel: Familiennachzug",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4654,7 +4860,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Familiennachzug"
+     "label": "6. Kapitel: Familiennachzug",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4679,7 +4886,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Familiennachzug"
+     "label": "6. Kapitel: Familiennachzug",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -4728,7 +4936,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Integrationskriterien"
+     "label": "6a. Kapitel: Integrationskriterien",
+     "eId": "chap_6_a"
     }
    ],
    "marginalie": [
@@ -4754,7 +4963,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Integrationskriterien"
+     "label": "6a. Kapitel: Integrationskriterien",
+     "eId": "chap_6_a"
     }
    ],
    "marginalie": [
@@ -4781,7 +4991,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Integrationskriterien"
+     "label": "6a. Kapitel: Integrationskriterien",
+     "eId": "chap_6_a"
     }
    ],
    "marginalie": [
@@ -4792,7 +5003,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Integrationskriterien"
+     "label": "6a. Kapitel: Integrationskriterien",
+     "eId": "chap_6_a"
     }
    ],
    "marginalie": [
@@ -4803,7 +5015,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Integrationskriterien"
+     "label": "6a. Kapitel: Integrationskriterien",
+     "eId": "chap_6_a"
     }
    ],
    "marginalie": [
@@ -4814,7 +5027,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Integrationskriterien"
+     "label": "6a. Kapitel: Integrationskriterien",
+     "eId": "chap_6_a"
     }
    ],
    "marginalie": [
@@ -4839,7 +5053,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Integrationskriterien"
+     "label": "6a. Kapitel: Integrationskriterien",
+     "eId": "chap_6_a"
     }
    ],
    "marginalie": [
@@ -4865,7 +5080,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe"
+     "label": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4890,7 +5106,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe"
+     "label": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4915,7 +5132,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe"
+     "label": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4977,7 +5195,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe"
+     "label": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -5015,7 +5234,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe"
+     "label": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -5040,7 +5260,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe"
+     "label": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -5078,7 +5299,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe"
+     "label": "8. Kapitel: Meldepflichten, Amtshilfe und Datenbekanntgabe",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [],
@@ -5105,7 +5327,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Arbeitsmarktlicher Vorentscheid und Zustimmungsverfahren"
+     "label": "9. Kapitel: Arbeitsmarktlicher Vorentscheid und Zustimmungsverfahren",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -5167,7 +5390,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10a. Kapitel: Eurodac"
+     "label": "10a. Kapitel: Eurodac",
+     "eId": "chap_10_a"
     }
    ],
    "marginalie": [
@@ -5218,7 +5442,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10a. Kapitel: Eurodac"
+     "label": "10a. Kapitel: Eurodac",
+     "eId": "chap_10_a"
     }
    ],
    "marginalie": [
@@ -5257,7 +5482,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10a. Kapitel: Eurodac"
+     "label": "10a. Kapitel: Eurodac",
+     "eId": "chap_10_a"
     }
    ],
    "marginalie": [],
@@ -5280,7 +5506,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10a. Kapitel: Eurodac"
+     "label": "10a. Kapitel: Eurodac",
+     "eId": "chap_10_a"
     }
    ],
    "marginalie": [
@@ -5307,7 +5534,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10a. Kapitel: Eurodac"
+     "label": "10a. Kapitel: Eurodac",
+     "eId": "chap_10_a"
     }
    ],
    "marginalie": [
@@ -5346,7 +5574,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Zuständigkeiten, Mitteilungen und Fristen"
+     "label": "11. Kapitel: Zuständigkeiten, Mitteilungen und Fristen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5419,7 +5648,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Zuständigkeiten, Mitteilungen und Fristen"
+     "label": "11. Kapitel: Zuständigkeiten, Mitteilungen und Fristen",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -5462,7 +5692,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11a. Kapitel: Strafbestimmungen"
+     "label": "11a. Kapitel: Strafbestimmungen",
+     "eId": "chap_11_a"
     }
    ],
    "marginalie": [],
@@ -5498,7 +5729,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [],
@@ -5525,7 +5757,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [],
@@ -5552,7 +5785,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -5590,7 +5824,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Schlussbestimmungen"
+     "label": "12. Kapitel: Schlussbestimmungen",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [

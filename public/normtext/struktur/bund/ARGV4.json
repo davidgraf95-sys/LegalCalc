@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "822.114",
   "titel": "Verordnung 4 zum Arbeitsgesetz (ArGV 4)",
@@ -66,7 +66,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [],
@@ -226,11 +227,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -269,11 +272,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -284,11 +289,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Arbeitsräume"
+     "label": "2. Abschnitt: Arbeitsräume",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -314,11 +321,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Arbeitsräume"
+     "label": "2. Abschnitt: Arbeitsräume",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -329,11 +338,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verkehrswege"
+     "label": "3. Abschnitt: Verkehrswege",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -359,11 +370,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verkehrswege"
+     "label": "3. Abschnitt: Verkehrswege",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -388,11 +401,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verkehrswege"
+     "label": "3. Abschnitt: Verkehrswege",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -441,11 +456,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verkehrswege"
+     "label": "3. Abschnitt: Verkehrswege",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -482,11 +499,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verkehrswege"
+     "label": "3. Abschnitt: Verkehrswege",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -511,11 +530,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verkehrswege"
+     "label": "3. Abschnitt: Verkehrswege",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -526,11 +547,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verkehrswege"
+     "label": "3. Abschnitt: Verkehrswege",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -541,11 +564,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verkehrswege"
+     "label": "3. Abschnitt: Verkehrswege",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -556,11 +581,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verkehrswege"
+     "label": "3. Abschnitt: Verkehrswege",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -571,11 +598,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verkehrswege"
+     "label": "3. Abschnitt: Verkehrswege",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -586,11 +615,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verkehrswege"
+     "label": "3. Abschnitt: Verkehrswege",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -601,11 +632,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Licht, Raumluft"
+     "label": "4. Abschnitt: Licht, Raumluft",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -631,11 +664,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Licht, Raumluft"
+     "label": "4. Abschnitt: Licht, Raumluft",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -646,11 +681,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Betriebe mit besonderen Gefahren"
+     "label": "5. Abschnitt: Betriebe mit besonderen Gefahren",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -688,11 +725,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Betriebe mit besonderen Gefahren"
+     "label": "5. Abschnitt: Betriebe mit besonderen Gefahren",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -717,11 +756,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Betriebe mit besonderen Gefahren"
+     "label": "5. Abschnitt: Betriebe mit besonderen Gefahren",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -746,11 +787,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Betriebe mit besonderen Gefahren"
+     "label": "5. Abschnitt: Betriebe mit besonderen Gefahren",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -775,11 +818,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Betriebe mit besonderen Gefahren"
+     "label": "5. Abschnitt: Betriebe mit besonderen Gefahren",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -804,11 +849,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Betriebe mit besonderen Gefahren"
+     "label": "5. Abschnitt: Betriebe mit besonderen Gefahren",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -833,11 +880,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Betriebe mit besonderen Gefahren"
+     "label": "5. Abschnitt: Betriebe mit besonderen Gefahren",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [
@@ -862,11 +911,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Richtlinien und Ausnahmebewilligungen"
+     "label": "6. Abschnitt: Richtlinien und Ausnahmebewilligungen",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -904,11 +955,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht"
+     "label": "2. Kapitel: Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Richtlinien und Ausnahmebewilligungen"
+     "label": "6. Abschnitt: Richtlinien und Ausnahmebewilligungen",
+     "eId": "chap_2/sec_6"
     }
    ],
    "marginalie": [
@@ -945,11 +998,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Industrielle Betriebe"
+     "label": "3. Kapitel: Industrielle Betriebe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -983,11 +1038,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Industrielle Betriebe"
+     "label": "3. Kapitel: Industrielle Betriebe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -998,11 +1055,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Industrielle Betriebe"
+     "label": "3. Kapitel: Industrielle Betriebe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1013,11 +1072,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Industrielle Betriebe"
+     "label": "3. Kapitel: Industrielle Betriebe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1028,11 +1089,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Industrielle Betriebe"
+     "label": "3. Kapitel: Industrielle Betriebe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Unterstellungsverfahren"
+     "label": "2. Abschnitt: Unterstellungsverfahren",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1057,11 +1120,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Industrielle Betriebe"
+     "label": "3. Kapitel: Industrielle Betriebe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Unterstellungsverfahren"
+     "label": "2. Abschnitt: Unterstellungsverfahren",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1086,11 +1151,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Industrielle Betriebe"
+     "label": "3. Kapitel: Industrielle Betriebe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Unterstellungsverfahren"
+     "label": "2. Abschnitt: Unterstellungsverfahren",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1115,11 +1182,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Industrielle Betriebe"
+     "label": "3. Kapitel: Industrielle Betriebe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Unterstellungsverfahren"
+     "label": "2. Abschnitt: Unterstellungsverfahren",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1144,11 +1213,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Industrielle Betriebe"
+     "label": "3. Kapitel: Industrielle Betriebe",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Unterstellungsverfahren"
+     "label": "2. Abschnitt: Unterstellungsverfahren",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1173,11 +1244,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
+     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Plangenehmigungsverfahren"
+     "label": "1. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1223,11 +1296,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
+     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Plangenehmigungsverfahren"
+     "label": "1. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1238,11 +1313,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
+     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Plangenehmigungsverfahren"
+     "label": "1. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1253,11 +1330,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
+     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Plangenehmigungsverfahren"
+     "label": "1. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1282,11 +1361,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
+     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Plangenehmigungsverfahren"
+     "label": "1. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1349,11 +1430,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
+     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Betriebsbewilligungsverfahren"
+     "label": "2. Abschnitt: Betriebsbewilligungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1364,11 +1447,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
+     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Betriebsbewilligungsverfahren"
+     "label": "2. Abschnitt: Betriebsbewilligungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1393,11 +1478,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
+     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Betriebsbewilligungsverfahren"
+     "label": "2. Abschnitt: Betriebsbewilligungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1434,11 +1521,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
+     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Bestimmungen"
+     "label": "3. Abschnitt: Besondere Bestimmungen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1449,11 +1538,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung"
+     "label": "4. Kapitel: Plangenehmigung und Betriebsbewilligung",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Besondere Bestimmungen"
+     "label": "3. Abschnitt: Besondere Bestimmungen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1464,7 +1555,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1498,7 +1590,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [

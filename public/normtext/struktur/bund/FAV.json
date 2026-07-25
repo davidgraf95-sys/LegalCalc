@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "784.101.2",
   "titel": "Verordnung über Fernmeldeanlagen",
@@ -67,7 +67,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -78,7 +79,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -139,7 +141,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -159,7 +162,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -179,7 +183,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -199,11 +204,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Konformität"
+     "label": "1. Abschnitt: Konformität",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -228,11 +235,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Konformität"
+     "label": "1. Abschnitt: Konformität",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -317,11 +326,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Konformität"
+     "label": "1. Abschnitt: Konformität",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -346,11 +357,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Konformität"
+     "label": "1. Abschnitt: Konformität",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -361,11 +374,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Konformität"
+     "label": "1. Abschnitt: Konformität",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -376,11 +391,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Konformität"
+     "label": "1. Abschnitt: Konformität",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -400,11 +417,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konformitätsbewertung"
+     "label": "2. Abschnitt: Konformitätsbewertung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -415,11 +434,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konformitätsbewertung"
+     "label": "2. Abschnitt: Konformitätsbewertung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -444,11 +465,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konformitätsbewertung"
+     "label": "2. Abschnitt: Konformitätsbewertung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -473,11 +496,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konformitätsbewertung"
+     "label": "2. Abschnitt: Konformitätsbewertung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -488,11 +513,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konformitätsbewertung"
+     "label": "2. Abschnitt: Konformitätsbewertung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -517,11 +544,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Konformitätsbewertung"
+     "label": "2. Abschnitt: Konformitätsbewertung",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -546,11 +575,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationen"
+     "label": "3. Abschnitt: Informationen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -575,11 +606,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationen"
+     "label": "3. Abschnitt: Informationen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -628,11 +661,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Informationen"
+     "label": "3. Abschnitt: Informationen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -658,11 +693,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Allgemeine Pflichten der Wirtschaftsakteurinnen"
+     "label": "4. Abschnitt: Allgemeine Pflichten der Wirtschaftsakteurinnen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -687,11 +724,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Allgemeine Pflichten der Wirtschaftsakteurinnen"
+     "label": "4. Abschnitt: Allgemeine Pflichten der Wirtschaftsakteurinnen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -702,11 +741,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Allgemeine Pflichten der Wirtschaftsakteurinnen"
+     "label": "4. Abschnitt: Allgemeine Pflichten der Wirtschaftsakteurinnen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -743,11 +784,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Allgemeine Pflichten der Wirtschaftsakteurinnen"
+     "label": "4. Abschnitt: Allgemeine Pflichten der Wirtschaftsakteurinnen",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -772,7 +815,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausnahmen"
+     "label": "3. Kapitel: Ausnahmen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -886,11 +930,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Besondere Bestimmungen"
+     "label": "4. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Funkanlagen, die zur Wahrung der öffentlichen Sicherheit von Behörden betrieben werden"
+     "label": "1. Abschnitt: Funkanlagen, die zur Wahrung der öffentlichen Sicherheit von Behörden betrieben werden",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -927,11 +973,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Besondere Bestimmungen"
+     "label": "4. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Funkanlagen, die zur Wahrung der öffentlichen Sicherheit von Behörden betrieben werden"
+     "label": "1. Abschnitt: Funkanlagen, die zur Wahrung der öffentlichen Sicherheit von Behörden betrieben werden",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1004,11 +1052,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Besondere Bestimmungen"
+     "label": "4. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Funkanlagen, die zur Wahrung der öffentlichen Sicherheit von Behörden betrieben werden"
+     "label": "1. Abschnitt: Funkanlagen, die zur Wahrung der öffentlichen Sicherheit von Behörden betrieben werden",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1046,11 +1096,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Besondere Bestimmungen"
+     "label": "4. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Messe und Vorführung"
+     "label": "2. Abschnitt: Messe und Vorführung",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -1109,7 +1161,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bereitstellung auf dem Markt und Vorführung von neuen leitungsgebundenen Fernmeldeanlagen"
+     "label": "5. Kapitel: Bereitstellung auf dem Markt und Vorführung von neuen leitungsgebundenen Fernmeldeanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1158,7 +1211,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Bereitstellung auf dem Markt und Vorführung von neuen leitungsgebundenen Fernmeldeanlagen"
+     "label": "5. Kapitel: Bereitstellung auf dem Markt und Vorführung von neuen leitungsgebundenen Fernmeldeanlagen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1195,7 +1249,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Inbetriebnahme, Erstellen und Betreiben von Fernmeldeanlagen"
+     "label": "6. Kapitel: Inbetriebnahme, Erstellen und Betreiben von Fernmeldeanlagen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1220,7 +1275,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Inbetriebnahme, Erstellen und Betreiben von Fernmeldeanlagen"
+     "label": "6. Kapitel: Inbetriebnahme, Erstellen und Betreiben von Fernmeldeanlagen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1231,7 +1287,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bereitstellung auf dem Markt, Erstellen und Betreiben von gebrauchten Fernmeldeanlagen"
+     "label": "7. Kapitel: Bereitstellung auf dem Markt, Erstellen und Betreiben von gebrauchten Fernmeldeanlagen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -1242,7 +1299,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Bereitstellung auf dem Markt, Erstellen und Betreiben von gebrauchten Fernmeldeanlagen"
+     "label": "7. Kapitel: Bereitstellung auf dem Markt, Erstellen und Betreiben von gebrauchten Fernmeldeanlagen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -1253,7 +1311,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Kontrolle"
+     "label": "8. Kapitel: Kontrolle",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1306,7 +1365,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Kontrolle"
+     "label": "8. Kapitel: Kontrolle",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1317,7 +1377,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Kontrolle"
+     "label": "8. Kapitel: Kontrolle",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1328,7 +1389,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Kontrolle"
+     "label": "8. Kapitel: Kontrolle",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1365,7 +1427,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Kontrolle"
+     "label": "8. Kapitel: Kontrolle",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1376,7 +1439,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -1387,7 +1451,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -1453,7 +1518,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -1478,7 +1544,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -1631,7 +1698,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -1642,11 +1710,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt"
+     "label": "2. Kapitel: Bereitstellung von neuen Funkanlagen auf dem Markt",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Kombiniertes Angebot von Funkanlagen und Ladenetzteilen"
+     "label": "5. Abschnitt: Kombiniertes Angebot von Funkanlagen und Ladenetzteilen",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [],
@@ -1670,11 +1740,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Besondere Bestimmungen"
+     "label": "4. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Funkanlagen, die zur Wahrung der öffentlichen Sicherheit von Behörden betrieben werden"
+     "label": "1. Abschnitt: Funkanlagen, die zur Wahrung der öffentlichen Sicherheit von Behörden betrieben werden",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1716,11 +1788,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Besondere Bestimmungen"
+     "label": "4. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Funkanlagen, die zur Wahrung der öffentlichen Sicherheit von Behörden betrieben werden"
+     "label": "1. Abschnitt: Funkanlagen, die zur Wahrung der öffentlichen Sicherheit von Behörden betrieben werden",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -1743,11 +1817,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Besondere Bestimmungen"
+     "label": "4. Kapitel: Besondere Bestimmungen",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Funkanlagen, die durch die Armee oder den Zivilschutz in Frequenzbereichen betrieben werden, die sowohl für militärische als auch zivile Nutzungen vorgesehen sind"
+     "label": "3. Abschnitt: Funkanlagen, die durch die Armee oder den Zivilschutz in Frequenzbereichen betrieben werden, die sowohl für militärische als auch zivile Nutzungen vorgesehen sind",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [],
@@ -1784,7 +1860,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [

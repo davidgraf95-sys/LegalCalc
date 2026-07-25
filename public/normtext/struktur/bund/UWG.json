@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "241",
   "titel": "Bundesgesetz gegen den unlauteren Wettbewerb",
@@ -78,7 +78,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Zweck"
+     "label": "1. Kapitel: Zweck",
+     "eId": "chap_1"
     }
    ],
    "marginalie": []
@@ -87,11 +88,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen"
+     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs"
+     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -102,11 +105,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen"
+     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs"
+     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -387,11 +392,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen"
+     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs"
+     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -440,11 +447,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen"
+     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs"
+     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -455,11 +464,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen"
+     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs"
+     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -470,11 +481,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen"
+     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs"
+     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -485,11 +498,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen"
+     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs"
+     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -518,11 +533,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen"
+     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Prozessrechtliche Bestimmungen"
+     "label": "2. Abschnitt: Prozessrechtliche Bestimmungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -581,11 +598,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen"
+     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Prozessrechtliche Bestimmungen"
+     "label": "2. Abschnitt: Prozessrechtliche Bestimmungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -695,11 +714,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen"
+     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Prozessrechtliche Bestimmungen"
+     "label": "2. Abschnitt: Prozessrechtliche Bestimmungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -710,7 +731,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verwaltungsrechtliche Bestimmungen"
+     "label": "3. Kapitel: Verwaltungsrechtliche Bestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -756,7 +778,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verwaltungsrechtliche Bestimmungen"
+     "label": "3. Kapitel: Verwaltungsrechtliche Bestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -767,7 +790,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verwaltungsrechtliche Bestimmungen"
+     "label": "3. Kapitel: Verwaltungsrechtliche Bestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -778,7 +802,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verwaltungsrechtliche Bestimmungen"
+     "label": "3. Kapitel: Verwaltungsrechtliche Bestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -833,7 +858,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verwaltungsrechtliche Bestimmungen"
+     "label": "3. Kapitel: Verwaltungsrechtliche Bestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -844,7 +870,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Zusammenarbeit mit ausländischen Aufsichtsbehörden"
+     "label": "3a. Kapitel: Zusammenarbeit mit ausländischen Aufsichtsbehörden",
+     "eId": "chap_3_a"
     }
    ],
    "marginalie": [
@@ -874,7 +901,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Zusammenarbeit mit ausländischen Aufsichtsbehörden"
+     "label": "3a. Kapitel: Zusammenarbeit mit ausländischen Aufsichtsbehörden",
+     "eId": "chap_3_a"
     }
    ],
    "marginalie": [
@@ -916,7 +944,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -977,7 +1006,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1039,7 +1069,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [],
@@ -1066,7 +1097,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1093,7 +1125,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1134,7 +1167,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1164,7 +1198,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Schlussbestimmungen"
+     "label": "5. Kapitel: Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1184,11 +1219,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen"
+     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Prozessrechtliche Bestimmungen"
+     "label": "2. Abschnitt: Prozessrechtliche Bestimmungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [],
@@ -1215,11 +1252,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen"
+     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Prozessrechtliche Bestimmungen"
+     "label": "2. Abschnitt: Prozessrechtliche Bestimmungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1264,11 +1303,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen"
+     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Prozessrechtliche Bestimmungen"
+     "label": "2. Abschnitt: Prozessrechtliche Bestimmungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [],
@@ -1295,7 +1336,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Verwaltungsrechtliche Bestimmungen"
+     "label": "3. Kapitel: Verwaltungsrechtliche Bestimmungen",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1324,7 +1366,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Strafbestimmungen"
+     "label": "4. Kapitel: Strafbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1353,11 +1396,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen"
+     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs"
+     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1386,11 +1431,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen"
+     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs"
+     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1431,11 +1478,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen"
+     "label": "2. Kapitel: Zivil- und prozessrechtliche Bestimmungen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs"
+     "label": "1. Abschnitt: Widerrechtlichkeit des unlauteren Wettbewerbs",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [

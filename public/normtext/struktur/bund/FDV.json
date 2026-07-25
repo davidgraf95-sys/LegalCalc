@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "784.101.1",
   "titel": "Verordnung über Fernmeldedienste",
@@ -55,7 +55,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Begriffe"
+     "label": "1. Kapitel: Begriffe",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [],
@@ -90,7 +91,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -115,7 +117,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -140,7 +143,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -178,7 +182,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -203,7 +208,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -241,7 +247,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -266,7 +273,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -305,7 +313,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -342,7 +351,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -379,7 +389,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -417,11 +428,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundversorgungskonzession"
+     "label": "1. Abschnitt: Grundversorgungskonzession",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -432,11 +445,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundversorgungskonzession"
+     "label": "1. Abschnitt: Grundversorgungskonzession",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -447,11 +462,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundversorgungskonzession"
+     "label": "1. Abschnitt: Grundversorgungskonzession",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -462,11 +479,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -551,11 +570,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -580,11 +601,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -595,11 +618,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -624,11 +649,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -653,11 +680,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -682,11 +711,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -711,11 +742,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -740,11 +773,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -755,11 +790,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Finanzierung der Grundversorgung"
+     "label": "3. Abschnitt: Finanzierung der Grundversorgung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -808,11 +845,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Finanzierung der Grundversorgung"
+     "label": "3. Abschnitt: Finanzierung der Grundversorgung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -837,11 +876,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Finanzierung der Grundversorgung"
+     "label": "3. Abschnitt: Finanzierung der Grundversorgung",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -852,11 +893,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste"
+     "label": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -907,11 +950,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste"
+     "label": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -949,11 +994,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Standortidentifikation"
+     "label": "3. Abschnitt: Standortidentifikation",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -991,11 +1038,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Standortidentifikation"
+     "label": "3. Abschnitt: Standortidentifikation",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -1033,11 +1082,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Weitere Pflichten"
+     "label": "4. Abschnitt: Weitere Pflichten",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1075,11 +1126,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Weitere Pflichten"
+     "label": "4. Abschnitt: Weitere Pflichten",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1116,11 +1169,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Weitere Pflichten"
+     "label": "4. Abschnitt: Weitere Pflichten",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -1131,7 +1186,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Nummernportabilität"
+     "label": "4a. Kapitel: Nummernportabilität",
+     "eId": "chap_4_a"
     }
    ],
    "marginalie": [
@@ -1177,7 +1233,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Mehrwertdienste"
+     "label": "5. Kapitel: Mehrwertdienste",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1202,7 +1259,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Mehrwertdienste"
+     "label": "5. Kapitel: Mehrwertdienste",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1252,7 +1310,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Mehrwertdienste"
+     "label": "5. Kapitel: Mehrwertdienste",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1277,7 +1336,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Mehrwertdienste"
+     "label": "5. Kapitel: Mehrwertdienste",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1288,7 +1348,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Mehrwertdienste"
+     "label": "5. Kapitel: Mehrwertdienste",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1313,7 +1374,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Mehrwertdienste"
+     "label": "5. Kapitel: Mehrwertdienste",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1363,7 +1425,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Mehrwertdienste"
+     "label": "5. Kapitel: Mehrwertdienste",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1401,7 +1464,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlichtungsstelle"
+     "label": "6. Kapitel: Schlichtungsstelle",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1459,7 +1523,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlichtungsstelle"
+     "label": "6. Kapitel: Schlichtungsstelle",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1470,7 +1535,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlichtungsstelle"
+     "label": "6. Kapitel: Schlichtungsstelle",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1481,7 +1547,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlichtungsstelle"
+     "label": "6. Kapitel: Schlichtungsstelle",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1492,7 +1559,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlichtungsstelle"
+     "label": "6. Kapitel: Schlichtungsstelle",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1503,7 +1571,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlichtungsstelle"
+     "label": "6. Kapitel: Schlichtungsstelle",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1528,7 +1597,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlichtungsstelle"
+     "label": "6. Kapitel: Schlichtungsstelle",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1614,7 +1684,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlichtungsstelle"
+     "label": "6. Kapitel: Schlichtungsstelle",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1639,7 +1710,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlichtungsstelle"
+     "label": "6. Kapitel: Schlichtungsstelle",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1650,11 +1722,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1679,11 +1753,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1732,11 +1808,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1747,11 +1825,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1788,11 +1868,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1817,11 +1899,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1832,11 +1916,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -1847,11 +1933,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen"
+     "label": "2. Abschnitt: Besondere Bestimmungen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1888,11 +1976,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen"
+     "label": "2. Abschnitt: Besondere Bestimmungen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1929,11 +2019,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen"
+     "label": "2. Abschnitt: Besondere Bestimmungen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1958,11 +2050,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen"
+     "label": "2. Abschnitt: Besondere Bestimmungen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -1973,11 +2067,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -1988,11 +2084,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -2003,11 +2101,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -2018,11 +2118,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -2033,11 +2135,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -2048,11 +2152,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [],
@@ -2075,11 +2181,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -2128,11 +2236,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -2143,11 +2253,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -2158,11 +2270,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -2173,11 +2287,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -2188,7 +2304,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2214,7 +2331,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2225,7 +2343,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2236,7 +2355,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2247,7 +2367,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2272,7 +2393,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2310,7 +2432,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2374,7 +2497,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2412,7 +2536,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2450,7 +2575,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2548,7 +2674,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2559,7 +2686,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2570,7 +2698,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2581,7 +2710,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2618,7 +2748,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -2657,11 +2788,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sicherheitskommunikation"
+     "label": "1. Abschnitt: Sicherheitskommunikation",
+     "eId": "chap_10/sec_1"
     }
    ],
    "marginalie": [
@@ -2699,11 +2832,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sicherheitskommunikation"
+     "label": "1. Abschnitt: Sicherheitskommunikation",
+     "eId": "chap_10/sec_1"
     }
    ],
    "marginalie": [],
@@ -2726,11 +2861,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sicherheitskommunikation"
+     "label": "1. Abschnitt: Sicherheitskommunikation",
+     "eId": "chap_10/sec_1"
     }
    ],
    "marginalie": [
@@ -2780,11 +2917,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Sicherheitskommunikation"
+     "label": "1. Abschnitt: Sicherheitskommunikation",
+     "eId": "chap_10/sec_1"
     }
    ],
    "marginalie": [
@@ -2809,11 +2948,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einschränkung des Fernmeldeverkehrs"
+     "label": "2. Abschnitt: Einschränkung des Fernmeldeverkehrs",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -2850,11 +2991,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einschränkung des Fernmeldeverkehrs"
+     "label": "2. Abschnitt: Einschränkung des Fernmeldeverkehrs",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -2879,11 +3022,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Störungsmeldung"
+     "label": "3. Abschnitt: Störungsmeldung",
+     "eId": "chap_10/sec_3"
     }
    ],
    "marginalie": [],
@@ -2907,7 +3052,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Amtliche Fernmeldestatistik"
+     "label": "11. Kapitel: Amtliche Fernmeldestatistik",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2945,7 +3091,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Amtliche Fernmeldestatistik"
+     "label": "11. Kapitel: Amtliche Fernmeldestatistik",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2956,7 +3103,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Amtliche Fernmeldestatistik"
+     "label": "11. Kapitel: Amtliche Fernmeldestatistik",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2967,7 +3115,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Amtliche Fernmeldestatistik"
+     "label": "11. Kapitel: Amtliche Fernmeldestatistik",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2978,7 +3127,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Amtliche Fernmeldestatistik"
+     "label": "11. Kapitel: Amtliche Fernmeldestatistik",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -2989,7 +3139,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Amtliche Fernmeldestatistik"
+     "label": "11. Kapitel: Amtliche Fernmeldestatistik",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3000,7 +3151,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Amtliche Fernmeldestatistik"
+     "label": "11. Kapitel: Amtliche Fernmeldestatistik",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3011,7 +3163,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Teilnahme an den Aktivitäten der Internationalen Fernmeldeunion"
+     "label": "12. Kapitel: Teilnahme an den Aktivitäten der Internationalen Fernmeldeunion",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [],
@@ -3047,11 +3200,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Vollzug"
+     "label": "1. Abschnitt: Vollzug",
+     "eId": "chap_13/sec_1"
     }
    ],
    "marginalie": []
@@ -3060,11 +3215,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung und Änderung bisherigen Rechts"
+     "label": "2. Abschnitt: Aufhebung und Änderung bisherigen Rechts",
+     "eId": "chap_13/sec_2"
     }
    ],
    "marginalie": [
@@ -3118,11 +3275,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung und Änderung bisherigen Rechts"
+     "label": "2. Abschnitt: Aufhebung und Änderung bisherigen Rechts",
+     "eId": "chap_13/sec_2"
     }
    ],
    "marginalie": [
@@ -3148,11 +3307,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_3"
     }
    ],
    "marginalie": [],
@@ -3175,11 +3336,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Inkrafttreten"
+     "label": "4. Abschnitt: Inkrafttreten",
+     "eId": "chap_13/sec_4"
     }
    ],
    "marginalie": []
@@ -3188,11 +3351,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Aufhebung und Änderung bisherigen Rechts"
+     "label": "2. Abschnitt: Aufhebung und Änderung bisherigen Rechts",
+     "eId": "chap_13/sec_2"
     }
    ],
    "marginalie": [
@@ -3242,11 +3407,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_3"
     }
    ],
    "marginalie": [],
@@ -3273,11 +3440,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_3"
     }
    ],
    "marginalie": [
@@ -3302,11 +3471,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_3"
     }
    ],
    "marginalie": [
@@ -3331,11 +3502,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_3"
     }
    ],
    "marginalie": [
@@ -3360,11 +3533,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Übergangsbestimmungen"
+     "label": "3. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_13/sec_3"
     }
    ],
    "marginalie": [
@@ -3401,7 +3576,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3430,7 +3606,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3455,7 +3632,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3480,7 +3658,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3505,7 +3684,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3554,7 +3734,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste"
+     "label": "2. Kapitel: Gemeinsame Bestimmungen über Fernmeldedienste",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -3579,11 +3760,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Geltungsbereich"
+     "label": "1a. Abschnitt: Geltungsbereich",
+     "eId": "chap_3/sec_1_a"
     }
    ],
    "marginalie": [
@@ -3609,11 +3792,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1a. Abschnitt: Geltungsbereich"
+     "label": "1a. Abschnitt: Geltungsbereich",
+     "eId": "chap_3/sec_1_a"
     }
    ],
    "marginalie": [
@@ -3624,11 +3809,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3653,11 +3840,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Grundversorgung"
+     "label": "3. Kapitel: Grundversorgung",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin"
+     "label": "2. Abschnitt: Pflichten der Grundversorgungskonzessionärin",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3682,11 +3871,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Übermittlung von Nummern"
+     "label": "1. Abschnitt: Übermittlung von Nummern",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [],
@@ -3767,11 +3958,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste"
+     "label": "2. Abschnitt: Not-, Hilfs- und Beratungsdienste",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -3796,11 +3989,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Standortidentifikation"
+     "label": "3. Abschnitt: Standortidentifikation",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3853,11 +4048,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten"
+     "label": "4. Kapitel: Aus der Erbringung bestimmter Dienste abgeleitete Pflichten",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Standortidentifikation"
+     "label": "3. Abschnitt: Standortidentifikation",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -3934,7 +4131,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Nummernportabilität"
+     "label": "4a. Kapitel: Nummernportabilität",
+     "eId": "chap_4_a"
     }
    ],
    "marginalie": [
@@ -3959,7 +4157,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Nummernportabilität"
+     "label": "4a. Kapitel: Nummernportabilität",
+     "eId": "chap_4_a"
     }
    ],
    "marginalie": [
@@ -3984,7 +4183,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Nummernportabilität"
+     "label": "4a. Kapitel: Nummernportabilität",
+     "eId": "chap_4_a"
     }
    ],
    "marginalie": [
@@ -4009,7 +4209,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Nummernportabilität"
+     "label": "4a. Kapitel: Nummernportabilität",
+     "eId": "chap_4_a"
     }
    ],
    "marginalie": [
@@ -4034,7 +4235,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Nummernportabilität"
+     "label": "4a. Kapitel: Nummernportabilität",
+     "eId": "chap_4_a"
     }
    ],
    "marginalie": [
@@ -4059,7 +4261,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4b. Kapitel: Freie Wahl der Anbieterin für nationale und internationale Verbindungen"
+     "label": "4b. Kapitel: Freie Wahl der Anbieterin für nationale und internationale Verbindungen",
+     "eId": "chap_4_b"
     }
    ],
    "marginalie": [],
@@ -4083,7 +4286,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Mehrwertdienste"
+     "label": "5. Kapitel: Mehrwertdienste",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4133,7 +4337,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Mehrwertdienste"
+     "label": "5. Kapitel: Mehrwertdienste",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -4188,11 +4393,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4217,11 +4424,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4246,11 +4455,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -4275,11 +4486,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Besondere Bestimmungen"
+     "label": "2. Abschnitt: Besondere Bestimmungen",
+     "eId": "chap_7/sec_2"
     }
    ],
    "marginalie": [],
@@ -4302,11 +4515,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen"
+     "label": "7. Kapitel: Zugang zu den Einrichtungen und Diensten marktbeherrschender Anbieterinnen",
+     "eId": "chap_7"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren"
+     "label": "3. Abschnitt: Zugangsvereinbarungen und Verfahren",
+     "eId": "chap_7/sec_3"
     }
    ],
    "marginalie": [
@@ -4331,7 +4546,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4356,7 +4572,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4381,7 +4598,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung"
+     "label": "8. Kapitel: Inanspruchnahme von Grund und Boden im Gemeingebrauch, weitere Anschlüsse und Mitbenutzung",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -4406,7 +4624,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -4431,7 +4650,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz"
+     "label": "9. Kapitel: Fernmeldegeheimnis, Datenschutz sowie Kinder- und Jugendschutz",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -4456,11 +4676,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einschränkung des Fernmeldeverkehrs"
+     "label": "2. Abschnitt: Einschränkung des Fernmeldeverkehrs",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -4485,11 +4707,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Einschränkung des Fernmeldeverkehrs"
+     "label": "2. Abschnitt: Einschränkung des Fernmeldeverkehrs",
+     "eId": "chap_10/sec_2"
     }
    ],
    "marginalie": [
@@ -4514,11 +4738,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen"
+     "label": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen",
+     "eId": "chap_10/sec_4"
     }
    ],
    "marginalie": [
@@ -4544,11 +4770,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen"
+     "label": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen",
+     "eId": "chap_10/sec_4"
     }
    ],
    "marginalie": [
@@ -4559,11 +4787,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen"
+     "label": "4. Abschnitt: Unbefugte Manipulation von Fernmeldeanlagen",
+     "eId": "chap_10/sec_4"
     }
    ],
    "marginalie": [
@@ -4588,11 +4818,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen"
+     "label": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen",
+     "eId": "chap_10/sec_5"
     }
    ],
    "marginalie": [
@@ -4618,11 +4850,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen"
+     "label": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen",
+     "eId": "chap_10/sec_5"
     }
    ],
    "marginalie": [
@@ -4633,11 +4867,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen"
+     "label": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen",
+     "eId": "chap_10/sec_5"
     }
    ],
    "marginalie": [
@@ -4648,11 +4884,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen"
+     "label": "5. Abschnitt: Sicherheit von Netzen und Diensten der Mobilfunkkonzessionärinnen",
+     "eId": "chap_10/sec_5"
     }
    ],
    "marginalie": [
@@ -4663,11 +4901,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung"
+     "label": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung",
+     "eId": "chap_10/sec_6"
     }
    ],
    "marginalie": [
@@ -4693,11 +4933,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung"
+     "label": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung",
+     "eId": "chap_10/sec_6"
     }
    ],
    "marginalie": [
@@ -4708,11 +4950,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Wichtige Landesinteressen"
+     "label": "10. Kapitel: Wichtige Landesinteressen",
+     "eId": "chap_10"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung"
+     "label": "6. Abschnitt: Verfügbarkeit von Netzen und Diensten der Mobilfunkkonzessionärinnen bei einer Störung der Stromversorgung",
+     "eId": "chap_10/sec_6"
     }
    ],
    "marginalie": [

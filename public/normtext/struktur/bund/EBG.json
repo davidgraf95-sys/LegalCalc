@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "742.101",
   "titel": "Eisenbahngesetz",
@@ -88,7 +88,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -158,7 +159,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -191,7 +193,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -273,7 +276,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -302,11 +306,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eisenbahnunternehmen"
+     "label": "2. Kapitel: Eisenbahnunternehmen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Infrastrukturbetreiberinnen"
+     "label": "1. Abschnitt: Infrastrukturbetreiberinnen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -487,11 +493,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eisenbahnunternehmen"
+     "label": "2. Kapitel: Eisenbahnunternehmen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Infrastrukturbetreiberinnen"
+     "label": "1. Abschnitt: Infrastrukturbetreiberinnen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -557,11 +565,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eisenbahnunternehmen"
+     "label": "2. Kapitel: Eisenbahnunternehmen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Infrastrukturbetreiberinnen"
+     "label": "1. Abschnitt: Infrastrukturbetreiberinnen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -646,11 +656,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eisenbahnunternehmen"
+     "label": "2. Kapitel: Eisenbahnunternehmen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Infrastrukturbetreiberinnen"
+     "label": "1. Abschnitt: Infrastrukturbetreiberinnen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -679,11 +691,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eisenbahnunternehmen"
+     "label": "2. Kapitel: Eisenbahnunternehmen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+     "label": "2. Abschnitt: Eisenbahnverkehrsunternehmen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [],
@@ -714,7 +728,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -780,7 +795,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -807,7 +823,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -840,7 +857,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -867,7 +885,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -909,7 +928,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -938,7 +958,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -1007,11 +1028,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1142,11 +1165,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -1237,11 +1262,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Sicherheit"
+     "label": "7. Abschnitt: Sicherheit",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -1252,11 +1279,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Sicherheit"
+     "label": "7. Abschnitt: Sicherheit",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -1267,11 +1296,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Sicherheit"
+     "label": "7. Abschnitt: Sicherheit",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -1332,11 +1363,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Sicherheit"
+     "label": "7. Abschnitt: Sicherheit",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -1362,11 +1395,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Sicherheit"
+     "label": "7. Abschnitt: Sicherheit",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -1395,11 +1430,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen"
+     "label": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen",
+     "eId": "chap_4/sec_8"
     }
    ],
    "marginalie": [
@@ -1465,11 +1502,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen"
+     "label": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen",
+     "eId": "chap_4/sec_8"
     }
    ],
    "marginalie": [
@@ -1502,11 +1541,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen"
+     "label": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen",
+     "eId": "chap_4/sec_8"
     }
    ],
    "marginalie": [
@@ -1559,11 +1600,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen"
+     "label": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen",
+     "eId": "chap_4/sec_8"
     }
    ],
    "marginalie": [
@@ -1574,11 +1617,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen"
+     "label": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen",
+     "eId": "chap_4/sec_8"
     }
    ],
    "marginalie": [
@@ -1611,11 +1656,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen"
+     "label": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen",
+     "eId": "chap_4/sec_8"
     }
    ],
    "marginalie": [
@@ -1626,11 +1673,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen"
+     "label": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen",
+     "eId": "chap_4/sec_8"
     }
    ],
    "marginalie": [
@@ -1641,11 +1690,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen"
+     "label": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen",
+     "eId": "chap_4/sec_8"
     }
    ],
    "marginalie": [
@@ -1656,11 +1707,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen"
+     "label": "8. Abschnitt: Kreuzungen zwischen öffentlichen Strassen und Bahnen",
+     "eId": "chap_4/sec_8"
     }
    ],
    "marginalie": [
@@ -1671,11 +1724,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen"
+     "label": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen",
+     "eId": "chap_4/sec_9"
     }
    ],
    "marginalie": [
@@ -1729,11 +1784,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen"
+     "label": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen",
+     "eId": "chap_4/sec_9"
     }
    ],
    "marginalie": [
@@ -1766,11 +1823,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen"
+     "label": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen",
+     "eId": "chap_4/sec_9"
     }
    ],
    "marginalie": [
@@ -1803,11 +1862,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen"
+     "label": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen",
+     "eId": "chap_4/sec_9"
     }
    ],
    "marginalie": [
@@ -1856,11 +1917,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen"
+     "label": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen",
+     "eId": "chap_4/sec_9"
     }
    ],
    "marginalie": [
@@ -1957,11 +2020,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "10. Abschnitt: Betriebsunterbruch"
+     "label": "10. Abschnitt: Betriebsunterbruch",
+     "eId": "chap_4/sec_10"
     }
    ],
    "marginalie": [],
@@ -2045,11 +2110,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "11. Abschnitt: Nebenbetriebe"
+     "label": "11. Abschnitt: Nebenbetriebe",
+     "eId": "chap_4/sec_11"
     }
    ],
    "marginalie": [],
@@ -2117,11 +2184,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "12. Abschnitt: Zuständigkeit des BAV bei Streitigkeiten"
+     "label": "12. Abschnitt: Zuständigkeit des BAV bei Streitigkeiten",
+     "eId": "chap_4/sec_12"
     }
    ],
    "marginalie": [],
@@ -2289,7 +2358,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen"
+     "label": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2323,7 +2393,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen"
+     "label": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2376,7 +2447,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen"
+     "label": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2405,7 +2477,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen"
+     "label": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2416,7 +2489,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen"
+     "label": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [],
@@ -2443,7 +2517,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen"
+     "label": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [],
@@ -2470,7 +2545,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen"
+     "label": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2481,7 +2557,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen"
+     "label": "5. Kapitel: Besondere Leistungen für öffentliche Verwaltungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -2510,11 +2587,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Finanzierung der Infrastruktur"
+     "label": "6. Kapitel: Finanzierung der Infrastruktur",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Im Allgemeinen"
+     "label": "1. Abschnitt: Im Allgemeinen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2614,11 +2693,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Finanzierung der Infrastruktur"
+     "label": "6. Kapitel: Finanzierung der Infrastruktur",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Im Allgemeinen"
+     "label": "1. Abschnitt: Im Allgemeinen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2651,11 +2732,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Finanzierung der Infrastruktur"
+     "label": "6. Kapitel: Finanzierung der Infrastruktur",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Im Allgemeinen"
+     "label": "1. Abschnitt: Im Allgemeinen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2684,11 +2767,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Finanzierung der Infrastruktur"
+     "label": "6. Kapitel: Finanzierung der Infrastruktur",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Im Allgemeinen"
+     "label": "1. Abschnitt: Im Allgemeinen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2753,11 +2838,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Finanzierung der Infrastruktur"
+     "label": "6. Kapitel: Finanzierung der Infrastruktur",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Im Allgemeinen"
+     "label": "1. Abschnitt: Im Allgemeinen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [],
@@ -2788,11 +2875,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Finanzierung der Infrastruktur"
+     "label": "6. Kapitel: Finanzierung der Infrastruktur",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Im Allgemeinen"
+     "label": "1. Abschnitt: Im Allgemeinen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [],
@@ -2823,11 +2912,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Finanzierung der Infrastruktur"
+     "label": "6. Kapitel: Finanzierung der Infrastruktur",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Im Allgemeinen"
+     "label": "1. Abschnitt: Im Allgemeinen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": []
@@ -2836,11 +2927,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Finanzierung der Infrastruktur"
+     "label": "6. Kapitel: Finanzierung der Infrastruktur",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Im Allgemeinen"
+     "label": "1. Abschnitt: Im Allgemeinen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [],
@@ -2867,11 +2960,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Finanzierung der Infrastruktur"
+     "label": "6. Kapitel: Finanzierung der Infrastruktur",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Im Allgemeinen"
+     "label": "1. Abschnitt: Im Allgemeinen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2932,11 +3027,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Finanzierung der Infrastruktur"
+     "label": "6. Kapitel: Finanzierung der Infrastruktur",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung des Ausbaus der Infrastruktur"
+     "label": "2. Abschnitt: Finanzierung des Ausbaus der Infrastruktur",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2982,7 +3079,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Hilfe bei grossen Naturschäden"
+     "label": "7. Kapitel: Hilfe bei grossen Naturschäden",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -3034,7 +3132,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Trennung von Verkehr und Infrastruktur"
+     "label": "8. Kapitel: Trennung von Verkehr und Infrastruktur",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3116,7 +3215,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Trennung von Verkehr und Infrastruktur"
+     "label": "8. Kapitel: Trennung von Verkehr und Infrastruktur",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3127,7 +3227,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Trennung von Verkehr und Infrastruktur"
+     "label": "8. Kapitel: Trennung von Verkehr und Infrastruktur",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3138,7 +3239,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Trennung von Verkehr und Infrastruktur"
+     "label": "8. Kapitel: Trennung von Verkehr und Infrastruktur",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3149,7 +3251,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Rechnungswesen"
+     "label": "9. Kapitel: Rechnungswesen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3216,7 +3319,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Rechnungswesen"
+     "label": "9. Kapitel: Rechnungswesen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3266,7 +3370,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Rechnungswesen"
+     "label": "9. Kapitel: Rechnungswesen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -3293,7 +3398,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Rechnungswesen"
+     "label": "9. Kapitel: Rechnungswesen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -3324,7 +3430,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Kaufrecht der Gemeinwesen"
+     "label": "10. Kapitel: Kaufrecht der Gemeinwesen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -3378,7 +3485,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Kaufrecht der Gemeinwesen"
+     "label": "10. Kapitel: Kaufrecht der Gemeinwesen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [
@@ -3403,7 +3511,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich"
+     "label": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3453,7 +3562,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich"
+     "label": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3464,7 +3574,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich"
+     "label": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3475,7 +3586,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich"
+     "label": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3486,7 +3598,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich"
+     "label": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3497,7 +3610,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich"
+     "label": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -3508,7 +3622,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -3558,7 +3673,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -3591,7 +3707,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -3634,7 +3751,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -3680,7 +3798,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [],
@@ -3707,7 +3826,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -3814,7 +3934,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [],
@@ -3841,7 +3962,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -3900,7 +4022,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [],
@@ -3931,7 +4054,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -3964,7 +4088,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4157,7 +4282,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -4209,7 +4335,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -4242,7 +4369,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -4353,7 +4481,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -4467,7 +4596,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -4504,7 +4634,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -4558,7 +4689,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsicht"
+     "label": "3. Kapitel: Aufsicht",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [
@@ -4591,11 +4723,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -4668,11 +4802,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -4717,11 +4853,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Grundsätze"
+     "label": "1. Abschnitt: Grundsätze",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -4758,11 +4896,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -4825,11 +4965,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -4882,11 +5024,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -4932,11 +5076,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -4985,11 +5131,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -5024,11 +5172,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -5119,11 +5269,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -5190,11 +5342,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -5263,11 +5417,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -5300,11 +5456,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -5398,11 +5556,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -5427,11 +5587,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Plangenehmigungsverfahren"
+     "label": "2. Abschnitt: Plangenehmigungsverfahren",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -5476,11 +5638,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Projektierungszonen"
+     "label": "3. Abschnitt: Projektierungszonen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -5566,11 +5730,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Projektierungszonen"
+     "label": "3. Abschnitt: Projektierungszonen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -5612,11 +5778,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Projektierungszonen"
+     "label": "3. Abschnitt: Projektierungszonen",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [
@@ -5641,11 +5809,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Baulinien"
+     "label": "4. Abschnitt: Baulinien",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -5747,11 +5917,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Baulinien"
+     "label": "4. Abschnitt: Baulinien",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -5805,11 +5977,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Baulinien"
+     "label": "4. Abschnitt: Baulinien",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -5854,11 +6028,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Baulinien"
+     "label": "4. Abschnitt: Baulinien",
+     "eId": "chap_4/sec_4"
     }
    ],
    "marginalie": [
@@ -5887,11 +6063,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Entschädigung für Eigentumsbeschränkungen"
+     "label": "5. Abschnitt: Entschädigung für Eigentumsbeschränkungen",
+     "eId": "chap_4/sec_5"
     }
    ],
    "marginalie": [],
@@ -5984,11 +6162,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Landumlegung"
+     "label": "6. Abschnitt: Landumlegung",
+     "eId": "chap_4/sec_6"
     }
    ],
    "marginalie": [],
@@ -6052,11 +6232,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Sicherheit"
+     "label": "7. Abschnitt: Sicherheit",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -6106,11 +6288,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Sicherheit"
+     "label": "7. Abschnitt: Sicherheit",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -6143,11 +6327,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Sicherheit"
+     "label": "7. Abschnitt: Sicherheit",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -6176,11 +6362,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Sicherheit"
+     "label": "7. Abschnitt: Sicherheit",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -6213,11 +6401,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Sicherheit"
+     "label": "7. Abschnitt: Sicherheit",
+     "eId": "chap_4/sec_7"
     }
    ],
    "marginalie": [
@@ -6246,11 +6436,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem",
+     "eId": "chap_4/sec_7_a"
     }
    ],
    "marginalie": [
@@ -6284,11 +6476,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem",
+     "eId": "chap_4/sec_7_a"
     }
    ],
    "marginalie": [
@@ -6299,11 +6493,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem",
+     "eId": "chap_4/sec_7_a"
     }
    ],
    "marginalie": [
@@ -6332,11 +6528,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem",
+     "eId": "chap_4/sec_7_a"
     }
    ],
    "marginalie": [
@@ -6365,11 +6563,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem",
+     "eId": "chap_4/sec_7_a"
     }
    ],
    "marginalie": [
@@ -6398,11 +6598,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem",
+     "eId": "chap_4/sec_7_a"
     }
    ],
    "marginalie": [
@@ -6431,11 +6633,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem",
+     "eId": "chap_4/sec_7_a"
     }
    ],
    "marginalie": [
@@ -6464,11 +6668,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem",
+     "eId": "chap_4/sec_7_a"
     }
    ],
    "marginalie": [
@@ -6497,11 +6703,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem",
+     "eId": "chap_4/sec_7_a"
     }
    ],
    "marginalie": [
@@ -6530,11 +6738,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem",
+     "eId": "chap_4/sec_7_a"
     }
    ],
    "marginalie": [
@@ -6545,11 +6755,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem",
+     "eId": "chap_4/sec_7_a"
     }
    ],
    "marginalie": [],
@@ -6576,11 +6788,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem",
+     "eId": "chap_4/sec_7_a"
     }
    ],
    "marginalie": [
@@ -6634,11 +6848,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem",
+     "eId": "chap_4/sec_7_a"
     }
    ],
    "marginalie": [
@@ -6683,11 +6899,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem",
+     "eId": "chap_4/sec_7_a"
     }
    ],
    "marginalie": [
@@ -6698,11 +6916,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem"
+     "label": "7a. Abschnitt: Interoperabilität mit dem europäischen Eisenbahnsystem",
+     "eId": "chap_4/sec_7_a"
     }
    ],
    "marginalie": [
@@ -6731,11 +6951,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "8a. Abschnitt: Vorhaltekosten der Wehrdienste"
+     "label": "8a. Abschnitt: Vorhaltekosten der Wehrdienste",
+     "eId": "chap_4/sec_8_a"
     }
    ],
    "marginalie": [],
@@ -6767,11 +6989,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen"
+     "label": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen",
+     "eId": "chap_4/sec_9"
     }
    ],
    "marginalie": [
@@ -6800,11 +7024,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen"
+     "label": "9. Abschnitt: Zusammenarbeit zwischen den Bahnen",
+     "eId": "chap_4/sec_9"
     }
    ],
    "marginalie": [
@@ -6833,11 +7059,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+     "label": "12a. Abschnitt: Kommission für den Eisenbahnverkehr",
+     "eId": "chap_4/sec_12_a"
     }
    ],
    "marginalie": [
@@ -6912,11 +7140,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+     "label": "12a. Abschnitt: Kommission für den Eisenbahnverkehr",
+     "eId": "chap_4/sec_12_a"
     }
    ],
    "marginalie": [
@@ -6966,11 +7196,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+     "label": "12a. Abschnitt: Kommission für den Eisenbahnverkehr",
+     "eId": "chap_4/sec_12_a"
     }
    ],
    "marginalie": [
@@ -6999,11 +7231,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+     "label": "12a. Abschnitt: Kommission für den Eisenbahnverkehr",
+     "eId": "chap_4/sec_12_a"
     }
    ],
    "marginalie": [
@@ -7040,11 +7274,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+     "label": "12a. Abschnitt: Kommission für den Eisenbahnverkehr",
+     "eId": "chap_4/sec_12_a"
     }
    ],
    "marginalie": [
@@ -7120,11 +7356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+     "label": "12a. Abschnitt: Kommission für den Eisenbahnverkehr",
+     "eId": "chap_4/sec_12_a"
     }
    ],
    "marginalie": [
@@ -7153,11 +7391,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+     "label": "12a. Abschnitt: Kommission für den Eisenbahnverkehr",
+     "eId": "chap_4/sec_12_a"
     }
    ],
    "marginalie": [
@@ -7194,11 +7434,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "12a. Abschnitt: Kommission für den Eisenbahnverkehr"
+     "label": "12a. Abschnitt: Kommission für den Eisenbahnverkehr",
+     "eId": "chap_4/sec_12_a"
     }
    ],
    "marginalie": [
@@ -7264,11 +7506,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "13. Abschnitt: Haftung"
+     "label": "13. Abschnitt: Haftung",
+     "eId": "chap_4/sec_13"
     }
    ],
    "marginalie": [
@@ -7410,11 +7654,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "13. Abschnitt: Haftung"
+     "label": "13. Abschnitt: Haftung",
+     "eId": "chap_4/sec_13"
     }
    ],
    "marginalie": [
@@ -7443,11 +7689,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "13. Abschnitt: Haftung"
+     "label": "13. Abschnitt: Haftung",
+     "eId": "chap_4/sec_13"
     }
    ],
    "marginalie": [
@@ -7458,11 +7706,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "13. Abschnitt: Haftung"
+     "label": "13. Abschnitt: Haftung",
+     "eId": "chap_4/sec_13"
     }
    ],
    "marginalie": [
@@ -7473,11 +7723,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "13. Abschnitt: Haftung"
+     "label": "13. Abschnitt: Haftung",
+     "eId": "chap_4/sec_13"
     }
    ],
    "marginalie": [
@@ -7488,11 +7740,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Planung, Bau und Betrieb"
+     "label": "4. Kapitel: Planung, Bau und Betrieb",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "13. Abschnitt: Haftung"
+     "label": "13. Abschnitt: Haftung",
+     "eId": "chap_4/sec_13"
     }
    ],
    "marginalie": [
@@ -7519,7 +7773,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Kapitel: Ausbau der Infrastruktur"
+     "label": "5a. Kapitel: Ausbau der Infrastruktur",
+     "eId": "chap_5_a"
     }
    ],
    "marginalie": [
@@ -7549,7 +7804,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Kapitel: Ausbau der Infrastruktur"
+     "label": "5a. Kapitel: Ausbau der Infrastruktur",
+     "eId": "chap_5_a"
     }
    ],
    "marginalie": [
@@ -7560,7 +7816,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Kapitel: Ausbau der Infrastruktur"
+     "label": "5a. Kapitel: Ausbau der Infrastruktur",
+     "eId": "chap_5_a"
     }
    ],
    "marginalie": [
@@ -7571,7 +7828,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Kapitel: Ausbau der Infrastruktur"
+     "label": "5a. Kapitel: Ausbau der Infrastruktur",
+     "eId": "chap_5_a"
     }
    ],
    "marginalie": [
@@ -7582,7 +7840,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Kapitel: Ausbau der Infrastruktur"
+     "label": "5a. Kapitel: Ausbau der Infrastruktur",
+     "eId": "chap_5_a"
     }
    ],
    "marginalie": [
@@ -7593,7 +7852,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5a. Kapitel: Ausbau der Infrastruktur"
+     "label": "5a. Kapitel: Ausbau der Infrastruktur",
+     "eId": "chap_5_a"
     }
    ],
    "marginalie": [
@@ -7604,7 +7864,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -7633,11 +7894,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Finanzierung der Infrastruktur"
+     "label": "6. Kapitel: Finanzierung der Infrastruktur",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Im Allgemeinen"
+     "label": "1. Abschnitt: Im Allgemeinen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -7666,11 +7929,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Finanzierung der Infrastruktur"
+     "label": "6. Kapitel: Finanzierung der Infrastruktur",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Im Allgemeinen"
+     "label": "1. Abschnitt: Im Allgemeinen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -7712,11 +7977,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Finanzierung der Infrastruktur"
+     "label": "6. Kapitel: Finanzierung der Infrastruktur",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung des Ausbaus der Infrastruktur"
+     "label": "2. Abschnitt: Finanzierung des Ausbaus der Infrastruktur",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -7745,11 +8012,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Finanzierung der Infrastruktur"
+     "label": "6. Kapitel: Finanzierung der Infrastruktur",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung des Ausbaus der Infrastruktur"
+     "label": "2. Abschnitt: Finanzierung des Ausbaus der Infrastruktur",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -7778,11 +8047,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Finanzierung der Infrastruktur"
+     "label": "6. Kapitel: Finanzierung der Infrastruktur",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung des Ausbaus der Infrastruktur"
+     "label": "2. Abschnitt: Finanzierung des Ausbaus der Infrastruktur",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -7811,11 +8082,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Finanzierung der Infrastruktur"
+     "label": "6. Kapitel: Finanzierung der Infrastruktur",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung des Ausbaus der Infrastruktur"
+     "label": "2. Abschnitt: Finanzierung des Ausbaus der Infrastruktur",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -7844,11 +8117,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Finanzierung der Infrastruktur"
+     "label": "6. Kapitel: Finanzierung der Infrastruktur",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Finanzierung des Ausbaus der Infrastruktur"
+     "label": "2. Abschnitt: Finanzierung des Ausbaus der Infrastruktur",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -7877,7 +8152,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Hilfe bei grossen Naturschäden"
+     "label": "7. Kapitel: Hilfe bei grossen Naturschäden",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -7908,7 +8184,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Hilfe bei grossen Naturschäden"
+     "label": "7. Kapitel: Hilfe bei grossen Naturschäden",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -7947,7 +8224,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Rechnungswesen"
+     "label": "9. Kapitel: Rechnungswesen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -7974,7 +8252,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Rechnungswesen"
+     "label": "9. Kapitel: Rechnungswesen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [],
@@ -8005,7 +8284,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "10. Kapitel: Kaufrecht der Gemeinwesen"
+     "label": "10. Kapitel: Kaufrecht der Gemeinwesen",
+     "eId": "chap_10"
     }
    ],
    "marginalie": [],
@@ -8036,7 +8316,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich"
+     "label": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -8065,7 +8346,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich"
+     "label": "11. Kapitel: Sicherheitsrelevante Tätigkeiten im Eisenbahnbereich",
+     "eId": "chap_11"
     }
    ],
    "marginalie": [
@@ -8098,7 +8380,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -8243,7 +8526,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -8276,7 +8560,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -8305,7 +8590,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -8354,7 +8640,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -8387,7 +8674,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen"
+     "label": "12. Kapitel: Strafbestimmungen und Verwaltungsmassnahmen",
+     "eId": "chap_12"
     }
    ],
    "marginalie": [
@@ -8446,11 +8734,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eisenbahnunternehmen"
+     "label": "2. Kapitel: Eisenbahnunternehmen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Infrastrukturbetreiberinnen"
+     "label": "1. Abschnitt: Infrastrukturbetreiberinnen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -8487,11 +8777,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eisenbahnunternehmen"
+     "label": "2. Kapitel: Eisenbahnunternehmen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Infrastrukturbetreiberinnen"
+     "label": "1. Abschnitt: Infrastrukturbetreiberinnen",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -8528,11 +8820,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eisenbahnunternehmen"
+     "label": "2. Kapitel: Eisenbahnunternehmen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+     "label": "2. Abschnitt: Eisenbahnverkehrsunternehmen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -8643,11 +8937,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eisenbahnunternehmen"
+     "label": "2. Kapitel: Eisenbahnunternehmen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+     "label": "2. Abschnitt: Eisenbahnverkehrsunternehmen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -8680,11 +8976,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eisenbahnunternehmen"
+     "label": "2. Kapitel: Eisenbahnunternehmen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+     "label": "2. Abschnitt: Eisenbahnverkehrsunternehmen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -8721,11 +9019,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eisenbahnunternehmen"
+     "label": "2. Kapitel: Eisenbahnunternehmen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+     "label": "2. Abschnitt: Eisenbahnverkehrsunternehmen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -8762,7 +9062,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -8791,7 +9092,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "13. Kapitel: Schlussbestimmungen"
+     "label": "13. Kapitel: Schlussbestimmungen",
+     "eId": "chap_13"
     }
    ],
    "marginalie": [
@@ -8820,11 +9122,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eisenbahnunternehmen"
+     "label": "2. Kapitel: Eisenbahnunternehmen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+     "label": "2. Abschnitt: Eisenbahnverkehrsunternehmen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -8933,11 +9237,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eisenbahnunternehmen"
+     "label": "2. Kapitel: Eisenbahnunternehmen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+     "label": "2. Abschnitt: Eisenbahnverkehrsunternehmen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -8982,11 +9288,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eisenbahnunternehmen"
+     "label": "2. Kapitel: Eisenbahnunternehmen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Eisenbahnverkehrsunternehmen"
+     "label": "2. Abschnitt: Eisenbahnverkehrsunternehmen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -9039,7 +9347,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9069,7 +9378,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9080,7 +9390,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9163,7 +9474,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9174,7 +9486,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9200,7 +9513,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9226,7 +9540,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9237,7 +9552,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9248,7 +9564,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9274,7 +9591,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9285,7 +9603,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9311,7 +9630,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9337,7 +9657,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9348,7 +9669,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9359,7 +9681,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9370,7 +9693,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9381,7 +9705,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9392,7 +9717,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9403,7 +9729,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [
@@ -9414,7 +9741,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2a. Kapitel: Trassenvergabestelle"
+     "label": "2a. Kapitel: Trassenvergabestelle",
+     "eId": "chap_2_a"
     }
    ],
    "marginalie": [

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "741.41",
   "titel": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge",
@@ -55,11 +55,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Einleitung"
+     "label": "1. Titel: Einleitung",
+     "eId": "part_1/tit_1"
     }
    ],
    "marginalie": [
@@ -97,11 +99,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Einleitung"
+     "label": "1. Titel: Einleitung",
+     "eId": "part_1/tit_1"
     }
    ],
    "marginalie": [
@@ -128,11 +132,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Einleitung"
+     "label": "1. Titel: Einleitung",
+     "eId": "part_1/tit_1"
     }
    ],
    "marginalie": [
@@ -769,11 +775,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Einleitung"
+     "label": "1. Titel: Einleitung",
+     "eId": "part_1/tit_1"
     }
    ],
    "marginalie": [
@@ -847,11 +855,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Einleitung"
+     "label": "1. Titel: Einleitung",
+     "eId": "part_1/tit_1"
     }
    ],
    "marginalie": [],
@@ -874,15 +884,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Definitionen"
+     "label": "1. Kapitel: Definitionen",
+     "eId": "part_1/tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -919,15 +932,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Definitionen"
+     "label": "1. Kapitel: Definitionen",
+     "eId": "part_1/tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1024,15 +1040,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Definitionen"
+     "label": "1. Kapitel: Definitionen",
+     "eId": "part_1/tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1081,15 +1100,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Definitionen"
+     "label": "1. Kapitel: Definitionen",
+     "eId": "part_1/tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -1163,15 +1185,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Motorwagen"
+     "label": "2. Kapitel: Motorwagen",
+     "eId": "part_1/tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1196,15 +1221,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Motorwagen"
+     "label": "2. Kapitel: Motorwagen",
+     "eId": "part_1/tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1337,15 +1365,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Motorwagen"
+     "label": "2. Kapitel: Motorwagen",
+     "eId": "part_1/tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1394,15 +1425,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Motorwagen"
+     "label": "2. Kapitel: Motorwagen",
+     "eId": "part_1/tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1505,15 +1539,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Übrige Motorfahrzeuge"
+     "label": "3. Kapitel: Übrige Motorfahrzeuge",
+     "eId": "part_1/tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1587,15 +1624,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Übrige Motorfahrzeuge"
+     "label": "3. Kapitel: Übrige Motorfahrzeuge",
+     "eId": "part_1/tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1644,15 +1684,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Übrige Motorfahrzeuge"
+     "label": "3. Kapitel: Übrige Motorfahrzeuge",
+     "eId": "part_1/tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1677,15 +1720,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Übrige Motorfahrzeuge"
+     "label": "3. Kapitel: Übrige Motorfahrzeuge",
+     "eId": "part_1/tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1710,15 +1756,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Übrige Motorfahrzeuge"
+     "label": "3. Kapitel: Übrige Motorfahrzeuge",
+     "eId": "part_1/tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1743,15 +1792,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Motorlose Fahrzeuge"
+     "label": "4. Kapitel: Motorlose Fahrzeuge",
+     "eId": "part_1/tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -1776,15 +1828,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Motorlose Fahrzeuge"
+     "label": "4. Kapitel: Motorlose Fahrzeuge",
+     "eId": "part_1/tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -1881,15 +1936,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Motorlose Fahrzeuge"
+     "label": "4. Kapitel: Motorlose Fahrzeuge",
+     "eId": "part_1/tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -1914,15 +1972,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Motorlose Fahrzeuge"
+     "label": "4. Kapitel: Motorlose Fahrzeuge",
+     "eId": "part_1/tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -1996,15 +2057,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Motorlose Fahrzeuge"
+     "label": "4. Kapitel: Motorlose Fahrzeuge",
+     "eId": "part_1/tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -2041,15 +2105,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Motorlose Fahrzeuge"
+     "label": "4. Kapitel: Motorlose Fahrzeuge",
+     "eId": "part_1/tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -2114,15 +2181,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Ausnahmefahrzeuge"
+     "label": "5. Kapitel: Ausnahmefahrzeuge",
+     "eId": "part_1/tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -2148,15 +2218,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Ausnahmefahrzeuge"
+     "label": "5. Kapitel: Ausnahmefahrzeuge",
+     "eId": "part_1/tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -2167,15 +2240,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Ausnahmefahrzeuge"
+     "label": "5. Kapitel: Ausnahmefahrzeuge",
+     "eId": "part_1/tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -2264,15 +2340,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Ausnahmefahrzeuge"
+     "label": "5. Kapitel: Ausnahmefahrzeuge",
+     "eId": "part_1/tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -2334,11 +2413,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung"
+     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zulassungsprüfung"
+     "label": "1. Kapitel: Zulassungsprüfung",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2439,11 +2520,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung"
+     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zulassungsprüfung"
+     "label": "1. Kapitel: Zulassungsprüfung",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2481,11 +2564,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung"
+     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zulassungsprüfung"
+     "label": "1. Kapitel: Zulassungsprüfung",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2571,11 +2656,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung"
+     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zulassungsprüfung"
+     "label": "1. Kapitel: Zulassungsprüfung",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -2613,11 +2700,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung"
+     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Nachprüfungen"
+     "label": "2. Kapitel: Nachprüfungen",
+     "eId": "part_2/chap_2"
     }
    ],
    "marginalie": [
@@ -2945,11 +3034,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung"
+     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Nachprüfungen"
+     "label": "2. Kapitel: Nachprüfungen",
+     "eId": "part_2/chap_2"
     }
    ],
    "marginalie": [
@@ -3134,11 +3225,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung"
+     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Abgaswartung und -Nachkontrolle"
+     "label": "3. Kapitel: Abgaswartung und -Nachkontrolle",
+     "eId": "part_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3236,11 +3329,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung"
+     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Abgaswartung und -Nachkontrolle"
+     "label": "3. Kapitel: Abgaswartung und -Nachkontrolle",
+     "eId": "part_2/chap_3"
     }
    ],
    "marginalie": [
@@ -3277,15 +3372,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Grundsatz und Geltungsbereich"
+     "label": "1. Kapitel: Grundsatz und Geltungsbereich",
+     "eId": "part_3/tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -3296,15 +3394,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1a. Kapitel: Abmessungen, Gewichte, Kennzeichnung"
+     "label": "1a. Kapitel: Abmessungen, Gewichte, Kennzeichnung",
+     "eId": "part_3/tit_1/chap_1_a"
     }
    ],
    "marginalie": [
@@ -3722,15 +3823,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1a. Kapitel: Abmessungen, Gewichte, Kennzeichnung"
+     "label": "1a. Kapitel: Abmessungen, Gewichte, Kennzeichnung",
+     "eId": "part_3/tit_1/chap_1_a"
     }
    ],
    "marginalie": [
@@ -3779,15 +3883,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1a. Kapitel: Abmessungen, Gewichte, Kennzeichnung"
+     "label": "1a. Kapitel: Abmessungen, Gewichte, Kennzeichnung",
+     "eId": "part_3/tit_1/chap_1_a"
     }
    ],
    "marginalie": [
@@ -3828,15 +3935,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1a. Kapitel: Abmessungen, Gewichte, Kennzeichnung"
+     "label": "1a. Kapitel: Abmessungen, Gewichte, Kennzeichnung",
+     "eId": "part_3/tit_1/chap_1_a"
     }
    ],
    "marginalie": [
@@ -3994,15 +4104,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1a. Kapitel: Abmessungen, Gewichte, Kennzeichnung"
+     "label": "1a. Kapitel: Abmessungen, Gewichte, Kennzeichnung",
+     "eId": "part_3/tit_1/chap_1_a"
     }
    ],
    "marginalie": [
@@ -4063,15 +4176,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1a. Kapitel: Abmessungen, Gewichte, Kennzeichnung"
+     "label": "1a. Kapitel: Abmessungen, Gewichte, Kennzeichnung",
+     "eId": "part_3/tit_1/chap_1_a"
     }
    ],
    "marginalie": [
@@ -4082,15 +4198,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1a. Kapitel: Abmessungen, Gewichte, Kennzeichnung"
+     "label": "1a. Kapitel: Abmessungen, Gewichte, Kennzeichnung",
+     "eId": "part_3/tit_1/chap_1_a"
     }
    ],
    "marginalie": [
@@ -4175,15 +4294,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1a. Kapitel: Abmessungen, Gewichte, Kennzeichnung"
+     "label": "1a. Kapitel: Abmessungen, Gewichte, Kennzeichnung",
+     "eId": "part_3/tit_1/chap_1_a"
     }
    ],
    "marginalie": [
@@ -4208,15 +4330,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Antrieb, Abgase, Geräusche"
+     "label": "2. Kapitel: Antrieb, Abgase, Geräusche",
+     "eId": "part_3/tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -4277,15 +4402,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Antrieb, Abgase, Geräusche"
+     "label": "2. Kapitel: Antrieb, Abgase, Geräusche",
+     "eId": "part_3/tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -4310,15 +4438,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Antrieb, Abgase, Geräusche"
+     "label": "2. Kapitel: Antrieb, Abgase, Geräusche",
+     "eId": "part_3/tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -4399,15 +4530,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Antrieb, Abgase, Geräusche"
+     "label": "2. Kapitel: Antrieb, Abgase, Geräusche",
+     "eId": "part_3/tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -4444,15 +4578,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Antrieb, Abgase, Geräusche"
+     "label": "2. Kapitel: Antrieb, Abgase, Geräusche",
+     "eId": "part_3/tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -4489,15 +4626,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Antrieb, Abgase, Geräusche"
+     "label": "2. Kapitel: Antrieb, Abgase, Geräusche",
+     "eId": "part_3/tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -4522,15 +4662,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Antrieb, Abgase, Geräusche"
+     "label": "2. Kapitel: Antrieb, Abgase, Geräusche",
+     "eId": "part_3/tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -4619,15 +4762,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Antrieb, Abgase, Geräusche"
+     "label": "2. Kapitel: Antrieb, Abgase, Geräusche",
+     "eId": "part_3/tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -4713,15 +4859,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Kraftübertragung"
+     "label": "3. Kapitel: Kraftübertragung",
+     "eId": "part_3/tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -4732,15 +4881,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Kraftübertragung"
+     "label": "3. Kapitel: Kraftübertragung",
+     "eId": "part_3/tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -4789,15 +4941,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Achsen, Radaufhängung"
+     "label": "4. Kapitel: Achsen, Radaufhängung",
+     "eId": "part_3/tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -4846,15 +5001,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Achsen, Radaufhängung"
+     "label": "4. Kapitel: Achsen, Radaufhängung",
+     "eId": "part_3/tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -4879,15 +5037,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Räder, Reifen"
+     "label": "5. Kapitel: Räder, Reifen",
+     "eId": "part_3/tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -4988,15 +5149,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Räder, Reifen"
+     "label": "5. Kapitel: Räder, Reifen",
+     "eId": "part_3/tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -5045,15 +5209,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Räder, Reifen"
+     "label": "5. Kapitel: Räder, Reifen",
+     "eId": "part_3/tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -5130,15 +5297,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Räder, Reifen"
+     "label": "5. Kapitel: Räder, Reifen",
+     "eId": "part_3/tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -5163,15 +5333,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Räder, Reifen"
+     "label": "5. Kapitel: Räder, Reifen",
+     "eId": "part_3/tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -5208,15 +5381,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Räder, Reifen"
+     "label": "5. Kapitel: Räder, Reifen",
+     "eId": "part_3/tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -5241,15 +5417,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Lenkung"
+     "label": "6. Kapitel: Lenkung",
+     "eId": "part_3/tit_1/chap_6"
     }
    ],
    "marginalie": [],
@@ -5272,15 +5451,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Bremsen"
+     "label": "7. Kapitel: Bremsen",
+     "eId": "part_3/tit_1/chap_7"
     }
    ],
    "marginalie": []
@@ -5289,15 +5471,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Aufbau, Innenraum"
+     "label": "8. Kapitel: Aufbau, Innenraum",
+     "eId": "part_3/tit_1/chap_8"
     }
    ],
    "marginalie": [
@@ -5362,15 +5547,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Aufbau, Innenraum"
+     "label": "8. Kapitel: Aufbau, Innenraum",
+     "eId": "part_3/tit_1/chap_8"
     }
    ],
    "marginalie": [
@@ -5407,15 +5595,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Aufbau, Innenraum"
+     "label": "8. Kapitel: Aufbau, Innenraum",
+     "eId": "part_3/tit_1/chap_8"
     }
    ],
    "marginalie": [
@@ -5452,15 +5643,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Aufbau, Innenraum"
+     "label": "8. Kapitel: Aufbau, Innenraum",
+     "eId": "part_3/tit_1/chap_8"
     }
    ],
    "marginalie": [
@@ -5537,15 +5731,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Aufbau, Innenraum"
+     "label": "8. Kapitel: Aufbau, Innenraum",
+     "eId": "part_3/tit_1/chap_8"
     }
    ],
    "marginalie": [
@@ -5570,15 +5767,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Aufbau, Innenraum"
+     "label": "8. Kapitel: Aufbau, Innenraum",
+     "eId": "part_3/tit_1/chap_8"
     }
    ],
    "marginalie": [
@@ -5639,15 +5839,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Aufbau, Innenraum"
+     "label": "8. Kapitel: Aufbau, Innenraum",
+     "eId": "part_3/tit_1/chap_8"
     }
    ],
    "marginalie": [
@@ -5804,15 +6007,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "9. Kapitel: Beleuchtung"
+     "label": "9. Kapitel: Beleuchtung",
+     "eId": "part_3/tit_1/chap_9"
     }
    ],
    "marginalie": [
@@ -5861,15 +6067,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "9. Kapitel: Beleuchtung"
+     "label": "9. Kapitel: Beleuchtung",
+     "eId": "part_3/tit_1/chap_9"
     }
    ],
    "marginalie": [
@@ -5914,15 +6123,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "9. Kapitel: Beleuchtung"
+     "label": "9. Kapitel: Beleuchtung",
+     "eId": "part_3/tit_1/chap_9"
     }
    ],
    "marginalie": [
@@ -5959,15 +6171,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "9. Kapitel: Beleuchtung"
+     "label": "9. Kapitel: Beleuchtung",
+     "eId": "part_3/tit_1/chap_9"
     }
    ],
    "marginalie": [
@@ -6084,15 +6299,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "9. Kapitel: Beleuchtung"
+     "label": "9. Kapitel: Beleuchtung",
+     "eId": "part_3/tit_1/chap_9"
     }
    ],
    "marginalie": [
@@ -6129,15 +6347,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "9. Kapitel: Beleuchtung"
+     "label": "9. Kapitel: Beleuchtung",
+     "eId": "part_3/tit_1/chap_9"
     }
    ],
    "marginalie": [
@@ -6198,15 +6419,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "9. Kapitel: Beleuchtung"
+     "label": "9. Kapitel: Beleuchtung",
+     "eId": "part_3/tit_1/chap_9"
     }
    ],
    "marginalie": [
@@ -6217,15 +6441,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_1/chap_10"
     }
    ],
    "marginalie": [
@@ -6291,15 +6518,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_1/chap_10"
     }
    ],
    "marginalie": [
@@ -6324,15 +6554,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_1/chap_10"
     }
    ],
    "marginalie": [
@@ -6401,15 +6634,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_1/chap_10"
     }
    ],
    "marginalie": [
@@ -6434,15 +6670,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_1/chap_10"
     }
    ],
    "marginalie": [
@@ -6453,15 +6692,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_1/chap_10"
     }
    ],
    "marginalie": [
@@ -6486,15 +6728,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_1/chap_10"
     }
    ],
    "marginalie": [
@@ -6519,15 +6764,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_1/chap_10"
     }
    ],
    "marginalie": [
@@ -6538,15 +6786,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_1/chap_10"
     }
    ],
    "marginalie": [
@@ -6557,15 +6808,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_1/chap_10"
     }
    ],
    "marginalie": [
@@ -6576,15 +6830,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_1/chap_10"
     }
    ],
    "marginalie": [
@@ -6633,15 +6890,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "10. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_1/chap_10"
     }
    ],
    "marginalie": [
@@ -6666,15 +6926,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "11. Kapitel: Besondere Bestimmungen"
+     "label": "11. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_1/chap_11"
     }
    ],
    "marginalie": [
@@ -6711,15 +6974,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "11. Kapitel: Besondere Bestimmungen"
+     "label": "11. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_1/chap_11"
     }
    ],
    "marginalie": [
@@ -6744,15 +7010,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Abmessungen, Gewichte, Kennzeichnung"
+     "label": "1. Kapitel: Abmessungen, Gewichte, Kennzeichnung",
+     "eId": "part_3/tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -6861,15 +7130,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Abmessungen, Gewichte, Kennzeichnung"
+     "label": "1. Kapitel: Abmessungen, Gewichte, Kennzeichnung",
+     "eId": "part_3/tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -7102,15 +7374,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Abmessungen, Gewichte, Kennzeichnung"
+     "label": "1. Kapitel: Abmessungen, Gewichte, Kennzeichnung",
+     "eId": "part_3/tit_2/chap_1"
     }
    ],
    "marginalie": [
@@ -7121,15 +7396,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Antrieb, Abgase und Kraftübertragung"
+     "label": "2. Kapitel: Antrieb, Abgase und Kraftübertragung",
+     "eId": "part_3/tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -7226,15 +7504,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Antrieb, Abgase und Kraftübertragung"
+     "label": "2. Kapitel: Antrieb, Abgase und Kraftübertragung",
+     "eId": "part_3/tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -7245,15 +7526,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "2a. Kapitel: Geschwindigkeitsbegrenzungseinrichtungen, Fahrtschreiber, Datenaufzeichnungsgeräte"
+     "label": "2a. Kapitel: Geschwindigkeitsbegrenzungseinrichtungen, Fahrtschreiber, Datenaufzeichnungsgeräte",
+     "eId": "part_3/tit_2/chap_2_a"
     }
    ],
    "marginalie": [
@@ -7351,15 +7635,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "2a. Kapitel: Geschwindigkeitsbegrenzungseinrichtungen, Fahrtschreiber, Datenaufzeichnungsgeräte"
+     "label": "2a. Kapitel: Geschwindigkeitsbegrenzungseinrichtungen, Fahrtschreiber, Datenaufzeichnungsgeräte",
+     "eId": "part_3/tit_2/chap_2_a"
     }
    ],
    "marginalie": [
@@ -7410,15 +7697,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "2a. Kapitel: Geschwindigkeitsbegrenzungseinrichtungen, Fahrtschreiber, Datenaufzeichnungsgeräte"
+     "label": "2a. Kapitel: Geschwindigkeitsbegrenzungseinrichtungen, Fahrtschreiber, Datenaufzeichnungsgeräte",
+     "eId": "part_3/tit_2/chap_2_a"
     }
    ],
    "marginalie": [
@@ -7504,15 +7794,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "2a. Kapitel: Geschwindigkeitsbegrenzungseinrichtungen, Fahrtschreiber, Datenaufzeichnungsgeräte"
+     "label": "2a. Kapitel: Geschwindigkeitsbegrenzungseinrichtungen, Fahrtschreiber, Datenaufzeichnungsgeräte",
+     "eId": "part_3/tit_2/chap_2_a"
     }
    ],
    "marginalie": [
@@ -7549,15 +7842,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Bremsen, Assistenzsysteme sowie Schutz vor Cyberangriffen"
+     "label": "3. Kapitel: Bremsen, Assistenzsysteme sowie Schutz vor Cyberangriffen",
+     "eId": "part_3/tit_2/chap_3"
     }
    ],
    "marginalie": [],
@@ -7718,15 +8014,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Aufbau, Innenraum"
+     "label": "4. Kapitel: Aufbau, Innenraum",
+     "eId": "part_3/tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -7751,15 +8050,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Aufbau, Innenraum"
+     "label": "4. Kapitel: Aufbau, Innenraum",
+     "eId": "part_3/tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -7820,15 +8122,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Aufbau, Innenraum"
+     "label": "4. Kapitel: Aufbau, Innenraum",
+     "eId": "part_3/tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -7937,15 +8242,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Aufbau, Innenraum"
+     "label": "4. Kapitel: Aufbau, Innenraum",
+     "eId": "part_3/tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -8006,15 +8314,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Aufbau, Innenraum"
+     "label": "4. Kapitel: Aufbau, Innenraum",
+     "eId": "part_3/tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -8025,15 +8336,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Beleuchtung"
+     "label": "5. Kapitel: Beleuchtung",
+     "eId": "part_3/tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -8106,15 +8420,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Beleuchtung"
+     "label": "5. Kapitel: Beleuchtung",
+     "eId": "part_3/tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -8340,15 +8657,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Beleuchtung"
+     "label": "5. Kapitel: Beleuchtung",
+     "eId": "part_3/tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -8373,15 +8693,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "6. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_2/chap_6"
     }
    ],
    "marginalie": [
@@ -8482,15 +8805,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "6. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_2/chap_6"
     }
    ],
    "marginalie": [],
@@ -8513,15 +8839,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "6. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_2/chap_6"
     }
    ],
    "marginalie": [
@@ -8574,15 +8903,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "6. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_2/chap_6"
     }
    ],
    "marginalie": [
@@ -8607,15 +8939,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "6. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_2/chap_6"
     }
    ],
    "marginalie": [
@@ -8641,19 +8976,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Motorwagen mit beschränkter Höchstgeschwindigkeit"
+     "label": "1. Abschnitt: Motorwagen mit beschränkter Höchstgeschwindigkeit",
+     "eId": "part_3/tit_2/chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -8691,19 +9030,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Motorwagen mit beschränkter Höchstgeschwindigkeit"
+     "label": "1. Abschnitt: Motorwagen mit beschränkter Höchstgeschwindigkeit",
+     "eId": "part_3/tit_2/chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -8800,19 +9143,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Motorwagen mit beschränkter Höchstgeschwindigkeit"
+     "label": "1. Abschnitt: Motorwagen mit beschränkter Höchstgeschwindigkeit",
+     "eId": "part_3/tit_2/chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -8957,19 +9304,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Motorwagen mit beschränkter Höchstgeschwindigkeit"
+     "label": "1. Abschnitt: Motorwagen mit beschränkter Höchstgeschwindigkeit",
+     "eId": "part_3/tit_2/chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -9006,19 +9357,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Gesellschaftswagen (einschliesslich Gelenk- und Trolleybusse) und Kleinbusse"
+     "label": "2. Abschnitt: Gesellschaftswagen (einschliesslich Gelenk- und Trolleybusse) und Kleinbusse",
+     "eId": "part_3/tit_2/chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -9127,19 +9482,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Gesellschaftswagen (einschliesslich Gelenk- und Trolleybusse) und Kleinbusse"
+     "label": "2. Abschnitt: Gesellschaftswagen (einschliesslich Gelenk- und Trolleybusse) und Kleinbusse",
+     "eId": "part_3/tit_2/chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -9200,19 +9559,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Gesellschaftswagen (einschliesslich Gelenk- und Trolleybusse) und Kleinbusse"
+     "label": "2. Abschnitt: Gesellschaftswagen (einschliesslich Gelenk- und Trolleybusse) und Kleinbusse",
+     "eId": "part_3/tit_2/chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -9290,19 +9653,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Sattelschlepper"
+     "label": "3. Abschnitt: Sattelschlepper",
+     "eId": "part_3/tit_2/chap_7/sec_3"
     }
    ],
    "marginalie": [],
@@ -9337,19 +9704,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Motorwagen mit Tank- oder Siloaufbauten"
+     "label": "4. Abschnitt: Motorwagen mit Tank- oder Siloaufbauten",
+     "eId": "part_3/tit_2/chap_7/sec_4"
     }
    ],
    "marginalie": [],
@@ -9421,19 +9792,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Arbeitsmotorwagen"
+     "label": "5. Abschnitt: Arbeitsmotorwagen",
+     "eId": "part_3/tit_2/chap_7/sec_5"
     }
    ],
    "marginalie": [
@@ -9444,19 +9819,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Arbeitsmotorwagen"
+     "label": "5. Abschnitt: Arbeitsmotorwagen",
+     "eId": "part_3/tit_2/chap_7/sec_5"
     }
    ],
    "marginalie": [
@@ -9517,19 +9896,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Arbeitsmotorwagen"
+     "label": "5. Abschnitt: Arbeitsmotorwagen",
+     "eId": "part_3/tit_2/chap_7/sec_5"
     }
    ],
    "marginalie": [
@@ -9540,19 +9923,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Arbeitsmotorwagen"
+     "label": "5. Abschnitt: Arbeitsmotorwagen",
+     "eId": "part_3/tit_2/chap_7/sec_5"
     }
    ],
    "marginalie": [
@@ -9577,19 +9964,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Arbeitsmotorwagen"
+     "label": "5. Abschnitt: Arbeitsmotorwagen",
+     "eId": "part_3/tit_2/chap_7/sec_5"
     }
    ],
    "marginalie": [
@@ -9614,19 +10005,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Arbeitsmotorwagen"
+     "label": "5. Abschnitt: Arbeitsmotorwagen",
+     "eId": "part_3/tit_2/chap_7/sec_5"
     }
    ],
    "marginalie": [
@@ -9651,19 +10046,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Arbeitsmotorwagen"
+     "label": "5. Abschnitt: Arbeitsmotorwagen",
+     "eId": "part_3/tit_2/chap_7/sec_5"
     }
    ],
    "marginalie": [
@@ -9674,19 +10073,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Traktoren"
+     "label": "6. Abschnitt: Traktoren",
+     "eId": "part_3/tit_2/chap_7/sec_6"
     }
    ],
    "marginalie": [
@@ -9747,19 +10150,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Traktoren"
+     "label": "6. Abschnitt: Traktoren",
+     "eId": "part_3/tit_2/chap_7/sec_6"
     }
    ],
    "marginalie": [
@@ -9784,15 +10191,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Abmessungen, Gewichte, Plätze, Kennzeichnung"
+     "label": "1. Kapitel: Abmessungen, Gewichte, Plätze, Kennzeichnung",
+     "eId": "part_3/tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -9867,15 +10277,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Abmessungen, Gewichte, Plätze, Kennzeichnung"
+     "label": "1. Kapitel: Abmessungen, Gewichte, Plätze, Kennzeichnung",
+     "eId": "part_3/tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -10068,15 +10481,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Antrieb, Räder und Reifen"
+     "label": "2. Kapitel: Antrieb, Räder und Reifen",
+     "eId": "part_3/tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -10125,15 +10541,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Antrieb, Räder und Reifen"
+     "label": "2. Kapitel: Antrieb, Räder und Reifen",
+     "eId": "part_3/tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -10170,15 +10589,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Aufbau, Innenraum, Bemalungen"
+     "label": "3. Kapitel: Aufbau, Innenraum, Bemalungen",
+     "eId": "part_3/tit_3/chap_3"
     }
    ],
    "marginalie": [],
@@ -10226,15 +10648,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Beleuchtung"
+     "label": "4. Kapitel: Beleuchtung",
+     "eId": "part_3/tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -10307,15 +10732,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Beleuchtung"
+     "label": "4. Kapitel: Beleuchtung",
+     "eId": "part_3/tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -10376,15 +10804,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Beleuchtung"
+     "label": "4. Kapitel: Beleuchtung",
+     "eId": "part_3/tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -10409,15 +10840,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "5. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -10454,15 +10888,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "5. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_3/chap_5"
     }
    ],
    "marginalie": [
@@ -10539,19 +10976,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_3/chap_6"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Motorräder nach Artikel 14 Buchstabe a"
+     "label": "1. Abschnitt: Motorräder nach Artikel 14 Buchstabe a",
+     "eId": "part_3/tit_3/chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -10589,19 +11030,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_3/chap_6"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Motorräder nach Artikel 14 Buchstabe a"
+     "label": "1. Abschnitt: Motorräder nach Artikel 14 Buchstabe a",
+     "eId": "part_3/tit_3/chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -10642,19 +11087,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_3/chap_6"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Motorräder mit Seitenwagen"
+     "label": "2. Abschnitt: Motorräder mit Seitenwagen",
+     "eId": "part_3/tit_3/chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -10679,19 +11128,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_3/chap_6"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Motorräder mit Seitenwagen"
+     "label": "2. Abschnitt: Motorräder mit Seitenwagen",
+     "eId": "part_3/tit_3/chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -10716,19 +11169,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_3/chap_6"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Zweirädrige Kleinmotorräder"
+     "label": "3. Abschnitt: Zweirädrige Kleinmotorräder",
+     "eId": "part_3/tit_3/chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -10765,19 +11222,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_3/chap_6"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Zweirädrige Kleinmotorräder"
+     "label": "3. Abschnitt: Zweirädrige Kleinmotorräder",
+     "eId": "part_3/tit_3/chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -10826,19 +11287,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_3/chap_6"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Zweirädrige Kleinmotorräder"
+     "label": "3. Abschnitt: Zweirädrige Kleinmotorräder",
+     "eId": "part_3/tit_3/chap_6/sec_3"
     }
    ],
    "marginalie": [
@@ -10899,19 +11364,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_3/chap_6"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Kleinmotorräder mit mehr als zwei Rädern und Leichtmotorfahrzeuge"
+     "label": "4. Abschnitt: Kleinmotorräder mit mehr als zwei Rädern und Leichtmotorfahrzeuge",
+     "eId": "part_3/tit_3/chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -10997,19 +11466,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_3/chap_6"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Kleinmotorräder mit mehr als zwei Rädern und Leichtmotorfahrzeuge"
+     "label": "4. Abschnitt: Kleinmotorräder mit mehr als zwei Rädern und Leichtmotorfahrzeuge",
+     "eId": "part_3/tit_3/chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -11034,19 +11507,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_3/chap_6"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Kleinmotorräder mit mehr als zwei Rädern und Leichtmotorfahrzeuge"
+     "label": "4. Abschnitt: Kleinmotorräder mit mehr als zwei Rädern und Leichtmotorfahrzeuge",
+     "eId": "part_3/tit_3/chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -11083,19 +11560,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_3/chap_6"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Kleinmotorräder mit mehr als zwei Rädern und Leichtmotorfahrzeuge"
+     "label": "4. Abschnitt: Kleinmotorräder mit mehr als zwei Rädern und Leichtmotorfahrzeuge",
+     "eId": "part_3/tit_3/chap_6/sec_4"
     }
    ],
    "marginalie": [
@@ -11168,19 +11649,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_3/chap_6"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Klein- und dreirädrige Motorfahrzeuge"
+     "label": "5. Abschnitt: Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3/chap_6/sec_5"
     }
    ],
    "marginalie": [
@@ -11253,19 +11738,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_3/chap_6"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Klein- und dreirädrige Motorfahrzeuge"
+     "label": "5. Abschnitt: Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3/chap_6/sec_5"
     }
    ],
    "marginalie": [
@@ -11276,19 +11765,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_3/chap_6"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Klein- und dreirädrige Motorfahrzeuge"
+     "label": "5. Abschnitt: Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3/chap_6/sec_5"
     }
    ],
    "marginalie": [
@@ -11313,19 +11806,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_3/chap_6"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Klein- und dreirädrige Motorfahrzeuge"
+     "label": "5. Abschnitt: Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3/chap_6/sec_5"
     }
    ],
    "marginalie": [
@@ -11350,19 +11847,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_3/chap_6"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Motorschlitten"
+     "label": "6. Abschnitt: Motorschlitten",
+     "eId": "part_3/tit_3/chap_6/sec_6"
     }
    ],
    "marginalie": [],
@@ -11385,11 +11886,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Land- und forstwirtschaftliche Motorfahrzeuge"
+     "label": "4. Titel: Land- und forstwirtschaftliche Motorfahrzeuge",
+     "eId": "part_3/tit_4"
     }
    ],
    "marginalie": [
@@ -11427,11 +11930,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Land- und forstwirtschaftliche Motorfahrzeuge"
+     "label": "4. Titel: Land- und forstwirtschaftliche Motorfahrzeuge",
+     "eId": "part_3/tit_4"
     }
    ],
    "marginalie": [
@@ -11456,11 +11961,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Land- und forstwirtschaftliche Motorfahrzeuge"
+     "label": "4. Titel: Land- und forstwirtschaftliche Motorfahrzeuge",
+     "eId": "part_3/tit_4"
     }
    ],
    "marginalie": [
@@ -11509,11 +12016,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Land- und forstwirtschaftliche Motorfahrzeuge"
+     "label": "4. Titel: Land- und forstwirtschaftliche Motorfahrzeuge",
+     "eId": "part_3/tit_4"
     }
    ],
    "marginalie": [
@@ -11587,11 +12096,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Land- und forstwirtschaftliche Motorfahrzeuge"
+     "label": "4. Titel: Land- und forstwirtschaftliche Motorfahrzeuge",
+     "eId": "part_3/tit_4"
     }
    ],
    "marginalie": [
@@ -11640,11 +12151,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Land- und forstwirtschaftliche Motorfahrzeuge"
+     "label": "4. Titel: Land- und forstwirtschaftliche Motorfahrzeuge",
+     "eId": "part_3/tit_4"
     }
    ],
    "marginalie": [],
@@ -11667,15 +12180,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Motoreinachser"
+     "label": "1. Kapitel: Motoreinachser",
+     "eId": "part_3/tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -11700,15 +12216,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Motoreinachser"
+     "label": "1. Kapitel: Motoreinachser",
+     "eId": "part_3/tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -11733,15 +12252,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Motoreinachser"
+     "label": "1. Kapitel: Motoreinachser",
+     "eId": "part_3/tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -11766,15 +12288,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Motoreinachser"
+     "label": "1. Kapitel: Motoreinachser",
+     "eId": "part_3/tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -11785,15 +12310,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Motoreinachser"
+     "label": "1. Kapitel: Motoreinachser",
+     "eId": "part_3/tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -11818,15 +12346,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Motoreinachser"
+     "label": "1. Kapitel: Motoreinachser",
+     "eId": "part_3/tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -11837,15 +12368,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Motorhandwagen"
+     "label": "2. Kapitel: Motorhandwagen",
+     "eId": "part_3/tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -11894,15 +12428,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Motorhandwagen"
+     "label": "2. Kapitel: Motorhandwagen",
+     "eId": "part_3/tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -11939,19 +12476,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Die Motorfahrräder"
+     "label": "3. Kapitel: Die Motorfahrräder",
+     "eId": "part_3/tit_5/chap_3"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "part_3/tit_5/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -12062,19 +12603,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Die Motorfahrräder"
+     "label": "3. Kapitel: Die Motorfahrräder",
+     "eId": "part_3/tit_5/chap_3"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "part_3/tit_5/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -12099,19 +12644,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Die Motorfahrräder"
+     "label": "3. Kapitel: Die Motorfahrräder",
+     "eId": "part_3/tit_5/chap_3"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "part_3/tit_5/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -12148,19 +12697,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Die Motorfahrräder"
+     "label": "3. Kapitel: Die Motorfahrräder",
+     "eId": "part_3/tit_5/chap_3"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "part_3/tit_5/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -12209,19 +12762,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Die Motorfahrräder"
+     "label": "3. Kapitel: Die Motorfahrräder",
+     "eId": "part_3/tit_5/chap_3"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Besondere Bestimmungen für schnelle Motorfahrräder"
+     "label": "2. Abschnitt: Besondere Bestimmungen für schnelle Motorfahrräder",
+     "eId": "part_3/tit_5/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -12295,19 +12852,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Die Motorfahrräder"
+     "label": "3. Kapitel: Die Motorfahrräder",
+     "eId": "part_3/tit_5/chap_3"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Besondere Bestimmungen für Leicht-Motorfahrräder"
+     "label": "3. Abschnitt: Besondere Bestimmungen für Leicht-Motorfahrräder",
+     "eId": "part_3/tit_5/chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -12330,19 +12891,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Die Motorfahrräder"
+     "label": "3. Kapitel: Die Motorfahrräder",
+     "eId": "part_3/tit_5/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Besondere Bestimmungen für motorisierte Rollstühle"
+     "label": "4. Abschnitt: Besondere Bestimmungen für motorisierte Rollstühle",
+     "eId": "part_3/tit_5/chap_3/sec_4"
     }
    ],
    "marginalie": [],
@@ -12418,15 +12983,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Abmessungen, Gewichte, Kennzeichnung"
+     "label": "1. Kapitel: Abmessungen, Gewichte, Kennzeichnung",
+     "eId": "part_3/tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -12488,15 +13056,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Abmessungen, Gewichte, Kennzeichnung"
+     "label": "1. Kapitel: Abmessungen, Gewichte, Kennzeichnung",
+     "eId": "part_3/tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -12621,15 +13192,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Abmessungen, Gewichte, Kennzeichnung"
+     "label": "1. Kapitel: Abmessungen, Gewichte, Kennzeichnung",
+     "eId": "part_3/tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -12654,15 +13228,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Abmessungen, Gewichte, Kennzeichnung"
+     "label": "1. Kapitel: Abmessungen, Gewichte, Kennzeichnung",
+     "eId": "part_3/tit_6/chap_1"
     }
    ],
    "marginalie": [
@@ -12673,15 +13250,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Achsen, Radaufhängung"
+     "label": "2. Kapitel: Achsen, Radaufhängung",
+     "eId": "part_3/tit_6/chap_2"
     }
    ],
    "marginalie": []
@@ -12690,15 +13270,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Räder, Reifen, Lenkung"
+     "label": "3. Kapitel: Räder, Reifen, Lenkung",
+     "eId": "part_3/tit_6/chap_3"
     }
    ],
    "marginalie": [
@@ -12723,15 +13306,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Räder, Reifen, Lenkung"
+     "label": "3. Kapitel: Räder, Reifen, Lenkung",
+     "eId": "part_3/tit_6/chap_3"
     }
    ],
    "marginalie": [
@@ -12742,15 +13328,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Bremsen, Assistenzsysteme und Antrieb"
+     "label": "4. Kapitel: Bremsen, Assistenzsysteme und Antrieb",
+     "eId": "part_3/tit_6/chap_4"
     }
    ],
    "marginalie": [],
@@ -12858,15 +13447,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Aufbau, Innenraum"
+     "label": "5. Kapitel: Aufbau, Innenraum",
+     "eId": "part_3/tit_6/chap_5"
     }
    ],
    "marginalie": [
@@ -12891,15 +13483,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Aufbau, Innenraum"
+     "label": "5. Kapitel: Aufbau, Innenraum",
+     "eId": "part_3/tit_6/chap_5"
     }
    ],
    "marginalie": [
@@ -12984,15 +13579,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Beleuchtung"
+     "label": "6. Kapitel: Beleuchtung",
+     "eId": "part_3/tit_6/chap_6"
     }
    ],
    "marginalie": [
@@ -13053,15 +13651,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Beleuchtung"
+     "label": "6. Kapitel: Beleuchtung",
+     "eId": "part_3/tit_6/chap_6"
     }
    ],
    "marginalie": [
@@ -13227,15 +13828,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Beleuchtung"
+     "label": "6. Kapitel: Beleuchtung",
+     "eId": "part_3/tit_6/chap_6"
     }
    ],
    "marginalie": [
@@ -13246,15 +13850,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "7. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_6/chap_7"
     }
    ],
    "marginalie": [],
@@ -13341,19 +13948,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten"
+     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten",
+     "eId": "part_3/tit_6/chap_8"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Anhänger zum Personentransport"
+     "label": "1. Abschnitt: Anhänger zum Personentransport",
+     "eId": "part_3/tit_6/chap_8/sec_1"
     }
    ],
    "marginalie": [],
@@ -13376,19 +13987,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten"
+     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten",
+     "eId": "part_3/tit_6/chap_8"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Starre Anhänger"
+     "label": "2. Abschnitt: Starre Anhänger",
+     "eId": "part_3/tit_6/chap_8/sec_2"
     }
    ],
    "marginalie": [],
@@ -13423,19 +14038,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten"
+     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten",
+     "eId": "part_3/tit_6/chap_8"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Anhänger an Motorrädern, Leicht‑, Klein- und dreirädrigen Motorfahrzeugen"
+     "label": "3. Abschnitt: Anhänger an Motorrädern, Leicht‑, Klein- und dreirädrigen Motorfahrzeugen",
+     "eId": "part_3/tit_6/chap_8/sec_3"
     }
    ],
    "marginalie": [],
@@ -13471,19 +14090,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten"
+     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten",
+     "eId": "part_3/tit_6/chap_8"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Anhänger an Motoreinachsern"
+     "label": "4. Abschnitt: Anhänger an Motoreinachsern",
+     "eId": "part_3/tit_6/chap_8/sec_4"
     }
    ],
    "marginalie": [],
@@ -13518,19 +14141,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten"
+     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten",
+     "eId": "part_3/tit_6/chap_8"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Arbeitsanhänger"
+     "label": "5. Abschnitt: Arbeitsanhänger",
+     "eId": "part_3/tit_6/chap_8/sec_5"
     }
    ],
    "marginalie": [
@@ -13541,19 +14168,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten"
+     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten",
+     "eId": "part_3/tit_6/chap_8"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Arbeitsanhänger"
+     "label": "5. Abschnitt: Arbeitsanhänger",
+     "eId": "part_3/tit_6/chap_8/sec_5"
     }
    ],
    "marginalie": [
@@ -13578,19 +14209,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten"
+     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten",
+     "eId": "part_3/tit_6/chap_8"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Arbeitsanhänger"
+     "label": "5. Abschnitt: Arbeitsanhänger",
+     "eId": "part_3/tit_6/chap_8/sec_5"
     }
    ],
    "marginalie": [],
@@ -13613,19 +14248,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten"
+     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten",
+     "eId": "part_3/tit_6/chap_8"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Arbeitsanhänger"
+     "label": "5. Abschnitt: Arbeitsanhänger",
+     "eId": "part_3/tit_6/chap_8/sec_5"
     }
    ],
    "marginalie": [
@@ -13662,19 +14301,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten"
+     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten",
+     "eId": "part_3/tit_6/chap_8"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Arbeitsanhänger"
+     "label": "5. Abschnitt: Arbeitsanhänger",
+     "eId": "part_3/tit_6/chap_8/sec_5"
     }
    ],
    "marginalie": [
@@ -13711,19 +14354,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten"
+     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten",
+     "eId": "part_3/tit_6/chap_8"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Anhänger an Motor- und Arbeitskarren"
+     "label": "6. Abschnitt: Anhänger an Motor- und Arbeitskarren",
+     "eId": "part_3/tit_6/chap_8/sec_6"
     }
    ],
    "marginalie": [],
@@ -13798,19 +14445,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten"
+     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten",
+     "eId": "part_3/tit_6/chap_8"
     },
     {
      "ebene": 4,
-     "label": "7. Abschnitt: Anhänger an Traktoren"
+     "label": "7. Abschnitt: Anhänger an Traktoren",
+     "eId": "part_3/tit_6/chap_8/sec_7"
     }
    ],
    "marginalie": [],
@@ -13833,19 +14484,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten"
+     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten",
+     "eId": "part_3/tit_6/chap_8"
     },
     {
      "ebene": 4,
-     "label": "8. Abschnitt: Land- und forstwirtschaftliche Anhänger"
+     "label": "8. Abschnitt: Land- und forstwirtschaftliche Anhänger",
+     "eId": "part_3/tit_6/chap_8/sec_8"
     }
    ],
    "marginalie": [
@@ -13923,19 +14578,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten"
+     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten",
+     "eId": "part_3/tit_6/chap_8"
     },
     {
      "ebene": 4,
-     "label": "8. Abschnitt: Land- und forstwirtschaftliche Anhänger"
+     "label": "8. Abschnitt: Land- und forstwirtschaftliche Anhänger",
+     "eId": "part_3/tit_6/chap_8/sec_8"
     }
    ],
    "marginalie": [
@@ -13988,19 +14647,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten"
+     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten",
+     "eId": "part_3/tit_6/chap_8"
     },
     {
      "ebene": 4,
-     "label": "8. Abschnitt: Land- und forstwirtschaftliche Anhänger"
+     "label": "8. Abschnitt: Land- und forstwirtschaftliche Anhänger",
+     "eId": "part_3/tit_6/chap_8/sec_8"
     }
    ],
    "marginalie": [
@@ -14097,19 +14760,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten"
+     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten",
+     "eId": "part_3/tit_6/chap_8"
     },
     {
      "ebene": 4,
-     "label": "9. Abschnitt: Anhänger an Fahrrädern und Motorfahrrädern"
+     "label": "9. Abschnitt: Anhänger an Fahrrädern und Motorfahrrädern",
+     "eId": "part_3/tit_6/chap_8/sec_9"
     }
    ],
    "marginalie": [],
@@ -14197,15 +14864,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "7. Titel: Übrige motorlose Fahrzeuge"
+     "label": "7. Titel: Übrige motorlose Fahrzeuge",
+     "eId": "part_3/tit_7"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Tierfuhrwerke, Handwagen, Stosskarren und Handschlitten"
+     "label": "1. Kapitel: Tierfuhrwerke, Handwagen, Stosskarren und Handschlitten",
+     "eId": "part_3/tit_7/chap_1"
     }
    ],
    "marginalie": [],
@@ -14265,15 +14935,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "7. Titel: Übrige motorlose Fahrzeuge"
+     "label": "7. Titel: Übrige motorlose Fahrzeuge",
+     "eId": "part_3/tit_7"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Tierfuhrwerke, Handwagen, Stosskarren und Handschlitten"
+     "label": "1. Kapitel: Tierfuhrwerke, Handwagen, Stosskarren und Handschlitten",
+     "eId": "part_3/tit_7/chap_1"
     }
    ],
    "marginalie": [],
@@ -14296,15 +14969,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "7. Titel: Übrige motorlose Fahrzeuge"
+     "label": "7. Titel: Übrige motorlose Fahrzeuge",
+     "eId": "part_3/tit_7"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Fahrräder"
+     "label": "2. Kapitel: Fahrräder",
+     "eId": "part_3/tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -14393,15 +15069,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "7. Titel: Übrige motorlose Fahrzeuge"
+     "label": "7. Titel: Übrige motorlose Fahrzeuge",
+     "eId": "part_3/tit_7"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Fahrräder"
+     "label": "2. Kapitel: Fahrräder",
+     "eId": "part_3/tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -14438,15 +15117,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "7. Titel: Übrige motorlose Fahrzeuge"
+     "label": "7. Titel: Übrige motorlose Fahrzeuge",
+     "eId": "part_3/tit_7"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Fahrräder"
+     "label": "2. Kapitel: Fahrräder",
+     "eId": "part_3/tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -14523,15 +15205,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "7. Titel: Übrige motorlose Fahrzeuge"
+     "label": "7. Titel: Übrige motorlose Fahrzeuge",
+     "eId": "part_3/tit_7"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Fahrräder"
+     "label": "2. Kapitel: Fahrräder",
+     "eId": "part_3/tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -14597,15 +15282,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "7. Titel: Übrige motorlose Fahrzeuge"
+     "label": "7. Titel: Übrige motorlose Fahrzeuge",
+     "eId": "part_3/tit_7"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Fahrräder"
+     "label": "2. Kapitel: Fahrräder",
+     "eId": "part_3/tit_7/chap_2"
     }
    ],
    "marginalie": [
@@ -14654,15 +15342,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "7. Titel: Übrige motorlose Fahrzeuge"
+     "label": "7. Titel: Übrige motorlose Fahrzeuge",
+     "eId": "part_3/tit_7"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Fahrräder"
+     "label": "2. Kapitel: Fahrräder",
+     "eId": "part_3/tit_7/chap_2"
     }
    ],
    "marginalie": [],
@@ -14685,11 +15376,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Strafbestimmungen"
+     "label": "1. Kapitel: Strafbestimmungen",
+     "eId": "part_4/chap_1"
     }
    ],
    "marginalie": [],
@@ -14781,11 +15474,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -14869,11 +15564,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -14898,11 +15595,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -14927,11 +15626,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -14942,15 +15643,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "2a. Kapitel: Geschwindigkeitsbegrenzungseinrichtungen, Fahrtschreiber, Datenaufzeichnungsgeräte"
+     "label": "2a. Kapitel: Geschwindigkeitsbegrenzungseinrichtungen, Fahrtschreiber, Datenaufzeichnungsgeräte",
+     "eId": "part_3/tit_2/chap_2_a"
     }
    ],
    "marginalie": [
@@ -14979,15 +15683,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Aufbau, Innenraum"
+     "label": "4. Kapitel: Aufbau, Innenraum",
+     "eId": "part_3/tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -15109,15 +15816,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Aufbau, Innenraum"
+     "label": "4. Kapitel: Aufbau, Innenraum",
+     "eId": "part_3/tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -15179,15 +15889,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Aufbau, Innenraum"
+     "label": "4. Kapitel: Aufbau, Innenraum",
+     "eId": "part_3/tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -15224,15 +15937,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Weitere Anforderungen und Zusatzausrüstungen"
+     "label": "6. Kapitel: Weitere Anforderungen und Zusatzausrüstungen",
+     "eId": "part_3/tit_2/chap_6"
     }
    ],
    "marginalie": [
@@ -15261,19 +15977,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Motorwagen mit beschränkter Höchstgeschwindigkeit"
+     "label": "1. Abschnitt: Motorwagen mit beschränkter Höchstgeschwindigkeit",
+     "eId": "part_3/tit_2/chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -15334,19 +16054,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Motorwagen mit beschränkter Höchstgeschwindigkeit"
+     "label": "1. Abschnitt: Motorwagen mit beschränkter Höchstgeschwindigkeit",
+     "eId": "part_3/tit_2/chap_7/sec_1"
     }
    ],
    "marginalie": [
@@ -15396,19 +16120,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Gesellschaftswagen (einschliesslich Gelenk- und Trolleybusse) und Kleinbusse"
+     "label": "2. Abschnitt: Gesellschaftswagen (einschliesslich Gelenk- und Trolleybusse) und Kleinbusse",
+     "eId": "part_3/tit_2/chap_7/sec_2"
     }
    ],
    "marginalie": [
@@ -15458,19 +16186,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten"
+     "label": "7. Kapitel: Besondere Bestimmungen für einzelne Motorwagenarten",
+     "eId": "part_3/tit_2/chap_7"
     },
     {
      "ebene": 4,
-     "label": "7. Abschnitt: Raupenfahrzeuge"
+     "label": "7. Abschnitt: Raupenfahrzeuge",
+     "eId": "part_3/tit_2/chap_7/sec_7"
     }
    ],
    "marginalie": [
@@ -15532,15 +16264,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Abmessungen, Gewichte, Plätze, Kennzeichnung"
+     "label": "1. Kapitel: Abmessungen, Gewichte, Plätze, Kennzeichnung",
+     "eId": "part_3/tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -15565,19 +16300,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge"
+     "label": "3. Titel: Motorräder, Leicht‑, Klein- und dreirädrige Motorfahrzeuge",
+     "eId": "part_3/tit_3"
     },
     {
      "ebene": 3,
-     "label": "6. Kapitel: Besondere Bestimmungen"
+     "label": "6. Kapitel: Besondere Bestimmungen",
+     "eId": "part_3/tit_3/chap_6"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Motorräder nach Artikel 14 Buchstabe a"
+     "label": "1. Abschnitt: Motorräder nach Artikel 14 Buchstabe a",
+     "eId": "part_3/tit_3/chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -15606,19 +16345,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Die Motorfahrräder"
+     "label": "3. Kapitel: Die Motorfahrräder",
+     "eId": "part_3/tit_5/chap_3"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "part_3/tit_5/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -15667,19 +16410,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Die Motorfahrräder"
+     "label": "3. Kapitel: Die Motorfahrräder",
+     "eId": "part_3/tit_5/chap_3"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "part_3/tit_5/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -15732,19 +16479,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Die Motorfahrräder"
+     "label": "3. Kapitel: Die Motorfahrräder",
+     "eId": "part_3/tit_5/chap_3"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Besondere Bestimmungen für schnelle Motorfahrräder"
+     "label": "2. Abschnitt: Besondere Bestimmungen für schnelle Motorfahrräder",
+     "eId": "part_3/tit_5/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -15805,19 +16556,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Die Motorfahrräder"
+     "label": "3. Kapitel: Die Motorfahrräder",
+     "eId": "part_3/tit_5/chap_3"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Besondere Bestimmungen für schnelle Motorfahrräder"
+     "label": "2. Abschnitt: Besondere Bestimmungen für schnelle Motorfahrräder",
+     "eId": "part_3/tit_5/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -15842,19 +16597,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Die Motorfahrräder"
+     "label": "3. Kapitel: Die Motorfahrräder",
+     "eId": "part_3/tit_5/chap_3"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Besondere Bestimmungen für Elektro-Stehroller"
+     "label": "5. Abschnitt: Besondere Bestimmungen für Elektro-Stehroller",
+     "eId": "part_3/tit_5/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -15892,19 +16651,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Übrige Motorfahrzeuge"
+     "label": "5. Titel: Übrige Motorfahrzeuge",
+     "eId": "part_3/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Die Motorfahrräder"
+     "label": "3. Kapitel: Die Motorfahrräder",
+     "eId": "part_3/tit_5/chap_3"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Besondere Bestimmungen für schwere Motorfahrräder"
+     "label": "6. Abschnitt: Besondere Bestimmungen für schwere Motorfahrräder",
+     "eId": "part_3/tit_5/chap_3/sec_6"
     }
    ],
    "marginalie": [],
@@ -15928,11 +16691,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Einleitung"
+     "label": "1. Titel: Einleitung",
+     "eId": "part_1/tit_1"
     }
    ],
    "marginalie": [
@@ -15957,19 +16722,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "6. Titel: Anhänger"
+     "label": "6. Titel: Anhänger",
+     "eId": "part_3/tit_6"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten"
+     "label": "8. Kapitel: Besondere Bestimmungen für einzelne Anhängerarten",
+     "eId": "part_3/tit_6/chap_8"
     },
     {
      "ebene": 4,
-     "label": "10. Abschnitt: Schlittenanhänger"
+     "label": "10. Abschnitt: Schlittenanhänger",
+     "eId": "part_3/tit_6/chap_8/sec_10"
     }
    ],
    "marginalie": [],
@@ -15993,11 +16762,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16034,11 +16805,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16063,11 +16836,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16105,11 +16880,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16134,11 +16911,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16163,11 +16942,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16192,11 +16973,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16221,11 +17004,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16262,11 +17047,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16291,11 +17078,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16320,11 +17109,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16356,11 +17147,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16385,11 +17178,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16438,11 +17233,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16467,11 +17264,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16508,11 +17307,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16550,11 +17351,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16579,11 +17382,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16621,11 +17426,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16663,11 +17470,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Straf- und Schlussbestimmungen"
+     "label": "4. Teil: Straf- und Schlussbestimmungen",
+     "eId": "part_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Schlussbestimmungen"
+     "label": "2. Kapitel: Schlussbestimmungen",
+     "eId": "part_4/chap_2"
     }
    ],
    "marginalie": [
@@ -16692,15 +17501,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Motorlose Fahrzeuge"
+     "label": "4. Kapitel: Motorlose Fahrzeuge",
+     "eId": "part_1/tit_2/chap_4"
     }
    ],
    "marginalie": [
@@ -16741,15 +17553,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Ausnahmefahrzeuge"
+     "label": "5. Kapitel: Ausnahmefahrzeuge",
+     "eId": "part_1/tit_2/chap_5"
     }
    ],
    "marginalie": [
@@ -16774,11 +17589,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung"
+     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zulassungsprüfung"
+     "label": "1. Kapitel: Zulassungsprüfung",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -16853,11 +17670,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung"
+     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zulassungsprüfung"
+     "label": "1. Kapitel: Zulassungsprüfung",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -16882,11 +17701,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung"
+     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zulassungsprüfung"
+     "label": "1. Kapitel: Zulassungsprüfung",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -16911,11 +17732,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung"
+     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Zulassungsprüfung"
+     "label": "1. Kapitel: Zulassungsprüfung",
+     "eId": "part_2/chap_1"
     }
    ],
    "marginalie": [
@@ -16926,11 +17749,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung"
+     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Nachprüfungen"
+     "label": "2. Kapitel: Nachprüfungen",
+     "eId": "part_2/chap_2"
     }
    ],
    "marginalie": [
@@ -16955,11 +17780,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung"
+     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Nachprüfungen"
+     "label": "2. Kapitel: Nachprüfungen",
+     "eId": "part_2/chap_2"
     }
    ],
    "marginalie": [
@@ -16984,11 +17811,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung"
+     "label": "2. Teil: Zulassungsprüfung, Nachprüfung, Abgaswartung",
+     "eId": "part_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Kapitel: Gemeinsame Bestimmungen für Zulassungs- und Nachprüfungen"
+     "label": "2a. Kapitel: Gemeinsame Bestimmungen für Zulassungs- und Nachprüfungen",
+     "eId": "part_2/chap_2_a"
     }
    ],
    "marginalie": [],
@@ -17049,15 +17878,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Grundsatz und Geltungsbereich"
+     "label": "1. Kapitel: Grundsatz und Geltungsbereich",
+     "eId": "part_3/tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -17160,11 +17992,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Einleitung"
+     "label": "1. Titel: Einleitung",
+     "eId": "part_1/tit_1"
     }
    ],
    "marginalie": [
@@ -17217,11 +18051,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Einleitung"
+     "label": "1. Titel: Einleitung",
+     "eId": "part_1/tit_1"
     }
    ],
    "marginalie": [
@@ -17250,15 +18086,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Antrieb, Abgase, Geräusche"
+     "label": "2. Kapitel: Antrieb, Abgase, Geräusche",
+     "eId": "part_3/tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -17300,15 +18139,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "8. Kapitel: Aufbau, Innenraum"
+     "label": "8. Kapitel: Aufbau, Innenraum",
+     "eId": "part_3/tit_1/chap_8"
     }
    ],
    "marginalie": [
@@ -17345,15 +18187,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Definitionen und allgemeine Anforderungen"
+     "label": "1. Titel: Definitionen und allgemeine Anforderungen",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "9. Kapitel: Beleuchtung"
+     "label": "9. Kapitel: Beleuchtung",
+     "eId": "part_3/tit_1/chap_9"
     }
    ],
    "marginalie": [
@@ -17378,15 +18223,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Technische Anforderungen"
+     "label": "3. Teil: Technische Anforderungen",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Die Motorwagen"
+     "label": "2. Titel: Die Motorwagen",
+     "eId": "part_3/tit_2"
     },
     {
      "ebene": 3,
-     "label": "2a. Kapitel: Geschwindigkeitsbegrenzungseinrichtungen, Fahrtschreiber, Datenaufzeichnungsgeräte"
+     "label": "2a. Kapitel: Geschwindigkeitsbegrenzungseinrichtungen, Fahrtschreiber, Datenaufzeichnungsgeräte",
+     "eId": "part_3/tit_2/chap_2_a"
     }
    ],
    "marginalie": [
@@ -17411,15 +18259,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Allgemeine Bestimmungen"
+     "label": "1. Teil: Allgemeine Bestimmungen",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Fahrzeugeinteilung"
+     "label": "2. Titel: Fahrzeugeinteilung",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Definitionen"
+     "label": "1. Kapitel: Definitionen",
+     "eId": "part_1/tit_2/chap_1"
     }
    ],
    "marginalie": [

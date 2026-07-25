@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "961.01",
   "titel": "Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen",
@@ -55,11 +55,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand, Zweck und Geltungsbereich"
+     "label": "1. Kapitel: Gegenstand, Zweck und Geltungsbereich",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -105,11 +107,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand, Zweck und Geltungsbereich"
+     "label": "1. Kapitel: Gegenstand, Zweck und Geltungsbereich",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -286,11 +290,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bewilligung"
+     "label": "1. Abschnitt: Bewilligung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -323,11 +329,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bewilligung"
+     "label": "1. Abschnitt: Bewilligung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -372,11 +380,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bewilligung"
+     "label": "1. Abschnitt: Bewilligung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -405,11 +415,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bewilligung"
+     "label": "1. Abschnitt: Bewilligung",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -442,11 +454,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Voraussetzungen"
+     "label": "2. Abschnitt: Voraussetzungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -476,11 +490,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Voraussetzungen"
+     "label": "2. Abschnitt: Voraussetzungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -491,11 +507,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Voraussetzungen"
+     "label": "2. Abschnitt: Voraussetzungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -524,11 +542,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Voraussetzungen"
+     "label": "2. Abschnitt: Voraussetzungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -539,11 +559,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Voraussetzungen"
+     "label": "2. Abschnitt: Voraussetzungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -572,11 +594,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Voraussetzungen"
+     "label": "2. Abschnitt: Voraussetzungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -587,11 +611,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Voraussetzungen"
+     "label": "2. Abschnitt: Voraussetzungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -618,11 +644,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Voraussetzungen"
+     "label": "2. Abschnitt: Voraussetzungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -651,11 +679,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ergänzende Voraussetzungen für ausländische Versicherungsunternehmen"
+     "label": "3. Abschnitt: Ergänzende Voraussetzungen für ausländische Versicherungsunternehmen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -684,11 +714,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Finanzielle Ausstattung"
+     "label": "1. Abschnitt: Finanzielle Ausstattung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -699,11 +731,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Finanzielle Ausstattung"
+     "label": "1. Abschnitt: Finanzielle Ausstattung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -732,11 +766,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Finanzielle Ausstattung"
+     "label": "1. Abschnitt: Finanzielle Ausstattung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -747,11 +783,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Finanzielle Ausstattung"
+     "label": "1. Abschnitt: Finanzielle Ausstattung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -762,11 +800,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Finanzielle Ausstattung"
+     "label": "1. Abschnitt: Finanzielle Ausstattung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -795,11 +835,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Finanzielle Ausstattung"
+     "label": "1. Abschnitt: Finanzielle Ausstattung",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -828,11 +870,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Risikomanagement"
+     "label": "2. Abschnitt: Risikomanagement",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -883,11 +927,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verantwortlicher Aktuar oder verantwortliche Aktuarin"
+     "label": "3. Abschnitt: Verantwortlicher Aktuar oder verantwortliche Aktuarin",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -898,11 +944,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verantwortlicher Aktuar oder verantwortliche Aktuarin"
+     "label": "3. Abschnitt: Verantwortlicher Aktuar oder verantwortliche Aktuarin",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -963,11 +1011,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Berichterstattung"
+     "label": "4. Abschnitt: Berichterstattung",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1044,11 +1094,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Berichterstattung"
+     "label": "4. Abschnitt: Berichterstattung",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1106,11 +1158,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Prüfung"
+     "label": "5. Abschnitt: Prüfung",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1160,11 +1214,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Prüfung"
+     "label": "5. Abschnitt: Prüfung",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1248,11 +1304,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Prüfung"
+     "label": "5. Abschnitt: Prüfung",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [],
@@ -1279,11 +1337,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Prüfung"
+     "label": "5. Abschnitt: Prüfung",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -1294,11 +1354,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1327,11 +1389,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1342,11 +1406,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1357,11 +1423,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1388,11 +1456,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1421,11 +1491,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1454,11 +1526,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1487,11 +1561,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1520,11 +1596,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1535,7 +1613,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler"
+     "label": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1565,7 +1644,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler"
+     "label": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1604,7 +1684,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler"
+     "label": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1615,7 +1696,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler"
+     "label": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1626,7 +1708,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler"
+     "label": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1637,7 +1720,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler"
+     "label": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1648,11 +1732,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1726,11 +1812,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1776,11 +1864,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [],
@@ -1811,11 +1901,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1826,11 +1918,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [],
@@ -1861,11 +1955,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schutzmassnahmen, Massnahmen bei Insolvenzgefahr und Liquidation"
+     "label": "2. Abschnitt: Schutzmassnahmen, Massnahmen bei Insolvenzgefahr und Liquidation",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2020,11 +2116,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schutzmassnahmen, Massnahmen bei Insolvenzgefahr und Liquidation"
+     "label": "2. Abschnitt: Schutzmassnahmen, Massnahmen bei Insolvenzgefahr und Liquidation",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2053,11 +2151,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Versicherungskonkurs"
+     "label": "2b. Abschnitt: Versicherungskonkurs",
+     "eId": "chap_5/sec_2_b"
     }
    ],
    "marginalie": [
@@ -2103,11 +2203,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Versicherungskonkurs"
+     "label": "2b. Abschnitt: Versicherungskonkurs",
+     "eId": "chap_5/sec_2_b"
     }
    ],
    "marginalie": [
@@ -2181,11 +2283,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Zusätzliche Schutzmassnahmen für ausländische Versicherungsunternehmen"
+     "label": "4. Abschnitt: Zusätzliche Schutzmassnahmen für ausländische Versicherungsunternehmen",
+     "eId": "chap_5/sec_4"
     }
    ],
    "marginalie": [
@@ -2215,11 +2319,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Zusätzliche Schutzmassnahmen für ausländische Versicherungsunternehmen"
+     "label": "4. Abschnitt: Zusätzliche Schutzmassnahmen für ausländische Versicherungsunternehmen",
+     "eId": "chap_5/sec_4"
     }
    ],
    "marginalie": [
@@ -2245,11 +2351,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Zusätzliche Schutzmassnahmen für ausländische Versicherungsunternehmen"
+     "label": "4. Abschnitt: Zusätzliche Schutzmassnahmen für ausländische Versicherungsunternehmen",
+     "eId": "chap_5/sec_4"
     }
    ],
    "marginalie": [
@@ -2260,11 +2368,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Beendigung der Versicherungstätigkeit"
+     "label": "5. Abschnitt: Beendigung der Versicherungstätigkeit",
+     "eId": "chap_5/sec_5"
     }
    ],
    "marginalie": [
@@ -2275,11 +2385,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Beendigung der Versicherungstätigkeit"
+     "label": "5. Abschnitt: Beendigung der Versicherungstätigkeit",
+     "eId": "chap_5/sec_5"
     }
    ],
    "marginalie": [
@@ -2325,11 +2437,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Beendigung der Versicherungstätigkeit"
+     "label": "5. Abschnitt: Beendigung der Versicherungstätigkeit",
+     "eId": "chap_5/sec_5"
     }
    ],
    "marginalie": [
@@ -2340,11 +2454,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Beendigung der Versicherungstätigkeit"
+     "label": "5. Abschnitt: Beendigung der Versicherungstätigkeit",
+     "eId": "chap_5/sec_5"
     }
    ],
    "marginalie": [
@@ -2355,11 +2471,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Versicherungsgruppen"
+     "label": "1. Abschnitt: Versicherungsgruppen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2370,11 +2488,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Versicherungsgruppen"
+     "label": "1. Abschnitt: Versicherungsgruppen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2385,11 +2505,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Versicherungsgruppen"
+     "label": "1. Abschnitt: Versicherungsgruppen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2400,11 +2522,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Versicherungsgruppen"
+     "label": "1. Abschnitt: Versicherungsgruppen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2433,11 +2557,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Versicherungsgruppen"
+     "label": "1. Abschnitt: Versicherungsgruppen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2448,11 +2574,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Versicherungsgruppen"
+     "label": "1. Abschnitt: Versicherungsgruppen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2481,11 +2609,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Versicherungsgruppen"
+     "label": "1. Abschnitt: Versicherungsgruppen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2542,11 +2672,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Versicherungsgruppen"
+     "label": "1. Abschnitt: Versicherungsgruppen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -2589,11 +2721,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherungskonglomerate"
+     "label": "2. Abschnitt: Versicherungskonglomerate",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2626,11 +2760,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherungskonglomerate"
+     "label": "2. Abschnitt: Versicherungskonglomerate",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2663,11 +2799,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherungskonglomerate"
+     "label": "2. Abschnitt: Versicherungskonglomerate",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2678,11 +2816,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherungskonglomerate"
+     "label": "2. Abschnitt: Versicherungskonglomerate",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2711,11 +2851,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherungskonglomerate"
+     "label": "2. Abschnitt: Versicherungskonglomerate",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2726,11 +2868,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherungskonglomerate"
+     "label": "2. Abschnitt: Versicherungskonglomerate",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2759,11 +2903,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherungskonglomerate"
+     "label": "2. Abschnitt: Versicherungskonglomerate",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2820,11 +2966,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherungskonglomerate"
+     "label": "2. Abschnitt: Versicherungskonglomerate",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2835,7 +2983,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Herausgabe von Dokumenten an die Versicherungsnehmerinnen und -nehmer und an die versicherten Personen"
+     "label": "7. Kapitel: Herausgabe von Dokumenten an die Versicherungsnehmerinnen und -nehmer und an die versicherten Personen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2881,7 +3030,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Herausgabe von Dokumenten an die Versicherungsnehmerinnen und -nehmer und an die versicherten Personen"
+     "label": "7. Kapitel: Herausgabe von Dokumenten an die Versicherungsnehmerinnen und -nehmer und an die versicherten Personen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2910,7 +3060,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7a. Kapitel: Tarifverfügungen und Gerichte"
+     "label": "7a. Kapitel: Tarifverfügungen und Gerichte",
+     "eId": "chap_7_a"
     }
    ],
    "marginalie": [
@@ -2969,7 +3120,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7a. Kapitel: Tarifverfügungen und Gerichte"
+     "label": "7a. Kapitel: Tarifverfügungen und Gerichte",
+     "eId": "chap_7_a"
     }
    ],
    "marginalie": [
@@ -2998,7 +3150,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Strafbestimmungen"
+     "label": "8. Kapitel: Strafbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3059,7 +3212,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Strafbestimmungen"
+     "label": "8. Kapitel: Strafbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3088,7 +3242,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3121,7 +3276,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3132,7 +3288,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3143,7 +3300,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3163,11 +3321,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Voraussetzungen"
+     "label": "2. Abschnitt: Voraussetzungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -3196,11 +3356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Ergänzende Voraussetzungen für ausländische Versicherungsunternehmen"
+     "label": "3. Abschnitt: Ergänzende Voraussetzungen für ausländische Versicherungsunternehmen",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -3229,11 +3391,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Risikomanagement"
+     "label": "2. Abschnitt: Risikomanagement",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3262,11 +3426,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand, Zweck und Geltungsbereich"
+     "label": "1. Kapitel: Gegenstand, Zweck und Geltungsbereich",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3295,11 +3461,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand, Zweck und Geltungsbereich"
+     "label": "1. Kapitel: Gegenstand, Zweck und Geltungsbereich",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -3328,11 +3496,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Gegenstand, Zweck und Geltungsbereich"
+     "label": "1. Kapitel: Gegenstand, Zweck und Geltungsbereich",
+     "eId": "chap_1"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflichten für von der Aufsicht ausgenommene Unternehmen und Personen"
+     "label": "2. Abschnitt: Pflichten für von der Aufsicht ausgenommene Unternehmen und Personen",
+     "eId": "chap_1/sec_2"
     }
    ],
    "marginalie": [],
@@ -3360,11 +3530,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5a. Abschnitt: Versicherungsunternehmen, die professionelle Versicherungsnehmer versichern, und konzerninterne Direkt- und Rückversicherung"
+     "label": "5a. Abschnitt: Versicherungsunternehmen, die professionelle Versicherungsnehmer versichern, und konzerninterne Direkt- und Rückversicherung",
+     "eId": "chap_3/sec_5_a"
     }
    ],
    "marginalie": [
@@ -3407,11 +3579,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5a. Abschnitt: Versicherungsunternehmen, die professionelle Versicherungsnehmer versichern, und konzerninterne Direkt- und Rückversicherung"
+     "label": "5a. Abschnitt: Versicherungsunternehmen, die professionelle Versicherungsnehmer versichern, und konzerninterne Direkt- und Rückversicherung",
+     "eId": "chap_3/sec_5_a"
     }
    ],
    "marginalie": [
@@ -3422,11 +3596,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5a. Abschnitt: Versicherungsunternehmen, die professionelle Versicherungsnehmer versichern, und konzerninterne Direkt- und Rückversicherung"
+     "label": "5a. Abschnitt: Versicherungsunternehmen, die professionelle Versicherungsnehmer versichern, und konzerninterne Direkt- und Rückversicherung",
+     "eId": "chap_3/sec_5_a"
     }
    ],
    "marginalie": [
@@ -3452,11 +3628,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5a. Abschnitt: Versicherungsunternehmen, die professionelle Versicherungsnehmer versichern, und konzerninterne Direkt- und Rückversicherung"
+     "label": "5a. Abschnitt: Versicherungsunternehmen, die professionelle Versicherungsnehmer versichern, und konzerninterne Direkt- und Rückversicherung",
+     "eId": "chap_3/sec_5_a"
     }
    ],
    "marginalie": [
@@ -3467,11 +3645,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5b. Abschnitt: Versicherungszweckgesellschaften"
+     "label": "5b. Abschnitt: Versicherungszweckgesellschaften",
+     "eId": "chap_3/sec_5_b"
     }
    ],
    "marginalie": [
@@ -3501,11 +3681,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5b. Abschnitt: Versicherungszweckgesellschaften"
+     "label": "5b. Abschnitt: Versicherungszweckgesellschaften",
+     "eId": "chap_3/sec_5_b"
     }
    ],
    "marginalie": [
@@ -3516,11 +3698,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige"
+     "label": "6. Abschnitt: Besondere Bestimmungen für einzelne Versicherungszweige",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -3557,11 +3741,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen",
+     "eId": "chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -3591,11 +3777,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen",
+     "eId": "chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -3606,11 +3794,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen",
+     "eId": "chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -3636,11 +3826,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen",
+     "eId": "chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -3651,11 +3843,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen",
+     "eId": "chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -3666,11 +3860,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen",
+     "eId": "chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -3681,11 +3877,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen",
+     "eId": "chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -3696,11 +3894,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen",
+     "eId": "chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -3711,11 +3911,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen",
+     "eId": "chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -3726,11 +3928,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen",
+     "eId": "chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -3741,11 +3945,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit"
+     "label": "3. Kapitel: Ausübung der Versicherungstätigkeit",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen"
+     "label": "7. Abschnitt: Qualifizierte Lebensversicherungen",
+     "eId": "chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -3756,7 +3962,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler"
+     "label": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -3767,7 +3974,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler"
+     "label": "4. Kapitel: Versicherungsvermittlerinnen und -vermittler",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -3778,11 +3986,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schutzmassnahmen, Massnahmen bei Insolvenzgefahr und Liquidation"
+     "label": "2. Abschnitt: Schutzmassnahmen, Massnahmen bei Insolvenzgefahr und Liquidation",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -3837,11 +4047,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Schutzmassnahmen, Massnahmen bei Insolvenzgefahr und Liquidation"
+     "label": "2. Abschnitt: Schutzmassnahmen, Massnahmen bei Insolvenzgefahr und Liquidation",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -3870,11 +4082,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Sanierung"
+     "label": "2a. Abschnitt: Sanierung",
+     "eId": "chap_5/sec_2_a"
     }
    ],
    "marginalie": [
@@ -3904,11 +4118,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Sanierung"
+     "label": "2a. Abschnitt: Sanierung",
+     "eId": "chap_5/sec_2_a"
     }
    ],
    "marginalie": [
@@ -3919,11 +4135,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Sanierung"
+     "label": "2a. Abschnitt: Sanierung",
+     "eId": "chap_5/sec_2_a"
     }
    ],
    "marginalie": [
@@ -3949,11 +4167,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Sanierung"
+     "label": "2a. Abschnitt: Sanierung",
+     "eId": "chap_5/sec_2_a"
     }
    ],
    "marginalie": [
@@ -3979,11 +4199,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Sanierung"
+     "label": "2a. Abschnitt: Sanierung",
+     "eId": "chap_5/sec_2_a"
     }
    ],
    "marginalie": [
@@ -3994,11 +4216,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Sanierung"
+     "label": "2a. Abschnitt: Sanierung",
+     "eId": "chap_5/sec_2_a"
     }
    ],
    "marginalie": [
@@ -4009,11 +4233,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Sanierung"
+     "label": "2a. Abschnitt: Sanierung",
+     "eId": "chap_5/sec_2_a"
     }
    ],
    "marginalie": [
@@ -4024,11 +4250,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Sanierung"
+     "label": "2a. Abschnitt: Sanierung",
+     "eId": "chap_5/sec_2_a"
     }
    ],
    "marginalie": [
@@ -4039,11 +4267,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Sanierung"
+     "label": "2a. Abschnitt: Sanierung",
+     "eId": "chap_5/sec_2_a"
     }
    ],
    "marginalie": [
@@ -4054,11 +4284,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Sanierung"
+     "label": "2a. Abschnitt: Sanierung",
+     "eId": "chap_5/sec_2_a"
     }
    ],
    "marginalie": [
@@ -4069,11 +4301,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Sanierung"
+     "label": "2a. Abschnitt: Sanierung",
+     "eId": "chap_5/sec_2_a"
     }
    ],
    "marginalie": [
@@ -4084,11 +4318,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Sanierung"
+     "label": "2a. Abschnitt: Sanierung",
+     "eId": "chap_5/sec_2_a"
     }
    ],
    "marginalie": [
@@ -4099,11 +4335,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Sanierung"
+     "label": "2a. Abschnitt: Sanierung",
+     "eId": "chap_5/sec_2_a"
     }
    ],
    "marginalie": [
@@ -4142,11 +4380,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Versicherungskonkurs"
+     "label": "2b. Abschnitt: Versicherungskonkurs",
+     "eId": "chap_5/sec_2_b"
     }
    ],
    "marginalie": [
@@ -4196,11 +4436,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Versicherungskonkurs"
+     "label": "2b. Abschnitt: Versicherungskonkurs",
+     "eId": "chap_5/sec_2_b"
     }
    ],
    "marginalie": [
@@ -4229,11 +4471,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Versicherungskonkurs"
+     "label": "2b. Abschnitt: Versicherungskonkurs",
+     "eId": "chap_5/sec_2_b"
     }
    ],
    "marginalie": [
@@ -4262,11 +4506,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Versicherungskonkurs"
+     "label": "2b. Abschnitt: Versicherungskonkurs",
+     "eId": "chap_5/sec_2_b"
     }
    ],
    "marginalie": [
@@ -4303,11 +4549,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Versicherungskonkurs"
+     "label": "2b. Abschnitt: Versicherungskonkurs",
+     "eId": "chap_5/sec_2_b"
     }
    ],
    "marginalie": [
@@ -4336,11 +4584,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Versicherungskonkurs"
+     "label": "2b. Abschnitt: Versicherungskonkurs",
+     "eId": "chap_5/sec_2_b"
     }
    ],
    "marginalie": [
@@ -4418,11 +4668,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2c. Abschnitt: Verfahren"
+     "label": "2c. Abschnitt: Verfahren",
+     "eId": "chap_5/sec_2_c"
     }
    ],
    "marginalie": [
@@ -4476,11 +4728,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2c. Abschnitt: Verfahren"
+     "label": "2c. Abschnitt: Verfahren",
+     "eId": "chap_5/sec_2_c"
     }
    ],
    "marginalie": [
@@ -4543,11 +4797,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2c. Abschnitt: Verfahren"
+     "label": "2c. Abschnitt: Verfahren",
+     "eId": "chap_5/sec_2_c"
     }
    ],
    "marginalie": [
@@ -4589,11 +4845,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2c. Abschnitt: Verfahren"
+     "label": "2c. Abschnitt: Verfahren",
+     "eId": "chap_5/sec_2_c"
     }
    ],
    "marginalie": [
@@ -4622,11 +4880,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2c. Abschnitt: Verfahren"
+     "label": "2c. Abschnitt: Verfahren",
+     "eId": "chap_5/sec_2_c"
     }
    ],
    "marginalie": [
@@ -4669,11 +4929,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2c. Abschnitt: Verfahren"
+     "label": "2c. Abschnitt: Verfahren",
+     "eId": "chap_5/sec_2_c"
     }
    ],
    "marginalie": [
@@ -4728,11 +4990,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2c. Abschnitt: Verfahren"
+     "label": "2c. Abschnitt: Verfahren",
+     "eId": "chap_5/sec_2_c"
     }
    ],
    "marginalie": [
@@ -4761,11 +5025,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: …"
+     "label": "3. Abschnitt: …",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [],
@@ -4792,11 +5058,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Versicherungsgruppen"
+     "label": "1. Abschnitt: Versicherungsgruppen",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -4833,11 +5101,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate"
+     "label": "6. Kapitel: Besondere Bestimmungen betreffend die Aufsicht über Versicherungsgruppen und Versicherungskonglomerate",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Versicherungskonglomerate"
+     "label": "2. Abschnitt: Versicherungskonglomerate",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -4874,7 +5144,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Herausgabe von Dokumenten an die Versicherungsnehmerinnen und -nehmer und an die versicherten Personen"
+     "label": "7. Kapitel: Herausgabe von Dokumenten an die Versicherungsnehmerinnen und -nehmer und an die versicherten Personen",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -4905,7 +5176,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -4934,11 +5206,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Voraussetzungen"
+     "label": "2. Abschnitt: Voraussetzungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4967,11 +5241,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Voraussetzungen"
+     "label": "2. Abschnitt: Voraussetzungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -5000,11 +5276,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit"
+     "label": "2. Kapitel: Aufnahme der Versicherungstätigkeit",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Voraussetzungen"
+     "label": "2. Abschnitt: Voraussetzungen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [

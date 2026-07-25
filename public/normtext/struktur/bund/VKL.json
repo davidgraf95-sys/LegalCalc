@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "832.104",
   "titel": "Verordnung über die Kostenermittlung und die Leistungserfassung durch Spitäler, Geburtshäuser und Pflegeheime in der Krankenversicherung",
@@ -66,7 +66,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -91,7 +92,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Abschnitt: Allgemeines"
+     "label": "1. Abschnitt: Allgemeines",
+     "eId": "sec_1"
     }
    ],
    "marginalie": [
@@ -188,7 +190,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Definitionen"
+     "label": "2. Abschnitt: Definitionen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -213,7 +216,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Definitionen"
+     "label": "2. Abschnitt: Definitionen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [],
@@ -236,7 +240,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Definitionen"
+     "label": "2. Abschnitt: Definitionen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -261,7 +266,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Definitionen"
+     "label": "2. Abschnitt: Definitionen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -286,7 +292,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Definitionen"
+     "label": "2. Abschnitt: Definitionen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -323,7 +330,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Abschnitt: Definitionen"
+     "label": "2. Abschnitt: Definitionen",
+     "eId": "sec_2"
     }
    ],
    "marginalie": [
@@ -348,7 +356,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Ermittlung der Kosten und Erfassung der Leistungen"
+     "label": "3. Abschnitt: Ermittlung der Kosten und Erfassung der Leistungen",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -373,7 +382,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Ermittlung der Kosten und Erfassung der Leistungen"
+     "label": "3. Abschnitt: Ermittlung der Kosten und Erfassung der Leistungen",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -422,7 +432,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Ermittlung der Kosten und Erfassung der Leistungen"
+     "label": "3. Abschnitt: Ermittlung der Kosten und Erfassung der Leistungen",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [
@@ -433,7 +444,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Ausweis der erbrachten Leistungen"
+     "label": "4. Abschnitt: Ausweis der erbrachten Leistungen",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -458,7 +470,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Ausweis der erbrachten Leistungen"
+     "label": "4. Abschnitt: Ausweis der erbrachten Leistungen",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -507,7 +520,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Abschnitt: Ausweis der erbrachten Leistungen"
+     "label": "4. Abschnitt: Ausweis der erbrachten Leistungen",
+     "eId": "sec_4"
     }
    ],
    "marginalie": [
@@ -544,7 +558,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Abschnitt: Einsichtnahme"
+     "label": "5. Abschnitt: Einsichtnahme",
+     "eId": "sec_5"
     }
    ],
    "marginalie": [],
@@ -567,7 +582,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [],
@@ -590,7 +606,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Abschnitt: Schlussbestimmungen"
+     "label": "6. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_6"
     }
    ],
    "marginalie": [
@@ -601,7 +618,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Abschnitt: Ermittlung der Kosten und Erfassung der Leistungen"
+     "label": "3. Abschnitt: Ermittlung der Kosten und Erfassung der Leistungen",
+     "eId": "sec_3"
     }
    ],
    "marginalie": [

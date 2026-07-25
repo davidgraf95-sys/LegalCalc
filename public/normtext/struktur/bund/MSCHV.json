@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "232.111",
   "titel": "Verordnung über den Schutz von Marken und Herkunftsangaben",
@@ -81,7 +81,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -135,7 +136,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -160,7 +162,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -185,7 +188,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -222,7 +226,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -247,7 +252,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -272,7 +278,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -311,11 +318,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -365,11 +374,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -470,11 +481,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -511,11 +524,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -564,11 +579,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -621,11 +638,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -636,11 +655,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -665,11 +686,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -680,11 +703,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -695,11 +720,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -724,11 +751,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -776,11 +805,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -805,11 +836,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Widerspruchsverfahren"
+     "label": "2. Abschnitt: Widerspruchsverfahren",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -834,11 +867,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Widerspruchsverfahren"
+     "label": "2. Abschnitt: Widerspruchsverfahren",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -863,11 +898,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Widerspruchsverfahren"
+     "label": "2. Abschnitt: Widerspruchsverfahren",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -892,11 +929,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Widerspruchsverfahren"
+     "label": "2. Abschnitt: Widerspruchsverfahren",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -957,11 +996,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Widerspruchsverfahren"
+     "label": "2. Abschnitt: Widerspruchsverfahren",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -986,11 +1027,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verlängerung der Markeneintragung"
+     "label": "3. Abschnitt: Verlängerung der Markeneintragung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1015,11 +1058,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verlängerung der Markeneintragung"
+     "label": "3. Abschnitt: Verlängerung der Markeneintragung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1100,11 +1145,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Verlängerung der Markeneintragung"
+     "label": "3. Abschnitt: Verlängerung der Markeneintragung",
+     "eId": "chap_2/sec_3"
     }
    ],
    "marginalie": [
@@ -1129,11 +1176,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Änderungen der Markeneintragung"
+     "label": "4. Abschnitt: Änderungen der Markeneintragung",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1170,11 +1219,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Änderungen der Markeneintragung"
+     "label": "4. Abschnitt: Änderungen der Markeneintragung",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1199,11 +1250,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Änderungen der Markeneintragung"
+     "label": "4. Abschnitt: Änderungen der Markeneintragung",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1214,11 +1267,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Änderungen der Markeneintragung"
+     "label": "4. Abschnitt: Änderungen der Markeneintragung",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1229,11 +1284,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Änderungen der Markeneintragung"
+     "label": "4. Abschnitt: Änderungen der Markeneintragung",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [
@@ -1244,11 +1301,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Löschung der Markeneintragung"
+     "label": "5. Abschnitt: Löschung der Markeneintragung",
+     "eId": "chap_2/sec_5"
     }
    ],
    "marginalie": [],
@@ -1271,11 +1330,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Markenregister"
+     "label": "3. Kapitel: Aktenheft und Markenregister",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Das Aktenheft"
+     "label": "1. Abschnitt: Das Aktenheft",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1340,11 +1401,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Markenregister"
+     "label": "3. Kapitel: Aktenheft und Markenregister",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Das Aktenheft"
+     "label": "1. Abschnitt: Das Aktenheft",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1369,11 +1432,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Markenregister"
+     "label": "3. Kapitel: Aktenheft und Markenregister",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Das Aktenheft"
+     "label": "1. Abschnitt: Das Aktenheft",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1410,11 +1475,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Markenregister"
+     "label": "3. Kapitel: Aktenheft und Markenregister",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Das Aktenheft"
+     "label": "1. Abschnitt: Das Aktenheft",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1455,11 +1522,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Markenregister"
+     "label": "3. Kapitel: Aktenheft und Markenregister",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Das Markenregister"
+     "label": "2. Abschnitt: Das Markenregister",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1591,11 +1660,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Markenregister"
+     "label": "3. Kapitel: Aktenheft und Markenregister",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Das Markenregister"
+     "label": "2. Abschnitt: Das Markenregister",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -1632,7 +1703,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Veröffentlichungen des IGE"
+     "label": "4. Kapitel: Veröffentlichungen des IGE",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1658,7 +1730,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Veröffentlichungen des IGE"
+     "label": "4. Kapitel: Veröffentlichungen des IGE",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -1683,7 +1756,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Veröffentlichungen des IGE"
+     "label": "4. Kapitel: Veröffentlichungen des IGE",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [],
@@ -1706,11 +1780,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Internationale Markenregistrierung"
+     "label": "6. Kapitel: Internationale Markenregistrierung",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gesuch um internationale Registrierung"
+     "label": "1. Abschnitt: Gesuch um internationale Registrierung",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1822,11 +1898,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Internationale Markenregistrierung"
+     "label": "6. Kapitel: Internationale Markenregistrierung",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gesuch um internationale Registrierung"
+     "label": "1. Abschnitt: Gesuch um internationale Registrierung",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1864,11 +1942,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Internationale Markenregistrierung"
+     "label": "6. Kapitel: Internationale Markenregistrierung",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gesuch um internationale Registrierung"
+     "label": "1. Abschnitt: Gesuch um internationale Registrierung",
+     "eId": "chap_6/sec_1"
     }
    ],
    "marginalie": [
@@ -1897,11 +1977,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Internationale Markenregistrierung"
+     "label": "6. Kapitel: Internationale Markenregistrierung",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wirkung der internationalen Registrierung in der Schweiz"
+     "label": "2. Abschnitt: Wirkung der internationalen Registrierung in der Schweiz",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1942,11 +2024,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Internationale Markenregistrierung"
+     "label": "6. Kapitel: Internationale Markenregistrierung",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wirkung der internationalen Registrierung in der Schweiz"
+     "label": "2. Abschnitt: Wirkung der internationalen Registrierung in der Schweiz",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -1971,11 +2055,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Internationale Markenregistrierung"
+     "label": "6. Kapitel: Internationale Markenregistrierung",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wirkung der internationalen Registrierung in der Schweiz"
+     "label": "2. Abschnitt: Wirkung der internationalen Registrierung in der Schweiz",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2000,7 +2086,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Produzentenkennzeichen auf Uhren und Uhrwerken"
+     "label": "7. Kapitel: Produzentenkennzeichen auf Uhren und Uhrwerken",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [],
@@ -2024,7 +2111,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2050,7 +2138,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2061,7 +2150,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2072,7 +2162,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2111,11 +2202,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Aufhebung bisherigen Rechts"
+     "label": "1. Abschnitt: Aufhebung bisherigen Rechts",
+     "eId": "chap_9/sec_1"
     }
    ],
    "marginalie": [],
@@ -2186,11 +2279,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [
@@ -2201,11 +2296,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [
@@ -2216,11 +2313,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Inkrafttreten"
+     "label": "3. Abschnitt: Inkrafttreten",
+     "eId": "chap_9/sec_3"
     }
    ],
    "marginalie": []
@@ -2229,11 +2328,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2258,11 +2359,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2287,11 +2390,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -2328,11 +2433,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Verfahren zur Löschung einer Markeneintragung wegen Nichtgebrauchs der Marke"
+     "label": "2a. Abschnitt: Verfahren zur Löschung einer Markeneintragung wegen Nichtgebrauchs der Marke",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -2358,11 +2465,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Verfahren zur Löschung einer Markeneintragung wegen Nichtgebrauchs der Marke"
+     "label": "2a. Abschnitt: Verfahren zur Löschung einer Markeneintragung wegen Nichtgebrauchs der Marke",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -2373,11 +2482,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Verfahren zur Löschung einer Markeneintragung wegen Nichtgebrauchs der Marke"
+     "label": "2a. Abschnitt: Verfahren zur Löschung einer Markeneintragung wegen Nichtgebrauchs der Marke",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -2388,11 +2499,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Verfahren zur Löschung einer Markeneintragung wegen Nichtgebrauchs der Marke"
+     "label": "2a. Abschnitt: Verfahren zur Löschung einer Markeneintragung wegen Nichtgebrauchs der Marke",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -2403,11 +2516,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Verfahren zur Löschung einer Markeneintragung wegen Nichtgebrauchs der Marke"
+     "label": "2a. Abschnitt: Verfahren zur Löschung einer Markeneintragung wegen Nichtgebrauchs der Marke",
+     "eId": "chap_2/sec_2_a"
     }
    ],
    "marginalie": [
@@ -2445,11 +2560,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Änderungen der Markeneintragung"
+     "label": "4. Abschnitt: Änderungen der Markeneintragung",
+     "eId": "chap_2/sec_4"
     }
    ],
    "marginalie": [],
@@ -2472,11 +2589,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Markenregister"
+     "label": "3. Kapitel: Aktenheft und Markenregister",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Das Markenregister"
+     "label": "2. Abschnitt: Das Markenregister",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -2503,11 +2622,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aktenheft und Markenregister"
+     "label": "3. Kapitel: Aktenheft und Markenregister",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Das Markenregister"
+     "label": "2. Abschnitt: Das Markenregister",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -2536,7 +2657,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: …"
+     "label": "5. Kapitel: …",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [],
@@ -2559,7 +2681,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -2598,11 +2721,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Internationale Markenregistrierung"
+     "label": "6. Kapitel: Internationale Markenregistrierung",
+     "eId": "chap_6"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Wirkung der internationalen Registrierung in der Schweiz"
+     "label": "2. Abschnitt: Wirkung der internationalen Registrierung in der Schweiz",
+     "eId": "chap_6/sec_2"
     }
    ],
    "marginalie": [
@@ -2627,11 +2752,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Herkunftsangaben"
+     "label": "6a. Kapitel: Herkunftsangaben",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_6_a/sec_1"
     }
    ],
    "marginalie": [
@@ -2670,11 +2797,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Herkunftsangaben"
+     "label": "6a. Kapitel: Herkunftsangaben",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_6_a/sec_1"
     }
    ],
    "marginalie": [
@@ -2685,11 +2814,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Herkunftsangaben"
+     "label": "6a. Kapitel: Herkunftsangaben",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_6_a/sec_1"
     }
    ],
    "marginalie": [
@@ -2700,11 +2831,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Herkunftsangaben"
+     "label": "6a. Kapitel: Herkunftsangaben",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gemeinsame Bestimmungen"
+     "label": "1. Abschnitt: Gemeinsame Bestimmungen",
+     "eId": "chap_6_a/sec_1"
     }
    ],
    "marginalie": [
@@ -2715,11 +2848,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Herkunftsangaben"
+     "label": "6a. Kapitel: Herkunftsangaben",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte"
+     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte",
+     "eId": "chap_6_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2730,11 +2865,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Herkunftsangaben"
+     "label": "6a. Kapitel: Herkunftsangaben",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte"
+     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte",
+     "eId": "chap_6_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2745,11 +2882,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Herkunftsangaben"
+     "label": "6a. Kapitel: Herkunftsangaben",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte"
+     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte",
+     "eId": "chap_6_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2760,11 +2899,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Herkunftsangaben"
+     "label": "6a. Kapitel: Herkunftsangaben",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte"
+     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte",
+     "eId": "chap_6_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2775,11 +2916,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Herkunftsangaben"
+     "label": "6a. Kapitel: Herkunftsangaben",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte"
+     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte",
+     "eId": "chap_6_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2790,11 +2933,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Herkunftsangaben"
+     "label": "6a. Kapitel: Herkunftsangaben",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte"
+     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte",
+     "eId": "chap_6_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2805,11 +2950,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Herkunftsangaben"
+     "label": "6a. Kapitel: Herkunftsangaben",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte"
+     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte",
+     "eId": "chap_6_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2820,11 +2967,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Herkunftsangaben"
+     "label": "6a. Kapitel: Herkunftsangaben",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte"
+     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte",
+     "eId": "chap_6_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2835,11 +2984,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Herkunftsangaben"
+     "label": "6a. Kapitel: Herkunftsangaben",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte"
+     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte",
+     "eId": "chap_6_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2850,11 +3001,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Herkunftsangaben"
+     "label": "6a. Kapitel: Herkunftsangaben",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte"
+     "label": "2. Abschnitt: Herkunftsangaben für Produkte nach Artikel 48c MSchG, insbesondere industrielle Produkte",
+     "eId": "chap_6_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2865,11 +3018,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6a. Kapitel: Herkunftsangaben"
+     "label": "6a. Kapitel: Herkunftsangaben",
+     "eId": "chap_6_a"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Herkunftsangaben für Dienstleistungen"
+     "label": "3. Abschnitt: Herkunftsangaben für Dienstleistungen",
+     "eId": "chap_6_a/sec_3"
     }
    ],
    "marginalie": []
@@ -2878,11 +3033,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6b. Kapitel: Internationale Registrierung von geografischen Angaben"
+     "label": "6b. Kapitel: Internationale Registrierung von geografischen Angaben",
+     "eId": "chap_6_b"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gesuch um internationale Registrierung oder um Änderung der internationalen Registrierung einer schweizerischen Ursprungsbezeichnung oder geografischen Angabe"
+     "label": "1. Abschnitt: Gesuch um internationale Registrierung oder um Änderung der internationalen Registrierung einer schweizerischen Ursprungsbezeichnung oder geografischen Angabe",
+     "eId": "chap_6_b/sec_1"
     }
    ],
    "marginalie": [
@@ -2908,11 +3065,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6b. Kapitel: Internationale Registrierung von geografischen Angaben"
+     "label": "6b. Kapitel: Internationale Registrierung von geografischen Angaben",
+     "eId": "chap_6_b"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Gesuch um internationale Registrierung oder um Änderung der internationalen Registrierung einer schweizerischen Ursprungsbezeichnung oder geografischen Angabe"
+     "label": "1. Abschnitt: Gesuch um internationale Registrierung oder um Änderung der internationalen Registrierung einer schweizerischen Ursprungsbezeichnung oder geografischen Angabe",
+     "eId": "chap_6_b/sec_1"
     }
    ],
    "marginalie": [
@@ -2923,11 +3082,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6b. Kapitel: Internationale Registrierung von geografischen Angaben"
+     "label": "6b. Kapitel: Internationale Registrierung von geografischen Angaben",
+     "eId": "chap_6_b"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Verweigerung der Wirksamkeit einer internationalen Registrierung in der Schweiz und Garantien in Bezug auf sonstige Rechte"
+     "label": "2. Abschnitt: Verweigerung der Wirksamkeit einer internationalen Registrierung in der Schweiz und Garantien in Bezug auf sonstige Rechte",
+     "eId": "chap_6_b/sec_2"
     }
    ],
    "marginalie": [],
@@ -2951,7 +3112,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2962,7 +3124,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2973,7 +3136,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2984,7 +3148,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -2995,7 +3160,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3006,7 +3172,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet"
+     "label": "8. Kapitel: Hilfeleistung beim Verbringen von Waren ins Zollgebiet oder aus dem Zollgebiet",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3017,11 +3184,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [
@@ -3050,11 +3219,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Übergangsbestimmungen"
+     "label": "2. Abschnitt: Übergangsbestimmungen",
+     "eId": "chap_9/sec_2"
     }
    ],
    "marginalie": [
@@ -3079,7 +3250,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -3104,7 +3276,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -3141,11 +3314,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Eintragung der Marken"
+     "label": "2. Kapitel: Eintragung der Marken",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Eintragungsverfahren"
+     "label": "1. Abschnitt: Eintragungsverfahren",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [

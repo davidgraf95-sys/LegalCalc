@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "281.31",
   "titel": "Verordnung über die im Betreibungs- und Konkursverfahren zu verwendenden Formulare und Register sowie die Rechnungsführung",
@@ -59,7 +59,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Formulare"
+     "label": "I. Formulare",
+     "eId": "lvl_I"
     }
    ],
    "marginalie": [],
@@ -82,7 +83,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Formulare"
+     "label": "I. Formulare",
+     "eId": "lvl_I"
     }
    ],
    "marginalie": [],
@@ -105,11 +107,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Formulare"
+     "label": "I. Formulare",
+     "eId": "lvl_I"
     },
     {
      "ebene": 2,
-     "label": "A. Begehren"
+     "label": "A. Begehren",
+     "eId": "lvl_I/lvl_A"
     }
    ],
    "marginalie": [],
@@ -132,11 +136,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Formulare"
+     "label": "I. Formulare",
+     "eId": "lvl_I"
     },
     {
      "ebene": 2,
-     "label": "A. Begehren"
+     "label": "A. Begehren",
+     "eId": "lvl_I/lvl_A"
     }
    ],
    "marginalie": [],
@@ -160,11 +166,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Formulare"
+     "label": "I. Formulare",
+     "eId": "lvl_I"
     },
     {
      "ebene": 2,
-     "label": "A. Begehren"
+     "label": "A. Begehren",
+     "eId": "lvl_I/lvl_A"
     }
    ],
    "marginalie": []
@@ -173,11 +181,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Formulare"
+     "label": "I. Formulare",
+     "eId": "lvl_I"
     },
     {
      "ebene": 2,
-     "label": "B. Verfügungen und Verrichtungen der Betreibungs- und Konkursämter"
+     "label": "B. Verfügungen und Verrichtungen der Betreibungs- und Konkursämter",
+     "eId": "lvl_I/lvl_B"
     }
    ],
    "marginalie": []
@@ -186,11 +196,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "I. Formulare"
+     "label": "I. Formulare",
+     "eId": "lvl_I"
     },
     {
      "ebene": 2,
-     "label": "B. Verfügungen und Verrichtungen der Betreibungs- und Konkursämter"
+     "label": "B. Verfügungen und Verrichtungen der Betreibungs- und Konkursämter",
+     "eId": "lvl_I/lvl_B"
     }
    ],
    "marginalie": []
@@ -199,7 +211,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Registerführung"
+     "label": "II. Registerführung",
+     "eId": "lvl_II"
     }
    ],
    "marginalie": []
@@ -208,11 +221,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Registerführung"
+     "label": "II. Registerführung",
+     "eId": "lvl_II"
     },
     {
      "ebene": 2,
-     "label": "1. Eingangsregister"
+     "label": "1. Eingangsregister",
+     "eId": "lvl_II/lvl_1"
     }
    ],
    "marginalie": []
@@ -221,11 +236,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Registerführung"
+     "label": "II. Registerführung",
+     "eId": "lvl_II"
     },
     {
      "ebene": 2,
-     "label": "2. Betreibungsbuch"
+     "label": "2. Betreibungsbuch",
+     "eId": "lvl_II/lvl_2"
     }
    ],
    "marginalie": []
@@ -234,11 +251,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Registerführung"
+     "label": "II. Registerführung",
+     "eId": "lvl_II"
     },
     {
      "ebene": 2,
-     "label": "3. Gruppenbuch"
+     "label": "3. Gruppenbuch",
+     "eId": "lvl_II/lvl_3"
     }
    ],
    "marginalie": []
@@ -247,11 +266,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Registerführung"
+     "label": "II. Registerführung",
+     "eId": "lvl_II"
     },
     {
      "ebene": 2,
-     "label": "4. Personenregister"
+     "label": "4. Personenregister",
+     "eId": "lvl_II/lvl_4"
     }
    ],
    "marginalie": []
@@ -260,11 +281,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Registerführung"
+     "label": "II. Registerführung",
+     "eId": "lvl_II"
     },
     {
      "ebene": 2,
-     "label": "5. Tagebuch und Agenda"
+     "label": "5. Tagebuch und Agenda",
+     "eId": "lvl_II/lvl_5"
     }
    ],
    "marginalie": []
@@ -273,11 +296,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Registerführung"
+     "label": "II. Registerführung",
+     "eId": "lvl_II"
     },
     {
      "ebene": 2,
-     "label": "6. Kassabuch"
+     "label": "6. Kassabuch",
+     "eId": "lvl_II/book_6"
     }
    ],
    "marginalie": []
@@ -286,11 +311,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "II. Registerführung"
+     "label": "II. Registerführung",
+     "eId": "lvl_II"
     },
     {
      "ebene": 2,
-     "label": "7. Kontokorrentbuch"
+     "label": "7. Kontokorrentbuch",
+     "eId": "lvl_II/lvl_7"
     }
    ],
    "marginalie": []
@@ -299,11 +326,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Rechnungsführung"
+     "label": "III. Rechnungsführung",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "1. Im Detail"
+     "label": "1. Im Detail",
+     "eId": "lvl_III/lvl_1"
     }
    ],
    "marginalie": []
@@ -312,11 +341,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Rechnungsführung"
+     "label": "III. Rechnungsführung",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "2. Summarisch"
+     "label": "2. Summarisch",
+     "eId": "lvl_III/lvl_2"
     }
    ],
    "marginalie": []
@@ -325,11 +356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "III. Rechnungsführung"
+     "label": "III. Rechnungsführung",
+     "eId": "lvl_III"
     },
     {
      "ebene": 2,
-     "label": "2. Summarisch"
+     "label": "2. Summarisch",
+     "eId": "lvl_III/lvl_2"
     }
    ],
    "marginalie": []
@@ -338,7 +371,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "IV. Schlussbestimmungen"
+     "label": "IV. Schlussbestimmungen",
+     "eId": "lvl_IV"
     }
    ],
    "marginalie": [],

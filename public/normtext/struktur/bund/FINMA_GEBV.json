@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "956.122",
   "titel": "Verordnung über die Erhebung von Gebühren und Abgaben durch die Eidgenössische Finanzmarktaufsicht",
@@ -56,7 +56,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -81,7 +82,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -92,7 +94,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -274,7 +277,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -285,7 +289,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren"
+     "label": "2. Kapitel: Gebühren",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -310,7 +315,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren"
+     "label": "2. Kapitel: Gebühren",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -337,7 +343,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren"
+     "label": "2. Kapitel: Gebühren",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -362,7 +369,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren"
+     "label": "2. Kapitel: Gebühren",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -411,7 +419,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren"
+     "label": "2. Kapitel: Gebühren",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -436,7 +445,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Gebühren"
+     "label": "2. Kapitel: Gebühren",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -475,11 +485,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -504,11 +516,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -545,11 +559,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -574,11 +590,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -603,11 +621,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -633,11 +653,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Grossbanken, übrige Banken und Wertpapierhäuser"
+     "label": "2. Abschnitt: Grossbanken, übrige Banken und Wertpapierhäuser",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -750,11 +772,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Grossbanken, übrige Banken und Wertpapierhäuser"
+     "label": "2. Abschnitt: Grossbanken, übrige Banken und Wertpapierhäuser",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -791,11 +815,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Grossbanken, übrige Banken und Wertpapierhäuser"
+     "label": "2. Abschnitt: Grossbanken, übrige Banken und Wertpapierhäuser",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -820,11 +846,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Grossbanken, übrige Banken und Wertpapierhäuser"
+     "label": "2. Abschnitt: Grossbanken, übrige Banken und Wertpapierhäuser",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -849,11 +877,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Kollektive Kapitalanlagen"
+     "label": "3. Abschnitt: Kollektive Kapitalanlagen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -968,11 +998,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Kollektive Kapitalanlagen"
+     "label": "3. Abschnitt: Kollektive Kapitalanlagen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1009,11 +1041,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Kollektive Kapitalanlagen"
+     "label": "3. Abschnitt: Kollektive Kapitalanlagen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1038,11 +1072,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Kollektive Kapitalanlagen"
+     "label": "3. Abschnitt: Kollektive Kapitalanlagen",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1092,11 +1128,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Versicherungsunternehmen"
+     "label": "4. Abschnitt: Versicherungsunternehmen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1147,11 +1185,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Versicherungsunternehmen"
+     "label": "4. Abschnitt: Versicherungsunternehmen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1250,11 +1290,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Versicherungsunternehmen"
+     "label": "4. Abschnitt: Versicherungsunternehmen",
+     "eId": "chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1281,11 +1323,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Ungebundene Versicherungsvermittlerinnen und Versicherungsvermittler"
+     "label": "5. Abschnitt: Ungebundene Versicherungsvermittlerinnen und Versicherungsvermittler",
+     "eId": "chap_3/sec_5"
     }
    ],
    "marginalie": [],
@@ -1320,11 +1364,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Selbstregulierungsorganisationen"
+     "label": "6. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1349,11 +1395,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Selbstregulierungsorganisationen"
+     "label": "6. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1364,11 +1412,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Selbstregulierungsorganisationen"
+     "label": "6. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1379,11 +1429,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6. Abschnitt: Selbstregulierungsorganisationen"
+     "label": "6. Abschnitt: Selbstregulierungsorganisationen",
+     "eId": "chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -1446,7 +1498,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Reserven"
+     "label": "4. Kapitel: Reserven",
+     "eId": "chap_4"
     }
    ],
    "marginalie": []
@@ -1455,7 +1508,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Übergangs- und Schlussbestimmungen"
+     "label": "5. Kapitel: Übergangs- und Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1516,7 +1570,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Übergangs- und Schlussbestimmungen"
+     "label": "5. Kapitel: Übergangs- und Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1527,7 +1582,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Übergangs- und Schlussbestimmungen"
+     "label": "5. Kapitel: Übergangs- und Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1538,11 +1594,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Finanzmarktinfrastrukturen"
+     "label": "2a. Abschnitt: Finanzmarktinfrastrukturen",
+     "eId": "chap_3/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1642,11 +1700,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Finanzmarktinfrastrukturen"
+     "label": "2a. Abschnitt: Finanzmarktinfrastrukturen",
+     "eId": "chap_3/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1657,11 +1717,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Finanzmarktinfrastrukturen"
+     "label": "2a. Abschnitt: Finanzmarktinfrastrukturen",
+     "eId": "chap_3/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1687,11 +1749,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2a. Abschnitt: Finanzmarktinfrastrukturen"
+     "label": "2a. Abschnitt: Finanzmarktinfrastrukturen",
+     "eId": "chap_3/sec_2_a"
     }
    ],
    "marginalie": [
@@ -1718,11 +1782,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Personen nach Artikel 1b BankG"
+     "label": "2b. Abschnitt: Personen nach Artikel 1b BankG",
+     "eId": "chap_3/sec_2_b"
     }
    ],
    "marginalie": [
@@ -1762,11 +1828,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2b. Abschnitt: Personen nach Artikel 1b BankG"
+     "label": "2b. Abschnitt: Personen nach Artikel 1b BankG",
+     "eId": "chap_3/sec_2_b"
     }
    ],
    "marginalie": [
@@ -1792,11 +1860,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6a. Abschnitt: Aufsichtsorganisationen nach dem 3. Titel des FINMAG"
+     "label": "6a. Abschnitt: Aufsichtsorganisationen nach dem 3. Titel des FINMAG",
+     "eId": "chap_3/sec_6_a"
     }
    ],
    "marginalie": [
@@ -1822,11 +1892,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "6a. Abschnitt: Aufsichtsorganisationen nach dem 3. Titel des FINMAG"
+     "label": "6a. Abschnitt: Aufsichtsorganisationen nach dem 3. Titel des FINMAG",
+     "eId": "chap_3/sec_6_a"
     }
    ],
    "marginalie": [
@@ -1837,11 +1909,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "7. Abschnitt: …"
+     "label": "7. Abschnitt: …",
+     "eId": "chap_3/sec_7"
     }
    ],
    "marginalie": [],
@@ -1864,11 +1938,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Aufsichtsabgaben"
+     "label": "3. Kapitel: Aufsichtsabgaben",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "8. Abschnitt: …"
+     "label": "8. Abschnitt: …",
+     "eId": "chap_3/sec_8"
     }
    ],
    "marginalie": [],
@@ -1891,7 +1967,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Übergangs- und Schlussbestimmungen"
+     "label": "5. Kapitel: Übergangs- und Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [],
@@ -1918,7 +1995,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Übergangs- und Schlussbestimmungen"
+     "label": "5. Kapitel: Übergangs- und Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [
@@ -1956,7 +2034,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Übergangs- und Schlussbestimmungen"
+     "label": "5. Kapitel: Übergangs- und Schlussbestimmungen",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "832.102",
   "titel": "Verordnung über die Krankenversicherung",
@@ -97,19 +97,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Versicherungspflicht"
+     "label": "1. Titel: Versicherungspflicht",
+     "eId": "part_1/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Versicherungspflichtige Personen"
+     "label": "1. Abschnitt: Versicherungspflichtige Personen",
+     "eId": "part_1/tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -308,19 +312,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Versicherungspflicht"
+     "label": "1. Titel: Versicherungspflicht",
+     "eId": "part_1/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Versicherungspflichtige Personen"
+     "label": "1. Abschnitt: Versicherungspflichtige Personen",
+     "eId": "part_1/tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -600,19 +608,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Versicherungspflicht"
+     "label": "1. Titel: Versicherungspflicht",
+     "eId": "part_1/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Versicherungspflichtige Personen"
+     "label": "1. Abschnitt: Versicherungspflichtige Personen",
+     "eId": "part_1/tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -637,19 +649,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Versicherungspflicht"
+     "label": "1. Titel: Versicherungspflicht",
+     "eId": "part_1/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Versicherungspflichtige Personen"
+     "label": "1. Abschnitt: Versicherungspflichtige Personen",
+     "eId": "part_1/tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -660,19 +676,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Versicherungspflicht"
+     "label": "1. Titel: Versicherungspflicht",
+     "eId": "part_1/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Versicherungspflichtige Personen"
+     "label": "1. Abschnitt: Versicherungspflichtige Personen",
+     "eId": "part_1/tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -683,19 +703,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Versicherungspflicht"
+     "label": "1. Titel: Versicherungspflicht",
+     "eId": "part_1/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Versicherungspflichtige Personen"
+     "label": "1. Abschnitt: Versicherungspflichtige Personen",
+     "eId": "part_1/tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -757,19 +781,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Versicherungspflicht"
+     "label": "1. Titel: Versicherungspflicht",
+     "eId": "part_1/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Beginn und Ende der Versicherung"
+     "label": "2. Abschnitt: Beginn und Ende der Versicherung",
+     "eId": "part_1/tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -946,19 +974,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Versicherungspflicht"
+     "label": "1. Titel: Versicherungspflicht",
+     "eId": "part_1/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Beginn und Ende der Versicherung"
+     "label": "2. Abschnitt: Beginn und Ende der Versicherung",
+     "eId": "part_1/tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -995,19 +1027,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Versicherungspflicht"
+     "label": "1. Titel: Versicherungspflicht",
+     "eId": "part_1/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Beginn und Ende der Versicherung"
+     "label": "2. Abschnitt: Beginn und Ende der Versicherung",
+     "eId": "part_1/tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -1057,19 +1093,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Versicherungspflicht"
+     "label": "1. Titel: Versicherungspflicht",
+     "eId": "part_1/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Aufgaben der Kantone"
+     "label": "3. Abschnitt: Aufgaben der Kantone",
+     "eId": "part_1/tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [],
@@ -1132,15 +1172,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Versicherungspflicht"
+     "label": "1. Titel: Versicherungspflicht",
+     "eId": "part_1/tit_1"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Sistierung der Versicherungspflicht und der Unfalldeckung"
+     "label": "2. Kapitel: Sistierung der Versicherungspflicht und der Unfalldeckung",
+     "eId": "part_1/tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -1165,15 +1208,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Gemeinsame Einrichtung"
+     "label": "3. Kapitel: Gemeinsame Einrichtung",
+     "eId": "part_1/tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1258,15 +1304,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Gemeinsame Einrichtung"
+     "label": "3. Kapitel: Gemeinsame Einrichtung",
+     "eId": "part_1/tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1406,15 +1455,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Förderung der Gesundheit"
+     "label": "4. Kapitel: Förderung der Gesundheit",
+     "eId": "part_1/tit_2/chap_4"
     }
    ],
    "marginalie": [],
@@ -1462,19 +1514,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "part_1/tit_2/chap_5"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Beschwerde durch das BAG"
+     "label": "2. Abschnitt: Beschwerde durch das BAG",
+     "eId": "part_1/tit_2/chap_5/sec_2"
     }
    ],
    "marginalie": [],
@@ -1497,19 +1553,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "part_1/tit_2/chap_5"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Daten"
+     "label": "3. Abschnitt: Daten",
+     "eId": "part_1/tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1608,19 +1668,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "part_1/tit_2/chap_5"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Daten"
+     "label": "3. Abschnitt: Daten",
+     "eId": "part_1/tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1645,19 +1709,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "part_1/tit_2/chap_5"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Daten"
+     "label": "3. Abschnitt: Daten",
+     "eId": "part_1/tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1682,19 +1750,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "part_1/tit_2/chap_5"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Daten"
+     "label": "3. Abschnitt: Daten",
+     "eId": "part_1/tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1732,19 +1804,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "part_1/tit_2/chap_5"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Daten"
+     "label": "3. Abschnitt: Daten",
+     "eId": "part_1/tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -1755,15 +1831,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Leistungen"
+     "label": "3. Titel: Leistungen",
+     "eId": "part_1/tit_3"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Bezeichnung der Leistungen"
+     "label": "1. Kapitel: Bezeichnung der Leistungen",
+     "eId": "part_1/tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1837,15 +1916,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Leistungen"
+     "label": "3. Titel: Leistungen",
+     "eId": "part_1/tit_3"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Bezeichnung der Leistungen"
+     "label": "1. Kapitel: Bezeichnung der Leistungen",
+     "eId": "part_1/tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1856,15 +1938,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Leistungen"
+     "label": "3. Titel: Leistungen",
+     "eId": "part_1/tit_3"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Bezeichnung der Leistungen"
+     "label": "1. Kapitel: Bezeichnung der Leistungen",
+     "eId": "part_1/tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1889,15 +1974,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Leistungen"
+     "label": "3. Titel: Leistungen",
+     "eId": "part_1/tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Umfang der Kostenübernahme"
+     "label": "2. Kapitel: Umfang der Kostenübernahme",
+     "eId": "part_1/tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1934,15 +2022,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Leistungen"
+     "label": "3. Titel: Leistungen",
+     "eId": "part_1/tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Umfang der Kostenübernahme"
+     "label": "2. Kapitel: Umfang der Kostenübernahme",
+     "eId": "part_1/tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1967,19 +2058,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Ärzte und Ärztinnen sowie Einrichtungen, die der ambulanten Krankenpflege durch Ärzte und Ärztinnen dienen"
+     "label": "1. Abschnitt: Ärzte und Ärztinnen sowie Einrichtungen, die der ambulanten Krankenpflege durch Ärzte und Ärztinnen dienen",
+     "eId": "part_1/tit_4/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2018,19 +2113,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Ärzte und Ärztinnen sowie Einrichtungen, die der ambulanten Krankenpflege durch Ärzte und Ärztinnen dienen"
+     "label": "1. Abschnitt: Ärzte und Ärztinnen sowie Einrichtungen, die der ambulanten Krankenpflege durch Ärzte und Ärztinnen dienen",
+     "eId": "part_1/tit_4/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -2041,19 +2140,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Apotheker und Apothekerinnen"
+     "label": "2. Abschnitt: Apotheker und Apothekerinnen",
+     "eId": "part_1/tit_4/chap_1/sec_2"
     }
    ],
    "marginalie": [],
@@ -2102,19 +2205,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Apotheker und Apothekerinnen"
+     "label": "2. Abschnitt: Apotheker und Apothekerinnen",
+     "eId": "part_1/tit_4/chap_1/sec_2"
     }
    ],
    "marginalie": [],
@@ -2137,19 +2244,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Zahnärzte und Zahnärztinnen"
+     "label": "3. Abschnitt: Zahnärzte und Zahnärztinnen",
+     "eId": "part_1/tit_4/chap_1/sec_3"
     }
    ],
    "marginalie": [],
@@ -2198,19 +2309,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Zahnärzte und Zahnärztinnen"
+     "label": "3. Abschnitt: Zahnärzte und Zahnärztinnen",
+     "eId": "part_1/tit_4/chap_1/sec_3"
     }
    ],
    "marginalie": [],
@@ -2233,19 +2348,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Chiropraktoren und Chiropraktorinnen sowie Organisationen der Chiropraktik"
+     "label": "4. Abschnitt: Chiropraktoren und Chiropraktorinnen sowie Organisationen der Chiropraktik",
+     "eId": "part_1/tit_4/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -2345,19 +2464,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Hebammen und Organisationen der Hebammen"
+     "label": "5. Abschnitt: Hebammen und Organisationen der Hebammen",
+     "eId": "part_1/tit_4/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -2396,19 +2519,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen"
+     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen",
+     "eId": "part_1/tit_4/chap_1/sec_6"
     }
    ],
    "marginalie": [],
@@ -2431,19 +2558,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen"
+     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen",
+     "eId": "part_1/tit_4/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -2481,19 +2612,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen"
+     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen",
+     "eId": "part_1/tit_4/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -2531,19 +2666,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen"
+     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen",
+     "eId": "part_1/tit_4/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -2593,19 +2732,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen"
+     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen",
+     "eId": "part_1/tit_4/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -2630,19 +2773,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen"
+     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen",
+     "eId": "part_1/tit_4/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -2691,19 +2838,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen"
+     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen",
+     "eId": "part_1/tit_4/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -2728,19 +2879,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "7. Abschnitt: Laboratorien"
+     "label": "7. Abschnitt: Laboratorien",
+     "eId": "part_1/tit_4/chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -2789,19 +2944,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "7. Abschnitt: Laboratorien"
+     "label": "7. Abschnitt: Laboratorien",
+     "eId": "part_1/tit_4/chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -2898,19 +3057,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "8. Abschnitt: Abgabestellen für Mittel und Gegenstände"
+     "label": "8. Abschnitt: Abgabestellen für Mittel und Gegenstände",
+     "eId": "part_1/tit_4/chap_1/sec_8"
     }
    ],
    "marginalie": [],
@@ -2933,19 +3096,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "9. Abschnitt: Transport- und Rettungsunternehmen"
+     "label": "9. Abschnitt: Transport- und Rettungsunternehmen",
+     "eId": "part_1/tit_4/chap_1/sec_9"
     }
    ],
    "marginalie": [],
@@ -2968,19 +3135,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "10. Abschnitt: Heilbäder"
+     "label": "10. Abschnitt: Heilbäder",
+     "eId": "part_1/tit_4/chap_1/sec_10"
     }
    ],
    "marginalie": [
@@ -2991,19 +3162,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "10. Abschnitt: Heilbäder"
+     "label": "10. Abschnitt: Heilbäder",
+     "eId": "part_1/tit_4/chap_1/sec_10"
     }
    ],
    "marginalie": [
@@ -3014,15 +3189,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Rechnungstellung"
+     "label": "2. Kapitel: Rechnungstellung",
+     "eId": "part_1/tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -3108,19 +3286,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Analysenliste"
+     "label": "2. Abschnitt: Analysenliste",
+     "eId": "part_1/tit_4/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3153,19 +3335,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Analysenliste"
+     "label": "2. Abschnitt: Analysenliste",
+     "eId": "part_1/tit_4/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3176,19 +3362,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Analysenliste"
+     "label": "2. Abschnitt: Analysenliste",
+     "eId": "part_1/tit_4/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -3225,19 +3415,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Arzneimittelliste mit Tarif"
+     "label": "3. Abschnitt: Arzneimittelliste mit Tarif",
+     "eId": "part_1/tit_4/chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -3256,19 +3450,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [],
@@ -3299,19 +3497,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -3410,19 +3612,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -3447,19 +3653,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -3496,19 +3706,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -3609,19 +3823,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -3688,19 +3906,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -3725,19 +3947,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -3766,19 +3992,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Analysenliste, die Arzneimittelliste mit Tarif und die Spezialitätenliste"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Analysenliste, die Arzneimittelliste mit Tarif und die Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_5"
     }
    ],
    "marginalie": [],
@@ -3822,19 +4052,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Analysenliste, die Arzneimittelliste mit Tarif und die Spezialitätenliste"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Analysenliste, die Arzneimittelliste mit Tarif und die Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -3845,19 +4079,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Analysenliste, die Arzneimittelliste mit Tarif und die Spezialitätenliste"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Analysenliste, die Arzneimittelliste mit Tarif und die Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -3868,19 +4106,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Analysenliste, die Arzneimittelliste mit Tarif und die Spezialitätenliste"
+     "label": "5. Abschnitt: Gemeinsame Bestimmungen für die Analysenliste, die Arzneimittelliste mit Tarif und die Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -3905,15 +4147,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen"
+     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen",
+     "eId": "part_1/tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -3924,15 +4169,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen"
+     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen",
+     "eId": "part_1/tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -3957,15 +4205,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: …"
+     "label": "1. Kapitel: …",
+     "eId": "part_1/tit_5/chap_1"
     }
    ],
    "marginalie": [],
@@ -3988,15 +4239,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: …"
+     "label": "1. Kapitel: …",
+     "eId": "part_1/tit_5/chap_1"
     }
    ],
    "marginalie": [],
@@ -4019,15 +4273,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: …"
+     "label": "1. Kapitel: …",
+     "eId": "part_1/tit_5/chap_1"
     }
    ],
    "marginalie": [],
@@ -4050,19 +4307,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4087,19 +4348,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4124,19 +4389,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4197,19 +4466,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4234,19 +4507,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Besondere Versicherungsformen"
+     "label": "2. Abschnitt: Besondere Versicherungsformen",
+     "eId": "part_1/tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4271,19 +4548,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Besondere Versicherungsformen"
+     "label": "2. Abschnitt: Besondere Versicherungsformen",
+     "eId": "part_1/tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4320,19 +4601,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Besondere Versicherungsformen"
+     "label": "2. Abschnitt: Besondere Versicherungsformen",
+     "eId": "part_1/tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4401,19 +4686,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Besondere Versicherungsformen"
+     "label": "2. Abschnitt: Besondere Versicherungsformen",
+     "eId": "part_1/tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4424,19 +4713,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Besondere Versicherungsformen"
+     "label": "2. Abschnitt: Besondere Versicherungsformen",
+     "eId": "part_1/tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4473,19 +4766,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Besondere Versicherungsformen"
+     "label": "2. Abschnitt: Besondere Versicherungsformen",
+     "eId": "part_1/tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4496,19 +4793,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Besondere Versicherungsformen"
+     "label": "2. Abschnitt: Besondere Versicherungsformen",
+     "eId": "part_1/tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4545,19 +4846,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Besondere Versicherungsformen"
+     "label": "2. Abschnitt: Besondere Versicherungsformen",
+     "eId": "part_1/tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4606,19 +4911,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Besondere Versicherungsformen"
+     "label": "2. Abschnitt: Besondere Versicherungsformen",
+     "eId": "part_1/tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -4629,19 +4938,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Entschädigungen an Dritte"
+     "label": "3. Abschnitt: Entschädigungen an Dritte",
+     "eId": "part_1/tit_5/chap_2/sec_3"
     }
    ],
    "marginalie": []
@@ -4650,15 +4963,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Kostenbeteiligung"
+     "label": "3. Kapitel: Kostenbeteiligung",
+     "eId": "part_1/tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -4739,15 +5055,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Kostenbeteiligung"
+     "label": "3. Kapitel: Kostenbeteiligung",
+     "eId": "part_1/tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -4796,15 +5115,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Kostenbeteiligung"
+     "label": "3. Kapitel: Kostenbeteiligung",
+     "eId": "part_1/tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -4829,19 +5151,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Prämienverbilligung durch die Kantone"
+     "label": "4. Kapitel: Prämienverbilligung durch die Kantone",
+     "eId": "part_1/tit_5/chap_4"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Anspruchsberechtigte"
+     "label": "1. Abschnitt: Anspruchsberechtigte",
+     "eId": "part_1/tit_5/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -4892,7 +5218,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Freiwillige Taggeldversicherung"
+     "label": "2. Teil: Freiwillige Taggeldversicherung",
+     "eId": "part_2"
     }
    ],
    "marginalie": [
@@ -4903,19 +5230,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Koordinationsregeln"
+     "label": "3. Teil: Koordinationsregeln",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Leistungskoordination"
+     "label": "1. Titel: Leistungskoordination",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen"
+     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen",
+     "eId": "part_3/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Abgrenzung der Leistungspflicht"
+     "label": "1. Abschnitt: Abgrenzung der Leistungspflicht",
+     "eId": "part_3/tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -4982,19 +5313,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Koordinationsregeln"
+     "label": "3. Teil: Koordinationsregeln",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Leistungskoordination"
+     "label": "1. Titel: Leistungskoordination",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen"
+     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen",
+     "eId": "part_3/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Abgrenzung der Leistungspflicht"
+     "label": "1. Abschnitt: Abgrenzung der Leistungspflicht",
+     "eId": "part_3/tit_1/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -5020,19 +5355,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Koordinationsregeln"
+     "label": "3. Teil: Koordinationsregeln",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Leistungskoordination"
+     "label": "1. Titel: Leistungskoordination",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen"
+     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen",
+     "eId": "part_3/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Vorleistungspflicht"
+     "label": "2. Abschnitt: Vorleistungspflicht",
+     "eId": "part_3/tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -5070,19 +5409,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Koordinationsregeln"
+     "label": "3. Teil: Koordinationsregeln",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Leistungskoordination"
+     "label": "1. Titel: Leistungskoordination",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen"
+     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen",
+     "eId": "part_3/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Vorleistungspflicht"
+     "label": "2. Abschnitt: Vorleistungspflicht",
+     "eId": "part_3/tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -5093,19 +5436,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Koordinationsregeln"
+     "label": "3. Teil: Koordinationsregeln",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Leistungskoordination"
+     "label": "1. Titel: Leistungskoordination",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen"
+     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen",
+     "eId": "part_3/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Vorleistungspflicht"
+     "label": "2. Abschnitt: Vorleistungspflicht",
+     "eId": "part_3/tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -5130,19 +5477,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Koordinationsregeln"
+     "label": "3. Teil: Koordinationsregeln",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Leistungskoordination"
+     "label": "1. Titel: Leistungskoordination",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen"
+     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen",
+     "eId": "part_3/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Vorleistungspflicht"
+     "label": "2. Abschnitt: Vorleistungspflicht",
+     "eId": "part_3/tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [],
@@ -5165,19 +5516,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Koordinationsregeln"
+     "label": "3. Teil: Koordinationsregeln",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Leistungskoordination"
+     "label": "1. Titel: Leistungskoordination",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen"
+     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen",
+     "eId": "part_3/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Vorleistungspflicht"
+     "label": "2. Abschnitt: Vorleistungspflicht",
+     "eId": "part_3/tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -5188,19 +5543,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Koordinationsregeln"
+     "label": "3. Teil: Koordinationsregeln",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Leistungskoordination"
+     "label": "1. Titel: Leistungskoordination",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen"
+     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen",
+     "eId": "part_3/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Rückvergütung von Leistungen anderer Sozialversicherer"
+     "label": "3. Abschnitt: Rückvergütung von Leistungen anderer Sozialversicherer",
+     "eId": "part_3/tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -5211,19 +5570,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Koordinationsregeln"
+     "label": "3. Teil: Koordinationsregeln",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Leistungskoordination"
+     "label": "1. Titel: Leistungskoordination",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen"
+     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen",
+     "eId": "part_3/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Rückvergütung von Leistungen anderer Sozialversicherer"
+     "label": "3. Abschnitt: Rückvergütung von Leistungen anderer Sozialversicherer",
+     "eId": "part_3/tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -5234,19 +5597,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Koordinationsregeln"
+     "label": "3. Teil: Koordinationsregeln",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Leistungskoordination"
+     "label": "1. Titel: Leistungskoordination",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen"
+     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen",
+     "eId": "part_3/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Rückvergütung von Leistungen anderer Sozialversicherer"
+     "label": "3. Abschnitt: Rückvergütung von Leistungen anderer Sozialversicherer",
+     "eId": "part_3/tit_1/chap_1/sec_3"
     }
    ],
    "marginalie": [
@@ -5257,19 +5624,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Koordinationsregeln"
+     "label": "3. Teil: Koordinationsregeln",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Leistungskoordination"
+     "label": "1. Titel: Leistungskoordination",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen"
+     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen",
+     "eId": "part_3/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Informationspflicht der Versicherer"
+     "label": "4. Abschnitt: Informationspflicht der Versicherer",
+     "eId": "part_3/tit_1/chap_1/sec_4"
     }
    ],
    "marginalie": [],
@@ -5293,19 +5664,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Koordinationsregeln"
+     "label": "3. Teil: Koordinationsregeln",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Leistungskoordination"
+     "label": "1. Titel: Leistungskoordination",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen"
+     "label": "1. Kapitel: Verhältnis zu anderen Sozialversicherungen",
+     "eId": "part_3/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Informationspflicht der Versicherer"
+     "label": "4. Abschnitt: Informationspflicht der Versicherer",
+     "eId": "part_3/tit_1/chap_1/sec_4"
     }
    ],
    "marginalie": []
@@ -5314,15 +5689,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Koordinationsregeln"
+     "label": "3. Teil: Koordinationsregeln",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Leistungskoordination"
+     "label": "1. Titel: Leistungskoordination",
+     "eId": "part_3/tit_1"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Überentschädigung"
+     "label": "2. Kapitel: Überentschädigung",
+     "eId": "part_3/tit_1/chap_2"
     }
    ],
    "marginalie": [],
@@ -5345,7 +5723,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verfügung, Kosten der Bekanntgabe und Publikation von Daten"
+     "label": "4. Teil: Verfügung, Kosten der Bekanntgabe und Publikation von Daten",
+     "eId": "part_4"
     }
    ],
    "marginalie": [
@@ -5383,7 +5762,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verfügung, Kosten der Bekanntgabe und Publikation von Daten"
+     "label": "4. Teil: Verfügung, Kosten der Bekanntgabe und Publikation von Daten",
+     "eId": "part_4"
     }
    ],
    "marginalie": [
@@ -5433,11 +5813,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Schlussbestimmungen"
+     "label": "5. Teil: Schlussbestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Übergangsbestimmungen"
+     "label": "1. Titel: Übergangsbestimmungen",
+     "eId": "part_5/tit_1"
     }
    ],
    "marginalie": [],
@@ -5460,11 +5842,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Schlussbestimmungen"
+     "label": "5. Teil: Schlussbestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Übergangsbestimmungen"
+     "label": "1. Titel: Übergangsbestimmungen",
+     "eId": "part_5/tit_1"
     }
    ],
    "marginalie": [
@@ -5518,11 +5902,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Schlussbestimmungen"
+     "label": "5. Teil: Schlussbestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Übergangsbestimmungen"
+     "label": "1. Titel: Übergangsbestimmungen",
+     "eId": "part_5/tit_1"
     }
    ],
    "marginalie": [],
@@ -5545,11 +5931,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Schlussbestimmungen"
+     "label": "5. Teil: Schlussbestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Übergangsbestimmungen"
+     "label": "1. Titel: Übergangsbestimmungen",
+     "eId": "part_5/tit_1"
     }
    ],
    "marginalie": [
@@ -5599,11 +5987,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Schlussbestimmungen"
+     "label": "5. Teil: Schlussbestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Übergangsbestimmungen"
+     "label": "1. Titel: Übergangsbestimmungen",
+     "eId": "part_5/tit_1"
     }
    ],
    "marginalie": [],
@@ -5626,11 +6016,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Schlussbestimmungen"
+     "label": "5. Teil: Schlussbestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Übergangsbestimmungen"
+     "label": "1. Titel: Übergangsbestimmungen",
+     "eId": "part_5/tit_1"
     }
    ],
    "marginalie": [],
@@ -5657,11 +6049,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Teil: Schlussbestimmungen"
+     "label": "5. Teil: Schlussbestimmungen",
+     "eId": "part_5"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Inkrafttreten"
+     "label": "2. Titel: Inkrafttreten",
+     "eId": "part_5/tit_2"
     }
    ],
    "marginalie": []
@@ -5670,19 +6064,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Besondere Versicherungsformen"
+     "label": "2. Abschnitt: Besondere Versicherungsformen",
+     "eId": "part_1/tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -5711,15 +6109,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Kostenbeteiligung"
+     "label": "3. Kapitel: Kostenbeteiligung",
+     "eId": "part_1/tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -5775,15 +6176,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen"
+     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen",
+     "eId": "part_1/tit_5/chap_3_a"
     }
    ],
    "marginalie": [
@@ -5809,15 +6213,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen"
+     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen",
+     "eId": "part_1/tit_5/chap_3_a"
     }
    ],
    "marginalie": [
@@ -5854,15 +6261,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen"
+     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen",
+     "eId": "part_1/tit_5/chap_3_a"
     }
    ],
    "marginalie": [
@@ -5887,15 +6297,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen"
+     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen",
+     "eId": "part_1/tit_5/chap_3_a"
     }
    ],
    "marginalie": [
@@ -5920,15 +6333,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen"
+     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen",
+     "eId": "part_1/tit_5/chap_3_a"
     }
    ],
    "marginalie": [
@@ -5977,15 +6393,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen"
+     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen",
+     "eId": "part_1/tit_5/chap_3_a"
     }
    ],
    "marginalie": [
@@ -6027,15 +6446,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen"
+     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen",
+     "eId": "part_1/tit_5/chap_3_a"
     }
    ],
    "marginalie": [
@@ -6060,15 +6482,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen"
+     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen",
+     "eId": "part_1/tit_5/chap_3_a"
     }
    ],
    "marginalie": [
@@ -6130,15 +6555,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen"
+     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen",
+     "eId": "part_1/tit_5/chap_3_a"
     }
    ],
    "marginalie": [
@@ -6167,15 +6595,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen"
+     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen",
+     "eId": "part_1/tit_5/chap_3_a"
     }
    ],
    "marginalie": [
@@ -6200,15 +6631,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen"
+     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen",
+     "eId": "part_1/tit_5/chap_3_a"
     }
    ],
    "marginalie": [
@@ -6263,15 +6697,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen"
+     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen",
+     "eId": "part_1/tit_5/chap_3_a"
     }
    ],
    "marginalie": [
@@ -6313,15 +6750,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen"
+     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen",
+     "eId": "part_1/tit_5/chap_3_a"
     }
    ],
    "marginalie": [
@@ -6370,15 +6810,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen"
+     "label": "3a. Kapitel: Nichtbezahlung von Prämien und Kostenbeteiligungen",
+     "eId": "part_1/tit_5/chap_3_a"
     }
    ],
    "marginalie": [
@@ -6427,19 +6870,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Prämienverbilligung durch die Kantone"
+     "label": "4. Kapitel: Prämienverbilligung durch die Kantone",
+     "eId": "part_1/tit_5/chap_4"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Anspruchsberechtigte"
+     "label": "1. Abschnitt: Anspruchsberechtigte",
+     "eId": "part_1/tit_5/chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -6476,19 +6923,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Prämienverbilligung durch die Kantone"
+     "label": "4. Kapitel: Prämienverbilligung durch die Kantone",
+     "eId": "part_1/tit_5/chap_4"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Durchführung der Prämienverbilligung"
+     "label": "2. Abschnitt: Durchführung der Prämienverbilligung",
+     "eId": "part_1/tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -6514,19 +6965,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Prämienverbilligung durch die Kantone"
+     "label": "4. Kapitel: Prämienverbilligung durch die Kantone",
+     "eId": "part_1/tit_5/chap_4"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Durchführung der Prämienverbilligung"
+     "label": "2. Abschnitt: Durchführung der Prämienverbilligung",
+     "eId": "part_1/tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -6638,19 +7093,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Prämienverbilligung durch die Kantone"
+     "label": "4. Kapitel: Prämienverbilligung durch die Kantone",
+     "eId": "part_1/tit_5/chap_4"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Durchführung der Prämienverbilligung"
+     "label": "2. Abschnitt: Durchführung der Prämienverbilligung",
+     "eId": "part_1/tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -6661,19 +7120,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Prämienverbilligung durch die Kantone"
+     "label": "4. Kapitel: Prämienverbilligung durch die Kantone",
+     "eId": "part_1/tit_5/chap_4"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Durchführung der Prämienverbilligung"
+     "label": "2. Abschnitt: Durchführung der Prämienverbilligung",
+     "eId": "part_1/tit_5/chap_4/sec_2"
     }
    ],
    "marginalie": [
@@ -6684,7 +7147,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Freiwillige Taggeldversicherung"
+     "label": "2. Teil: Freiwillige Taggeldversicherung",
+     "eId": "part_2"
     }
    ],
    "marginalie": [],
@@ -6707,7 +7171,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Teil: Freiwillige Taggeldversicherung"
+     "label": "2. Teil: Freiwillige Taggeldversicherung",
+     "eId": "part_2"
     }
    ],
    "marginalie": [
@@ -6736,15 +7201,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Versicherungspflicht"
+     "label": "1. Titel: Versicherungspflicht",
+     "eId": "part_1/tit_1"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Sistierung der Versicherungspflicht und der Unfalldeckung"
+     "label": "2. Kapitel: Sistierung der Versicherungspflicht und der Unfalldeckung",
+     "eId": "part_1/tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -6799,11 +7267,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Teil: Koordinationsregeln"
+     "label": "3. Teil: Koordinationsregeln",
+     "eId": "part_3"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: …"
+     "label": "2. Titel: …",
+     "eId": "part_3/tit_2"
     }
    ],
    "marginalie": [],
@@ -6826,7 +7296,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Teil: Verfügung, Kosten der Bekanntgabe und Publikation von Daten"
+     "label": "4. Teil: Verfügung, Kosten der Bekanntgabe und Publikation von Daten",
+     "eId": "part_4"
     }
    ],
    "marginalie": [],
@@ -6849,15 +7320,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: …"
+     "label": "1. Kapitel: …",
+     "eId": "part_1/tit_2/chap_1"
     }
    ],
    "marginalie": [],
@@ -6880,15 +7354,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: …"
+     "label": "1. Kapitel: …",
+     "eId": "part_1/tit_2/chap_1"
     }
    ],
    "marginalie": [],
@@ -6915,15 +7392,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: …"
+     "label": "2. Kapitel: …",
+     "eId": "part_1/tit_2/chap_2"
     }
    ],
    "marginalie": [],
@@ -6946,15 +7426,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Gemeinsame Einrichtung"
+     "label": "3. Kapitel: Gemeinsame Einrichtung",
+     "eId": "part_1/tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -6983,15 +7466,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Gemeinsame Einrichtung"
+     "label": "3. Kapitel: Gemeinsame Einrichtung",
+     "eId": "part_1/tit_2/chap_3"
     }
    ],
    "marginalie": [],
@@ -7018,15 +7504,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Gemeinsame Einrichtung"
+     "label": "3. Kapitel: Gemeinsame Einrichtung",
+     "eId": "part_1/tit_2/chap_3"
     }
    ],
    "marginalie": [],
@@ -7049,19 +7538,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "part_1/tit_2/chap_5"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: …"
+     "label": "1. Abschnitt: …",
+     "eId": "part_1/tit_2/chap_5/sec_1"
     }
    ],
    "marginalie": [],
@@ -7084,19 +7577,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "part_1/tit_2/chap_5"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Daten"
+     "label": "3. Abschnitt: Daten",
+     "eId": "part_1/tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [],
@@ -7123,19 +7620,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "part_1/tit_2/chap_5"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Daten"
+     "label": "3. Abschnitt: Daten",
+     "eId": "part_1/tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -7164,19 +7665,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "part_1/tit_2/chap_5"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Daten"
+     "label": "3. Abschnitt: Daten",
+     "eId": "part_1/tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -7226,19 +7731,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "part_1/tit_2/chap_5"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Daten"
+     "label": "3. Abschnitt: Daten",
+     "eId": "part_1/tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -7300,19 +7809,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "part_1/tit_2/chap_5"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Daten"
+     "label": "3. Abschnitt: Daten",
+     "eId": "part_1/tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -7398,19 +7911,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "part_1/tit_2/chap_5"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Daten"
+     "label": "3. Abschnitt: Daten",
+     "eId": "part_1/tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -7462,19 +7979,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "2. Titel: Organisation"
+     "label": "2. Titel: Organisation",
+     "eId": "part_1/tit_2"
     },
     {
      "ebene": 3,
-     "label": "5. Kapitel: Aufsicht"
+     "label": "5. Kapitel: Aufsicht",
+     "eId": "part_1/tit_2/chap_5"
     },
     {
      "ebene": 4,
-     "label": "3. Abschnitt: Daten"
+     "label": "3. Abschnitt: Daten",
+     "eId": "part_1/tit_2/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -7499,15 +8020,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Leistungen"
+     "label": "3. Titel: Leistungen",
+     "eId": "part_1/tit_3"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Bezeichnung der Leistungen"
+     "label": "1. Kapitel: Bezeichnung der Leistungen",
+     "eId": "part_1/tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -7532,15 +8056,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Leistungen"
+     "label": "3. Titel: Leistungen",
+     "eId": "part_1/tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Umfang der Kostenübernahme"
+     "label": "2. Kapitel: Umfang der Kostenübernahme",
+     "eId": "part_1/tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -7569,15 +8096,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Leistungen"
+     "label": "3. Titel: Leistungen",
+     "eId": "part_1/tit_3"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Umfang der Kostenübernahme"
+     "label": "2. Kapitel: Umfang der Kostenübernahme",
+     "eId": "part_1/tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -7602,15 +8132,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Leistungen"
+     "label": "3. Titel: Leistungen",
+     "eId": "part_1/tit_3"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Kommissionen"
+     "label": "3. Kapitel: Kommissionen",
+     "eId": "part_1/tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -7648,15 +8181,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Leistungen"
+     "label": "3. Titel: Leistungen",
+     "eId": "part_1/tit_3"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Kommissionen"
+     "label": "3. Kapitel: Kommissionen",
+     "eId": "part_1/tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -7681,15 +8217,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Leistungen"
+     "label": "3. Titel: Leistungen",
+     "eId": "part_1/tit_3"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Kommissionen"
+     "label": "3. Kapitel: Kommissionen",
+     "eId": "part_1/tit_3/chap_3"
     }
    ],
    "marginalie": [],
@@ -7712,15 +8251,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Leistungen"
+     "label": "3. Titel: Leistungen",
+     "eId": "part_1/tit_3"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Kommissionen"
+     "label": "3. Kapitel: Kommissionen",
+     "eId": "part_1/tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -7781,15 +8323,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Leistungen"
+     "label": "3. Titel: Leistungen",
+     "eId": "part_1/tit_3"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Kommissionen"
+     "label": "3. Kapitel: Kommissionen",
+     "eId": "part_1/tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -7875,15 +8420,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Leistungen"
+     "label": "3. Titel: Leistungen",
+     "eId": "part_1/tit_3"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Kommissionen"
+     "label": "3. Kapitel: Kommissionen",
+     "eId": "part_1/tit_3/chap_3"
     }
    ],
    "marginalie": [
@@ -7968,15 +8516,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "3. Titel: Leistungen"
+     "label": "3. Titel: Leistungen",
+     "eId": "part_1/tit_3"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Kommissionen"
+     "label": "3. Kapitel: Kommissionen",
+     "eId": "part_1/tit_3/chap_3"
     }
    ],
    "marginalie": [],
@@ -7999,19 +8550,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Chiropraktoren und Chiropraktorinnen sowie Organisationen der Chiropraktik"
+     "label": "4. Abschnitt: Chiropraktoren und Chiropraktorinnen sowie Organisationen der Chiropraktik",
+     "eId": "part_1/tit_4/chap_1/sec_4"
     }
    ],
    "marginalie": [
@@ -8036,19 +8591,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "5. Abschnitt: Hebammen und Organisationen der Hebammen"
+     "label": "5. Abschnitt: Hebammen und Organisationen der Hebammen",
+     "eId": "part_1/tit_4/chap_1/sec_5"
     }
    ],
    "marginalie": [
@@ -8059,19 +8618,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen"
+     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen",
+     "eId": "part_1/tit_4/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -8113,19 +8676,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen"
+     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen",
+     "eId": "part_1/tit_4/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -8167,19 +8734,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen"
+     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen",
+     "eId": "part_1/tit_4/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -8269,19 +8840,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen"
+     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen",
+     "eId": "part_1/tit_4/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -8322,19 +8897,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen"
+     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen",
+     "eId": "part_1/tit_4/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -8363,19 +8942,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen"
+     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen",
+     "eId": "part_1/tit_4/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -8404,19 +8987,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen"
+     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen",
+     "eId": "part_1/tit_4/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -8445,19 +9032,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen"
+     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen",
+     "eId": "part_1/tit_4/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -8482,19 +9073,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen"
+     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen",
+     "eId": "part_1/tit_4/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -8523,19 +9118,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen"
+     "label": "6. Abschnitt: Personen, die auf ärztliche Anordnung hin Leistungen erbringen, und Organisationen, die solche Personen beschäftigen",
+     "eId": "part_1/tit_4/chap_1/sec_6"
     }
    ],
    "marginalie": [
@@ -8564,19 +9163,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "7. Abschnitt: Laboratorien"
+     "label": "7. Abschnitt: Laboratorien",
+     "eId": "part_1/tit_4/chap_1/sec_7"
     }
    ],
    "marginalie": [
@@ -8614,19 +9217,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "8a. Abschnitt: Geburtshäuser"
+     "label": "8a. Abschnitt: Geburtshäuser",
+     "eId": "part_1/tit_4/chap_1/sec_8_a"
     }
    ],
    "marginalie": [],
@@ -8662,19 +9269,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "11. Abschnitt: Planungskriterien"
+     "label": "11. Abschnitt: Planungskriterien",
+     "eId": "part_1/tit_4/chap_1/sec_11"
     }
    ],
    "marginalie": [
@@ -8712,19 +9323,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "11. Abschnitt: Planungskriterien"
+     "label": "11. Abschnitt: Planungskriterien",
+     "eId": "part_1/tit_4/chap_1/sec_11"
     }
    ],
    "marginalie": [
@@ -8749,19 +9364,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "11. Abschnitt: Planungskriterien"
+     "label": "11. Abschnitt: Planungskriterien",
+     "eId": "part_1/tit_4/chap_1/sec_11"
     }
    ],
    "marginalie": [
@@ -8772,19 +9391,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "11. Abschnitt: Planungskriterien"
+     "label": "11. Abschnitt: Planungskriterien",
+     "eId": "part_1/tit_4/chap_1/sec_11"
     }
    ],
    "marginalie": [
@@ -8809,19 +9432,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "11. Abschnitt: Planungskriterien"
+     "label": "11. Abschnitt: Planungskriterien",
+     "eId": "part_1/tit_4/chap_1/sec_11"
     }
    ],
    "marginalie": [
@@ -8846,19 +9473,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "11. Abschnitt: Planungskriterien"
+     "label": "11. Abschnitt: Planungskriterien",
+     "eId": "part_1/tit_4/chap_1/sec_11"
     }
    ],
    "marginalie": [
@@ -8883,19 +9514,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Zulassung"
+     "label": "1. Kapitel: Zulassung",
+     "eId": "part_1/tit_4/chap_1"
     },
     {
      "ebene": 4,
-     "label": "12. Abschnitt: Qualitätsanforderungen"
+     "label": "12. Abschnitt: Qualitätsanforderungen",
+     "eId": "part_1/tit_4/chap_1/sec_12"
     }
    ],
    "marginalie": [],
@@ -8919,15 +9554,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Rechnungstellung"
+     "label": "2. Kapitel: Rechnungstellung",
+     "eId": "part_1/tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -9018,15 +9656,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Rechnungstellung"
+     "label": "2. Kapitel: Rechnungstellung",
+     "eId": "part_1/tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -9055,15 +9696,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Rechnungstellung"
+     "label": "2. Kapitel: Rechnungstellung",
+     "eId": "part_1/tit_4/chap_2"
     }
    ],
    "marginalie": [
@@ -9113,19 +9757,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Tarifgestaltung und Fallbeitrag"
+     "label": "1. Abschnitt: Tarifgestaltung und Fallbeitrag",
+     "eId": "part_1/tit_4/chap_3/sec_1"
     }
    ],
    "marginalie": [],
@@ -9182,19 +9830,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Tarifgestaltung und Fallbeitrag"
+     "label": "1. Abschnitt: Tarifgestaltung und Fallbeitrag",
+     "eId": "part_1/tit_4/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -9223,19 +9875,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Tarifgestaltung und Fallbeitrag"
+     "label": "1. Abschnitt: Tarifgestaltung und Fallbeitrag",
+     "eId": "part_1/tit_4/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -9260,19 +9916,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Tarifgestaltung und Fallbeitrag"
+     "label": "1. Abschnitt: Tarifgestaltung und Fallbeitrag",
+     "eId": "part_1/tit_4/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -9297,19 +9957,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Tarifgestaltung und Fallbeitrag"
+     "label": "1. Abschnitt: Tarifgestaltung und Fallbeitrag",
+     "eId": "part_1/tit_4/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -9334,19 +9998,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Tarifgestaltung und Fallbeitrag"
+     "label": "1. Abschnitt: Tarifgestaltung und Fallbeitrag",
+     "eId": "part_1/tit_4/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -9375,19 +10043,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Tarifgestaltung und Fallbeitrag"
+     "label": "1. Abschnitt: Tarifgestaltung und Fallbeitrag",
+     "eId": "part_1/tit_4/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -9412,19 +10084,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Tarifgestaltung und Fallbeitrag"
+     "label": "1. Abschnitt: Tarifgestaltung und Fallbeitrag",
+     "eId": "part_1/tit_4/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -9449,19 +10125,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "1a. Abschnitt: Datenbekanntgabe"
+     "label": "1a. Abschnitt: Datenbekanntgabe",
+     "eId": "part_1/tit_4/chap_3/sec_1_a"
     }
    ],
    "marginalie": [
@@ -9499,19 +10179,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "1a. Abschnitt: Datenbekanntgabe"
+     "label": "1a. Abschnitt: Datenbekanntgabe",
+     "eId": "part_1/tit_4/chap_3/sec_1_a"
     }
    ],
    "marginalie": [
@@ -9536,19 +10220,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "1a. Abschnitt: Datenbekanntgabe"
+     "label": "1a. Abschnitt: Datenbekanntgabe",
+     "eId": "part_1/tit_4/chap_3/sec_1_a"
     }
    ],
    "marginalie": [
@@ -9573,19 +10261,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "1a. Abschnitt: Datenbekanntgabe"
+     "label": "1a. Abschnitt: Datenbekanntgabe",
+     "eId": "part_1/tit_4/chap_3/sec_1_a"
     }
    ],
    "marginalie": [
@@ -9610,19 +10302,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -9707,19 +10403,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -9748,19 +10448,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -9789,19 +10493,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -9826,19 +10534,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -9863,19 +10575,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -9900,19 +10616,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -9989,19 +10709,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10026,19 +10750,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10063,19 +10791,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10100,19 +10832,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10177,19 +10913,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10214,19 +10954,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10251,19 +10995,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10288,19 +11036,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10329,19 +11081,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10394,19 +11150,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10459,19 +11219,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10496,19 +11260,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10537,19 +11305,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10578,19 +11350,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10651,19 +11427,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10688,19 +11468,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10729,19 +11513,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10766,19 +11554,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Versicherungspflicht"
+     "label": "1. Titel: Versicherungspflicht",
+     "eId": "part_1/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Beginn und Ende der Versicherung"
+     "label": "2. Abschnitt: Beginn und Ende der Versicherung",
+     "eId": "part_1/tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -10824,19 +11616,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10885,19 +11681,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4. Abschnitt: Spezialitätenliste"
+     "label": "4. Abschnitt: Spezialitätenliste",
+     "eId": "part_1/tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -10959,19 +11759,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4a. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
+     "label": "4a. Abschnitt: Vergütung von Arzneimitteln im Einzelfall",
+     "eId": "part_1/tit_4/chap_3/sec_4_a"
     }
    ],
    "marginalie": [
@@ -11013,19 +11817,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4a. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
+     "label": "4a. Abschnitt: Vergütung von Arzneimitteln im Einzelfall",
+     "eId": "part_1/tit_4/chap_3/sec_4_a"
     }
    ],
    "marginalie": [
@@ -11054,19 +11862,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4a. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
+     "label": "4a. Abschnitt: Vergütung von Arzneimitteln im Einzelfall",
+     "eId": "part_1/tit_4/chap_3/sec_4_a"
     }
    ],
    "marginalie": [
@@ -11095,19 +11907,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4a. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
+     "label": "4a. Abschnitt: Vergütung von Arzneimitteln im Einzelfall",
+     "eId": "part_1/tit_4/chap_3/sec_4_a"
     }
    ],
    "marginalie": [
@@ -11180,19 +11996,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4a. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
+     "label": "4a. Abschnitt: Vergütung von Arzneimitteln im Einzelfall",
+     "eId": "part_1/tit_4/chap_3/sec_4_a"
     }
    ],
    "marginalie": [],
@@ -11223,19 +12043,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3. Kapitel: Tarife und Preise"
+     "label": "3. Kapitel: Tarife und Preise",
+     "eId": "part_1/tit_4/chap_3"
     },
     {
      "ebene": 4,
-     "label": "4a. Abschnitt: Vergütung von Arzneimitteln im Einzelfall"
+     "label": "4a. Abschnitt: Vergütung von Arzneimitteln im Einzelfall",
+     "eId": "part_1/tit_4/chap_3/sec_4_a"
     }
    ],
    "marginalie": [],
@@ -11258,19 +12082,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Massnahmen zur Eindämmung der Kostenentwicklung"
+     "label": "3a. Kapitel: Massnahmen zur Eindämmung der Kostenentwicklung",
+     "eId": "part_1/tit_4/chap_3_a"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Kostenziele"
+     "label": "1. Abschnitt: Kostenziele",
+     "eId": "part_1/tit_4/chap_3_a/sec_1"
     }
    ],
    "marginalie": [
@@ -11296,19 +12124,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Massnahmen zur Eindämmung der Kostenentwicklung"
+     "label": "3a. Kapitel: Massnahmen zur Eindämmung der Kostenentwicklung",
+     "eId": "part_1/tit_4/chap_3_a"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Kostenziele"
+     "label": "1. Abschnitt: Kostenziele",
+     "eId": "part_1/tit_4/chap_3_a/sec_1"
     }
    ],
    "marginalie": [
@@ -11319,19 +12151,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Massnahmen zur Eindämmung der Kostenentwicklung"
+     "label": "3a. Kapitel: Massnahmen zur Eindämmung der Kostenentwicklung",
+     "eId": "part_1/tit_4/chap_3_a"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Eidgenössische Kommission für das Kosten- und Qualitätsmonitoring in der obligatorischen Krankenpflegeversicherung"
+     "label": "2. Abschnitt: Eidgenössische Kommission für das Kosten- und Qualitätsmonitoring in der obligatorischen Krankenpflegeversicherung",
+     "eId": "part_1/tit_4/chap_3_a/sec_2"
     }
    ],
    "marginalie": [
@@ -11342,19 +12178,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Massnahmen zur Eindämmung der Kostenentwicklung"
+     "label": "3a. Kapitel: Massnahmen zur Eindämmung der Kostenentwicklung",
+     "eId": "part_1/tit_4/chap_3_a"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Eidgenössische Kommission für das Kosten- und Qualitätsmonitoring in der obligatorischen Krankenpflegeversicherung"
+     "label": "2. Abschnitt: Eidgenössische Kommission für das Kosten- und Qualitätsmonitoring in der obligatorischen Krankenpflegeversicherung",
+     "eId": "part_1/tit_4/chap_3_a/sec_2"
     }
    ],
    "marginalie": [
@@ -11365,19 +12205,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Massnahmen zur Eindämmung der Kostenentwicklung"
+     "label": "3a. Kapitel: Massnahmen zur Eindämmung der Kostenentwicklung",
+     "eId": "part_1/tit_4/chap_3_a"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Eidgenössische Kommission für das Kosten- und Qualitätsmonitoring in der obligatorischen Krankenpflegeversicherung"
+     "label": "2. Abschnitt: Eidgenössische Kommission für das Kosten- und Qualitätsmonitoring in der obligatorischen Krankenpflegeversicherung",
+     "eId": "part_1/tit_4/chap_3_a/sec_2"
     }
    ],
    "marginalie": [
@@ -11388,19 +12232,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "3a. Kapitel: Massnahmen zur Eindämmung der Kostenentwicklung"
+     "label": "3a. Kapitel: Massnahmen zur Eindämmung der Kostenentwicklung",
+     "eId": "part_1/tit_4/chap_3_a"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Eidgenössische Kommission für das Kosten- und Qualitätsmonitoring in der obligatorischen Krankenpflegeversicherung"
+     "label": "2. Abschnitt: Eidgenössische Kommission für das Kosten- und Qualitätsmonitoring in der obligatorischen Krankenpflegeversicherung",
+     "eId": "part_1/tit_4/chap_3_a/sec_2"
     }
    ],
    "marginalie": [
@@ -11411,15 +12259,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen"
+     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen",
+     "eId": "part_1/tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -11444,15 +12295,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen"
+     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen",
+     "eId": "part_1/tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -11477,15 +12331,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen"
+     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen",
+     "eId": "part_1/tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -11510,15 +12367,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen"
+     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen",
+     "eId": "part_1/tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -11555,15 +12415,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen"
+     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen",
+     "eId": "part_1/tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -11588,15 +12451,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen"
+     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen",
+     "eId": "part_1/tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -11621,15 +12487,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen"
+     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen",
+     "eId": "part_1/tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -11654,15 +12523,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen"
+     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen",
+     "eId": "part_1/tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -11687,15 +12559,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen"
+     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen",
+     "eId": "part_1/tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -11720,15 +12595,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen"
+     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen",
+     "eId": "part_1/tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -11765,15 +12643,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen"
+     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen",
+     "eId": "part_1/tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -11798,15 +12679,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen"
+     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen",
+     "eId": "part_1/tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -11831,15 +12715,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen"
+     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen",
+     "eId": "part_1/tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -11864,15 +12751,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen"
+     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen",
+     "eId": "part_1/tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -11897,15 +12787,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4. Titel: Leistungserbringer"
+     "label": "4. Titel: Leistungserbringer",
+     "eId": "part_1/tit_4"
     },
     {
      "ebene": 3,
-     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen"
+     "label": "4. Kapitel: Kontrolle der Wirtschaftlichkeit und der Qualität der Leistungen",
+     "eId": "part_1/tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -11943,11 +12836,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4a. Titel: Pilotprojekte"
+     "label": "4a. Titel: Pilotprojekte",
+     "eId": "part_1/tit_4_a"
     }
    ],
    "marginalie": [
@@ -11973,11 +12868,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4a. Titel: Pilotprojekte"
+     "label": "4a. Titel: Pilotprojekte",
+     "eId": "part_1/tit_4_a"
     }
    ],
    "marginalie": [
@@ -11988,11 +12885,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4a. Titel: Pilotprojekte"
+     "label": "4a. Titel: Pilotprojekte",
+     "eId": "part_1/tit_4_a"
     }
    ],
    "marginalie": [
@@ -12003,11 +12902,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4a. Titel: Pilotprojekte"
+     "label": "4a. Titel: Pilotprojekte",
+     "eId": "part_1/tit_4_a"
     }
    ],
    "marginalie": [
@@ -12018,11 +12919,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4a. Titel: Pilotprojekte"
+     "label": "4a. Titel: Pilotprojekte",
+     "eId": "part_1/tit_4_a"
     }
    ],
    "marginalie": [
@@ -12033,11 +12936,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4a. Titel: Pilotprojekte"
+     "label": "4a. Titel: Pilotprojekte",
+     "eId": "part_1/tit_4_a"
     }
    ],
    "marginalie": [
@@ -12048,11 +12953,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "4a. Titel: Pilotprojekte"
+     "label": "4a. Titel: Pilotprojekte",
+     "eId": "part_1/tit_4_a"
     }
    ],
    "marginalie": [
@@ -12063,15 +12970,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: …"
+     "label": "1. Kapitel: …",
+     "eId": "part_1/tit_5/chap_1"
     }
    ],
    "marginalie": [],
@@ -12098,19 +13008,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Versicherungspflicht"
+     "label": "1. Titel: Versicherungspflicht",
+     "eId": "part_1/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Beginn und Ende der Versicherung"
+     "label": "2. Abschnitt: Beginn und Ende der Versicherung",
+     "eId": "part_1/tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -12153,19 +13067,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "1. Titel: Versicherungspflicht"
+     "label": "1. Titel: Versicherungspflicht",
+     "eId": "part_1/tit_1"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_1/chap_1"
     },
     {
      "ebene": 4,
-     "label": "2. Abschnitt: Beginn und Ende der Versicherung"
+     "label": "2. Abschnitt: Beginn und Ende der Versicherung",
+     "eId": "part_1/tit_1/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -12190,15 +13108,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: …"
+     "label": "1. Kapitel: …",
+     "eId": "part_1/tit_5/chap_1"
     }
    ],
    "marginalie": [],
@@ -12225,15 +13146,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: …"
+     "label": "1. Kapitel: …",
+     "eId": "part_1/tit_5/chap_1"
     }
    ],
    "marginalie": [],
@@ -12256,15 +13180,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: …"
+     "label": "1. Kapitel: …",
+     "eId": "part_1/tit_5/chap_1"
     }
    ],
    "marginalie": [],
@@ -12291,15 +13218,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "1. Kapitel: …"
+     "label": "1. Kapitel: …",
+     "eId": "part_1/tit_5/chap_1"
     }
    ],
    "marginalie": [],
@@ -12322,19 +13252,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -12372,19 +13306,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -12411,19 +13349,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -12448,19 +13390,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -12546,19 +13492,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "1. Abschnitt: Allgemeine Bestimmungen"
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "part_1/tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -12583,19 +13533,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "1a. Abschnitt: Prämien der Versicherten mit Wohnort in einem Mitgliedstaat der Europäischen Union, in Island, in Norwegen oder im Vereinigten Königreich"
+     "label": "1a. Abschnitt: Prämien der Versicherten mit Wohnort in einem Mitgliedstaat der Europäischen Union, in Island, in Norwegen oder im Vereinigten Königreich",
+     "eId": "part_1/tit_5/chap_2/sec_1_a"
     }
    ],
    "marginalie": [
@@ -12634,19 +13588,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "1a. Abschnitt: Prämien der Versicherten mit Wohnort in einem Mitgliedstaat der Europäischen Union, in Island, in Norwegen oder im Vereinigten Königreich"
+     "label": "1a. Abschnitt: Prämien der Versicherten mit Wohnort in einem Mitgliedstaat der Europäischen Union, in Island, in Norwegen oder im Vereinigten Königreich",
+     "eId": "part_1/tit_5/chap_2/sec_1_a"
     }
    ],
    "marginalie": [],
@@ -12669,19 +13627,23 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Teil: Obligatorische Krankenpflegeversicherung"
+     "label": "1. Teil: Obligatorische Krankenpflegeversicherung",
+     "eId": "part_1"
     },
     {
      "ebene": 2,
-     "label": "5. Titel: Finanzierung"
+     "label": "5. Titel: Finanzierung",
+     "eId": "part_1/tit_5"
     },
     {
      "ebene": 3,
-     "label": "2. Kapitel: Prämien der Versicherten"
+     "label": "2. Kapitel: Prämien der Versicherten",
+     "eId": "part_1/tit_5/chap_2"
     },
     {
      "ebene": 4,
-     "label": "1b. Abschnitt: Prämien von nothilfeberechtigten Personen nach Artikel 82 AsylG"
+     "label": "1b. Abschnitt: Prämien von nothilfeberechtigten Personen nach Artikel 82 AsylG",
+     "eId": "part_1/tit_5/chap_2/sec_1_b"
     }
    ],
    "marginalie": [],

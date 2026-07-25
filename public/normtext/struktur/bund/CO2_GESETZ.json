@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "641.71",
   "titel": "Bundesgesetz über die Reduktion der CO2-Emissionen",
@@ -68,7 +68,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -115,7 +116,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -170,7 +172,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -216,7 +219,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -277,7 +281,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -306,7 +311,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -348,7 +354,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -377,7 +384,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -388,11 +396,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Technische Massnahmen zur Verminderung der CO2-Emissionen"
+     "label": "2. Kapitel: Technische Massnahmen zur Verminderung der CO2-Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Bei Gebäuden"
+     "label": "1. Abschnitt: Bei Gebäuden",
+     "eId": "chap_2/sec_1"
     }
    ],
    "marginalie": [],
@@ -464,11 +474,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Technische Massnahmen zur Verminderung der CO2-Emissionen"
+     "label": "2. Kapitel: Technische Massnahmen zur Verminderung der CO2-Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bei Fahrzeugen"
+     "label": "2. Abschnitt: Bei Fahrzeugen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -531,11 +543,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Technische Massnahmen zur Verminderung der CO2-Emissionen"
+     "label": "2. Kapitel: Technische Massnahmen zur Verminderung der CO2-Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bei Fahrzeugen"
+     "label": "2. Abschnitt: Bei Fahrzeugen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -564,11 +578,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Technische Massnahmen zur Verminderung der CO2-Emissionen"
+     "label": "2. Kapitel: Technische Massnahmen zur Verminderung der CO2-Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bei Fahrzeugen"
+     "label": "2. Abschnitt: Bei Fahrzeugen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -597,11 +613,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Technische Massnahmen zur Verminderung der CO2-Emissionen"
+     "label": "2. Kapitel: Technische Massnahmen zur Verminderung der CO2-Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bei Fahrzeugen"
+     "label": "2. Abschnitt: Bei Fahrzeugen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -659,7 +677,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: …"
+     "label": "3. Kapitel: …",
+     "eId": "chap_3"
     }
    ],
    "marginalie": [],
@@ -686,11 +705,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister"
+     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Emissionshandelssystem"
+     "label": "1. Abschnitt: Emissionshandelssystem",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -749,11 +770,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister"
+     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Emissionshandelssystem"
+     "label": "1. Abschnitt: Emissionshandelssystem",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -818,11 +841,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister"
+     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Emissionshandelssystem"
+     "label": "1. Abschnitt: Emissionshandelssystem",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -867,11 +892,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister"
+     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Emissionshandelssystem"
+     "label": "1. Abschnitt: Emissionshandelssystem",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -952,11 +979,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister"
+     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Emissionshandelssystem"
+     "label": "1. Abschnitt: Emissionshandelssystem",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -985,11 +1014,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister"
+     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Emissionshandelssystem"
+     "label": "1. Abschnitt: Emissionshandelssystem",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1034,11 +1065,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister"
+     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Emissionshandelssystem"
+     "label": "1. Abschnitt: Emissionshandelssystem",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -1087,11 +1120,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: CO2-Abgabe"
+     "label": "5. Kapitel: CO2-Abgabe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Abgabeerhebung"
+     "label": "1. Abschnitt: Abgabeerhebung",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1121,11 +1156,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: CO2-Abgabe"
+     "label": "5. Kapitel: CO2-Abgabe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Abgabeerhebung"
+     "label": "1. Abschnitt: Abgabeerhebung",
+     "eId": "chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -1180,11 +1217,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: CO2-Abgabe"
+     "label": "5. Kapitel: CO2-Abgabe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber mit Verpflichtung zur Verminderung der Treibhausgasemissionen"
+     "label": "2. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber mit Verpflichtung zur Verminderung der Treibhausgasemissionen",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1260,11 +1299,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: CO2-Abgabe"
+     "label": "5. Kapitel: CO2-Abgabe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber mit Verpflichtung zur Verminderung der Treibhausgasemissionen"
+     "label": "2. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber mit Verpflichtung zur Verminderung der Treibhausgasemissionen",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -1293,11 +1334,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: CO2-Abgabe"
+     "label": "5. Kapitel: CO2-Abgabe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "5. Abschnitt: Verfahren"
+     "label": "5. Abschnitt: Verfahren",
+     "eId": "chap_5/sec_5"
     }
    ],
    "marginalie": [],
@@ -1341,7 +1384,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verwendung der Erträge"
+     "label": "6. Kapitel: Verwendung der Erträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1383,7 +1427,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verwendung der Erträge"
+     "label": "6. Kapitel: Verwendung der Erträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1412,7 +1457,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verwendung der Erträge"
+     "label": "6. Kapitel: Verwendung der Erträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1486,7 +1532,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verwendung der Erträge"
+     "label": "6. Kapitel: Verwendung der Erträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1515,7 +1562,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verwendung der Erträge"
+     "label": "6. Kapitel: Verwendung der Erträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1544,7 +1592,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug, Verfahren und Förderung"
+     "label": "7. Kapitel: Vollzug, Verfahren und Förderung",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -1662,7 +1711,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug, Verfahren und Förderung"
+     "label": "7. Kapitel: Vollzug, Verfahren und Förderung",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -1707,7 +1757,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug, Verfahren und Förderung"
+     "label": "7. Kapitel: Vollzug, Verfahren und Förderung",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -1736,7 +1787,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Strafbestimmungen"
+     "label": "8. Kapitel: Strafbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1747,7 +1799,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Strafbestimmungen"
+     "label": "8. Kapitel: Strafbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1758,7 +1811,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Strafbestimmungen"
+     "label": "8. Kapitel: Strafbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1787,7 +1841,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Strafbestimmungen"
+     "label": "8. Kapitel: Strafbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -1841,7 +1896,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -1887,7 +1943,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -1913,7 +1970,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -1924,7 +1982,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -1935,7 +1994,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -1955,11 +2015,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Technische Massnahmen zur Verminderung der CO2-Emissionen"
+     "label": "2. Kapitel: Technische Massnahmen zur Verminderung der CO2-Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bei Fahrzeugen"
+     "label": "2. Abschnitt: Bei Fahrzeugen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [],
@@ -1986,11 +2048,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Technische Massnahmen zur Verminderung der CO2-Emissionen"
+     "label": "2. Kapitel: Technische Massnahmen zur Verminderung der CO2-Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bei Fahrzeugen"
+     "label": "2. Abschnitt: Bei Fahrzeugen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2032,11 +2096,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Technische Massnahmen zur Verminderung der CO2-Emissionen"
+     "label": "2. Kapitel: Technische Massnahmen zur Verminderung der CO2-Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bei Fahrzeugen"
+     "label": "2. Abschnitt: Bei Fahrzeugen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2065,11 +2131,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Technische Massnahmen zur Verminderung der CO2-Emissionen"
+     "label": "2. Kapitel: Technische Massnahmen zur Verminderung der CO2-Emissionen",
+     "eId": "chap_2"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Bei Fahrzeugen"
+     "label": "2. Abschnitt: Bei Fahrzeugen",
+     "eId": "chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2098,11 +2166,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister"
+     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Emissionshandelssystem"
+     "label": "1. Abschnitt: Emissionshandelssystem",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2167,11 +2237,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister"
+     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Emissionshandelssystem"
+     "label": "1. Abschnitt: Emissionshandelssystem",
+     "eId": "chap_4/sec_1"
     }
    ],
    "marginalie": [
@@ -2208,11 +2280,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister"
+     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: …"
+     "label": "2. Abschnitt: …",
+     "eId": "chap_4/sec_2"
     }
    ],
    "marginalie": [],
@@ -2239,11 +2313,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister"
+     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: …"
+     "label": "3. Abschnitt: …",
+     "eId": "chap_4/sec_3"
     }
    ],
    "marginalie": [],
@@ -2270,11 +2346,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister"
+     "label": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister",
+     "eId": "chap_4"
     },
     {
      "ebene": 2,
-     "label": "3a. Abschnitt: Emissionshandelsregister"
+     "label": "3a. Abschnitt: Emissionshandelsregister",
+     "eId": "chap_4/sec_3_a"
     }
    ],
    "marginalie": [],
@@ -2302,11 +2380,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Massnahmen im Zusammenhang mit fossilen Treibstoffen"
+     "label": "4a. Kapitel: Massnahmen im Zusammenhang mit fossilen Treibstoffen",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Pflicht zur Kompensation von CO2-Emissionen bei fossilen Treibstoffen"
+     "label": "1. Abschnitt: Pflicht zur Kompensation von CO2-Emissionen bei fossilen Treibstoffen",
+     "eId": "chap_4_a/sec_1"
     }
    ],
    "marginalie": [
@@ -2349,11 +2429,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Massnahmen im Zusammenhang mit fossilen Treibstoffen"
+     "label": "4a. Kapitel: Massnahmen im Zusammenhang mit fossilen Treibstoffen",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Pflicht zur Kompensation von CO2-Emissionen bei fossilen Treibstoffen"
+     "label": "1. Abschnitt: Pflicht zur Kompensation von CO2-Emissionen bei fossilen Treibstoffen",
+     "eId": "chap_4_a/sec_1"
     }
    ],
    "marginalie": [
@@ -2364,11 +2446,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Massnahmen im Zusammenhang mit fossilen Treibstoffen"
+     "label": "4a. Kapitel: Massnahmen im Zusammenhang mit fossilen Treibstoffen",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Pflicht zur Kompensation von CO2-Emissionen bei fossilen Treibstoffen"
+     "label": "1. Abschnitt: Pflicht zur Kompensation von CO2-Emissionen bei fossilen Treibstoffen",
+     "eId": "chap_4_a/sec_1"
     }
    ],
    "marginalie": [
@@ -2379,11 +2463,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Massnahmen im Zusammenhang mit fossilen Treibstoffen"
+     "label": "4a. Kapitel: Massnahmen im Zusammenhang mit fossilen Treibstoffen",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Pflicht zur Kompensation von CO2-Emissionen bei fossilen Treibstoffen"
+     "label": "1. Abschnitt: Pflicht zur Kompensation von CO2-Emissionen bei fossilen Treibstoffen",
+     "eId": "chap_4_a/sec_1"
     }
    ],
    "marginalie": [
@@ -2394,11 +2480,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Massnahmen im Zusammenhang mit fossilen Treibstoffen"
+     "label": "4a. Kapitel: Massnahmen im Zusammenhang mit fossilen Treibstoffen",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflicht zur Bereitstellung und zur Beimischung von emissionsarmen, erneuerbaren und erneuerbaren synthetischen Treibstoffen"
+     "label": "2. Abschnitt: Pflicht zur Bereitstellung und zur Beimischung von emissionsarmen, erneuerbaren und erneuerbaren synthetischen Treibstoffen",
+     "eId": "chap_4_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2424,11 +2512,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4a. Kapitel: Massnahmen im Zusammenhang mit fossilen Treibstoffen"
+     "label": "4a. Kapitel: Massnahmen im Zusammenhang mit fossilen Treibstoffen",
+     "eId": "chap_4_a"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Pflicht zur Bereitstellung und zur Beimischung von emissionsarmen, erneuerbaren und erneuerbaren synthetischen Treibstoffen"
+     "label": "2. Abschnitt: Pflicht zur Bereitstellung und zur Beimischung von emissionsarmen, erneuerbaren und erneuerbaren synthetischen Treibstoffen",
+     "eId": "chap_4_a/sec_2"
     }
    ],
    "marginalie": [
@@ -2439,11 +2529,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: CO2-Abgabe"
+     "label": "5. Kapitel: CO2-Abgabe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber mit Verpflichtung zur Verminderung der Treibhausgasemissionen"
+     "label": "2. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber mit Verpflichtung zur Verminderung der Treibhausgasemissionen",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2480,11 +2572,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: CO2-Abgabe"
+     "label": "5. Kapitel: CO2-Abgabe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber mit Verpflichtung zur Verminderung der Treibhausgasemissionen"
+     "label": "2. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber mit Verpflichtung zur Verminderung der Treibhausgasemissionen",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2513,11 +2607,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: CO2-Abgabe"
+     "label": "5. Kapitel: CO2-Abgabe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber mit Verpflichtung zur Verminderung der Treibhausgasemissionen"
+     "label": "2. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber mit Verpflichtung zur Verminderung der Treibhausgasemissionen",
+     "eId": "chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -2546,11 +2642,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: CO2-Abgabe"
+     "label": "5. Kapitel: CO2-Abgabe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber von WKK-Anlagen, die weder am EHS teilnehmen noch eine Verminderungsverpflichtung eingegangen sind"
+     "label": "3. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber von WKK-Anlagen, die weder am EHS teilnehmen noch eine Verminderungsverpflichtung eingegangen sind",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -2596,11 +2694,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: CO2-Abgabe"
+     "label": "5. Kapitel: CO2-Abgabe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber von WKK-Anlagen, die weder am EHS teilnehmen noch eine Verminderungsverpflichtung eingegangen sind"
+     "label": "3. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber von WKK-Anlagen, die weder am EHS teilnehmen noch eine Verminderungsverpflichtung eingegangen sind",
+     "eId": "chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -2629,11 +2729,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: CO2-Abgabe"
+     "label": "5. Kapitel: CO2-Abgabe",
+     "eId": "chap_5"
     },
     {
      "ebene": 2,
-     "label": "4. Abschnitt: Rückerstattung der CO2-Abgabe bei nicht energetischer Nutzung"
+     "label": "4. Abschnitt: Rückerstattung der CO2-Abgabe bei nicht energetischer Nutzung",
+     "eId": "chap_5/sec_4"
     }
    ],
    "marginalie": [],
@@ -2661,7 +2763,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verwendung der Erträge"
+     "label": "6. Kapitel: Verwendung der Erträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2690,7 +2793,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verwendung der Erträge"
+     "label": "6. Kapitel: Verwendung der Erträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2719,7 +2823,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verwendung der Erträge"
+     "label": "6. Kapitel: Verwendung der Erträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2748,7 +2853,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Verwendung der Erträge"
+     "label": "6. Kapitel: Verwendung der Erträge",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -2777,7 +2883,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -2806,7 +2913,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug, Verfahren und Förderung"
+     "label": "7. Kapitel: Vollzug, Verfahren und Förderung",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2835,7 +2943,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug, Verfahren und Förderung"
+     "label": "7. Kapitel: Vollzug, Verfahren und Förderung",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2872,7 +2981,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug, Verfahren und Förderung"
+     "label": "7. Kapitel: Vollzug, Verfahren und Förderung",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2937,7 +3047,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug, Verfahren und Förderung"
+     "label": "7. Kapitel: Vollzug, Verfahren und Förderung",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -2979,7 +3090,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Kapitel: Vollzug, Verfahren und Förderung"
+     "label": "7. Kapitel: Vollzug, Verfahren und Förderung",
+     "eId": "chap_7"
     }
    ],
    "marginalie": [
@@ -3008,7 +3120,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Kapitel: Strafbestimmungen"
+     "label": "8. Kapitel: Strafbestimmungen",
+     "eId": "chap_8"
     }
    ],
    "marginalie": [
@@ -3037,7 +3150,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3070,7 +3184,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3103,7 +3218,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3132,7 +3248,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "9. Kapitel: Schlussbestimmungen"
+     "label": "9. Kapitel: Schlussbestimmungen",
+     "eId": "chap_9"
     }
    ],
    "marginalie": [
@@ -3173,7 +3290,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [
@@ -3202,7 +3320,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Allgemeine Bestimmungen"
+     "label": "1. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [

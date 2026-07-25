@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "221.411",
   "titel": "Handelsregisterverordnung",
@@ -67,11 +67,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gegenstand und Begriffe"
+     "label": "1. Kapitel: Gegenstand und Begriffe",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -97,11 +99,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gegenstand und Begriffe"
+     "label": "1. Kapitel: Gegenstand und Begriffe",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -112,11 +116,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsregisterbehörden"
+     "label": "2. Kapitel: Handelsregisterbehörden",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -141,11 +147,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsregisterbehörden"
+     "label": "2. Kapitel: Handelsregisterbehörden",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [],
@@ -168,11 +176,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsregisterbehörden"
+     "label": "2. Kapitel: Handelsregisterbehörden",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -197,11 +207,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aufbau und Inhalt des Handelsregisters"
+     "label": "3. Kapitel: Aufbau und Inhalt des Handelsregisters",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -212,11 +224,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aufbau und Inhalt des Handelsregisters"
+     "label": "3. Kapitel: Aufbau und Inhalt des Handelsregisters",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -227,11 +241,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aufbau und Inhalt des Handelsregisters"
+     "label": "3. Kapitel: Aufbau und Inhalt des Handelsregisters",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -242,11 +258,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aufbau und Inhalt des Handelsregisters"
+     "label": "3. Kapitel: Aufbau und Inhalt des Handelsregisters",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -283,11 +301,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentlichkeit des Handelsregisters"
+     "label": "4. Kapitel: Öffentlichkeit des Handelsregisters",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -312,11 +332,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentlichkeit des Handelsregisters"
+     "label": "4. Kapitel: Öffentlichkeit des Handelsregisters",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -377,11 +399,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Öffentlichkeit des Handelsregisters"
+     "label": "4. Kapitel: Öffentlichkeit des Handelsregisters",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -406,11 +430,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Zentrale Datenbanken"
+     "label": "7. Kapitel: Zentrale Datenbanken",
+     "eId": "tit_1/chap_7"
     }
    ],
    "marginalie": [
@@ -436,11 +462,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Zentrale Datenbanken"
+     "label": "7. Kapitel: Zentrale Datenbanken",
+     "eId": "tit_1/chap_7"
     }
    ],
    "marginalie": [
@@ -451,15 +479,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Anmeldung und Belege"
+     "label": "1. Kapitel: Anmeldung und Belege",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anmeldung"
+     "label": "1. Abschnitt: Anmeldung",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [],
@@ -495,15 +526,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Anmeldung und Belege"
+     "label": "1. Kapitel: Anmeldung und Belege",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anmeldung"
+     "label": "1. Abschnitt: Anmeldung",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -528,15 +562,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Anmeldung und Belege"
+     "label": "1. Kapitel: Anmeldung und Belege",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anmeldung"
+     "label": "1. Abschnitt: Anmeldung",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -561,15 +598,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Anmeldung und Belege"
+     "label": "1. Kapitel: Anmeldung und Belege",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anmeldung"
+     "label": "1. Abschnitt: Anmeldung",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -606,15 +646,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Anmeldung und Belege"
+     "label": "1. Kapitel: Anmeldung und Belege",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Anmeldung"
+     "label": "1. Abschnitt: Anmeldung",
+     "eId": "tit_2/chap_1/sec_1"
     }
    ],
    "marginalie": [
@@ -663,15 +706,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Anmeldung und Belege"
+     "label": "1. Kapitel: Anmeldung und Belege",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Belege"
+     "label": "2. Abschnitt: Belege",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -733,15 +779,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Anmeldung und Belege"
+     "label": "1. Kapitel: Anmeldung und Belege",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Belege"
+     "label": "2. Abschnitt: Belege",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -802,15 +851,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Anmeldung und Belege"
+     "label": "1. Kapitel: Anmeldung und Belege",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Belege"
+     "label": "2. Abschnitt: Belege",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -847,15 +899,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Anmeldung und Belege"
+     "label": "1. Kapitel: Anmeldung und Belege",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Belege"
+     "label": "2. Abschnitt: Belege",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -866,15 +921,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Anmeldung und Belege"
+     "label": "1. Kapitel: Anmeldung und Belege",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Belege"
+     "label": "2. Abschnitt: Belege",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -899,15 +957,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Anmeldung und Belege"
+     "label": "1. Kapitel: Anmeldung und Belege",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Belege"
+     "label": "2. Abschnitt: Belege",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -918,11 +979,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Grundsätze für die Eintragung"
+     "label": "2. Kapitel: Grundsätze für die Eintragung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -947,11 +1010,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Grundsätze für die Eintragung"
+     "label": "2. Kapitel: Grundsätze für die Eintragung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -976,11 +1041,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Grundsätze für die Eintragung"
+     "label": "2. Kapitel: Grundsätze für die Eintragung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1005,11 +1072,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Grundsätze für die Eintragung"
+     "label": "2. Kapitel: Grundsätze für die Eintragung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1020,11 +1089,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Grundsätze für die Eintragung"
+     "label": "2. Kapitel: Grundsätze für die Eintragung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -1035,11 +1106,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Prüfung, Genehmigung und Publikation der Eintragung"
+     "label": "3. Kapitel: Prüfung, Genehmigung und Publikation der Eintragung",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1050,11 +1123,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Prüfung, Genehmigung und Publikation der Eintragung"
+     "label": "3. Kapitel: Prüfung, Genehmigung und Publikation der Eintragung",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1065,11 +1140,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Prüfung, Genehmigung und Publikation der Eintragung"
+     "label": "3. Kapitel: Prüfung, Genehmigung und Publikation der Eintragung",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1080,11 +1157,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Prüfung, Genehmigung und Publikation der Eintragung"
+     "label": "3. Kapitel: Prüfung, Genehmigung und Publikation der Eintragung",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1109,11 +1188,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Prüfung, Genehmigung und Publikation der Eintragung"
+     "label": "3. Kapitel: Prüfung, Genehmigung und Publikation der Eintragung",
+     "eId": "tit_2/chap_3"
     }
    ],
    "marginalie": [
@@ -1138,11 +1219,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Einzelunternehmen"
+     "label": "1. Kapitel: Einzelunternehmen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [],
@@ -1165,11 +1248,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Einzelunternehmen"
+     "label": "1. Kapitel: Einzelunternehmen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1194,11 +1279,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Einzelunternehmen"
+     "label": "1. Kapitel: Einzelunternehmen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1223,11 +1310,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Einzelunternehmen"
+     "label": "1. Kapitel: Einzelunternehmen",
+     "eId": "tit_3/chap_1"
     }
    ],
    "marginalie": [
@@ -1268,11 +1357,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kollektiv- und Kommanditgesellschaft"
+     "label": "2. Kapitel: Kollektiv- und Kommanditgesellschaft",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1297,11 +1388,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kollektiv- und Kommanditgesellschaft"
+     "label": "2. Kapitel: Kollektiv- und Kommanditgesellschaft",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1312,11 +1405,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Kollektiv- und Kommanditgesellschaft"
+     "label": "2. Kapitel: Kollektiv- und Kommanditgesellschaft",
+     "eId": "tit_3/chap_2"
     }
    ],
    "marginalie": [
@@ -1341,15 +1436,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gründung"
+     "label": "1. Abschnitt: Gründung",
+     "eId": "tit_3/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1446,15 +1544,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gründung"
+     "label": "1. Abschnitt: Gründung",
+     "eId": "tit_3/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1491,15 +1592,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gründung"
+     "label": "1. Abschnitt: Gründung",
+     "eId": "tit_3/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -1632,15 +1736,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Ordentliche Kapitalerhöhung"
+     "label": "3. Abschnitt: Ordentliche Kapitalerhöhung",
+     "eId": "tit_3/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1690,15 +1797,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Ordentliche Kapitalerhöhung"
+     "label": "3. Abschnitt: Ordentliche Kapitalerhöhung",
+     "eId": "tit_3/chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -1721,15 +1831,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Ordentliche Kapitalerhöhung"
+     "label": "3. Abschnitt: Ordentliche Kapitalerhöhung",
+     "eId": "tit_3/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -1778,15 +1891,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Erhöhung aus bedingtem Kapital"
+     "label": "4. Abschnitt: Erhöhung aus bedingtem Kapital",
+     "eId": "tit_3/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1872,15 +1988,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Erhöhung aus bedingtem Kapital"
+     "label": "4. Abschnitt: Erhöhung aus bedingtem Kapital",
+     "eId": "tit_3/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1953,15 +2072,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Erhöhung aus bedingtem Kapital"
+     "label": "4. Abschnitt: Erhöhung aus bedingtem Kapital",
+     "eId": "tit_3/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -1986,15 +2108,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Nachträgliche Leistung von Einlagen"
+     "label": "5. Abschnitt: Nachträgliche Leistung von Einlagen",
+     "eId": "tit_3/chap_3/sec_5"
     }
    ],
    "marginalie": [],
@@ -2017,15 +2142,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Herabsetzung des Aktienkapitals"
+     "label": "6. Abschnitt: Herabsetzung des Aktienkapitals",
+     "eId": "tit_3/chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -2062,15 +2190,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Herabsetzung des Aktienkapitals"
+     "label": "6. Abschnitt: Herabsetzung des Aktienkapitals",
+     "eId": "tit_3/chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -2107,15 +2238,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Herabsetzung des Aktienkapitals"
+     "label": "6. Abschnitt: Herabsetzung des Aktienkapitals",
+     "eId": "tit_3/chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -2164,15 +2298,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Herabsetzung des Aktienkapitals"
+     "label": "6. Abschnitt: Herabsetzung des Aktienkapitals",
+     "eId": "tit_3/chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -2183,15 +2320,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Herabsetzung des Aktienkapitals"
+     "label": "6. Abschnitt: Herabsetzung des Aktienkapitals",
+     "eId": "tit_3/chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -2202,15 +2342,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Partizipationskapital"
+     "label": "8. Abschnitt: Partizipationskapital",
+     "eId": "tit_3/chap_3/sec_8"
     }
    ],
    "marginalie": [],
@@ -2234,15 +2377,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "9. Abschnitt: Besondere Bestimmungen zur Revision und zur Revisionsstelle"
+     "label": "9. Abschnitt: Besondere Bestimmungen zur Revision und zur Revisionsstelle",
+     "eId": "tit_3/chap_3/sec_9"
     }
    ],
    "marginalie": [
@@ -2268,15 +2414,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "9. Abschnitt: Besondere Bestimmungen zur Revision und zur Revisionsstelle"
+     "label": "9. Abschnitt: Besondere Bestimmungen zur Revision und zur Revisionsstelle",
+     "eId": "tit_3/chap_3/sec_9"
     }
    ],
    "marginalie": [
@@ -2313,15 +2462,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "10. Abschnitt: Auflösung und Löschung"
+     "label": "10. Abschnitt: Auflösung und Löschung",
+     "eId": "tit_3/chap_3/sec_10"
     }
    ],
    "marginalie": [
@@ -2359,15 +2511,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "10. Abschnitt: Auflösung und Löschung"
+     "label": "10. Abschnitt: Auflösung und Löschung",
+     "eId": "tit_3/chap_3/sec_10"
     }
    ],
    "marginalie": [
@@ -2404,15 +2559,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "10. Abschnitt: Auflösung und Löschung"
+     "label": "10. Abschnitt: Auflösung und Löschung",
+     "eId": "tit_3/chap_3/sec_10"
     }
    ],
    "marginalie": [
@@ -2423,11 +2581,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Kommanditaktiengesellschaft"
+     "label": "4. Kapitel: Kommanditaktiengesellschaft",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -2512,11 +2672,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Kommanditaktiengesellschaft"
+     "label": "4. Kapitel: Kommanditaktiengesellschaft",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -2553,11 +2715,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Kommanditaktiengesellschaft"
+     "label": "4. Kapitel: Kommanditaktiengesellschaft",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -2666,11 +2830,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Kommanditaktiengesellschaft"
+     "label": "4. Kapitel: Kommanditaktiengesellschaft",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -2695,11 +2861,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Kommanditaktiengesellschaft"
+     "label": "4. Kapitel: Kommanditaktiengesellschaft",
+     "eId": "tit_3/chap_4"
     }
    ],
    "marginalie": [
@@ -2710,15 +2878,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung"
+     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gründung"
+     "label": "1. Abschnitt: Gründung",
+     "eId": "tit_3/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -2779,15 +2950,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung"
+     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gründung"
+     "label": "1. Abschnitt: Gründung",
+     "eId": "tit_3/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -2824,15 +2998,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung"
+     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Gründung"
+     "label": "1. Abschnitt: Gründung",
+     "eId": "tit_3/chap_5/sec_1"
     }
    ],
    "marginalie": [
@@ -2905,15 +3082,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung"
+     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Erhöhung des Stammkapitals"
+     "label": "2. Abschnitt: Erhöhung des Stammkapitals",
+     "eId": "tit_3/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -3010,15 +3190,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung"
+     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Erhöhung des Stammkapitals"
+     "label": "2. Abschnitt: Erhöhung des Stammkapitals",
+     "eId": "tit_3/chap_5/sec_2"
     }
    ],
    "marginalie": [],
@@ -3041,15 +3224,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung"
+     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Erhöhung des Stammkapitals"
+     "label": "2. Abschnitt: Erhöhung des Stammkapitals",
+     "eId": "tit_3/chap_5/sec_2"
     }
    ],
    "marginalie": [
@@ -3074,15 +3260,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung"
+     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Herabsetzung des Stammkapitals"
+     "label": "3. Abschnitt: Herabsetzung des Stammkapitals",
+     "eId": "tit_3/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -3107,15 +3296,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung"
+     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Herabsetzung des Stammkapitals"
+     "label": "3. Abschnitt: Herabsetzung des Stammkapitals",
+     "eId": "tit_3/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -3140,15 +3332,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung"
+     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Herabsetzung des Stammkapitals"
+     "label": "3. Abschnitt: Herabsetzung des Stammkapitals",
+     "eId": "tit_3/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -3173,15 +3368,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung"
+     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Herabsetzung des Stammkapitals"
+     "label": "3. Abschnitt: Herabsetzung des Stammkapitals",
+     "eId": "tit_3/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -3192,15 +3390,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung"
+     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Herabsetzung des Stammkapitals"
+     "label": "3. Abschnitt: Herabsetzung des Stammkapitals",
+     "eId": "tit_3/chap_5/sec_3"
     }
    ],
    "marginalie": [
@@ -3211,15 +3412,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung"
+     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Übertragung von Stammanteilen"
+     "label": "4. Abschnitt: Übertragung von Stammanteilen",
+     "eId": "tit_3/chap_5/sec_4"
     }
    ],
    "marginalie": []
@@ -3228,15 +3432,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung"
+     "label": "5. Kapitel: Gesellschaft mit beschränkter Haftung",
+     "eId": "tit_3/chap_5"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Währung des Stammkapitals, Revision, Auflösung und Löschung sowie Übertragung von Stammanteilen bei überschuldeten Gesellschaften ohne Geschäftstätigkeit und ohne verwertbare Aktiven"
+     "label": "5. Abschnitt: Währung des Stammkapitals, Revision, Auflösung und Löschung sowie Übertragung von Stammanteilen bei überschuldeten Gesellschaften ohne Geschäftstätigkeit und ohne verwertbare Aktiven",
+     "eId": "tit_3/chap_5/sec_5"
     }
    ],
    "marginalie": [],
@@ -3260,11 +3467,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Genossenschaft"
+     "label": "6. Kapitel: Genossenschaft",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3361,11 +3570,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Genossenschaft"
+     "label": "6. Kapitel: Genossenschaft",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3431,11 +3642,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Genossenschaft"
+     "label": "6. Kapitel: Genossenschaft",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [],
@@ -3458,11 +3671,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Genossenschaft"
+     "label": "6. Kapitel: Genossenschaft",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3511,11 +3726,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Genossenschaft"
+     "label": "6. Kapitel: Genossenschaft",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3526,11 +3743,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Genossenschaft"
+     "label": "6. Kapitel: Genossenschaft",
+     "eId": "tit_3/chap_6"
     }
    ],
    "marginalie": [
@@ -3541,11 +3760,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Verein"
+     "label": "7. Kapitel: Verein",
+     "eId": "tit_3/chap_7"
     }
    ],
    "marginalie": [
@@ -3594,11 +3815,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Verein"
+     "label": "7. Kapitel: Verein",
+     "eId": "tit_3/chap_7"
     }
    ],
    "marginalie": [
@@ -3609,11 +3832,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Verein"
+     "label": "7. Kapitel: Verein",
+     "eId": "tit_3/chap_7"
     }
    ],
    "marginalie": [
@@ -3674,11 +3899,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Verein"
+     "label": "7. Kapitel: Verein",
+     "eId": "tit_3/chap_7"
     }
    ],
    "marginalie": [
@@ -3703,11 +3930,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Stiftung"
+     "label": "8. Kapitel: Stiftung",
+     "eId": "tit_3/chap_8"
     }
    ],
    "marginalie": [
@@ -3744,11 +3973,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Stiftung"
+     "label": "8. Kapitel: Stiftung",
+     "eId": "tit_3/chap_8"
     }
    ],
    "marginalie": [
@@ -3857,11 +4088,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Stiftung"
+     "label": "8. Kapitel: Stiftung",
+     "eId": "tit_3/chap_8"
     }
    ],
    "marginalie": [
@@ -3872,11 +4105,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Stiftung"
+     "label": "8. Kapitel: Stiftung",
+     "eId": "tit_3/chap_8"
     }
    ],
    "marginalie": [
@@ -3887,11 +4122,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "9. Kapitel: Kommanditgesellschaft für kollektive Kapitalanlagen"
+     "label": "9. Kapitel: Kommanditgesellschaft für kollektive Kapitalanlagen",
+     "eId": "tit_3/chap_9"
     }
    ],
    "marginalie": [
@@ -3902,11 +4139,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "9. Kapitel: Kommanditgesellschaft für kollektive Kapitalanlagen"
+     "label": "9. Kapitel: Kommanditgesellschaft für kollektive Kapitalanlagen",
+     "eId": "tit_3/chap_9"
     }
    ],
    "marginalie": [
@@ -3967,11 +4206,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "9. Kapitel: Kommanditgesellschaft für kollektive Kapitalanlagen"
+     "label": "9. Kapitel: Kommanditgesellschaft für kollektive Kapitalanlagen",
+     "eId": "tit_3/chap_9"
     }
    ],
    "marginalie": [
@@ -3982,11 +4223,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "10. Kapitel: Investmentgesellschaft mit festem Kapital (SICAF)"
+     "label": "10. Kapitel: Investmentgesellschaft mit festem Kapital (SICAF)",
+     "eId": "tit_3/chap_10"
     }
    ],
    "marginalie": [],
@@ -4021,11 +4264,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "11. Kapitel: Investmentgesellschaft mit variablem Kapital (SICAV)"
+     "label": "11. Kapitel: Investmentgesellschaft mit variablem Kapital (SICAV)",
+     "eId": "tit_3/chap_11"
     }
    ],
    "marginalie": [
@@ -4078,11 +4323,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "11. Kapitel: Investmentgesellschaft mit variablem Kapital (SICAV)"
+     "label": "11. Kapitel: Investmentgesellschaft mit variablem Kapital (SICAV)",
+     "eId": "tit_3/chap_11"
     }
    ],
    "marginalie": [
@@ -4107,11 +4354,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "11. Kapitel: Investmentgesellschaft mit variablem Kapital (SICAV)"
+     "label": "11. Kapitel: Investmentgesellschaft mit variablem Kapital (SICAV)",
+     "eId": "tit_3/chap_11"
     }
    ],
    "marginalie": [
@@ -4176,11 +4425,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "11. Kapitel: Investmentgesellschaft mit variablem Kapital (SICAV)"
+     "label": "11. Kapitel: Investmentgesellschaft mit variablem Kapital (SICAV)",
+     "eId": "tit_3/chap_11"
     }
    ],
    "marginalie": [
@@ -4191,11 +4442,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "12. Kapitel: Institut des öffentlichen Rechts"
+     "label": "12. Kapitel: Institut des öffentlichen Rechts",
+     "eId": "tit_3/chap_12"
     }
    ],
    "marginalie": [
@@ -4220,11 +4473,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "12. Kapitel: Institut des öffentlichen Rechts"
+     "label": "12. Kapitel: Institut des öffentlichen Rechts",
+     "eId": "tit_3/chap_12"
     }
    ],
    "marginalie": [
@@ -4235,11 +4490,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "12. Kapitel: Institut des öffentlichen Rechts"
+     "label": "12. Kapitel: Institut des öffentlichen Rechts",
+     "eId": "tit_3/chap_12"
     }
    ],
    "marginalie": [
@@ -4250,15 +4507,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "13. Kapitel: Zweigniederlassung"
+     "label": "13. Kapitel: Zweigniederlassung",
+     "eId": "tit_3/chap_13"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweigniederlassung einer Rechtseinheit mit Sitz in der Schweiz"
+     "label": "1. Abschnitt: Zweigniederlassung einer Rechtseinheit mit Sitz in der Schweiz",
+     "eId": "tit_3/chap_13/sec_1"
     }
    ],
    "marginalie": [
@@ -4269,15 +4529,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "13. Kapitel: Zweigniederlassung"
+     "label": "13. Kapitel: Zweigniederlassung",
+     "eId": "tit_3/chap_13"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweigniederlassung einer Rechtseinheit mit Sitz in der Schweiz"
+     "label": "1. Abschnitt: Zweigniederlassung einer Rechtseinheit mit Sitz in der Schweiz",
+     "eId": "tit_3/chap_13/sec_1"
     }
    ],
    "marginalie": [
@@ -4288,15 +4551,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "13. Kapitel: Zweigniederlassung"
+     "label": "13. Kapitel: Zweigniederlassung",
+     "eId": "tit_3/chap_13"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweigniederlassung einer Rechtseinheit mit Sitz in der Schweiz"
+     "label": "1. Abschnitt: Zweigniederlassung einer Rechtseinheit mit Sitz in der Schweiz",
+     "eId": "tit_3/chap_13/sec_1"
     }
    ],
    "marginalie": [
@@ -4307,15 +4573,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "13. Kapitel: Zweigniederlassung"
+     "label": "13. Kapitel: Zweigniederlassung",
+     "eId": "tit_3/chap_13"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zweigniederlassung einer Rechtseinheit mit Sitz in der Schweiz"
+     "label": "1. Abschnitt: Zweigniederlassung einer Rechtseinheit mit Sitz in der Schweiz",
+     "eId": "tit_3/chap_13/sec_1"
     }
    ],
    "marginalie": [
@@ -4326,15 +4595,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "13. Kapitel: Zweigniederlassung"
+     "label": "13. Kapitel: Zweigniederlassung",
+     "eId": "tit_3/chap_13"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zweigniederlassung einer Rechtseinheit mit Sitz im Ausland"
+     "label": "2. Abschnitt: Zweigniederlassung einer Rechtseinheit mit Sitz im Ausland",
+     "eId": "tit_3/chap_13/sec_2"
     }
    ],
    "marginalie": [
@@ -4345,15 +4617,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "13. Kapitel: Zweigniederlassung"
+     "label": "13. Kapitel: Zweigniederlassung",
+     "eId": "tit_3/chap_13"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zweigniederlassung einer Rechtseinheit mit Sitz im Ausland"
+     "label": "2. Abschnitt: Zweigniederlassung einer Rechtseinheit mit Sitz im Ausland",
+     "eId": "tit_3/chap_13/sec_2"
     }
    ],
    "marginalie": [
@@ -4364,15 +4639,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "13. Kapitel: Zweigniederlassung"
+     "label": "13. Kapitel: Zweigniederlassung",
+     "eId": "tit_3/chap_13"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Zweigniederlassung einer Rechtseinheit mit Sitz im Ausland"
+     "label": "2. Abschnitt: Zweigniederlassung einer Rechtseinheit mit Sitz im Ausland",
+     "eId": "tit_3/chap_13/sec_2"
     }
    ],
    "marginalie": [
@@ -4383,11 +4661,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Unternehmens-Identifikationsnummer, Rechtsform-, Sitz-, Zweck- und Personenangaben sowie Hinweis auf die vorangehende Eintragung"
+     "label": "1. Kapitel: Unternehmens-Identifikationsnummer, Rechtsform-, Sitz-, Zweck- und Personenangaben sowie Hinweis auf die vorangehende Eintragung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -4473,11 +4753,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Unternehmens-Identifikationsnummer, Rechtsform-, Sitz-, Zweck- und Personenangaben sowie Hinweis auf die vorangehende Eintragung"
+     "label": "1. Kapitel: Unternehmens-Identifikationsnummer, Rechtsform-, Sitz-, Zweck- und Personenangaben sowie Hinweis auf die vorangehende Eintragung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -4502,11 +4784,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Unternehmens-Identifikationsnummer, Rechtsform-, Sitz-, Zweck- und Personenangaben sowie Hinweis auf die vorangehende Eintragung"
+     "label": "1. Kapitel: Unternehmens-Identifikationsnummer, Rechtsform-, Sitz-, Zweck- und Personenangaben sowie Hinweis auf die vorangehende Eintragung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -4531,11 +4815,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Unternehmens-Identifikationsnummer, Rechtsform-, Sitz-, Zweck- und Personenangaben sowie Hinweis auf die vorangehende Eintragung"
+     "label": "1. Kapitel: Unternehmens-Identifikationsnummer, Rechtsform-, Sitz-, Zweck- und Personenangaben sowie Hinweis auf die vorangehende Eintragung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -4560,11 +4846,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Unternehmens-Identifikationsnummer, Rechtsform-, Sitz-, Zweck- und Personenangaben sowie Hinweis auf die vorangehende Eintragung"
+     "label": "1. Kapitel: Unternehmens-Identifikationsnummer, Rechtsform-, Sitz-, Zweck- und Personenangaben sowie Hinweis auf die vorangehende Eintragung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -4590,11 +4878,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Unternehmens-Identifikationsnummer, Rechtsform-, Sitz-, Zweck- und Personenangaben sowie Hinweis auf die vorangehende Eintragung"
+     "label": "1. Kapitel: Unternehmens-Identifikationsnummer, Rechtsform-, Sitz-, Zweck- und Personenangaben sowie Hinweis auf die vorangehende Eintragung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -4605,11 +4895,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Unternehmens-Identifikationsnummer, Rechtsform-, Sitz-, Zweck- und Personenangaben sowie Hinweis auf die vorangehende Eintragung"
+     "label": "1. Kapitel: Unternehmens-Identifikationsnummer, Rechtsform-, Sitz-, Zweck- und Personenangaben sowie Hinweis auf die vorangehende Eintragung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -4646,15 +4938,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Sitzverlegung"
+     "label": "2. Kapitel: Sitzverlegung",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: In der Schweiz"
+     "label": "1. Abschnitt: In der Schweiz",
+     "eId": "tit_4/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4703,15 +4998,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Sitzverlegung"
+     "label": "2. Kapitel: Sitzverlegung",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: In der Schweiz"
+     "label": "1. Abschnitt: In der Schweiz",
+     "eId": "tit_4/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4722,15 +5020,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Sitzverlegung"
+     "label": "2. Kapitel: Sitzverlegung",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: In der Schweiz"
+     "label": "1. Abschnitt: In der Schweiz",
+     "eId": "tit_4/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -4756,15 +5057,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Sitzverlegung"
+     "label": "2. Kapitel: Sitzverlegung",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Verlegung des Sitzes einer ausländischen Rechtseinheit in die Schweiz"
+     "label": "2. Abschnitt: Verlegung des Sitzes einer ausländischen Rechtseinheit in die Schweiz",
+     "eId": "tit_4/chap_2/sec_2"
     }
    ],
    "marginalie": [],
@@ -4799,15 +5103,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Sitzverlegung"
+     "label": "2. Kapitel: Sitzverlegung",
+     "eId": "tit_4/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Verlegung des Sitzes einer schweizerischen Rechtseinheit ins Ausland"
+     "label": "3. Abschnitt: Verlegung des Sitzes einer schweizerischen Rechtseinheit ins Ausland",
+     "eId": "tit_4/chap_2/sec_3"
     }
    ],
    "marginalie": [],
@@ -4878,15 +5185,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zeitpunkt der Anmeldung und der Eintragung"
+     "label": "1. Abschnitt: Zeitpunkt der Anmeldung und der Eintragung",
+     "eId": "tit_4/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -4925,15 +5235,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Zeitpunkt der Anmeldung und der Eintragung"
+     "label": "1. Abschnitt: Zeitpunkt der Anmeldung und der Eintragung",
+     "eId": "tit_4/chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -4958,15 +5271,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Fusion von Rechtseinheiten"
+     "label": "2. Abschnitt: Fusion von Rechtseinheiten",
+     "eId": "tit_4/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -4991,15 +5307,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Fusion von Rechtseinheiten"
+     "label": "2. Abschnitt: Fusion von Rechtseinheiten",
+     "eId": "tit_4/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5024,15 +5343,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Fusion von Rechtseinheiten"
+     "label": "2. Abschnitt: Fusion von Rechtseinheiten",
+     "eId": "tit_4/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -5057,15 +5379,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spaltung von Kapitalgesellschaften und Genossenschaften"
+     "label": "3. Abschnitt: Spaltung von Kapitalgesellschaften und Genossenschaften",
+     "eId": "tit_4/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -5090,15 +5415,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spaltung von Kapitalgesellschaften und Genossenschaften"
+     "label": "3. Abschnitt: Spaltung von Kapitalgesellschaften und Genossenschaften",
+     "eId": "tit_4/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -5109,15 +5437,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Spaltung von Kapitalgesellschaften und Genossenschaften"
+     "label": "3. Abschnitt: Spaltung von Kapitalgesellschaften und Genossenschaften",
+     "eId": "tit_4/chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -5128,15 +5459,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Umwandlung von Gesellschaften"
+     "label": "4. Abschnitt: Umwandlung von Gesellschaften",
+     "eId": "tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -5161,15 +5495,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "4. Abschnitt: Umwandlung von Gesellschaften"
+     "label": "4. Abschnitt: Umwandlung von Gesellschaften",
+     "eId": "tit_4/chap_3/sec_4"
     }
    ],
    "marginalie": [
@@ -5194,15 +5531,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Vermögensübertragung"
+     "label": "5. Abschnitt: Vermögensübertragung",
+     "eId": "tit_4/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -5213,15 +5553,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "5. Abschnitt: Vermögensübertragung"
+     "label": "5. Abschnitt: Vermögensübertragung",
+     "eId": "tit_4/chap_3/sec_5"
     }
    ],
    "marginalie": [
@@ -5232,15 +5575,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Fusion und Vermögensübertragung von Stiftungen"
+     "label": "6. Abschnitt: Fusion und Vermögensübertragung von Stiftungen",
+     "eId": "tit_4/chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -5265,15 +5611,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "6. Abschnitt: Fusion und Vermögensübertragung von Stiftungen"
+     "label": "6. Abschnitt: Fusion und Vermögensübertragung von Stiftungen",
+     "eId": "tit_4/chap_3/sec_6"
     }
    ],
    "marginalie": [
@@ -5284,15 +5633,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Fusion, Umwandlung und Vermögensübertragung von Vorsorgeeinrichtungen"
+     "label": "7. Abschnitt: Fusion, Umwandlung und Vermögensübertragung von Vorsorgeeinrichtungen",
+     "eId": "tit_4/chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -5317,15 +5669,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Fusion, Umwandlung und Vermögensübertragung von Vorsorgeeinrichtungen"
+     "label": "7. Abschnitt: Fusion, Umwandlung und Vermögensübertragung von Vorsorgeeinrichtungen",
+     "eId": "tit_4/chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -5336,15 +5691,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Fusion, Umwandlung und Vermögensübertragung von Vorsorgeeinrichtungen"
+     "label": "7. Abschnitt: Fusion, Umwandlung und Vermögensübertragung von Vorsorgeeinrichtungen",
+     "eId": "tit_4/chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -5355,15 +5713,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "8. Abschnitt: Fusion, Umwandlung und Vermögensübertragung von Instituten des öffentlichen Rechts"
+     "label": "8. Abschnitt: Fusion, Umwandlung und Vermögensübertragung von Instituten des öffentlichen Rechts",
+     "eId": "tit_4/chap_3/sec_8"
     }
    ],
    "marginalie": []
@@ -5372,15 +5733,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "9. Abschnitt: Grenzüberschreitende Umstrukturierungen"
+     "label": "9. Abschnitt: Grenzüberschreitende Umstrukturierungen",
+     "eId": "tit_4/chap_3/sec_9"
     }
    ],
    "marginalie": [
@@ -5441,15 +5805,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "9. Abschnitt: Grenzüberschreitende Umstrukturierungen"
+     "label": "9. Abschnitt: Grenzüberschreitende Umstrukturierungen",
+     "eId": "tit_4/chap_3/sec_9"
     }
    ],
    "marginalie": [
@@ -5460,15 +5827,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Umstrukturierungen"
+     "label": "3. Kapitel: Umstrukturierungen",
+     "eId": "tit_4/chap_3"
     },
     {
      "ebene": 3,
-     "label": "10. Abschnitt: Übertragbarkeit bei Spaltung und Vermögensübertragung"
+     "label": "10. Abschnitt: Übertragbarkeit bei Spaltung und Vermögensübertragung",
+     "eId": "tit_4/chap_3/sec_10"
     }
    ],
    "marginalie": []
@@ -5477,11 +5847,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Eintragungen von besonderen Vertretungsverhältnissen und von Beschlüssen der Gläubigerversammlung von Anleihensobligationen"
+     "label": "4. Kapitel: Eintragungen von besonderen Vertretungsverhältnissen und von Beschlüssen der Gläubigerversammlung von Anleihensobligationen",
+     "eId": "tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -5506,11 +5878,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Eintragungen von besonderen Vertretungsverhältnissen und von Beschlüssen der Gläubigerversammlung von Anleihensobligationen"
+     "label": "4. Kapitel: Eintragungen von besonderen Vertretungsverhältnissen und von Beschlüssen der Gläubigerversammlung von Anleihensobligationen",
+     "eId": "tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -5535,11 +5909,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Eintragungen von besonderen Vertretungsverhältnissen und von Beschlüssen der Gläubigerversammlung von Anleihensobligationen"
+     "label": "4. Kapitel: Eintragungen von besonderen Vertretungsverhältnissen und von Beschlüssen der Gläubigerversammlung von Anleihensobligationen",
+     "eId": "tit_4/chap_4"
     }
    ],
    "marginalie": [
@@ -5550,11 +5926,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Eintragungen von Amtes wegen"
+     "label": "5. Titel: Eintragungen von Amtes wegen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Fehlende oder unrichtige Eintragung"
+     "label": "1. Kapitel: Fehlende oder unrichtige Eintragung",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -5591,11 +5969,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Eintragungen von Amtes wegen"
+     "label": "5. Titel: Eintragungen von Amtes wegen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Fehlende oder unrichtige Eintragung"
+     "label": "1. Kapitel: Fehlende oder unrichtige Eintragung",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -5620,11 +6000,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Eintragungen von Amtes wegen"
+     "label": "5. Titel: Eintragungen von Amtes wegen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Fehlende oder unrichtige Eintragung"
+     "label": "1. Kapitel: Fehlende oder unrichtige Eintragung",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -5649,11 +6031,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Eintragungen von Amtes wegen"
+     "label": "5. Titel: Eintragungen von Amtes wegen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Fehlende oder unrichtige Eintragung"
+     "label": "1. Kapitel: Fehlende oder unrichtige Eintragung",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -5690,11 +6074,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Eintragungen von Amtes wegen"
+     "label": "5. Titel: Eintragungen von Amtes wegen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Konkurs, Nachlassstundung und Nachlassvertrag mit Vermögensabtretung"
+     "label": "2. Kapitel: Konkurs, Nachlassstundung und Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -5731,11 +6117,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Eintragungen von Amtes wegen"
+     "label": "5. Titel: Eintragungen von Amtes wegen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Konkurs, Nachlassstundung und Nachlassvertrag mit Vermögensabtretung"
+     "label": "2. Kapitel: Konkurs, Nachlassstundung und Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -5772,11 +6160,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Eintragungen von Amtes wegen"
+     "label": "5. Titel: Eintragungen von Amtes wegen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Konkurs, Nachlassstundung und Nachlassvertrag mit Vermögensabtretung"
+     "label": "2. Kapitel: Konkurs, Nachlassstundung und Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -5825,11 +6215,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Eintragungen von Amtes wegen"
+     "label": "5. Titel: Eintragungen von Amtes wegen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Konkurs, Nachlassstundung und Nachlassvertrag mit Vermögensabtretung"
+     "label": "2. Kapitel: Konkurs, Nachlassstundung und Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -5854,7 +6246,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Wiedereintragung gelöschter Rechtseinheiten"
+     "label": "6. Titel: Wiedereintragung gelöschter Rechtseinheiten",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -5865,7 +6258,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Wiedereintragung gelöschter Rechtseinheiten"
+     "label": "6. Titel: Wiedereintragung gelöschter Rechtseinheiten",
+     "eId": "tit_6"
     }
    ],
    "marginalie": []
@@ -5874,7 +6268,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Aktenaufbewahrung, Aktenherausgabe, Datenqualität"
+     "label": "7. Titel: Aktenaufbewahrung, Aktenherausgabe, Datenqualität",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [
@@ -5940,7 +6335,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Aktenaufbewahrung, Aktenherausgabe, Datenqualität"
+     "label": "7. Titel: Aktenaufbewahrung, Aktenherausgabe, Datenqualität",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [
@@ -5965,7 +6361,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Aktenaufbewahrung, Aktenherausgabe, Datenqualität"
+     "label": "7. Titel: Aktenaufbewahrung, Aktenherausgabe, Datenqualität",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [
@@ -5976,7 +6373,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "7. Titel: Aktenaufbewahrung, Aktenherausgabe, Datenqualität"
+     "label": "7. Titel: Aktenaufbewahrung, Aktenherausgabe, Datenqualität",
+     "eId": "tit_7"
     }
    ],
    "marginalie": [
@@ -6001,11 +6399,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Revisionsstelle"
+     "label": "1. Kapitel: Revisionsstelle",
+     "eId": "tit_8/chap_1"
     }
    ],
    "marginalie": []
@@ -6014,11 +6414,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Weisungen, Kreisschreiben und Mitteilungen"
+     "label": "2. Kapitel: Weisungen, Kreisschreiben und Mitteilungen",
+     "eId": "tit_8/chap_2"
     }
    ],
    "marginalie": [],
@@ -6054,11 +6456,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aufhebung und Änderung bisherigen Rechts"
+     "label": "3. Kapitel: Aufhebung und Änderung bisherigen Rechts",
+     "eId": "tit_8/chap_3"
     }
    ],
    "marginalie": []
@@ -6067,11 +6471,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Übergangsbestimmungen"
+     "label": "4. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [
@@ -6082,11 +6488,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Übergangsbestimmungen"
+     "label": "4. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [
@@ -6112,11 +6520,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Übergangsbestimmungen"
+     "label": "4. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [
@@ -6127,11 +6537,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Übergangsbestimmungen"
+     "label": "4. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [
@@ -6157,11 +6569,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Übergangsbestimmungen"
+     "label": "4. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [
@@ -6172,11 +6586,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Übergangsbestimmungen"
+     "label": "4. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [
@@ -6202,11 +6618,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Übergangsbestimmungen"
+     "label": "4. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [
@@ -6232,11 +6650,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Übergangsbestimmungen"
+     "label": "4. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [
@@ -6247,11 +6667,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Übergangsbestimmungen"
+     "label": "4. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [
@@ -6262,11 +6684,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Inkrafttreten"
+     "label": "5. Kapitel: Inkrafttreten",
+     "eId": "tit_8/chap_5"
     }
    ],
    "marginalie": []
@@ -6275,11 +6699,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung"
+     "label": "4. Titel: Rechtsformübergreifende Bestimmungen für die Eintragung",
+     "eId": "tit_4"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Unternehmens-Identifikationsnummer, Rechtsform-, Sitz-, Zweck- und Personenangaben sowie Hinweis auf die vorangehende Eintragung"
+     "label": "1. Kapitel: Unternehmens-Identifikationsnummer, Rechtsform-, Sitz-, Zweck- und Personenangaben sowie Hinweis auf die vorangehende Eintragung",
+     "eId": "tit_4/chap_1"
     }
    ],
    "marginalie": [
@@ -6316,11 +6742,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Beglaubigungen durch das Handelsregisteramt"
+     "label": "5. Kapitel: Beglaubigungen durch das Handelsregisteramt",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [],
@@ -6368,11 +6796,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Elektronischer Geschäftsverkehr"
+     "label": "6. Kapitel: Elektronischer Geschäftsverkehr",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [
@@ -6424,11 +6854,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Elektronischer Geschäftsverkehr"
+     "label": "6. Kapitel: Elektronischer Geschäftsverkehr",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [
@@ -6489,11 +6921,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Elektronischer Geschäftsverkehr"
+     "label": "6. Kapitel: Elektronischer Geschäftsverkehr",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [],
@@ -6516,11 +6950,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Elektronischer Geschäftsverkehr"
+     "label": "6. Kapitel: Elektronischer Geschäftsverkehr",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [
@@ -6531,11 +6967,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Zentrale Datenbanken"
+     "label": "7. Kapitel: Zentrale Datenbanken",
+     "eId": "tit_1/chap_7"
     }
    ],
    "marginalie": [
@@ -6560,11 +6998,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Eintragungen von Amtes wegen"
+     "label": "5. Titel: Eintragungen von Amtes wegen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Fehlende oder unrichtige Eintragung"
+     "label": "1. Kapitel: Fehlende oder unrichtige Eintragung",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [
@@ -6589,11 +7029,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Eintragungen von Amtes wegen"
+     "label": "5. Titel: Eintragungen von Amtes wegen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Fehlende oder unrichtige Eintragung"
+     "label": "1. Kapitel: Fehlende oder unrichtige Eintragung",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [],
@@ -6620,11 +7062,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Eintragungen von Amtes wegen"
+     "label": "5. Titel: Eintragungen von Amtes wegen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Fehlende oder unrichtige Eintragung"
+     "label": "1. Kapitel: Fehlende oder unrichtige Eintragung",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [],
@@ -6647,11 +7091,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Eintragungen von Amtes wegen"
+     "label": "5. Titel: Eintragungen von Amtes wegen",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Konkurs, Nachlassstundung und Nachlassvertrag mit Vermögensabtretung"
+     "label": "2. Kapitel: Konkurs, Nachlassstundung und Nachlassvertrag mit Vermögensabtretung",
+     "eId": "tit_5/chap_2"
     }
    ],
    "marginalie": [
@@ -6676,7 +7122,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Wiedereintragung gelöschter Rechtseinheiten"
+     "label": "6. Titel: Wiedereintragung gelöschter Rechtseinheiten",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [],
@@ -6700,11 +7147,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Übergangsbestimmungen"
+     "label": "4. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [],
@@ -6727,11 +7176,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Übergangsbestimmungen"
+     "label": "4. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [
@@ -6780,11 +7231,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "8. Titel: Schlussbestimmungen"
+     "label": "8. Titel: Schlussbestimmungen",
+     "eId": "tit_8"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Übergangsbestimmungen"
+     "label": "4. Kapitel: Übergangsbestimmungen",
+     "eId": "tit_8/chap_4"
     }
    ],
    "marginalie": [
@@ -6809,15 +7262,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Anmeldung und Belege"
+     "label": "1. Kapitel: Anmeldung und Belege",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Belege"
+     "label": "2. Abschnitt: Belege",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -6846,15 +7302,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Anmeldung und Belege"
+     "label": "1. Kapitel: Anmeldung und Belege",
+     "eId": "tit_2/chap_1"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Belege"
+     "label": "2. Abschnitt: Belege",
+     "eId": "tit_2/chap_1/sec_2"
     }
    ],
    "marginalie": [
@@ -6891,11 +7350,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Eintragungsverfahren"
+     "label": "2. Titel: Eintragungsverfahren",
+     "eId": "tit_2"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Grundsätze für die Eintragung"
+     "label": "2. Kapitel: Grundsätze für die Eintragung",
+     "eId": "tit_2/chap_2"
     }
    ],
    "marginalie": [
@@ -6937,15 +7398,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Währung des Aktienkapitals"
+     "label": "2. Abschnitt: Währung des Aktienkapitals",
+     "eId": "tit_3/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -6971,15 +7435,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: Währung des Aktienkapitals"
+     "label": "2. Abschnitt: Währung des Aktienkapitals",
+     "eId": "tit_3/chap_3/sec_2"
     }
    ],
    "marginalie": [
@@ -6990,15 +7457,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Ordentliche Kapitalerhöhung"
+     "label": "3. Abschnitt: Ordentliche Kapitalerhöhung",
+     "eId": "tit_3/chap_3/sec_3"
     }
    ],
    "marginalie": [],
@@ -7021,15 +7491,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Kapitalband"
+     "label": "7. Abschnitt: Kapitalband",
+     "eId": "tit_3/chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -7055,15 +7528,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Kapitalband"
+     "label": "7. Abschnitt: Kapitalband",
+     "eId": "tit_3/chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -7074,15 +7550,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "7. Abschnitt: Kapitalband"
+     "label": "7. Abschnitt: Kapitalband",
+     "eId": "tit_3/chap_3/sec_7"
     }
    ],
    "marginalie": [
@@ -7093,11 +7572,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Handelsregisterbehörden"
+     "label": "2. Kapitel: Handelsregisterbehörden",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -7122,15 +7603,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Aktiengesellschaft"
+     "label": "3. Kapitel: Aktiengesellschaft",
+     "eId": "tit_3/chap_3"
     },
     {
      "ebene": 3,
-     "label": "11. Abschnitt: Übertragung der Aktien bei überschuldeten Gesellschaften ohne Geschäftstätigkeit und ohne verwertbare Aktiven"
+     "label": "11. Abschnitt: Übertragung der Aktien bei überschuldeten Gesellschaften ohne Geschäftstätigkeit und ohne verwertbare Aktiven",
+     "eId": "tit_3/chap_3/sec_11"
     }
    ],
    "marginalie": [],
@@ -7166,11 +7650,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung"
+     "label": "3. Titel: Rechtsformspezifische Bestimmungen für die Eintragung",
+     "eId": "tit_3"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Verein"
+     "label": "7. Kapitel: Verein",
+     "eId": "tit_3/chap_7"
     }
    ],
    "marginalie": [

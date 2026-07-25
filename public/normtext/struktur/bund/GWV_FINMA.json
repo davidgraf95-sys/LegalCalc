@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "955.033.0",
   "titel": "Verordnung der Eidgenössischen Finanzmarktaufsicht über die Bekämpfung von Geldwäscherei und Terrorismusfinanzierung im Finanzsektor",
@@ -55,11 +55,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gegenstand und Begriffe"
+     "label": "1. Kapitel: Gegenstand und Begriffe",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -70,11 +72,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Gegenstand und Begriffe"
+     "label": "1. Kapitel: Gegenstand und Begriffe",
+     "eId": "tit_1/chap_1"
     }
    ],
    "marginalie": [
@@ -132,11 +136,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geltungsbereich"
+     "label": "2. Kapitel: Geltungsbereich",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -161,11 +167,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geltungsbereich"
+     "label": "2. Kapitel: Geltungsbereich",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [],
@@ -188,11 +196,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geltungsbereich"
+     "label": "2. Kapitel: Geltungsbereich",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -217,11 +227,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Geltungsbereich"
+     "label": "2. Kapitel: Geltungsbereich",
+     "eId": "tit_1/chap_2"
     }
    ],
    "marginalie": [
@@ -258,11 +270,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Grundsätze"
+     "label": "3. Kapitel: Grundsätze",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -273,11 +287,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Grundsätze"
+     "label": "3. Kapitel: Grundsätze",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -288,11 +304,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Grundsätze"
+     "label": "3. Kapitel: Grundsätze",
+     "eId": "tit_1/chap_3"
     }
    ],
    "marginalie": [
@@ -318,11 +336,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Allgemeine Sorgfaltspflichten"
+     "label": "4. Kapitel: Allgemeine Sorgfaltspflichten",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -347,11 +367,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Allgemeine Sorgfaltspflichten"
+     "label": "4. Kapitel: Allgemeine Sorgfaltspflichten",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -388,11 +410,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Allgemeine Sorgfaltspflichten"
+     "label": "4. Kapitel: Allgemeine Sorgfaltspflichten",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [
@@ -441,11 +465,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Besondere Sorgfaltspflichten"
+     "label": "5. Kapitel: Besondere Sorgfaltspflichten",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -506,11 +532,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Besondere Sorgfaltspflichten"
+     "label": "5. Kapitel: Besondere Sorgfaltspflichten",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -547,11 +575,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Besondere Sorgfaltspflichten"
+     "label": "5. Kapitel: Besondere Sorgfaltspflichten",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -562,11 +592,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Besondere Sorgfaltspflichten"
+     "label": "5. Kapitel: Besondere Sorgfaltspflichten",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -577,11 +609,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Besondere Sorgfaltspflichten"
+     "label": "5. Kapitel: Besondere Sorgfaltspflichten",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -592,11 +626,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Besondere Sorgfaltspflichten"
+     "label": "5. Kapitel: Besondere Sorgfaltspflichten",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -607,11 +643,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Besondere Sorgfaltspflichten"
+     "label": "5. Kapitel: Besondere Sorgfaltspflichten",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -622,11 +660,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Besondere Sorgfaltspflichten"
+     "label": "5. Kapitel: Besondere Sorgfaltspflichten",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -690,11 +730,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Besondere Sorgfaltspflichten"
+     "label": "5. Kapitel: Besondere Sorgfaltspflichten",
+     "eId": "tit_1/chap_5"
     }
    ],
    "marginalie": [
@@ -721,11 +763,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Dokumentationspflicht, Aufbewahrung der Belege und Information von Behörden"
+     "label": "6. Kapitel: Dokumentationspflicht, Aufbewahrung der Belege und Information von Behörden",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [
@@ -788,11 +832,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Organisatorische Massnahmen"
+     "label": "7. Kapitel: Organisatorische Massnahmen",
+     "eId": "tit_1/chap_7"
     }
    ],
    "marginalie": [
@@ -803,11 +849,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Organisatorische Massnahmen"
+     "label": "7. Kapitel: Organisatorische Massnahmen",
+     "eId": "tit_1/chap_7"
     }
    ],
    "marginalie": [
@@ -818,11 +866,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Organisatorische Massnahmen"
+     "label": "7. Kapitel: Organisatorische Massnahmen",
+     "eId": "tit_1/chap_7"
     }
    ],
    "marginalie": [
@@ -833,11 +883,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Organisatorische Massnahmen"
+     "label": "7. Kapitel: Organisatorische Massnahmen",
+     "eId": "tit_1/chap_7"
     }
    ],
    "marginalie": [
@@ -862,11 +914,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Organisatorische Massnahmen"
+     "label": "7. Kapitel: Organisatorische Massnahmen",
+     "eId": "tit_1/chap_7"
     }
    ],
    "marginalie": [
@@ -877,11 +931,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Beizug Dritter"
+     "label": "8. Kapitel: Beizug Dritter",
+     "eId": "tit_1/chap_8"
     }
    ],
    "marginalie": [
@@ -892,11 +948,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "8. Kapitel: Beizug Dritter"
+     "label": "8. Kapitel: Beizug Dritter",
+     "eId": "tit_1/chap_8"
     }
    ],
    "marginalie": [
@@ -907,7 +965,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Besondere Bestimmungen für Banken und Wertpapierhäuser"
+     "label": "2. Titel: Besondere Bestimmungen für Banken und Wertpapierhäuser",
+     "eId": "tit_2"
     }
    ],
    "marginalie": [
@@ -940,7 +999,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Besondere Bestimmungen für Banken und Wertpapierhäuser"
+     "label": "2. Titel: Besondere Bestimmungen für Banken und Wertpapierhäuser",
+     "eId": "tit_2"
     }
    ],
    "marginalie": [
@@ -951,7 +1011,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Besondere Bestimmungen für Banken und Wertpapierhäuser"
+     "label": "2. Titel: Besondere Bestimmungen für Banken und Wertpapierhäuser",
+     "eId": "tit_2"
     }
    ],
    "marginalie": [
@@ -976,7 +1037,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Besondere Bestimmungen für Banken und Wertpapierhäuser"
+     "label": "2. Titel: Besondere Bestimmungen für Banken und Wertpapierhäuser",
+     "eId": "tit_2"
     }
    ],
    "marginalie": [
@@ -987,7 +1049,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Titel: Besondere Bestimmungen für Banken und Wertpapierhäuser"
+     "label": "2. Titel: Besondere Bestimmungen für Banken und Wertpapierhäuser",
+     "eId": "tit_2"
     }
    ],
    "marginalie": [
@@ -1024,7 +1087,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Besondere Bestimmungen für Fondsleitungen, KAG-Investmentgesellschaften und Verwalter von Kollektivvermögen"
+     "label": "3. Titel: Besondere Bestimmungen für Fondsleitungen, KAG-Investmentgesellschaften und Verwalter von Kollektivvermögen",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -1088,7 +1152,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Titel: Besondere Bestimmungen für Fondsleitungen, KAG-Investmentgesellschaften und Verwalter von Kollektivvermögen"
+     "label": "3. Titel: Besondere Bestimmungen für Fondsleitungen, KAG-Investmentgesellschaften und Verwalter von Kollektivvermögen",
+     "eId": "tit_3"
     }
    ],
    "marginalie": [
@@ -1132,7 +1197,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Besondere Bestimmungen für Versicherungseinrichtungen"
+     "label": "4. Titel: Besondere Bestimmungen für Versicherungseinrichtungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1176,7 +1242,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Titel: Besondere Bestimmungen für Versicherungseinrichtungen"
+     "label": "4. Titel: Besondere Bestimmungen für Versicherungseinrichtungen",
+     "eId": "tit_4"
     }
    ],
    "marginalie": [
@@ -1187,11 +1254,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)",
+     "eId": "tit_5/chap_1_a"
     }
    ],
    "marginalie": [
@@ -1253,11 +1322,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)",
+     "eId": "tit_5/chap_1_a"
     }
    ],
    "marginalie": [
@@ -1268,11 +1339,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)",
+     "eId": "tit_5/chap_1_a"
     }
    ],
    "marginalie": [
@@ -1283,11 +1356,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)",
+     "eId": "tit_5/chap_1_a"
     }
    ],
    "marginalie": [
@@ -1298,11 +1373,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)",
+     "eId": "tit_5/chap_1_a"
     }
    ],
    "marginalie": [
@@ -1313,11 +1390,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)",
+     "eId": "tit_5/chap_1_a"
     }
    ],
    "marginalie": [
@@ -1355,11 +1434,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)",
+     "eId": "tit_5/chap_1_a"
     }
    ],
    "marginalie": [
@@ -1370,11 +1451,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)",
+     "eId": "tit_5/chap_1_a"
     }
    ],
    "marginalie": [
@@ -1399,11 +1482,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)",
+     "eId": "tit_5/chap_1_a"
     }
    ],
    "marginalie": [
@@ -1414,11 +1499,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)",
+     "eId": "tit_5/chap_1_a"
     }
    ],
    "marginalie": [
@@ -1429,11 +1516,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)",
+     "eId": "tit_5/chap_1_a"
     }
    ],
    "marginalie": [],
@@ -1456,11 +1545,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)",
+     "eId": "tit_5/chap_1_a"
     }
    ],
    "marginalie": [
@@ -1498,15 +1589,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)"
+     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Kontrollinhaberin oder Kontrollinhaber"
+     "label": "1. Abschnitt: Kontrollinhaberin oder Kontrollinhaber",
+     "eId": "tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1531,15 +1625,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)"
+     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Kontrollinhaberin oder Kontrollinhaber"
+     "label": "1. Abschnitt: Kontrollinhaberin oder Kontrollinhaber",
+     "eId": "tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1550,15 +1647,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)"
+     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "1. Abschnitt: Kontrollinhaberin oder Kontrollinhaber"
+     "label": "1. Abschnitt: Kontrollinhaberin oder Kontrollinhaber",
+     "eId": "tit_5/chap_2/sec_1"
     }
    ],
    "marginalie": [
@@ -1596,15 +1696,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)"
+     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person"
+     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1615,15 +1718,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)"
+     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person"
+     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1634,15 +1740,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)"
+     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person"
+     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1667,15 +1776,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)"
+     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person"
+     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1686,15 +1798,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)"
+     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person"
+     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1705,15 +1820,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)"
+     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person"
+     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1724,15 +1842,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)"
+     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person"
+     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1781,15 +1902,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)"
+     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person"
+     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1800,15 +1924,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)"
+     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person"
+     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -1819,15 +1946,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)"
+     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "3. Abschnitt: Scheitern der Feststellung der wirtschaftlich berechtigten Person"
+     "label": "3. Abschnitt: Scheitern der Feststellung der wirtschaftlich berechtigten Person",
+     "eId": "tit_5/chap_2/sec_3"
     }
    ],
    "marginalie": [],
@@ -1863,11 +1993,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Erneute Identifizierung der Vertragspartei oder Feststellung der wirtschaftlich berechtigten Person (Art. 5 GwG)"
+     "label": "3. Kapitel: Erneute Identifizierung der Vertragspartei oder Feststellung der wirtschaftlich berechtigten Person (Art. 5 GwG)",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -1878,11 +2010,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Erneute Identifizierung der Vertragspartei oder Feststellung der wirtschaftlich berechtigten Person (Art. 5 GwG)"
+     "label": "3. Kapitel: Erneute Identifizierung der Vertragspartei oder Feststellung der wirtschaftlich berechtigten Person (Art. 5 GwG)",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -1922,11 +2056,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "3. Kapitel: Erneute Identifizierung der Vertragspartei oder Feststellung der wirtschaftlich berechtigten Person (Art. 5 GwG)"
+     "label": "3. Kapitel: Erneute Identifizierung der Vertragspartei oder Feststellung der wirtschaftlich berechtigten Person (Art. 5 GwG)",
+     "eId": "tit_5/chap_3"
     }
    ],
    "marginalie": [
@@ -1937,11 +2073,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Geschäftsbeziehungen und Transaktionen mit erhöhten Risiken"
+     "label": "4. Kapitel: Geschäftsbeziehungen und Transaktionen mit erhöhten Risiken",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -1983,11 +2121,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Geschäftsbeziehungen und Transaktionen mit erhöhten Risiken"
+     "label": "4. Kapitel: Geschäftsbeziehungen und Transaktionen mit erhöhten Risiken",
+     "eId": "tit_5/chap_4"
     }
    ],
    "marginalie": [
@@ -1998,11 +2138,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "5. Kapitel: Dokumentationspflicht und Aufbewahrung der Belege"
+     "label": "5. Kapitel: Dokumentationspflicht und Aufbewahrung der Belege",
+     "eId": "tit_5/chap_5"
     }
    ],
    "marginalie": [],
@@ -2039,11 +2181,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Organisatorische Massnahmen"
+     "label": "6. Kapitel: Organisatorische Massnahmen",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -2068,11 +2212,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Organisatorische Massnahmen"
+     "label": "6. Kapitel: Organisatorische Massnahmen",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [],
@@ -2095,7 +2241,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schluss- und Übergangsbestimmungen"
+     "label": "6. Titel: Schluss- und Übergangsbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -2121,7 +2268,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schluss- und Übergangsbestimmungen"
+     "label": "6. Titel: Schluss- und Übergangsbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -2132,7 +2280,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schluss- und Übergangsbestimmungen"
+     "label": "6. Titel: Schluss- und Übergangsbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -2143,11 +2292,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Dokumentationspflicht, Aufbewahrung der Belege und Information von Behörden"
+     "label": "6. Kapitel: Dokumentationspflicht, Aufbewahrung der Belege und Information von Behörden",
+     "eId": "tit_1/chap_6"
     }
    ],
    "marginalie": [
@@ -2172,11 +2323,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "7. Kapitel: Organisatorische Massnahmen"
+     "label": "7. Kapitel: Organisatorische Massnahmen",
+     "eId": "tit_1/chap_7"
     }
    ],
    "marginalie": [
@@ -2215,11 +2368,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "9. Kapitel: …"
+     "label": "9. Kapitel: …",
+     "eId": "tit_1/chap_9"
     }
    ],
    "marginalie": [],
@@ -2242,11 +2397,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1. Kapitel: Geltungsbereich"
+     "label": "1. Kapitel: Geltungsbereich",
+     "eId": "tit_5/chap_1"
     }
    ],
    "marginalie": [],
@@ -2327,11 +2484,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+     "label": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)",
+     "eId": "tit_5/chap_1_a"
     }
    ],
    "marginalie": [
@@ -2368,15 +2527,18 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)"
+     "label": "2. Kapitel: Feststellung der an Unternehmen und Vermögenswerten wirtschaftlich berechtigten Personen (Art. 4 GwG)",
+     "eId": "tit_5/chap_2"
     },
     {
      "ebene": 3,
-     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person"
+     "label": "2. Abschnitt: An Vermögenswerten wirtschaftlich berechtigte Person",
+     "eId": "tit_5/chap_2/sec_2"
     }
    ],
    "marginalie": [
@@ -2401,11 +2563,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "label": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "eId": "tit_5"
     },
     {
      "ebene": 2,
-     "label": "6. Kapitel: Organisatorische Massnahmen"
+     "label": "6. Kapitel: Organisatorische Massnahmen",
+     "eId": "tit_5/chap_6"
     }
    ],
    "marginalie": [
@@ -2468,7 +2632,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schluss- und Übergangsbestimmungen"
+     "label": "6. Titel: Schluss- und Übergangsbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -2506,7 +2671,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Titel: Schluss- und Übergangsbestimmungen"
+     "label": "6. Titel: Schluss- und Übergangsbestimmungen",
+     "eId": "tit_6"
     }
    ],
    "marginalie": [
@@ -2531,11 +2697,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Titel: Allgemeine Bestimmungen"
+     "label": "1. Titel: Allgemeine Bestimmungen",
+     "eId": "tit_1"
     },
     {
      "ebene": 2,
-     "label": "4. Kapitel: Allgemeine Sorgfaltspflichten"
+     "label": "4. Kapitel: Allgemeine Sorgfaltspflichten",
+     "eId": "tit_1/chap_4"
     }
    ],
    "marginalie": [

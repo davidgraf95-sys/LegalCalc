@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-24",
+ "erzeugt": "2026-07-25",
  "kopf": {
   "srNummer": "836.2",
   "titel": "Bundesgesetz über die Familienzulagen und Finanzhilfen an Familienorganisationen",
@@ -127,7 +127,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "1. Kapitel: Anwendbarkeit des ATSG"
+     "label": "1. Kapitel: Anwendbarkeit des ATSG",
+     "eId": "chap_1"
     }
    ],
    "marginalie": [],
@@ -183,7 +184,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -194,7 +196,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -265,7 +268,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -291,7 +295,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -328,7 +333,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -339,7 +345,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -400,7 +407,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -411,7 +419,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -437,7 +446,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "2. Kapitel: Allgemeine Bestimmungen"
+     "label": "2. Kapitel: Allgemeine Bestimmungen",
+     "eId": "chap_2"
     }
    ],
    "marginalie": [
@@ -448,11 +458,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
+     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -527,11 +539,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
+     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -592,11 +606,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
+     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -657,11 +673,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
+     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -672,11 +690,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
+     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -687,11 +707,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
+     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -752,11 +774,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen"
+     "label": "1. Abschnitt: Erwerbstätige in nichtlandwirtschaftlichen Berufen",
+     "eId": "chap_3/sec_1"
     }
    ],
    "marginalie": [
@@ -785,11 +809,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "2. Abschnitt: Erwerbstätige in der Landwirtschaft"
+     "label": "2. Abschnitt: Erwerbstätige in der Landwirtschaft",
+     "eId": "chap_3/sec_2"
     }
    ],
    "marginalie": [],
@@ -814,11 +840,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Nichterwerbstätige"
+     "label": "3. Abschnitt: Nichterwerbstätige",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -884,11 +912,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Nichterwerbstätige"
+     "label": "3. Abschnitt: Nichterwerbstätige",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -914,11 +944,13 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3. Kapitel: Familienzulagenordnungen"
+     "label": "3. Kapitel: Familienzulagenordnungen",
+     "eId": "chap_3"
     },
     {
      "ebene": 2,
-     "label": "3. Abschnitt: Nichterwerbstätige"
+     "label": "3. Abschnitt: Nichterwerbstätige",
+     "eId": "chap_3/sec_3"
     }
    ],
    "marginalie": [
@@ -929,7 +961,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechtspflege und Strafbestimmungen"
+     "label": "4. Kapitel: Rechtspflege und Strafbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -956,7 +989,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "4. Kapitel: Rechtspflege und Strafbestimmungen"
+     "label": "4. Kapitel: Rechtspflege und Strafbestimmungen",
+     "eId": "chap_4"
     }
    ],
    "marginalie": [
@@ -983,7 +1017,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "5. Kapitel: Verhältnis zum europäischen Recht"
+     "label": "5. Kapitel: Verhältnis zum europäischen Recht",
+     "eId": "chap_5"
     }
    ],
    "marginalie": [],
@@ -1076,7 +1111,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1220,7 +1256,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1231,7 +1268,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1302,7 +1340,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1313,7 +1352,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1333,7 +1373,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Familienzulagenregister"
+     "label": "3a. Kapitel: Familienzulagenregister",
+     "eId": "chap_3_a"
     }
    ],
    "marginalie": [
@@ -1379,7 +1420,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Familienzulagenregister"
+     "label": "3a. Kapitel: Familienzulagenregister",
+     "eId": "chap_3_a"
     }
    ],
    "marginalie": [
@@ -1408,7 +1450,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Familienzulagenregister"
+     "label": "3a. Kapitel: Familienzulagenregister",
+     "eId": "chap_3_a"
     }
    ],
    "marginalie": [
@@ -1460,7 +1503,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Familienzulagenregister"
+     "label": "3a. Kapitel: Familienzulagenregister",
+     "eId": "chap_3_a"
     }
    ],
    "marginalie": [
@@ -1471,7 +1515,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Familienzulagenregister"
+     "label": "3a. Kapitel: Familienzulagenregister",
+     "eId": "chap_3_a"
     }
    ],
    "marginalie": [
@@ -1482,7 +1527,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3a. Kapitel: Familienzulagenregister"
+     "label": "3a. Kapitel: Familienzulagenregister",
+     "eId": "chap_3_a"
     }
    ],
    "marginalie": [
@@ -1524,7 +1570,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3b. Kapitel: Finanzhilfen an Familienorganisationen"
+     "label": "3b. Kapitel: Finanzhilfen an Familienorganisationen",
+     "eId": "chap_3_b"
     }
    ],
    "marginalie": [
@@ -1554,7 +1601,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3b. Kapitel: Finanzhilfen an Familienorganisationen"
+     "label": "3b. Kapitel: Finanzhilfen an Familienorganisationen",
+     "eId": "chap_3_b"
     }
    ],
    "marginalie": [
@@ -1565,7 +1613,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3b. Kapitel: Finanzhilfen an Familienorganisationen"
+     "label": "3b. Kapitel: Finanzhilfen an Familienorganisationen",
+     "eId": "chap_3_b"
     }
    ],
    "marginalie": [
@@ -1576,7 +1625,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "3b. Kapitel: Finanzhilfen an Familienorganisationen"
+     "label": "3b. Kapitel: Finanzhilfen an Familienorganisationen",
+     "eId": "chap_3_b"
     }
    ],
    "marginalie": [
@@ -1605,7 +1655,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1634,7 +1685,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
@@ -1667,7 +1719,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "6. Kapitel: Schlussbestimmungen"
+     "label": "6. Kapitel: Schlussbestimmungen",
+     "eId": "chap_6"
     }
    ],
    "marginalie": [
