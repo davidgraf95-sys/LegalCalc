@@ -51,6 +51,12 @@ export interface SuchGruppe {
   mehrHref?: string;
   /** true, solange die zugrundeliegenden Daten noch nicht geladen sind. */
   laedt?: boolean;
+  /** true, wenn Treffer DA sind, die Menge aber noch wächst (gestaffelter
+   *  Index-Aufbau, W2·5). Anders als `laedt` ersetzt das die Liste nicht — die
+   *  bereits gefundenen Treffer bleiben nutzbar. Wirkt auf den §8-Zähler: die
+   *  Kopfzeile sagt «mindestens N … wird noch durchsucht» statt eine Endzahl zu
+   *  behaupten, die keine ist. */
+  unvollstaendig?: boolean;
   /** Einmalige, dezente §8-Offenlegung unter dem Gruppentitel (z. B. Online-Suche). */
   hinweis?: string;
   /** Externer Amtslink (öffnet in neuem Reiter) — z. B. BGE «nicht im Bestand»
@@ -262,11 +268,29 @@ export function materialGruppe(liste: BrowseMaterial[] | null, q: string, kappun
  *  `q` (optional): setzt bei Kappung das «alle N →»-Ziel auf die /suche-Seite
  *  (UI-NAV S5) — bis dahin waren die Treffer jenseits der Kappung strukturell
  *  unerreichbar (§8), die Gruppe hatte als einzige kein `mehrHref`. */
-export function artikelGruppe(treffer: SuchTreffer[] | null, kappung = KAPPUNG, q = ''): SuchGruppe {
+/** Klartext für noch fehlende Ebenen — je Ebene EIN Satz, der sagt, was fehlt.
+ *  Bewusst konkret («kantonale Erlasse») statt «lädt noch»: Ein Anwalt, der
+ *  keine kantonalen Treffer sieht, schliesst sonst, es gebe keine kantonale
+ *  Bestimmung. Genau diesen Fehlschluss verhindert der Satz (§8). */
+const EBENEN_FEHLT: Record<string, string> = {
+  kanton: 'Kantonale Erlasse werden noch geladen — kantonale Treffer fehlen hier noch.',
+  bund: 'Bundeserlasse werden noch geladen — eidgenössische Treffer fehlen hier noch.',
+};
+
+export function artikelGruppe(
+  treffer: SuchTreffer[] | null,
+  kappung = KAPPUNG,
+  q = '',
+  fehlendeEbenen: readonly string[] = [],
+): SuchGruppe {
   if (treffer === null) return { id: 'artikel', titel: 'Gesetzestext', treffer: [], gesamt: 0, laedt: true };
+  // Gestaffelter Index (W2·5): Treffer sind schon da, die Menge wächst aber noch.
+  const fehlt = fehlendeEbenen.filter((eb) => EBENEN_FEHLT[eb]);
   return {
     id: 'artikel', titel: 'Gesetzestext', treffer: treffer.slice(0, kappung), gesamt: treffer.length,
     mehrHref: q.trim() !== '' && treffer.length > kappung ? `/suche?q=${encodeURIComponent(q)}` : undefined,
+    unvollstaendig: fehlt.length > 0 || undefined,
+    hinweis: fehlt.length > 0 ? fehlt.map((eb) => EBENEN_FEHLT[eb]).join(' ') : undefined,
   };
 }
 
@@ -275,6 +299,9 @@ export interface SuchDaten {
   gesetze: BrowseErlass[] | null;
   /** Bereits gefundene Artikel-Volltext-Treffer (lazy FlexSearch); null = lädt. */
   artikel: SuchTreffer[] | null;
+  /** Ebenen, die im gestaffelt aufgebauten Artikel-Index noch fehlen (W2·5).
+   *  Leer/undefiniert = vollständig. */
+  artikelFehlendeEbenen?: readonly string[];
   entscheide: BrowseEntscheid[] | null;
   materialien: BrowseMaterial[] | null;
 }
@@ -286,15 +313,20 @@ export interface SuchDaten {
  *  die Online-Edge-Gruppe DAHINTER — beides ausserhalb dieses synchronen
  *  Aggregators. Leere (aber geladene) Gruppen entfallen, noch ladende Gruppen
  *  bleiben als Platzhalter sichtbar. */
+// UNVOLLSTÄNDIG ⇒ SICHTBAR, auch ohne Treffer (W2·5): Eine rein kantonale Query
+// («Handänderungssteuer») hat während des Nachladens NULL Bund-Treffer. Fiele die
+// Gruppe dann aus der Liste, verschwände mit ihr der Hinweis, dass kantonale
+// Erlasse noch fehlen — und die Suche behauptete stumm «nichts gefunden» über
+// einen Bestand, den sie noch gar nicht gelesen hat (§8).
 export function sucheAlles(q: string, daten: SuchDaten, kappung = KAPPUNG): SuchGruppe[] {
   if (q.trim() === '') return [];
   const gruppen = [
     gesetzGruppe(daten.gesetze, q, kappung),
-    artikelGruppe(daten.artikel, kappung, q),
+    artikelGruppe(daten.artikel, kappung, q, daten.artikelFehlendeEbenen ?? []),
     entscheidGruppe(daten.entscheide, q, kappung),
     materialGruppe(daten.materialien, q, kappung),
     katalogGruppe(q, kappung),
     presetGruppe(daten.presets, kappung),
   ];
-  return gruppen.filter((g) => g.laedt || g.treffer.length > 0);
+  return gruppen.filter((g) => g.laedt || g.unvollstaendig || g.treffer.length > 0);
 }

@@ -25,7 +25,33 @@
 
 import { normalisiereBegriff, expandiereSuchbegriff } from './vokabular';
 
-export interface RankEintrag { k: string; ku: string; a: string; l: string; m: string; n: string; g: string; t: string }
+export interface RankEintrag { k: string; ku: string; a: string; l: string; m: string; n: string; g: string; t: string; eb: 'bund' | 'kanton' }
+
+// ── Ebenen-Rang (W2·5) — PROVISORISCHE ANZEIGE-ORDNUNG, KEIN ENTSCHIED ───────
+//
+// Bei GLEICHER Themennähe und gleichem Kernerlass-Rang steht Bundesrecht vor
+// kantonalem Recht. Zwei Gründe, beide bewusst:
+//   1. Ohne diesen Tiebreak entschiede die Alphabetik des Routen-Keys — «AG-291.150»
+//      stünde vor «AHVG», ein Kanton-Erlass also vor einem Bundeserlass, und zwar
+//      ohne jede fachliche Begründung. Das wäre kein Ranking, sondern ein Zufall.
+//   2. Er hält die Bund-Reihenfolge exakt so, wie sie vor der Kanton-Aufnahme war
+//      (§6: der Zuwachs verschlechtert die bestehende Trefferlage nicht) — er hat
+//      eine echte Regression behoben (OR 253 war über «Miete» unauffindbar).
+//
+// KEINE Aussage über Normenhierarchie im Rechtssinn: eine reine Anzeige-Ordnung
+// (§3), nicht Rechtslogik. Und ausdrücklich NICHT die entschiedene Relevanz-
+// Politik — der Entscheid darüber liegt offen bei David (Stand 25.7.2026).
+//
+// BEKANNTE SCHWÄCHE, die diesen Entscheid nötig macht: In Gebieten KANTONALER
+// Zuständigkeit — Einführungsgesetze zu Bundesrecht, Notariat und Beurkundung,
+// Steuern, Gerichtsorganisation und Verfahren vor kantonalen Instanzen — ist die
+// einschlägige Norm regelmässig die kantonale. Eine Bund-zuerst-Regel schiebt
+// sie dort systematisch nach hinten, obwohl sie die gesuchte ist. Wer den Rang
+// künftig ändert: die Regel ist bewusst an EINER Stelle isoliert, damit sie sich
+// austauschen lässt, ohne die übrige Rangfolge anzufassen — und ohne den
+// Recall-Schutz je Ebene (artikelVolltext.ts) zu berühren, der davon unabhängig
+// ist und bleiben muss.
+const EBENEN_RANG: Record<'bund' | 'kanton', number> = { bund: 0, kanton: 1 };
 
 // Kernerlasse (ROUTEN-Keys, wie der Index sie führt): bewusst KLEIN gehalten und
 // hier begründet — keine abgeleitete «Objektivität», sondern die im juristischen
@@ -81,7 +107,7 @@ export function sucherTerme(q: string): { orig: string[]; syn: string[] } {
   return { orig, syn };
 }
 
-interface Bewertung<T> { e: T; stufe: number; kern: number; num: number; suf: string; idx: number }
+interface Bewertung<T> { e: T; stufe: number; kern: number; ebene: number; num: number; suf: string; idx: number }
 
 function bewerte<T extends RankEintrag>(e: T, orig: string[], idx: number): Bewertung<T> {
   // NUR die kurzen Struktur-Felder tokenisieren (m/n/g) — nie den Volltext e.t
@@ -98,7 +124,12 @@ function bewerte<T extends RankEintrag>(e: T, orig: string[], idx: number): Bewe
   }
   const [num, suf] = artikelSchluessel(e.a);
   const stufe = haupt ? 0 : neben ? 1 : 2;
-  return { e, stufe, kern: KERN_RANG.has(e.k) ? KERN_RANG.get(e.k)! : KERN_NICHT, num, suf, idx };
+  return {
+    e, stufe,
+    kern: KERN_RANG.has(e.k) ? KERN_RANG.get(e.k)! : KERN_NICHT,
+    ebene: EBENEN_RANG[e.eb] ?? EBENEN_RANG.kanton,
+    num, suf, idx,
+  };
 }
 
 /**
@@ -119,6 +150,9 @@ export function rangiere<T extends RankEintrag>(kandidaten: T[], q: string, limi
       // Topische Stufen: Kernerlass ↑, dann Artikelnummer ↑ (definitorischer
       // Eröffnungsartikel des getroffenen Abschnitts zuerst → «253 ff.»/«492 ff.»).
       if (x.kern !== y.kern) return x.kern - y.kern;
+      // Bund vor Kanton (s. EBENEN_RANG) — VOR der Key-Alphabetik, sonst
+      // entschiede «AG-…» < «AHVG» die Reihenfolge zwischen den Ebenen.
+      if (x.ebene !== y.ebene) return x.ebene - y.ebene;
       if (x.e.k !== y.e.k) return x.e.k < y.e.k ? -1 : 1;
       if (x.num !== y.num) return x.num - y.num;
       return x.suf < y.suf ? -1 : x.suf > y.suf ? 1 : 0;

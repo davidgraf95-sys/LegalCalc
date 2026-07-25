@@ -639,20 +639,18 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 
 ### Welle 2 — Griff (Auffindbarkeit) + Konsultieren + mehr Klingen
 
-- [ ] **5 · Auffindbarkeits-Schicht** *(ein Index → mehrere Oberflächen)*. **Zweiachsiger Einstieg
-  <!-- @meta id: W2·5 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
+- [x] **5 · Auffindbarkeits-Schicht** *(ein Index → mehrere Oberflächen)*. **Zweiachsiger Einstieg
+  <!-- @meta id: W2·5 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
   (Rechtsgebiet × Aufgabe)** ✅ **28.6.2026** (gegated, deployt 2.7.) · **Globale Artikel-
-  Volltextsuche** ✅ **28.6.2026** (FlexSearch, 24 183 Bund-Artikel, build-time-Index, lazy).
-  Wortlaut → `ROADMAP-CHRONIK.md` → W2·5 (22.7.2026).
-  **Offen:** Kanton-Volltext im Index nachziehen · ~~Startseiten-Modul-Rahmen~~ → **wird in W2·5c
-  gebaut** (Modul-Registry, `FAHRPLAN-STARTSEITE-V3.md` §4 — FUNDAMENT-Vorleistung).
-  **Status-Korrektur 20.7.2026: `wip` → `ready`.** Der Restposten ist gemessen, nicht geschätzt:
-  `scripts/such-index-generieren.ts` baut ausschliesslich `public/such-index/artikel-bund.json` aus
-  `public/normtext/bund` (`ebene: 'bund'` hartcodiert) — der Kanton-Volltext fehlt im Index also belegt.
-  Seit dem 10.7. kein Commit mit `Roadmap: W2·5`, kein Worktree, kein offener PR ⇒ es baut niemand daran.
+  Volltextsuche** ✅ **28.6.2026** (FlexSearch, build-time-Index, lazy) · **Kanton-Volltext im
+  Index** ✅ **25.7.2026** (PR #365 — 54 444 Artikel: Bund 25 389 + Kanton 29 055 aus 26 Kantonen;
+  Ebene ist Generator-Parameter statt Literal, Treffer nennt seinen Kanton, Recall je Ebene getrennt).
+  Wortlaut → `ROADMAP-CHRONIK.md` → W2·5 (22.7. + 25.7.2026).
+  **ABGESCHLOSSEN 25.7.2026.** ~~Startseiten-Modul-Rahmen~~ → **wird in W2·5c gebaut**
+  (Modul-Registry, `FAHRPLAN-STARTSEITE-V3.md` §4 — FUNDAMENT-Vorleistung), gehörte nie hierher.
   **Zur Klarstellung (Befund 20.7.):** `W2·5b`/`5c`/`5d`/`5g`/`5h` sind **keine Kinder** dieses Schritts —
   `scripts/plan/*` kennt kein Eltern-/Kind-Konzept, jeder trägt eigenes `@meta` mit eigenem Status. Es ist
-  eine **Nummern-Familie, keine Hierarchie**; W2·5 ist selbsttragend und wird eigenständig abgeschlossen.
+  eine **Nummern-Familie, keine Hierarchie**; W2·5 ist selbsttragend und wurde eigenständig abgeschlossen.
 - [x] **5b · Reader-Darstellung Bund** *(GESETZESDARSTELLUNG-BUND, `[OF]`)* —
   <!-- @meta id: W2·5b · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZESDARSTELLUNG-BUND.md -->
   **ABGESCHLOSSEN 25.7.2026** — alle Einheiten M1–M12 des QA-Sweeps ✅ (zuletzt in dieser
