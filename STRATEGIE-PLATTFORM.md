@@ -187,7 +187,14 @@ F1/F2 sind sofort und parallel startbar. «David-Zeit» = nicht delegierbar.
   geprüft am Z von …» statt Pauschal-Floskel. Macht das ehrliche Status-Modell
   (§8) vom Eingeständnis zum Verkaufsargument. 2–3 Tage nach F4.1.
 
-### F5 · Prinzipien-Erweiterung (CLAUDE.md §12–§16, Davids Freigabe nötig)
+### F5 · Prinzipien-Erweiterung (Davids Freigabe nötig — Nummerierung überholt)
+
+> **Nummerierung überholt (25.7.2026).** Die hier vorgeschlagenen Nummern
+> §12–§16 sind seither im Reglement anderweitig belegt; **§16 ist zudem
+> ausdrücklich gestrichen und wird nicht neu belegt** (`CLAUDE.md` §16). Der
+> Entwurf beansprucht diese Nummern daher nicht mehr. **Die Inhalte bleiben
+> unverändert offene Vorschläge — über sie ist nichts entschieden.** Wird einer
+> angenommen, bekommt er eine freie Nummer (§17 aufwärts), nie eine belegte.
 
 Die §§1–11 regeln den Bau; der Plattform-Betrieb ist ungeregelt. Entwurf
 (Detail-Begründung: `kritik-prinzipien.md`):
@@ -209,7 +216,8 @@ Die §§1–11 regeln den Bau; der Plattform-Betrieb ist ungeregelt. Entwurf
   Ja (unverändert); (B) quellengenerierte Daten-Regenerate (LIK, PLZ) mit
   Golden-Diff nur auf erwarteten Datenzeilen + grünem Verfalls-Check →
   automatischer Merge zulässig, asynchrones Review.
-- **§16 Vorfalls-Disziplin** – bestätigter Fehler in einer `verified`-Engine →
+- **Vorfalls-Disziplin** (Entwurfs-Nummer §16 **entfallen**, siehe Kasten oben —
+  Inhalt bleibt offener Vorschlag) – bestätigter Fehler in einer `verified`-Engine →
   sofortiger Status-Rückfall auf `entwurf` + Changelog + Versions-Bump;
   «Berechnung scheint falsch»-Meldeweg (mailto + Permalink, kein Datenabfluss).
 - **Lesart-Klarstellung §1:** «Duplikat vor Abstraktion» gilt für RECHTSLOGIK;
@@ -324,8 +332,10 @@ wichtigste Investition des ganzen Plans):
 
 ## 4 · Entscheide für David (blockieren einzelne Stränge, nicht den Start)
 
-1. **CLAUDE.md-Erweiterung §12–§16 (F5)** – Freigabe des Entwurfs? Insbesondere
-   §14 (erweiterter Abnahme-Kreis) und §15 (Deploy-Klassen für Daten-Regenerate).
+1. **CLAUDE.md-Erweiterung (F5)** – Freigabe des Entwurfs? Insbesondere der
+   erweiterte Abnahme-Kreis und die Deploy-Klassen für Daten-Regenerate. Die
+   Entwurfs-Nummern §12–§16 sind überholt (Kasten bei F5); bei Annahme gibt es
+   freie Nummern ab §17.
 2. **Abnahme-Welle 1 terminieren** – die Fristen-Säule ist Davids nicht
    delegierbare Kernzeit (1–2 Wochen); davor Feiertags-Verifikation 26 Kantone
    abschliessen. Wann?

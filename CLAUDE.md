@@ -178,10 +178,19 @@ bei Konflikt gewinnt immer die Treue, nie das Tempo (§1). Jede
 Performance-Massnahme trägt eine explizite Logikverlust-Bewertung. Bauregeln und
 Messung: Skill **`perf`**.
 
-## §16 — entfällt
+## §16 — entfällt (Entscheid David 25.7.2026)
 
-Framework-API-Fragen live nachschlagen statt aus Modellwissen: gehört in die
-Beschreibung des jeweiligen Werkzeugs, nicht ins Reglement.
+Die frühere Regel «Framework-APIs live nachschlagen statt aus Modellwissen» ist
+**gestrichen, nicht verschoben** — und das mit Absicht: Sie gehört in die
+Beschreibung des Werkzeugs, mit dem man nachschlägt, nicht ins Reglement. Dort
+steht sie auch. Ein Reglement, das Werkzeug-Bedienung mitführt, veraltet mit dem
+Werkzeug.
+
+**Die Nummer 16 wird nicht neu belegt.** Sonst zeigte jeder Bestandsverweis auf
+§16 still auf eine andere Regel — dieselbe Fehlerklasse wie eine Unternummer,
+die ins Leere läuft, nur in umgekehrter Richtung: nicht ein toter Verweis,
+sondern ein lebender, der das Falsche trifft. Eine künftige Regel bekommt §17
+oder höher.
 
 ---
 
