@@ -107,10 +107,23 @@ const DATEN_BUDGET: readonly (readonly [string, number])[] = [
   ['public/rechtsprechung/norm-index.json', 260 * 1024],
   ['public/such-index/artikel.json', 10_400 * 1024],
 ];
+// GEMESSEN WIRD DIE AUSGELIEFERTE KOPIE in dist/ — mit public/ nur als Rückfall.
+// Grund (CI-Befund 25.7.2026): `public/such-index/artikel.json` ist gitignored und
+// entsteht erst im Build-Schritt. Der Perf-Budget-Job lädt das gebaute `dist/`
+// herunter, hat aber kein `public/` mit Index — das Tor lief darum rot mit
+// «fehlt — Budget nicht prüfbar», obwohl die Datei existierte. `vite build`
+// kopiert public/ nach dist/, also liegt dort BEIDES. dist/ ist ohnehin das
+// richtigere Mass: es ist die Datei, die der Nutzer wirklich bekommt.
+const daten = (rel: string): string | null => {
+  const inDist = join(process.cwd(), 'dist', rel.replace(/^public\//, ''));
+  if (existsSync(inDist)) return inDist;
+  const inPublic = join(process.cwd(), rel);
+  return existsSync(inPublic) ? inPublic : null;
+};
 console.log('check:perf-budget — Daten-Nutzlast (gzip):');
 for (const [rel, max] of DATEN_BUDGET) {
-  const p = join(process.cwd(), rel);
-  if (!existsSync(p)) { fehler.push(`${rel} fehlt — Budget nicht prüfbar.`); continue; }
+  const p = daten(rel);
+  if (!p) { fehler.push(`${rel} fehlt (weder in dist/ noch in public/) — Budget nicht prüfbar.`); continue; }
   const g = gz(p);
   console.log(`  ${rel.replace('public/', '')}  gzip ${kb(g)}  (Budget ${kb(max)})`);
   if (g > max) {
