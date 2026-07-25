@@ -21,7 +21,7 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
-## Session 25.7.2026 (W2·5) — Kanton-Volltext im Suchindex: 54 444 Artikel statt 25 389, Ranking-Regression gefunden und behoben (PR #365, offen)
+## Session 25.7.2026 (W2·5) — Kanton-Volltext im Suchindex: 54 444 Artikel statt 25 389, Ranking-Regression gefunden und behoben (PR #365 gemergt, `d07d3a11`)
 **Auftrag David:** erst PR #364 landen (erledigt, `dd624ee7` auf main), dann W2·5-Restposten «Kanton-Volltext im Index nachziehen». Auflagen: Ebene nirgends mehr hartcodiert · kantonaler Treffer als kantonal erkennbar mit Kanton · Index-Grösse messen und melden statt still kürzen · kein Erlass darf stillschweigend wegfallen. W2·5b/5c/5d/5g/5h/5i und die zehn unverlinkten FAHRPLAN-Dateien unberührt gelassen.
 - **Ebene ist jetzt Parameter, nicht Literal.** `EBENEN = ['bund','kanton']` → `baueEbenenIndex(ebene)` → `baueIndex()`; Artefakt `public/such-index/artikel-bund.json` → `artikel.json` (Prod-Smoke-Pfad mitgezogen). **54 444 Artikel: Bund 25 389 + Kanton 29 055 aus allen 26 Kantonen** (1 231 kantonale Erlasse).
 - **Herkunft ehrlich (§8):** Einträge tragen `eb`/`kt`; Treffer nennt den Kanton doppelt — Label «· AI» **und** Marke «AI» **ohne** `redundant`, weil `redundant: true` die Marke auf Mobile ausblendet (`SuchResultate.tsx`) und ein Handy-Nutzer die Herkunft sonst komplett verlöre. href auf `/gesetze/<eb>/<key>`.

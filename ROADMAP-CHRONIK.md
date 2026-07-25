@@ -564,7 +564,9 @@ Kanton 29 055 aus allen 26 Kantonen** (1 231 kantonale Erlasse). Prod-Smoke-Pfad
   Regression behoben): der Kommentar am Fundort hält fest, dass «Bund vor Kanton» eine Anzeige-
   Ordnung und keine entschiedene Relevanz-Politik ist, und dass sie in Gebieten kantonaler
   Zuständigkeit (Einführungsgesetze, Notariat, Steuern, Gerichtsorganisation) die einschlägige
-  Norm systematisch nach hinten schiebt. Entscheid offen bei David.
+  Norm systematisch nach hinten schiebt. **Entscheid David 25.7.2026: «Bund vor Kanton bleibt
+  vorerst so.»** Damit ist die Ordnung bestätigt, aber ausdrücklich als vorläufig — die
+  Kennzeichnung im Code bleibt darum bestehen und ist nicht zu entfernen.
 
   (Rechtsgebiet × Aufgabe)** ✅ **28.6.2026 (gegated, deployt 2.7.2026):** `einstiegMatrix()`
   (`src/lib/einstieg.ts`) projiziert den Katalog (§5) auf Rechtsgebiet × Aufgabe; Komponente
