@@ -59,7 +59,11 @@ test('⑤ LugÜ: «Vorbehalte und Erklärungen» (decl_u2) rendern als abgesetzt
   // decl/scope-Nachzug: abgesetzte Anhang-Optik wie annex_u1 (istAnhangToken).
   await expect(erklaerungen).toHaveAttribute('data-anhang', '');
   await expect(page.locator('#art-scope_u1')).toHaveAttribute('data-anhang', '');
-  await expect(erklaerungen.getByRole('link', { name: /Vorbehalte und Erklärungen/ })).toBeVisible();
+  // EID-2-Nachzug (deklarierte Test-Anpassung, §6.3): seit dem Verifizier-Deep-Link
+  // trägt der Block ZWEI Links mit «Vorbehalte und Erklärungen» im Accessible Name
+  // (Titel-Anker + «amtliche Fassung ↗», dessen aria-label den Titel zitiert).
+  // Gemeint ist hier der TITEL-Anker → exact-Name (Identität statt Substring, §7).
+  await expect(erklaerungen.getByRole('link', { name: 'Vorbehalte und Erklärungen', exact: true })).toBeVisible();
   // Kerninhalt (CH-Zustellungs-Vorbehalt nach Art. I Abs. 2 Protokoll 1) ist da.
   await expect(erklaerungen.getByText(/behält sich das in Artikel I Absatz 2/)).toBeVisible();
 });
