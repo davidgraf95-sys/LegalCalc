@@ -63,6 +63,7 @@ function Blatt({ k, loc, onNavigate, klein }: {
       to={k.ziel}
       onClick={onNavigate}
       aria-current={aktiv ? 'page' : undefined}
+      aria-label={k.ariaLabel}
       className={`group/blatt flex items-center gap-2.5 rounded-md no-underline transition-colors ${klein ? 'px-2.5 py-1.5 text-body-s' : 'px-2.5 py-2 text-body-s font-medium'} ${
         aktiv ? 'bg-brass-100 text-brass-800' : 'text-ink-600 hover:text-ink-900 hover:bg-brass-100/40'
       }`}
@@ -73,6 +74,15 @@ function Blatt({ k, loc, onNavigate, klein }: {
         aktiv ? 'bg-brass-600' : 'bg-transparent group-hover/blatt:bg-brass-300'
       }`} />
       <span className="leading-snug" title={k.label}>{k.label}</span>
+      {/* IA-7 (§11.5): Erlass-Zahl-Badge (Kantonslinks) — rechtsbündig, von
+          Anfang an im Markup (§15.2, kein CLS). Optik-Familie der IA-2-Pills
+          (Gesetze.tsx): `num text-micro`, Zahl ERBT die kontrast-geprüfte
+          Link-Textfarbe — kein eigenes helleres Token (§13/F2, WCAG ≥4.5).
+          aria-hidden: der volle Accessible Name (Name + Zahl + Zustands-Wort)
+          liegt auf dem Link (k.ariaLabel, O4-Muster — nie nur die Zahl). */}
+      {k.zahl != null && (
+        <span aria-hidden className="num text-micro ml-auto pl-1.5 shrink-0">{k.zahl}</span>
+      )}
     </Link>
   );
 }

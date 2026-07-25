@@ -24,6 +24,12 @@ import { SYSTEMATIK } from './normtext/systematik';
 import { GEBIETE } from './normtext/register';
 import { KANTONE, KANTON_NAMEN } from '../data/tarif/typen';
 import { BEHOERDEN } from './materialien/register';
+// IA-7 (W2·5d §11.5): Erlass-Zahl-Badges an den 26 Kantonslinks — Zahl aus dem
+// generierten Zähler-SSoT (register.json → gen:zaehler, Drift-Tor check:zaehler;
+// build-time, KEIN Client-Fetch, §15.3), Zustands-Wort aus der IA-2-SSoT
+// erfassungsgrad.ts (KEINE zweite Zähl-Wahrheit, §5).
+import { STARTSEITE_ZAEHLER } from '../data/startseiteZaehler.generated';
+import { erfassungsgrad, STUFE_WORT } from './normtext/erfassungsgrad';
 
 /** Blatt: ein Navigationsziel (Route, ggf. mit Query/Hash für eine Teilsicht). */
 export interface NavLink {
@@ -31,6 +37,12 @@ export interface NavLink {
   label: string;
   /** Voller Pfad inkl. ?query/#hash — wird unverändert an react-router <Link to> gegeben. */
   ziel: string;
+  /** IA-7: kleine Erlass-Zahl rechts am Eintrag (heute nur Kantonslinks) —
+   *  reine Anzeige, von Anfang an im Markup (§15.2, kein CLS). */
+  zahl?: number;
+  /** IA-7: vollständiger Accessible Name (Name + Zahl + Zustands-Wort,
+   *  O4-Muster — nie nur Farbe/Zahl, §11.6.8). Nur gesetzt, wenn `zahl` gesetzt ist. */
+  ariaLabel?: string;
 }
 
 /** Knoten mit Kindern: entweder ein Abschnitt mit Überschrift oder eine
@@ -115,9 +127,23 @@ const GESETZE_KINDER: NavKnoten[] = [
     // Übersicht, statt der früheren föderalen Standesordnung (BV Art. 1), die der
     // alphabetischen Raster-/Pill-Ordnung widersprach. Vollname statt Code, damit
     // die Liste scannbar ist (David: «sehr unübersichtlich»).
+    // IA-7 (§11.5): Erlass-Zahl-Badge an JEDEM Kantonslink — dieselbe Mengen-
+    // Ehrlichkeit wie die IA-2-Pills/-Karten (§8): Zahl = Zähler-SSoT,
+    // Zustands-Wort = erfassungsgrad.ts (nur konsumiert). 0-Fall: Badge «0»,
+    // aria «keine Erlasse» (Wortlaut wie SchweizKarte/AzRegister, O4).
+    // Skalierungs-Invariante (§11.0): kein «if kanton === …», nur Ableitung.
     kinder: [...KANTONE]
       .sort((a, b) => KANTON_NAMEN[a].localeCompare(KANTON_NAMEN[b], 'de'))
-      .map((kt) => link(KANTON_NAMEN[kt], `/gesetze?ebene=kanton&kt=${kt}`)),
+      .map((kt) => {
+        const n = STARTSEITE_ZAEHLER.kantonErlassZahlen[kt] ?? 0;
+        const wort = STUFE_WORT[erfassungsgrad(kt, n).stufe];
+        const mengen = n === 0 ? 'keine Erlasse' : `${n} ${n === 1 ? 'Erlass' : 'Erlasse'}`;
+        return {
+          ...link(KANTON_NAMEN[kt], `/gesetze?ebene=kanton&kt=${kt}`),
+          zahl: n,
+          ariaLabel: `${KANTON_NAMEN[kt]} — ${mengen}, ${wort}`,
+        };
+      }),
   },
   // International unter «Gesetze» subsumiert (Auftrag David 25.6.2026) — eigene
   // einklappbare Gruppe wie Bund/Kantone. IA-6 Stufe 1 (FAHRPLAN-GESETZES-UX

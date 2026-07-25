@@ -26,7 +26,7 @@ const RSPR_REGISTER = resolve(wurzel, 'public/rechtsprechung/register.json');
 const MATERIALIEN_REGISTER = resolve(wurzel, 'public/materialien/register.json');
 const ZIEL = resolve(wurzel, 'src/data/startseiteZaehler.generated.ts');
 
-interface ErlassEintrag { ebene: 'bund' | 'kanton'; status: string }
+interface ErlassEintrag { ebene: 'bund' | 'kanton'; status: string; kanton?: string }
 interface EntscheidEintrag { verweis?: unknown }
 interface MaterialEintrag { key: string }
 
@@ -36,6 +36,20 @@ function zaehle() {
   const g = JSON.parse(readFileSync(GESETZE_REGISTER, 'utf8')) as { erzeugt: string; erlasse: ErlassEintrag[] };
   const bund = g.erlasse.filter((e) => e.ebene === 'bund' && e.status === 'snapshot').length;
   const kanton = g.erlasse.filter((e) => e.ebene === 'kanton' && e.status === 'snapshot').length;
+
+  // IA-7 (W2·5d §11.5): erfasste Erlass-Zahl JE Kanton für die Sidebar-Badges —
+  // DIESELBE Zählregel wie die IA-2-UI (`kantonAnzahl` in Gesetze.tsx): ALLE
+  // Manifest-Einträge der Ebene «kanton», nicht nur status 'snapshot' (heute
+  // deckungsgleich, da alle kantonalen Einträge Snapshots sind — das Tor
+  // src/tests/navigation-ia7-badges.test.ts meldet ein Auseinanderlaufen).
+  // Schlüssel alphabetisch sortiert → deterministisches Artefakt (§2/§5).
+  const proKanton: Record<string, number> = {};
+  for (const e of g.erlasse) {
+    if (e.ebene === 'kanton' && e.kanton) proKanton[e.kanton] = (proKanton[e.kanton] ?? 0) + 1;
+  }
+  const kantonErlassZahlen = Object.fromEntries(
+    Object.keys(proKanton).sort().map((k) => [k, proKanton[k]]),
+  );
 
   // Rechtsprechung: Nicht-Verweis-Entscheide = echte Volltext-Snapshots (Verweise
   // sind Redirect-Stubs auf ein anderes Urteil, s. NewsHeader/Rechtsprechung.tsx).
@@ -57,6 +71,7 @@ function zaehle() {
     gesetzeBundVolltext: bund,
     gesetzeKantonVolltext: kanton,
     gesetzeVolltext: bund + kanton,
+    kantonErlassZahlen,
     rechtsprechungVolltext: entscheide,
     materialien,
     rechner,
@@ -82,6 +97,9 @@ function baue(): string {
     '  gesetzeKantonVolltext: number;\n' +
     '  /** Bund + Kanton im Volltext. */\n' +
     '  gesetzeVolltext: number;\n' +
+    '  /** IA-7: erfasste Erlasse JE Kanton (alle Manifest-Einträge der Ebene kanton —\n' +
+    '   *  dieselbe Zählregel wie die IA-2-Badges/`kantonAnzahl` in Gesetze.tsx). */\n' +
+    '  kantonErlassZahlen: Record<string, number>;\n' +
     '  /** Gerichtsentscheide im Volltext (Nicht-Verweise). */\n' +
     '  rechtsprechungVolltext: number;\n' +
     '  /** Erfasste amtliche Materialien (Behördenpublikationen, nur-live-link). */\n' +
