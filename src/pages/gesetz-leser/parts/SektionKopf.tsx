@@ -4,10 +4,15 @@ import { romanFrei, margLabel } from '../helpers';
 
 // Gliederungs-Überschrift im Fliesstext: klappbar (Fedlex-analog), volle
 // Bezeichnung, nach Ebene abgestuft.
-export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel }: {
+export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel, amtlichUrl }: {
   s: Sektion; refCb: (el: HTMLElement | null) => void; offen: boolean; onToggle: () => void; bereich?: string;
   /** Die Sektion umfasst genau EINEN Artikel (Bereich = «Art. N», keine Spanne). */
   bereichEinzel?: boolean;
+  /** EID-2 (W2·5d §12): fertig gebauter Verifizier-Deep-Link «amtliche Fassung»
+   *  dieser Gliederungsstufe (ELI-Form `quelleUrl#<Container-eId>`, Builder
+   *  verifikationslink.ts). undefined = kein Link (Kanton/Randtitel/Alt-Sidecar,
+   *  §8 — nie ein toter Link). Reines Outbound-Chrome, kein eigener Anker (§12.4). */
+  amtlichUrl?: string;
 }) {
   const { pre, rest } = romanFrei(s.label);
   // Vollwertige Abschnitts-Überschrift im Fliesstext: feine Overline mit dem
@@ -42,7 +47,7 @@ export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel 
   // am alten fussnotenAuf-Schalter; Prominenz via data-fussnoten-CSS (R9).
   const sekFn = offen && s.fussnoten && s.fussnoten.length > 0 ? s.fussnoten : null;
   return (
-    <div ref={refCb} data-sek={s.id} data-normtext-linie className={`nt-anker ${mt} ${regel}`}>
+    <div ref={refCb} data-sek={s.id} data-normtext-linie className={`group/sekkopf nt-anker ${mt} ${regel}`}>
       {pre && (
         <button type="button" onClick={onToggle} aria-expanded={offen} className="group/sek block text-left">
           <span className="lc-overline group-hover/sek:text-brass-700">{pre}</span>
@@ -80,6 +85,17 @@ export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel 
             Darstellung (§3) — gleicher Text, nur umbruchfähig. */}
         {bereich && !(bereichEinzel && offen) && (
           <span className="num min-w-0 [overflow-wrap:anywhere] text-xs font-normal text-ink-500">{bereich}</span>
+        )}
+        {/* EID-2 (W2·5d §12): Verifizier-Deep-Link «amtliche Fassung an genau
+            dieser Stelle» der Gliederungsstufe. Hover-dezent wie die Artikel-
+            Aktionen (Zitat/Link in ArtikelLeser): opacity-0 bis Hover/Fokus,
+            auf Touch immer sichtbar. Kein neues Chrome — ein Inline-Glied der
+            bestehenden Titelzeile; target/rel wie bestehende amtliche Links. */}
+        {amtlichUrl && (
+          <a href={amtlichUrl} target="_blank" rel="noopener noreferrer"
+            className="shrink-0 text-micro text-ink-500 no-underline opacity-0 transition-opacity group-hover/sekkopf:opacity-100 focus-visible:opacity-100 hover:text-brass-700 [@media(hover:none)]:opacity-100"
+            aria-label={`Amtliche Fassung von «${s.label}» auf Fedlex öffnen (neues Fenster)`}
+            title="Amtliche Fassung an genau dieser Stelle (Fedlex)">amtliche Fassung ↗</a>
         )}
       </span>
     </div>
