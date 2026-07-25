@@ -535,8 +535,15 @@ Kanton 29 055 aus allen 26 Kantonen** (1 231 kantonale Erlasse). Prod-Smoke-Pfad
 - **Praxisbeweis im Browser:** «Handänderungssteuer» (rein kantonale Steuer, vorher artikelseitig
   nicht auffindbar) liefert jetzt AI- und AR-Steuergesetzartikel; Klick landet auf
   `/gesetze/kanton/AI-640.000#art-116`, keine Konsolenfehler.
-- **Beweis:** `npm run gate` voll grün · `check:suchindex` grün · Golden byte-gleich ·
+- **Beweis:** `npm run gate` voll grün · `check:suchindex` grün · Golden byte-gleich 249/249 ·
   `check:gegenpruefung` grün (kein Risiko-Pfad berührt — weder Rechnen noch Extraktion noch Norm-Tarif).
+- **CI-Befund (offen, Entscheid David):** `Browser-Smoke Shard 1/3` rot, `Perf-Budget` dadurch
+  übersprungen. Drei Such-Specs laufen nach 2 Retries in `Timeout: 10000ms` mit `Received: 0` — die
+  Assertions stimmen, die Treffer kommen auf dem Runner zu spät. Gemessene Ursache: clientseitiger
+  FlexSearch-Aufbau **3 153 → 6 143 ms (+95 %)**; lokal grün in 4.8–5.9 s, CI-Runner laut
+  `playwright.config.ts` ~3.9× langsamer. First Paint unberührt (Lazy greift). Weder Inhalt gekürzt
+  noch Timeouts angehoben — die drei inhaltserhaltenden Wege (gestaffelter Aufbau Bund-zuerst /
+  Timeout-Envelope / Kanton auf Anforderung) stehen im PR-Kommentar zum Entscheid.
 
   (Rechtsgebiet × Aufgabe)** ✅ **28.6.2026 (gegated, deployt 2.7.2026):** `einstiegMatrix()`
   (`src/lib/einstieg.ts`) projiziert den Katalog (§5) auf Rechtsgebiet × Aufgabe; Komponente
