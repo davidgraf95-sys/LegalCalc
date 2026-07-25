@@ -14,8 +14,9 @@ wird nur geladen, wenn es gebraucht wird.
 
 > **Eine Regel kostet dort am wenigsten, wo sie am spätesten gelesen wird.**
 
-`CLAUDE.md` wird bei **jedem** Dispatch geladen (~7 200 Token). Eine Zeile dort
-kostet also bei jeder delegierten Einheit. Reihenfolge der Wahl:
+`CLAUDE.md` wird bei **jedem** Dispatch geladen (nach dem A4-Umzug 25.7.2026
+~2 500 Token statt ~7 200 — der Hebel wird dadurch kleiner, nicht gegenstandslos).
+Eine Zeile dort kostet bei jeder delegierten Einheit. Reihenfolge der Wahl:
 
 | Form | Kosten je Dispatch | Wählen, wenn |
 |---|---|---|
@@ -24,11 +25,12 @@ kostet also bei jeder delegierten Einheit. Reihenfolge der Wahl:
 | **Skill** | nur die Description | die Regel situativ gilt (Landung, Gegenprüfung, Postmortem) |
 | **CLAUDE.md** | volle Kosten, immer | letzte Wahl — nur wenn nicht maschinalisierbar und immer gültig |
 
-`CLAUDE.md` §13 Ziff. 6 sagt das selbst: maschinell prüfbare Regeln gehören in
-ESLint/Tests, nicht ins .md. **Netto-Prosa-Zuwachs ist zu begründen.**
+Das Design-Reglement sagt das selbst (`DESIGN-REGLEMENT.md` E1, früher zitiert
+als `CLAUDE.md` §13 Ziff. 6): maschinell prüfbare Regeln gehören in ESLint/Tests,
+nicht ins .md. **Netto-Prosa-Zuwachs ist zu begründen.**
 
 Und: **ein Tor ist erst ein Tor, wenn es einmal rot war.** Wer eines baut, zeigt
-den Sabotage-Beweis (CLAUDE.md §6 Ziff. 7).
+den Sabotage-Beweis (§6.7 — Skill `refactoring`, Ziff. 7).
 
 ## Register der belegten Fehlerklassen (Vorfälle 18.–20.7.2026)
 
