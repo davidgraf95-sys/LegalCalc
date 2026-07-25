@@ -22,7 +22,12 @@ test.describe('/gesetze — Rechtsgebiets-Sicht (G6)', () => {
     const tuer = main.getByRole('button', { name: /Nach Rechtsgebiet & Thema/ })
     await expect(tuer).toBeVisible()
     await tuer.click()
-    await expect(page).toHaveURL(/ansicht=rechtsgebiet/)
+    // IA-5 (§11.4 Ziff. 2, deklarierte URL-FORM-Anpassung): die Tür führt in den
+    // EINEN kanonischen Zustand `?gliederung=rechtsgebiet` (A15-Mechanik); die
+    // Alt-URL `?ansicht=rechtsgebiet` bleibt auflösbarer Alias — der
+    // Erreichbarkeits-Pin unten (Overflow-Test) und
+    // gesetze-uebersicht-u.e2e.ts:112 bleiben UNANGEPASST.
+    await expect(page).toHaveURL(/gliederung=rechtsgebiet/)
 
     // Beide Ebenen der Sicht sind da: das kuratierte Delta + das Grundgerüst.
     await expect(main.getByRole('heading', { name: 'Querschnitts-Themen' })).toBeVisible()
@@ -49,9 +54,11 @@ test.describe('/gesetze — Rechtsgebiets-Sicht (G6)', () => {
     await main.getByText('Privatrecht', { exact: true }).first().click()
     await expect(main.getByRole('link', { name: /Obligationenrecht/ }).first()).toBeVisible()
 
-    // Rückweg zum Landeplatz.
+    // Rückweg zum Landeplatz. (IA-5, deklarierte URL-FORM-Anpassung: der Zustand
+    // liegt jetzt kanonisch in `?ebene=…&gliederung=…` — «zurück» heisst: keine
+    // Säule mehr gewählt; die Gliederungs-Wahl bleibt als Deep-Link-Parameter.)
     await main.getByRole('button', { name: '← Übersicht' }).click()
-    await expect(page).not.toHaveURL(/ansicht=rechtsgebiet/)
+    await expect(page).not.toHaveURL(/ebene=/)
     await expect(main.getByRole('button', { name: /Bundesrecht/ })).toBeVisible()
 
     expect(fehler).toEqual([])

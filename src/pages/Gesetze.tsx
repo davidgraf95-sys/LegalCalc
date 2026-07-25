@@ -36,6 +36,11 @@ import { AzRegister } from './gesetze-teile/AzRegister';
 // Teilmengen-Bildung auf dem geladenen Manifest (kein dritter Suchpfad, A5;
 // kein zweiter Index, K10). Logik testbar in gesetze-teile/filter-scope.ts.
 import { loeseFilterScope, scopeLabel, scopeBasis } from './gesetze-teile/filter-scope';
+// IA-5 (§11.4 Ziff. 2): `?ansicht=rechtsgebiet` (alte G6-Tür) ist auflösbarer
+// Alias auf den EINEN kanonischen Zustand `?ebene=bund&gliederung=rechtsgebiet`
+// (A15-Mechanik) — parse-seitig sofort wirksam, die URL wird per Effect auf die
+// kanonische Form gebracht (kein Router-Redirect, Leitplanke E.4).
+import { istRechtsgebietAlias, normalisiereAnsicht } from './gesetze-teile/ansicht-alias';
 
 type Ebene = 'bund' | 'kanton' | 'international';
 
@@ -167,26 +172,34 @@ export function Gesetze() {
   // still auf «Bund», sondern auf dem neutralen Landeplatz (drei Einstiegskacheln).
   // Eine Säule ist erst gewählt, wenn ?ebene= gesetzt ist (Deep-Links bleiben
   // erreichbar). `ebene` (Fallback 'bund') trägt nur die abgeleiteten Listen.
+  // IA-5 (§11.4 Ziff. 2): der Alias wird schon beim Parse aufgelöst (kein
+  // Flash der falschen Sicht); der Effect unten schreibt die kanonische URL.
+  const ansichtAlias = istRechtsgebietAlias(params);
   const ebeneParam = params.get('ebene');
-  const gewaehlt: Ebene | null = ebeneParam === 'kanton' ? 'kanton'
+  const gewaehlt: Ebene | null = ansichtAlias ? 'bund'
+    : ebeneParam === 'kanton' ? 'kanton'
     : ebeneParam === 'international' ? 'international'
     : ebeneParam === 'bund' ? 'bund' : null;
   const ebene: Ebene = gewaehlt ?? 'bund';
   const kanton = gewaehlt === 'kanton' ? params.get('kt') : null;
   // IA-4: wirksamer Scope des lokalen Filterfelds (Default = aktive Ebene;
-  // Landeplatz/Rechtsgebiets-Sicht = alle Ebenen; Chip weitet).
+  // Landeplatz = alle Ebenen; Chip weitet).
   const filterScope = loeseFilterScope(gewaehlt, kanton, alleEbenen);
-  // Rechtsgebiets-Sicht (G6 · §4.4): zweite, achsen-orthogonale Gliederung. Eigener
-  // Zustand `?ansicht=rechtsgebiet` (nicht Teil der Ebene) — vom Landeplatz
-  // erreichbar, mit «← Übersicht» wieder verlassen.
-  const themenSicht = params.get('ansicht') === 'rechtsgebiet';
   // Gliederung (A15): EINE Wahl für alle drei Säulen (Relevanz/Systematisch/
   // Rechtsgebiet). URL `?gliederung=` gewinnt (teilbarer Deep-Link), sonst die
   // persistente Wahl (localStorage), sonst Default 'systematisch' — das hält die
   // prerenderte Sicht + bestehende e2e-/Golden-Kontrakte byte-gleich. Die
   // Store-Lesung ist synchron (Pre-Paint-Muster, §15/G2a): kein Flash, weil der
-  // Inhalt ohnehin erst nach dem async Manifest paintet.
-  const gliederung = loeseGliederung(params.get('gliederung'));
+  // Inhalt ohnehin erst nach dem async Manifest paintet. Der IA-5-Alias gewinnt
+  // (die alte Tür WAR die Rechtsgebiets-Sicht) und wird nicht persistiert
+  // (Deep-Link-Semantik, wie `?gliederung=`).
+  const gliederung: Gliederung = ansichtAlias ? 'rechtsgebiet' : loeseGliederung(params.get('gliederung'));
+  // URL-Normalisierung Alt → kanonisch (IA-5): idempotent, feuert nur solange
+  // `?ansicht=rechtsgebiet` in der URL steht — danach nie wieder (kein Loop).
+  useEffect(() => {
+    const n = normalisiereAnsicht(params);
+    if (n) setParams(n, { replace: true });
+  }, [params, setParams]);
   const setzeGliederung = (g: Gliederung) => {
     const p = new URLSearchParams(params);
     p.set('gliederung', g);
@@ -200,10 +213,13 @@ export function Gesetze() {
     p.delete('ansicht');
     setParams(p, { replace: true });
   };
+  // IA-5: die vierte Tür führt direkt in den kanonischen Zustand — dieselbe
+  // Sicht, die der Gliederungs-Umschalter der Bund-Säule trägt (A15-Mechanik).
   const setzeThemen = () => {
     const p = new URLSearchParams(params);
-    p.set('ansicht', 'rechtsgebiet');
-    p.delete('ebene');
+    p.set('ebene', 'bund');
+    p.set('gliederung', 'rechtsgebiet');
+    p.delete('ansicht');
     p.delete('kt');
     setParams(p, { replace: true });
   };
@@ -294,13 +310,13 @@ export function Gesetze() {
           <div className="flex flex-wrap items-center justify-between gap-3">
             {/* Steuerung nur NACH Säulen-Wahl (G4 · §4.1): auf dem Landeplatz
                 tragen die drei Kacheln die Steuerung, kein Tab-/Overline-Dopplung. */}
-            {!suche.trim() && (gewaehlt !== null || themenSicht) ? (
+            {!suche.trim() && gewaehlt !== null ? (
               <div className="flex flex-wrap items-center gap-3">
                 <button type="button" onClick={zurUebersicht}
                   className="text-body-s font-medium text-brass-700 hover:text-brass-600 transition-colors">
                   ← Übersicht
                 </button>
-                {gewaehlt !== null && <Segment aktiv={ebene} onWahl={setzeEbene} />}
+                <Segment aktiv={ebene} onWahl={setzeEbene} />
               </div>
             ) : <span />}
             {/* IA-4 (§11.5/O5): Scope-Label + Chip sind von Anfang an im Layout
@@ -343,7 +359,7 @@ export function Gesetze() {
           {/* Landeplatz (G4 · §4.1): drei gleichwertige Einstiegskacheln mit
               Kurz-Statistik statt stillem Bund-Default. Prominenter Sprung-/
               Such-Hinweis (Cmd/Ctrl-K, §4.2) darüber. */}
-          {!suche.trim() && gewaehlt === null && !themenSicht && (
+          {!suche.trim() && gewaehlt === null && (
             <div className="space-y-4">
               <Einstieg
                 bund={gefiltert.length}
@@ -360,12 +376,6 @@ export function Gesetze() {
                   nach unten (§15.2), alle Listen-Wechsel sind input-getrieben. */}
               <AzRegister erlasse={erlasse} />
             </div>
-          )}
-
-          {/* Rechtsgebiets-Sicht (G6 · §4.4): zweite Gliederung, Querschnitts-Themen
-              + Auto-Grundgerüst. Reine Darstellung (§3); tolerant (unzugeordnet ok). */}
-          {!suche.trim() && themenSicht && (
-            <RechtsgebietSicht erlasse={erlasse} />
           )}
 
           {/* Suche im wirksamen Scope (IA-4, verallgemeinert N6): Default ist
@@ -422,7 +432,7 @@ export function Gesetze() {
           {/* Ein Tab-Panel pro Ebene (nur das aktive rendert); id/aria-labelledby
               folgen der aktiven Ebene und verbinden es mit dem gewählten Tab.
               Erst NACH Säulen-Wahl (gewaehlt !== null) — davor trägt der Landeplatz. */}
-          {!suche.trim() && gewaehlt !== null && !themenSicht && (
+          {!suche.trim() && gewaehlt !== null && (
           <div role="tabpanel" id={`ebene-panel-${ebene}`} aria-labelledby={`ebene-tab-${ebene}`}>
           {ebene === 'bund' && (
             gefiltert.length === 0
