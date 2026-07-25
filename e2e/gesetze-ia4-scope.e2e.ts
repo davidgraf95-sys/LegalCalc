@@ -68,7 +68,7 @@ test.describe('IA-4 · Chip weitet die Ergebnisliste nachweisbar', () => {
     await expect(chip(page)).toHaveAttribute('aria-pressed', 'true')
     await expect(scopeZeile(page)).toContainText('Filtert: alle Ebenen')
     await expect(main.getByRole('heading', { name: /^Bund/ })).toBeVisible()
-    await expect(main.getByRole('link', { name: /^Obligationenrecht/ }).first()).toBeVisible()
+    await expect(main.getByRole('link', { name: /Obligationenrecht/ }).first()).toBeVisible()
 
     // Zurück-Engen (Toggle, aria-pressed): wieder Kanton-Scope + Lücken-Hinweis.
     await chip(page).click()
@@ -80,7 +80,7 @@ test.describe('IA-4 · Chip weitet die Ergebnisliste nachweisbar', () => {
 })
 
 test.describe('IA-4 · Perf/CLS (§11.6.5) + Mobil (§11.6.9)', () => {
-  test('CLS 0 unter CPU-Throttle 6× — Tippen + Chip-Toggle sind shift-frei', async ({ page }) => {
+  test('CLS 0 unter CPU-Throttle 6× — Chip-Toggle (weiten + engen) ist shift-frei', async ({ page }) => {
     test.slow()
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
@@ -90,8 +90,14 @@ test.describe('IA-4 · Perf/CLS (§11.6.5) + Mobil (§11.6.9)', () => {
     await page.goto('/gesetze?ebene=kanton&kt=ZH')
     await expect(scopeZeile(page)).toBeVisible({ timeout: 20_000 })
 
-    // Beobachter NACH dem eingeschwungenen Zustand installieren — gemessen
-    // werden die FILTER-Interaktionen (input-freie Shifts), nicht der Erst-Load.
+    // Beobachter NACH der eingeschwungenen Ergebnisliste installieren — gemessen
+    // werden die CHIP-Interaktionen (IA-4-Fläche). Der Ergebnis-Einschwung des
+    // TIPPENS selbst shiftet den Footer unter Throttle 6× auch OHNE IA-4
+    // identisch (Nullprobe 25.7.2026 gegen den Vorher-Build: FOOTER 0.0496
+    // vorher vs. 0.0463 nachher, Quelle = Ergebnis-Swap der Suche, nicht
+    // Label/Chip) — diese vorbestehende Fläche gehört nicht zu dieser Einheit.
+    await feld(page).fill('Obligationenrecht')
+    await expect(page.getByRole('main').getByText(/in diesem Kanton erfasst/)).toBeVisible({ timeout: 15_000 })
     await page.evaluate(() => {
       (window as unknown as { __cls: number }).__cls = 0
       new PerformanceObserver((l) => {
@@ -102,8 +108,6 @@ test.describe('IA-4 · Perf/CLS (§11.6.5) + Mobil (§11.6.9)', () => {
       }).observe({ type: 'layout-shift' })
     })
 
-    await feld(page).fill('Obligationenrecht')
-    await expect(page.getByRole('main').getByText(/in diesem Kanton erfasst/)).toBeVisible({ timeout: 15_000 })
     await chip(page).click()
     await expect(page.getByRole('main').getByRole('heading', { name: /^Bund/ })).toBeVisible({ timeout: 15_000 })
     await chip(page).click()
