@@ -6,9 +6,43 @@ description: Verwenden, wenn ein fertiger Feature-PR nach main gelandet werden s
 # Serielle Landung eines PR nach main
 
 Ziel: Konflikte paralleler PRs entschärfen, indem **EINE** PR aufs Mal
-gelandet wird und generierte Dateien nie von Hand gemischt werden. Arbiter
-bleibt §9/§12 CLAUDE.md und der Skill `deploy-check` (die §9-Sorgfalt gilt
-weiterhin **vor** dem Merge). Dieser Skill ist die Merge-Mechanik davor.
+gelandet wird und generierte Dateien nie von Hand gemischt werden. Die
+Deploy-Sorgfalt gilt weiterhin **vor** dem Merge (Skill `deploy-check`);
+dieser Skill ist die Merge-Mechanik davor.
+
+**Dieser Skill trägt §12** (Parallel-Sessions nur isoliert). Seit dem
+A4-Umzug (25.7.2026) steht der Paragraph hier, `CLAUDE.md` §12 zeigt nur
+noch hierher.
+
+## §12 · Isolation — die Grundregeln vor jeder Landung
+
+Gleichzeitige Sessions im selben Arbeitsverzeichnis haben wiederholt Arbeit
+zerstört. Darum:
+
+1. **Zweite und jede weitere Session arbeitet in einem eigenen git-Worktree**
+   (`git worktree add …` bzw. die native Worktree-Isolation von Claude Code)
+   und bringt Ergebnisse als Commits zurück. Wer beim Start fremden WIP in
+   `git status` sieht, der nicht zum eigenen Auftrag gehört, wechselt **vor**
+   Struktur-Arbeiten in einen Worktree.
+2. **Im geteilten Verzeichnis gelten zwingend:**
+   - Commits nur mit explizitem Pathspec: `git commit -m "…" -- <dateien>`
+   - **kein** `git stash` bei fremdem WIP
+   - **kein** `git commit --amend` (der Hook `tor-schutz.py` blockiert es)
+   - nach jedem Commit die `--stat`-Dateizahl gegen die eigene add-Liste prüfen
+3. **Deploys nie aus dem Arbeitsverzeichnis**, immer aus einem sauberen
+   HEAD-Worktree (Skill `deploy-check`).
+4. **Merge-Treiber-Politik** (`.gitattributes`, aktiv pro Clone via `prepare` →
+   `scripts/git-setup.sh`): Append-Register `merge=union`; generierte
+   Projektionen (`daten-manifest.json`, `*.generated.ts`,
+   rechtsprechung-Indexe) `merge=regen` — eigene Seite behalten, **Generator
+   neu laufen lassen**. `golden/*.json` und `public/normtext/**` bewusst OHNE
+   Treiber: dort SOLL der Konflikt anhalten (Byte-Orakel bzw. Drop/Leak).
+   `rerere` ist aktiv. Die Treiber greifen nur bei **lokalen** Merges und
+   Rebases, nie beim GitHub-Server-Merge.
+
+---
+
+## Ablauf
 
 Voraussetzung einmal pro Clone/Worktree: `npm install` lief (setzt via
 `prepare` → `scripts/git-setup.sh` den `regen`-Treiber + rerere). Sonst

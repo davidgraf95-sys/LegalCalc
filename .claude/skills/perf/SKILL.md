@@ -1,0 +1,68 @@
+---
+name: perf
+description: Geräte-Last und Performance-Bauregeln — Virtualisierung, CLS, Lazy Loading, Memoisierung, Hydration, On-demand-Inhalte, dazu die Pflicht zur Logikverlust-Bewertung und das Perf-Budget-Tor. Verwenden bei Arbeiten an Ladezeit, Bundle-Grösse, Rendering, Scroll-Verhalten, Lighthouse-Werten oder wenn eine Seite als langsam gemeldet wird.
+---
+
+# Geräte-Last: nicht merklich langsamer — ausser bei Logikverlust
+
+LexMetrik wird so gebaut, dass es den Computer des Nutzers nicht merklich
+langsamer macht — **solange daraus kein Logikverlust entsteht**. Diese Regel ist
+der Korrektheit (CLAUDE.md §1) untergeordnet: bei Konflikt gewinnt immer die
+Treue, nie das Tempo.
+
+## Was «Logikverlust» heisst
+
+Jeder Verlust an
+
+- **Inhalts-Treue** — vollständiger Normtext, Tabellen, Fussnoten
+- **Rechtsregel-Treue** — Rechner und Werte
+- **Funktions-Treue** — Ctrl+F über das *ganze* Gesetz, `#art_`-Anker und
+  Deep-Links, Print- und PDF-Vollständigkeit, Scroll-Spy und TOC,
+  Split-View-Pane-Zustand
+- **Golden-Byte-Gleichheit**
+
+**Jede Performance-Massnahme trägt eine explizite Logikverlust-Bewertung. Ohne
+sie wird sie nicht gemerged.**
+
+## Bauregeln
+
+**1. Keine DOM-entfernende Virtualisierung von Normtext.** Off-screen-Kosten nur
+über CSS `content-visibility: auto` plus `contain-intrinsic-size`; jeder
+Artikel-Knoten bleibt im DOM. Windowing oder Unmount, das Ctrl+F, Anker,
+Kopieren, Screenreader oder SEO bricht, ist verboten.
+
+**2. CLS = 0 durch reservierten Platz, nie durch weniger Inhalt.** Asynchron
+einwachsende Blöcke bekommen am **prerenderten** Element eine token-basierte
+Mindesthöhe. Client-Initialstate auf den Server-Zustand pinnen, Abweichung erst
+per `useEffect`.
+
+**3. Schwere Features lazy und off-critical-path, nie eager-Korpus.** Grosse
+Parses erst bei Bedarf, per `requestIdleCallback` oder im Worker — nie synchron
+im ersten Paint. Defer ändert nur das **Wann**, nie das **Was**: der volle Parse
+bleibt.
+
+**4. Memoisierung ist Pflicht, weil der React Compiler aus ist.** `React.memo`
+nur mit Default-Komparator, `useCallback` mit vollständigen Deps, `useMemo` für
+teure Ableitungen, geteilt via WeakMap auf die Datenreferenz — nie über einen
+globalen Token-Key, das kollidiert zwischen Erlassen.
+
+**5. Render-then-replace bleibt; kein naives `hydrateRoot`** — ein
+Markup-Mismatch ist stiller Normtext-Verlust. Bundle-Splitting und Sharding sind
+erlaubt, solange die Union byte-identisch bleibt und golden,
+`check:normtext` und `check:struktur-konsistenz` grün bleiben.
+
+**6. Long-Tail on demand bleibt inhaltsvollständig.** On-demand geladener Inhalt
+trägt dieselben Treue-Pflichten wie prerenderter: Ctrl+F, Anker, Print,
+Provenienz (CLAUDE.md §7 a–d), ehrlicher Fehlerzustand (§8). Ein Pfad, der
+kürzt, ist Logikverlust.
+
+## Messung
+
+Das Tor `check:perf-budget` (Lighthouse-CI auf `/gesetze/bund/OR` und Startseite
+unter 4× CPU) läuft **nur in CI**, nicht in der lokalen `gate`-Kette. **Lokal
+grün beweist also kein Perf-Budget.**
+
+Gegengekoppelt an `golden:vergleich` sowie `check:normtext` und
+`check:struktur-konsistenz`: **Tempo zählt nur, wenn die Treue grün bleibt.**
+
+Detail-Begründungen je Regel: `FAHRPLAN-PERFORMANCE.md` (Querschnitt `QS-PERF`).

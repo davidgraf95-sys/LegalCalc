@@ -4,7 +4,8 @@ Mechanik der Prüf-Werkzeuge für beide Korpora (Normtext + Rechtsprechung): wel
 **wann** er läuft, was er beweist. **Diese Datei erst beim Verifikations-Schritt in den Kontext
 ziehen** — nicht vorab (Progressive Disclosure, siehe `SKILL.md`).
 
-Diese Datei **dupliziert `CLAUDE.md` §6 nicht**, sie orchestriert die dort definierten Tore für die
+Diese Datei **dupliziert §6 nicht** (Protokoll seit 25.7.2026 im Skill `refactoring`;
+`CLAUDE.md` §6 trägt den Kern), sie orchestriert die dort definierten Tore für die
 zwei Korpora. Alle Befehle sind gegen `package.json`, `scripts/gate.sh` und `playwright.config.ts`
 verifiziert. Erfinde keinen Befehl dazu — was hier nicht steht, existiert nicht.
 
