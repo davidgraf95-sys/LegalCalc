@@ -120,12 +120,16 @@ const GESETZE_KINDER: NavKnoten[] = [
       .map((kt) => link(KANTON_NAMEN[kt], `/gesetze?ebene=kanton&kt=${kt}`)),
   },
   // International unter «Gesetze» subsumiert (Auftrag David 25.6.2026) — eigene
-  // einklappbare Gruppe wie Bund/Kantone; Ziel = die /international-Übersichtsseite,
-  // die Kinder springen zu deren Sach-Ankern.
+  // einklappbare Gruppe wie Bund/Kantone. IA-6 Stufe 1 (FAHRPLAN-GESETZES-UX
+  // §11.4 Ziff. 3, W2·5d): der Gruppen-Kopf zielt vereinheitlicht auf die
+  // KANONISCHE Säule ?ebene=international (wie Bund/Kantone auf ihre Säulen);
+  // die Kinder springen weiter zu den Sach-Ankern der voll funktionalen
+  // Alias-Seite /international (5 Anker unverändert — kein Redirect, Stufe 2
+  // nur mit separatem David-Go).
   {
     art: 'gruppe',
     label: 'International',
-    ziel: '/international',
+    ziel: '/gesetze?ebene=international',
     aufklappbar: true,
     standardOffen: false,
     kinder: [

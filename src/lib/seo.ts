@@ -74,13 +74,21 @@ const DOPPELKARTEN_OVERRIDE: Record<string, string> = {
 // Seite individuell (Freigabe David 15.6.2026) — faktisch aus dem vorhandenen
 // Seitentext destilliert, keine neuen Rechtsaussagen; Datenschutz bleibt ehrlich
 // als Entwurf gekennzeichnet.
-const STATISCHE_SEITEN: Record<string, { titel: string; beschreibung: string; ogBeschreibung?: string }> = {
+// `kanonischerPfad`: Alias-Seiten (IA-6) tragen ein Canonical auf ihre
+// kanonische URL statt auf sich selbst — Prerender UND RouteMeta beziehen es
+// aus derselben Quelle hier (§5). Die Seite selbst bleibt voll funktional
+// (kein Redirect); die Sitemap führt weiterhin den echten Routen-Pfad.
+const STATISCHE_SEITEN: Record<string, { titel: string; beschreibung: string; ogBeschreibung?: string; kanonischerPfad?: string }> = {
   '/': { titel: SITE_TITEL, beschreibung: SITE_DESCRIPTION, ogBeschreibung: SITE_OG_DESCRIPTION },
   '/rechner': { titel: 'Rechner & Werkzeuge — LexMetrik', beschreibung: 'Alle Rechner von LexMetrik nach Aufgabe gegliedert — Zuständigkeiten, Fristen und Gebühren. Feste Rechenregeln, jede Norm direkt verlinkt, Ergebnisse sofort im Browser.' },
   '/vorlagen': { titel: 'Vorlagen & Dokumente — LexMetrik', beschreibung: 'Rechtsdokumente von LexMetrik aus festen Textbausteinen mit Normbezug — Verträge, Eingaben, Erklärungen und Dokumentmappen, regelbasiert aufgesetzt mit ehrlichen Form-Grenzen.' },
   '/gesetze': { titel: 'Schweizer Gesetzessammlung — LexMetrik', beschreibung: 'Volltext der in LexMetrik verwendeten Bundesgesetze und kantonalen Erlasse — geltende Fassung, mit Stand und amtlichem Live-Link. Schnelle Navigation zwischen und innerhalb der Gesetze.' },
   '/rechtsprechung': { titel: 'Rechtsprechung — LexMetrik', beschreibung: 'Ausgewählte Bundesgerichtsentscheide im Volltext, nach Sachgebiet erschlossen und mit den Gesetzen verzahnt. Daten: OpenCaseLaw — massgeblich bleibt die amtliche Fassung. Keine Rechtsberatung.' },
-  '/international': { titel: 'International / Staatsverträge — LexMetrik', beschreibung: 'Für die Schweiz massgebliche Staatsverträge und internationales Recht — EMRK, CISG, Lugano-Übereinkommen, Haager Übereinkommen, Freizügigkeitsabkommen und DSGVO. Jeder Eintrag mit Live-Link zur amtlichen Fassung (Fedlex bzw. EUR-Lex), keine Snapshots.' },
+  // IA-6 Stufe 1 (FAHRPLAN-GESETZES-UX §11.4 Ziff. 3, W2·5d): /international
+  // bleibt voll funktionale Alias-Seite inkl. der 5 Hash-Anker; Kanonik ist die
+  // Säule ?ebene=international. NUR rel=canonical/og:url — kein Redirect, kein
+  // 301 (Stufe 2 = separates David-Go, §11.8 Y-C).
+  '/international': { titel: 'International / Staatsverträge — LexMetrik', beschreibung: 'Für die Schweiz massgebliche Staatsverträge und internationales Recht — EMRK, CISG, Lugano-Übereinkommen, Haager Übereinkommen, Freizügigkeitsabkommen und DSGVO. Jeder Eintrag mit Live-Link zur amtlichen Fassung (Fedlex bzw. EUR-Lex), keine Snapshots.', kanonischerPfad: '/gesetze?ebene=international' },
   '/materialien': { titel: 'Amtliche Ressourcen / Materialien — LexMetrik', beschreibung: 'Praxisleitende Publikationen der Bundesbehörden — ESTV-Kreisschreiben, EDÖB-Leitfäden, SECO- und BSV-Wegleitungen, EHRA-Praxismitteilungen, FINMA-Rundschreiben, IGE-Richtlinien. Faktisches Soft-Law ohne Gesetzesrang, je mit Live-Link zur amtlichen Fassung und mit den Gesetzen verzahnt.' },
   '/methodik': { titel: 'Wie LexMetrik rechnet — LexMetrik', beschreibung: 'Wie LexMetrik Fristen, Beträge und Quoten herleitet: gerechnet wird nach festen Regeln, jeder Schritt nachvollziehbar, jede Norm mit der amtlichen Sammlung verlinkt.' },
   '/ueber': { titel: 'Über — LexMetrik', beschreibung: 'Warum es LexMetrik gibt — entstanden bei der Vorbereitung auf die Anwaltsprüfung: überprüfbare, normtreue Rechtsberechnung statt Black Box.' },
@@ -139,7 +147,10 @@ export function prerenderRouten(): string[] {
 export function metaFuerPfad(pfad: string): RouteMetadaten | null {
   const statisch = STATISCHE_SEITEN[pfad];
   const canonical = SITE_URL + pfad;
-  if (statisch) return { pfad, ...statisch, canonical };
+  if (statisch) {
+    const { kanonischerPfad, ...meta } = statisch;
+    return { pfad, ...meta, canonical: kanonischerPfad ? SITE_URL + kanonischerPfad : canonical };
+  }
   const karte = kartenProPfad().get(pfad);
   if (!karte) return null;
   return {
