@@ -41,7 +41,10 @@ on:
 
 concurrency:
   group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  # Auf main NIE canceln: seit perf nur noch auf main läuft (26.7.2026), wäre
+  # ein durch den nächsten Merge gecancelter main-Lauf ein Deploy-Stand ohne
+  # §15-Messung (Review-Befund 26.7.). PR-Läufe cancelt der nächste Push weiter.
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
   bau:
@@ -69,8 +72,7 @@ jobs:
           include-hidden-files: true
 
   tore:
-    name: Tore (tsc · Tests · Lint · Build · Checks)
-    needs: bau
+    name: Tore (Tests · Lint · Checks)
     runs-on: ubuntu-latest
     env:
       # Produkt-Zeitzone: Engines geben teils Date-Instants zurück (z. B.
@@ -100,14 +102,11 @@ jobs:
         run: npm run check:merge-schutz
       - name: Plan-Inventar-Konsistenz (Node-only, günstig — darum vor tsc/Build)
         run: npm run check:plan
-      # tsc -b läuft im bau-Job (Teil von npm run build); dist kommt als
-      # Artefakt — die dist-lesenden Tore (Smoke, SEO-Index, …) sehen dieselbe
-      # Umgebung wie vor dem Split, nur ohne zweiten Build.
-      - name: dist-Artefakt herunterladen (aus `bau`, nicht neu bauen)
-        uses: actions/download-artifact@v4
-        with:
-          name: dist
-          path: dist
+      # tsc -b läuft im bau-Job (Teil von npm run build). KEIN dist-Download
+      # hier: kein einziger tore-Check liest dist/ (Review 26.7.2026 — smoke
+      # rendert SSR aus src, seo-index liest ROOT/index.html; Tests/Lint liefen
+      # schon im alten Monojob VOR dem Build). Darum auch kein `needs: bau` —
+      # tore startet sofort, parallel zu bau.
       - name: Tests (volle Ausgabe)
         run: npm test
       - name: Lint (volle Ausgabe, nie tail!)
@@ -186,7 +185,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      # Union-Wächter VOR den Shards: beweist, dass die drei Gruppen in
+      # Union-Wächter VOR den Shards: beweist, dass die Gruppen in
       # e2e/shard-gruppen.json exakt die von Playwright gesammelte Spec-Menge
       # abdecken (kein Test doppelt, keiner verloren). Läuft in jedem Matrix-Job
       # (billig, `playwright --list` ohne Browser/Server) — reisst die Kette,

@@ -205,10 +205,11 @@ Damit ist der Workflow queue-fähig; die **Aktivierung bleibt David-Gate G7**.
 Checks als required ergänzt sind. Das ist Teil desselben ~10-Min-Handschritts.
 
 **David-Anleitung (~10 Min, G7 — Reihenfolge einhalten):**
-1. **Required Checks ergänzen** (Settings → Branches → Rule `main` → *Require status checks*): die vier neuen
-   Kontexte hinzufügen — `Tore (tsc · Tests · Lint · Build · Checks)` (bleibt), `Browser-Smoke Shard 1/3 (Playwright)`,
-   `… Shard 2/3 …`, `… Shard 3/3 …`, `Perf-Budget (§15 — nur bei grüner Treue)`, `Vercel` (bleibt). Erst NACH einem
-   ersten grünen Lauf auf `main` erscheinen die neuen Kontexte in der Auswahl-Liste.
+1. **Required Checks ergänzen** (Settings → Branches → Rule `main` → *Require status checks*): Kontexte seit dem
+   CI-Umbau 26.7.2026 — `Tore (Tests · Lint · Checks)`, `Browser-Smoke Shard 1/8 (Playwright)` … `… Shard 8/8 …`,
+   `Vercel`, `Merge-Schutz (Required-Kontext)`. Perf ist NICHT mehr required (läuft nur noch auf main/merge_group;
+   auf PRs wäre der Kontext dekorativ, GitHub wertet skipped als erfüllt). Erst NACH einem
+   ersten grünen Lauf erscheinen neue Kontexte in der Auswahl-Liste.
 2. **Merge Queue einschalten**: dieselbe Rule → *Require merge queue* anhaken (Default-Settings genügen). Die Queue
    fährt CI auf `merge_group`-Events — genau dafür der neue Trigger. Ohne Schritt 1 hätte die Queue nichts zu warten.
 3. **`strict` (up-to-date) prüfen**: Die Queue testet jeden PR gegen den frisch serialisierten `main`, darum wird
