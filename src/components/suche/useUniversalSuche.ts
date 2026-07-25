@@ -1,11 +1,12 @@
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
-import { sucheAlles, sprungGruppe, bgeSprungGruppe, type SuchGruppe, type SuchTreffer } from '../../lib/universalSuche';
+import { sucheAlles, sprungGruppe, bgeSprungGruppe, type SuchGruppe } from '../../lib/universalSuche';
 import { holeOnlineTreffer, MIN_ZEICHEN } from '../../lib/suche/onlineVolltext';
 import { baueNormIndex, parseNormQuery } from '../../lib/suche/normQuery';
 import { baueBgeIndex, parseBgeSprung } from '../../lib/suche/bgeQuery';
 import { meinenSie } from '../../lib/suche/vorschlag';
 import { vokabularBegriffe } from '../../lib/suche/vokabular';
 import { KATALOG_KARTEN } from '../../lib/startseiteConfig';
+import type { ArtikelSuche } from '../../lib/suche/artikelVolltext';
 import type { PresetIndexEintrag } from '../../lib/presetIndex';
 import type { BrowseErlass } from '../../lib/normtext/browse-typen';
 import type { BrowseEntscheid } from '../../lib/rechtsprechung/register';
@@ -58,7 +59,7 @@ export function useUniversalSuche(q: string, opt: UniversalSucheOpt = {}): Unive
   const artikelLimit = opt.artikelLimit ?? 40;
   const kappung = opt.kappung ?? 6;
   const [presetSucheFn, setPresetSucheFn] = useState<((s: string, limit?: number) => PresetIndexEintrag[]) | null>(null);
-  const [artikelSucheFn, setArtikelSucheFn] = useState<((s: string, limit?: number) => SuchTreffer[]) | null>(null);
+  const [artikelSuche, setArtikelSuche] = useState<ArtikelSuche | null>(null);
   const [gesetze, setGesetze] = useState<BrowseErlass[] | null>(null);
   const [entscheide, setEntscheide] = useState<BrowseEntscheid[] | null>(null);
   const [materialien, setMaterialien] = useState<BrowseMaterial[] | null>(null);
@@ -74,8 +75,17 @@ export function useUniversalSuche(q: string, opt: UniversalSucheOpt = {}): Unive
     // Grösse gemessen 25.7.2026 (W2·5, Kanton dazu): 48.0 MB roh / 9.9 MB gzip,
     // vorher (nur Bund) 26.0 MB / 5.4 MB. Der Zuwachs trifft ausschliesslich den
     // ersten Suchvorgang, nicht den First Paint — darum bleibt er tragbar (§15).
+    //
+    // GESTAFFELT (W2·5): das erste `then` kommt, sobald der BUND durchsuchbar ist;
+    // der Callback feuert, wenn die kantonale Ebene nachgerückt ist. Beide setzen
+    // denselben State — die neue Objekt-Identität lässt die `artikelTreffer`-Memo
+    // unten neu rechnen, die laufende Suche wertet sich also VON SELBST neu aus.
+    // Niemand muss dieselbe Query ein zweites Mal tippen (Auflage David 25.7.2026).
     // Bei Fehlschlag bleibt die Gruppe leer statt die ganze Suche zu blockieren (§8).
-    import('../../lib/suche/artikelVolltext').then((m) => m.ladeArtikelSuche()).then((fn) => setArtikelSucheFn(() => fn)).catch(() => setArtikelSucheFn(() => () => []));
+    import('../../lib/suche/artikelVolltext')
+      .then((m) => m.ladeArtikelSuche((nachgeladen) => setArtikelSuche(nachgeladen)))
+      .then((erste) => setArtikelSuche(erste))
+      .catch(() => setArtikelSuche({ suche: () => [], fehlendeEbenen: [] }));
     import('../../lib/normtext/browse').then((m) => m.ladeBrowseManifest()).then((m) => setGesetze(m?.erlasse ?? [])).catch(() => setGesetze([]));
     import('../../lib/rechtsprechung/browse').then((m) => m.ladeEntscheidManifest()).then((m) => setEntscheide(m?.entscheide ?? [])).catch(() => setEntscheide([]));
     import('../../lib/materialien/browse').then((m) => m.ladeMaterialManifest()).then((m) => setMaterialien(m?.materialien ?? [])).catch(() => setMaterialien([]));
@@ -127,8 +137,8 @@ export function useUniversalSuche(q: string, opt: UniversalSucheOpt = {}): Unive
   // universalSuche.ts) → das Entkoppeln ändert nur das WANN, nicht das WAS (§6.4).
   const qArtikel = useDeferredValue(q);
   const artikelTreffer = useMemo(
-    () => (artikelSucheFn ? artikelSucheFn(qArtikel, artikelLimit) : null),
-    [artikelSucheFn, qArtikel, artikelLimit],
+    () => (artikelSuche ? artikelSuche.suche(qArtikel, artikelLimit) : null),
+    [artikelSuche, qArtikel, artikelLimit],
   );
 
   const gruppen = useMemo(
@@ -145,6 +155,7 @@ export function useUniversalSuche(q: string, opt: UniversalSucheOpt = {}): Unive
         presets: presetSucheFn ? presetSucheFn(q, 999) : null,
         gesetze,
         artikel: artikelTreffer,
+        artikelFehlendeEbenen: artikelSuche?.fehlendeEbenen,
         entscheide,
         materialien,
       }, kappung);
@@ -157,7 +168,7 @@ export function useUniversalSuche(q: string, opt: UniversalSucheOpt = {}): Unive
     },
     [q, direkt, bge, presetSucheFn, artikelTreffer, gesetze, entscheide, materialien, onlineGruppe, kappung],
   );
-  const allesGeladen = presetSucheFn !== null && artikelSucheFn !== null && gesetze !== null && entscheide !== null && materialien !== null;
+  const allesGeladen = presetSucheFn !== null && artikelSuche !== null && gesetze !== null && entscheide !== null && materialien !== null;
 
   // §8-Korpus-Offenlegung (S3/E1): rein aus den geladenen Manifesten (K10). Der
   // Volltext-Suchindex ist Bund-only (artikelVolltext + Online-Edge, §11.5),

@@ -27,15 +27,30 @@ import { normalisiereBegriff, expandiereSuchbegriff } from './vokabular';
 
 export interface RankEintrag { k: string; ku: string; a: string; l: string; m: string; n: string; g: string; t: string; eb: 'bund' | 'kanton' }
 
-// Ebenen-Rang (W2·5): bei GLEICHER Themennähe und gleichem Kernerlass-Rang steht
-// Bundesrecht vor kantonalem Recht. Zwei Gründe, beide bewusst:
+// ── Ebenen-Rang (W2·5) — PROVISORISCHE ANZEIGE-ORDNUNG, KEIN ENTSCHIED ───────
+//
+// Bei GLEICHER Themennähe und gleichem Kernerlass-Rang steht Bundesrecht vor
+// kantonalem Recht. Zwei Gründe, beide bewusst:
 //   1. Ohne diesen Tiebreak entschiede die Alphabetik des Routen-Keys — «AG-291.150»
 //      stünde vor «AHVG», ein Kanton-Erlass also vor einem Bundeserlass, und zwar
 //      ohne jede fachliche Begründung. Das wäre kein Ranking, sondern ein Zufall.
 //   2. Er hält die Bund-Reihenfolge exakt so, wie sie vor der Kanton-Aufnahme war
-//      (§6: der Zuwachs verschlechtert die bestehende Trefferlage nicht).
-// KEINE Aussage über Normenhierarchie im Rechtssinn — eine reine Anzeige-Ordnung
-// für eine gesamtschweizerische Suche (§3), nicht Rechtslogik.
+//      (§6: der Zuwachs verschlechtert die bestehende Trefferlage nicht) — er hat
+//      eine echte Regression behoben (OR 253 war über «Miete» unauffindbar).
+//
+// KEINE Aussage über Normenhierarchie im Rechtssinn: eine reine Anzeige-Ordnung
+// (§3), nicht Rechtslogik. Und ausdrücklich NICHT die entschiedene Relevanz-
+// Politik — der Entscheid darüber liegt offen bei David (Stand 25.7.2026).
+//
+// BEKANNTE SCHWÄCHE, die diesen Entscheid nötig macht: In Gebieten KANTONALER
+// Zuständigkeit — Einführungsgesetze zu Bundesrecht, Notariat und Beurkundung,
+// Steuern, Gerichtsorganisation und Verfahren vor kantonalen Instanzen — ist die
+// einschlägige Norm regelmässig die kantonale. Eine Bund-zuerst-Regel schiebt
+// sie dort systematisch nach hinten, obwohl sie die gesuchte ist. Wer den Rang
+// künftig ändert: die Regel ist bewusst an EINER Stelle isoliert, damit sie sich
+// austauschen lässt, ohne die übrige Rangfolge anzufassen — und ohne den
+// Recall-Schutz je Ebene (artikelVolltext.ts) zu berühren, der davon unabhängig
+// ist und bleiben muss.
 const EBENEN_RANG: Record<'bund' | 'kanton', number> = { bund: 0, kanton: 1 };
 
 // Kernerlasse (ROUTEN-Keys, wie der Index sie führt): bewusst KLEIN gehalten und

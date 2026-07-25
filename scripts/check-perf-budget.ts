@@ -82,10 +82,30 @@ if (entry.length === 1) {
 //    Shell zieht es für jeden Inhaltspfad (Breadcrumb-Label), also faktisch auf
 //    jeder Gesetzes-Leserseite. Ohne Schranke wächst die Achse mit jedem weiteren
 //    Kanton unbemerkt weiter (§15).
+//    W2·5 (25.7.2026): der Artikel-Suchindex kommt dazu — der mit Abstand
+//    grösste Einzelposten. Er liegt NICHT auf dem kritischen Pfad (lazy, lädt erst
+//    beim ersten Tastendruck in der Suche), gehört aber trotzdem unter eine
+//    Schranke, weil der kantonale Korpus mit 1 231 Erlassen erklärtermassen
+//    unvollständig ist und weiter wächst.
+//
+//    Herleitung der Schranke (gemessen 25.7.2026, nicht gegriffen):
+//      · heute        9 667 KB gzip (54 444 Artikel: Bund 25 389 + Kanton 29 055)
+//      · davon Kanton ~4 399 KB für 1 231 Erlasse  ⇒  ~3.6 KB gzip je Erlass
+//      · Budget      10 400 KB  ⇒  ~733 KB Luft  ⇒  ~200 weitere Kanton-Erlasse
+//    Der eigentliche Schmerz ist nicht die Leitung, sondern der CLIENTSEITIGE
+//    Indexaufbau: er skaliert mit der Artikelzahl und lag bei dieser Grösse
+//    bereits bei ~6.1 s (node) bzw. 5.3 s bis zur ersten Trefferanzeige im
+//    Browser — auf dem ~3.9× langsameren CI-Runner reichte das, um die
+//    Browser-Smoke-Suite reissen zu lassen. Die Schranke soll also anschlagen,
+//    BEVOR jemand das merkt: ~200 Erlasse (gut ein weiterer mittlerer Kanton)
+//    passen durch, ein Massenimport nicht. Wer sie anhebt, hebt bewusst auch die
+//    Wartezeit bis zum ersten Treffer an — dann gehört die Staffelung
+//    (artikelVolltext.ts, `baue()`) mit überdacht, nicht bloss die Zahl.
 const DATEN_BUDGET: readonly (readonly [string, number])[] = [
   ['public/rechtsprechung/register.json', 780 * 1024],
   ['public/rechtsprechung/richter.json', 24 * 1024],
   ['public/rechtsprechung/norm-index.json', 260 * 1024],
+  ['public/such-index/artikel.json', 10_400 * 1024],
 ];
 console.log('check:perf-budget — Daten-Nutzlast (gzip):');
 for (const [rel, max] of DATEN_BUDGET) {

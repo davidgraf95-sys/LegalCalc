@@ -537,13 +537,34 @@ Kanton 29 055 aus allen 26 Kantonen** (1 231 kantonale Erlasse). Prod-Smoke-Pfad
   `/gesetze/kanton/AI-640.000#art-116`, keine Konsolenfehler.
 - **Beweis:** `npm run gate` voll grün · `check:suchindex` grün · Golden byte-gleich 249/249 ·
   `check:gegenpruefung` grün (kein Risiko-Pfad berührt — weder Rechnen noch Extraktion noch Norm-Tarif).
-- **CI-Befund (offen, Entscheid David):** `Browser-Smoke Shard 1/3` rot, `Perf-Budget` dadurch
-  übersprungen. Drei Such-Specs laufen nach 2 Retries in `Timeout: 10000ms` mit `Received: 0` — die
-  Assertions stimmen, die Treffer kommen auf dem Runner zu spät. Gemessene Ursache: clientseitiger
-  FlexSearch-Aufbau **3 153 → 6 143 ms (+95 %)**; lokal grün in 4.8–5.9 s, CI-Runner laut
-  `playwright.config.ts` ~3.9× langsamer. First Paint unberührt (Lazy greift). Weder Inhalt gekürzt
-  noch Timeouts angehoben — die drei inhaltserhaltenden Wege (gestaffelter Aufbau Bund-zuerst /
-  Timeout-Envelope / Kanton auf Anforderung) stehen im PR-Kommentar zum Entscheid.
+- **CI-Befund + Behebung (Nachtrag David 25.7.2026):** `Browser-Smoke Shard 1/3` war rot,
+  `Perf-Budget` dadurch übersprungen. Drei Such-Specs liefen nach 2 Retries in `Timeout: 10000ms`
+  mit `Received: 0` — Assertions korrekt, Treffer zu spät. Gemessene Ursache: clientseitiger
+  FlexSearch-Aufbau **3 153 → 6 143 ms (+95 %)**. Behoben durch **gestaffelten Aufbau** (David
+  gab Weg 1 frei): `baueSucher` ist inkrementell, die Doc-IDs sind globale Positionen im
+  Eintrags-Array — der Kanton rückt nach, ohne dass der Bund-Index neu gebaut wird (der wäre
+  sonst zweimal zu zahlen). Kanton in 2000er-Häppchen mit Yield, damit der Hauptthread frei bleibt.
+  **Der volle Index wird weiterhin vollständig geladen; gestaffelt ist nur der Zeitpunkt.**
+  Zwei Auflagen, beide gegated (`src/tests/suche/gestaffelterIndex.test.ts`):
+    · **Teilzustand sichtbar** — `hinweis` an der Gesetzestext-Gruppe nennt die fehlende Ebene im
+      Klartext, die Kopfzeile trägt «— wird noch ergänzt». Die Gruppe bleibt dabei **auch bei null
+      Treffern** stehen: bei einer rein kantonalen Query verschwände sonst der Hinweis mitsamt der
+      Gruppe, und die Suche behauptete stumm «nichts gefunden» über einen ungelesenen Bestand.
+    · **Automatische Neuauswertung** — der Nachlade-Callback setzt ein neues `ArtikelSuche`-Objekt;
+      die neue Identität lässt die React-Memo neu rechnen. Niemand tippt dieselbe Query zweimal.
+  **Zeitmessung im Browser (lokal, `vite preview`):** erste Trefferanzeige **5 328 → 3 668 ms**,
+  Kopfzeile mit Aufschlüsselung **5 344 → 3 941 ms**. Volle E2E-Suite lokal **314/314 grün**.
+- **Index-Grösse im Perf-Budget verankert:** `check:perf-budget` deckelt
+  `public/such-index/artikel.json` auf **10 400 KB gzip** (heute 9 667 KB). Hergeleitet, nicht
+  gegriffen: ~3.6 KB gzip je Kanton-Erlass ⇒ ~200 weitere Erlasse Luft — ein weiterer mittlerer
+  Kanton passt durch, ein Massenimport schlägt an. Der eigentliche Kostentreiber ist nicht die
+  Leitung, sondern der clientseitige Aufbau; das steht als Warnung am Budget. Sabotage-Probe rot
+  gezeigt (Deckel 9 000 KB ⇒ exit 1).
+- **Ebenen-Tiebreak als PROVISORISCH gekennzeichnet** (Logik unverändert — sie hat eine echte
+  Regression behoben): der Kommentar am Fundort hält fest, dass «Bund vor Kanton» eine Anzeige-
+  Ordnung und keine entschiedene Relevanz-Politik ist, und dass sie in Gebieten kantonaler
+  Zuständigkeit (Einführungsgesetze, Notariat, Steuern, Gerichtsorganisation) die einschlägige
+  Norm systematisch nach hinten schiebt. Entscheid offen bei David.
 
   (Rechtsgebiet × Aufgabe)** ✅ **28.6.2026 (gegated, deployt 2.7.2026):** `einstiegMatrix()`
   (`src/lib/einstieg.ts`) projiziert den Katalog (§5) auf Rechtsgebiet × Aufgabe; Komponente
