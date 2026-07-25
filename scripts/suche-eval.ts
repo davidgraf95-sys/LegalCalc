@@ -12,9 +12,9 @@
 // und assembliert sie in der GLEICHEN Anzeige-Reihenfolge wie der Hook
 // (Sprung → Gesetze → Gesetzestext → Rechtsprechung).
 //
-// Deterministisch (§2): kein LLM, kein Netz, kein Date.now(). Der Bund-Index wird
-// FRISCH aus den gepinnten Snapshots gebaut (baueBundIndex) — nicht aus der
-// committeten, potenziell veralteten such-index/artikel-bund.json (die m/n/g-
+// Deterministisch (§2): kein LLM, kein Netz, kein Date.now(). Der Artikel-Index wird
+// FRISCH aus den gepinnten Snapshots gebaut (baueIndex, Bund + Kanton) — nicht
+// aus der gebauten such-index/artikel.json (dort fehlen die m/n/g-
 // Ranking-Felder fehlen dort), exakt wie im Gate-Test rankingTestset.test.ts.
 //
 // Herkunft/Methodik: LLM-freier Retrieval-Eval (Recall@k / MRR / NDCG@10) nach
@@ -40,7 +40,7 @@ import { readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as flex from 'flexsearch';
-import { baueBundIndex } from './such-index-generieren';
+import { baueIndex } from './such-index-generieren';
 import { baueSuchFn } from '../src/lib/suche/artikelVolltext';
 import { baueNormIndex, parseNormQuery, type NormErlass } from '../src/lib/suche/normQuery';
 import { baueBgeIndex, parseBgeSprung } from '../src/lib/suche/bgeQuery';
@@ -168,7 +168,7 @@ function main(): void {
   const gold = ladeGold();
 
   // Produktions-Pipeline instanziieren (FRISCHER Index wie im Gate-Test).
-  const eintraege = baueBundIndex().eintraege;
+  const eintraege = baueIndex().eintraege;
   const artikelSuche = baueSuchFn(eintraege as never, FlexSearch);
   const erlasse = JSON.parse(readFileSync(resolve(wurzel, 'public/normtext/register.json'), 'utf8')).erlasse as unknown[];
   const entscheide = JSON.parse(readFileSync(resolve(wurzel, 'public/rechtsprechung/register.json'), 'utf8')).entscheide as unknown[];

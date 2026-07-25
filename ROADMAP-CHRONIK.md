@@ -496,7 +496,47 @@ Schritt 14** → **im selben Worktree wie Strang B, nie als paralleler Strang** 
     einziger `<style>`-Träger im Korpus). Daten-Regen 9 Erlasse (OR +4 713 Z., VRV +409 Z., 6 VO +348
     grundlage, SSV −CSS), golden klassifiziert-additiv, Engine-Golden byte-gleich, QS-GP-Quittung.
 
-## W2·5 — Auffindbarkeits-Schicht: Zweiachsiger Einstieg + Artikel-Volltextsuche *(offener Schritt; ✅-Prosa wörtlich verschoben 22.7.2026)*
+## W2·5 — Auffindbarkeits-Schicht: Zweiachsiger Einstieg + Artikel-Volltextsuche *(ABGESCHLOSSEN 25.7.2026; ✅-Prosa verschoben 22.7., Abschluss ergänzt 25.7.2026)*
+
+### Restposten «Kanton-Volltext im Index» ✅ 25.7.2026 (PR #365, Trailer `Roadmap: W2·5`)
+
+**Ausgangslage (gemessen):** `scripts/such-index-generieren.ts` las ausschliesslich
+`public/normtext/bund` und schrieb `artikel-bund.json` mit hartcodiertem `ebene: 'bund'`.
+**Gebaut:** die Ebene ist jetzt **Parameter** (`EBENEN = ['bund','kanton']`, `baueEbenenIndex(ebene)`
+→ `baueIndex()`); Artefakt heisst `public/such-index/artikel.json`. **54 444 Artikel: Bund 25 389 +
+Kanton 29 055 aus allen 26 Kantonen** (1 231 kantonale Erlasse). Prod-Smoke-Pfad mitgezogen.
+
+- **Herkunft ehrlich (§8):** jeder Eintrag trägt `eb` (Ebene) + `kt` (Kantonskürzel). Der Treffer
+  nennt den Kanton doppelt — Label-Suffix «· AI» **und** Marke «AI» **ohne** `redundant`, weil
+  `redundant: true` die Marke auf Mobile ausblendet (`SuchResultate.tsx`, `max-sm:hidden`): beim
+  Bund-«Gesetzestext» richtig (wiederholt nur den Gruppentitel), beim Kanton hätte es die
+  Herkunftsangabe auf dem Handy komplett gelöscht. href geht auf `/gesetze/<eb>/<key>`.
+- **Ranking-Regression gefunden UND behoben (der eigentliche Fund dieser Einheit):** das
+  Query-Testset wurde auf den **vollen** Index umgestellt (bund-only wäre ab jetzt Fiktion) — und
+  lief prompt rot: **«Miete» fand OR 253 überhaupt nicht mehr.** Ursache gemessen: FlexSearch kappt
+  **je Feld** bei `limit`; im gemeinsamen Index teilen sich die Ebenen dieses Kontingent, die 193
+  kantonalen Gliederungs-Treffer drückten OR 253 im `g`-Feld von Rang 259 auf **339** und damit aus
+  dem 300er-Fenster. OR 253 führt «Miete» nur in der Gliederung («Achter Titel: Die Miete»), war
+  also unauffindbar. **Fix: ein FlexSearch-Index JE EBENE** — der Bund-Recall ist damit exakt der
+  von vorher und hängt nicht mehr davon ab, wie viel kantonales Recht im Korpus liegt; jeder weitere
+  Kanton kann die Bund-Trefferlage nicht mehr verschlechtern. Dazu ein Tiebreak **Bund vor Kanton**
+  bei gleicher Themennähe/Kernerlass-Rang (`EBENEN_RANG`, `artikelRanking.ts`) — sonst entschiede die
+  Key-Alphabetik («AG-291.150» < «AHVG»), also der Zufall. Nach dem Fix: «Miete» → OR 253 **Rang 1**.
+- **Kein stiller Verlust (§8):** der Generator protokolliert jede nicht indexierte Datei mit Grund
+  (`unlesbar` / `kein-eintraege-array` / `kein-volltext`) im Artefakt **und** in der CLI-Ausgabe;
+  vorher schluckte ein blosses `catch { continue }` kaputtes JSON spurlos. Real übersprungen: **genau
+  eine** Datei, `kanton/index.json` (URL→Datei-Karte, kein Erlass). Neues Tor `suchIndex.test.ts`
+  vergleicht gegen `public/normtext/register.json` in **beide** Richtungen.
+- **§6.7-Sabotage-Probe gefahren:** Erlass still fallen lassen → rot («spurlos aus dem Index gefallen:
+  kanton/AG-291.150»); `kt` blanken → rot (1 229 Erlasse ohne Kanton + Manifest-Abweichung).
+- **Geräte-Last gemessen (§15):** Index **25.97 MB → 47.96 MB** roh, **5.44 MB → 9.94 MB** gzip
+  (+83 %). **Lazy-Loading hält:** der Index lädt erst beim ersten Tastendruck in der Suche —
+  Vollaufbau von `/gesetze` löst empirisch **0** Index-Anfragen aus. First Paint unberührt.
+- **Praxisbeweis im Browser:** «Handänderungssteuer» (rein kantonale Steuer, vorher artikelseitig
+  nicht auffindbar) liefert jetzt AI- und AR-Steuergesetzartikel; Klick landet auf
+  `/gesetze/kanton/AI-640.000#art-116`, keine Konsolenfehler.
+- **Beweis:** `npm run gate` voll grün · `check:suchindex` grün · Golden byte-gleich ·
+  `check:gegenpruefung` grün (kein Risiko-Pfad berührt — weder Rechnen noch Extraktion noch Norm-Tarif).
 
   (Rechtsgebiet × Aufgabe)** ✅ **28.6.2026 (gegated, deployt 2.7.2026):** `einstiegMatrix()`
   (`src/lib/einstieg.ts`) projiziert den Katalog (§5) auf Rechtsgebiet × Aufgabe; Komponente

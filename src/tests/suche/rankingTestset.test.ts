@@ -2,19 +2,24 @@
 // ─── S4-GATE: Query-Testset für das Artikel-Volltext-Ranking (UI-NAV S4) ─────
 //
 // Der Auftrag macht das Query-Testset zum GATE: repräsentative Anwalts-Queries
-// mit erwarteten Top-Treffern, gegen den ECHTEN Bund-Korpus (baueBundIndex +
-// FlexSearch, exakt die Produktions-Pipeline baueSuchFn). Zwei Zusicherungen je
-// Fall:
+// mit erwarteten Top-Treffern, gegen den ECHTEN Korpus (baueIndex + FlexSearch,
+// exakt die Produktions-Pipeline baueSuchFn). Zwei Zusicherungen je Fall:
 //   1. Der erwartete Kernartikel steht im NEUEN Ranking in den Top-`maxRang`.
 //   2. Das neue Ranking ist NIE schlechter als das rohe FlexSearch-Ranking
 //      (Vorher) — Ranking-Änderungen dürfen das Set nur verbessern (§6.3).
 //
 // Die Vorher/Nachher-Ränge werden geloggt (Metrik für den PR-Body). Reine
 // Determinismus-Prüfung (§2): kein Netz, kein Date; der Index kommt aus den
-// gepinnten Snapshots via baueBundIndex().
+// gepinnten Snapshots via baueIndex().
+//
+// W2·5 (25.7.2026): gemessen wird der VOLLE Index (Bund + Kanton), nicht mehr nur
+// Bund. Das ist bewusst das schärfere Mass — die 29 055 kantonalen Artikel teilen
+// sich denselben Recall-Pool (POOL=300) mit dem Bund, also muss sich hier zeigen,
+// ob kantonaler Zuwachs die Bund-Kernartikel aus den Top-Rängen drängt. Ein
+// bund-only gemessenes Ranking wäre ab jetzt eine Fiktion.
 import { describe, it, expect, beforeAll } from 'vitest';
 import * as flex from 'flexsearch';
-import { baueBundIndex } from '../../../scripts/such-index-generieren';
+import { baueIndex } from '../../../scripts/such-index-generieren';
 import { baueSuchFn } from '../../lib/suche/artikelVolltext';
 import { expandiereSuchbegriff } from '../../lib/suche/vokabular';
 import type { SuchTreffer } from '../../lib/universalSuche';
@@ -76,10 +81,10 @@ describe('UI-NAV S4 — Query-Testset (Ranking-Gate)', () => {
   let neu: (q: string, limit?: number) => SuchTreffer[];
   let roh: (q: string, limit?: number) => SuchTreffer[];
 
-  // Grosszügiges Hook-Budget: der FlexSearch-Aufbau über ~25 000 Artikel (zwei
+  // Grosszügiges Hook-Budget: der FlexSearch-Aufbau über ~54 000 Artikel (zwei
   // Indizes: neu + Roh-Baseline) ist der teure Teil; die Suchen danach sind schnell.
   beforeAll(() => {
-    const eintraege = baueBundIndex().eintraege as Eintrag[];
+    const eintraege = baueIndex().eintraege as Eintrag[];
     neu = baueSuchFn(eintraege as never, FlexSearch);
     roh = baueBaseline(eintraege);
   }, 180000);

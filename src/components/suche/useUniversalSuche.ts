@@ -69,8 +69,12 @@ export function useUniversalSuche(q: string, opt: UniversalSucheOpt = {}): Unive
     if (q === '' || gestartet.current) return;
     gestartet.current = true;
     import('../../lib/presetIndex').then((m) => setPresetSucheFn(() => m.presetSuche)).catch(() => setPresetSucheFn(() => () => []));
-    // Artikel-Volltext: Lib + ~4 MB-Index lazy (eigener Chunk). Bei Fehlschlag
-    // bleibt die Gruppe leer statt die ganze Suche zu blockieren (§8).
+    // Artikel-Volltext: Lib + Index lazy in EIGENEM Chunk — er lädt erst HIER,
+    // beim ersten Tastendruck in der Suche (q !== ''), nie beim Seitenaufbau.
+    // Grösse gemessen 25.7.2026 (W2·5, Kanton dazu): 48.0 MB roh / 9.9 MB gzip,
+    // vorher (nur Bund) 26.0 MB / 5.4 MB. Der Zuwachs trifft ausschliesslich den
+    // ersten Suchvorgang, nicht den First Paint — darum bleibt er tragbar (§15).
+    // Bei Fehlschlag bleibt die Gruppe leer statt die ganze Suche zu blockieren (§8).
     import('../../lib/suche/artikelVolltext').then((m) => m.ladeArtikelSuche()).then((fn) => setArtikelSucheFn(() => fn)).catch(() => setArtikelSucheFn(() => () => []));
     import('../../lib/normtext/browse').then((m) => m.ladeBrowseManifest()).then((m) => setGesetze(m?.erlasse ?? [])).catch(() => setGesetze([]));
     import('../../lib/rechtsprechung/browse').then((m) => m.ladeEntscheidManifest()).then((m) => setEntscheide(m?.entscheide ?? [])).catch(() => setEntscheide([]));

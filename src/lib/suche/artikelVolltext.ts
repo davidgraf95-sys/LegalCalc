@@ -3,7 +3,7 @@ import { sucherTerme, rangiere, type RankEintrag } from './artikelRanking';
 
 // ─── Artikel-Volltextsuche (ROADMAP Schritt 5, FlexSearch) ──────────────────
 //
-// LAZY: FlexSearch-Lib UND der Bund-Index werden erst beim ERSTEN Aufruf dynamisch
+// LAZY: FlexSearch-Lib UND der Artikel-Index werden erst beim ERSTEN Aufruf dynamisch
 // geladen und client-seitig zu einem Index gebaut — nie im Haupt-Bundle (§3/§6.4:
 // eigener Chunk, nur Ladezeitpunkt). Danach gecacht. Term-/Zitat-Suche (z. B.
 // «243 ZPO», «Notwehr»), KEINE semantische Suche — deklinationsabhängige Phrasen
@@ -15,7 +15,13 @@ import { sucherTerme, rangiere, type RankEintrag } from './artikelRanking';
 // `m` (Marginalie/Gliederung) macht Alltagsbegriffe wie «Miete» auffindbar, die
 // im Artikeltext nie vorkommen (K10: dasselbe Daten-Sidecar, das der Reader nutzt).
 
-interface IndexEintrag extends RankEintrag { k: string; ku: string; a: string; l: string; m: string; n: string; g: string; t: string; tb: string; f: string }
+interface IndexEintrag extends RankEintrag {
+  k: string; ku: string; a: string; l: string; m: string; n: string; g: string; t: string; tb: string; f: string;
+  /** Ebene des Erlasses — trägt den href auf die richtige Route. */
+  eb: 'bund' | 'kanton';
+  /** Kantonskürzel («AG») bei eb==='kanton', sonst ''. */
+  kt: string;
+}
 
 // Kandidaten-Pool: deutlich grösser als das Anzeige-Limit, damit die Re-Rangierung
 // die wirklich relevanten Treffer aus einer breiten Recall-Menge heben kann.
@@ -42,13 +48,24 @@ function snippet(text: string, q: string): string {
 }
 
 function treffer(e: IndexEintrag, q: string): SuchTreffer {
+  // HERKUNFT EHRLICH (§8, W2·5): Seit der Kanton im selben Index liegt, muss ein
+  // kantonaler Treffer als kantonal lesbar sein — sonst liest sich «§ 1
+  // Anwaltstarif» wie Bundesrecht. Zwei Träger, bewusst redundant (dasselbe
+  // Muster wie gesetzGruppe in universalSuche.ts):
+  //   · Label-Suffix « · AG» — steht auch dort, wo keine Marke gerendert wird.
+  //   · Marke «AG» OHNE `redundant` — die Bund-Marke «Gesetzestext» ist auf
+  //     Mobile ausgeblendet (redundant zum Gruppentitel), das Kantonskürzel
+  //     trägt dagegen Information und muss auf JEDER Breite sichtbar bleiben.
+  const kantonal = e.eb === 'kanton' && e.kt !== '';
   return {
     id: `art:${e.k}:${e.a}`,
     // Label: Anzeige-Kürzel (e.ku, «StGB»); href: ROUTEN-Key (e.k, «STGB»).
-    label: `${e.l} ${e.ku}`,
+    label: kantonal ? `${e.l} ${e.ku} · ${e.kt}` : `${e.l} ${e.ku}`,
     untertitel: snippet(e.t, q),
-    marke: { text: 'Gesetzestext', ton: 'soft' as const, redundant: true },
-    href: `/gesetze/bund/${encodeURIComponent(e.k)}#art-${e.a}`,
+    marke: kantonal
+      ? { text: e.kt, ton: 'soft' as const }
+      : { text: 'Gesetzestext', ton: 'soft' as const, redundant: true },
+    href: `/gesetze/${e.eb}/${encodeURIComponent(e.k)}#art-${e.a}`,
   };
 }
 
@@ -71,7 +88,7 @@ type FlexLike = {
 export function baueSuchFn(eintraege: IndexEintrag[], FlexSearch: FlexLike): (q: string, limit?: number) => SuchTreffer[] {
   const Document = FlexSearch.Document;
   const Charset = FlexSearch.Charset;
-  const idx = new Document({
+  const neuesDoc = () => new Document({
     document: {
       id: 'id',
       index: [
@@ -92,17 +109,46 @@ export function baueSuchFn(eintraege: IndexEintrag[], FlexSearch: FlexLike): (q:
     },
     encoder: Charset?.LatinBalance,
   });
-  eintraege.forEach((e, i) => idx.add({
-    id: i,
-    // Kürzel UND Routen-Key mitindexieren (z. B. «StGB» und «STGB», «ArGV 1»/«ARGV_1»).
-    t: (e.l + ' ' + e.ku + ' ' + e.k + ' ' + e.t).toLowerCase(),
-    l: (e.l + ' ' + e.ku + ' ' + e.k).toLowerCase(),
-    m: e.m.toLowerCase(),
-    n: e.n.toLowerCase(),
-    g: e.g.toLowerCase(),
-    tb: (e.tb ?? '').toLowerCase(),
-    f: (e.f ?? '').toLowerCase(),
-  }));
+
+  // EIN INDEX JE EBENE (W2·5) — nicht ein gemeinsamer.
+  //
+  // Gemessen am 25.7.2026, und der Grund für diese Aufteilung: FlexSearch kappt
+  // JE FELD bei `limit`. In einem gemeinsamen Index teilen sich Bund und Kanton
+  // dieses eine Kontingent — die 29 055 kantonalen Artikel drückten OR 253
+  // («Miete» ist dort NUR über die Gliederung «Achter Titel: Die Miete»
+  // erreichbar) im g-Feld von Rang 259 auf 339 und damit aus dem 300er-Fenster:
+  // der zentrale Mietrechts-Artikel war über «Miete» nicht mehr auffindbar.
+  //
+  // Mit einem eigenen Recall-Kontingent je Ebene ist der Bund-Recall EXAKT der
+  // von vorher — er hängt nicht mehr davon ab, wie viel kantonales Recht im
+  // Korpus liegt. Jeder weitere Kanton kann die Bund-Trefferlage damit nicht
+  // mehr verschlechtern (§1: Vollständigkeit vor Sparsamkeit; §6: der Zuwachs
+  // verschlechtert Bestehendes nicht). Die Re-Rangierung sieht danach beide
+  // Mengen und ordnet sie deterministisch (artikelRanking: Bund vor Kanton bei
+  // gleicher Themennähe).
+  const indizes: { eb: 'bund' | 'kanton'; doc: DocLike }[] = [];
+  const docFuer = new Map<string, DocLike>();
+  for (const eb of ['bund', 'kanton'] as const) {
+    const doc = neuesDoc();
+    docFuer.set(eb, doc);
+    indizes.push({ eb, doc });
+  }
+  eintraege.forEach((e, i) => {
+    // Unbekannte/fehlende Ebene landet im Bund-Index statt im Nichts — ein
+    // Eintrag darf nie unauffindbar werden, nur weil sein Ebenen-Feld fehlt (§8).
+    const doc = docFuer.get(e.eb) ?? docFuer.get('bund')!;
+    doc.add({
+      id: i,
+      // Kürzel UND Routen-Key mitindexieren (z. B. «StGB» und «STGB», «ArGV 1»/«ARGV_1»).
+      t: (e.l + ' ' + e.ku + ' ' + e.k + ' ' + e.t).toLowerCase(),
+      l: (e.l + ' ' + e.ku + ' ' + e.k).toLowerCase(),
+      m: e.m.toLowerCase(),
+      n: e.n.toLowerCase(),
+      g: e.g.toLowerCase(),
+      tb: (e.tb ?? '').toLowerCase(),
+      f: (e.f ?? '').toLowerCase(),
+    });
+  });
 
   // Feld-Priorität im Recall: Marginalie/Gliederung ZUERST einsammeln, damit
   // topische Treffer nicht von der (oft grösseren) Textmenge aus dem Pool
@@ -123,13 +169,19 @@ export function baueSuchFn(eintraege: IndexEintrag[], FlexSearch: FlexLike): (q:
     const kandidaten: IndexEintrag[] = [];
     for (const term of terme) {
       if (kandidaten.length >= POOL) break;
-      const buckets = idx.search(term, { limit: POOL, suggest: true })
-        .slice()
-        .sort((a, b) => (FELD_PRIO[a.field] ?? 9) - (FELD_PRIO[b.field] ?? 9));
-      for (const bucket of buckets) {
-        for (const id of bucket.result) {
-          const n = id as number;
-          if (!gesehen.has(n)) { gesehen.add(n); kandidaten.push(eintraege[n]); }
+      // Je Ebene das VOLLE Kontingent (POOL je Feld) — die Ebenen konkurrieren
+      // nicht um dieselben Plätze. Bund zuerst eingesammelt, damit die
+      // Ankunftsordnung der rein textuellen Stufe (rangiere, Gruppe B) die
+      // bisherige bleibt.
+      for (const { doc } of indizes) {
+        const buckets = doc.search(term, { limit: POOL, suggest: true })
+          .slice()
+          .sort((a, b) => (FELD_PRIO[a.field] ?? 9) - (FELD_PRIO[b.field] ?? 9));
+        for (const bucket of buckets) {
+          for (const id of bucket.result) {
+            const n = id as number;
+            if (!gesehen.has(n)) { gesehen.add(n); kandidaten.push(eintraege[n]); }
+          }
         }
       }
     }
@@ -141,7 +193,7 @@ export function baueSuchFn(eintraege: IndexEintrag[], FlexSearch: FlexLike): (q:
 async function baue(): Promise<(q: string, limit?: number) => SuchTreffer[]> {
   const [flex, daten] = await Promise.all([
     import('flexsearch'),
-    fetch(import.meta.env.BASE_URL + 'such-index/artikel-bund.json').then((r) => {
+    fetch(import.meta.env.BASE_URL + 'such-index/artikel.json').then((r) => {
       if (!r.ok) throw new Error('Index ' + r.status);
       return r.json() as Promise<{ eintraege: IndexEintrag[] }>;
     }),
