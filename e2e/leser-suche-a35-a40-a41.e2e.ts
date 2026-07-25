@@ -58,11 +58,17 @@ test.describe('A35 — In-Gesetz-Suche in der Kopfzeile + Treffer-Highlight', ()
       return hl ? hl.size : 0;
     }), { timeout: 15000 }).toBeGreaterThan(0);
     // Suche leeren ⇒ Highlight verschwindet wieder (Cleanup).
+    // Timeout-Kalibrierung 25.7.2026 (deklarierte Infra-Anpassung, §6.3): der
+    // Clear-Pfad läuft über den Idle-/Debounce-Zyklus des grossen OR-Korpus und
+    // braucht LOKAL bereits ~16–17 s — das alte 15-s-Prädikat war strukturell zu
+    // knapp und riss in CI wiederholt (PR #353, 2× identisch; Contention addiert).
+    // Die ASSERTION (Highlight wird schliesslich entfernt) bleibt unverändert
+    // scharf; nur das Warte-Budget deckt jetzt die reale Dauer + CI-Marge.
     await suche.fill('');
     await expect.poll(async () => page.evaluate(() => {
       const reg = (globalThis as unknown as { CSS?: { highlights?: Map<string, unknown> } }).CSS?.highlights;
       return reg?.has('lc-such-treffer') ?? false;
-    }), { timeout: 15000 }).toBe(false);
+    }), { timeout: 45000 }).toBe(false);
   });
 });
 
