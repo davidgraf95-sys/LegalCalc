@@ -299,24 +299,29 @@ export function LeserVolltextInhalt({
               <p className="lc-overline">Gliederung</p>
               <button type="button" onClick={() => setTocOffen((v) => !v)} className="text-micro text-ink-500 hover:text-brass-700" title="Gliederung ein-/ausklappen">{tocOffen ? '‹ einklappen' : 'ausklappen ›'}</button>
             </div>
+            {/* A32 + E4-Korrektur (David 25.7.2026: «das kontextfenster soll
+                gliederung nicht abschneiden. sie soll einfach unten an der
+                gliederung stehen»): das Kontext-Panel steht IM FLUSS INNERHALB
+                des [data-toc]-Scrollers, unterhalb des Baums. Der frühere feste
+                33vh-Geschwister-Slot klemmte das Gliederungs-Sichtfenster ein
+                (ZGB@1440: 444px statt ~740px) — er entfällt ersatzlos. Der Baum
+                behält damit das VOLLE Spalten-Sichtfenster (wie vor E4); wer die
+                Gliederung zu Ende scrollt, findet das Panel direkt darunter.
+                [data-toc]-Semantik (interner Scroller, A33-Mitscroll/Scroll-Spy)
+                unverändert — das Panel ist nur zusätzlicher Inhalt am Scroller-
+                Ende. §15.2: das Panel blendet erst NACH vollständiger Ladung ein
+                (variante="seitenleiste", KontextPanel-Gating) und unter ihm steht
+                im Scroller nichts — das Einwachsen vergrössert nur die Scroll-
+                höhe, verschiebt aber kein sichtbares Element (CLS 0, Beweis neu
+                geführt in e2e/leser-kontext-e4.e2e.ts). */}
             <div data-toc className="flex-1 min-h-0 overflow-y-auto overscroll-contain pr-2 [scrollbar-width:thin]">
               {tocBaumEl}
+              {kontextImToc && (
+                <div data-toc-kontext className="mt-4 border-t border-line pt-3">
+                  <KontextPanel typ="norm" normKeys={[erlass.key]} variante="seitenleiste" />
+                </div>
+              )}
             </div>
-            {/* A32: Kontext-Panel UNTERHALB der Gliederung. Die Gliederung bleibt
-                primär: der Baum behält flex-1 (allen Restplatz), der Panel-Slot ist
-                auf h-toc-kontext (33vh-Token, tailwind.config.js) FIXIERT und
-                scrollt intern — er kann die Gliederung nie verdrängen. §15.2: die
-                feste Slot-Höhe steht ab dem ersten Render (reservierter Platz) und
-                das Panel blendet erst NACH vollständiger Ladung ein
-                (variante="seitenleiste", KontextPanel-Gating) → der async-Resolve
-                füllt reservierten Platz, nichts rückt nach (CLS 0, Beweis
-                e2e/leser-kontext-e4.e2e.ts). */}
-            {kontextImToc && (
-              <div data-toc-kontext
-                className="shrink-0 h-toc-kontext mt-3 border-t border-line pt-3 overflow-y-auto overscroll-contain pr-2 [scrollbar-width:thin]">
-                <KontextPanel typ="norm" normKeys={[erlass.key]} variante="seitenleiste" />
-              </div>
-            )}
           </aside>
         )}
 
