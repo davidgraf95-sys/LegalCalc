@@ -227,6 +227,12 @@ export interface Sektion {
   /** G11: Fussnoten-Marker, die an DIESER Überschrift hängen (section-heading-
    *  footnote) — `artikel`+`nr` zeigen aufs Fussnoten-Ziel im Trägerartikel. */
   fussnoten?: Array<{ artikel: string; nr: string }>;
+  /** EID-2 (W2·5d §12): Fedlex-Container-eId dieser amtlichen Gliederungsstufe
+   *  (aus dem EID-1-Sidecar `gliederung[].eId` durchgereicht) — reines OUTBOUND-
+   *  Ziel für den Verifizier-Deep-Link `quelleUrl#<eId>`, NIE ein eigener Anker
+   *  (§12.1/§12.4; die Sektion-`id` bleibt das ephemere `sek-N`). Randtitel-
+   *  promotete Knoten und Alt-Sidecars tragen keine (§7: nichts fabrizieren). */
+  eId?: string;
 }
 
 /**
@@ -261,8 +267,10 @@ export function baueGliederungsbaum(
     // Gliederungsstufe ein. Ohne amtliche Gliederung beginnen sie bei 0 (dann
     // tragen sie selbst die Haupt-Hierarchie, z. B. kantonale Erlasse).
     const basis = gliederung.length ? Math.max(...gliederung.map((g) => g.ebene)) + 1 : 0;
-    const pfad: Array<{ ebene: number; label: string; randtitel: boolean }> = [
-      ...gliederung.map((g) => ({ ebene: g.ebene, label: g.label, randtitel: false })),
+    // EID-2: die Container-eId der amtlichen Stufen mitführen (Randtitel-Knoten
+    // sind keine Fedlex-Container und bleiben eId-frei).
+    const pfad: Array<{ ebene: number; label: string; randtitel: boolean; eId?: string }> = [
+      ...gliederung.map((g) => ({ ebene: g.ebene, label: g.label, randtitel: false, eId: g.eId })),
       ...ahnen.map((label, i) => ({ ebene: basis + i, label, randtitel: true })),
     ];
     if (pfad.length === 0) { ohneGliederung.push(e); continue; }
@@ -276,6 +284,9 @@ export function baueGliederungsbaum(
         treffer = { id: `sek-${nr++}`, ebene: stufe.ebene, label: stufe.label, kinder: [], artikel: [], randtitel: stufe.randtitel };
         ebeneListe.push(treffer);
       }
+      // EID-2: erste vorhandene Sidecar-eId am Knoten festhalten (dokumentlinear
+      // tragen alle Artikel derselben Stufe dieselbe eId; nie überschreiben).
+      if (stufe.eId && !treffer.eId) treffer.eId = stufe.eId;
       // G11: Marker für section-heading-Fussnoten, deren Label diese Stufe trifft,
       // an den Knoten heften (Träger = der aktuelle, erste Artikel darunter).
       const treffFn = sektFn.filter((f) => f.sektion === stufe.label);

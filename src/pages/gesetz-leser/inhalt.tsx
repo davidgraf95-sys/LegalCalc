@@ -11,6 +11,7 @@ import {
   baueGliederungsbaum, type Sektion, type StrukturMap, type ErlassKopf, type CurrencyMap,
 } from '../../lib/normtext/browse';
 import { type KantonSystematik } from '../../lib/normtext/systematik';
+import { verifizierLinkSektion } from '../../lib/normtext/verifikationslink';
 import { linienProfil } from './linienAufbau';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
@@ -738,7 +739,11 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     const einzugCls = eingerueckt ? 'pl-einzug-mobil sm:pl-einzug' : '';
     return (
       <section key={s.id} data-normtext-linie className={`space-y-3 ${guide ? 'border-l border-guide' : ''} ${einzugCls}`}>
-        <SektionKopf s={s} refCb={regRef(s.id)} offen={auf} onToggle={() => toggle(s.id, defOpen)} bereich={sektionMeta.get(s.id)?.bereich} bereichEinzel={sektionMeta.get(s.id)?.einzel ?? false} />
+        <SektionKopf s={s} refCb={regRef(s.id)} offen={auf} onToggle={() => toggle(s.id, defOpen)} bereich={sektionMeta.get(s.id)?.bereich} bereichEinzel={sektionMeta.get(s.id)?.einzel ?? false}
+          // EID-2 (W2·5d §12): Sektions-Deep-Link zur amtlichen Fassung — nur wenn
+          // das EID-1-Sidecar eine Container-eId trägt UND der Erlass eine ELI-
+          // Quelle hat (Builder liefert sonst null ⇒ kein Link, §8).
+          amtlichUrl={verifizierLinkSektion(erlass, s.eId) ?? undefined} />
         {auf && <div className="space-y-5">{inhalt.map((x) => x.el)}</div>}
       </section>
     );

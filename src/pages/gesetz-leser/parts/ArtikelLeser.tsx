@@ -15,6 +15,7 @@ import {
 } from '../../../lib/verzahnung/artikel-revisionen';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../../lib/normtext/typen';
+import { verifizierLinkArtikel } from '../../../lib/normtext/verifikationslink';
 import type { ArtikelHistorie } from '../../../lib/normtext/historie-laden';
 import { ArtikelHistorieZeile } from './ArtikelHistorie';
 import { margStufeStil, fnTextMitLinks, baueZitat, margLabel } from '../helpers';
@@ -173,6 +174,10 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   const zitat = `${label} ${erlass.kuerzel}`;
   // VOLL-Zitat (W2·5d G2b) für die Kopier-Aktion: Fundstelle + SR + Stand (§7 a–d).
   const zitatVoll = baueZitat(erlass, label);
+  // EID-2 (W2·5d §12): Verifizier-Deep-Link «amtliche Fassung an genau dieser
+  // Stelle» — die per-Artikel-ELI-URL des Snapshots (quelleUrl#art_…), validiert
+  // im Builder (§5-SSoT; Kanton/aufgehoben/Synthese-Suffix ⇒ null = KEIN Link, §8).
+  const amtlich = verifizierLinkArtikel(e, erlass);
   // Vollständig aufgehobener Artikel → dezent + standardmässig eingeklappt
   // (Auftrag David: «nicht so präsent», aufklappbar über den ▾/▸-Toggle).
   const ganzAufgehoben = artikelGanzAufgehoben(e.bloecke);
@@ -374,6 +379,15 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               <span className="ml-auto flex shrink-0 gap-3 opacity-0 transition-opacity focus-within:opacity-100 group-hover:opacity-100 [@media(hover:none)]:opacity-100">
                 <button type="button" onClick={() => kopiere('zitat')} className="text-micro text-ink-500 hover:text-brass-700" aria-label={`Zitat kopieren: ${zitatVoll}`}>{kopiert === 'zitat' ? '✓ kopiert' : 'Zitat'}</button>
                 <button type="button" onClick={() => kopiere('link')} className="text-micro text-ink-500 hover:text-brass-700" aria-label="Permalink kopieren">{kopiert === 'link' ? '✓' : 'Link'}</button>
+                {/* EID-2: Outbound zur amtlichen Fassung AN DIESER STELLE (ELI-Form,
+                    target/rel wie die bestehenden amtlichen Links, §12.4). Stil =
+                    dieselbe dezente Aktions-Stimme wie Zitat/Link daneben (§13). */}
+                {amtlich && (
+                  <a href={amtlich} target="_blank" rel="noopener noreferrer"
+                    className="text-micro text-ink-500 hover:text-brass-700 no-underline whitespace-nowrap"
+                    aria-label={`Amtliche Fassung von ${zitat} auf Fedlex öffnen (neues Fenster)`}
+                    title="Amtliche Fassung an genau dieser Stelle (Fedlex)">amtliche Fassung ↗</a>
+                )}
               </span>
             )}
             {/* Amtliche Aufhebungsnotiz (eigene Zeile, dezent eingerückt) — M2: erst
