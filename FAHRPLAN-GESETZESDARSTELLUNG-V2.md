@@ -214,6 +214,15 @@ Klassifikation build-seitig = Risiko-Pfad mit Gegenprüfung; ZITAT-Behandlung =
 David-Entscheid): `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`; gelabelte
 Stichprobe `docs/ux-audit-2026-07/hist-h0/stichprobe-300-gelabelt.json`.
 
+**H1 ✅ GEBAUT + GEMERGT 26.7.2026 (PR #375, Squash `de8f294a`).** Dreiwertige Ansicht im
+«Ansicht ▾»-Menü; Klassifikation `kl: A|V|G|Z|U` build-seitig (`scripts/normtext/
+fussnoten-klassifikation.ts`, 227 Bund-Sidecars; Kanton bewusst ohne `kl` = immer sichtbar);
+nur `[data-fn-klasse="A"]` dämpfbar (Auflage 1). 4 Gegenprüfungs-Runden: B1 laufende
+Befristungen + B3 Fristenlauf-Anordnung aus A nach G gehoben (62 Wechsel, einzeln belegt);
+#376-Konfliktauflösung als reine Verschiebung verifiziert. **Offen bei David:** ZITAT-Entscheid
+(Auflage 5) + fachliche Abnahme + D1–D3 (niedrig). Wortlaut/Beweise: `ROADMAP-CHRONIK.md` →
+W2·5i-HIST-ANSICHT + `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`.
+
 ### §7.4 Fassungs-Fundament (gilt über diesen Schritt hinaus)
 David, 20.7.2026: das Fundament für historische Gesetzesfassungen soll bei **jeder** Normtext-Arbeit
 mitgedacht werden — nicht erst, wenn die Zeitmaschine (`W2·5g-ZEIT`, geparkt) gebaut wird. Verankert
