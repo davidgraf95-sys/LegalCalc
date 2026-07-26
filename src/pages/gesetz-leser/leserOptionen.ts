@@ -50,43 +50,70 @@ export type LeserOptionen = Record<OptFeld, OptWert>;
 /** V2·B-2: Zeitraum-Stufen für die Leitfall-Filterung («alle» = ungefiltert). */
 export type LeitfallZeitraum = 'alle' | '20' | '10' | '5';
 
+/**
+ * W2·5i-HIST-ANSICHT: DREIWERTIGE Darstellung der Änderungshistorie.
+ *
+ * · `fussnoten`   — Default = die heutige Darstellung (Apparat am Artikelfuss).
+ *                   CSS-No-op, damit der Grundzustand byte-gleich bleibt (R6).
+ * · `aus`         — die Änderungsvermerke werden gedämpft (Marker + Apparat-
+ *                   Eintrag). NUR Klasse 'A'; V/G/Z/U und alle Fussnoten OHNE
+ *                   Klasse bleiben sichtbar (H0-Auflage 1).
+ * · `chronologie` — dieselben 'A'-Einträge, aber als chronologisch sortierte
+ *                   Liste am Artikelfuss statt als Fussnoten-Apparat.
+ *
+ * Bewusst KEIN `OptFeld`/`OptWert`: die Union der vier Toggles ist zweiwertig
+ * ('an'|'aus', plus 'auto' für Linien). Ein drittes, semantisch anderes Wort in
+ * dieselbe Union zu drücken machte jeden Toggle-Aufruf typunsicher (`setzeOption
+ * ('fussnoten', 'chronologie')` wäre compilierbar und sinnlos). Der Wert lebt
+ * darum wie `zeitraum` als eigenes Feld im SELBEN persistenten Store — ein
+ * Store, ein localStorage-Schlüssel, ein Hörer-Satz (§5).
+ */
+export type HistAnsicht = 'aus' | 'fussnoten' | 'chronologie';
+
 const KEY = 'lm.leser.optionen';
 const FELDER: readonly OptFeld[] = ['linien', 'fussnoten', 'verweise', 'leitfaelle'];
 const DEFAULT: LeserOptionen = { linien: 'auto', fussnoten: 'an', verweise: 'an', leitfaelle: 'an' };
 const ZEITRAEUME: readonly LeitfallZeitraum[] = ['alle', '20', '10', '5'];
 const DEFAULT_ZEITRAUM: LeitfallZeitraum = 'alle';
+const HIST_ANSICHTEN: readonly HistAnsicht[] = ['aus', 'fussnoten', 'chronologie'];
+const DEFAULT_HIST: HistAnsicht = 'fussnoten';
 
 interface GeladenerZustand {
   opt: LeserOptionen;
   zeitraum: LeitfallZeitraum;
+  hist: HistAnsicht;
 }
 
 function lade(): GeladenerZustand {
   try {
     const roh = localStorage.getItem(KEY);
-    if (!roh) return { opt: { ...DEFAULT }, zeitraum: DEFAULT_ZEITRAUM };
-    const o = JSON.parse(roh) as Partial<Record<OptFeld, unknown>> & { zeitraum?: unknown };
+    if (!roh) return { opt: { ...DEFAULT }, zeitraum: DEFAULT_ZEITRAUM, hist: DEFAULT_HIST };
+    const o = JSON.parse(roh) as Partial<Record<OptFeld, unknown>> & { zeitraum?: unknown; hist?: unknown };
     const opt: LeserOptionen = { ...DEFAULT };
     for (const f of FELDER) if (o[f] === 'an' || o[f] === 'aus' || o[f] === 'auto') opt[f] = o[f] as OptWert;
     const zeitraum = ZEITRAEUME.includes(o.zeitraum as LeitfallZeitraum)
       ? (o.zeitraum as LeitfallZeitraum)
       : DEFAULT_ZEITRAUM;
-    return { opt, zeitraum };
+    const hist = HIST_ANSICHTEN.includes(o.hist as HistAnsicht) ? (o.hist as HistAnsicht) : DEFAULT_HIST;
+    return { opt, zeitraum, hist };
   } catch {
     // localStorage gesperrt (privater Modus) ODER kaputtes JSON → Default.
-    return { opt: { ...DEFAULT }, zeitraum: DEFAULT_ZEITRAUM };
+    return { opt: { ...DEFAULT }, zeitraum: DEFAULT_ZEITRAUM, hist: DEFAULT_HIST };
   }
 }
 
 // getSnapshot muss eine STABILE Referenz liefern (sonst warnt/looped React).
 // `aktuell`/`aktuellZeitraum` werden nur bei echten Änderungen ersetzt.
-const start = typeof window === 'undefined' ? { opt: { ...DEFAULT }, zeitraum: DEFAULT_ZEITRAUM } : lade();
+const start = typeof window === 'undefined'
+  ? { opt: { ...DEFAULT }, zeitraum: DEFAULT_ZEITRAUM, hist: DEFAULT_HIST }
+  : lade();
 let aktuell: LeserOptionen = start.opt;
 let aktuellZeitraum: LeitfallZeitraum = start.zeitraum;
+let aktuellHist: HistAnsicht = start.hist;
 
 function speichere(): void {
   try {
-    localStorage.setItem(KEY, JSON.stringify({ ...aktuell, zeitraum: aktuellZeitraum }));
+    localStorage.setItem(KEY, JSON.stringify({ ...aktuell, zeitraum: aktuellZeitraum, hist: aktuellHist }));
   } catch {
     /* Speicher gesperrt — die Wahl gilt dann nur für die Sitzung */
   }
@@ -101,8 +128,13 @@ export function wendeLeserOptionenAn(): void {
   const g = lade();
   aktuell = g.opt;
   aktuellZeitraum = g.zeitraum;
+  aktuellHist = g.hist;
   const el = document.documentElement;
   for (const f of FELDER) el.setAttribute(`data-${f}`, aktuell[f]);
+  // W2·5i: die Historie-Ansicht ist CSS-getrieben wie die vier Toggles → dasselbe
+  // Pre-Paint-Attribut am <html> (kein Flackern, kein Hydration-Mismatch). Der
+  // Default 'fussnoten' emittiert KEINE CSS-Regel ⇒ Grundzustand byte-gleich (R6).
+  el.setAttribute('data-histansicht', aktuellHist);
 }
 
 const hoerer = new Set<() => void>();
@@ -125,6 +157,20 @@ export function setzeZeitraum(z: LeitfallZeitraum): void {
   if (z === aktuellZeitraum) return;
   aktuellZeitraum = z;
   speichere();
+  hoerer.forEach((f) => f());
+}
+
+/** W2·5i: Historie-Ansicht setzen. Wie `setzeOption`: Attribut direkt ans <html>
+ *  (KEIN Artikel-Re-Render — die Umschaltung ist rein CSS, die Chronologie-Liste
+ *  liegt bereits im DOM), persistieren, Hörer benachrichtigen. Nur die drei
+ *  Auswahl-Buttons rendern neu (Primitiv-Selektor `useHistAnsicht`). */
+export function setzeHistAnsicht(h: HistAnsicht): void {
+  if (h === aktuellHist) return;
+  aktuellHist = h;
+  speichere();
+  if (typeof document !== 'undefined') {
+    document.documentElement.setAttribute('data-histansicht', h);
+  }
   hoerer.forEach((f) => f());
 }
 
@@ -171,4 +217,19 @@ function getZeitraumServerSnapshot(): LeitfallZeitraum {
 }
 export function useLeitfallZeitraum(): LeitfallZeitraum {
   return useSyncExternalStore(abonniere, getZeitraumSnapshot, getZeitraumServerSnapshot);
+}
+
+/** W2·5i: Primitiv-Selektor auf die Historie-Ansicht — gibt NUR den String zurück,
+ *  also re-rendern die Abonnenten nur bei echter Änderung (Object.is). Bewusst
+ *  ausschliesslich vom Auswahl-Steuerelement abonniert: die Artikel-Darstellung
+ *  folgt dem `data-histansicht`-Attribut per CSS, nicht per React-State (§15 —
+ *  Umschalten rendert den Normtext nicht neu). */
+function getHistSnapshot(): HistAnsicht {
+  return aktuellHist;
+}
+function getHistServerSnapshot(): HistAnsicht {
+  return DEFAULT_HIST;
+}
+export function useHistAnsicht(): HistAnsicht {
+  return useSyncExternalStore(abonniere, getHistSnapshot, getHistServerSnapshot);
 }

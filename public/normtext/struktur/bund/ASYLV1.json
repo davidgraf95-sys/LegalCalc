@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -78,7 +80,8 @@
       "b": 1,
       "o": 61,
       "l": 61
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "3",
@@ -91,7 +94,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Kapitel: Geltungsbereich und Begriffe"
+     "sektion": "1. Kapitel: Geltungsbereich und Begriffe",
+     "kl": "A"
     }
    ]
   },
@@ -122,7 +126,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -153,7 +158,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -184,7 +190,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -215,7 +222,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -263,7 +271,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -275,7 +284,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -292,7 +302,8 @@
       "b": 1,
       "o": 335,
       "l": 335
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -310,7 +321,8 @@
       "b": 2,
       "o": 373,
       "l": 380
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "23",
@@ -328,7 +340,8 @@
       "b": 2,
       "o": 379,
       "l": 380
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "24",
@@ -349,7 +362,8 @@
       "b": 2,
       "o": 380,
       "l": 380
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -366,7 +380,8 @@
       "b": 3,
       "o": 277,
       "l": 277
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -383,7 +398,8 @@
       "b": 4,
       "o": 401,
       "l": 401
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -400,7 +416,8 @@
       "b": 5,
       "o": 366,
       "l": 366
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -417,7 +434,8 @@
       "b": 6,
       "o": 342,
       "l": 342
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -429,7 +447,8 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -447,7 +466,8 @@
       "it": 3,
       "o": 77,
       "l": 77
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -464,7 +484,8 @@
       "b": 7,
       "o": 69,
       "l": 226
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -481,7 +502,8 @@
       "b": 7,
       "o": 226,
       "l": 226
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -512,7 +534,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -524,7 +547,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -541,7 +565,8 @@
       "b": 1,
       "o": 219,
       "l": 219
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -558,7 +583,8 @@
       "b": 2,
       "o": 143,
       "l": 143
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -587,7 +613,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -618,7 +645,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -649,7 +677,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -662,7 +691,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2a. Abschnitt: Zentren des Bundes"
+     "sektion": "2a. Abschnitt: Zentren des Bundes",
+     "kl": "A"
     }
    ]
   },
@@ -693,7 +723,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -724,7 +755,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "55",
@@ -742,7 +774,8 @@
       "b": 2,
       "o": 98,
       "l": 197
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -771,7 +804,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -802,7 +836,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -833,7 +868,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "61",
@@ -846,7 +882,8 @@
       "b": 0,
       "o": 50,
       "l": 177
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "62",
@@ -865,7 +902,8 @@
       "b": 0,
       "o": 135,
       "l": 177
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -896,7 +934,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "64",
@@ -908,7 +947,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -925,7 +965,8 @@
       "b": 0,
       "o": 128,
       "l": 128
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -954,7 +995,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -985,7 +1027,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1016,7 +1059,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -1033,7 +1077,8 @@
       "b": 0,
       "o": 216,
       "l": 216
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1064,7 +1109,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1095,7 +1141,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1131,7 +1178,8 @@
       "b": 0,
       "o": 173,
       "l": 173
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "84",
@@ -1148,7 +1196,8 @@
       "b": 1,
       "o": 200,
       "l": 200
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1179,7 +1228,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1208,7 +1258,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1242,7 +1293,8 @@
       "b": 0,
       "o": 483,
       "l": 483
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1271,7 +1323,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1302,7 +1355,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "103",
@@ -1319,7 +1373,8 @@
       "b": 0,
       "o": 64,
       "l": 64
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "104",
@@ -1331,7 +1386,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "105",
@@ -1350,7 +1406,8 @@
       "it": 2,
       "o": 77,
       "l": 122
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "106",
@@ -1369,7 +1426,8 @@
       "it": 2,
       "o": 102,
       "l": 122
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "107",
@@ -1381,7 +1439,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "108",
@@ -1400,7 +1459,8 @@
       "it": 3,
       "o": 92,
       "l": 179
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "109",
@@ -1419,7 +1479,8 @@
       "it": 3,
       "o": 164,
       "l": 179
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "110",
@@ -1436,7 +1497,8 @@
       "b": 1,
       "o": 147,
       "l": 147
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1465,7 +1527,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1496,7 +1559,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "113",
@@ -1514,7 +1578,8 @@
       "b": 3,
       "o": 157,
       "l": 411
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "114",
@@ -1532,7 +1597,8 @@
       "b": 3,
       "o": 315,
       "l": 411
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1563,7 +1629,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1611,7 +1678,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1640,7 +1708,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1669,7 +1738,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1698,7 +1768,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1734,7 +1805,8 @@
       "b": 1,
       "o": 1,
       "l": 1
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1763,7 +1835,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1797,7 +1870,8 @@
       "b": 1,
       "o": 157,
       "l": 157
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1866,7 +1940,8 @@
       "b": 0,
       "o": 69,
       "l": 240
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "126",
@@ -1883,7 +1958,8 @@
       "b": 0,
       "o": 240,
       "l": 240
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "127",
@@ -1900,7 +1976,8 @@
       "b": 1,
       "o": 196,
       "l": 196
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1948,7 +2025,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2036,7 +2114,8 @@
       "b": 0,
       "o": 263,
       "l": 263
-     }
+     },
+     "kl": "U"
     }
    ]
   },
@@ -2067,7 +2146,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "143",
@@ -2080,7 +2160,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Abschnitt: Beschwerdeverfahren auf Bundesebene"
+     "sektion": "4. Abschnitt: Beschwerdeverfahren auf Bundesebene",
+     "kl": "A"
     }
    ]
   },
@@ -2124,7 +2205,8 @@
       "b": 0,
       "o": 37,
       "l": 54
-     }
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -2162,7 +2244,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "160",
@@ -2179,7 +2262,8 @@
       "b": 2,
       "o": 66,
       "l": 233
-     }
+     },
+     "kl": "Z"
     },
     {
      "nr": "161",
@@ -2196,7 +2280,8 @@
       "b": 2,
       "o": 233,
       "l": 233
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "162",
@@ -2213,7 +2298,8 @@
       "b": 3,
       "o": 133,
       "l": 133
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2244,7 +2330,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -2256,7 +2343,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -2269,7 +2357,8 @@
       "it": 1,
       "o": 90,
       "l": 377
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "48",
@@ -2287,7 +2376,8 @@
       "it": 1,
       "o": 377,
       "l": 377
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -2308,7 +2398,8 @@
       "b": 2,
       "o": 214,
       "l": 214
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2341,7 +2432,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2374,7 +2466,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2406,7 +2499,8 @@
       "b": 0,
       "o": 32,
       "l": 32
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -2425,7 +2519,8 @@
       "it": 3,
       "o": 55,
       "l": 100
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "7",
@@ -2437,7 +2532,8 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -2450,7 +2546,8 @@
       "it": 4,
       "o": 315,
       "l": 316
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2476,7 +2573,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2502,7 +2600,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2537,7 +2636,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -2555,7 +2655,8 @@
       "b": 1,
       "o": 225,
       "l": 285
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2586,7 +2687,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "70",
@@ -2598,7 +2700,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     },
     {
      "nr": "71",
@@ -2615,7 +2718,8 @@
       "b": 1,
       "o": 179,
       "l": 179
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2646,7 +2750,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -2658,7 +2763,8 @@
       "b": 0,
       "o": 199,
       "l": 218
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "74",
@@ -2676,7 +2782,8 @@
       "b": 5,
       "o": 102,
       "l": 103
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2707,7 +2814,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2740,7 +2848,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2769,7 +2878,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2802,7 +2912,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2833,7 +2944,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "88",
@@ -2845,7 +2957,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2876,7 +2989,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "91",
@@ -2888,7 +3002,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "92",
@@ -2900,7 +3015,8 @@
       "b": 0,
       "o": 121,
       "l": 136
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "93",
@@ -2917,7 +3033,8 @@
       "b": 0,
       "o": 136,
       "l": 136
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "94",
@@ -2929,7 +3046,8 @@
       "b": 3,
       "o": 182,
       "l": 183
-     }
+     },
+     "kl": "U"
     },
     {
      "nr": "95",
@@ -2946,7 +3064,8 @@
       "b": 3,
       "o": 183,
       "l": 183
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2977,7 +3096,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3008,7 +3128,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "98",
@@ -3020,7 +3141,8 @@
       "b": 1,
       "o": 85,
       "l": 200
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "99",
@@ -3032,7 +3154,8 @@
       "b": 1,
       "o": 123,
       "l": 200
-     }
+     },
+     "kl": "U"
     }
    ]
   },
@@ -3058,7 +3181,8 @@
      "text": "Ursprünglich: Art. 2.",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -3070,7 +3194,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -3101,7 +3226,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3136,7 +3262,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3167,7 +3294,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3198,7 +3326,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3230,7 +3359,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Kapitel: Rechtsschutz und Beschwerdeverfahren"
+     "sektion": "5. Kapitel: Rechtsschutz und Beschwerdeverfahren",
+     "kl": "A"
     },
     {
      "nr": "131",
@@ -3243,7 +3373,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Grundsätze des Rechtsschutzes"
+     "sektion": "1. Abschnitt: Grundsätze des Rechtsschutzes",
+     "kl": "A"
     }
    ]
   },
@@ -3274,7 +3405,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "134",
@@ -3286,7 +3418,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "135",
@@ -3298,7 +3431,8 @@
       "b": 1,
       "o": 125,
       "l": 256
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "136",
@@ -3310,7 +3444,8 @@
       "b": 1,
       "o": 255,
       "l": 256
-     }
+     },
+     "kl": "U"
     },
     {
      "nr": "132",
@@ -3323,7 +3458,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Rechtsschutz am Flughafen und in den Zentren des Bundes"
+     "sektion": "2. Abschnitt: Rechtsschutz am Flughafen und in den Zentren des Bundes",
+     "kl": "A"
     }
    ]
   },
@@ -3359,7 +3495,8 @@
       "b": 5,
       "o": 148,
       "l": 148
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3390,7 +3527,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "139",
@@ -3402,7 +3540,8 @@
       "b": 0,
       "o": 379,
       "l": 404
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3484,7 +3623,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "142",
@@ -3501,7 +3641,8 @@
       "b": 2,
       "o": 191,
       "l": 191
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "140",
@@ -3514,7 +3655,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Rechtsschutz im erweiterten Verfahren nach Zuweisung auf die Kantone"
+     "sektion": "3. Abschnitt: Rechtsschutz im erweiterten Verfahren nach Zuweisung auf die Kantone",
+     "kl": "A"
     }
    ]
   },
@@ -3630,7 +3772,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3656,7 +3799,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "149",
@@ -3668,7 +3812,8 @@
       "b": 0,
       "o": 172,
       "l": 525
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "150",
@@ -3686,7 +3831,8 @@
       "b": 0,
       "o": 333,
       "l": 525
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "151",
@@ -3703,7 +3849,8 @@
       "b": 0,
       "o": 525,
       "l": 525
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "146",
@@ -3716,7 +3863,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5a. Kapitel: Internationale Verträge"
+     "sektion": "5a. Kapitel: Internationale Verträge",
+     "kl": "A"
     },
     {
      "nr": "147",
@@ -3729,7 +3877,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5a. Kapitel: Internationale Verträge"
+     "sektion": "5a. Kapitel: Internationale Verträge",
+     "kl": "A"
     }
    ]
   },
@@ -3755,7 +3904,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "153",
@@ -3768,7 +3918,8 @@
       "b": 0,
       "o": 172,
       "l": 475
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "154",
@@ -3787,7 +3938,8 @@
       "b": 0,
       "o": 266,
       "l": 475
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3817,7 +3969,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "157",
@@ -3835,7 +3988,8 @@
       "b": 0,
       "o": 173,
       "l": 174
-     }
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -3861,7 +4015,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3894,7 +4049,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3925,7 +4081,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3956,7 +4113,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -3968,7 +4126,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "37",
@@ -3985,7 +4144,8 @@
       "b": 0,
       "o": 78,
       "l": 78
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -4003,7 +4163,8 @@
       "b": 3,
       "o": 138,
       "l": 139
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4032,7 +4193,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

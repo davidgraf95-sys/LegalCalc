@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -50,7 +51,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -75,7 +77,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -99,7 +102,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -128,7 +132,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -163,7 +168,8 @@
       "b": 0,
       "o": 178,
       "l": 413
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -401,7 +407,8 @@
       "b": 0,
       "o": 42,
       "l": 110
-     }
+     },
+     "kl": "Z"
     }
    ]
   }

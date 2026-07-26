@@ -28,7 +28,8 @@
     "text": "Seit 1. Jan. 2016: Art. 20 Abs. 5.",
     "links": [],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "U"
    },
    {
     "nr": "2",
@@ -40,7 +41,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -67,7 +69,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -99,7 +102,8 @@
       "it": 0,
       "o": 124,
       "l": 133
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "5",
@@ -111,7 +115,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -129,7 +134,8 @@
       "it": 1,
       "o": 103,
       "l": 104
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "7",
@@ -141,7 +147,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -153,7 +160,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "9",
@@ -171,7 +179,8 @@
       "it": 3,
       "o": 152,
       "l": 153
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "10",
@@ -183,7 +192,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -201,7 +211,8 @@
       "it": 4,
       "o": 110,
       "l": 111
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "12",
@@ -219,7 +230,8 @@
       "it": 5,
       "o": 122,
       "l": 276
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "13",
@@ -231,7 +243,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -249,7 +262,8 @@
       "it": 7,
       "o": 207,
       "l": 218
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "15",
@@ -261,7 +275,8 @@
       }
      ],
      "absatz": "1",
-     "item": "i"
+     "item": "i",
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -273,7 +288,8 @@
       }
      ],
      "absatz": "1",
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     },
     {
      "nr": "17",
@@ -289,7 +305,8 @@
       }
      ],
      "absatz": "1",
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -305,7 +322,8 @@
       }
      ],
      "absatz": "1",
-     "item": "l"
+     "item": "l",
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -321,7 +339,8 @@
       }
      ],
      "absatz": "1",
-     "item": "m"
+     "item": "m",
+     "kl": "A"
     },
     {
      "nr": "20",
@@ -337,7 +356,8 @@
       }
      ],
      "absatz": "1",
-     "item": "n"
+     "item": "n",
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -349,7 +369,8 @@
       }
      ],
      "absatz": "1",
-     "item": "o"
+     "item": "o",
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -361,7 +382,8 @@
       }
      ],
      "absatz": "1",
-     "item": "p"
+     "item": "p",
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -377,7 +399,8 @@
       }
      ],
      "absatz": "1",
-     "item": "q"
+     "item": "q",
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -395,7 +418,8 @@
       "it": 16,
       "o": 100,
       "l": 101
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "25",
@@ -407,7 +431,8 @@
       }
      ],
      "absatz": "1",
-     "item": "r"
+     "item": "r",
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -419,7 +444,8 @@
       }
      ],
      "absatz": "1",
-     "item": "s"
+     "item": "s",
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -436,7 +462,8 @@
       "b": 2,
       "o": 122,
       "l": 155
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "28",
@@ -453,7 +480,8 @@
       "b": 2,
       "o": 155,
       "l": 155
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -484,7 +512,8 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -537,7 +566,8 @@
       "b": 2,
       "o": 1,
       "l": 1
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -628,7 +658,8 @@
       "b": 2,
       "o": 186,
       "l": 203
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -681,7 +712,8 @@
       "b": 1,
       "o": 140,
       "l": 163
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -731,7 +763,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -743,7 +776,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -755,7 +789,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -772,7 +807,8 @@
       "b": 2,
       "o": 1,
       "l": 1
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "37",
@@ -789,7 +825,8 @@
       "b": 3,
       "o": 112,
       "l": 113
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "38",
@@ -806,7 +843,8 @@
       "b": 3,
       "o": 113,
       "l": 113
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -823,7 +861,8 @@
       "b": 4,
       "o": 105,
       "l": 105
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -854,7 +893,8 @@
       "b": 0,
       "o": 186,
       "l": 186
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -897,7 +937,8 @@
       "b": 0,
       "o": 485,
       "l": 485
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -929,7 +970,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen"
+     "sektion": "4. Kapitel: Überwachung von systemisch bedeutsamen Finanzmarktinfrastrukturen",
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -942,7 +984,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Bestimmung der systemisch bedeutsamen Finanzmarktinfrastrukturen und Geschäftsprozesse"
+     "sektion": "1. Abschnitt: Bestimmung der systemisch bedeutsamen Finanzmarktinfrastrukturen und Geschäftsprozesse",
+     "kl": "A"
     }
    ]
   },
@@ -978,7 +1021,8 @@
       "b": 0,
       "o": 159,
       "l": 181
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1015,7 +1059,8 @@
       "b": 0,
       "o": 184,
       "l": 245
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1051,7 +1096,8 @@
       "b": 2,
       "o": 7,
       "l": 7
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1155,7 +1201,8 @@
       "b": 0,
       "o": 250,
       "l": 250
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1208,7 +1255,8 @@
       "b": 3,
       "o": 202,
       "l": 213
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "64",
@@ -1225,7 +1273,8 @@
       "b": 3,
       "o": 213,
       "l": 213
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -1242,7 +1291,8 @@
       "b": 4,
       "o": 214,
       "l": 214
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1295,7 +1345,8 @@
       "b": 2,
       "o": 277,
       "l": 277
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1366,7 +1417,8 @@
       "it": 4,
       "o": 189,
       "l": 189
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1397,7 +1449,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "70",
@@ -1410,7 +1463,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen"
+     "sektion": "3. Abschnitt: Beurteilung der Einhaltung der besonderen Anforderungen",
+     "kl": "A"
     }
    ]
   },
@@ -1441,7 +1495,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -1453,7 +1508,8 @@
       }
      ],
      "absatz": "1",
-     "item": "n"
+     "item": "n",
+     "kl": "A"
     },
     {
      "nr": "74",
@@ -1465,7 +1521,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -1496,7 +1553,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "76",
@@ -1513,7 +1571,8 @@
       "b": 0,
       "o": 206,
       "l": 206
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1544,7 +1603,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -1561,7 +1621,8 @@
       "b": 2,
       "o": 297,
       "l": 334
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1590,7 +1651,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1614,7 +1676,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "81",
@@ -1631,7 +1694,8 @@
       "b": 1,
       "o": 128,
       "l": 307
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1657,7 +1721,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "83",
@@ -1674,7 +1739,8 @@
       "b": 0,
       "o": 303,
       "l": 406
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1732,7 +1798,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -1749,7 +1816,8 @@
       "b": 0,
       "o": 151,
       "l": 215
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "46",
@@ -1762,7 +1830,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "sektion": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -1775,7 +1844,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen"
+     "sektion": "2. Abschnitt: Besondere Anforderungen für systemisch bedeutsame Finanzmarktinfrastrukturen",
+     "kl": "A"
     }
    ]
   },
@@ -1811,7 +1881,8 @@
       "b": 4,
       "o": 1,
       "l": 1
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1847,7 +1918,8 @@
       "b": 1,
       "o": 7,
       "l": 7
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1878,7 +1950,8 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "kl": "A"
     },
     {
      "nr": "54",
@@ -1890,7 +1963,8 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     }
    ]
   },
@@ -1936,7 +2010,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1973,7 +2048,8 @@
       "it": 1,
       "o": 29,
       "l": 29
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2004,7 +2080,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2035,7 +2112,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2071,7 +2149,8 @@
       "b": 2,
       "o": 272,
       "l": 272
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2124,7 +2203,8 @@
       "b": 0,
       "o": 499,
       "l": 499
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "62",
@@ -2141,7 +2221,8 @@
       "b": 1,
       "o": 465,
       "l": 465
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2189,7 +2270,8 @@
       }
      ],
      "absatz": "3",
-     "item": "j"
+     "item": "j",
+     "kl": "A"
     }
    ]
   },
@@ -2254,7 +2336,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

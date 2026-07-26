@@ -35,7 +35,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -51,7 +52,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "3",
@@ -63,7 +65,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -240,7 +243,8 @@
       "b": 1,
       "o": 147,
       "l": 147
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -409,7 +413,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -449,7 +454,8 @@
       "b": 0,
       "o": 105,
       "l": 105
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -470,7 +476,8 @@
       "b": 1,
       "o": 18,
       "l": 108
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -507,7 +514,8 @@
       "b": 0,
       "o": 62,
       "l": 234
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -576,7 +584,8 @@
       "b": 0,
       "o": 105,
       "l": 488
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -629,7 +638,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr"
+     "sektion": "3. Abschnitt: Eintragung und Schutzverlängerung; elektronischer Behördenverkehr",
+     "kl": "A"
     }
    ]
   },
@@ -735,7 +745,8 @@
       "b": 0,
       "o": 248,
       "l": 441
-     }
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -811,7 +822,8 @@
       "b": 0,
       "o": 215,
       "l": 227
-     }
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -849,7 +861,8 @@
       "b": 0,
       "o": 165,
       "l": 165
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -886,7 +899,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -957,7 +971,8 @@
       "b": 1,
       "o": 57,
       "l": 196
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -994,7 +1009,8 @@
       "b": 0,
       "o": 63,
       "l": 212
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1027,7 +1043,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1062,7 +1079,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1114,7 +1132,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1154,7 +1173,8 @@
       "b": 0,
       "o": 171,
       "l": 171
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -1175,7 +1195,8 @@
       "b": 1,
       "o": 127,
       "l": 127
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -1196,7 +1217,8 @@
       "b": 1,
       "o": 127,
       "l": 127
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1234,7 +1256,8 @@
       "b": 0,
       "o": 151,
       "l": 183
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1320,7 +1343,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -1337,7 +1361,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet"
+     "sektion": "5. Abschnitt: Hilfeleistung beim Verbringen von Gegenständen ins Zollgebiet oder aus dem Zollgebiet",
+     "kl": "A"
     }
    ]
   },
@@ -1372,7 +1397,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1407,7 +1433,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1442,7 +1469,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1499,7 +1527,8 @@
      "text": "BRB vom 8. März 2002",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1534,7 +1563,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1569,7 +1599,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1604,7 +1635,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -1621,7 +1653,8 @@
       "b": 0,
       "o": 56,
       "l": 215
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1656,7 +1689,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1691,7 +1725,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -1707,7 +1742,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -1728,7 +1764,8 @@
       "b": 0,
       "o": 1,
       "l": 1
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -1749,7 +1786,8 @@
       "b": 2,
       "o": 1,
       "l": 1
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1784,7 +1822,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -1796,7 +1835,8 @@
       "b": 1,
       "o": 213,
       "l": 235
-     }
+     },
+     "kl": "G"
     }
    ]
   },
@@ -1831,7 +1871,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1866,7 +1907,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1901,7 +1943,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1936,7 +1979,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

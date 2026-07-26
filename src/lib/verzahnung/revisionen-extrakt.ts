@@ -114,6 +114,56 @@ const ART_PRAEFIX_RE = /Art\.\s*(\d+\s*(?:<[^>]+>|[a-zäöü])*)\s*$/;
 const PRAEFIX_FENSTER = 40;
 
 /**
+ * Spätester datierter Textänderungs-Beleg in EINER Fussnote (+ AS-Fundstelle aus
+ * derselben Klausel). Kein datierter Beleg → null.
+ *
+ * W2·5i: als eigene Funktion herausgezogen, weil die Chronologie-Ansicht des
+ * Gesetz-Lesers das Datum JE FUSSNOTE braucht (Sortierschlüssel), nicht nur das
+ * Maximum je Artikel. Ein zweiter Datums-Parser daneben wäre eine zweite Wahrheit
+ * (§5) — die Trigger-/Datums-/AS-Muster, das Trigger-Fenster, die Jahr-Ellipse UND
+ * der Fremd-Adressierungs-Wächter leben weiterhin genau hier.
+ * `extrahiereArtikelRevision` ist danach das Maximum über die Fussnoten und
+ * verhält sich unverändert (gleiche Vergleichs- und Tie-Break-Semantik: `>` behält
+ * bei Gleichstand den ERSTEN Fund).
+ *
+ * `hostToken` = kanonischer Token des Artikels, dem die Fussnote gehört. Er ist
+ * für den Fremd-Adressierungs-Wächter (ART_PRAEFIX_RE) nötig und MUSS von jedem
+ * Aufrufer durchgereicht werden, der ihn kennt: fehlt er, verwirft der Wächter
+ * jede fremd-adressierte Klausel konservativ (§1 — lieber kein Datum als ein
+ * fremdes), was ohne Not Daten kostet.
+ */
+export function extrahiereFussnotenRevision(text: string, hostToken?: string): ArtikelRevision | null {
+  let best: ArtikelRevision | null = null;
+  TRIGGER_RE.lastIndex = 0;
+  let tm: RegExpExecArray | null;
+  while ((tm = TRIGGER_RE.exec(text)) !== null) {
+    const vorher = text.slice(Math.max(0, tm.index - PRAEFIX_FENSTER), tm.index);
+    const ap = ART_PRAEFIX_RE.exec(vorher);
+    if (ap && kanonArtikelToken(ap[1].replace(/<[^>]*>/g, '')) !== hostToken) continue;
+    const nachTrigger = tm.index + tm[0].length;
+    const rest = text.slice(nachTrigger);
+    // Jahr-Ellipse ZUERST (spezifischere Form; Begründung bei DATUM_ELLIPSE_RE).
+    let dm = DATUM_ELLIPSE_RE.exec(rest);
+    if (dm && dm.index > DATUM_FENSTER) dm = null;
+    if (!dm) {
+      dm = DATUM_RE.exec(rest);
+      if (!dm || dm.index > DATUM_FENSTER) continue; // Datum gehört nicht zu diesem Trigger
+    }
+    const iso = parseDeutschesRevisionsdatum(dm[1], dm[2], dm[3]);
+    if (!iso) continue;
+    if (!best || iso > best.iso) {
+      // AS-Fundstelle NACH dem Datum, innerhalb DERSELBEN Fussnote: eine
+      // Enactment-AS gilt für die ganze Fassung — auch wenn eine Fussnote
+      // gestaffelte In-Kraft-Daten trägt (BVG Art. 64, OR Art. 732/927) und die
+      // AS erst hinter dem zweiten Datum steht.
+      const am = AS_RE.exec(rest.slice(dm.index + dm[0].length));
+      best = { iso, as: am ? `AS ${am[1]} ${am[2]}` : '' };
+    }
+  }
+  return best;
+}
+
+/**
  * Max Trigger-Datum («in Kraft seit» / «mit Wirkung seit» / «in Kraft vom») über
  * ALLE Fussnoten eines Artikels → das Datum der letzten Textänderung + zugehörige
  * AS-Fundstelle (aus DERSELBEN Klausel). Kein datierter Beleg (Urfassung / nur
@@ -126,33 +176,8 @@ export function extrahiereArtikelRevision(
 ): ArtikelRevision | null {
   let best: ArtikelRevision | null = null;
   for (const fn of fussnoten ?? []) {
-    const text = fn.text ?? '';
-    TRIGGER_RE.lastIndex = 0;
-    let tm: RegExpExecArray | null;
-    while ((tm = TRIGGER_RE.exec(text)) !== null) {
-      const vorher = text.slice(Math.max(0, tm.index - PRAEFIX_FENSTER), tm.index);
-      const ap = ART_PRAEFIX_RE.exec(vorher);
-      if (ap && kanonArtikelToken(ap[1].replace(/<[^>]*>/g, '')) !== hostToken) continue;
-      const nachTrigger = tm.index + tm[0].length;
-      const rest = text.slice(nachTrigger);
-      // Jahr-Ellipse ZUERST (spezifischere Form; Begründung bei DATUM_ELLIPSE_RE).
-      let dm = DATUM_ELLIPSE_RE.exec(rest);
-      if (dm && dm.index > DATUM_FENSTER) dm = null;
-      if (!dm) {
-        dm = DATUM_RE.exec(rest);
-        if (!dm || dm.index > DATUM_FENSTER) continue; // Datum gehört nicht zu diesem Trigger
-      }
-      const iso = parseDeutschesRevisionsdatum(dm[1], dm[2], dm[3]);
-      if (!iso) continue;
-      if (!best || iso > best.iso) {
-        // AS-Fundstelle NACH dem Datum, innerhalb DERSELBEN Fussnote: eine
-        // Enactment-AS gilt für die ganze Fassung — auch wenn eine Fussnote
-        // gestaffelte In-Kraft-Daten trägt (BVG Art. 64, OR Art. 732/927) und die
-        // AS erst hinter dem zweiten Datum steht.
-        const am = AS_RE.exec(rest.slice(dm.index + dm[0].length));
-        best = { iso, as: am ? `AS ${am[1]} ${am[2]}` : '' };
-      }
-    }
+    const kandidat = extrahiereFussnotenRevision(fn.text ?? '', hostToken);
+    if (kandidat && (!best || kandidat.iso > best.iso)) best = kandidat;
   }
   return best;
 }

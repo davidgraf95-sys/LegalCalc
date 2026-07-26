@@ -32,7 +32,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -59,7 +60,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -90,7 +92,8 @@
       "b": 0,
       "o": 1,
       "l": 1
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "4",
@@ -107,7 +110,8 @@
       "b": 1,
       "o": 140,
       "l": 140
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "5",
@@ -125,7 +129,8 @@
       "it": 3,
       "o": 19,
       "l": 19
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -146,7 +151,8 @@
       "b": 2,
       "o": 147,
       "l": 147
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -163,7 +169,8 @@
       "b": 3,
       "o": 102,
       "l": 102
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -180,7 +187,8 @@
       "b": 4,
       "o": 367,
       "l": 367
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -212,7 +220,8 @@
       "b": 0,
       "o": 195,
       "l": 258
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -238,7 +247,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -250,7 +260,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -262,7 +273,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -279,7 +291,8 @@
       "b": 1,
       "o": 189,
       "l": 257
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -305,7 +318,8 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -323,7 +337,8 @@
       "it": 1,
       "o": 328,
       "l": 363
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "17",
@@ -341,7 +356,8 @@
       "it": 1,
       "o": 363,
       "l": 363
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -353,7 +369,8 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -371,7 +388,8 @@
       "it": 9,
       "o": 183,
       "l": 194
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "20",
@@ -389,7 +407,8 @@
       "it": 10,
       "o": 218,
       "l": 292
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -415,7 +434,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -433,7 +453,8 @@
       "it": 1,
       "o": 238,
       "l": 238
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -450,7 +471,8 @@
       "b": 1,
       "o": 201,
       "l": 201
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -462,7 +484,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -480,7 +503,8 @@
       "it": 4,
       "o": 57,
       "l": 57
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -497,7 +521,8 @@
       "b": 2,
       "o": 1,
       "l": 1
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -523,7 +548,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -554,7 +580,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -566,7 +593,8 @@
       }
      ],
      "absatz": "1",
-     "item": "4"
+     "item": "4",
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -579,7 +607,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Angaben zu Personen und Beteiligten im Bewilligungsgesuch und Änderung von Tatsachen"
+     "sektion": "1. Abschnitt: Angaben zu Personen und Beteiligten im Bewilligungsgesuch und Änderung von Tatsachen",
+     "kl": "A"
     }
    ]
   },
@@ -615,7 +644,8 @@
       "b": 0,
       "o": 145,
       "l": 145
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "37",
@@ -628,7 +658,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Organisation der Banken"
+     "sektion": "2. Abschnitt: Organisation der Banken",
+     "kl": "A"
     }
    ]
   },
@@ -693,7 +724,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "40",
@@ -714,7 +746,8 @@
       "b": 2,
       "o": 443,
       "l": 443
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -731,7 +764,8 @@
       "b": 5,
       "o": 170,
       "l": 170
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -813,7 +847,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -830,7 +865,8 @@
       "b": 0,
       "o": 173,
       "l": 306
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -982,7 +1018,8 @@
       "b": 1,
       "o": 81,
       "l": 124
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1018,7 +1055,8 @@
       "b": 0,
       "o": 99,
       "l": 168
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1054,7 +1092,8 @@
       "b": 0,
       "o": 274,
       "l": 295
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1108,7 +1147,8 @@
       "b": 0,
       "o": 58,
       "l": 59
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1246,7 +1286,8 @@
       "b": 3,
       "o": 42,
       "l": 60
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1300,7 +1341,8 @@
       "b": 0,
       "o": 62,
       "l": 63
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1392,7 +1434,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1418,7 +1461,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1707,7 +1751,8 @@
       "b": 2,
       "o": 63,
       "l": 423
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "77",
@@ -1724,7 +1769,8 @@
       "b": 2,
       "o": 423,
       "l": 423
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1760,7 +1806,8 @@
       "b": 1,
       "o": 132,
       "l": 132
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1808,7 +1855,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "80",
@@ -1820,7 +1868,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -1856,7 +1905,8 @@
       "b": 4,
       "o": 26,
       "l": 285
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "84",
@@ -1873,7 +1923,8 @@
       "b": 4,
       "o": 285,
       "l": 285
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "82",
@@ -1886,7 +1937,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Sanier- und Liquidierbarkeit"
+     "sektion": "2. Abschnitt: Sanier- und Liquidierbarkeit",
+     "kl": "A"
     }
    ]
   },
@@ -1917,7 +1969,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "86",
@@ -1935,7 +1988,8 @@
       "b": 0,
       "o": 26,
       "l": 144
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1964,7 +2018,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "91",
@@ -1977,7 +2032,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Information der Öffentlichkeit"
+     "sektion": "3. Abschnitt: Information der Öffentlichkeit",
+     "kl": "A"
     }
    ]
   },
@@ -2004,7 +2060,8 @@
       "b": 0,
       "o": 37,
       "l": 54
-     }
+     },
+     "kl": "U"
     }
    ]
   },
@@ -2047,7 +2104,8 @@
       "b": 2,
       "o": 25,
       "l": 348
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "96",
@@ -2064,7 +2122,8 @@
       "b": 2,
       "o": 348,
       "l": 348
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "97",
@@ -2081,7 +2140,8 @@
       "b": 4,
       "o": 178,
       "l": 178
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2125,7 +2185,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG"
+     "sektion": "2a. Abschnitt: Organisation der Personen nach Artikel 1b BankG",
+     "kl": "A"
     }
    ]
   },
@@ -2224,7 +2285,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -2241,7 +2303,8 @@
       "b": 0,
       "o": 131,
       "l": 131
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -2259,7 +2322,8 @@
       "it": 1,
       "o": 125,
       "l": 133
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "46",
@@ -2277,7 +2341,8 @@
       "it": 1,
       "o": 48,
       "l": 48
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -2294,7 +2359,8 @@
       "b": 4,
       "o": 104,
       "l": 104
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2342,7 +2408,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -2359,7 +2426,8 @@
       "b": 0,
       "o": 474,
       "l": 474
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -2376,7 +2444,8 @@
       "b": 2,
       "o": 24,
       "l": 96
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "53",
@@ -2393,7 +2462,8 @@
       "b": 2,
       "o": 37,
       "l": 96
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2419,7 +2489,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2445,7 +2516,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2472,7 +2544,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4a. Kapitel: Privilegierte Einlagen sowie privilegierte Einlegerinnen und Einleger"
+     "sektion": "4a. Kapitel: Privilegierte Einlagen sowie privilegierte Einlegerinnen und Einleger",
+     "kl": "A"
     }
    ]
   },
@@ -2516,7 +2589,8 @@
       "it": 0,
       "o": 78,
       "l": 136
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "63",
@@ -2534,7 +2608,8 @@
       "it": 0,
       "o": 135,
       "l": 136
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "64",
@@ -2552,7 +2627,8 @@
       "it": 1,
       "o": 84,
       "l": 85
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "65",
@@ -2570,7 +2646,8 @@
       "it": 4,
       "o": 93,
       "l": 321
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "66",
@@ -2588,7 +2665,8 @@
       "it": 4,
       "o": 293,
       "l": 321
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2626,7 +2704,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     },
     {
      "nr": "67",
@@ -2639,7 +2718,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Kapitel: Einlagensicherung von Banken"
+     "sektion": "5. Kapitel: Einlagensicherung von Banken",
+     "kl": "A"
     }
    ]
   },
@@ -2665,7 +2745,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -2691,7 +2772,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -2717,7 +2799,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -2743,7 +2826,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -2769,7 +2853,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -2795,7 +2880,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2826,7 +2912,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2857,7 +2944,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2888,7 +2976,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "89",
@@ -2905,7 +2994,8 @@
       "b": 0,
       "o": 342,
       "l": 363
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "90",
@@ -2923,7 +3013,8 @@
       "it": 1,
       "o": 44,
       "l": 126
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2955,7 +3046,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Abschnitt: Wesentliche Gruppengesellschaften systemrelevanter Banken mit Sitz in der Schweiz"
+     "sektion": "4. Abschnitt: Wesentliche Gruppengesellschaften systemrelevanter Banken mit Sitz in der Schweiz",
+     "kl": "A"
     }
    ]
   },
@@ -3015,7 +3107,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3041,7 +3134,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -3053,7 +3147,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -3079,7 +3174,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -3097,7 +3193,8 @@
       "b": 0,
       "o": 101,
       "l": 117
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3128,7 +3225,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

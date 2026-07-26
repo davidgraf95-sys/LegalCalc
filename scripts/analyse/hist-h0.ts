@@ -19,8 +19,18 @@
 //     nach Klassifikator-Klasse stratifizierte Stichprobe als JSON auf stdout
 //     (für die Hand-Labelung; Seed fix → byte-stabil, §2).
 //   npx vite-node scripts/analyse/hist-h0.ts -- --unklar N    → N UNKLAR-Beispiele
+//
+// H1-NACHTRAG 26.7.2026 (W2·5i): die REGELN leben nicht mehr hier, sondern in
+// `scripts/normtext/fussnoten-klassifikation.ts` — sie sind in die Generator-
+// Schicht gehoben (H0-Auflage 3: Klassifikation EINMAL build-seitig als Sidecar-
+// Feld `kl`) und werden von dort importiert (§5: eine Quelle). Dieses Werkzeug
+// bleibt die MESSUNG darüber. Folge für die Reproduktion des H0-Berichts: die
+// Zahlen verschieben sich um exakt die 13 Fussnoten, die H0-Auflage 2 aus
+// AENDERUNG herausroutet (AENDERUNG 25'367 → 25'354, Kanton 674 → 661, Bund
+// unverändert 24'693) — Belegrechnung im Kopf des Regel-Moduls.
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { klassifiziere, type Klasse } from '../normtext/fussnoten-klassifikation.ts';
 
 type Fussnote = { nr: string; text: string; absatz: string | null; item: string | null };
 type Fall = {
@@ -57,119 +67,11 @@ function ladeKorpus(): Fall[] {
   return faelle;
 }
 
-// ─── Regeln (empirisch aus den Anfangs-Mustern des Korpus erhoben, 25.7.2026) ──
-
-// Reine Revisionsprosa am Fussnoten-ANFANG.
-const REV_START = new RegExp(
-  '^(' +
-    [
-      'Fassung gemäss',
-      'Fassung des\\b',
-      'Eingefügt durch',
-      'Aufgehoben durch',
-      'Aufgehoben gemäss',
-      'Ausdruck gemäss',
-      'Bereinigt gemäss',
-      'Nummerierung gemäss',
-      'Bezeichnung gemäss',
-      'Ursprünglich\\b',
-      '(Erster|Zweiter|Dritter|Vierter|Fünfter|Letzter) (Satz|Absatz|Halbsatz)\\b',
-      'Satz (eingefügt|aufgehoben|gemäss)',
-      'Die Bezeichnung\\b',
-      'Die Paarform\\b',
-      'Umbenennung von',
-      'Softwarebedingte',
-      'Die Berichtigung\\b',
-      'Berichtigt von der',
-      'Die Referendumsfrist',
-      'Angenommen in der Volksabstimmung',
-      'Wirksam seit',
-      'Publiziert am',
-      'BRB vom',
-      'In Kraft (seit|getreten)',
-      'Die Änderung(en)?\\b',
-      'Strafdrohungen neu umschrieben',
-      'Der Verweis wurde in Anwendung',
-      'Gegenstandslos\\b',
-      'Betrifft nur\\b',
-      'Abkürzung eingefügt durch',
-      'Die Initiative wurde',
-      '.{0,40}\\bin Kraft gesetzt',
-      '.{0,60}\\b(in Wirksamkeit erklärt|unbenützt abgelaufen)',
-      '.{0,80}\\b(angenommen|genehmigt|zugestimmt)(\\b|\\.)',
-      '.{0,40}\\bin der Fassung des\\b',
-    ].join('|') +
-    ')',
-  'i',
-);
-
-// Leser-Redirect INNERHALB einer Revisions-Fussnote → Grauzone.
-const REDIRECT = /\b(siehe|vgl\.|heute|massgebend|anwendbar)\b/i;
-
-// Substanz-/Verweis-ANFANG (SR-Nummern, kantonale Register, Abkürzungs-
-// Auflösungen, EU-Rechtsakte, Provisions-Verweise, Dokument-Links).
-const VW_START = new RegExp(
-  '^(' +
-    [
-      'SR \\d',
-      '(bGS|SG|SAR|BGS|LS|GS|sGS|SRL|SHR|SGS|NG|RB|BR|CSC|SRSZ|GDB|RiE|BaB|BeE) [\\d.]',
-      '(aGS|GS) [IVX]',
-      'SG RiE',
-      'KV\\b',
-      'BV\\b',
-      'Vgl\\.',
-      'Siehe\\b(?! heute)',
-      'Verordnung \\((EG|EWG|EU)\\)',
-      'Richtlinie\\b',
-      '(§|Art\\.) ?\\d',
-      'Mit Übergangsbestimmung',
-      'vgl\\.',
-    ].join('|') +
-    ')',
-);
-// Verweis-Signale IRGENDWO im Text (greifen nur, wenn kein REV-Marker vorliegt):
-// eingeklammerte SR-/Register-Nummer (Abkürzungs-Auflösung, Erlass-Nennung) oder
-// Bezugs-URL («abrufbar/einsehbar unter», «bezogen werden»).
-const VW_SIGNAL =
-  /\((?:[A-ZÄÖÜ][A-Za-zÄÖÜäöü]{1,11}; )?(SR|bGS|SG|SAR|BGS|LS|sGS|SRL|BR|RB|SGS|GDB|SRSZ|CSC|NG|BSG|RSB|RiE|BaB|BeE)\s?[\d.]+|\b(abrufbar|einsehbar) unter\b|\bbezogen werden\b/;
-
-// Reine Publikations-Zitate (AS-/BBl-/Abl-Ketten, «[AS …]»-Fassungsketten) —
-// eigene Berichts-Klasse: weder Redirect noch Revisionsprosa im engeren Sinn;
-// für die UI-Frage konservativ IMMER sichtbar zu halten.
-const ZITAT_START =
-  /^\[?(AS|BS|BBl|Abl\.?|AGS|OS|GS|nGS|SRL Nr|RRB)\s?[\d ]/;
-
-// Grauzonen-ANFÄNGE: historisch motiviert, tragen aber geltende Information.
-const GRAU_START = new RegExp(
-  '^(' +
-    [
-      'Heute:',
-      'Siehe heute',
-      'umbenannt in',
-      // Wert-Provenienz: «Betrag/Höchstbetrag/Ansätze gemäss Änd. vom …» — Historie
-      // UND geltende Herkunftsangabe des Werts zugleich.
-      '[A-ZÄÖÜ][a-zäöü]*([Bb]etrag|[Bb]eträge|[Aa]nsätze)\\w* gemäss',
-      '(Betrag|Beträge|Ansätze) gemäss',
-    ].join('|') +
-    ')',
-);
-// Aufhebung MIT Nachfolger-Redirect («Dieses Gesetz ist aufgehoben. Massgebend ist jetzt …»).
-const GRAU_AUFHEBUNG = /aufgehoben.*(massgebend|siehe|heute|ersetzt durch)/i;
-
-export type Klasse = 'AENDERUNG' | 'VERWEIS' | 'GRAUZONE' | 'ZITAT' | 'UNKLAR';
-
-export function klassifiziere(text: string): Klasse {
-  if (GRAU_START.test(text)) return 'GRAUZONE';
-  if (REV_START.test(text)) {
-    if (REDIRECT.test(text) || GRAU_AUFHEBUNG.test(text)) return 'GRAUZONE';
-    return 'AENDERUNG';
-  }
-  if (GRAU_AUFHEBUNG.test(text)) return 'GRAUZONE';
-  if (VW_START.test(text)) return 'VERWEIS';
-  if (ZITAT_START.test(text)) return 'ZITAT';
-  if (VW_SIGNAL.test(text)) return 'VERWEIS';
-  return 'UNKLAR';
-}
+// ─── Regeln: SSoT in scripts/normtext/fussnoten-klassifikation.ts (§5) ────────
+// Die Regel-Regexe (REV_START/REDIRECT/VW_START/VW_SIGNAL/ZITAT_START/GRAU_*)
+// und `klassifiziere()` sind dorthin gehoben — inkl. der H0-Auflage-2-Riegel.
+// Hier bleibt NUR die Messung. Ein Regel-Duplikat wäre eine zweite Wahrheit (§5)
+// und würde Messung und Produktiv-Klassifikation auseinanderlaufen lassen.
 
 // ─── deterministischer PRNG (mulberry32, fixer Seed — §2, reproduzierbar) ─────
 function mulberry32(seed: number) {
