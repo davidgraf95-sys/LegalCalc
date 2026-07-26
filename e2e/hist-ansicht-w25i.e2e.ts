@@ -181,6 +181,16 @@ test('«als Chronologie»: A-Einträge chronologisch am Artikelfuss, Verweise bl
   expect(zahlen[0]).toBe(2006);
   expect(zahlen[zahlen.length - 1]).toBe(2021);
 
+  // Gegenprüfungs-Befund B4: jede Chronologie-Zeile nennt ihre Fussnoten-NUMMER,
+  // sonst ist der Marker im Wortlaut (²⁷) keinem Eintrag zuzuordnen. Erste Zeile =
+  // fn 27 (2006-07-01), letzte = fn 26 (2021, Tie-Break nach Nummer hinter fn 25).
+  const zeilen = await chrono.locator('li').evaluateAll((lis) =>
+    lis.map((li) => (li as HTMLElement).innerText.trim()));
+  expect(zeilen[0].startsWith('27')).toBe(true);
+  for (const nr of ['25', '26', '27', '28']) {
+    expect(zeilen.some((z) => z.startsWith(nr)), `Chronologie nennt fn ${nr}`).toBe(true);
+  }
+
   // Die A-Zeilen sind aus dem Apparat verschwunden (sie stehen jetzt oben) …
   await expect(apparatZeile(page, '9', '27')).toBeHidden();
   // … ihr Wortlaut bleibt aber im DOM (R9/§8) und das Marker-Popover findet ihn.
@@ -231,6 +241,37 @@ test('Persistenz + Pre-Paint: die Wahl übersteht den Reload ohne Flackern', asy
   await expect(page.locator('#art-4')).toBeVisible();
   await expect(apparatZeile(page, '4', '12')).toBeHidden();
   await expect(apparatZeile(page, '4', '13')).toBeVisible();
+});
+
+test('«aus»: GRAUZONE (G) und UNKLAR (U) bleiben sichtbar — Auflage 1 vollständig', async ({ page }) => {
+  // Gegenprüfungs-Befund B5 (26.7.2026): die übrigen Tests deckten nur V und Z ab.
+  // Verbreitert jemand später den CSS-Selektor von `[data-fn-klasse="A"]` auf
+  // `[data-fn-klasse]`, MUSS auch für G und U rot werden — sonst schützt die
+  // H0-Auflage 1 nur die zwei geprüften Klassen.
+  //
+  // BGBM trägt weder G noch U. ELG Art. 10 trägt A, G UND U auf EINEM Artikel
+  // (verifiziert am Sidecar 26.7.2026): fn34 = A · fn35 = U («Beträge angepasst
+  // gemäss …») · fn41 = G (Revisionsvermerk mit UeB-Zeiger «Siehe auch die UeB …»).
+  await warteReader(page, '/gesetze/bund/ELG', 'art-10');
+  const a34 = apparatZeile(page, '10', '34');
+  const u35 = apparatZeile(page, '10', '35');
+  const g41 = apparatZeile(page, '10', '41');
+
+  // Vorbedingung: die Klassen stehen wirklich im DOM (sonst prüft der Test nichts, §6.7).
+  await expect(a34).toHaveAttribute('data-fn-klasse', 'A');
+  await expect(u35).toHaveAttribute('data-fn-klasse', 'U');
+  await expect(g41).toHaveAttribute('data-fn-klasse', 'G');
+
+  await ansichtOeffnen(page);
+  await histWahl(page, 'aus').click();
+  await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'aus');
+
+  await expect(a34).toBeHidden();
+  await expect(u35).toBeVisible();
+  await expect(g41).toBeVisible();
+  // Und ihr Inhalt ist unverändert lesbar (nicht bloss ein leeres sichtbares Element).
+  await expect(u35).toContainText('Beträge angepasst');
+  await expect(g41).toContainText('Siehe auch die UeB');
 });
 
 test('axe: das offene Panel MIT der neuen Wahl und die Chronologie-Ansicht sind sauber', async ({ page }, testInfo) => {

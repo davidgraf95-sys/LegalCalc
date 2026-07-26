@@ -25,8 +25,20 @@
  * (SUBSTANZ_VERWEIS / VOLLSTAENDIGKEIT unten). Wirkung, am Bestand gemessen
  * (26.7.2026): 13 Fussnoten verlassen AENDERUNG — 12× «nicht abgedruckt»
  * + 1× «unter dem Vorbehalt» (BS-780.100 § 29), ALLE kantonal; die Bund-Fläche
- * (24'693 AENDERUNG) ist von Auflage 2 nicht betroffen. Korpus-Delta gegenüber
- * dem H0-Bericht: AENDERUNG 25'367 → 25'354 (Kanton 674 → 661).
+ * ist von Auflage 2 nicht betroffen.
+ *
+ * ─── Adversariale Gegenprüfung 26.7.2026: Befunde B1/B3 (bindend) ────────────
+ * Der unabhängige Durchgang fand zwei Familien, die als 'A' (= ausblendbar)
+ * eingeordnet waren, obwohl sie GELTENDE Information tragen:
+ *   B1 · Geltungs-ENDdaten / laufende Befristungen  → BEFRISTUNG, 61 Bund-Fälle
+ *   B3 · operative Anordnung «Laut Ziff. …»          → OPERATIVE_ANORDNUNG, 1 Fall
+ * Beide → GRAUZONE (Revisionsvermerk MIT geltender Information). Begründung,
+ * Formen-Inventar und die §2-Falle (kein Datumsvergleich!) stehen unten an den
+ * Regeln. Wirkung auf den Bund, GEMESSEN am Differ-Lauf (nicht geschätzt):
+ * 62 Fussnoten wechseln A → G, AENDERUNG 24'693 → 24'631, GRAUZONE 292 → 354.
+ *
+ * ─── Korpus-Stand nach allen Nachträgen (Bund, 31'786 Fussnoten) ─────────────
+ *   A 24'631 (77.5 %) · V 5'759 (18.1 %) · G 354 (1.1 %) · Z 632 (2.0 %) · U 410 (1.3 %)
  */
 
 /** Die fünf Klassen in Langform (Berichts-/Testsprache). */
@@ -165,6 +177,55 @@ const GRAU_AUFHEBUNG = /aufgehoben.*(massgebend|siehe|heute|ersetzt durch)/i;
 const SUBSTANZ_VERWEIS = /\bunter dem Vorbehalt\b|\beingesehen werden\b/i;
 const VOLLSTAENDIGKEIT = /\bnicht abgedruckt\b/i;
 
+// ─── Gegenprüfungs-Befund B1 (26.7.2026): BEFRISTUNGEN sind vorwärts gerichtet ─
+//
+// Befund der adversarialen Gegenprüfung: 62 Bund-Fussnoten tragen ein Geltungs-
+// ENDdatum («in Kraft vom 18. März 2023 bis zum 31. Dez. 2027», KVG 37 fn 116/117;
+// «Art. 95a Abs. 1 Bst. a gilt bis 31. Dez. 2027», ASYLG 95a fn 300; VTS 95 fn 438).
+// Das ist keine abgeschlossene Revisionsprosa, sondern eine **laufende Befristung**:
+// materiell erheblich und in die Zukunft weisend. In der Ansicht «aus» darf sie
+// nicht verschwinden (§1/§8) ⇒ GRAUZONE (Revisionsvermerk MIT geltender
+// Information), NICHT VERWEIS.
+//
+// §2-KRITISCH — warum NICHT nach «heute» unterschieden wird: die Versuchung ist,
+// nur NOCH LAUFENDE Befristungen (Enddatum ≥ heute) zu schützen und abgelaufene
+// weiter als 'A' zu behandeln. Das wäre ein `Date.now()` in der Klassifikations-
+// logik: dieselbe Fussnote fiele je nach Build-Tag in eine andere Klasse, das
+// Sidecar wäre nicht mehr reproduzierbar und der Differ-Beweis wertlos.
+// **ALLE Befristungs-Vermerke — auch längst abgelaufene — werden zu GRAUZONE.**
+// Determinismus vor Feinheit; der Preis ist, dass ~35 historische Befristungen
+// sichtbar bleiben (Lesekomfort, kein Treue-Problem).
+//
+// Formen-Inventar am Bestand erhoben (26.7.2026), NICHT geraten:
+//   · «in Kraft vom <Datum> bis (zum) <Datum>»  — 58× der häufigste Fall
+//   · «in Kraft bis zum <Datum>»                — EPV 93 fn 34
+//   · «gilt/gelten bis <Datum>»                 — ASYLG 95a fn 300
+//   · «befristet bis», «Bis zum Inkrafttreten … : Art. N» (ZGB 89a fn 136)
+// Das Fenster hinter «in Kraft vom» MUSS Punkte zulassen (deutsche Datums-
+// abkürzungen «1. Jan. 2025»); ein `[^.]`-Fenster matchte 0 von 58 Fällen.
+// Bewusst NICHT aufgenommen: ein blosses «bis zum» (fängt reine Historie wie
+// KVV 136 fn 518) und «verlängert bis» (die 5 Treffer — FZA 10 — sind bereits
+// 'U' und damit ohnehin sichtbar; die Regel gewänne nichts und würde nur breiter).
+const BEFRISTUNG = new RegExp(
+  [
+    '\\b(gilt|gelten|gültig) bis\\b',
+    '\\bin Kraft vom\\b.{0,60}?\\bbis\\b',
+    '\\bin Kraft bis\\b',
+    '\\bbefristet bis\\b',
+    '\\bbis zum Inkrafttreten\\b',
+  ].join('|'),
+  'i',
+);
+
+// ─── Gegenprüfungs-Befund B3 (26.7.2026): operative Anordnung in «Laut Ziff. …» ─
+//
+// AVIV 51a fn 168: «… Laut Ziff. II kann die Karenzfrist von zwei Wochen nach
+// Abs. 4 bereits vor dem Inkrafttreten dieser Änd. zu laufen beginnen, sofern die
+// Kurzarbeit vorangemeldet worden ist.» Das ist eine **operative Fristenlauf-Regel**
+// im Fussnotengewand — Substanz, kein Änderungsvermerk. «Laut Ziff.» führt im
+// Bestand ausschliesslich solche Anordnungen ein (1 Treffer, einzeln geprüft).
+const OPERATIVE_ANORDNUNG = /\bLaut Ziff\./i;
+
 /** HTML-Tags weg, Whitespace normalisiert — die Regeln arbeiten auf Klartext.
  *  Identisch zum `strippe()` der H0-Messung (dieselbe Eingabe-Normalisierung,
  *  sonst wären die Korpuszahlen des Berichts nicht reproduzierbar). */
@@ -183,6 +244,12 @@ export function klassifiziere(text: string): Klasse {
   // H0-Auflage 2 zuerst — Substanz schlägt Revisionsprosa (§1).
   if (SUBSTANZ_VERWEIS.test(text)) return 'VERWEIS';
   if (VOLLSTAENDIGKEIT.test(text)) return 'GRAUZONE';
+  // Gegenprüfungs-Befunde B1/B3: vorwärts gerichtete Befristung bzw. operative
+  // Anordnung. Ebenfalls VOR dem Revisionsprosa-Test — die betroffenen Fussnoten
+  // beginnen fast alle mit «Eingefügt durch …»/«Fassung gemäss …» und landeten
+  // sonst in 'A' (= ausblendbar), obwohl sie geltende Information tragen.
+  if (BEFRISTUNG.test(text)) return 'GRAUZONE';
+  if (OPERATIVE_ANORDNUNG.test(text)) return 'GRAUZONE';
   if (GRAU_START.test(text)) return 'GRAUZONE';
   if (REV_START.test(text)) {
     if (REDIRECT.test(text) || GRAU_AUFHEBUNG.test(text)) return 'GRAUZONE';

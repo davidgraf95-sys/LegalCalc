@@ -92,6 +92,86 @@ describe('H0-Auflage 2 — die belegten Substanz-Fehlgriffe sind aus AENDERUNG h
   });
 });
 
+describe('Gegenprüfungs-Befund B1 — Befristungen sind vorwärts gerichtet, nie ausblendbar', () => {
+  // Alle Texte WÖRTLICH aus public/normtext/struktur/bund/*.json (Stand 26.7.2026).
+  // Vor dem Nachtrag waren alle vier als AENDERUNG (= ausblendbar) eingeordnet.
+  const FAELLE: Array<[string, string]> = [
+    ['ASYLG 95a fn300 («gilt bis»)',
+      'Eingefügt durch Ziff. I des BG vom 25. Sept. 2015, in Kraft seit 1. Jan. 2018, '
+      + 'Art. 95a Abs. 1 Bst. a gilt bis 31. Dez. 2027 (AS 2016 3101, 2017 6171; BBl 2014 7991).'],
+    ['KVG 37 fn116 («in Kraft vom … bis zum»)',
+      'Eingefügt durch Ziff. I des BG vom 17. März 2023 (Ausnahmen von der Pflicht einer '
+      + 'dreijährigen Tätigkeit), in Kraft vom 18. März 2023 bis zum 31. Dez. 2027 '
+      + '(AS 2023 134; BBl 2022 3125; 2023 343).'],
+    ['KVG 37 fn117 («Fassung gemäss … in Kraft vom … bis zum»)',
+      'Fassung gemäss Ziff. I des BG vom 17. März 2023 (Ausnahmen von der Pflicht einer '
+      + 'dreijährigen Tätigkeit), in Kraft vom 18. März 2023 bis zum 31. Dez. 2027 '
+      + '(AS 2023 134; BBl 2022 3125; 2023 343).'],
+    ['VTS 95 fn438 («bis zum … , ab dem … unbefristet»)',
+      'Eingefügt durch Ziff. I der V vom 17. Dez. 2021, in Kraft vom 1. April 2022 bis zum '
+      + '31. Dez. 2030, ab dem 1. Juli 2026 unbefristet (AS 2022 14; 2026 226 Ziff. III).'],
+    ['EPV 93 fn34 («in Kraft bis zum»)',
+      'Eingefügt durch Ziff. III der V vom 18. Nov. 2020, in Kraft bis zum 30. Juni 2022 '
+      + '(AS 2020 4733).'],
+  ];
+  for (const [name, text] of FAELLE) {
+    it(`${name} → GRAUZONE, nie AENDERUNG`, () => {
+      expect(klassifiziere(text)).toBe('GRAUZONE');
+      expect(klassifiziereFussnote(text)).toBe('G');
+    });
+  }
+
+  it('GRAUZONE, nicht VERWEIS — es ist ein Revisionsvermerk MIT geltender Information', () => {
+    expect(klassifiziere(FAELLE[1][1])).not.toBe('VERWEIS');
+  });
+
+  it('§2: ABGELAUFENE Befristungen werden GLEICH behandelt (kein Date.now() in der Regel)', () => {
+    // Die Versuchung wäre, nur laufende Befristungen (Enddatum ≥ heute) zu schützen.
+    // Das wäre zeitabhängige Klassifikation: dieselbe Fussnote fiele je nach Build-Tag
+    // in eine andere Klasse und das Sidecar wäre nicht reproduzierbar. Darum: ALLE.
+    const abgelaufen = 'Eingefügt durch Anhang der V vom 4. Sept. 2013, in Kraft vom '
+      + '1. Okt. 2013 bis zum 28. Sept. 2015 (AS 2013 3065).';   // ASYLV2 41 fn111
+    const laufend = 'Eingefügt durch Ziff. I der V vom 8. Mai 2024, in Kraft vom '
+      + '1. Juli 2024 bis zum 30. Juni 2032 (AS 2024 220).';     // KVV 51 fn207
+    expect(klassifiziere(abgelaufen)).toBe('GRAUZONE');
+    expect(klassifiziere(laufend)).toBe('GRAUZONE');
+    expect(klassifiziere(abgelaufen)).toBe(klassifiziere(laufend));
+  });
+
+  it('ABGRENZUNG: ein blosses «bis zum» in reiner Historie bleibt AENDERUNG', () => {
+    // KVV 136 fn518 — «bis zum» steht hier NICHT in einer Geltungsdauer-Klausel.
+    // Wäre die Regel auf das nackte «bis zum» gebaut, wanderte diese Fussnote
+    // (und 3 weitere) grundlos aus der ausblendbaren Klasse.
+    const t = 'Aufgehoben durch Ziff. IV 51 der V vom 22. Aug. 2007 zur formellen '
+      + 'Bereinigung des Bundesrechts, mit Wirkung seit 1. Jan. 2008 (AS 2007 4477). '
+      + 'Die Frist lief bis zum Ablauf des Jahres.';
+    expect(/\bbis zum\b/.test(t)).toBe(true);
+    expect(klassifiziere(t)).toBe('AENDERUNG');
+  });
+
+  it('ABGRENZUNG: «in Kraft SEIT …» (unbefristet) bleibt AENDERUNG', () => {
+    const t = 'Fassung gemäss Ziff. I des BG vom 16. Dez. 2005, in Kraft seit 1. Jan. 2008 '
+      + '(AS 2007 4791; BBl 2002 3148).';
+    expect(klassifiziere(t)).toBe('AENDERUNG');
+  });
+});
+
+describe('Gegenprüfungs-Befund B3 — operative Anordnung in «Laut Ziff. …»', () => {
+  // AVIV 51a fn168, WÖRTLICH aus dem Sidecar. Vor dem Nachtrag: AENDERUNG.
+  const LAUT_ZIFF = 'Eingefügt durch Ziff. I der V vom 28. Aug. 1991, in Kraft seit '
+    + '1. Jan. 1992 (AS 1991 2132). Laut Ziff. II kann die Karenzfrist von zwei Wochen '
+    + 'nach Abs. 4 bereits vor dem Inkrafttreten dieser Änd. zu laufen beginnen, sofern '
+    + 'die Kurzarbeit vorangemeldet worden ist.';
+  it('AVIV 51a fn168 (Fristenlauf-Regel) → GRAUZONE, nie AENDERUNG', () => {
+    expect(klassifiziere(LAUT_ZIFF)).toBe('GRAUZONE');
+    expect(klassifiziereFussnote(LAUT_ZIFF)).toBe('G');
+  });
+  it('greift trotz «Eingefügt durch …»-Anfang (Reihenfolge vor REV_START)', () => {
+    expect(/^Eingefügt durch/.test(LAUT_ZIFF)).toBe(true);
+    expect(klassifiziere(LAUT_ZIFF)).not.toBe('AENDERUNG');
+  });
+});
+
 describe('Sicherheitsrichtung — Substanz-Signale dürfen nie AENDERUNG ergeben', () => {
   // Die Signalliste des korpusweiten Risiko-Scans (H0 Ziff. 3): trägt eine Fussnote
   // eine Bezugsquelle/URL oder einen materiellen Vorbehalt, ist sie nie ausblendbar.

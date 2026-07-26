@@ -531,6 +531,12 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
             <ol data-hist-chrono className="mt-3 border-t border-rule-artikel pt-2 space-y-1">
               {chronologie.map((fn, i) => (
                 <li key={i} className="text-xs leading-normal text-ink-500">
+                  {/* Gegenprüfungs-Befund B4 (26.7.2026): die Fussnoten-NUMMER gehört
+                      auch in die Chronologie-Zeile. Ohne sie ist der Marker im Wortlaut
+                      (¹¹⁶) keinem Eintrag mehr zuzuordnen — der Leser sieht eine
+                      Datumsliste ohne Anschluss an den Text. Gleiche Darstellung wie im
+                      Apparat (`num`, ink-500), damit die Zuordnung optisch trägt. */}
+                  {fn.fn.nr && <span className="num mr-1 text-ink-500">{fn.fn.nr}</span>}
                   {/* Das Datum ist der SORTIERSCHLÜSSEL — es sichtbar zu machen ist
                       §8-Ehrlichkeit: der Leser sieht, wonach geordnet wurde, und dass
                       undatierte Vermerke am Ende stehen (kein stilles Rateergebnis). */}
