@@ -37,7 +37,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "2",
@@ -49,7 +50,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -61,7 +63,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "4",
@@ -73,7 +76,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "5",
@@ -85,7 +89,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "6",
@@ -101,7 +106,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -132,7 +138,8 @@
       }
      ],
      "absatz": "2",
-     "item": "bbis"
+     "item": "bbis",
+     "kl": "A"
     }
    ]
   },
@@ -167,7 +174,8 @@
       "b": 1,
       "o": 277,
       "l": 277
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -197,7 +205,8 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -213,7 +222,8 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -229,7 +239,8 @@
       }
      ],
      "absatz": null,
-     "item": "p"
+     "item": "p",
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -245,7 +256,8 @@
       }
      ],
      "absatz": null,
-     "item": "q"
+     "item": "q",
+     "kl": "A"
     }
    ]
   },
@@ -275,7 +287,8 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -291,7 +304,8 @@
       }
      ],
      "absatz": "4",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -313,7 +327,8 @@
       "it": 2,
       "o": 124,
       "l": 124
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -334,7 +349,8 @@
       "b": 5,
       "o": 162,
       "l": 162
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -364,7 +380,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -385,7 +402,8 @@
       "b": 2,
       "o": 218,
       "l": 218
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -415,7 +433,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -505,7 +524,8 @@
       "it": 1,
       "o": 164,
       "l": 164
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -544,7 +564,8 @@
       "b": 0,
       "o": 175,
       "l": 175
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -560,7 +581,8 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -625,7 +647,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -646,7 +669,8 @@
       "b": 1,
       "o": 209,
       "l": 209
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -667,7 +691,8 @@
       "b": 2,
       "o": 81,
       "l": 81
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -707,7 +732,8 @@
       "b": 1,
       "o": 276,
       "l": 276
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -745,7 +771,8 @@
       "b": 1,
       "o": 49,
       "l": 49
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -780,7 +807,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "36",
@@ -801,7 +829,8 @@
       "b": 2,
       "o": 92,
       "l": 92
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -841,7 +870,8 @@
       "b": 2,
       "o": 34,
       "l": 517
-     }
+     },
+     "kl": "G"
     }
    ]
   },
@@ -877,7 +907,8 @@
       "b": 7,
       "o": 38,
       "l": 83
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "38",
@@ -894,7 +925,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Marktüberwachung"
+     "sektion": "2. Abschnitt: Marktüberwachung",
+     "kl": "A"
     }
    ]
   },
@@ -930,7 +962,8 @@
       "b": 3,
       "o": 188,
       "l": 285
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -965,7 +998,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1005,7 +1039,8 @@
       "b": 0,
       "o": 278,
       "l": 278
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -1026,7 +1061,8 @@
       "b": 1,
       "o": 260,
       "l": 260
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1058,7 +1094,8 @@
       "b": 0,
       "o": 105,
       "l": 105
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1090,7 +1127,8 @@
       "b": 0,
       "o": 105,
       "l": 105
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1122,7 +1160,8 @@
       "b": 0,
       "o": 98,
       "l": 98
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1154,7 +1193,8 @@
       "b": 0,
       "o": 105,
       "l": 105
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1184,7 +1224,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1216,7 +1257,8 @@
       "b": 0,
       "o": 105,
       "l": 105
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -1232,7 +1274,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -1264,7 +1307,8 @@
       "b": 0,
       "o": 162,
       "l": 181
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "54",
@@ -1282,7 +1326,8 @@
       "b": 0,
       "o": 181,
       "l": 181
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1324,7 +1369,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1345,7 +1391,8 @@
      "text": "BRB vom 17. Juni 1996",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1381,7 +1428,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3a. Kapitel: Inverkehrbringen von nach ausländischen technischen Vorschriften hergestellten Produkten"
+     "sektion": "3a. Kapitel: Inverkehrbringen von nach ausländischen technischen Vorschriften hergestellten Produkten",
+     "kl": "A"
     }
    ]
   },
@@ -1435,7 +1483,8 @@
       "b": 0,
       "o": 238,
       "l": 239
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1481,7 +1530,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -1497,7 +1547,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -1515,7 +1566,8 @@
       "it": 1,
       "o": 132,
       "l": 133
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1589,7 +1641,8 @@
       "b": 0,
       "o": 156,
       "l": 156
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1619,7 +1672,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1649,7 +1703,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1679,7 +1734,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

@@ -34,7 +34,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -102,7 +104,8 @@
       "it": 8,
       "o": 104,
       "l": 343
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "4",
@@ -115,7 +118,8 @@
       "it": 8,
       "o": 233,
       "l": 343
-     }
+     },
+     "kl": "U"
     },
     {
      "nr": "5",
@@ -127,7 +131,8 @@
       }
      ],
      "absatz": null,
-     "item": "h"
+     "item": "h",
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -146,7 +151,8 @@
       "it": 9,
       "o": 146,
       "l": 211
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -182,7 +188,8 @@
       "b": 0,
       "o": 100,
       "l": 100
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -211,7 +218,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -242,7 +250,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     }
    ]
   },
@@ -279,7 +288,8 @@
       "it": 3,
       "o": 227,
       "l": 227
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -297,7 +307,8 @@
       "it": 1,
       "o": 220,
       "l": 220
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -368,7 +379,8 @@
       "b": 1,
       "o": 111,
       "l": 226
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -404,7 +416,8 @@
       "b": 0,
       "o": 720,
       "l": 720
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -435,7 +448,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -452,7 +466,8 @@
       "b": 4,
       "o": 237,
       "l": 237
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -483,7 +498,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "18",
@@ -500,7 +516,8 @@
       "b": 2,
       "o": 346,
       "l": 346
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -518,7 +535,8 @@
       "it": 3,
       "o": 116,
       "l": 116
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -555,7 +573,8 @@
       "it": 8,
       "o": 43,
       "l": 43
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -572,7 +591,8 @@
       "b": 2,
       "o": 302,
       "l": 302
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -584,7 +604,8 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -601,7 +622,8 @@
       "b": 5,
       "o": 187,
       "l": 187
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -632,7 +654,8 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -650,7 +673,8 @@
       "it": 1,
       "o": 159,
       "l": 159
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -771,7 +795,8 @@
       "b": 1,
       "o": 27,
       "l": 178
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "27",
@@ -788,7 +813,8 @@
       "b": 3,
       "o": 209,
       "l": 209
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -807,7 +833,8 @@
       "b": 4,
       "o": 214,
       "l": 444
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "29",
@@ -825,7 +852,8 @@
       "b": 4,
       "o": 444,
       "l": 444
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -863,7 +891,8 @@
       "b": 0,
       "o": 467,
       "l": 614
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -894,7 +923,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -913,7 +943,8 @@
       "it": 1,
       "o": 110,
       "l": 111
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "34",
@@ -925,7 +956,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -938,7 +970,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "6. Kapitel: Dokumentationspflicht, Aufbewahrung der Belege und Information von Behörden"
+     "sektion": "6. Kapitel: Dokumentationspflicht, Aufbewahrung der Belege und Information von Behörden",
+     "kl": "A"
     }
    ]
   },
@@ -1020,7 +1053,8 @@
       }
      ],
      "absatz": "2",
-     "item": "l"
+     "item": "l",
+     "kl": "A"
     }
    ]
   },
@@ -1097,7 +1131,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -1110,7 +1145,8 @@
       "b": 0,
       "o": 266,
       "l": 331
-     }
+     },
+     "kl": "U"
     }
    ]
   },
@@ -1153,7 +1189,8 @@
       "b": 3,
       "o": 304,
       "l": 304
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1191,7 +1228,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -1208,7 +1246,8 @@
       "b": 1,
       "o": 154,
       "l": 154
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1239,7 +1278,8 @@
       "b": 0,
       "o": 396,
       "l": 396
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -1251,7 +1291,8 @@
       "b": 2,
       "o": 76,
       "l": 630
-     }
+     },
+     "kl": "U"
     },
     {
      "nr": "48",
@@ -1263,7 +1304,8 @@
       "b": 3,
       "o": 273,
       "l": 274
-     }
+     },
+     "kl": "U"
     },
     {
      "nr": "49",
@@ -1280,7 +1322,8 @@
       "b": 3,
       "o": 274,
       "l": 274
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -1293,7 +1336,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Titel: Besondere Bestimmungen für Fondsleitungen, KAG-Investmentgesellschaften und Verwalter von Kollektivvermögen"
+     "sektion": "3. Titel: Besondere Bestimmungen für Fondsleitungen, KAG-Investmentgesellschaften und Verwalter von Kollektivvermögen",
+     "kl": "A"
     }
    ]
   },
@@ -1319,7 +1363,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -1331,7 +1376,8 @@
       "b": 2,
       "o": 280,
       "l": 281
-     }
+     },
+     "kl": "U"
     },
     {
      "nr": "52",
@@ -1348,7 +1394,8 @@
       "b": 2,
       "o": 281,
       "l": 281
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1374,7 +1421,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "54",
@@ -1386,7 +1434,8 @@
       "b": 0,
       "o": 205,
       "l": 349
-     }
+     },
+     "kl": "U"
     },
     {
      "nr": "55",
@@ -1403,7 +1452,8 @@
       "b": 0,
       "o": 349,
       "l": 349
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1451,7 +1501,8 @@
       "b": 0,
       "o": 66,
       "l": 107
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "63",
@@ -1468,7 +1519,8 @@
       "b": 3,
       "o": 216,
       "l": 216
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "64",
@@ -1485,7 +1537,8 @@
       "b": 4,
       "o": 270,
       "l": 270
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "61",
@@ -1498,7 +1551,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)"
+     "sektion": "1a. Kapitel: Identifizierung der Vertragspartei (Art. 3 GwG)",
+     "kl": "A"
     }
    ]
   },
@@ -1615,7 +1669,8 @@
       "b": 1,
       "o": 205,
       "l": 450
-     }
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -1663,7 +1718,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     }
    ]
   },
@@ -1726,7 +1782,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1763,7 +1820,8 @@
       "b": 1,
       "o": 249,
       "l": 259
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "71",
@@ -1780,7 +1838,8 @@
       "b": 1,
       "o": 259,
       "l": 259
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1821,7 +1880,8 @@
       "b": 4,
       "o": 266,
       "l": 266
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1885,7 +1945,8 @@
       "b": 0,
       "o": 171,
       "l": 171
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "74",
@@ -1897,7 +1958,8 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -1982,7 +2044,8 @@
       "b": 0,
       "o": 295,
       "l": 295
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2084,7 +2147,8 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "kl": "A"
     },
     {
      "nr": "77",
@@ -2096,7 +2160,8 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -2114,7 +2179,8 @@
       "it": 4,
       "o": 101,
       "l": 101
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2198,7 +2264,8 @@
       "b": 1,
       "o": 295,
       "l": 299
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "81",
@@ -2215,7 +2282,8 @@
       "b": 1,
       "o": 299,
       "l": 299
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2270,7 +2338,8 @@
       "b": 0,
       "o": 122,
       "l": 132
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "83",
@@ -2288,7 +2357,8 @@
       "b": 0,
       "o": 132,
       "l": 132
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2342,7 +2412,8 @@
       "b": 1,
       "o": 30,
       "l": 151
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "85",
@@ -2363,7 +2434,8 @@
       "b": 1,
       "o": 151,
       "l": 151
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2416,7 +2488,8 @@
       "it": 5,
       "o": 90,
       "l": 91
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "87",
@@ -2434,7 +2507,8 @@
       "b": 3,
       "o": 146,
       "l": 347
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2465,7 +2539,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2494,7 +2569,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2526,7 +2602,8 @@
       "b": 0,
       "o": 54,
       "l": 71
-     }
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -2581,7 +2658,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2612,7 +2690,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "37",
@@ -2631,7 +2710,8 @@
       "b": 0,
       "o": 149,
       "l": 375
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2660,7 +2740,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2693,7 +2774,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "60",
@@ -2712,7 +2794,8 @@
       "b": 0,
       "o": 52,
       "l": 132
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "56",
@@ -2726,7 +2809,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "sektion": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "kl": "V"
     },
     {
      "nr": "57",
@@ -2739,7 +2823,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG"
+     "sektion": "5. Titel: Besondere Bestimmungen für Personen nach Artikel 1b BankG und Finanzintermediäre nach Artikel 2 Absatz 2 Buchstaben abis und dquater GwG",
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -2752,7 +2837,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Kapitel: Geltungsbereich"
+     "sektion": "1. Kapitel: Geltungsbereich",
+     "kl": "A"
     }
    ]
   },
@@ -2783,7 +2869,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -2800,7 +2887,8 @@
       "b": 1,
       "o": 302,
       "l": 302
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2836,7 +2924,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2867,7 +2956,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "90",
@@ -2885,7 +2975,8 @@
       "b": 0,
       "o": 34,
       "l": 550
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "91",
@@ -2903,7 +2994,8 @@
       "b": 0,
       "o": 193,
       "l": 550
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "92",
@@ -2920,7 +3012,8 @@
       "b": 0,
       "o": 550,
       "l": 550
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2946,7 +3039,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "96",
@@ -2964,7 +3058,8 @@
       "b": 0,
       "o": 147,
       "l": 148
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2990,7 +3085,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3021,7 +3117,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
