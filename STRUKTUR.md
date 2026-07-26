@@ -21,7 +21,7 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
-## Session 26.7.2026 (Folge-Einheit, Branch feat/fortsetzungs-tiefe) — Fortsetzungs-Tiefe + blockübergreifende Zitier-Kette (PR folgt, gestapelt auf #372)
+## Session 26.7.2026 (Folge-Einheit, Branch feat/fortsetzungs-tiefe) — Fortsetzungs-Tiefe + blockübergreifende Zitier-Kette (PR #378, gestapelt auf #372)
 **Auftrag (Task-Chip, Befund 6 der Routing-Gegenprüfung):** amtliche Struktur verifizieren, `tiefe`-Extraktion für Fortsetzungs-Ziffern, Kette prüfen, ZitierMarken-Unterdrückung rückbauen.
 - **Amtlich verifiziert (§7, PDF-x-Positionen der Pin-Konsolidierungen):** die vom Formelbild unterbrochenen Ziffern «2.» stehen in DBG 22 (S. 17) und STHG 7 (S. 6/7) auf der Ziffern-Einrückung (tiefe 1 unter lit. a bzw. c). Der neue Scanner fand 4 weitere amtlich falsche Ebenen: RBUE 25 (i–v flach NEBEN «4)» statt darunter — invertiert), RBUE/HZUE annex_u1, VVV annex_4 (alle per PDF belegt).
 - **Extraktor (Risiko-Pfad, TDD rot→grün):** (Form A) anonyme direkte Unter-`<dl>` wird rekursiv eine Stufe tiefer zerlegt; (Form B) enge Fortsetzungsregel nur an Bild-Blöcken (reiner Ziffern-Nachfolger n→n+1, führende Kette). 5 Snapshots inhaltlich geändert, 222 byte-gleich, Sidecars/`pos` byte-stabil, Golden grün.
