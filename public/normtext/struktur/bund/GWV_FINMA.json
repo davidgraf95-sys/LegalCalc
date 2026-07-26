@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "955.033.0",
   "titel": "Verordnung der Eidgenössischen Finanzmarktaufsicht über die Bekämpfung von Geldwäscherei und Terrorismusfinanzierung im Finanzsektor",
@@ -96,14 +96,26 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 8,
+      "o": 104,
+      "l": 343
+     }
     },
     {
      "nr": "4",
      "text": "Seit dem 1. Juli 2016: KmGK.",
      "links": [],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 8,
+      "o": 233,
+      "l": 343
+     }
     },
     {
      "nr": "5",
@@ -128,7 +140,13 @@
       }
      ],
      "absatz": null,
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 0,
+      "it": 9,
+      "o": 146,
+      "l": 211
+     }
     }
    ]
   },
@@ -159,7 +177,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 100,
+      "l": 100
+     }
     }
    ]
   },
@@ -250,7 +273,13 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 227,
+      "l": 227
+     }
     },
     {
      "nr": "11",
@@ -262,7 +291,13 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 220,
+      "l": 220
+     }
     }
    ]
   },
@@ -328,7 +363,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 111,
+      "l": 226
+     }
     }
    ]
   },
@@ -359,7 +399,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 720,
+      "l": 720
+     }
     }
    ]
   },
@@ -402,7 +447,12 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 237,
+      "l": 237
+     }
     }
    ]
   },
@@ -445,7 +495,12 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 346,
+      "l": 346
+     }
     },
     {
      "nr": "19",
@@ -457,7 +512,13 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 4,
+      "it": 3,
+      "o": 116,
+      "l": 116
+     }
     }
    ]
   },
@@ -488,7 +549,13 @@
       }
      ],
      "absatz": "2",
-     "item": "i"
+     "item": "i",
+     "pos": {
+      "b": 1,
+      "it": 8,
+      "o": 43,
+      "l": 43
+     }
     },
     {
      "nr": "21",
@@ -500,7 +567,12 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 302,
+      "l": 302
+     }
     },
     {
      "nr": "22",
@@ -524,7 +596,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 187,
+      "l": 187
+     }
     }
    ]
   },
@@ -567,7 +644,13 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 159,
+      "l": 159
+     }
     }
    ]
   },
@@ -683,7 +766,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 27,
+      "l": 178
+     }
     },
     {
      "nr": "27",
@@ -695,7 +783,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 209,
+      "l": 209
+     }
     },
     {
      "nr": "28",
@@ -709,7 +802,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 4
+     "absatzIndex": 4,
+     "pos": {
+      "b": 4,
+      "o": 214,
+      "l": 444
+     }
     },
     {
      "nr": "29",
@@ -722,7 +820,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 4
+     "absatzIndex": 4,
+     "pos": {
+      "b": 4,
+      "o": 444,
+      "l": 444
+     }
     }
    ]
   },
@@ -755,7 +858,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 467,
+      "l": 614
+     }
     }
    ]
   },
@@ -799,7 +907,13 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 110,
+      "l": 111
+     }
     },
     {
      "nr": "34",
@@ -991,7 +1105,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 266,
+      "l": 331
+     }
     }
    ]
   },
@@ -1029,7 +1148,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 304,
+      "l": 304
+     }
     }
    ]
   },
@@ -1079,7 +1203,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 154,
+      "l": 154
+     }
     }
    ]
   },
@@ -1105,21 +1234,36 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 396,
+      "l": 396
+     }
     },
     {
      "nr": "47",
      "text": "Seit dem 1. Juli 2016: KmGK.",
      "links": [],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 76,
+      "l": 630
+     }
     },
     {
      "nr": "48",
      "text": "Die Vereinbarung kann bei der Schweizerischen Bankiervereinigung kostenlos abgerufen werden unter www.swissbanking.org.",
      "links": [],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 273,
+      "l": 274
+     }
     },
     {
      "nr": "49",
@@ -1131,7 +1275,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 274,
+      "l": 274
+     }
     },
     {
      "nr": "45",
@@ -1177,7 +1326,12 @@
      "text": "Die Vereinbarung kann bei der Schweizerischen Bankiervereinigung kostenlos abgerufen werden unter www.swissbanking.org.",
      "links": [],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 280,
+      "l": 281
+     }
     },
     {
      "nr": "52",
@@ -1189,7 +1343,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 281,
+      "l": 281
+     }
     }
    ]
   },
@@ -1222,7 +1381,12 @@
      "text": "Das Reglement kann bei der Selbstregulierungsorganisation des Schweizerischen Versicherungsverbandes kostenlos abgerufen werden unter www.sro-svv.ch.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 205,
+      "l": 349
+     }
     },
     {
      "nr": "55",
@@ -1234,7 +1398,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 349,
+      "l": 349
+     }
     }
    ]
   },
@@ -1277,7 +1446,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 66,
+      "l": 107
+     }
     },
     {
      "nr": "63",
@@ -1289,7 +1463,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 216,
+      "l": 216
+     }
     },
     {
      "nr": "64",
@@ -1301,7 +1480,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 270,
+      "l": 270
+     }
     },
     {
      "nr": "61",
@@ -1426,7 +1610,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 205,
+      "l": 450
+     }
     }
    ]
   },
@@ -1569,7 +1758,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 249,
+      "l": 259
+     }
     },
     {
      "nr": "71",
@@ -1581,7 +1775,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 259,
+      "l": 259
+     }
     }
    ]
   },
@@ -1617,7 +1816,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 266,
+      "l": 266
+     }
     }
    ]
   },
@@ -1676,7 +1880,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 171,
+      "l": 171
+     }
     },
     {
      "nr": "74",
@@ -1768,7 +1977,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 295,
+      "l": 295
+     }
     }
    ]
   },
@@ -1894,7 +2108,13 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 101,
+      "l": 101
+     }
     }
    ]
   },
@@ -1973,7 +2193,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 295,
+      "l": 299
+     }
     },
     {
      "nr": "81",
@@ -1985,7 +2210,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 299,
+      "l": 299
+     }
     }
    ]
   },
@@ -2035,7 +2265,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 122,
+      "l": 132
+     }
     },
     {
      "nr": "83",
@@ -2048,7 +2283,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 132,
+      "l": 132
+     }
     }
    ]
   },
@@ -2097,7 +2337,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 30,
+      "l": 151
+     }
     },
     {
      "nr": "85",
@@ -2113,7 +2358,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 151,
+      "l": 151
+     }
     }
    ]
   },
@@ -2160,7 +2410,13 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 90,
+      "l": 91
+     }
     },
     {
      "nr": "87",
@@ -2173,7 +2429,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 146,
+      "l": 347
+     }
     }
    ]
   },
@@ -2260,7 +2521,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 54,
+      "l": 71
+     }
     }
    ]
   },
@@ -2360,7 +2626,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 149,
+      "l": 375
+     }
     }
    ]
   },
@@ -2436,7 +2707,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 52,
+      "l": 132
+     }
     },
     {
      "nr": "56",
@@ -2519,7 +2795,12 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 302,
+      "l": 302
+     }
     }
    ]
   },
@@ -2599,7 +2880,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 34,
+      "l": 550
+     }
     },
     {
      "nr": "91",
@@ -2612,7 +2898,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 193,
+      "l": 550
+     }
     },
     {
      "nr": "92",
@@ -2624,7 +2915,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 550,
+      "l": 550
+     }
     }
    ]
   },
@@ -2663,7 +2959,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 147,
+      "l": 148
+     }
     }
    ]
   },

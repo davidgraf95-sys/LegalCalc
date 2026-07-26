@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.142.30",
   "titel": "Abkommen über die Rechtsstellung der Flüchtlinge",
@@ -521,7 +521,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 391,
+      "l": 392
+     }
     }
    ]
   },

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "211.432.11",
   "titel": "Technische Verordnung des EJPD und des VBS über das Grundbuch",
@@ -318,7 +318,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 206,
+      "l": 206
+     }
     },
     {
      "nr": "19",
@@ -330,7 +335,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 167,
+      "l": 167
+     }
     }
    ]
   },
@@ -349,7 +359,12 @@
      "text": "Diese Norm kann kostenlos eingesehen und gegen Bezahlung bezogen werden bei der Schweizerischen Normen-Vereinigung (SNV), Sulzerallee 70, 8404 Winterthur; www.snv.ch.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 120,
+      "l": 133
+     }
     }
    ]
   },
@@ -441,7 +456,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 126,
+      "l": 134
+     }
     }
    ]
   },
@@ -551,7 +571,13 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 192,
+      "l": 284
+     }
     },
     {
      "nr": "35",
@@ -575,7 +601,13 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 109,
+      "l": 213
+     }
     }
    ]
   },
@@ -601,7 +633,13 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 249,
+      "l": 328
+     }
     },
     {
      "nr": "38",
@@ -625,7 +663,13 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 66,
+      "l": 67
+     }
     },
     {
      "nr": "40",
@@ -663,7 +707,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 90,
+      "l": 91
+     }
     },
     {
      "nr": "42",
@@ -675,7 +724,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 91,
+      "l": 91
+     }
     }
    ]
   },
@@ -713,14 +767,26 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 190,
+      "l": 255
+     }
     },
     {
      "nr": "44",
      "text": "www.eCH.ch",
      "links": [],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 162,
+      "l": 198
+     }
     }
    ]
   },
@@ -746,7 +812,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 181,
+      "l": 192
+     }
     }
    ]
   },
@@ -770,7 +841,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 219,
+      "l": 315
+     }
     }
    ]
   },
@@ -807,7 +883,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 63,
+      "l": 99
+     }
     }
    ]
   },
@@ -981,7 +1062,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 382,
+      "l": 420
+     }
     }
    ]
   },
@@ -1007,7 +1093,13 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 115,
+      "l": 226
+     }
     },
     {
      "nr": "23",
@@ -1019,7 +1111,13 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 81,
+      "l": 119
+     }
     },
     {
      "nr": "21",
@@ -1070,7 +1168,13 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 55,
+      "l": 56
+     }
     },
     {
      "nr": "26",
@@ -1082,7 +1186,13 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 98,
+      "l": 148
+     }
     },
     {
      "nr": "24",

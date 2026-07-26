@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "943.02",
   "titel": "Bundesgesetz über den Binnenmarkt",
@@ -100,7 +100,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 107,
+      "l": 107
+     }
     }
    ]
   },
@@ -130,7 +135,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 472,
+      "l": 472
+     }
     },
     {
      "nr": "7",
@@ -146,7 +156,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 134,
+      "l": 134
+     }
     },
     {
      "nr": "8",
@@ -162,7 +177,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 427,
+      "l": 427
+     }
     },
     {
      "nr": "9",
@@ -178,7 +198,12 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 203,
+      "l": 246
+     }
     },
     {
      "nr": "10",
@@ -194,7 +219,12 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 246,
+      "l": 246
+     }
     }
    ]
   },
@@ -254,7 +284,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 3,
+      "l": 3
+     }
     },
     {
      "nr": "13",
@@ -267,7 +302,12 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 104,
+      "l": 306
+     }
     },
     {
      "nr": "14",
@@ -283,7 +323,12 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 306,
+      "l": 306
+     }
     }
    ]
   },
@@ -309,7 +354,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 514,
+      "l": 676
+     }
     },
     {
      "nr": "16",
@@ -322,7 +372,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 585,
+      "l": 676
+     }
     },
     {
      "nr": "17",
@@ -338,7 +393,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 676,
+      "l": 676
+     }
     }
    ]
   },
@@ -408,7 +468,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 172,
+      "l": 172
+     }
     }
    ]
   },
@@ -438,7 +503,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 85,
+      "l": 85
+     }
     },
     {
      "nr": "26",
@@ -454,7 +524,13 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 104,
+      "l": 104
+     }
     },
     {
      "nr": "27",
@@ -470,7 +546,12 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 148,
+      "l": 148
+     }
     },
     {
      "nr": "28",
@@ -490,7 +571,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 296,
+      "l": 296
+     }
     }
    ]
   },
@@ -672,7 +758,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 99,
+      "l": 99
+     }
     },
     {
      "nr": "24",
@@ -685,7 +776,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 153,
+      "l": 185
+     }
     }
    ]
   }

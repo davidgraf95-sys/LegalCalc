@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "944.3",
   "titel": "Bundesgesetz über Pauschalreisen",
@@ -80,21 +80,36 @@
      "text": "Da die durchgehende Verwendung von Paarformen die Lesbarkeit des vorliegenden Erlasses erschwert, wird im folgenden die männliche Personenbezeichnung als Ausdruck gewählt, der sich auf Personen beider Geschlechter bezieht.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 51,
+      "l": 177
+     }
     },
     {
      "nr": "4",
      "text": "Da die durchgehende Verwendung von Paarformen die Lesbarkeit des vorliegenden Erlasses erschwert, wird im folgenden die männliche Personenbezeichnung als Ausdruck gewählt, der sich auf Personen beider Geschlechter bezieht.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 45,
+      "l": 132
+     }
     },
     {
      "nr": "5",
      "text": "Da die durchgehende Verwendung von Paarformen die Lesbarkeit des vorliegenden Erlasses erschwert, wird im folgenden die männliche Personenbezeichnung als Ausdruck gewählt, der sich auf Personen beider Geschlechter bezieht.",
      "links": [],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 42,
+      "l": 60
+     }
     }
    ]
   },
@@ -232,7 +247,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 304,
+      "l": 382
+     }
     }
    ]
   },

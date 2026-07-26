@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "812.212.1",
   "titel": "Verordnung über die Bewilligungen im Arzneimittelbereich",
@@ -59,7 +59,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 202,
+      "l": 203
+     }
     }
    ]
   },
@@ -80,7 +85,13 @@
      "text": "Steht für: <i>Good Manufacturing Practice</i>",
      "links": [],
      "absatz": null,
-     "item": "o"
+     "item": "o",
+     "pos": {
+      "b": 0,
+      "it": 14,
+      "o": 348,
+      "l": 402
+     }
     }
    ]
   },
@@ -264,7 +275,13 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 247,
+      "l": 264
+     }
     }
    ]
   },
@@ -290,7 +307,13 @@
      "text": "Steht für: <i>Good Distribution Practice</i>",
      "links": [],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 97,
+      "l": 126
+     }
     }
    ]
   },
@@ -338,7 +361,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 111,
+      "l": 111
+     }
     }
    ]
   },
@@ -403,7 +431,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 128,
+      "l": 128
+     }
     }
    ]
   },
@@ -587,7 +620,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 90,
+      "l": 101
+     }
     }
    ]
   },
@@ -652,7 +690,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 204,
+      "l": 252
+     }
     }
    ]
   },
@@ -717,7 +760,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 170,
+      "l": 226
+     }
     }
    ]
   },
@@ -811,7 +859,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 164,
+      "l": 241
+     }
     },
     {
      "nr": "12",
@@ -823,7 +876,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 142,
+      "l": 142
+     }
     }
    ]
   },
@@ -957,7 +1015,13 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 78,
+      "l": 119
+     }
     }
    ]
   },
@@ -983,7 +1047,12 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 160,
+      "l": 161
+     }
     },
     {
      "nr": "16",
@@ -995,7 +1064,12 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 161,
+      "l": 161
+     }
     }
    ]
   },
@@ -1016,7 +1090,12 @@
      "text": "Verordnung (EG) Nr. 1236/2005 des Rates vom 27. Juni 2005 betreffend den Handel mit bestimmten Gütern, die zur Vollstreckung der Todesstrafe, zu Folter oder zu anderer grausamer, unmenschlicher oder erniedrigender Behandlung oder Strafe verwendet werden könnten; Fassung gemäss ABl. L 200 vom 30.7.2005, S. 1.",
      "links": [],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 254,
+      "l": 318
+     }
     }
    ]
   },
@@ -1078,7 +1157,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 216,
+      "l": 241
+     }
     },
     {
      "nr": "20",
@@ -1090,7 +1174,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 241,
+      "l": 241
+     }
     }
    ]
   },
@@ -1351,7 +1440,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 190,
+      "l": 190
+     }
     }
    ]
   },

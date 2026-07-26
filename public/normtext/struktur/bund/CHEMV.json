@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "813.11",
   "titel": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen",
@@ -130,7 +130,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 197,
+      "l": 294
+     }
     },
     {
      "nr": "8",
@@ -143,7 +148,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 271,
+      "l": 294
+     }
     },
     {
      "nr": "9",
@@ -155,7 +165,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 294,
+      "l": 294
+     }
     },
     {
      "nr": "10",
@@ -168,7 +183,12 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 154,
+      "l": 332
+     }
     },
     {
      "nr": "11",
@@ -181,7 +201,12 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 260,
+      "l": 332
+     }
     },
     {
      "nr": "12",
@@ -193,7 +218,12 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 332,
+      "l": 332
+     }
     },
     {
      "nr": "13",
@@ -206,7 +236,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 130,
+      "l": 414
+     }
     },
     {
      "nr": "14",
@@ -222,7 +257,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 414,
+      "l": 414
+     }
     },
     {
      "nr": "15",
@@ -234,7 +274,13 @@
       }
      ],
      "absatz": "5",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 5,
+      "it": 2,
+      "o": 122,
+      "l": 122
+     }
     },
     {
      "nr": "16",
@@ -259,7 +305,13 @@
       }
      ],
      "absatz": "5",
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 5,
+      "it": 3,
+      "o": 70,
+      "l": 77
+     }
     },
     {
      "nr": "18",
@@ -272,7 +324,13 @@
       }
      ],
      "absatz": "5",
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 5,
+      "it": 4,
+      "o": 149,
+      "l": 150
+     }
     },
     {
      "nr": "19",
@@ -285,7 +343,13 @@
       }
      ],
      "absatz": "5",
-     "item": "3"
+     "item": "3",
+     "pos": {
+      "b": 5,
+      "it": 5,
+      "o": 93,
+      "l": 94
+     }
     },
     {
      "nr": "20",
@@ -298,7 +362,13 @@
       }
      ],
      "absatz": "5",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 5,
+      "it": 6,
+      "o": 87,
+      "l": 88
+     }
     },
     {
      "nr": "21",
@@ -310,7 +380,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 154,
+      "l": 154
+     }
     },
     {
      "nr": "22",
@@ -323,7 +398,12 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 121,
+      "l": 122
+     }
     },
     {
      "nr": "23",
@@ -335,7 +415,12 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 122,
+      "l": 122
+     }
     }
    ]
   },
@@ -396,7 +481,13 @@
      "text": "Verordnung (EG) Nr. 1907/2006 des Europäischen Parlaments und des Rates vom 18. Dezember 2006 zur Registrierung, Bewertung, Zulassung und Beschränkung chemischer Stoffe (REACH), zur Schaffung einer Europäischen Agentur für chemische Stoffe, zur Änderung der Richtlinie 1999/45/EG und zur Aufhebung der Verordnung (EWG) Nr. 793/93 des Rates, der Verordnung (EG) Nr. 1488/94 der Kommission, der Richtlinie 76/769/EWG des Rates sowie der Richtlinien 91/155/EWG, 93/67/EWG, 93/105/EG und 2000/21/EG der Kommission, ABl. L 396 vom 30.12.2006, S. 1; zuletzt geändert durch Verordnung (EU) 2021/2204, ABl. L 446 vom 14.12.2021, S. 34.",
      "links": [],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 1,
+      "it": 9,
+      "o": 94,
+      "l": 142
+     }
     },
     {
      "nr": "28",
@@ -408,7 +499,13 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "it": 10,
+      "o": 2,
+      "l": 117
+     }
     },
     {
      "nr": "29",
@@ -427,14 +524,24 @@
      "text": "Verordnung (EG) Nr. 1272/2008 des Europäischen Parlaments und des Rates vom 16. Dezember 2008 über die Einstufung, Kennzeichnung und Verpackung von Stoffen und Gemischen, zur Änderung und Aufhebung der Richtlinien 67/548/EWG und 1999/45/EG und zur Änderung der Verordnung (EG) Nr. 1907/2006, ABl. L 353 vom 31.12.2008, S. 1; zuletzt geändert durch Delegierte Verordnung (EU) 2021/1962, ABl. L 400 vom 12.11.2021, S. 16.",
      "links": [],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 131,
+      "l": 217
+     }
     },
     {
      "nr": "31",
      "text": "Richtlinie 75/324/EWG des Rates vom 20. Mai 1975zur Angleichung der Rechtsvorschriften der Mitgliedstaaten über Aerosolpackungen, ABl. L 147 vom 9.6.1975, S. 40; zuletzt geändert durch Richtlinie (EU) 2016/2037, ABl. L 314 vom 22.11.2016, S. 11.",
      "links": [],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 161,
+      "l": 217
+     }
     },
     {
      "nr": "32",
@@ -446,7 +553,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 217,
+      "l": 217
+     }
     },
     {
      "nr": "33",
@@ -458,7 +570,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 769,
+      "l": 769
+     }
     },
     {
      "nr": "34",
@@ -471,7 +588,12 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 243,
+      "l": 256
+     }
     },
     {
      "nr": "35",
@@ -483,7 +605,12 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 256,
+      "l": 256
+     }
     }
    ]
   },
@@ -516,14 +643,24 @@
      "text": "Siehe Fussnote zu Art. 2 Abs. 2 Bst. f. Ausdruck gemäss Anhang Ziff.1 der V vom 15. Nov. 2023, in Kraft seit 1. Jan. 2024 . diese Änd. ist in den in AS erwähten Bestimmungen ausgeführt.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 147,
+      "l": 157
+     }
     },
     {
      "nr": "37",
      "text": "Siehe Fussnote zu Art. 2 Abs. 4",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 153,
+      "l": 163
+     }
     }
    ]
   },
@@ -574,7 +711,12 @@
      "text": "Siehe Fussnote zu Art. 2 Abs. 4.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 96,
+      "l": 107
+     }
     },
     {
      "nr": "39",
@@ -618,7 +760,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 90,
+      "l": 101
+     }
     }
    ]
   },
@@ -650,7 +797,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 140,
+      "l": 151
+     }
     }
    ]
   },
@@ -688,7 +840,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 62,
+      "l": 238
+     }
     },
     {
      "nr": "43",
@@ -696,7 +853,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 237,
+      "l": 238
+     }
     }
    ]
   },
@@ -739,7 +901,13 @@
      "text": "Siehe Fussnote zu Art. 2 Abs. 4.",
      "links": [],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 162,
+      "l": 163
+     }
     },
     {
      "nr": "46",
@@ -763,7 +931,13 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 148,
+      "l": 148
+     }
     },
     {
      "nr": "48",
@@ -775,7 +949,12 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 264,
+      "l": 264
+     }
     },
     {
      "nr": "49",
@@ -787,7 +966,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 224,
+      "l": 224
+     }
     },
     {
      "nr": "50",
@@ -799,7 +984,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 38,
+      "l": 233
+     }
     }
    ]
   },
@@ -836,14 +1026,24 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 62,
+      "l": 321
+     }
     },
     {
      "nr": "53",
      "text": "Siehe Fussnote zu Art. 2 Abs. 4.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 320,
+      "l": 321
+     }
     },
     {
      "nr": "54",
@@ -855,7 +1055,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 321,
+      "l": 321
+     }
     }
    ]
   },
@@ -886,7 +1091,13 @@
      "text": "Siehe Fussnote zu Art. 2 Abs. 4.",
      "links": [],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 81,
+      "l": 88
+     }
     }
    ]
   },
@@ -956,14 +1167,25 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 69,
+      "l": 69
+     }
     },
     {
      "nr": "58",
      "text": "Siehe Fussnote zu Art. 2 Abs. 2 Bst. f.",
      "links": [],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 356,
+      "l": 374
+     }
     },
     {
      "nr": "59",
@@ -975,7 +1197,12 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 374,
+      "l": 374
+     }
     },
     {
      "nr": "60",
@@ -987,7 +1214,13 @@
       }
      ],
      "absatz": "6",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 6,
+      "it": 1,
+      "o": 287,
+      "l": 287
+     }
     },
     {
      "nr": "61",
@@ -999,7 +1232,12 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 330,
+      "l": 330
+     }
     }
    ]
   },
@@ -1035,7 +1273,13 @@
       }
      ],
      "absatz": "2",
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 62,
+      "l": 63
+     }
     }
    ]
   },
@@ -1066,7 +1310,12 @@
      "text": "Siehe Fussnote zu Art. 2 Abs. 2 Bst. f.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 103,
+      "l": 293
+     }
     }
    ]
   },
@@ -1098,7 +1347,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 104,
+      "l": 121
+     }
     }
    ]
   },
@@ -1187,35 +1441,65 @@
      "text": "Richtlinie 2000/39/EG der Kommission vom 8. Juni 2000 zur Festlegung einer ersten Liste von Arbeitsplatz-Richtgrenzwerten in Durchführung der Richtlinie 98/24/EG des Rates zum Schutz von Gesundheit und Sicherheit der Arbeitnehmer vor der Gefährdung durch chemische Arbeitsstoffe bei der Arbeit, ABl. L 142 vom 16.6.2000, S. 47; zuletzt geändert durch Richtlinie 2009/161/EU, ABl. L 338 vom 19.12.2009, S. 87.",
      "links": [],
      "absatz": null,
-     "item": "4"
+     "item": "4",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 98,
+      "l": 174
+     }
     },
     {
      "nr": "71",
      "text": "Richtlinie 2006/15/EG der Kommission vom 7. Februar 2006 zur Festlegung einer zweiten Liste von Arbeitsplatz-Richtgrenzwerten in Durchführung der Richtlinie 98/24/EG des Rates und zur Änderung der Richtlinien 91/322/EWG und 2000/39/EG, Fassung gemäss ABl. L 38 vom 9.2.2006, S. 36.",
      "links": [],
      "absatz": null,
-     "item": "4"
+     "item": "4",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 110,
+      "l": 174
+     }
     },
     {
      "nr": "72",
      "text": "Richtlinie 2009/161/EU der Kommission vom 17. Dezember 2009 zur Festlegung einer dritten Liste von Arbeitsplatz-Richtgrenzwerten in Durchführung der Richtlinie 98/24/EG des Rates und zur Änderung der Richtlinie 2000/39/EG, Fassung gemäss ABl. L 338 vom 19.12.2009, S. 87.",
      "links": [],
      "absatz": null,
-     "item": "4"
+     "item": "4",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 123,
+      "l": 174
+     }
     },
     {
      "nr": "73",
      "text": "Richtlinie (EU) 2017/164 der Kommission vom 31. Januar 2017 zur Festlegung einer vierten Liste von Arbeitsplatz-Richtgrenzwerten in Durchführung der Richtlinie 98/24/EG des Rates und zur Änderung der Richtlinien 91/322/EWG, 2000/39/EG und 2009/161/EU der Kommission, Fassung gemäss ABl. L 27 vom 1.2.2017, S. 115.",
      "links": [],
      "absatz": null,
-     "item": "4"
+     "item": "4",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 138,
+      "l": 174
+     }
     },
     {
      "nr": "74",
      "text": "Richtlinie (EU) 2019/1831 der Kommission vom 24. November 2019 zur Festlegung einer fünften Liste von Arbeitsplatz-Richtgrenzwerten in Durchführung der Richtlinie 98/24/EG des Rates und zur Änderung der Richtlinie 2000/39/EG der Kommission, Fassung gemäss ABl. L 279 vom 31.10.2019, S. 31.",
      "links": [],
      "absatz": null,
-     "item": "4"
+     "item": "4",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 158,
+      "l": 174
+     }
     }
    ]
   },
@@ -1373,7 +1657,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 95,
+      "l": 354
+     }
     }
    ]
   },
@@ -1428,7 +1717,13 @@
      "text": "Siehe Fussnote zu Art. 2 Abs. 2 Bst f",
      "links": [],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 0,
+      "it": 10,
+      "o": 62,
+      "l": 79
+     }
     },
     {
      "nr": "80",
@@ -1452,7 +1747,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 179,
+      "l": 179
+     }
     }
    ]
   },
@@ -1500,7 +1800,13 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 11,
+      "o": 35,
+      "l": 123
+     }
     },
     {
      "nr": "84",
@@ -1519,7 +1825,13 @@
      "text": "Siehe Fussnote zu Art. 2 Abs. 4.",
      "links": [],
      "absatz": "3",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 2,
+      "it": 0,
+      "o": 79,
+      "l": 85
+     }
     },
     {
      "nr": "86",
@@ -1531,7 +1843,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -1563,7 +1880,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 128,
+      "l": 188
+     }
     }
    ]
   },
@@ -1599,14 +1921,25 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 175,
+      "l": 175
+     }
     },
     {
      "nr": "89",
      "text": "Ursprünglich: Abs. 1.",
      "links": [],
      "absatz": "1bis",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 45,
+      "l": 45
+     }
     }
    ]
   },
@@ -1642,7 +1975,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 43,
+      "l": 43
+     }
     }
    ]
   },
@@ -1690,7 +2028,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 227,
+      "l": 227
+     }
     }
    ]
   },
@@ -1739,7 +2082,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 315,
+      "l": 421
+     }
     }
    ]
   },
@@ -1982,7 +2330,12 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 192,
+      "l": 192
+     }
     }
    ]
   },
@@ -2008,7 +2361,13 @@
      "text": "Siehe Fussnote zu Art. 2 Abs. 2 Bst. f.",
      "links": [],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 70,
+      "l": 85
+     }
     },
     {
      "nr": "98",
@@ -2021,7 +2380,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 212,
+      "l": 253
+     }
     }
    ]
   },
@@ -2104,7 +2468,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 135,
+      "l": 175
+     }
     }
    ]
   },
@@ -2161,7 +2530,13 @@
      "text": "Siehe Fussnote zu Art. 2 Abs. 4.",
      "links": [],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 120,
+      "l": 197
+     }
     },
     {
      "nr": "102",
@@ -2213,7 +2588,13 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 135,
+      "l": 135
+     }
     }
    ]
   },
@@ -2293,7 +2674,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 284,
+      "l": 341
+     }
     }
    ]
   },
@@ -2326,7 +2712,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 255,
+      "l": 327
+     }
     }
    ]
   },
@@ -2393,7 +2784,13 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 1,
+      "l": 1
+     }
     },
     {
      "nr": "113",
@@ -2406,7 +2803,13 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 8,
+      "o": 101,
+      "l": 132
+     }
     },
     {
      "nr": "114",
@@ -2461,7 +2864,13 @@
      "text": "Siehe Fussnote zu Art. 2 Abs. 4",
      "links": [],
      "absatz": "1",
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 0,
+      "it": 19,
+      "o": 63,
+      "l": 88
+     }
     },
     {
      "nr": "119",
@@ -2493,7 +2902,13 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 85,
+      "l": 85
+     }
     }
    ]
   },
@@ -2553,7 +2968,13 @@
      "text": "Siehe Fussnote zu Art. 2 Abs. 4.",
      "links": [],
      "absatz": "6",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 5,
+      "it": 2,
+      "o": 82,
+      "l": 95
+     }
     }
    ]
   },
@@ -2613,7 +3034,12 @@
      "text": "Siehe Fussnote zu Art. 2 Abs. 4.",
      "links": [],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 88,
+      "l": 109
+     }
     }
    ]
   },
@@ -2639,7 +3065,13 @@
      "text": "Siehe Fussnote zu Art. 2 Abs. 4.",
      "links": [],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 46,
+      "l": 136
+     }
     }
    ]
   },
@@ -2739,7 +3171,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 82,
+      "l": 111
+     }
     }
    ]
   },
@@ -2816,7 +3253,12 @@
      "text": "Siehe Fussnote zu Art. 2 Abs. 2 Bst. f.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 46,
+      "l": 142
+     }
     },
     {
      "nr": "126",
@@ -2829,7 +3271,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 262,
+      "l": 280
+     }
     }
    ]
   },
@@ -2873,7 +3320,13 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 7,
+      "l": 8
+     }
     },
     {
      "nr": "128",
@@ -2886,7 +3339,13 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 41,
+      "l": 42
+     }
     },
     {
      "nr": "129",
@@ -2911,7 +3370,13 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 50,
+      "l": 51
+     }
     },
     {
      "nr": "131",
@@ -2936,7 +3401,13 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 37,
+      "l": 38
+     }
     },
     {
      "nr": "133",
@@ -2948,7 +3419,12 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 125,
+      "l": 125
+     }
     },
     {
      "nr": "134",
@@ -2987,7 +3463,13 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 2,
+      "it": 3,
+      "o": 63,
+      "l": 110
+     }
     },
     {
      "nr": "136",
@@ -2999,7 +3481,13 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 2,
+      "it": 3,
+      "o": 110,
+      "l": 110
+     }
     },
     {
      "nr": "137",
@@ -3038,7 +3526,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 240,
+      "l": 240
+     }
     },
     {
      "nr": "139",
@@ -3063,7 +3556,13 @@
       }
      ],
      "absatz": null,
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 41,
+      "l": 42
+     }
     },
     {
      "nr": "141",
@@ -3076,7 +3575,13 @@
       }
      ],
      "absatz": null,
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 48,
+      "l": 49
+     }
     },
     {
      "nr": "142",
@@ -3101,7 +3606,13 @@
       }
      ],
      "absatz": null,
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 54,
+      "l": 55
+     }
     },
     {
      "nr": "144",
@@ -3114,7 +3625,13 @@
       }
      ],
      "absatz": null,
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 31,
+      "l": 78
+     }
     },
     {
      "nr": "145",
@@ -3127,7 +3644,13 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 49,
+      "l": 74
+     }
     },
     {
      "nr": "146",
@@ -3140,7 +3663,13 @@
       }
      ],
      "absatz": null,
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 0,
+      "it": 9,
+      "o": 63,
+      "l": 79
+     }
     }
    ]
   },
@@ -3166,7 +3695,13 @@
       }
      ],
      "absatz": "5",
-     "item": "3"
+     "item": "3",
+     "pos": {
+      "b": 4,
+      "it": 4,
+      "o": 126,
+      "l": 126
+     }
     }
    ]
   },
@@ -3330,7 +3865,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 6
+     "absatzIndex": 6,
+     "pos": {
+      "b": 6,
+      "o": 311,
+      "l": 312
+     }
     }
    ]
   },
@@ -3403,7 +3943,13 @@
      "text": "Siehe Fussnote zu Art. 2 Abs. 4.",
      "links": [],
      "absatz": null,
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 71,
+      "l": 72
+     }
     },
     {
      "nr": "152",
@@ -3422,7 +3968,13 @@
      "text": "Verordnung (EG) Nr. 440/2008 der Kommission vom 30. Mai 2008 zur Festlegung von Prüfmethoden gemäss der Verordnung (EG) Nr. 1907/2006 des Europäischen Parlaments und des Rates zur Registrierung, Bewertung, Zulassung und Beschränkung chemischer Stoffe (REACH), ABl. L 142 vom 31.5.2008, S. 1.",
      "links": [],
      "absatz": null,
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 215,
+      "l": 344
+     }
     },
     {
      "nr": "154",
@@ -3434,14 +3986,26 @@
       }
      ],
      "absatz": null,
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 343,
+      "l": 344
+     }
     },
     {
      "nr": "155",
      "text": "Siehe Fussnote zu Art. 2 Abs.2 Bst.f.",
      "links": [],
      "absatz": null,
-     "item": "3"
+     "item": "3",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 76,
+      "l": 77
+     }
     },
     {
      "nr": "156",
@@ -3509,7 +4073,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 190,
+      "l": 191
+     }
     }
    ]
   },
@@ -3584,7 +4153,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 185,
+      "l": 185
+     }
     }
    ]
   },
@@ -3720,7 +4294,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 42,
+      "l": 59
+     }
     }
    ]
   },
@@ -3810,14 +4389,25 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 139,
+      "l": 219
+     }
     },
     {
      "nr": "166",
      "text": "Verordnung (EU) Nr. 1297/2014 der Kommission vom 5. Dezember 2014 zur Änderung der Verordnung (EG) Nr. 1272/2008 des Europäischen Parlaments und des Rates über die Einstufung, Kennzeichnung und Verpackung von Stoffen und Gemischen zwecks Anpassung an den technischen und wissenschaftlichen Fortschritt, Fassung gemäss ABl. L 350 vom 6.12.2014, S. 1.",
      "links": [],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 393,
+      "l": 476
+     }
     },
     {
      "nr": "167",
@@ -3830,7 +4420,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 149,
+      "l": 261
+     }
     }
    ]
   },
@@ -3932,7 +4527,12 @@
      "text": "Siehe Fussnote zu Art. 2 Abs. 4.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 265,
+      "l": 290
+     }
     }
    ]
   },
@@ -4006,7 +4606,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -4080,7 +4685,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 84,
+      "l": 84
+     }
     },
     {
      "nr": "173",

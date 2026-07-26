@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "951.312",
   "titel": "Verordnung der Eidgenössischen Finanzmarktaufsicht über die kollektiven Kapitalanlagen",
@@ -467,7 +467,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 105,
+      "l": 106
+     }
     }
    ]
   },
@@ -504,7 +509,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 110,
+      "l": 111
+     }
     }
    ]
   },
@@ -673,7 +683,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 112,
+      "l": 113
+     }
     }
    ]
   },
@@ -842,7 +857,13 @@
       }
      ],
      "absatz": "5",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 4,
+      "it": 0,
+      "o": 42,
+      "l": 43
+     }
     }
    ]
   },
@@ -1121,7 +1142,13 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 65,
+      "l": 66
+     }
     }
    ]
   },
@@ -1268,7 +1295,13 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 402,
+      "l": 589
+     }
     }
    ]
   },
@@ -1393,7 +1426,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 154,
+      "l": 185
+     }
     }
    ]
   },
@@ -1474,7 +1512,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 92,
+      "l": 197
+     }
     }
    ]
   },
@@ -1592,7 +1635,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 47,
+      "l": 48
+     }
     }
    ]
   },
@@ -1624,7 +1672,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 118,
+      "l": 317
+     }
     },
     {
      "nr": "16",
@@ -1680,7 +1733,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 143,
+      "l": 155
+     }
     }
    ]
   },
@@ -1759,7 +1817,13 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 172,
+      "l": 201
+     }
     }
    ]
   },
@@ -1796,7 +1860,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 169,
+      "l": 175
+     }
     }
    ]
   },
@@ -2100,7 +2169,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 130,
+      "l": 201
+     }
     }
    ]
   },
@@ -2162,7 +2236,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 71,
+      "l": 164
+     }
     }
    ]
   },
@@ -2212,7 +2291,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 80,
+      "l": 157
+     }
     }
    ]
   },
@@ -2395,7 +2479,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 75,
+      "l": 87
+     }
     }
    ]
   },
@@ -2432,7 +2521,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 85,
+      "l": 220
+     }
     }
    ]
   },
@@ -2469,7 +2563,13 @@
       }
      ],
      "absatz": "4",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 3,
+      "it": 2,
+      "o": 32,
+      "l": 33
+     }
     }
    ]
   },
@@ -2721,7 +2821,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 34,
+      "l": 153
+     }
     },
     {
      "nr": "49",
@@ -2734,7 +2839,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 140,
+      "l": 153
+     }
     }
    ]
   },
@@ -2822,7 +2932,12 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 284,
+      "l": 284
+     }
     },
     {
      "nr": "54",
@@ -2835,7 +2950,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 201,
+      "l": 202
+     }
     },
     {
      "nr": "55",
@@ -2847,7 +2967,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 202,
+      "l": 202
+     }
     }
    ]
   },
@@ -2916,7 +3041,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 239,
+      "l": 239
+     }
     },
     {
      "nr": "60",
@@ -2928,7 +3058,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 131,
+      "l": 131
+     }
     },
     {
      "nr": "61",
@@ -2940,7 +3075,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 3,
+      "l": 3
+     }
     }
    ]
   },
@@ -3067,7 +3207,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 69,
+      "l": 69
+     }
     },
     {
      "nr": "69",
@@ -3079,7 +3224,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 84,
+      "l": 84
+     }
     }
    ]
   },
@@ -3124,7 +3274,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 101,
+      "l": 113
+     }
     }
    ]
   },
@@ -3195,7 +3350,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 136,
+      "l": 146
+     }
     }
    ]
   },
@@ -3226,7 +3386,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 58,
+      "l": 75
+     }
     }
    ]
   },
@@ -3292,7 +3457,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 43,
+      "l": 154
+     }
     },
     {
      "nr": "76",

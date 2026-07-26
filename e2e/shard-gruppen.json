@@ -35,6 +35,7 @@
     "5": [
       "a11y.e2e.ts",
       "ag-gruendung-wizard.e2e.ts",
+      "fn5-wortposition.e2e.ts",
       "fussnote-absatz-altform.e2e.ts",
       "gesetze-ia-v2-walks.e2e.ts",
       "gesetze-ia7-sidebar-badges.e2e.ts",

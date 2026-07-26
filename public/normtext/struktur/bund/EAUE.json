@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.353.1",
   "titel": "Europäisches Auslieferungsübereinkommen",
@@ -81,7 +81,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 426,
+      "l": 426
+     }
     }
    ]
   },
@@ -224,7 +229,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 183,
+      "l": 183
+     }
     }
    ]
   },
@@ -366,7 +376,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 55,
+      "l": 224
+     }
     },
     {
      "nr": "14",
@@ -383,7 +398,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 3
+     "absatzIndex": 3,
+     "pos": {
+      "b": 3,
+      "o": 332,
+      "l": 332
+     }
     }
    ]
   },

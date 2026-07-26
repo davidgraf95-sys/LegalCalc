@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.107",
   "titel": "Übereinkommen über die Rechte des Kindes",
@@ -570,7 +570,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 439,
+      "l": 439
+     }
     }
    ]
   },

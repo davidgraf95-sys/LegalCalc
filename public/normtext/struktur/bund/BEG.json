@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "957.1",
   "titel": "Bundesgesetz über Bucheffekten",
@@ -88,7 +88,12 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 231,
+      "l": 231
+     }
     }
    ]
   },
@@ -109,7 +114,12 @@
      "text": "Weil es sich bei den Emittenten hauptsächlich um juristische Personen handelt, wird auf die sprachliche Gleichbehandlung verzichtet.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 118,
+      "l": 119
+     }
     },
     {
      "nr": "5",
@@ -125,7 +135,12 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 233,
+      "l": 233
+     }
     }
    ]
   },
@@ -151,7 +166,13 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 47,
+      "l": 48
+     }
     },
     {
      "nr": "7",
@@ -183,7 +204,13 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 78,
+      "l": 79
+     }
     },
     {
      "nr": "9",
@@ -231,7 +258,13 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 95,
+      "l": 96
+     }
     },
     {
      "nr": "12",
@@ -243,7 +276,13 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 1,
+      "it": 4,
+      "o": 77,
+      "l": 78
+     }
     },
     {
      "nr": "13",
@@ -271,7 +310,13 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 1,
+      "it": 5,
+      "o": 76,
+      "l": 81
+     }
     },
     {
      "nr": "15",
@@ -299,7 +344,13 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 1,
+      "it": 6,
+      "o": 99,
+      "l": 198
+     }
     },
     {
      "nr": "17",
@@ -311,7 +362,13 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 1,
+      "it": 6,
+      "o": 197,
+      "l": 198
+     }
     },
     {
      "nr": "18",
@@ -331,7 +388,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 242,
+      "l": 242
+     }
     }
    ]
   },
@@ -357,7 +419,13 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 89,
+      "l": 90
+     }
     },
     {
      "nr": "20",
@@ -451,7 +519,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 220,
+      "l": 220
+     }
     },
     {
      "nr": "25",
@@ -467,7 +540,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 113,
+      "l": 113
+     }
     }
    ]
   },
@@ -497,7 +575,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 358,
+      "l": 385
+     }
     },
     {
      "nr": "27",
@@ -513,7 +596,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 343,
+      "l": 460
+     }
     }
    ]
   },
@@ -573,7 +661,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 180,
+      "l": 261
+     }
     }
    ]
   },
@@ -645,7 +738,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 200,
+      "l": 200
+     }
     },
     {
      "nr": "37",
@@ -949,7 +1047,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 272,
+      "l": 272
+     }
     }
    ]
   },
@@ -1050,7 +1153,13 @@
       }
      ],
      "absatz": "1",
-     "item": "4"
+     "item": "4",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 169,
+      "l": 189
+     }
     },
     {
      "nr": "48",
@@ -1066,7 +1175,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 179,
+      "l": 179
+     }
     }
    ]
   },
@@ -1101,7 +1215,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 180,
+      "l": 180
+     }
     }
    ]
   },
@@ -1132,7 +1251,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 116,
+      "l": 362
+     }
     },
     {
      "nr": "51",
@@ -1148,7 +1272,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 333,
+      "l": 333
+     }
     }
    ]
   },
@@ -1183,7 +1312,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 310,
+      "l": 310
+     }
     },
     {
      "nr": "53",
@@ -1199,7 +1333,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -1229,7 +1368,13 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 122,
+      "l": 122
+     }
     }
    ]
   },
@@ -1265,7 +1410,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 183,
+      "l": 231
+     }
     }
    ]
   },
@@ -1418,7 +1568,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 109,
+      "l": 273
+     }
     }
    ]
   },
@@ -1461,7 +1616,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 182,
+      "l": 287
+     }
     },
     {
      "nr": "31",
@@ -1473,7 +1633,13 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 49,
+      "l": 150
+     }
     }
    ]
   },
