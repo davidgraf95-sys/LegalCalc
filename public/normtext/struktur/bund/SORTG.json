@@ -35,7 +35,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "2",
@@ -47,7 +48,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "3",
@@ -59,7 +61,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -95,7 +98,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -114,7 +118,8 @@
       "b": 0,
       "o": 118,
       "l": 153
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "4",
@@ -131,7 +136,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "…"
+     "sektion": "…",
+     "kl": "U"
     }
    ]
   },
@@ -166,7 +172,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -201,7 +208,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -254,7 +262,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1a. Kapitel: Sortenschutz"
+     "sektion": "1a. Kapitel: Sortenschutz",
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -271,7 +280,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Wirkungen des Sortenschutzes"
+     "sektion": "1. Abschnitt: Wirkungen des Sortenschutzes",
+     "kl": "A"
     }
    ]
   },
@@ -359,7 +369,8 @@
       "b": 0,
       "o": 112,
       "l": 129
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "13",
@@ -380,7 +391,8 @@
       "b": 0,
       "o": 129,
       "l": 129
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -432,7 +444,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -468,7 +481,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Abschnitt: Sortenbezeichnung und Marke"
+     "sektion": "4. Abschnitt: Sortenbezeichnung und Marke",
+     "kl": "A"
     }
    ]
   },
@@ -520,7 +534,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -560,7 +575,8 @@
       "b": 0,
       "o": 118,
       "l": 118
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -601,7 +617,8 @@
       "it": 2,
       "o": 122,
       "l": 122
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -622,7 +639,8 @@
       "b": 2,
       "o": 1,
       "l": 1
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -663,7 +681,8 @@
       "it": 2,
       "o": 83,
       "l": 83
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -734,7 +753,8 @@
       "b": 1,
       "o": 163,
       "l": 200
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -769,7 +789,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -804,7 +825,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -839,7 +861,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -874,7 +897,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -907,7 +931,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -943,7 +968,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes"
+     "sektion": "2. Abschnitt: Anmeldung, Prüfung der Sorte und Erteilung des Sortenschutzes",
+     "kl": "A"
     }
    ]
   },
@@ -1017,7 +1043,8 @@
       "b": 1,
       "o": 172,
       "l": 172
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1052,7 +1079,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1189,7 +1217,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -1210,7 +1239,8 @@
       "b": 1,
       "o": 1,
       "l": 1
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -1227,7 +1257,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "…"
+     "sektion": "…",
+     "kl": "U"
     }
    ]
   },
@@ -1273,7 +1304,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1306,7 +1338,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1341,7 +1374,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "39",
@@ -1358,7 +1392,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "…"
+     "sektion": "…",
+     "kl": "U"
     }
    ]
   },
@@ -1387,7 +1422,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1417,7 +1453,8 @@
       }
      ],
      "absatz": null,
-     "item": "1"
+     "item": "1",
+     "kl": "A"
     }
    ]
   },
@@ -1485,7 +1522,8 @@
       "b": 0,
       "o": 1,
       "l": 1
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1515,7 +1553,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1555,7 +1594,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1576,7 +1616,8 @@
      "text": "Abs. 2 des BRB vom 11. Mai 1977",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -1609,7 +1650,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1678,7 +1720,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1713,7 +1756,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1748,7 +1792,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1781,7 +1826,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1832,7 +1878,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Schutzfähige Sorten"
+     "sektion": "2. Abschnitt: Schutzfähige Sorten",
+     "kl": "A"
     }
    ]
   }

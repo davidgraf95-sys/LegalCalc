@@ -880,6 +880,34 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   gebaut werden, Auflagen 1–5 in `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`
   (nur AENDERUNG ausblendbar · Klassifikation build-seitig ⇒ Risiko-Pfad/Gegenprüfung ·
   ZITAT-Behandlung = David-Entscheid). Messwerkzeug `scripts/analyse/hist-h0.ts`.
+  **H1 ✅ GEBAUT 26.7.2026 (Branch `feat/w25i-hist-ansicht`, Tore grün — Merge steht aus).**
+  Klassifikator in die Generator-Schicht gehoben (`scripts/normtext/fussnoten-klassifikation.ts`
+  = SSoT, `hist-h0.ts` importiert sie); Auflage 2 eingebaut (13 Fussnoten verlassen AENDERUNG,
+  **alle kantonal** → korpusweit 25'354; Bund unverändert 24'693). NUR Bund regeneriert:
+  227 Sidecars, 31'786 neue `kl`-Felder (A 24'693 · V 5'759 · G 292 · Z 632 · U 410) —
+  **Additivität bewiesen** (`check-sidecar-differ.ts`: 0 unerlaubte Abweichungen, `pos{b,it,o,l}`
+  aus FN-5 byte-identisch). UI dreiwertig im bestehenden «Ansicht ▾»-Menü (`data-histansicht`
+  am `<html>`, Pre-Paint, Default = heutige Darstellung ⇒ R6-No-op); **nur `[data-fn-klasse="A"]`
+  ist dämpfbar** (Auflage 1), Fussnoten OHNE Klasse (ganzer Kanton) bleiben immer sichtbar.
+  Tore: `npm run gate` grün (golden byte-gleich) · `check:normtext`/`check:historie`/
+  `check:struktur-konsistenz` · `check:perf-budget` · 41 neue Unit-Tests + 8 e2e (inkl.
+  axe-Scan des offenen Panels und §6.7-Sabotage-Proben, je einmal rot gezeigt).
+  Nebenbefund gefixt: latenter WCAG-Kontrast-Verstoss `ink-400` am OptSwitch-AUS-Zustand
+  (serious, seit A4 latent — erst der Scan des GEÖFFNETEN Panels deckte ihn auf).
+  **Gegenprüfung ✅ 26.7.2026 (Auflage 3): VERDIKT BESTANDEN, 6 Befunde — alle umgesetzt.**
+  Sachlich tragend waren zwei: **B1** — 62 Bund-Fussnoten tragen ein Geltungs-ENDdatum
+  (27 davon ≥ 2026, laufende Befristungen: `ASYLG 95a` fn300 «gilt bis 31. Dez. 2027»,
+  `KVG 37` fn116/117, `VTS 95` fn438) und waren als `A` ausblendbar → Regel «Befristung»
+  → `G`; **B3** — `AVIV 51a` fn168 «Laut Ziff. II kann die Karenzfrist …» = operative
+  Fristenlauf-Regel → `G`. **§2-Entscheid dabei:** auch ABGELAUFENE Befristungen werden
+  `G`; eine Unterscheidung nach «heute» wäre `Date.now()` in der Klassifikation und
+  machte das Sidecar unreproduzierbar (eigener Unit-Test sichert die Gleichbehandlung).
+  Wirkung, gemessen: **62× A→G** (einzeln im Differ ausgewiesen), Bund A 24'693 → **24'631**,
+  G 292 → **354**. B4 Fussnoten-Nr in der Chronologie-Zeile · B5 e2e deckt jetzt auch je
+  einen `G`- und `U`-Fall (`ELG` Art. 10) · B6 `check-sidecar-differ` ehrlich als
+  Einmalbeweis-Skript benannt und als `npm run normtext:sidecar-differ` verankert.
+  **Offen vor Merge:** nur noch die **fachliche Abnahme David** inkl. **ZITAT-Entscheid**
+  (Auflage 5: heute sichtbar = Empfehlung, nicht entschieden).
 - [d] **5j-TABELLEN · Tabellen in Gesetzen lesbar machen** *(§14-Intake 20.7.2026, David: **ausdrücklich «später»**)*
   <!-- @meta id: W2·5j-TABELLEN · status: parked · of: ja · blocker: david-spaeter-tabellen · dep: [] · kollision: [src/components/normtext/ArtikelBody.tsx, src/pages/gesetz-leser/inhalt.tsx] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZES-UX.md -->
   Beispiel `/gesetze/kanton/BS-154.810#art-29`. **Datenlage erhoben — die Daten sind GUT:** strukturiert als

@@ -33,7 +33,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "2",
@@ -46,7 +47,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "3",
@@ -58,7 +60,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    }
   ]
  },
@@ -85,7 +88,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     },
     {
      "nr": "5",
@@ -102,7 +106,8 @@
       "b": 0,
       "o": 177,
       "l": 177
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -120,7 +125,8 @@
       "b": 1,
       "o": 63,
       "l": 118
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -172,7 +178,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -185,7 +192,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen"
+     "sektion": "1. Abschnitt: Mindestversicherung und gemeinsame Bestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -226,7 +234,8 @@
       "b": 2,
       "o": 246,
       "l": 246
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -262,7 +271,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -279,7 +289,8 @@
       "b": 1,
       "o": 38,
       "l": 179
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "15",
@@ -296,7 +307,8 @@
       "b": 1,
       "o": 179,
       "l": 179
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "16",
@@ -313,7 +325,8 @@
       "b": 2,
       "o": 236,
       "l": 236
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "17",
@@ -330,7 +343,8 @@
       "b": 3,
       "o": 219,
       "l": 219
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -371,7 +385,8 @@
       "b": 1,
       "o": 121,
       "l": 121
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "19",
@@ -388,7 +403,8 @@
       "b": 2,
       "o": 1,
       "l": 1
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -429,7 +445,8 @@
       "b": 2,
       "o": 104,
       "l": 104
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "21",
@@ -446,7 +463,8 @@
       "b": 3,
       "o": 264,
       "l": 264
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -487,7 +505,8 @@
       "b": 0,
       "o": 329,
       "l": 329
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -528,7 +547,8 @@
       "b": 1,
       "o": 217,
       "l": 217
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -546,7 +566,8 @@
       "b": 2,
       "o": 89,
       "l": 164
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "29",
@@ -563,7 +584,8 @@
       "b": 2,
       "o": 164,
       "l": 164
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "30",
@@ -575,7 +597,8 @@
       }
      ],
      "absatz": "4",
-     "item": "g"
+     "item": "g",
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -587,7 +610,8 @@
       }
      ],
      "absatz": "4",
-     "item": "k"
+     "item": "k",
+     "kl": "A"
     },
     {
      "nr": "32",
@@ -605,7 +629,8 @@
       "it": 11,
       "o": 135,
       "l": 135
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "33",
@@ -622,7 +647,8 @@
       "b": 4,
       "o": 242,
       "l": 242
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -640,7 +666,8 @@
       "b": 5,
       "o": 400,
       "l": 599
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "35",
@@ -658,7 +685,8 @@
       "b": 5,
       "o": 598,
       "l": 599
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "36",
@@ -675,7 +703,8 @@
       "b": 5,
       "o": 599,
       "l": 599
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -688,7 +717,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "III. Ersatzfahrzeuge und vorläufige Verkehrsberechtigung"
+     "sektion": "III. Ersatzfahrzeuge und vorläufige Verkehrsberechtigung",
+     "kl": "A"
     }
    ]
   },
@@ -729,7 +759,8 @@
       "b": 1,
       "o": 55,
       "l": 55
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "38",
@@ -750,7 +781,8 @@
       "b": 3,
       "o": 1,
       "l": 1
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -791,7 +823,8 @@
       "b": 0,
       "o": 362,
       "l": 362
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "45",
@@ -808,7 +841,8 @@
       "b": 1,
       "o": 200,
       "l": 200
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -849,7 +883,8 @@
       "b": 0,
       "o": 193,
       "l": 356
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -866,7 +901,8 @@
       "b": 0,
       "o": 356,
       "l": 356
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "48",
@@ -883,7 +919,8 @@
       "b": 1,
       "o": 191,
       "l": 209
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -924,7 +961,8 @@
       "b": 1,
       "o": 370,
       "l": 370
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "50",
@@ -941,7 +979,8 @@
       "b": 2,
       "o": 195,
       "l": 195
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1026,7 +1065,8 @@
       "b": 0,
       "o": 137,
       "l": 137
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1062,7 +1102,8 @@
       "b": 2,
       "o": 426,
       "l": 445
-     }
+     },
+     "kl": "G"
     },
     {
      "nr": "53",
@@ -1079,7 +1120,8 @@
       "b": 2,
       "o": 445,
       "l": 445
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "54",
@@ -1096,7 +1138,8 @@
       "b": 3,
       "o": 236,
       "l": 236
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1137,7 +1180,8 @@
       "b": 0,
       "o": 138,
       "l": 447
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "56",
@@ -1154,7 +1198,8 @@
       "b": 1,
       "o": 187,
       "l": 187
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1195,7 +1240,8 @@
       "b": 0,
       "o": 103,
       "l": 103
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "58",
@@ -1212,7 +1258,8 @@
       "b": 3,
       "o": 1,
       "l": 1
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -1229,7 +1276,8 @@
       "b": 4,
       "o": 1,
       "l": 1
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1265,7 +1313,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1306,7 +1355,8 @@
       "b": 1,
       "o": 224,
       "l": 224
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "63",
@@ -1323,7 +1373,8 @@
       "b": 2,
       "o": 141,
       "l": 141
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1359,7 +1410,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "65",
@@ -1377,7 +1429,8 @@
       "it": 3,
       "o": 30,
       "l": 46
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -1394,7 +1447,8 @@
       "b": 1,
       "o": 63,
       "l": 63
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "67",
@@ -1410,7 +1464,8 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "68",
@@ -1426,7 +1481,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "69",
@@ -1438,7 +1494,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     },
     {
      "nr": "70",
@@ -1450,7 +1507,8 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -1468,7 +1526,8 @@
       "it": 4,
       "o": 131,
       "l": 131
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "72",
@@ -1485,7 +1544,8 @@
       "b": 2,
       "o": 128,
       "l": 128
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1521,7 +1581,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "74",
@@ -1538,7 +1599,8 @@
       "b": 1,
       "o": 281,
       "l": 281
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1574,7 +1636,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -1592,7 +1655,8 @@
       "b": 3,
       "o": 107,
       "l": 189
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "79",
@@ -1609,7 +1673,8 @@
       "b": 3,
       "o": 189,
       "l": 189
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "80",
@@ -1627,7 +1692,8 @@
       "b": 4,
       "o": 173,
       "l": 422
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "81",
@@ -1644,7 +1710,8 @@
       "b": 4,
       "o": 422,
       "l": 422
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "82",
@@ -1661,7 +1728,8 @@
       "b": 5,
       "o": 402,
       "l": 519
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1697,7 +1765,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "84",
@@ -1714,7 +1783,8 @@
       "b": 0,
       "o": 247,
       "l": 247
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "85",
@@ -1732,7 +1802,8 @@
       "it": 1,
       "o": 198,
       "l": 198
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "86",
@@ -1749,7 +1820,8 @@
       "b": 1,
       "o": 211,
       "l": 211
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "87",
@@ -1766,7 +1838,8 @@
       "b": 2,
       "o": 394,
       "l": 394
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "88",
@@ -1783,7 +1856,8 @@
       "b": 3,
       "o": 1,
       "l": 1
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1824,7 +1898,8 @@
       "b": 0,
       "o": 181,
       "l": 181
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "90",
@@ -1841,7 +1916,8 @@
       "b": 1,
       "o": 38,
       "l": 182
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "91",
@@ -1858,7 +1934,8 @@
       "b": 1,
       "o": 182,
       "l": 182
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1899,7 +1976,8 @@
       "b": 0,
       "o": 262,
       "l": 262
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "93",
@@ -1916,7 +1994,8 @@
       "b": 2,
       "o": 280,
       "l": 280
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1974,7 +2053,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "95",
@@ -1992,7 +2072,8 @@
       "b": 2,
       "o": 349,
       "l": 453
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2055,7 +2136,8 @@
       "b": 1,
       "o": 297,
       "l": 297
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2091,7 +2173,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "98",
@@ -2109,7 +2192,8 @@
       "it": 1,
       "o": 74,
       "l": 74
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2169,7 +2253,8 @@
       "b": 0,
       "o": 58,
       "l": 59
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "99",
@@ -2182,7 +2267,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit"
+     "sektion": "3. Teil: Haftpflichtversicherung der Motorfahrzeuge von geringer Motorkraft oder Geschwindigkeit",
+     "kl": "A"
     }
    ]
   },
@@ -2270,7 +2356,8 @@
       "b": 1,
       "o": 33,
       "l": 34
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "101",
@@ -2283,7 +2370,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "II. Motorhandwagen, Motoreinachser, Leicht-Motorfahrräder, Rollstühle"
+     "sektion": "II. Motorhandwagen, Motoreinachser, Leicht-Motorfahrräder, Rollstühle",
+     "kl": "A"
     }
    ]
   },
@@ -2319,7 +2407,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "108",
@@ -2336,7 +2425,8 @@
       "b": 0,
       "o": 199,
       "l": 199
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "109",
@@ -2353,7 +2443,8 @@
       "b": 2,
       "o": 141,
       "l": 141
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "103",
@@ -2366,7 +2457,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "sektion": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "kl": "A"
     },
     {
      "nr": "104",
@@ -2379,7 +2471,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds"
+     "sektion": "4. Teil: Nationales Versicherungsbüro und Nationaler Garantiefonds",
+     "kl": "A"
     },
     {
      "nr": "105",
@@ -2392,7 +2485,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Nationales Versicherungsbüro"
+     "sektion": "1. Abschnitt: Nationales Versicherungsbüro",
+     "kl": "A"
     },
     {
      "nr": "106",
@@ -2405,7 +2499,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "I. Ausländische Motorfahrzeuge und Anhänger"
+     "sektion": "I. Ausländische Motorfahrzeuge und Anhänger",
+     "kl": "A"
     }
    ]
   },
@@ -2446,7 +2541,8 @@
       "b": 0,
       "o": 192,
       "l": 192
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "111",
@@ -2464,7 +2560,8 @@
       "it": 1,
       "o": 152,
       "l": 152
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2500,7 +2597,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2541,7 +2639,8 @@
       "b": 0,
       "o": 198,
       "l": 198
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "114",
@@ -2558,7 +2657,8 @@
       "b": 1,
       "o": 172,
       "l": 172
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2594,7 +2694,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2657,7 +2758,8 @@
       "b": 0,
       "o": 251,
       "l": 251
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2715,7 +2817,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2756,7 +2859,8 @@
       "b": 1,
       "o": 325,
       "l": 325
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2812,7 +2916,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "123",
@@ -2825,7 +2930,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Nationaler Garantiefonds"
+     "sektion": "2. Abschnitt: Nationaler Garantiefonds",
+     "kl": "A"
     },
     {
      "nr": "124",
@@ -2842,7 +2948,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "I. …"
+     "sektion": "I. …",
+     "kl": "A"
     }
    ]
   },
@@ -2876,7 +2983,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2917,7 +3025,8 @@
       "b": 0,
       "o": 107,
       "l": 107
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "129",
@@ -2929,7 +3038,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "130",
@@ -2946,7 +3056,8 @@
       "b": 2,
       "o": 193,
       "l": 306
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "131",
@@ -2963,7 +3074,8 @@
       "b": 2,
       "o": 306,
       "l": 306
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "132",
@@ -2984,7 +3096,8 @@
       "b": 3,
       "o": 189,
       "l": 189
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "127",
@@ -3001,7 +3114,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte"
+     "sektion": "II. Unbekannte oder nicht versicherte Fahrzeuge und fahrzeugähnliche Geräte",
+     "kl": "A"
     }
    ]
   },
@@ -3037,7 +3151,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "134",
@@ -3054,7 +3169,8 @@
       "b": 0,
       "o": 258,
       "l": 258
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3090,7 +3206,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "137",
@@ -3107,7 +3224,8 @@
       "b": 0,
       "o": 254,
       "l": 254
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3138,7 +3256,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "143",
@@ -3151,7 +3270,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds"
+     "sektion": "3. Abschnitt: Gemeinsame Bestimmungen für das Nationale Versicherungsbüro und den Nationalen Garantiefonds",
+     "kl": "A"
     }
    ]
   },
@@ -3182,7 +3302,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3211,7 +3332,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3242,7 +3364,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3273,7 +3396,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3303,7 +3427,8 @@
       "b": 1,
       "o": 14,
       "l": 24
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "155",
@@ -3321,7 +3446,8 @@
       "b": 1,
       "o": 24,
       "l": 24
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "156",
@@ -3339,7 +3465,8 @@
       "b": 2,
       "o": 378,
       "l": 532
-     }
+     },
+     "kl": "U"
     },
     {
      "nr": "157",
@@ -3357,7 +3484,8 @@
       "b": 2,
       "o": 532,
       "l": 532
-     }
+     },
+     "kl": "U"
     },
     {
      "nr": "158",
@@ -3375,7 +3503,8 @@
       "b": 4,
       "o": 4,
       "l": 4
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "159",
@@ -3393,7 +3522,8 @@
       "b": 6,
       "o": 497,
       "l": 497
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "160",
@@ -3411,7 +3541,8 @@
       "b": 6,
       "o": 497,
       "l": 497
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "153",
@@ -3419,7 +3550,8 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "sektion": "5. Teil: Strafbestimmungen"
+     "sektion": "5. Teil: Strafbestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -3448,7 +3580,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "161",
@@ -3456,7 +3589,8 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "sektion": "6. Teil: Schlussbestimmungen"
+     "sektion": "6. Teil: Schlussbestimmungen",
+     "kl": "A"
     },
     {
      "nr": "162",
@@ -3469,7 +3603,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "6. Teil: Schlussbestimmungen"
+     "sektion": "6. Teil: Schlussbestimmungen",
+     "kl": "A"
     },
     {
      "nr": "163",
@@ -3482,7 +3617,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Inkrafttreten"
+     "sektion": "1. Abschnitt: Inkrafttreten",
+     "kl": "A"
     }
    ]
   },
@@ -3511,7 +3647,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3544,7 +3681,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3580,7 +3718,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3616,7 +3755,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -3628,7 +3768,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "42",
@@ -3647,7 +3788,8 @@
       "it": 1,
       "o": 121,
       "l": 384
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "43",
@@ -3664,7 +3806,8 @@
       "b": 4,
       "o": 308,
       "l": 308
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3700,7 +3843,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3736,7 +3880,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "76",
@@ -3753,7 +3898,8 @@
       "b": 1,
       "o": 401,
       "l": 401
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3789,7 +3935,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -3806,7 +3953,8 @@
       "b": 3,
       "o": 100,
       "l": 100
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "11",
@@ -3823,7 +3971,8 @@
       "b": 4,
       "o": 9,
       "l": 110
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -3859,7 +4008,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "121",
@@ -3876,7 +4026,8 @@
       "b": 0,
       "o": 111,
       "l": 111
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "119",
@@ -3889,7 +4040,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "II. Auskunftsstelle"
+     "sektion": "II. Auskunftsstelle",
+     "kl": "A"
     }
    ]
   },
@@ -3975,7 +4127,8 @@
       "b": 2,
       "o": 60,
       "l": 128
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4011,7 +4164,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4046,7 +4200,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "III. Entschädigungsstelle"
+     "sektion": "III. Entschädigungsstelle",
+     "kl": "A"
     }
    ]
   },
@@ -4088,7 +4243,8 @@
       "b": 0,
       "o": 114,
       "l": 353
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "139",
@@ -4105,7 +4261,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "IV. Sanierung und Konkurs des Versicherers"
+     "sektion": "IV. Sanierung und Konkurs des Versicherers",
+     "kl": "A"
     }
    ]
   },
@@ -4148,7 +4305,8 @@
       "it": 0,
       "o": 110,
       "l": 118
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4205,7 +4363,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "V. Ausländische radsportliche Veranstaltungen"
+     "sektion": "V. Ausländische radsportliche Veranstaltungen",
+     "kl": "A"
     }
    ]
   },
@@ -4236,7 +4395,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4265,7 +4425,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4296,7 +4457,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "152",
@@ -4315,7 +4477,8 @@
       "b": 0,
       "o": 236,
       "l": 293
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -4344,7 +4507,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4373,7 +4537,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4406,7 +4571,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "170",
@@ -4418,7 +4584,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "168",
@@ -4431,7 +4598,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Ausnahmen, Weisungen"
+     "sektion": "2. Abschnitt: Ausnahmen, Weisungen",
+     "kl": "A"
     }
    ]
   },
@@ -4464,7 +4632,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -4500,7 +4669,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "23",
@@ -4517,7 +4687,8 @@
       "b": 1,
       "o": 187,
       "l": 187
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -4534,7 +4705,8 @@
       "b": 2,
       "o": 342,
       "l": 342
-     }
+     },
+     "kl": "A"
     }
    ]
   },

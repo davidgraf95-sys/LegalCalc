@@ -10,7 +10,8 @@
     "text": "Der Originaltext findet sich unter der gleichen Nummer in der französischen Ausgabe dieser Sammlung. Die Artikel der Übereinkunft sind mit Überschriften versehen worden, um die Benützung des Textes zu erleichtern; der Originaltext enthält keine Artikelüberschriften.",
     "links": [],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "U"
    },
    {
     "nr": "2",
@@ -22,7 +23,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -117,7 +119,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -143,7 +146,8 @@
       "it": 5,
       "o": 196,
       "l": 444
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "5",
@@ -161,7 +165,8 @@
       "it": 9,
       "o": 64,
       "l": 117
-     }
+     },
+     "kl": "U"
     },
     {
      "nr": "6",
@@ -179,7 +184,8 @@
       "it": 0,
       "o": 83,
       "l": 264
-     }
+     },
+     "kl": "U"
     }
    ]
   },
@@ -205,7 +211,8 @@
       "it": 5,
       "o": 138,
       "l": 153
-     }
+     },
+     "kl": "U"
     },
     {
      "nr": "8",
@@ -217,7 +224,8 @@
       }
      ],
      "absatz": null,
-     "item": "i"
+     "item": "i",
+     "kl": "U"
     }
    ]
   },
@@ -243,7 +251,8 @@
       "it": 0,
       "o": 208,
       "l": 247
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -299,7 +308,8 @@
       "it": 1,
       "o": 216,
       "l": 226
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -350,7 +360,8 @@
       "b": 0,
       "o": 205,
       "l": 266
-     }
+     },
+     "kl": "Z"
     },
     {
      "nr": "12",
@@ -363,7 +374,8 @@
       "b": 0,
       "o": 265,
       "l": 266
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "13",
@@ -381,7 +393,8 @@
       "it": 0,
       "o": 147,
       "l": 318
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "14",
@@ -399,7 +412,8 @@
       "it": 1,
       "o": 176,
       "l": 310
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "15",
@@ -417,7 +431,8 @@
       "it": 2,
       "o": 205,
       "l": 339
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -443,7 +458,8 @@
       "b": 0,
       "o": 278,
       "l": 598
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -475,7 +491,8 @@
       "b": 1,
       "o": 238,
       "l": 640
-     }
+     },
+     "kl": "V"
     }
    ]
   },

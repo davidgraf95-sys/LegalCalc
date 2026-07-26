@@ -32,7 +32,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -67,7 +68,8 @@
       "b": 0,
       "o": 272,
       "l": 410
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "3",
@@ -84,7 +86,8 @@
       "b": 0,
       "o": 410,
       "l": 410
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "4",
@@ -101,7 +104,8 @@
       "b": 1,
       "o": 490,
       "l": 490
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -132,7 +136,8 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "6",
@@ -144,7 +149,8 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -209,7 +215,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "8",
@@ -226,7 +233,8 @@
       "b": 0,
       "o": 112,
       "l": 314
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "9",
@@ -238,7 +246,8 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "kl": "A"
     }
    ]
   },
@@ -267,7 +276,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -315,7 +325,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -346,7 +357,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -363,7 +375,8 @@
       "b": 1,
       "o": 54,
       "l": 262
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "35",
@@ -380,7 +393,8 @@
       "b": 1,
       "o": 261,
       "l": 262
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "36",
@@ -397,7 +411,8 @@
       "b": 1,
       "o": 262,
       "l": 262
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -434,7 +449,8 @@
       "it": 0,
       "o": 104,
       "l": 229
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "41",
@@ -452,7 +468,8 @@
       "it": 1,
       "o": 114,
       "l": 184
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -529,7 +546,8 @@
       "b": 0,
       "o": 271,
       "l": 271
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -561,7 +579,8 @@
       "b": 0,
       "o": 84,
       "l": 364
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -587,7 +606,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -625,7 +645,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "66",
@@ -638,7 +659,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Kapitel: Übrige Bestimmungen"
+     "sektion": "4. Kapitel: Übrige Bestimmungen",
+     "kl": "A"
     }
    ]
   },
@@ -693,7 +715,8 @@
       "b": 0,
       "o": 53,
       "l": 241
-     }
+     },
+     "kl": "Z"
     },
     {
      "nr": "42",
@@ -706,7 +729,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Abschnitt: Kosten einer unentgeltlichen Rechtsverbeiständung"
+     "sektion": "5. Abschnitt: Kosten einer unentgeltlichen Rechtsverbeiständung",
+     "kl": "A"
     }
    ]
   },
@@ -743,7 +767,8 @@
       "it": 1,
       "o": 158,
       "l": 166
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "50",
@@ -768,7 +793,8 @@
       "b": 1,
       "o": 77,
       "l": 204
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "48",
@@ -781,7 +807,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen"
+     "sektion": "3a. Kapitel: Durchführung internationaler Sozialversicherungsabkommen",
+     "kl": "A"
     }
    ]
   },
@@ -818,7 +845,8 @@
       "it": 0,
       "o": 126,
       "l": 294
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "52",
@@ -836,7 +864,8 @@
       "it": 0,
       "o": 236,
       "l": 294
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "53",
@@ -854,7 +883,8 @@
       "it": 2,
       "o": 131,
       "l": 163
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "54",
@@ -872,7 +902,8 @@
       "it": 3,
       "o": 131,
       "l": 205
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "55",
@@ -890,7 +921,8 @@
       "it": 5,
       "o": 142,
       "l": 198
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "56",
@@ -908,7 +940,8 @@
       "it": 7,
       "o": 163,
       "l": 192
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "57",
@@ -926,7 +959,8 @@
       "it": 8,
       "o": 107,
       "l": 108
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -963,7 +997,8 @@
       "it": 0,
       "o": 119,
       "l": 120
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "59",
@@ -981,7 +1016,8 @@
       "it": 17,
       "o": 175,
       "l": 176
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "60",
@@ -999,7 +1035,8 @@
       "it": 19,
       "o": 48,
       "l": 109
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "61",
@@ -1017,7 +1054,8 @@
       "it": 20,
       "o": 39,
       "l": 112
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "62",
@@ -1035,7 +1073,8 @@
       "it": 21,
       "o": 156,
       "l": 212
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1071,7 +1110,8 @@
       "b": 0,
       "o": 123,
       "l": 345
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "64",
@@ -1089,7 +1129,8 @@
       "it": 0,
       "o": 93,
       "l": 164
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "65",
@@ -1107,7 +1148,8 @@
       "it": 0,
       "o": 139,
       "l": 164
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1252,7 +1294,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "U"
     }
    ]
   },
@@ -1278,7 +1321,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "70",
@@ -1296,7 +1340,8 @@
       "b": 0,
       "o": 138,
       "l": 139
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1322,7 +1367,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1354,7 +1400,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Anforderungen an Spezialistinnen und Spezialisten, die Observationen durchführen"
+     "sektion": "1. Abschnitt: Anforderungen an Spezialistinnen und Spezialisten, die Observationen durchführen",
+     "kl": "A"
     }
    ]
   },
@@ -1385,7 +1432,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -1403,7 +1451,8 @@
       "it": 0,
       "o": 103,
       "l": 201
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "14",
@@ -1421,7 +1470,8 @@
       "it": 1,
       "o": 246,
       "l": 432
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1492,7 +1542,8 @@
       "it": 1,
       "o": 141,
       "l": 325
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1528,7 +1579,8 @@
       "b": 1,
       "o": 91,
       "l": 92
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1577,7 +1629,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Durchführung der Observation"
+     "sektion": "2. Abschnitt: Durchführung der Observation",
+     "kl": "A"
     }
    ]
   },
@@ -1626,7 +1679,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2a. Abschnitt: Gutachten"
+     "sektion": "2a. Abschnitt: Gutachten",
+     "kl": "A"
     }
    ]
   },
@@ -1679,7 +1733,8 @@
       "b": 0,
       "o": 279,
       "l": 424
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1716,7 +1771,8 @@
       "it": 0,
       "o": 121,
       "l": 131
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "21",
@@ -1734,7 +1790,8 @@
       "it": 1,
       "o": 82,
       "l": 100
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "22",
@@ -1746,7 +1803,8 @@
       "b": 1,
       "o": 436,
       "l": 436
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "23",
@@ -1763,7 +1821,8 @@
       "b": 2,
       "o": 110,
       "l": 155
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1862,7 +1921,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1888,7 +1948,8 @@
      "text": "Ursprünglich Art. 8.",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "28",
@@ -1900,7 +1961,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "29",
@@ -1917,7 +1979,8 @@
       "b": 1,
       "o": 305,
       "l": 312
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "30",
@@ -1934,7 +1997,8 @@
       "b": 1,
       "o": 312,
       "l": 312
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -1952,7 +2016,8 @@
       "it": 1,
       "o": 101,
       "l": 149
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1983,7 +2048,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2014,7 +2080,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2045,7 +2112,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   }

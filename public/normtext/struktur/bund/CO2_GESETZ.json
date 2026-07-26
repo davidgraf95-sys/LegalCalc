@@ -35,7 +35,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -47,7 +48,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "3",
@@ -59,7 +61,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -90,7 +93,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "5",
@@ -113,7 +117,8 @@
       "b": 0,
       "o": 79,
       "l": 190
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -143,7 +148,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "7",
@@ -162,7 +168,8 @@
       "it": 4,
       "o": 196,
       "l": 265
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "8",
@@ -181,7 +188,8 @@
       "it": 5,
       "o": 212,
       "l": 213
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -211,7 +219,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "10",
@@ -233,7 +242,8 @@
       "b": 2,
       "o": 55,
       "l": 99
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -268,7 +278,8 @@
       "b": 0,
       "o": 95,
       "l": 95
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -289,7 +300,8 @@
       "b": 1,
       "o": 326,
       "l": 326
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "14",
@@ -310,7 +322,8 @@
       "b": 4,
       "o": 143,
       "l": 143
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -340,7 +353,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -370,7 +384,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "17",
@@ -389,7 +404,8 @@
       "it": 1,
       "o": 67,
       "l": 234
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -419,7 +435,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -469,7 +486,8 @@
       "b": 1,
       "o": 178,
       "l": 178
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "22",
@@ -487,7 +505,8 @@
       "b": 3,
       "o": 285,
       "l": 354
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "23",
@@ -508,7 +527,8 @@
       "b": 3,
       "o": 354,
       "l": 354
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "24",
@@ -529,7 +549,8 @@
       "b": 4,
       "o": 84,
       "l": 84
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -564,7 +585,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "25",
@@ -581,7 +603,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Bei Fahrzeugen"
+     "sektion": "2. Abschnitt: Bei Fahrzeugen",
+     "kl": "A"
     },
     {
      "nr": "26",
@@ -598,7 +621,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Bei Fahrzeugen"
+     "sektion": "2. Abschnitt: Bei Fahrzeugen",
+     "kl": "A"
     }
    ]
   },
@@ -633,7 +657,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -668,7 +693,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -709,7 +735,8 @@
       "it": 3,
       "o": 51,
       "l": 51
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "34",
@@ -730,7 +757,8 @@
       "b": 2,
       "o": 543,
       "l": 543
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "35",
@@ -748,7 +776,8 @@
       "b": 4,
       "o": 85,
       "l": 97
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -776,7 +805,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -811,7 +841,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "41",
@@ -830,7 +861,8 @@
       "it": 3,
       "o": 58,
       "l": 67
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "39",
@@ -847,7 +879,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister"
+     "sektion": "4. Kapitel: Emissionshandelssystem und Emissionshandelsregister",
+     "kl": "A"
     }
    ]
   },
@@ -882,7 +915,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "43",
@@ -907,7 +941,8 @@
       "b": 1,
       "o": 110,
       "l": 110
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "44",
@@ -928,7 +963,8 @@
       "b": 2,
       "o": 92,
       "l": 92
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -963,7 +999,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "49",
@@ -984,7 +1021,8 @@
       "b": 0,
       "o": 94,
       "l": 126
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1019,7 +1057,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "51",
@@ -1044,7 +1083,8 @@
       "b": 0,
       "o": 268,
       "l": 268
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "52",
@@ -1065,7 +1105,8 @@
       "b": 1,
       "o": 268,
       "l": 268
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "53",
@@ -1086,7 +1127,8 @@
       "b": 2,
       "o": 249,
       "l": 249
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1121,7 +1163,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1156,7 +1199,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "57",
@@ -1177,7 +1221,8 @@
       "b": 1,
       "o": 264,
       "l": 264
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1216,7 +1261,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "59",
@@ -1237,7 +1283,8 @@
       "b": 0,
       "o": 199,
       "l": 199
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1273,7 +1320,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "1. Abschnitt: Abgabeerhebung"
+     "sektion": "1. Abschnitt: Abgabeerhebung",
+     "kl": "A"
     }
    ]
   },
@@ -1311,7 +1359,8 @@
       "it": 0,
       "o": 83,
       "l": 161
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "68",
@@ -1333,7 +1382,8 @@
       "it": 0,
       "o": 160,
       "l": 161
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "69",
@@ -1352,7 +1402,8 @@
       "it": 1,
       "o": 108,
       "l": 136
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1387,7 +1438,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "73",
@@ -1406,7 +1458,8 @@
       "it": 2,
       "o": 115,
       "l": 239
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "70",
@@ -1423,7 +1476,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber mit Verpflichtung zur Verminderung der Treibhausgasemissionen"
+     "sektion": "2. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber mit Verpflichtung zur Verminderung der Treibhausgasemissionen",
+     "kl": "A"
     },
     {
      "nr": "71",
@@ -1440,7 +1494,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "2. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber mit Verpflichtung zur Verminderung der Treibhausgasemissionen"
+     "sektion": "2. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber mit Verpflichtung zur Verminderung der Treibhausgasemissionen",
+     "kl": "A"
     }
    ]
   },
@@ -1475,7 +1530,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1508,7 +1564,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "82",
@@ -1525,7 +1582,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "5. Abschnitt: Verfahren"
+     "sektion": "5. Abschnitt: Verfahren",
+     "kl": "A"
     }
    ]
   },
@@ -1555,7 +1613,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "86",
@@ -1573,7 +1632,8 @@
       "b": 1,
       "o": 116,
       "l": 231
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -1608,7 +1668,8 @@
       "b": 0,
       "o": 154,
       "l": 154
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1644,7 +1705,8 @@
       "it": 3,
       "o": 114,
       "l": 114
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "90",
@@ -1662,7 +1724,8 @@
       "b": 2,
       "o": 238,
       "l": 343
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "91",
@@ -1683,7 +1746,8 @@
       "b": 2,
       "o": 343,
       "l": 343
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "92",
@@ -1704,7 +1768,8 @@
       "b": 3,
       "o": 120,
       "l": 120
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -1734,7 +1799,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1764,7 +1830,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -1800,7 +1867,8 @@
       "it": 1,
       "o": 74,
       "l": 74
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "99",
@@ -1821,7 +1889,8 @@
       "b": 4,
       "o": 143,
       "l": 143
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "100",
@@ -1846,7 +1915,8 @@
       "b": 5,
       "o": 95,
       "l": 95
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "101",
@@ -1867,7 +1937,8 @@
       "b": 6,
       "o": 123,
       "l": 123
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "102",
@@ -1888,7 +1959,8 @@
       "b": 7,
       "o": 273,
       "l": 273
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "97",
@@ -1909,7 +1981,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "7. Kapitel: Vollzug, Verfahren und Förderung"
+     "sektion": "7. Kapitel: Vollzug, Verfahren und Förderung",
+     "kl": "A"
     }
    ]
   },
@@ -1944,7 +2017,8 @@
       "b": 0,
       "o": 36,
       "l": 36
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "104",
@@ -1960,7 +2034,8 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     }
    ]
   },
@@ -1990,7 +2065,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2044,7 +2120,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2076,7 +2153,8 @@
       "b": 0,
       "o": 62,
       "l": 117
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "117",
@@ -2098,7 +2176,8 @@
       "it": 2,
       "o": 47,
       "l": 47
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "118",
@@ -2115,7 +2194,8 @@
       "b": 2,
       "o": 306,
       "l": 306
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2167,7 +2247,8 @@
       "b": 0,
       "o": 36,
       "l": 53
-     }
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -2199,7 +2280,8 @@
       "b": 0,
       "o": 1,
       "l": 1
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2244,7 +2326,8 @@
      "text": "BRB vom 20. Nov. 2012",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2277,7 +2360,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2312,7 +2396,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "31",
@@ -2330,7 +2415,8 @@
       "b": 1,
       "o": 129,
       "l": 145
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2365,7 +2451,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2400,7 +2487,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2435,7 +2523,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "46",
@@ -2451,7 +2540,8 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "kl": "A"
     },
     {
      "nr": "47",
@@ -2476,7 +2566,8 @@
       "b": 2,
       "o": 124,
       "l": 124
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -2519,7 +2610,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2552,7 +2644,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2585,7 +2678,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2619,7 +2713,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3a. Abschnitt: Emissionshandelsregister"
+     "sektion": "3a. Abschnitt: Emissionshandelsregister",
+     "kl": "A"
     }
    ]
   },
@@ -2656,7 +2751,8 @@
       "b": 0,
       "o": 86,
       "l": 276
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "63",
@@ -2673,7 +2769,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4a. Kapitel: Massnahmen im Zusammenhang mit fossilen Treibstoffen"
+     "sektion": "4a. Kapitel: Massnahmen im Zusammenhang mit fossilen Treibstoffen",
+     "kl": "A"
     }
    ]
   },
@@ -2761,7 +2858,8 @@
       "b": 0,
       "o": 367,
       "l": 485
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -2821,7 +2919,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2856,7 +2955,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2891,7 +2991,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -2926,7 +3027,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "78",
@@ -2943,7 +3045,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber von WKK-Anlagen, die weder am EHS teilnehmen noch eine Verminderungsverpflichtung eingegangen sind"
+     "sektion": "3. Abschnitt: Rückerstattung der CO2-Abgabe an Betreiber von WKK-Anlagen, die weder am EHS teilnehmen noch eine Verminderungsverpflichtung eingegangen sind",
+     "kl": "A"
     }
    ]
   },
@@ -2978,7 +3081,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3012,7 +3116,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4. Abschnitt: Rückerstattung der CO2-Abgabe bei nicht energetischer Nutzung"
+     "sektion": "4. Abschnitt: Rückerstattung der CO2-Abgabe bei nicht energetischer Nutzung",
+     "kl": "A"
     }
    ]
   },
@@ -3042,7 +3147,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3072,7 +3178,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3102,7 +3209,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3132,7 +3240,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3162,7 +3271,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3192,7 +3302,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3230,7 +3341,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3264,7 +3376,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "108",
@@ -3280,7 +3393,8 @@
       }
      ],
      "absatz": "4",
-     "item": "a"
+     "item": "a",
+     "kl": "A"
     },
     {
      "nr": "109",
@@ -3296,7 +3410,8 @@
       }
      ],
      "absatz": "4",
-     "item": "dbis"
+     "item": "dbis",
+     "kl": "A"
     }
    ]
   },
@@ -3326,7 +3441,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "111",
@@ -3344,7 +3460,8 @@
       "b": 0,
       "o": 210,
       "l": 211
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -3374,7 +3491,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3404,7 +3522,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3438,7 +3557,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3472,7 +3592,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3502,7 +3623,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3532,7 +3654,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     },
     {
      "nr": "125",
@@ -3549,7 +3672,8 @@
       "b": 1,
       "o": 56,
       "l": 219
-     }
+     },
+     "kl": "Z"
     }
    ]
   },
@@ -3579,7 +3703,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -3609,7 +3734,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   }

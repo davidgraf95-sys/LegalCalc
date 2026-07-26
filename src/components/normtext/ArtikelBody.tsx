@@ -89,7 +89,15 @@ function vglFnNr(a: string, b: string): number {
 // Popover DIREKT an der Stelle — ohne die Leseposition zu verschieben (früher
 // sprang der Anker an den Artikelfuss). Quelle ist der gerenderte Fuss-Eintrag
 // (#fn-artikel-nr); schliesst bei Klick ausserhalb / Esc.
-export function FnRef({ artikel, nr, klasse }: { artikel: string; nr: string; klasse?: string }) {
+export function FnRef({ artikel, nr, klasse, kl }: {
+  artikel: string; nr: string; klasse?: string;
+  /** W2·5i-HIST-ANSICHT: build-seitige Fussnoten-KLASSE ('A'|'V'|'G'|'Z'|'U', Sidecar-
+   *  Feld `kl`) als `data-fn-klasse` am Marker-Träger. Steuert AUSSCHLIESSLICH die
+   *  CSS-Sichtbarkeit der Ansicht «Änderungshistorie: aus / als Chronologie» — nur
+   *  'A' ist dort dämpfbar (H0-Auflage 1). Fehlt der Wert (Kanton-Sidecars), trägt
+   *  der Marker kein Attribut und bleibt in JEDER Ansicht sichtbar (konservativ). */
+  kl?: string;
+}) {
   const [auf, setAuf] = useState(false);
   const [html, setHtml] = useState('');
   // Popover-Position (viewport-fixiert). Das Popover wird per Portal an
@@ -139,7 +147,7 @@ export function FnRef({ artikel, nr, klasse }: { artikel: string; nr: string; kl
     setAuf((v) => !v);
   };
   return (
-    <span ref={ankerRef} className="relative">
+    <span ref={ankerRef} className="relative" data-fn-klasse={kl}>
       <button type="button" onClick={umschalten} aria-expanded={auf} aria-label={`Fussnote ${nr}`}
         className={`num align-super text-[0.62em] font-medium text-brass-700 hover:text-brass-800 ${klasse ?? ''}`}>{nr}</button>
       {auf && html && pos && typeof document !== 'undefined' && createPortal(
@@ -413,7 +421,7 @@ function TarifTabelle({ zeilen }: { zeilen: Array<{ beschreibung: string; betrag
   );
 }
 
-export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, autolink = false, zitierKontext, fnProAbsatz, fnProItem, fnInlineAbsatz, fnInlineItem, intern }: {
+export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, autolink = false, zitierKontext, fnProAbsatz, fnProItem, fnInlineAbsatz, fnInlineItem, fnKlasse, intern }: {
   bloecke: NormSnapshot['bloecke'];
   /** Artikel-Token des Snapshots — steuert die Tarif-Darstellungs-Normalisierung. */
   artikel: string;
@@ -430,6 +438,13 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
   /** FN-5/M14: wortgenau positionierte Marker je Item (Schlüssel
    *  «<blockIndex>|<itemIndex>»; `o` = Offset in `items[j].text`). */
   fnInlineItem?: Record<string, Array<{ nr: string; o: number }>>;
+  /** W2·5i-HIST-ANSICHT: Fussnoten-Nummer → build-seitige Klasse (`kl` aus dem
+   *  Sidecar). EINE flache Abbildung für ALLE Marker-Pfade dieses Artikels
+   *  (Absatz-, Item-, Inline-Marker) — die Klasse hängt an der Fussnote, nie an
+   *  ihrer Position, also wäre sie in jeder der vier Marker-Strukturen dasselbe
+   *  Duplikat (§5). Fehlt ein Eintrag, trägt der Marker kein `data-fn-klasse`
+   *  und bleibt in jeder Ansicht sichtbar. Reine Darstellung (§3). */
+  fnKlasse?: Record<string, string>;
   passus: PassusInfo;
   /** Ref auf die markierte Stelle (für Scroll-ins-Sichtfeld im Popover). */
   passusRef?: React.Ref<HTMLElement>;
@@ -479,7 +494,8 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
     let von = 0;
     sortiert.forEach((p, k) => {
       if (p.o > von) teile.push(<React.Fragment key={`s${k}`}>{renderSeg(text.slice(von, p.o))}</React.Fragment>);
-      teile.push(<React.Fragment key={`f${p.nr}`}>{WJ}<FnRef artikel={artikel} nr={p.nr} /></React.Fragment>);
+      // W2·5i H1: kl-Klassifikation an den Marker durchreichen (wie End-Marker).
+      teile.push(<React.Fragment key={`f${p.nr}`}>{WJ}<FnRef artikel={artikel} nr={p.nr} kl={fnKlasse?.[p.nr]} /></React.Fragment>);
       von = p.o;
     });
     if (von < text.length) teile.push(<React.Fragment key="rest">{renderSeg(text.slice(von))}</React.Fragment>);
@@ -643,7 +659,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                   const rest = kand.filter((k) => !itemInlineGesetzt.has(k.nr)).map((k) => k.nr);
                   const alle = [...rest, ...(fnProItem?.[`${i}|${it.marke}`] ?? [])].sort(vglFnNr);
                   return alle.map((nr) => (
-                    <React.Fragment key={nr}>{WJ}<FnRef artikel={artikel} nr={nr} /></React.Fragment>
+                    <React.Fragment key={nr}>{WJ}<FnRef artikel={artikel} nr={nr} kl={fnKlasse?.[nr]} /></React.Fragment>
                   ));
                 })()}
               </span>
@@ -822,7 +838,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                 const rest = inlineKandidaten.filter((k) => !inlineGesetzt.has(k.nr)).map((k) => k.nr);
                 const alle = [...rest, ...(fnProAbsatz?.[i] ?? [])].sort(vglFnNr);
                 return alle.map((nr) => (
-                  <React.Fragment key={nr}>{WJ}<FnRef artikel={artikel} nr={nr} /></React.Fragment>
+                  <React.Fragment key={nr}>{WJ}<FnRef artikel={artikel} nr={nr} kl={fnKlasse?.[nr]} /></React.Fragment>
                 ));
               })()}
             </p>

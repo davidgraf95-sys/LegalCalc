@@ -13,6 +13,7 @@ import { execSync } from 'node:child_process';
 import { extrahiereStruktur, extrahiereAnhangStruktur } from './struktur-extrahiere.ts';
 import { extrahiereKopf } from './kopf-extrahiere.ts';
 import { extrahiereFussnoten, fnDefinitionen, type Fussnote } from './fussnoten-extrahiere.ts';
+import { klassifiziereFussnote } from './fussnoten-klassifikation.ts';
 import { ERLASS_REGISTER } from '../../src/lib/normtext/register.ts';
 
 const datumArg = process.argv.find((a) => a.startsWith('--datum='));
@@ -24,6 +25,23 @@ if (!/^\d{4}-\d{2}-\d{2}$/.test(erzeugt)) {
 
 const ZIEL = 'public/normtext/struktur/bund';
 mkdirSync(ZIEL, { recursive: true });
+
+// W2·5i-HIST-ANSICHT (H0-Auflage 3): die Fussnoten-Klasse wird GENAU HIER, EINMAL
+// build-seitig berechnet und als kompaktes Feld `kl` ('A'|'V'|'G'|'Z'|'U') an jede
+// Fussnote gehängt — kein Client-Regex-Lauf über 37'849 Fussnoten (§15.3), kein
+// zweiter Rechenort (§5). Regeln + empirische Grundlage: fussnoten-klassifikation.ts
+// bzw. bibliothek/normen/hist-ansicht-h0-trennbarkeit.md.
+//
+// `kl` wird ZULETZT gesetzt (Objekt-Spread am Ende), damit die bestehenden Felder
+// — inkl. `pos{b,it,o,l}` aus FN-5/M14 — in unveränderter Reihenfolge und
+// byte-identisch im JSON stehen: die Regeneration ist damit rein ADDITIV
+// (Differ-Beweis: scripts/normtext/check-sidecar-differ.ts).
+//
+// Fehlt `kl` (Kanton-Sidecars, die bewusst NICHT regeneriert werden — dort sind
+// nur 11 % der Fussnoten Historie), gilt die Fussnote im Reader als
+// UNklassifiziert und bleibt in JEDER Ansicht sichtbar. Konservativ (§8): eine
+// fehlende Klasse blendet nie etwas aus.
+const mitKlasse = (f: Fussnote): Fussnote & { kl: string } => ({ ...f, kl: klassifiziereFussnote(f.text) });
 
 const bund = ERLASS_REGISTER.filter((r) => r.ebene === 'bund' && r.status === 'snapshot');
 let geschrieben = 0;
@@ -72,11 +90,16 @@ for (const reg of bund) {
     // Tie-Break first-wins): die eigene «Fassung gemäss»-Fussnote des Artikels muss
     // VOR einer gleichdatierten Section-heading-Fussnote stehen, sonst attribuiert
     // der Extrakt die Section-Revision fälschlich dem Artikel (§1/§3).
-    const alle = [...perArt, ...rfn];
+    const alle = [...perArt, ...rfn].map(mitKlasse);
     sortiert[tok] = alle.length ? { ...rest, fussnoten: alle } : rest;
   }
   // M5: Erlass-Kopf (preface/preamble) als Sidecar — golden-neutral (kein Snapshot).
-  const kopf = extrahiereKopf(html);
+  // W2·5i: die Kopf-Fussnoten (Ingress-/Präambel-Apparat) tragen `kl` ebenfalls —
+  // sie sind im Reader dieselbe Bedienfläche (ErlassKopfBlock, data-fn-apparat).
+  const kopfRoh = extrahiereKopf(html);
+  const kopf = kopfRoh?.fussnoten?.length
+    ? { ...kopfRoh, fussnoten: kopfRoh.fussnoten.map(mitKlasse) }
+    : kopfRoh;
   const doc = kopf ? { erzeugt, kopf, artikel: sortiert } : { erzeugt, artikel: sortiert };
   writeFileSync(`${ZIEL}/${reg.key}.json`, JSON.stringify(doc, null, 1) + '\n', 'utf8');
   geschrieben++;
