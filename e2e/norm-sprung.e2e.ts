@@ -189,6 +189,41 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     // A9-Messung die reine Interaktion (Parser + Render) misst, nicht diesen Einmal-Load.
     await feld.fill('OR 257d')
     await expect(box.getByText('Sprung', { exact: true })).toBeVisible({ timeout: 20000 })
+    // ── WARMLAUF-LATTE korrigiert (26.7.2026, Ursachen-Fix) ──────────────────────
+    // Der «Sprung»-Treffer beweist den warmen Index NICHT: er ist der
+    // DETERMINISTISCHE Norm-Sprung aus dem Register/Parser und steht schon, während
+    // der ~4-MB-Artikel-Index noch lädt. Gemessen (4-vCPU-Container, CI-Zweig): nach
+    // dem Erscheinen von «Sprung» sind noch 11 586 · 13 065 · 13 546 · 14 484 ms
+    // Ladearbeit offen. Diese Restlast fiel bisher in die GEDROSSELTE Messphase und
+    // erschien dort — mit 4× multipliziert — als ~48-s-Stall der ersten Such-Latte,
+    // streng bimodal (entweder ~0.5 s oder ~48 s, je nachdem ob der Load vor dem
+    // Query-Reset fertig wurde). Auf dem 2-vCPU-Runner riss er alle drei Versuche
+    // (PR #382, Shard 7/8) — und war NICHT Interaktions-Lag, sondern genau der
+    // Einmal-Load, den dieser Warmlaufsschritt laut Kontrakt ausschliessen soll
+    // («auf dem WARMEN Index, NICHT Kaltstart unter Drossel», Kommentar oben).
+    //
+    // Darum wartet der Warmlauf jetzt auf den Ladezustand, den er zu erreichen
+    // behauptet: die SICHTBARE Ergebnis-Kopfzeile erscheint erst, wenn JEDE
+    // Suchgruppe fertig ist (`SuchResultate.tsx` hält den reservierten Slot bis
+    // dahin auf `invisible`) — Artikel-Index UND alle Manifeste.
+    //
+    // Das VERSCHÄRFT die Prüfung, statt sie zu lockern: die gedrosselten Latten
+    // unten bleiben byte-gleich (12 000/15 000 ms) und lösen mit dem echten
+    // Warmlauf in ~0.4–0.5 s auf, also bei ~4 % ihres Budgets statt im Münzwurf.
+    // Kein expect entfernt, kein Budget gehoben (§6.3).
+    await expect(
+      page.locator('p[aria-hidden="true"]', { hasText: /\d+ Treffer/ }),
+    ).toBeVisible({ timeout: 30_000 })
+    // Die Kopfzeile allein deckt nur die Stufe, die `laedt` bindet. Der
+    // Index-Aufbau läuft aber ZWEISTUFIG (`lib/suche/artikelVolltext.ts`): die
+    // gestaffelte zweite Stufe setzt `unvollstaendig`, NICHT `laedt`, und wird von
+    // `allesGeladen` darum nicht erfasst. Sichtbar ist sie am Vorbehalt «wird noch
+    // ergänzt», den die Kopfzeile bei `waechstNoch` anhängt (`SuchResultate.tsx`).
+    // Erst wenn der weg ist, ist der Index wirklich fertig — sonst blieb ein Rest
+    // der zweiten Stufe im gedrosselten Fenster und damit ein Rest des Rennens.
+    await expect(
+      page.locator('p[aria-hidden="true"]', { hasText: /wird noch ergänzt/ }),
+    ).toHaveCount(0, { timeout: 40_000 })
     await feld.fill('')
     await expect(box).toBeHidden()
 

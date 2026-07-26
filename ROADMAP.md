@@ -322,23 +322,50 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
     ausgeschlossen — jeder Lauf ist kalt. Vermutung, ungeprüft: Lighthouse wählt je nach Timing ein
     anderes LCP-Element. Der Deckel 13500 liegt ~16 % über dem hohen Modus und ist damit sicher;
     bevor er verschärft wird, muss die Bimodalität verstanden sein (sonst deckelt man sie nur weg, §8).
-  - [ ] **Bimodaler ~48-s-Stall in der ersten gedrosselten Such-Interaktion — Ursache offen**
-    *(neuer Befund 26.7.2026, `bibliothek/betrieb/e2e-flake-forensik-2026-07-26.md` §3)*. Bei der
-    Härtung der drei 2-vCPU-flaky e2e-Tests wurde `norm-sprung` A9 als Flake **widerlegt**: die erste
-    gedrosselte Such-Latte («OR 257d» → «Sprung» sichtbar, direkt nach dem Query-Reset) braucht im
-    CI-Zweig **entweder ~0.4–0.8 s oder ~48–50 s, nichts dazwischen** über 8 Beobachtungen — bei 4×
-    Drossel entsprechen ~48 s etwa **12 s un-gedrosselter Rechenzeit**. Die unmittelbar folgende,
-    IDENTISCHE zweite Latte braucht stets 0.3–0.4 s, die Arbeit fällt also genau einmal an.
-    **Ausgeschlossen (gemessen):** Host-Last/Worker-Contention (alle Läufe `workers=1`) und die
-    Test-Instrumentierung (Gegenprobe mit deaktiviertem rAF-Höhen-Sampler zeigt den Stall unverändert).
-    **Darum NICHT gehärtet** — eine höhere Latte verdeckte genau den Lag, den der A9-Test messen soll
-    (§1); `e2e/norm-sprung.e2e.ts` blieb byte-gleich. **Hypothese, ungeprüft (§8):** dieselbe Wurzel wie
-    der Posten «OR-LCP ist bimodal» direkt darüber — gleiche Signatur (streng bimodal, hoher Modus
-    ~11–12 s un-gedrosselt, geschwindigkeits-unabhängig), hier aber **lokal reproduzierbar**, was für
-    den LCP-Befund bisher nicht gelang. Erster Schritt: Profiling des per `useDeferredValue`
-    entkoppelten ~4-MB-Artikel-Index-Pfads. **Nachgeordnet, erst DANACH:** die Pfeil-Navigations-Latte
-    (`aria-activedescendant`, Deckel 12 s) läuft gemessen bei 56–99 % ihres Budgets und ist ein echter
-    Kalibrier-Kandidat — vor dem Verstehen des Stalls kalibrierte man dieselbe Erscheinung zweimal weg.
+  - [x] **Bimodaler ~48-s-Stall in der ersten gedrosselten Such-Interaktion — AUFGEKLÄRT + BEHOBEN**
+    *(26.7.2026, `bibliothek/betrieb/e2e-flake-forensik-2026-07-26.md` §3, PR #382)*. `norm-sprung`
+    A9 war als 2-vCPU-Flake gemeldet; gemessen war es ein **Messfehler des Tests**: der Warmlauf
+    wartete auf den «Sprung»-Treffer, der aus Register/Parser deterministisch berechnet wird und
+    schon steht, **während der Artikel-Suchindex noch aufgebaut wird**. Nach dem Erscheinen von
+    «Sprung» waren gemessen noch **11 586 – 14 484 ms** Ladearbeit offen; diese Restlast fiel in die
+    GEDROSSELTE Messphase und erschien dort ×4 als ~48-s-Stall — streng bimodal, weil es ein Rennen
+    zwischen Einmal-Load und Query-Reset ist (zwei Zustände, kein Kontinuum). Auf dem Runner riss das
+    alle drei Versuche (PR #382 Shard 7/8). **Fix:** der Warmlauf wartet jetzt auf den Ladezustand,
+    den er zu erreichen behauptet — Ergebnis-Kopfzeile sichtbar UND Vorbehalt «wird noch ergänzt»
+    weg (letzteres deckt die gestaffelte 2. Aufbaustufe, die `unvollstaendig` statt `laedt` setzt und
+    von `allesGeladen` NICHT erfasst wird). **Deckel byte-gleich** (12 000/15 000 ms), Latte löst
+    jetzt in 0.36–0.54 s statt im Münzwurf auf, Spec 44/44 grün bei `--retries=0`. Die Pfeil-Latte
+    (`aria-activedescendant`), vorher bei 56–99 % ihres Budgets, ist damit ebenfalls entlastet und
+    braucht **keine** Kalibrierung.
+  - [ ] **Der Artikel-Suchindex kostet ~28.5 s Main-Thread-Aufbau — struktureller Perf-Posten**
+    *(neuer Befund 26.7.2026, Messung durch delegierte Analyse; Dossier ebd. §3.5)*. Der Fix oben
+    korrigiert die MESSUNG, nicht die Ladekosten. Gemessen auf 4 vCPU @2.1 GHz, un-gedrosselt:
+    `ergaenze('bund')` **13 480 ms als EIN einziger, nicht unterbrechbarer Task**
+    (`src/lib/suche/artikelVolltext.ts:308`, via `:249–253` ohne Yield) +
+    `ergaenzeGestaffelt('kanton')` **15 023 ms in 16 Häppchen à 324–1 386 ms** (`:320–328`).
+    Un-gedrosselt liegen die Häppchen schon über dem 200-ms-Reaktionsanspruch, unter 4× Drossel bei
+    1.3–5.5 s je Block — die Zusicherung «Tippen/Scrollen bleibt flüssig» (`:112–113`) ist damit
+    **nicht eingehalten**. **Hebel (gehört zu Strang c):** Aufbau in einen Worker, oder den Index
+    build-time serialisieren (FlexSearch `export()`/`import()` — steht in Strang c schon als
+    Audit-1-B4). **Nicht ermittelt:** ob im langsamen Modus Stufe 1 oder Stufe 2 im Drossel-Fenster
+    lag (13.5 vs. 15.0 s passen beide numerisch) — das entscheidet nur ein Chromium-Trace mit
+    Long-Task-Attribution.
+  - [ ] **§8-Auskunftslücke im Fehlerpfad der Artikel-Suche** *(neuer Befund 26.7.2026, ebd.)*.
+    `src/components/suche/useUniversalSuche.ts:88` fängt einen gescheiterten Index-Load mit
+    `.catch(() => setArtikelSuche({ suche: () => [], fehlendeEbenen: [] }))` ab. Wegen
+    `fehlendeEbenen: []` ist `unvollstaendig` falsy (`src/lib/universalSuche.ts:292`) ⇒ die
+    Oberfläche meldet «0 Artikel, fertig durchsucht», obwohl **nichts** indexiert wurde. Genau der
+    Fehlschluss, gegen den `artikelVolltext.ts:30–34` und `src/tests/suche/gestaffelterIndex.test.ts`
+    argumentieren — im Fehlerfall aber nicht abgedeckt. **Zweiter Defekt am selben Pfad:**
+    `artikelVolltext.ts:60` räumt `ladePromise` bei Rejection nicht (ein Netz-Blip auf 46 MB
+    degradiert die Suche bis zum Reload permanent) — die repo-eigene Regel O-1.7 in
+    `src/lib/normtext/laden.ts:44–52` macht es ausdrücklich anders. Klein, eigener Commit.
+  - [ ] **«~4 MB Artikel-Index» ist in ~10 Kommentaren falsch — real 45.7 MiB**
+    *(Befund 26.7.2026, ebd.)*. `public/such-index/artikel.json` = 47 964 020 Bytes, 54 444 Einträge
+    (~9.7 MB gzip, so auch in `scripts/check-perf-budget.ts:92` beziffert). Die Zahl «~4 MB» steht
+    u. a. in `src/components/suche/useUniversalSuche.ts:128,131`, `e2e/norm-sprung.e2e.ts` und
+    `e2e/gesetze-ia-v2-walks.e2e.ts:18,45`. Sie hat die Flake-Suche in die falsche Grössenordnung
+    gelenkt (§5: eine Zahl, zehnfach kopiert und nirgends nachgeführt). Reine Kommentar-Korrektur.
   - [ ] **Dauer-rAF-Sampler in `e2e/helpers/cls.ts` ohne Abschalt-Bedingung** *(Nebenbefund 26.7.2026,
     Dossier ebd.)*. `clsBeobachtenInstallieren` startet eine unbegrenzte `requestAnimationFrame`-Schleife,
     die pro Frame `getBoundingClientRect()` auf 13 Elementen aufruft (erzwungenes Layout je Frame) und
