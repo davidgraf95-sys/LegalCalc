@@ -48,7 +48,15 @@ function OptSwitch({ feld, an, label, titel, ariaLabel, zusatz }: {
       <span className="inline-flex items-center gap-1.5">{label}{zusatz}</span>
       <span
         aria-hidden
-        className={`shrink-0 inline-flex items-center gap-1 text-xs ${an ? 'text-brass-700' : 'text-ink-400'}`}
+        // WCAG-AA (§13/F2), LATENTER Befund, gefunden 26.7.2026 durch den ersten
+        // axe-Scan des GEÖFFNETEN Panels (hist-ansicht-w25i.e2e.ts — die bestehende
+        // a11y-Stichprobe scannt den Reader mit geschlossenem Menü, darum blieb es
+        // unentdeckt): `ink-400` ist ein Deko-Token (~3.2–3.6:1) und trug hier den
+        // AUS-Zustand «○ aus» — axe: color-contrast, serious. `ink-500` (≥4.8:1 hell /
+        // ≥5.2:1 dunkel) hebt ihn auf AA, ohne die Dämpfungs-Absicht aufzugeben.
+        // Gleiche Korrektur wie W3.6 (25.6.) und die Fussnoten-Nummer (18.7.) —
+        // dritter Fall derselben Klasse an derselben Farbstufe.
+        className={`shrink-0 inline-flex items-center gap-1 text-xs ${an ? 'text-brass-700' : 'text-ink-500'}`}
       >
         {an ? '✓' : '○'} {an ? 'an' : 'aus'}
       </span>

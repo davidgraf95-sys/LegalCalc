@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
 
 // W2·5i-HIST-ANSICHT / H1 — «Änderungshistorie: aus / als Fussnoten / als Chronologie».
 //
@@ -223,6 +224,46 @@ test('Persistenz + Pre-Paint: die Wahl übersteht den Reload ohne Flackern', asy
   await expect(page.locator('#art-4')).toBeVisible();
   await expect(apparatZeile(page, '4', '12')).toBeHidden();
   await expect(apparatZeile(page, '4', '13')).toBeVisible();
+});
+
+test('axe: das offene Panel MIT der neuen Wahl und die Chronologie-Ansicht sind sauber', async ({ page }, testInfo) => {
+  // Das neue Steuerelement lebt in einem Panel, das die a11y.e2e.ts-Stichprobe NICHT
+  // öffnet (die scannt den Reader mit geschlossenem Menü) — und die Chronologie-Liste
+  // ist eine neue Textfläche mit eigenem Kontrast. Beide werden hier gescannt, sonst
+  // wäre die axe-Zusage für diesen Schritt leer.
+  const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
+  // Gleiche Determinismus-Vorkehrungen wie a11y.e2e.ts: Theme gepinnt (sonst
+  // entscheidet die Uhrzeit über hell/dunkel → flaky Kontraste) und reduzierte
+  // Bewegung (sonst misst axe mitten in der Einblende-Animation).
+  await page.addInitScript(() => {
+    try { localStorage.setItem('lexmetrik-thema', 'hell'); } catch { /* privater Modus */ }
+  });
+  await page.emulateMedia({ reducedMotion: 'reduce', colorScheme: 'light' });
+  await warteReader(page, '/gesetze/bund/BGBM', 'art-9');
+  await ansichtOeffnen(page);
+  await histWahl(page, 'chronologie').click();
+  await expect(page.locator('#art-9 [data-hist-chrono]')).toBeVisible();
+
+  const ergebnis = await new AxeBuilder({ page }).withTags(TAGS).analyze();
+  // Gleiche Tor-Politik wie a11y.e2e.ts: critical/serious gaten. `link-in-text-block`
+  // ist der dokumentierte Marken-Entscheid B-2 (Inline-Links ohne Unterstreichung)
+  // und gilt für die ganze Reader-Seite, nicht für diese Fläche.
+  const bekannt = new Set(['link-in-text-block']);
+  const schwer = ergebnis.violations.filter(
+    (v) => (v.impact === 'critical' || v.impact === 'serious') && !bekannt.has(v.id),
+  );
+  if (ergebnis.violations.length > 0) {
+    await testInfo.attach('hist-ansicht-befunde.json', {
+      body: JSON.stringify(ergebnis.violations.map((v) => ({
+        id: v.id, impact: v.impact, help: v.help, knoten: v.nodes.map((n) => n.target.join(' ')),
+      })), null, 2),
+      contentType: 'application/json',
+    });
+  }
+  expect(
+    schwer.map((v) => `${v.id} (${v.impact}): ${v.help} — z. B. ${v.nodes[0]?.target.join(' ')}`),
+    'axe hist-ansicht: keine critical/serious-Verstösse',
+  ).toEqual([]);
 });
 
 test('Kein totes Steuerelement: «Fussnoten AUS» entfernt die Historie-Wahl (§13 F4)', async ({ page }) => {
