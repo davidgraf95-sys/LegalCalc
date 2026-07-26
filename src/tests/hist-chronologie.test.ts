@@ -95,6 +95,43 @@ describe('baueChronologie — nur Klasse A (H0-Auflage 1)', () => {
   });
 });
 
+describe('Zusammenspiel mit PR #376 («in Kraft vom X bis zum Y» ist datierbar)', () => {
+  // #376 (main, 26.7.2026) hat den Revisions-Extrakt um den Trigger «in Kraft vom»
+  // erweitert — die befristete Inkraftsetzung erhält jetzt das ANFANGS-Datum.
+  // Für die Chronologie ist das aus einem nicht offensichtlichen Grund folgenlos,
+  // und genau das hält dieser Block fest, damit es niemand versehentlich umkehrt:
+  //
+  //   Der Gegenprüfungs-Befund B1 hat DIESELBE Familie aus 'A' nach 'G' verschoben
+  //   (Befristungen sind vorwärts gerichtet und dürfen nicht ausblendbar sein).
+  //   Die Chronologie listet aber NUR 'A'. Die Fussnoten sind also gar nicht in
+  //   der Liste — #376 nützt der Revisions-/Leitfall-Schicht, nicht dieser Ansicht.
+  //
+  // Würde jemand die Familie später wieder nach 'A' klassifizieren, stünde sie in
+  // der Chronologie — dann aber MIT korrektem Datum (zweite Zusicherung unten).
+  const AHVG_34bis = 'Eingefügt durch Ziff. I des BG vom 17. Dez. 2021 (AHV 21), in Kraft vom '
+    + '1. Jan. 2025 bis zum 31. Dez. 2033 (AS 2023 92; BBl 2019 6305).';
+  const AHVV_41bis_ellipse = 'Eingefügt durch Ziff. I 1 der V vom 20. März 2020 über Massnahmen '
+    + 'im Zusammenhang mit dem Coronavirus (COVID-19), in Kraft vom 21. März bis zum 20. Sept. 2020 '
+    + '(AS 2020 875).';
+
+  it('die Befristungs-Familie steht als G NICHT in der Chronologie', () => {
+    expect(baueChronologie([{ nr: '182', kl: 'G', text: AHVG_34bis }], datum)).toEqual([]);
+  });
+
+  it('wäre sie A, trüge sie das ANFANGS-Datum (nicht das Ablauf-Datum)', () => {
+    const c = baueChronologie([{ nr: '182', kl: 'A', text: AHVG_34bis }], datum);
+    expect(c).toHaveLength(1);
+    expect(c[0].iso).toBe('2025-01-01');       // nicht 2033-12-31
+  });
+
+  it('Jahr-Ellipse «vom 21. März bis zum 20. Sept. 2020» → 2020-03-21', () => {
+    // Das Jahr steht amtlich nur beim END-Datum und gilt für beide; ohne die
+    // Ellipse-Regel griffe der Parser das Ablauf-Datum (AHVV Art. 41bis).
+    const c = baueChronologie([{ nr: '182', kl: 'A', text: AHVV_41bis_ellipse }], datum);
+    expect(c[0].iso).toBe('2020-03-21');       // nicht 2020-09-20
+  });
+});
+
 describe('§6.7 — die Reihung kann scheitern', () => {
   it('würde eine unsortierte «Durchreiche» auffallen lassen', () => {
     const liste = [amtlich('26', 'A', '1. Jan. 2021'), amtlich('27', 'A', '1. Juli 2006')];

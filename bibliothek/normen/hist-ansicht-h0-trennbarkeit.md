@@ -319,7 +319,44 @@ aus. Kanton bleibt unberührt (kein `kl`).
 - **B6:** die Formulierung «Tor» für `check-sidecar-differ.ts` ist korrigiert und
   das Skript als `npm run normtext:sidecar-differ` verankert (Ziff. 7.3).
 
-### 8.5 Nebenbefund beim Einbau (eigene Beobachtung, kein Gegenprüfungs-Befund)
+### 8.5 B2 — von einer anderen Session gefixt (PR #376, auf main)
+
+Der Gegenprüfungs-Befund **B2** («in Kraft vom X bis zum Y» ergab kein
+Revisionsdatum) wurde parallel in `src/lib/verzahnung/revisionen-extrakt.ts`
+behoben (PR #376, Squash `d8fcb0e6`): Trigger `in Kraft vom` (massgeblich das
+**Anfangs**-Datum), Jahr-Ellipse «vom 21. März bis zum 20. Sept. 2020» und ein
+Fremd-Adressierungs-Wächter `ART_PRAEFIX_RE` («Art. 40c in Kraft vom …» in einer
+Gliederungstitel-Fussnote datiert Art. 40c, nicht den Host).
+
+**Merge-Auflösung (26.7.2026):** #376 änderte genau die Schleife, die dieser
+Schritt zuvor als `extrahiereFussnotenRevision(text, hostToken?)` herausgezogen
+hatte. Aufgelöst wurde **vereinend**: die vollständige #376-Semantik (drei
+Trigger, Ellipse-Vorrang, Wächter, `rest`-basierte AS-Suche) lebt jetzt IM
+Helfer; `extrahiereArtikelRevision` ist das Maximum darüber und reicht
+`hostToken` durch. Nichts von #376 ging verloren — dessen 48 neue Tests laufen
+unverändert grün.
+
+**Wirkung auf DIESE Ansicht: keine — und das ist nicht offensichtlich.**
+Befund B1 (Ziff. 8.1) hat dieselbe Fussnoten-Familie bereits aus `A` nach `G`
+verschoben, und die Chronologie listet ausschliesslich `A`. Gemessen am Bestand:
+von den **58** Fussnoten, die durch #376 neu ein Datum erhalten, sind **0 in
+Klasse A** und alle 58 in `G`. #376 nützt damit der Revisions-/Leitfall-Schicht,
+nicht der Chronologie.
+
+| Klasse | n | ohne Datum vorher | ohne Datum jetzt |
+|---|---:|---:|---:|
+| A (= die Chronologie) | 24'479 | 586 (2.39 %) | **586 (2.39 %)** |
+| G | 354 | 109 (30.79 %) | **51 (14.41 %)** |
+| A + G | 24'833 | 695 (2.80 %) | **637 (2.57 %)** |
+
+Kein Chronologie-Test war also sachlich überholt. Drei Zusicherungen halten das
+Zusammenspiel dennoch fest (`src/tests/hist-chronologie.test.ts`): die Familie
+steht als `G` nicht in der Liste · wäre sie `A`, trüge sie das **Anfangs**-Datum
+(2025-01-01, nicht 2033-12-31) · die Jahr-Ellipse ergibt 2020-03-21, nicht
+2020-09-20. Der Reader reicht `hostToken` an den Extrakt durch, damit die
+Chronologie-Daten mit den Revisions-Shards übereinstimmen (EINE Wahrheit, §5).
+
+### 8.6 Nebenbefund beim Einbau (eigene Beobachtung, kein Gegenprüfungs-Befund)
 
 Zwei Fallen, die beim Umsetzen selbst zuschlugen und darum hier stehen:
 

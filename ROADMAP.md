@@ -642,18 +642,20 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
 - [x] **5b · Reader-Darstellung Bund** *(GESETZESDARSTELLUNG-BUND, `[OF]`)* —
   <!-- @meta id: W2·5b · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZESDARSTELLUNG-BUND.md -->
   **ABGESCHLOSSEN 25.7.2026** — alle Einheiten M1–M12 des QA-Sweeps ✅ (zuletzt M12 PR #340 · M11+M6-D PR #342 · HAENGEND-Folge-Härtung PR #343). Wortlaut (inkl. QA-Sweep-Spec, Status-Korrektur 20.7., Nachmess-Warnung Batch C/D) → `ROADMAP-CHRONIK.md` → W2·5b (26.7.2026); Tabellen-Detail quer in `FAHRPLAN-TARIF-TABELLEN-STUFE2.md`, Popover in `FAHRPLAN-GESETZESTEXT-POPUP.md`.
-  - [ ] **M12 · Randtitel-Leerzeichen-Verklebung** *(§14-Intake 24.7.2026, David; Fokus-Dekret-
-    Priorität)*: Struktur-Generator verklebt mehrteilige Randtitel («Beginn der Wirkung**eneines**
-    unter**Abwesenden**geschlossenen …», OR Art. 10). Datenfehler, nicht Render:
-    `public/normtext/struktur/bund/*.json` (≥8 Erlasse belegt) + vererbt in
-    `public/such-index/artikel-bund.json`; Artikel-`bloecke` sauber; Dunkelziffer korpusweit messen.
-    Generator-Fix am Join (L0) + Regeneration Struktur/Such-Index + Verklebungs-Tor mit
-    Sabotage-Probe (§6.7); Extraktion ⇒ `check:gegenpruefung`. Detail + Befund:
-    `FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` M12.
+  - [x] **M12 · Randtitel-Leerzeichen-Verklebung** — **✅ GEBAUT + GEGENGEPRÜFT + GEMERGT
+    24./25.7.2026** (PR #340 `c872e4a9` + Folge-Härtung PR #343 `e3622991`): Generator-Fix am
+    Join (`loeseTrennung`/`biErsetzung`), Tor `check:verklebung` (Sabotage rot gezeigt),
+    231 Sidecars regeneriert, 2+2 Opus-Gegenprüfungs-Durchgänge (Register `ce06aa72`/`e964599c`).
+    Dieser Marker stand stale auf offen (Etikett-Korrektur 26.7.); Wortlaut + Beweise:
+    `FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` §M12.
 - [x] **5c · Startseite V3 + Branding I2** *(STARTSEITE-V3, done)* — ✅ GEBAUT 3.7.2026 (Bausequenz S1–S5 komplett, PRs #106/#107/#108/#111 + S5 Brass-Hero) + Zuletzt-Tracker. **Rest offen (kein Blocker):** Wash-Ton-Veto `bg-surface`-Fallback in `Hero.tsx`. Spec `FAHRPLAN-STARTSEITE-V3.md`. Trailer `Roadmap: W2·5c`. **Chronik:** `ROADMAP-CHRONIK.md` → W2·5c.
   <!-- @meta id: W2·5c · status: done · of: ja · blocker: null · dep: [] · kollision: [src/pages/Startseite.tsx, src/components/start, src/lib/navigation.ts, src/lib/seo.ts, index.html, tailwind.config.js, src/components/layout/Topbar.tsx, scripts/prerender.ts] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-STARTSEITE-V3.md -->
 - [ ] **5d · Gesetzes-UX & Darstellungs-Reglement** *(GESETZES-UX, `[OF]`, eigener Worktree; Auftrag David 4.7.)*:
   **§14-Intake 20.7.2026 (David):** Fassungshistorie im Ansicht-Menü an-/abwählbar (#27).
+  **Stand 26.7.2026 (Nachmessung):** G0–G6, A1–A18, A19–A25 (ohne zurückgezogenes L-3/A28),
+  E-Reihe A29–A40 E1–E7, §11 IA-1–IA-7, EID-1/EID-2 und FN-5/M14 sind gebaut — **offener
+  Rest = EID-3** (Folge-Härtungen; Teil-Grenze: A27-Revival bleibt per Rückzug David 12.7.
+  ausgeschlossen) sowie die im Fahrplan geführten Härtungs-/Politur-Posten.
   <!-- @meta id: W2·5d · status: ready · of: ja · blocker: null · dep: [W2·5c] · kollision: [src/pages/gesetz-leser/parts.tsx, src/pages/gesetz-leser/inhalt.tsx, src/components/normtext/ArtikelBody.tsx, src/lib/normtext/register.ts, src/components/suche, scripts/normtext] · seq-hart: [QS-PERF(ArtikelBody.tsx)] · seq-weich: [W2·5b-L0(scripts/normtext, nur U-PDF)] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-GESETZES-UX.md -->
   UX/Lesbarkeit des Gesetz-Lesers auf State-of-the-Art heben (Fedlex =
   Mindestlatte). **EINE Linien-Sprache** (3 benannte Rollen `--guide-gliederung`/

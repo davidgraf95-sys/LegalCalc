@@ -18,7 +18,7 @@ import type { NormSnapshot } from '../../../lib/normtext/typen';
 import { verifizierLinkArtikel } from '../../../lib/normtext/verifikationslink';
 import type { ArtikelHistorie } from '../../../lib/normtext/historie-laden';
 import { ArtikelHistorieZeile } from './ArtikelHistorie';
-import { extrahiereFussnotenRevision } from '../../../lib/verzahnung/revisionen-extrakt';
+import { extrahiereFussnotenRevision, kanonArtikelToken } from '../../../lib/verzahnung/revisionen-extrakt';
 import { margStufeStil, fnTextMitLinks, baueZitat, margLabel } from '../helpers';
 import { zitatMitAusweis, heuteIso, fmtDatumLang } from '../../../lib/format';
 import { schaetzeArtikelHoehe, baueChronologie, fnNrSortKey } from '../berechnungen';
@@ -243,7 +243,13 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // ./berechnungen (baueChronologie) — hier bleibt nur der Aufruf.
   const chronologie = baueChronologie<Fussnote>(
     fussAnzeige,
-    (text) => extrahiereFussnotenRevision(text)?.iso ?? null,
+    // `hostToken` MUSS mit (PR #376, Fremd-Adressierungs-Wächter): eine Klausel
+    // wie «… Art. 40c in Kraft vom 1. Jan. 2025 …» in der Gliederungstitel-
+    // Fussnote von AHVG Art. 39 datiert Art. 40c, NICHT den Host. Ohne den Token
+    // verwürfe der Wächter solche Klauseln konservativ ganz — die Chronologie
+    // zeigte dann «ohne Datum», obwohl das Datum bekannt ist. Mit dem Token
+    // stimmt sie mit den Revisions-Shards überein (EINE Wahrheit, §5).
+    (text) => extrahiereFussnotenRevision(text, kanonArtikelToken(e.artikel))?.iso ?? null,
   );
   for (const f of fussAnzeige) {
     if (!f.nr) continue;
