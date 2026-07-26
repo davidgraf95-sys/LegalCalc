@@ -73,6 +73,18 @@ function ZitierMarke({ zitat, ausweis, sup, klasse, children }: {
   return sup ? <sup className="mr-1">{knopf}</sup> : knopf;
 }
 
+// FN-5: numerischer Nr-Vergleich («95» < «95a» < «96») für die stabile Reihung
+// der End-Marker, wenn Rückfall-Kandidaten mit bestehenden zusammentreffen —
+// gleiche Ordnung wie die fussAnzeige-Sortierung im ArtikelLeser (A43).
+function vglFnNr(a: string, b: string): number {
+  const key = (nr: string): [number, string] => {
+    const m = /^(\d+)([a-z]*)$/i.exec(nr.trim());
+    return m ? [parseInt(m[1], 10), m[2].toLowerCase()] : [Number.POSITIVE_INFINITY, nr];
+  };
+  const ka = key(a), kb = key(b);
+  return ka[0] - kb[0] || ka[1].localeCompare(kb[1]);
+}
+
 // Fussnoten-Verweis (hochgestellte Nummer). Klick zeigt den Fussnotentext in einem
 // Popover DIREKT an der Stelle — ohne die Leseposition zu verschieben (früher
 // sprang der Anker an den Artikelfuss). Quelle ist der gerenderte Fuss-Eintrag
@@ -401,7 +413,7 @@ function TarifTabelle({ zeilen }: { zeilen: Array<{ beschreibung: string; betrag
   );
 }
 
-export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, autolink = false, zitierKontext, fnProAbsatz, fnProItem, intern }: {
+export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, autolink = false, zitierKontext, fnProAbsatz, fnProItem, fnInlineAbsatz, fnInlineItem, intern }: {
   bloecke: NormSnapshot['bloecke'];
   /** Artikel-Token des Snapshots — steuert die Tarif-Darstellungs-Normalisierung. */
   artikel: string;
@@ -410,6 +422,14 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
   fnProAbsatz?: Record<number, string[]>;
   /** Lesesicht: Fussnoten-Nummern je lit/Ziff-Item (Schlüssel «<blockIndex>|<marke>»). */
   fnProItem?: Record<string, string[]>;
+  /** FN-5/M14: wortgenau positionierte Marker je Block (Schlüssel = Block-Index;
+   *  `o` = Zeichen-Offset in `bloecke[i].text`). Nur im plain-Text-Pfad inline
+   *  gerendert; sonst (Tarif/Staffel/Tabelle, Offset im abgetrennten
+   *  Historie-Teil) Fallback ans Absatz-Ende. */
+  fnInlineAbsatz?: Record<number, Array<{ nr: string; o: number }>>;
+  /** FN-5/M14: wortgenau positionierte Marker je Item (Schlüssel
+   *  «<blockIndex>|<itemIndex>»; `o` = Offset in `items[j].text`). */
+  fnInlineItem?: Record<string, Array<{ nr: string; o: number }>>;
   passus: PassusInfo;
   /** Ref auf die markierte Stelle (für Scroll-ins-Sichtfeld im Popover). */
   passusRef?: React.Ref<HTMLElement>;
@@ -509,6 +529,31 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
           fremdKey
             ? <NormText text={glaetteInterpunktion(s)} intern={fremdIntern} />
             : fremdItems ? verlinktFremd(s) : verlinkt(s);
+        // FN-5/M14: wortgenau positionierbare Marker dieses Blocks (nur Lesesicht).
+        // Der Text-Pfad unten setzt platzierbare Marker inline und trägt sie in
+        // `inlineGesetzt` ein; nicht platzierte Kandidaten (Tarif-/Staffel-Pfad,
+        // Offset im abgetrennten Historie-Teil) rendern wie bisher am Absatz-Ende.
+        const inlineKandidaten = zk ? (fnInlineAbsatz?.[i] ?? []) : [];
+        const inlineGesetzt = new Set<string>();
+        // Segment-Splitter: Text an den Marker-Offsets teilen, jedes Segment durch
+        // die bestehende Anzeige-Pipeline (`renderSeg`), Marker per Wort-Verbinder
+        // (WJ) ans vorausgehende Segment geklebt — wie die End-Marker (A31).
+        const segmentiert = (
+          text: string,
+          marker: Array<{ nr: string; o: number }>,
+          renderSeg: (s: string) => React.ReactNode,
+        ): React.ReactNode => {
+          const sortiert = [...marker].sort((a, b2) => a.o - b2.o);
+          const teile: React.ReactNode[] = [];
+          let von = 0;
+          sortiert.forEach((p, k) => {
+            if (p.o > von) teile.push(<React.Fragment key={`s${k}`}>{renderSeg(text.slice(von, p.o))}</React.Fragment>);
+            teile.push(<React.Fragment key={`f${p.nr}`}>{WJ}<FnRef artikel={artikel} nr={p.nr} /></React.Fragment>);
+            von = p.o;
+          });
+          if (von < text.length) teile.push(<React.Fragment key="rest">{renderSeg(text.slice(von))}</React.Fragment>);
+          return <>{teile}</>;
+        };
         return (
           <div
             key={i}
@@ -579,17 +624,37 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                 // Tausender-Gruppierung NUR in Geld-Kontext (§3, FIX 2 — 22.6.2026):
                 // «Fr. 12 000» → «Fr. 12'000»; Jahrzahlen «2011» bleiben unberührt.
                 // Nicht auf Staffel-Tabellen (StaffelTabelle) — dort nur roher Text.
-                return zeilen
-                  ? <StaffelTabelle zeilen={zeilen} />
-                  : verlinkt(gruppiereBetraege(anzeige));
+                if (zeilen) return <StaffelTabelle zeilen={zeilen} />;
+                // FN-5/M14: Marker an der Wortstelle — nur im plain-Text-Pfad
+                // (anzeige === wortlaut === unveränderter Zuschnitt von b.text) und
+                // nur, wenn der Offset nach Marken-Delta im angezeigten Wortlaut
+                // liegt. Segmentweise durch die bestehende Pipeline (verlinkt/
+                // gruppiereBetraege) — der Wortlaut selbst bleibt unverändert (§1).
+                if (!tarifKontext && inlineKandidaten.length > 0) {
+                  const delta = b.text.length - rohtext.length;
+                  const platzierbar = inlineKandidaten
+                    .map((k) => ({ nr: k.nr, o: k.o - delta }))
+                    .filter((k) => k.o >= 0 && k.o <= anzeige.length);
+                  if (platzierbar.length > 0) {
+                    for (const p of platzierbar) inlineGesetzt.add(p.nr);
+                    return segmentiert(anzeige, platzierbar, (s) => verlinkt(gruppiereBetraege(s)));
+                  }
+                }
+                return verlinkt(gruppiereBetraege(anzeige));
               })()}
               {/* Fussnoten-Marker dieses Absatzes (klickbar → Fuss-Eintrag), damit
                   klar ist, worauf sich die Fussnote bezieht. A31 (David 16.7.2026):
                   Marker klebt via Wort-Verbinder (WJ) DIREKT an den Absatztext (kein
-                  ml-0.5-Abstand, kein Umbruch auf eine eigene Zeile) — wie auf Fedlex. */}
-              {zk && fnProAbsatz?.[i]?.map((nr) => (
-                <React.Fragment key={nr}>{WJ}<FnRef artikel={artikel} nr={nr} /></React.Fragment>
-              ))}
+                  ml-0.5-Abstand, kein Umbruch auf eine eigene Zeile) — wie auf Fedlex.
+                  FN-5: inline gesetzte Marker (oben, Wortstelle) erscheinen hier
+                  nicht mehr; nicht platzierbare Kandidaten fallen hierher zurück. */}
+              {zk && (() => {
+                const rest = inlineKandidaten.filter((k) => !inlineGesetzt.has(k.nr)).map((k) => k.nr);
+                const alle = [...rest, ...(fnProAbsatz?.[i] ?? [])].sort(vglFnNr);
+                return alle.map((nr) => (
+                  <React.Fragment key={nr}>{WJ}<FnRef artikel={artikel} nr={nr} /></React.Fragment>
+                ));
+              })()}
             </p>
             {/* Aufzählungs-Items (lit. bei Bund, Ziff. bei Kanton). EINHEITLICH:
                 identisches Markup/Styling, nur die Marke unterscheidet sich
@@ -629,6 +694,9 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                     && zielItemKey.ji === j;
                   // Gedankenstrich: ohne Punkt («–» statt «–.»).
                   const istStrich = /^[–—-]$/.test(it.marke.trim());
+                  // FN-5: im Text-Pfad inline gesetzte Marker dieses Items —
+                  // erscheinen nicht mehr zusätzlich am Item-Ende.
+                  const itemInlineGesetzt = new Set<string>();
                   const markeAnzeige = istStrich ? '–' : `${it.marke}.`;
                   // Präzises Zitat inkl. Verschachtelung: eine Ziff. unter einer
                   // Bst. wird «… lit. X Ziff. Y …». Eltern-Kette über die Stufen
@@ -686,15 +754,33 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                               const sz = staffelZeilen(it.text);
                               // Geld-Kontext-Tausender auch in Items (§3, FIX 2 — 22.6.2026).
                               // M6: in Fremdgesetz-Chapeau-Items ohne bare-Self-Link (verlinkeItem).
-                              if (!sz) return verlinkeItem(gruppiereBetraege(it.text));
+                              if (!sz) {
+                                // FN-5/M14: Marker an der Wortstelle im Item-Text —
+                                // Offsets beziehen sich direkt auf it.text (kein
+                                // Marken-Delta); Segmentierung wie im Absatz-Pfad.
+                                const kand = zk ? (fnInlineItem?.[`${i}|${j}`] ?? []) : [];
+                                const platzierbar = kand.filter((k) => k.o >= 0 && k.o <= it.text.length);
+                                if (platzierbar.length > 0) {
+                                  for (const p of platzierbar) itemInlineGesetzt.add(p.nr);
+                                  return segmentiert(it.text, platzierbar, (s) => verlinkeItem(gruppiereBetraege(s)));
+                                }
+                                return verlinkeItem(gruppiereBetraege(it.text));
+                              }
                               return <StaffelTabelle zeilen={staffelZeilen(normalisiereTarifText(it.text)) ?? sz} />;
                             })()}
                         {/* Fussnoten-Marker dieses lit/Ziff-Items (klickbar → Fuss).
                             A31: Marker klebt via WJ direkt an den Item-Text (kein
-                            Abstand, kein Umbruch auf eine eigene Zeile). */}
-                        {zk && fnProItem?.[`${i}|${it.marke}`]?.map((nr) => (
-                          <React.Fragment key={nr}>{WJ}<FnRef artikel={artikel} nr={nr} /></React.Fragment>
-                        ))}
+                            Abstand, kein Umbruch auf eine eigene Zeile). FN-5:
+                            inline gesetzte Marker erscheinen hier nicht mehr;
+                            nicht platzierbare Kandidaten fallen hierher zurück. */}
+                        {zk && (() => {
+                          const kand = fnInlineItem?.[`${i}|${j}`] ?? [];
+                          const rest = kand.filter((k) => !itemInlineGesetzt.has(k.nr)).map((k) => k.nr);
+                          const alle = [...rest, ...(fnProItem?.[`${i}|${it.marke}`] ?? [])].sort(vglFnNr);
+                          return alle.map((nr) => (
+                            <React.Fragment key={nr}>{WJ}<FnRef artikel={artikel} nr={nr} /></React.Fragment>
+                          ));
+                        })()}
                       </span>
                     </li>
                   );

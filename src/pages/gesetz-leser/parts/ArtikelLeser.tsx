@@ -221,9 +221,30 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // G11: Marker für section-heading-Fussnoten je Überschrift-Label — landen NICHT
   // mehr anonym auf Artikelebene, sondern an der passenden Randtitel-/Sektions-Zeile.
   const fnProSektion: Record<string, string[]> = {};
+  // FN-5/M14: wortgenau positionierbare Marker (Sidecar-`pos`) je Block bzw.
+  // Item (Schlüssel «<blockIndex>|<itemIndex>»). NUR wenn der Drift-Riegel hält
+  // (pos.l === aktuelle Textlänge, Offset im Bereich) — sonst fällt der Marker
+  // auf die bisherigen Block-Ende-Pfade zurück (§1: nie eine geratene Position).
+  const fnInlineAbsatz: Record<number, Array<{ nr: string; o: number }>> = {};
+  const fnInlineItem: Record<string, Array<{ nr: string; o: number }>> = {};
   for (const f of fussAnzeige) {
     if (!f.nr) continue;
     if (f.sektion) { (fnProSektion[f.sektion] ??= []).push(f.nr); continue; }
+    const p = f.pos;
+    if (p != null && p.b >= 0 && p.b < e.bloecke.length) {
+      const blk = e.bloecke[p.b];
+      if (p.it != null) {
+        const its = blk.items ?? [];
+        const zt = p.it >= 0 && p.it < its.length ? its[p.it].text : null;
+        if (zt != null && p.l === zt.length && p.o >= 0 && p.o <= zt.length) {
+          (fnInlineItem[`${p.b}|${p.it}`] ??= []).push({ nr: f.nr, o: p.o });
+          continue;
+        }
+      } else if (blk.text && p.l === blk.text.length && p.o >= 0 && p.o <= blk.text.length) {
+        (fnInlineAbsatz[p.b] ??= []).push({ nr: f.nr, o: p.o });
+        continue;
+      }
+    }
     let idx = f.absatz != null ? e.bloecke.findIndex((b) => b.absatz === f.absatz) : -1;
     // A31a: Marker in einem absatzlosen Fliesstext-Absatz (fn 667 in ZGB 798a) → am
     // Ende SEINES Blocks (0-basierter Index vom Extraktor) statt auf der Artikelebene.
@@ -418,6 +439,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           <ArtikelBody bloecke={e.bloecke} artikel={e.artikel} passus={{ absatz: null }} autolink
             zitierKontext={{ artikelLabel: label, kuerzel: erlass.kuerzel, fassung: erlass.stand, permalinkBasis: `${basisPfad}#art-${e.artikel}` }}
             fnProAbsatz={fnProAbsatz} fnProItem={fnProItem}
+            fnInlineAbsatz={fnInlineAbsatz} fnInlineItem={fnInlineItem}
             intern={intern}
             className="space-y-3.5 font-serif text-body-l leading-[1.65] text-ink-800" />
           {/* VERWEISE: auflösbare Normverweise des Artikels als Chips (Referenz David). */}
