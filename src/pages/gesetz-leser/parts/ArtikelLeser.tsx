@@ -21,7 +21,7 @@ import { ArtikelHistorieZeile } from './ArtikelHistorie';
 import { extrahiereFussnotenRevision } from '../../../lib/verzahnung/revisionen-extrakt';
 import { margStufeStil, fnTextMitLinks, baueZitat, margLabel } from '../helpers';
 import { zitatMitAusweis, heuteIso, fmtDatumLang } from '../../../lib/format';
-import { schaetzeArtikelHoehe } from '../berechnungen';
+import { schaetzeArtikelHoehe, baueChronologie, fnNrSortKey } from '../berechnungen';
 import { setzeZeitraum, useLeitfallZeitraum } from '../leserOptionen';
 import { filtereLeitfaelleNachZeitraum, zeitraumLabel } from '../leitfallFilter';
 
@@ -199,12 +199,12 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // und gehört im Apparat VOR die artikel-eigenen. Darum hier für die DARSTELLUNG
   // stabil nach numerischer Nr (+ Buchstaben-Suffix «95a») sortieren; leere/nicht-
   // parsbare Nr behalten stabil ihre Lage. Reine Darstellung — Sidecar/Daten unberührt.
-  const fnNrKey = (nr: string): [number, string] => {
-    const m = /^(\d+)([a-z]*)$/i.exec((nr ?? '').trim());
-    return m ? [parseInt(m[1], 10), m[2].toLowerCase()] : [Number.POSITIVE_INFINITY, nr ?? ''];
-  };
+  // W2·5i: der Nummern-Sortierschlüssel steht als `fnNrSortKey` in ./berechnungen
+  // (identische Implementierung, dort auch von der Chronologie-Reihung genutzt) —
+  // die frühere lokale Kopie ist entfallen, damit die Anzeige-Ordnung der
+  // Fussnoten nicht an zwei Stellen definiert ist (§5).
   const fussAnzeige: Fussnote[] = [...fussAnzeigeRoh].sort((a, b) => {
-    const ka = fnNrKey(a.nr), kb = fnNrKey(b.nr);
+    const ka = fnNrSortKey(a.nr), kb = fnNrSortKey(b.nr);
     return ka[0] - kb[0] || ka[1].localeCompare(kb[1]);
   });
   const [artOffen, setArtOffen] = useState(!ganzAufgehoben); // einzelner Artikel ein-/ausklappbar; aufgehoben → zu
@@ -239,23 +239,12 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // Sidecar-Fussnoten, die sowieso schon geladen sind) mit dem BESTEHENDEN
   // Datums-Extraktor aus dem Revisions-Extrakt (§5: das «in Kraft seit …»-Muster,
   // das Datums-Fenster und der deutsche Monats-Parser leben genau dort, nicht hier).
-  //
-  // Deterministisch (§2): aufsteigend nach ISO-Datum; UNDATIERTE ans Ende; bei
-  // gleichem Datum (und unter den Undatierten) entscheidet die Fussnoten-Nummer —
-  // also nie die Eingabe-Reihenfolge, sondern eine total geordnete Relation. Kein
-  // `new Date`, kein Locale-Vergleich (ISO-Strings sind lexikografisch sortierbar).
-  const chronologie: Array<{ fn: Fussnote; iso: string | null }> = fussAnzeige
-    .filter((f) => f.kl === 'A')
-    .map((f) => ({ fn: f, iso: extrahiereFussnotenRevision(f.text ?? '')?.iso ?? null }))
-    .sort((a, b) => {
-      if (a.iso !== b.iso) {
-        if (a.iso == null) return 1;      // undatiert immer ans Ende
-        if (b.iso == null) return -1;
-        return a.iso < b.iso ? -1 : 1;
-      }
-      const ka = fnNrKey(a.fn.nr), kb = fnNrKey(b.fn.nr);
-      return ka[0] - kb[0] || ka[1].localeCompare(kb[1]);
-    });
+  // Die Reihenfolge-Regel selbst steht als reine, geprüfte Funktion in
+  // ./berechnungen (baueChronologie) — hier bleibt nur der Aufruf.
+  const chronologie = baueChronologie<Fussnote>(
+    fussAnzeige,
+    (text) => extrahiereFussnotenRevision(text)?.iso ?? null,
+  );
   for (const f of fussAnzeige) {
     if (!f.nr) continue;
     if (f.sektion) { (fnProSektion[f.sektion] ??= []).push(f.nr); continue; }

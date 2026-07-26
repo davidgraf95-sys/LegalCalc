@@ -74,6 +74,15 @@ export function ErlassKopfBlock({ kopf, intern }: { kopf: ErlassKopf; intern?: I
           ))}
         </div>
       )}
+      {/* W2·5i-HIST-ANSICHT (bewusster Verzicht, 26.7.2026): der KOPF-Apparat trägt
+          KEIN `data-fn-klasse`, folgt der dreiwertigen Historie-Wahl also nicht — er
+          bleibt in allen drei Ansichten vollständig sichtbar. Grund: die Ansicht «als
+          Chronologie» ersetzt die A-Einträge durch eine datierte Liste AM ARTIKELFUSS;
+          für den Erlass-Kopf gibt es keine solche Ersatzdarstellung, ein Ausblenden
+          hier wäre also reiner Informationsverlust (§8). Das Sidecar liefert `kl` für
+          die Kopf-Fussnoten mit — wer den Kopf später einbezieht, braucht dann eine
+          eigene Ersatzdarstellung, nicht bloss eine CSS-Regel. Der bestehende
+          `data-fussnoten`-Toggle wirkt hier unverändert weiter. */}
       {kopf.fussnoten && kopf.fussnoten.length > 0 && (
         <div data-fn-apparat className="mt-3 border-t border-rule-artikel pt-2 space-y-1">
           {/* FN-3: Anker `fn-kopf-${nr}` am Kopf-Apparat — Sprungziel des FnRef-Popovers
