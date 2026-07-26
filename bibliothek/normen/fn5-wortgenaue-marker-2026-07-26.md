@@ -45,7 +45,7 @@ Vorfassungen **nur** durch `erzeugt` + hinzugefügte `pos`-Felder (Skript-Lauf
 
 ## 3 · Restklassen (ausgewiesen, kein stiller Verlust)
 
-1. **`<dt>`-Marken-Fussnoten** (Hauptteil der 3'822, z. B. AHVG Art. 3 lit. a):
+1. **`<dt>`-Marken-Fussnoten** (Hauptteil der 3'799, z. B. AHVG Art. 3 lit. a):
    der Marker klebt amtlich an der lit.-MARKE («a.⁴²»), nicht im Item-Text —
    eine Wortposition im Text existiert nicht. Render bleibt am Item-Ende.
    *Möglicher Folgeschritt:* Marker an der Marke rendern (reine Darstellung, S).
