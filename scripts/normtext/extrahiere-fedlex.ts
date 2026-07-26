@@ -340,6 +340,17 @@ export function parseArtikelInner(innerRoh: string): ArtikelText & { quellen: (s
       const items = parseDefinitionsListe(dlInner);
       if (items.length > 0) {
         if (bloecke.length > 0) {
+          // Befund 6 (26.7.2026): hängt die Liste an einem BILD-Block (Formel-<p>
+          // hat eine verschachtelte Aufzählung unterbrochen) und beginnt sie
+          // flach mit dem Ziffern-NACHFOLGER der unterbrochenen Unterliste,
+          // erbt die führende Nachfolger-Kette deren Tiefe. Amtlich verifiziert
+          // (DBG 22 «2.» nach image2 / STHG 7: PDF-Einrückung = Ziffern-Ebene).
+          // ENG begrenzt: nur Bild-Blöcke, nur Ziffern, nur direkte Nachfolger —
+          // sonst bleibt alles byte-gleich (§1: keine breite Heuristik).
+          const ziel = bloecke[bloecke.length - 1] as { bild?: unknown; bildKacheln?: unknown[] };
+          if (ziel.bild != null || (ziel.bildKacheln != null && ziel.bildKacheln.length > 0)) {
+            ergaenzeFortsetzungsTiefe(bloecke, items);
+          }
           bloecke[bloecke.length - 1].items = items;
         } else {
           // Liste ohne vorangehenden Absatz (selten) → eigener Block.
@@ -412,6 +423,39 @@ export function parseArtikelInner(innerRoh: string): ArtikelText & { quellen: (s
 }
 
 /**
+ * Fortsetzungs-Tiefe (Befund 6, 26.7.2026): Items, die an einen Bild-Block
+ * angehängt werden, setzen eine vom Formelbild unterbrochene Unterliste fort,
+ * wenn ihre führenden Marken die Ziffern-Sequenz der Unterliste DIREKT
+ * weiterzählen. Dann erben genau diese führenden Items die Tiefe des letzten
+ * Items der unterbrochenen Liste. Deterministisch und eng begrenzt (§1/§2):
+ * nur reine Ziffern-Marken, nur der unmittelbare Nachfolger (n → n+1), Abbruch
+ * an der ersten Nicht-Nachfolger-Marke oder an bereits struktur-vertiefter
+ * Position. Amtlicher Beleg: DBG SR 642.11 Art. 22 (PDF 1.1.2026 S. 17) und
+ * STHG SR 642.14 Art. 7 (PDF 1.1.2025 S. 6/7) — Fortsetzungs-«2.» steht auf
+ * der Ziffern-Einrückung, nicht auf der lit.-Ebene.
+ */
+function ergaenzeFortsetzungsTiefe(
+  bloecke: ArtikelText['bloecke'],
+  items: Array<{ marke: string; text: string; tiefe?: number }>,
+): void {
+  // Die unterbrochene Liste = nächstvorheriger Block mit items.
+  let vorItems: Array<{ marke: string; tiefe?: number }> | undefined;
+  for (let k = bloecke.length - 1; k >= 0; k--) {
+    const its = bloecke[k].items;
+    if (its != null && its.length > 0) { vorItems = its; break; }
+  }
+  if (vorItems == null) return;
+  const letztes = vorItems[vorItems.length - 1];
+  if (letztes.tiefe == null || letztes.tiefe <= 0 || !/^\d+$/.test(letztes.marke)) return;
+  let vorNr = parseInt(letztes.marke, 10);
+  for (const it of items) {
+    if (it.tiefe != null || !/^\d+$/.test(it.marke) || parseInt(it.marke, 10) !== vorNr + 1) break;
+    it.tiefe = letztes.tiefe;
+    vorNr += 1;
+  }
+}
+
+/**
  * Findet zu einem <dl>-Öffnungs-Tag (an Position startIdx beginnend) den Index
  * NACH dem PASSENDEN schliessenden </dl>, indem die <dl>/</dl>-Tiefe gezählt wird.
  * Fedlex verschachtelt <dl> in <dd> (lit. → nummerierte Unterpunkte); ein
@@ -479,13 +523,34 @@ function parseDefinitionsListe(
   // kann eine verschachtelte <dl> enthalten; deren Ende wird balanciert bestimmt
   // (findeDlEnde), damit das <dd>-Ende nicht am inneren </dl> falsch erkannt wird.
   const dtRe = /<dt[^>]*>([\s\S]*?)<\/dt>\s*<dd[^>]*>/gi;
-  let m: RegExpExecArray | null;
-  while ((m = dtRe.exec(dlInner)) !== null) {
+  // Befund 6 (26.7.2026): Fedlex setzt bei bild-unterbrochenen Aufzählungen die
+  // Fortsetzungs-Unterliste als ANONYME <dl> DIREKT in die <dl> («<dl><dl><dt>2.…»,
+  // DBG art_22/STHG art_7 nach dem ersten Formelbild). Der reine dt/dd-Scan
+  // flachte sie ab (Ziff. landete auf lit.-Ebene, amtliche Einrückung verloren —
+  // PDF-Beleg: Ziffern-x-Position, nicht lit-x). Darum: liegt VOR dem nächsten
+  // <dt> eine direkte Unter-<dl>, wird sie rekursiv eine Stufe tiefer zerlegt.
+  const dlRe = /<dl\b[^>]*>/gi;
+  let pos = 0;
+  while (pos < dlInner.length) {
+    dtRe.lastIndex = pos;
+    const m = dtRe.exec(dlInner);
+    dlRe.lastIndex = pos;
+    const d = dlRe.exec(dlInner);
+    if (d && (m == null || d.index < m.index)) {
+      // Anonyme direkte Unter-<dl> (nicht in einem <dd> — die konsumiert der
+      // dt/dd-Zweig unten mitsamt seinem <dd>): rekursiv, eine Stufe tiefer.
+      const anonEnde = findeDlEnde(dlInner, d.index);
+      const anonInner = dlInner.slice(d.index + d[0].length, anonEnde - '</dl>'.length);
+      for (const sub of parseDefinitionsListe(anonInner, tiefe + 1, anhang)) items.push(sub);
+      pos = anonEnde;
+      continue;
+    }
+    if (m == null) break;
     const ddStart = dtRe.lastIndex; // direkt nach dem <dd…>-Öffnungs-Tag
     // ── Ende dieses <dd> finden (balanciert über <dd>/</dd>) ──────────────
     const ddEnde = findeDdEnde(dlInner, ddStart);
     const ddRoh = dlInner.slice(ddStart, ddEnde);
-    dtRe.lastIndex = ddEnde + '</dd>'.length; // hinter dieses </dd> springen
+    pos = ddEnde + '</dd>'.length; // hinter dieses </dd> springen
 
     // Verschachtelte <dl> in DIESEM <dd> abtrennen: Einleitungstext = vor der
     // Unterliste; die Unterliste wird rekursiv zerlegt und NACH dem Eltern-Item

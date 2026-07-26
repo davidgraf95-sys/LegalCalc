@@ -43,6 +43,36 @@ test('DBG 22: fn 57 sitzt IM Rendite-Item des Formelbild-Blocks (B1-Riegel-Locke
   await expect(renditeItem.getByRole('button', { name: 'Fussnote 57' })).toHaveCount(1)
 })
 
+test('DBG 22: Bild-Block-Items tragen die blockübergreifende Fundstelle (Abs. 3 lit. a/c)', async ({ page }) => {
+  // Fortsetzungs-Kette (26.7.2026): die Zitier-Marken der vom Formelbild
+  // unterbrochenen Ziffern zeigen die PRÄZISE amtliche Fundstelle — Kette über
+  // Anker-Absatz (Abs. 3) und die lit. des Vorgängerblocks. Vorher waren die
+  // Marken unterdrückt (lokales Zitat wäre «Art. 22 Ziff. 2 DBG» gewesen, eine
+  // Fundstelle, die es amtlich nicht gibt).
+  await page.goto('/gesetze/bund/DBG#art-22')
+  const art = page.locator('#art-22')
+  await expect(art).toBeVisible()
+  await art.scrollIntoViewIfNeeded()
+
+  const zinssatzItem = art.locator('li', { hasText: 'Ist dieser Zinssatz negativ oder null' })
+  await expect(zinssatzItem.locator('button[title="Art. 22 Abs. 3 lit. a Ziff. 2 DBG — kopieren"]')).toHaveCount(1)
+
+  const renditeItem = art.locator('li', { hasText: 'Ist diese Rendite negativ oder null' })
+  await expect(renditeItem.locator('button[title="Art. 22 Abs. 3 lit. c Ziff. 2 DBG — kopieren"]')).toHaveCount(1)
+
+  // Die beiden «2.»-Marken sind damit UNTERSCHEIDBAR (lit. a vs. lit. c) —
+  // exakt der Befund-3-Fall der Gegenprüfung.
+})
+
+test('STHG 7: Rendite-Item trägt die Fundstelle Abs. 2 lit. c Ziff. 2', async ({ page }) => {
+  await page.goto('/gesetze/bund/STHG#art-7')
+  const art = page.locator('#art-7')
+  await expect(art).toBeVisible()
+  await art.scrollIntoViewIfNeeded()
+  const renditeItem = art.locator('li', { hasText: 'Ist diese Rendite negativ oder null' })
+  await expect(renditeItem.locator('button[title="Art. 7 Abs. 2 lit. c Ziff. 2 StHG — kopieren"]')).toHaveCount(1)
+})
+
 test('STHG 7: Formelbild-Block zeigt Bild UND seine Items', async ({ page }) => {
   await page.goto('/gesetze/bund/STHG#art-7')
   const art = page.locator('#art-7')

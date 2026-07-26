@@ -95,6 +95,10 @@ anderen Blöcken; das lokal gebaute Zitat wäre falsch (beide «Ziff. 2» ergäb
 identisch «Art. 22 Ziff. 2 DBG»). §1: keine Kopier-Marke statt einer falschen,
 bis blockübergreifende Kette + `tiefe`-Extraktion stehen (korpus-werkstatt;
 Extraktions-Lücke: `tiefe` fehlt bei Fortsetzungs-Ziffern, Befund 6).
+**Erledigt am 26.7.2026 (Folge-Einheit `feat/fortsetzungs-tiefe`):** Kette +
+`tiefe`-Extraktion gebaut, Zitier-Marken auf Bild-Block-Items rendern wieder —
+mit präziser blockübergreifender Fundstelle. Detail:
+`bibliothek/normen/fortsetzungs-tiefe-bild-bloecke-2026-07-26.md`.
 
 ## 5 · Pflegebedarf
 

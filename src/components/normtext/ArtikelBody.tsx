@@ -40,6 +40,32 @@ function litZiff(marke: string): string {
   return /^\d/.test(marke.trim()) ? 'Ziff.' : 'lit.';
 }
 
+/** Verschachtelungsstufe je Item. PRIMÄR aus der EXPLIZITEN `tiefe` des
+ *  Snapshots (M6, §1): liefert Fedlex die Stufe mit, wird sie NICHT mehr aus
+ *  dem Markentyp geraten — das Raten erzeugte falsche Zitate, wenn die
+ *  Reihenfolge umgekehrt ist (Ziff. → lit. statt lit. → Ziff.).
+ *  FALLBACK-Heuristik nur für Daten OHNE tiefe (Kanton-Snapshots, noch nicht
+ *  re-segnete Bund-Erlasse): Bst (a,b,c) = Stufe 0; Ziff (1,2,3) NACH einem
+ *  Bst = Stufe 1, sonst 0; Gedankenstrich = eine Stufe tiefer als das
+ *  vorausgehende Item. EINE Stelle (§5) — genutzt für die block-lokale
+ *  Darstellung UND die blockübergreifende Fortsetzungs-Kette der Bild-Blöcke. */
+function stufenFuer(items: Array<{ marke: string; tiefe?: number }>): number[] {
+  const hatTiefe = items.some((it) => typeof it.tiefe === 'number');
+  if (hatTiefe) return items.map((it) => it.tiefe ?? 0);
+  const typ = (m: string) => /^[–—-]$/.test(m.trim()) ? 'strich' : /^\d/.test(m.trim()) ? 'ziff' : 'lit';
+  const stufen: number[] = [];
+  let sahLit = false, letzteNichtStrich = 0;
+  for (const it of items) {
+    const t = typ(it.marke);
+    let lv: number;
+    if (t === 'strich') lv = letzteNichtStrich + 1;
+    else if (t === 'ziff') { lv = sahLit ? 1 : 0; letzteNichtStrich = lv; }
+    else { lv = 0; sahLit = true; letzteNichtStrich = 0; }
+    stufen.push(lv);
+  }
+  return stufen;
+}
+
 /** Stand-Ausweis-Basis (B-6): dieselbe Fassung + Permalink-Basis für alle Marken
  *  eines Artikels; der Abruf-Tag und der origin kommen zur Klick-Zeit dazu. */
 interface AusweisBasis { fassung?: string; permalinkBasis: string }
@@ -510,12 +536,21 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
   // null, wenn der Block keine items trägt.
   // `ohneZitierMarke` (Gegenprüfung 26.7., Befund 3): Items an absatz-losen
   // Bild-Blöcken sind Fortsetzungen des Vorgänger-Absatzes — ihre lit.-/Abs.-
-  // Kette liegt in ANDEREN Blöcken. Das lokal gebaute Zitat wäre falsch
-  // (DBG 22: beide «Ziff. 2» ergäben identisch «Art. 22 Ziff. 2 DBG», eine
-  // Fundstelle, die es amtlich nicht gibt). §1: lieber keine Kopier-Marke als
-  // eine falsche — bis die blockübergreifende Kette samt `tiefe`-Extraktion
-  // steht (korpus-werkstatt).
-  const itemListe = (b: NormSnapshot['bloecke'][number], i: number, absMarke: string | null, ohneZitierMarke = false) => {
+  // Kette liegt in ANDEREN Blöcken. Ist die Kette über `vorKette` + Anker-
+  // Absatz deterministisch herleitbar (Fortsetzungs-Tiefe-Bau 26.7.2026),
+  // rendert die ZitierMarke mit der PRÄZISEN blockübergreifenden Fundstelle
+  // («Art. 22 Abs. 3 lit. c Ziff. 2 DBG»); fehlt der Anker, bleibt die Marke
+  // unterdrückt — §1: lieber keine Kopier-Marke als eine falsche.
+  // `vorKette` = Items der unterbrochenen Liste aus den Vorgänger-Blöcken
+  // (Anker-Absatz + dazwischenliegende Bild-Blöcke), nur fürs Zitat — die
+  // block-lokale Einrückung (stufen) bleibt unberührt.
+  const itemListe = (
+    b: NormSnapshot['bloecke'][number],
+    i: number,
+    absMarke: string | null,
+    ohneZitierMarke = false,
+    vorKette?: NonNullable<NormSnapshot['bloecke'][number]['items']>,
+  ) => {
     if (b.items == null || b.items.length === 0) return null;
     // M6: erklärt dieser Absatz die Bestimmungen eines Fremdgesetzes für
     // anwendbar, zitieren seine Items bloße Fremd-Artikel → bare-Ref-Linking
@@ -534,30 +569,9 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
       fremdKey
         ? <NormText text={glaetteInterpunktion(s)} intern={fremdIntern} />
         : fremdItems ? verlinktFremd(s) : verlinkt(s);
-    // Verschachtelungsstufe je Item bestimmen. PRIMÄR aus der EXPLIZITEN
-    // `tiefe` des Snapshots (M6, §1): liefert Fedlex die Stufe mit, wird
-    // sie NICHT mehr aus dem Markentyp geraten — das Raten erzeugte
-    // falsche Zitate, wenn die Reihenfolge umgekehrt ist (Ziff. → lit.
-    // statt lit. → Ziff.). FALLBACK-Heuristik nur für Daten OHNE tiefe
-    // (Kanton-Snapshots, noch nicht re-segnete Bund-Erlasse): Bst (a,b,c)
-    // = Stufe 0; Ziff (1,2,3) NACH einem Bst = Stufe 1, sonst 0;
-    // Gedankenstrich = eine Stufe tiefer als das vorausgehende Item.
-    const hatTiefe = b.items!.some((it) => typeof it.tiefe === 'number');
-    const typ = (m: string) => /^[–—-]$/.test(m.trim()) ? 'strich' : /^\d/.test(m.trim()) ? 'ziff' : 'lit';
-    const stufen: number[] = [];
-    if (hatTiefe) {
-      for (const it of b.items!) stufen.push(it.tiefe ?? 0);
-    } else {
-      let sahLit = false, letzteNichtStrich = 0;
-      for (const it of b.items!) {
-        const t = typ(it.marke);
-        let lv: number;
-        if (t === 'strich') lv = letzteNichtStrich + 1;
-        else if (t === 'ziff') { lv = sahLit ? 1 : 0; letzteNichtStrich = lv; }
-        else { lv = 0; sahLit = true; letzteNichtStrich = 0; }
-        stufen.push(lv);
-      }
-    }
+    // Verschachtelungsstufe je Item (stufenFuer: explizite tiefe > Fallback-
+    // Heuristik; EINE Stelle, §5) — block-lokal für Einrückung und Zitat.
+    const stufen: number[] = stufenFuer(b.items!);
     return (
       <ul className={`mt-1.5 space-y-1 ${zk ? 'pl-8' : 'pl-1'}`}>
         {b.items!.map((it, j) => {
@@ -580,12 +594,22 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
           // Präzises Zitat inkl. Verschachtelung: eine Ziff. unter einer
           // Bst. wird «… lit. X Ziff. Y …». Eltern-Kette über die Stufen
           // rückwärts aufbauen (nächster Vorfahre je flacherer Stufe).
+          // Mit `vorKette` (Bild-Block-Fortsetzung) läuft die Kette über die
+          // VERSCHMOLZENE Liste (Vorgänger-Items + eigene Items bis j) — so
+          // findet die Fortsetzungs-Ziff. ihren lit.-Vorfahren im
+          // Vorgängerblock (DBG 22: «Abs. 3 lit. c Ziff. 2»). Ohne vorKette
+          // bleibt der Pfad byte-identisch block-lokal.
           const itemZitat = zk ? (() => {
+            const kette = vorKette != null && vorKette.length > 0
+              ? [...vorKette, ...b.items!.slice(0, j + 1)]
+              : b.items!.slice(0, j + 1);
+            const kStufen = vorKette != null && vorKette.length > 0 ? stufenFuer(kette) : stufen;
             const seg: string[] = [];
-            let lvl = stufen[j];
-            for (let k = j; k >= 0 && lvl >= 0; k--) {
-              if (stufen[k] === lvl && !/^[–—-]$/.test(b.items![k].marke.trim())) {
-                const m2 = b.items![k].marke;
+            const jK = kette.length - 1;
+            let lvl = kStufen[jK];
+            for (let k = jK; k >= 0 && lvl >= 0; k--) {
+              if (kStufen[k] === lvl && !/^[–—-]$/.test(kette[k].marke.trim())) {
+                const m2 = kette[k].marke;
                 seg.unshift(`${litZiff(m2)} ${m2}`);
                 lvl--;
               }
@@ -701,12 +725,35 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
           const figur = bb.bildKacheln && bb.bildKacheln.length > 0
             ? <BildKacheln kacheln={bb.bildKacheln} />
             : <BildFigur bild={bb.bild!} />;
-          // Zitier-Marke nur unterdrücken, wenn der Bild-Block wirklich
-          // absatz-los ist (Bedingung spiegelt die Begründung — Gegenprüfung
-          // 26.7., Hinweis zu B3): ein künftiger Bild-Block MIT eigener
-          // Absatznummer trüge ein korrektes «Abs.»-Zitat und behält die Marke.
-          const bildAbsMarke = absatzMarke(b.absatz, b.text).marke;
-          const items = itemListe(b, i, bildAbsMarke, bildAbsMarke == null);
+          // Fortsetzungs-Kette (26.7.2026): Items an Bild-Blöcken setzen die vom
+          // Formelbild unterbrochene Aufzählung fort. Anker = nächstvorheriger
+          // Nicht-Bild-Block; trägt er eine Absatznummer, liefert er «Abs. N»
+          // und seine Items + die Items dazwischenliegender Bild-Blöcke bilden
+          // die vorKette fürs blockübergreifende Zitat («Abs. 3 lit. c Ziff. 2»).
+          // Ohne herleitbaren Anker bleibt die Zitier-Marke unterdrückt
+          // (§1: lieber keine Kopier-Marke als eine falsche). Ein Bild-Block
+          // MIT eigener Absatznummer bleibt sein eigener Anker (kettenlos).
+          const eigeneMarke = absatzMarke(b.absatz, b.text).marke;
+          let ankerMarke: string | null = eigeneMarke;
+          const vorKette: NonNullable<typeof b.items> = [];
+          if (eigeneMarke == null) {
+            for (let k = i - 1; k >= 0; k--) {
+              const vb = bloecke[k] as BildBlock;
+              const vbIstBild = vb.bild != null || (vb.bildKacheln != null && vb.bildKacheln.length > 0);
+              if (vbIstBild) {
+                if (vb.items != null) vorKette.unshift(...vb.items);
+                continue;
+              }
+              // Erster Nicht-Bild-Block: nur ein regulärer Absatz-Block mit
+              // Nummer taugt als Anker (kein titel-/Tabellen-Block).
+              if (vb.absatz != null && vb.titel === undefined && vb.mehrspaltig == null && (vb.tabelle == null || vb.tabelle.length === 0)) {
+                ankerMarke = absatzMarke(vb.absatz, vb.text).marke;
+                if (ankerMarke != null && vb.items != null) vorKette.unshift(...vb.items);
+              }
+              break;
+            }
+          }
+          const items = itemListe(b, i, ankerMarke, ankerMarke == null, vorKette.length > 0 ? vorKette : undefined);
           // Itemloser Bild-Block: Markup exakt wie bisher (DOM-identisch).
           if (items == null) {
             return (
