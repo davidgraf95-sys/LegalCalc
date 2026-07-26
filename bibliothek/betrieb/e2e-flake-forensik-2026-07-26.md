@@ -243,7 +243,61 @@ Belastung weg; der Deckel braucht keine Kalibrierung. Er wäre sonst zum zweiten
 Mal auf dieselbe Erscheinung angepasst worden.
 
 
-## 4. Was offen bleibt
+## 4. Nebenfund mit eigener Tragweite: die fehlende Zeitzone
+
+Beim Gate-Lauf dieser Arbeit meldete `golden:vergleich` eine Abweichung in genau
+zwei Fällen: **`kuendigung:dj1` und `kuendigung:dj10`**. Die Nullprobe auf
+unverändertem `origin/main` (eigener Worktree) zeigte dieselbe Abweichung — damit
+war der Verdacht «meine Änderung» ausgeschlossen, der Verdacht «Defekt auf main»
+aber ebenso falsch.
+
+Der Diff war reiner Zeitzonen-Offset:
+
+```
+BASIS  "beendigungsdatum": "2025-10-31T22:59:59.999Z"   (= 23:59:59.999 Zürich)
+JETZT  "beendigungsdatum": "2025-10-31T23:59:59.999Z"   (= Mitternacht UTC)
+```
+
+`berechneKuendigungsfrist` liefert **lokale** Tagesgrenzen, und die Golden-Basis
+ist in Europe/Zurich erzeugt. Auf einer UTC-Maschine weichen deshalb genau die
+zeitzonenabhängigen Fälle ab — die anderen 247 sind TZ-neutral. Mit
+`TZ=Europe/Zurich`: «IDENTISCH — 249 Fälle byte-gleich».
+
+**Damit ist ein offener Punkt des Tor-Audits erledigt.**
+[AUDIT-TORE-2026-07-20.md](../register/AUDIT-TORE-2026-07-20.md) §6 hielt fest,
+dass der einzige Lauf von `fedlex-frische.yml` an `golden:vergleich` scheiterte —
+mit **exakt diesem Fallpaar** — und vermutete, «die Abweichung entstand erst
+durch die Regenerierungs-Schritte des Workflows selbst»; welcher Schritt, blieb
+ausdrücklich offen. Die Vermutung ist widerlegt: **`fedlex-frische.yml` setzt
+`TZ` nicht.** `ci.yml` setzt es vier Mal und begründet es dort selbst
+(Zeilen 79–83: «die TZ-Bugklasse vom 7.6.2026 feuerte NUR in Europe/Zurich —
+UTC-CI maskierte sie»). Der Workflow war strukturell zum Scheitern verurteilt,
+sobald sein Frische-Diff überhaupt einmal griff — und das wiegt schwer, weil neun
+Allowlist-Einträge des Audits ihn als Ersatz-Arbiter benennen.
+
+Behoben an drei Stellen:
+
+- `.github/workflows/fedlex-frische.yml` → `TZ: Europe/Zurich` (Job-Env). Fährt
+  `golden:vergleich`, `check:verfall`, `check:paritaet` — war garantiert rot.
+- `.github/workflows/normen-monitor.yml` → `TZ: Europe/Zurich` (Workflow-Env).
+  Fährt `check:verfall`; Verfallstermine sind Kalendertage, und ein UTC-Runner
+  kippt sie im Fenster zwischen 22:00/23:00 und Mitternacht Zürich um einen Tag.
+- `scripts/gate.sh` → `export TZ=Europe/Zurich`, bedingungslos. Das lokale Gate
+  war auf jeder UTC-Maschine und in jedem Container falsch-rot.
+
+Belegt: `npm run gate` grün — und **auch mit erzwungenem `TZ=UTC` in der
+Umgebung grün**, die Host-Zeitzone kann das Gate nicht mehr kippen.
+Bedingungslos statt `${TZ:-…}`, weil Container-Images häufig `TZ=UTC`
+exportieren und genau dann in das falsche Rot liefen, das die Zeile beseitigen
+soll.
+
+Die teuerste Lehre am Befund: **ein Tor, das aus Umgebungsgründen rot ist, wird
+bald ignoriert** — und dieses hier war der benannte Arbiter für neun andere Tore,
+während es aus einem Grund rot stand, der mit dem Rechtsinhalt nichts zu tun hat.
+
+---
+
+## 5. Was offen bleibt
 
 - **Ursache des bimodalen Stalls** (§3) — Profiling ausstehend; solange offen,
   ist `norm-sprung` A9 auf langsamer Hardware weiter rot-anfällig, und das ist
