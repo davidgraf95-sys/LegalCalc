@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "832.104",
   "titel": "Verordnung über die Kostenermittlung und die Leistungserfassung durch Spitäler, Geburtshäuser und Pflegeheime in der Krankenversicherung",
@@ -84,7 +84,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 99,
+      "l": 99
+     }
     }
    ]
   },
@@ -134,7 +139,13 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 1,
+      "l": 1
+     }
     },
     {
      "nr": "8",
@@ -182,7 +193,13 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 121,
+      "l": 135
+     }
     }
    ]
   },
@@ -322,7 +339,13 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 99,
+      "l": 196
+     }
     }
    ]
   },
@@ -374,7 +397,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 169,
+      "l": 169
+     }
     }
    ]
   },
@@ -412,7 +440,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 179,
+      "l": 195
+     }
     },
     {
      "nr": "22",
@@ -424,7 +457,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 195,
+      "l": 195
+     }
     }
    ]
   },
@@ -462,7 +500,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 82,
+      "l": 82
+     }
     }
    ]
   },
@@ -500,7 +543,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 139,
+      "l": 276
+     }
     },
     {
      "nr": "27",
@@ -512,7 +560,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 276,
+      "l": 276
+     }
     }
    ]
   },
@@ -538,7 +591,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 142,
+      "l": 223
+     }
     },
     {
      "nr": "29",
@@ -550,7 +608,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 223,
+      "l": 223
+     }
     }
    ]
   },

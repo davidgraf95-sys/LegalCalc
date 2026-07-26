@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "831.425",
   "titel": "Verordnung über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge",
@@ -101,7 +101,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 73,
+      "l": 373
+     }
     },
     {
      "nr": "6",
@@ -113,7 +118,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 127,
+      "l": 127
+     }
     }
    ]
   },
@@ -202,7 +212,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 119,
+      "l": 313
+     }
     },
     {
      "nr": "9",
@@ -214,7 +229,13 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 166,
+      "l": 166
+     }
     },
     {
      "nr": "10",
@@ -226,7 +247,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 322,
+      "l": 322
+     }
     }
    ]
   },
@@ -266,7 +292,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 99,
+      "l": 120
+     }
     }
    ]
   },
@@ -343,14 +374,25 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 86,
+      "l": 87
+     }
     },
     {
      "nr": "24",
      "text": "Heute: nach Art. 19 und 19<i>a</i>.",
      "links": [],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 171,
+      "l": 279
+     }
     }
    ]
   },
@@ -378,7 +420,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 59,
+      "l": 173
+     }
     }
    ]
   },
@@ -431,7 +478,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 186,
+      "l": 205
+     }
     },
     {
      "nr": "28",
@@ -444,7 +496,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 203,
+      "l": 205
+     }
     },
     {
      "nr": "29",
@@ -456,7 +513,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 90,
+      "l": 90
+     }
     },
     {
      "nr": "30",
@@ -468,7 +530,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 422,
+      "l": 422
+     }
     }
    ]
   },
@@ -531,7 +598,13 @@
       }
      ],
      "absatz": "1",
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 50,
+      "l": 51
+     }
     },
     {
      "nr": "34",
@@ -543,7 +616,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 181,
+      "l": 181
+     }
     }
    ]
   },
@@ -582,7 +660,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 384,
+      "l": 384
+     }
     },
     {
      "nr": "38",
@@ -594,7 +677,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 378,
+      "l": 378
+     }
     }
    ]
   },
@@ -634,7 +722,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 179,
+      "l": 192
+     }
     },
     {
      "nr": "41",
@@ -648,7 +741,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 191,
+      "l": 192
+     }
     }
    ]
   },
@@ -699,7 +797,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 179,
+      "l": 180
+     }
     },
     {
      "nr": "44",
@@ -712,7 +815,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 153,
+      "l": 366
+     }
     },
     {
      "nr": "45",
@@ -725,7 +833,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 182,
+      "l": 366
+     }
     }
    ]
   },
@@ -776,7 +889,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 36,
+      "l": 115
+     }
     }
    ]
   },
@@ -803,7 +921,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -904,7 +1027,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 59,
+      "l": 273
+     }
     },
     {
      "nr": "48",
@@ -916,7 +1044,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 277,
+      "l": 277
+     }
     },
     {
      "nr": "49",
@@ -953,7 +1086,13 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 267,
+      "l": 617
+     }
     }
    ]
   },
@@ -998,7 +1137,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 160,
+      "l": 160
+     }
     },
     {
      "nr": "57",
@@ -1010,7 +1154,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 147,
+      "l": 147
+     }
     },
     {
      "nr": "52",
@@ -1062,7 +1211,13 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 38,
+      "l": 45
+     }
     },
     {
      "nr": "59",
@@ -1113,7 +1268,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 313,
+      "l": 313
+     }
     }
    ]
   },
@@ -1178,7 +1338,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 176,
+      "l": 207
+     }
     },
     {
      "nr": "64",
@@ -1190,7 +1355,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 207,
+      "l": 207
+     }
     }
    ]
   },
@@ -1217,7 +1387,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 633,
+      "l": 633
+     }
     },
     {
      "nr": "65",
@@ -1256,7 +1431,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 250,
+      "l": 250
+     }
     }
    ]
   },
@@ -1321,7 +1501,13 @@
       }
      ],
      "absatz": null,
-     "item": "i"
+     "item": "i",
+     "pos": {
+      "b": 0,
+      "it": 8,
+      "o": 59,
+      "l": 60
+     }
     }
    ]
   },
@@ -1389,7 +1575,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 152,
+      "l": 228
+     }
     }
    ]
   },
@@ -1440,7 +1631,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 325,
+      "l": 382
+     }
     },
     {
      "nr": "19",
@@ -1453,7 +1649,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 361,
+      "l": 382
+     }
     },
     {
      "nr": "20",
@@ -1465,7 +1666,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 382,
+      "l": 382
+     }
     },
     {
      "nr": "21",
@@ -1477,7 +1683,12 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 151,
+      "l": 151
+     }
     }
    ]
   },

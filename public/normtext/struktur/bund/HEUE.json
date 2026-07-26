@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.211.232.1",
   "titel": "Übereinkommen über den internationalen Schutz von Erwachsenen",
@@ -81,7 +81,13 @@
      "text": "Deutschland (DE), Österreich (AT): Pflegschaft",
      "links": [],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 37,
+      "l": 70
+     }
     }
    ]
   },
@@ -431,7 +437,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 262,
+      "l": 300
+     }
     }
    ]
   },
@@ -481,7 +492,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 104,
+      "l": 146
+     }
     }
    ]
   },

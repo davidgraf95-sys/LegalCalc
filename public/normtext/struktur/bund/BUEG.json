@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "141.0",
   "titel": "Bundesgesetz über das Schweizer Bürgerrecht",
@@ -416,7 +416,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 269,
+      "l": 269
+     }
     }
    ]
   },
@@ -739,7 +744,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 111,
+      "l": 112
+     }
     }
    ]
   },
@@ -1010,7 +1020,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 535,
+      "l": 603
+     }
     }
    ]
   },
@@ -1234,7 +1249,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 353,
+      "l": 353
+     }
     }
    ]
   },

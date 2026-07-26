@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.741.611",
   "titel": "Übereinkommen über den Beförderungsvertrag im internationalen Strassengüterverkehr (CMR)",
@@ -276,7 +276,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 2
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 2,
+      "l": 120
+     }
     },
     {
      "nr": "3",
@@ -289,7 +294,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 6
+     "absatzIndex": 6,
+     "pos": {
+      "b": 6,
+      "o": 2,
+      "l": 855
+     }
     },
     {
      "nr": "4",
@@ -302,7 +312,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 7
+     "absatzIndex": 7,
+     "pos": {
+      "b": 7,
+      "o": 2,
+      "l": 591
+     }
     },
     {
      "nr": "5",
@@ -315,7 +330,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 7
+     "absatzIndex": 7,
+     "pos": {
+      "b": 7,
+      "o": 198,
+      "l": 591
+     }
     },
     {
      "nr": "6",
@@ -328,7 +348,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 8
+     "absatzIndex": 8,
+     "pos": {
+      "b": 8,
+      "o": 2,
+      "l": 606
+     }
     }
    ]
   },
@@ -418,7 +443,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 4
+     "absatzIndex": 4,
+     "pos": {
+      "b": 4,
+      "o": 292,
+      "l": 372
+     }
     }
    ]
   },

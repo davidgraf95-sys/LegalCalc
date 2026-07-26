@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "642.118.2",
   "titel": "Verordnung des EFD über die Quellensteuer bei der direkten Bundessteuer",
@@ -72,7 +72,13 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 107,
+      "l": 165
+     }
     },
     {
      "nr": "4",
@@ -96,7 +102,13 @@
       }
      ],
      "absatz": "1",
-     "item": "i"
+     "item": "i",
+     "pos": {
+      "b": 0,
+      "it": 8,
+      "o": 88,
+      "l": 332
+     }
     },
     {
      "nr": "6",
@@ -124,7 +136,13 @@
       }
      ],
      "absatz": "1",
-     "item": "n"
+     "item": "n",
+     "pos": {
+      "b": 0,
+      "it": 13,
+      "o": 115,
+      "l": 350
+     }
     },
     {
      "nr": "8",
@@ -184,7 +202,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 182,
+      "l": 182
+     }
     }
    ]
   },
@@ -234,7 +257,13 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 125,
+      "l": 254
+     }
     }
    ]
   },
@@ -368,7 +397,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 187,
+      "l": 187
+     }
     }
    ]
   },
@@ -394,7 +428,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 180,
+      "l": 180
+     }
     }
    ]
   },
@@ -504,7 +543,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 154,
+      "l": 257
+     }
     }
    ]
   },
@@ -567,7 +611,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 48,
+      "l": 65
+     }
     }
    ]
   },
@@ -594,7 +643,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -651,7 +705,13 @@
      "text": "<i>BBl <b>1983</b> II 535</i>",
      "links": [],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 116,
+      "l": 272
+     }
     }
    ]
   },

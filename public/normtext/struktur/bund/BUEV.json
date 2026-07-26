@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "141.01",
   "titel": "Verordnung über das Schweizer Bürgerrecht",
@@ -104,7 +104,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 393,
+      "l": 514
+     }
     }
    ]
   },
@@ -488,7 +493,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 139
+     }
     }
    ]
   },
@@ -551,7 +561,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 141,
+      "l": 224
+     }
     }
    ]
   },
@@ -582,7 +597,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 213,
+      "l": 213
+     }
     }
    ]
   },
@@ -647,7 +667,13 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 117,
+      "l": 125
+     }
     }
    ]
   },

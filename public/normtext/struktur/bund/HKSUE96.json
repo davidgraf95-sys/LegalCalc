@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.211.231.011",
   "titel": "Übereinkommen über die Zuständigkeit, das anzuwendende Recht, die Anerkennung, Vollstreckung und Zusammenarbeit auf dem Gebiet der elterlichen Verantwortung und der Massnahmen zum Schutz von Kindern",
@@ -109,7 +109,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 101,
+      "l": 321
+     }
     }
    ]
   },
@@ -138,14 +143,26 @@
      "text": "Deutschland (DE): das Recht zum persönlichen Umgang",
      "links": [],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 176,
+      "l": 310
+     }
     },
     {
      "nr": "7",
      "text": "DE: die Pflegschaft; AT: die besondere Sachwalterschaft",
      "links": [],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 37,
+      "l": 70
+     }
     }
    ]
   },
@@ -475,7 +492,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 286,
+      "l": 375
+     }
     },
     {
      "nr": "9",
@@ -483,7 +505,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 203,
+      "l": 647
+     }
     },
     {
      "nr": "10",
@@ -491,7 +518,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 379,
+      "l": 647
+     }
     },
     {
      "nr": "11",
@@ -499,7 +531,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 526,
+      "l": 647
+     }
     },
     {
      "nr": "12",
@@ -507,7 +544,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 2
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 105,
+      "l": 435
+     }
     },
     {
      "nr": "13",
@@ -515,7 +557,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 2
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 325,
+      "l": 435
+     }
     }
    ]
   },
@@ -565,7 +612,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 262,
+      "l": 300
+     }
     }
    ]
   },
@@ -615,7 +667,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 104,
+      "l": 146
+     }
     }
    ]
   },
@@ -701,7 +758,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 65,
+      "l": 448
+     }
     },
     {
      "nr": "17",
@@ -709,7 +771,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 403,
+      "l": 448
+     }
     }
    ]
   },
@@ -734,7 +801,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 244,
+      "l": 450
+     }
     }
    ]
   },

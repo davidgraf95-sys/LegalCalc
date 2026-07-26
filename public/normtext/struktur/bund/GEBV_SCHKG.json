@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "281.35",
   "titel": "Gebührenverordnung zum Bundesgesetz über Schuldbetreibung und Konkurs",
@@ -156,7 +156,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 137,
+      "l": 137
+     }
     }
    ]
   },
@@ -233,7 +238,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 258,
+      "l": 258
+     }
     },
     {
      "nr": "9",
@@ -281,7 +291,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 362,
+      "l": 362
+     }
     }
    ]
   },
@@ -308,7 +323,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 129,
+      "l": 166
+     }
     },
     {
      "nr": "14",
@@ -320,7 +340,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 166,
+      "l": 166
+     }
     }
    ]
   },
@@ -611,7 +636,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 114,
+      "l": 211
+     }
     }
    ]
   },
@@ -789,7 +819,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 196,
+      "l": 233
+     }
     }
    ]
   },
@@ -940,7 +975,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 78,
+      "l": 230
+     }
     },
     {
      "nr": "32",
@@ -952,7 +992,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 230,
+      "l": 230
+     }
     },
     {
      "nr": "33",
@@ -996,7 +1041,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -1048,7 +1098,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 39,
+      "l": 239
+     }
     }
    ]
   },
@@ -1110,7 +1165,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 218,
+      "l": 218
+     }
     }
    ]
   },
@@ -1191,14 +1251,24 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 100,
+      "l": 454
+     }
     },
     {
      "nr": "18",
      "text": "Fassung gemäss Ziff. I der V vom 15. Okt. 2025, in Kraft seit 1. Jan. 2026 (AS <b>202</b><b>5</b> 630).",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 454,
+      "l": 454
+     }
     },
     {
      "nr": "19",
@@ -1210,7 +1280,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 210,
+      "l": 210
+     }
     },
     {
      "nr": "20",
@@ -1222,7 +1297,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 91,
+      "l": 91
+     }
     },
     {
      "nr": "21",
@@ -1234,7 +1314,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -1272,7 +1357,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 138
+     }
     },
     {
      "nr": "24",
@@ -1284,7 +1374,13 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 45,
+      "l": 45
+     }
     }
    ]
   },

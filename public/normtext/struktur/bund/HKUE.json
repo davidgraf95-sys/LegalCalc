@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.211.230.02",
   "titel": "Übereinkommen über die zivilrechtlichen Aspekte internationaler Kindesentführung",
@@ -389,7 +389,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 110,
+      "l": 691
+     }
     }
    ]
   },

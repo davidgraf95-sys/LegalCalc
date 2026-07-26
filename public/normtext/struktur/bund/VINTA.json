@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "142.205",
   "titel": "Verordnung über die Integration von Ausländerinnen und Ausländern",
@@ -195,7 +195,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 316,
+      "l": 316
+     }
     }
    ]
   },
@@ -258,7 +263,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 190,
+      "l": 268
+     }
     },
     {
      "nr": "6",
@@ -270,7 +280,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 423,
+      "l": 423
+     }
     },
     {
      "nr": "7",
@@ -282,7 +297,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 132,
+      "l": 132
+     }
     }
    ]
   },
@@ -320,7 +340,12 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 366,
+      "l": 366
+     }
     },
     {
      "nr": "11",
@@ -333,7 +358,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 368,
+      "l": 376
+     }
     }
    ]
   },
@@ -360,7 +390,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 94,
+      "l": 213
+     }
     }
    ]
   },
@@ -386,7 +421,12 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 243,
+      "l": 243
+     }
     }
    ]
   },
@@ -413,7 +453,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 199,
+      "l": 200
+     }
     }
    ]
   },
@@ -584,7 +629,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 35,
+      "l": 107
+     }
     }
    ]
   },

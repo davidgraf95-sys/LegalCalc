@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.142.112.681",
   "titel": "Abkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft und ihren Mitgliedstaaten andererseits über die Freizügigkeit",
@@ -228,7 +228,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 2
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 598,
+      "l": 598
+     }
     },
     {
      "nr": "4",
@@ -241,7 +246,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 3
+     "absatzIndex": 3,
+     "pos": {
+      "b": 3,
+      "o": 502,
+      "l": 598
+     }
     },
     {
      "nr": "5",
@@ -266,7 +276,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 6
+     "absatzIndex": 6,
+     "pos": {
+      "b": 6,
+      "o": 685,
+      "l": 685
+     }
     },
     {
      "nr": "6",
@@ -283,7 +298,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 6
+     "absatzIndex": 6,
+     "pos": {
+      "b": 6,
+      "o": 685,
+      "l": 685
+     }
     },
     {
      "nr": "7",
@@ -308,7 +328,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 10
+     "absatzIndex": 10,
+     "pos": {
+      "b": 10,
+      "o": 262,
+      "l": 262
+     }
     },
     {
      "nr": "8",
@@ -316,7 +341,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 12
+     "absatzIndex": 12,
+     "pos": {
+      "b": 12,
+      "o": 829,
+      "l": 1866
+     }
     },
     {
      "nr": "9",
@@ -324,7 +354,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 12
+     "absatzIndex": 12,
+     "pos": {
+      "b": 12,
+      "o": 1696,
+      "l": 1866
+     }
     },
     {
      "nr": "10",
@@ -337,7 +372,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 13
+     "absatzIndex": 13,
+     "pos": {
+      "b": 13,
+      "o": 537,
+      "l": 635
+     }
     },
     {
      "nr": "11",
@@ -362,7 +402,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 14
+     "absatzIndex": 14,
+     "pos": {
+      "b": 14,
+      "o": 119,
+      "l": 119
+     }
     },
     {
      "nr": "12",
@@ -370,7 +415,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 15
+     "absatzIndex": 15,
+     "pos": {
+      "b": 15,
+      "o": 861,
+      "l": 1872
+     }
     },
     {
      "nr": "13",
@@ -378,7 +428,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 15
+     "absatzIndex": 15,
+     "pos": {
+      "b": 15,
+      "o": 1724,
+      "l": 1872
+     }
     },
     {
      "nr": "14",
@@ -391,7 +446,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 16
+     "absatzIndex": 16,
+     "pos": {
+      "b": 16,
+      "o": 859,
+      "l": 859
+     }
     },
     {
      "nr": "15",
@@ -416,7 +476,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 17
+     "absatzIndex": 17,
+     "pos": {
+      "b": 17,
+      "o": 125,
+      "l": 125
+     }
     },
     {
      "nr": "16",
@@ -424,7 +489,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 18
+     "absatzIndex": 18,
+     "pos": {
+      "b": 18,
+      "o": 830,
+      "l": 1840
+     }
     },
     {
      "nr": "17",
@@ -432,7 +502,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 18
+     "absatzIndex": 18,
+     "pos": {
+      "b": 18,
+      "o": 1692,
+      "l": 1840
+     }
     },
     {
      "nr": "18",
@@ -457,7 +532,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 20
+     "absatzIndex": 20,
+     "pos": {
+      "b": 20,
+      "o": 125,
+      "l": 125
+     }
     },
     {
      "nr": "19",
@@ -465,7 +545,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 22
+     "absatzIndex": 22,
+     "pos": {
+      "b": 22,
+      "o": 649,
+      "l": 662
+     }
     },
     {
      "nr": "20",
@@ -497,7 +582,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 24
+     "absatzIndex": 24,
+     "pos": {
+      "b": 24,
+      "o": 490,
+      "l": 503
+     }
     },
     {
      "nr": "22",
@@ -529,7 +619,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 26
+     "absatzIndex": 26,
+     "pos": {
+      "b": 26,
+      "o": 468,
+      "l": 473
+     }
     },
     {
      "nr": "24",
@@ -582,7 +677,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 34
+     "absatzIndex": 34,
+     "pos": {
+      "b": 34,
+      "o": 435,
+      "l": 529
+     }
     },
     {
      "nr": "27",
@@ -631,7 +731,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 37
+     "absatzIndex": 37,
+     "pos": {
+      "b": 37,
+      "o": 87,
+      "l": 87
+     }
     },
     {
      "nr": "29",
@@ -676,7 +781,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 42
+     "absatzIndex": 42,
+     "pos": {
+      "b": 42,
+      "o": 999,
+      "l": 999
+     }
     },
     {
      "nr": "31",
@@ -696,7 +806,13 @@
       }
      ],
      "absatz": null,
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 43,
+      "it": 1,
+      "o": 74,
+      "l": 74
+     }
     },
     {
      "nr": "32",
@@ -721,7 +837,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 46
+     "absatzIndex": 46,
+     "pos": {
+      "b": 46,
+      "o": 638,
+      "l": 638
+     }
     },
     {
      "nr": "33",
@@ -746,7 +867,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 48
+     "absatzIndex": 48,
+     "pos": {
+      "b": 48,
+      "o": 642,
+      "l": 642
+     }
     },
     {
      "nr": "34",
@@ -767,7 +893,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 50
+     "absatzIndex": 50,
+     "pos": {
+      "b": 50,
+      "o": 642,
+      "l": 642
+     }
     }
    ]
   },
@@ -962,7 +1093,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 29,
+      "l": 30
+     }
     },
     {
      "nr": "36",
@@ -975,7 +1112,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 68,
+      "l": 69
+     }
     },
     {
      "nr": "37",
@@ -988,7 +1131,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 62,
+      "l": 63
+     }
     },
     {
      "nr": "38",
@@ -1001,7 +1150,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 70,
+      "l": 71
+     }
     },
     {
      "nr": "39",
@@ -1014,7 +1169,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 67,
+      "l": 68
+     }
     },
     {
      "nr": "40",
@@ -1027,7 +1188,13 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 69,
+      "l": 70
+     }
     },
     {
      "nr": "41",
@@ -1040,7 +1207,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 329,
+      "l": 330
+     }
     }
    ]
   },

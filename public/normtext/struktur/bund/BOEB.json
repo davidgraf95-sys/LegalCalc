@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "172.056.1",
   "titel": "Bundesgesetz über das öffentliche Beschaffungswesen",
@@ -139,7 +139,13 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 65,
+      "l": 243
+     }
     },
     {
      "nr": "7",
@@ -152,7 +158,13 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 142,
+      "l": 224
+     }
     }
    ]
   },
@@ -184,7 +196,13 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 161,
+      "l": 270
+     }
     },
     {
      "nr": "9",
@@ -197,7 +215,13 @@
       }
      ],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 1,
+      "it": 4,
+      "o": 109,
+      "l": 110
+     }
     }
    ]
   },
@@ -314,7 +338,13 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 81,
+      "l": 82
+     }
     }
    ]
   },
@@ -353,7 +383,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 292,
+      "l": 433
+     }
     }
    ]
   },
@@ -591,7 +626,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 154,
+      "l": 154
+     }
     }
    ]
   },
@@ -660,14 +700,26 @@
      "text": "CPV = «Common Procurement Vocabulary» (Gemeinsames Vokabular für öffentliche Aufträge der Europäischen Union)",
      "links": [],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 69,
+      "l": 139
+     }
     },
     {
      "nr": "14",
      "text": "CPC = «Central Product Classification» (Zentrale Gütersystematik der Vereinten Nationen)",
      "links": [],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 138,
+      "l": 139
+     }
     }
    ]
   },
@@ -814,7 +866,13 @@
       }
      ],
      "absatz": "1",
-     "item": "fbis"
+     "item": "fbis",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 227,
+      "l": 240
+     }
     },
     {
      "nr": "17",
@@ -827,7 +885,13 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 1,
+      "it": 6,
+      "o": 57,
+      "l": 67
+     }
     },
     {
      "nr": "18",
@@ -840,7 +904,13 @@
       }
      ],
      "absatz": "2",
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 1,
+      "it": 7,
+      "o": 59,
+      "l": 92
+     }
     }
    ]
   },
@@ -988,7 +1058,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 134,
+      "l": 197
+     }
     }
    ]
   },
@@ -1015,7 +1090,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 25,
+      "l": 179
+     }
     },
     {
      "nr": "21",
@@ -1028,7 +1108,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 74,
+      "l": 179
+     }
     }
    ]
   },
