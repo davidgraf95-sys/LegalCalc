@@ -149,6 +149,13 @@ gegen Pfad (a) ab 2000 (1942 Marker). Sidecar `public/normtext/revisionen/<KEY>.
 bis E1→`erlass_fassungen`); im Norm-Kontext-Bus «Änderungen / Revisionen» neben der Entstehungsgeschichte
 (Bridge B1). Tore `check:revisionen`(-netz). Gegenprüfung bestanden; fachliche Abnahme David offen.
 
+**Artikel-Revisions-Extrakt — Fussnoten-Formen-Zensus (W2·5i H1, Befund-Fix):** [normtext/artikel-revisionen-fussnotenformen-2026-07-26.md](normtext/artikel-revisionen-fussnotenformen-2026-07-26.md) —
+welche amtlichen Formulierungen einer datierten Textänderung `revisionen-extrakt.ts` erkennt
+(«in Kraft seit» · «mit Wirkung seit» · neu «in Kraft vom X bis zum Y» inkl. Jahr-Ellipse; 59 Fussnoten,
+41 Artikel-Deltas) + Fremd-Adressierungs-Wächter «Art. \<Nr\> in Kraft …» (2 Korpus-Fälle) + bezifferte
+Rest-Familie NICHT erkannter Formen (46 Artikel, 11 Varianten — Folge-Schritt über ROADMAP-Eingang).
+Gegenprüfung Opus 2 Runden (R1 widerlegt → Wächter, R2 auf nachgebessertem Diff); Abnahme David offen.
+
 **Vernehmlassungen / Gesetzgebung in Arbeit (Fedlex-Portfolio Paket 3, W3·11):** [materialien/vernehmlassungen-2026-07-10.md](materialien/vernehmlassungen-2026-07-10.md) —
 **POC MACHBAR** (deterministisch · Füllraten status/Titel 100 % / Frist 96,6 % · amtlich · Join 173/218).
 822 Vernehmlassungsverfahren über die 218 Bund-Volltext-Erlasse, automatisch über den Fedlex-
