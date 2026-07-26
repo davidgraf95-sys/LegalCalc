@@ -540,7 +540,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                   {/* Das Datum ist der SORTIERSCHLÜSSEL — es sichtbar zu machen ist
                       §8-Ehrlichkeit: der Leser sieht, wonach geordnet wurde, und dass
                       undatierte Vermerke am Ende stehen (kein stilles Rateergebnis). */}
-                  <span className="num mr-1.5 tabular-nums text-ink-600">
+                  <span data-hist-datum={fn.iso ?? ''} className="num mr-1.5 tabular-nums text-ink-600">
                     {fn.iso ? fmtDatumLang(fn.iso) : 'ohne Datum'}
                   </span>
                   {fnTextMitLinks(fn.fn)}

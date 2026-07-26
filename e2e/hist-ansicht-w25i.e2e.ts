@@ -171,10 +171,17 @@ test('«als Chronologie»: A-Einträge chronologisch am Artikelfuss, Verweise bl
   // SORTIERBEWEIS: Apparat-Reihenfolge ist die Fussnoten-Nummer (25,26,27,28), die
   // Chronologie ordnet nach Inkraftsetzung → 2006, 2007, 2021, 2021. Die Liste muss
   // also GEGEN die Nummern-Reihenfolge stehen, sonst wäre sie eine Durchreiche.
-  const jahre = await chrono.locator('li').evaluateAll((lis) =>
-    lis.map((li) => (li.querySelector('span')?.textContent ?? '').trim()));
+  // Datum GEZIELT über `[data-hist-datum]` lesen, nicht über die Span-Position:
+  // seit B4 steht die Fussnoten-Nummer als erstes Kind, ein positionsabhängiger
+  // Selektor las sonst die Nummer als «Jahr» (Befund beim B4-Einbau selbst).
+  const jahre = await chrono.locator('li [data-hist-datum]').evaluateAll((els) =>
+    els.map((el) => (el.textContent ?? '').trim()));
   expect(jahre.length).toBeGreaterThanOrEqual(4);
   const zahlen = jahre.map((t) => Number((t.match(/(\d{4})$/) ?? [])[1] ?? NaN));
+  // Die ISO-Attribute sind der eigentliche Sortierschlüssel — auch die prüfen.
+  const isos = await chrono.locator('li [data-hist-datum]').evaluateAll((els) =>
+    els.map((el) => el.getAttribute('data-hist-datum') ?? ''));
+  expect(isos.filter(Boolean)).toEqual([...isos.filter(Boolean)].sort());
   for (let i = 1; i < zahlen.length; i++) {
     expect(zahlen[i], `Chronologie aufsteigend: ${jahre.join(' | ')}`).toBeGreaterThanOrEqual(zahlen[i - 1]);
   }
@@ -184,8 +191,12 @@ test('«als Chronologie»: A-Einträge chronologisch am Artikelfuss, Verweise bl
   // Gegenprüfungs-Befund B4: jede Chronologie-Zeile nennt ihre Fussnoten-NUMMER,
   // sonst ist der Marker im Wortlaut (²⁷) keinem Eintrag zuzuordnen. Erste Zeile =
   // fn 27 (2006-07-01), letzte = fn 26 (2021, Tie-Break nach Nummer hinter fn 25).
+  // `textContent`, NICHT `innerText`: die Artikel stehen unter
+  // `content-visibility: auto` (W2.8) — dort liefert `innerText` für nicht
+  // gerenderte Teilbäume einen LEEREN String, und die Zusicherung wäre still wahr
+  // bzw. still falsch, je nach Scroll-Zustand. `textContent` ist layout-unabhängig.
   const zeilen = await chrono.locator('li').evaluateAll((lis) =>
-    lis.map((li) => (li as HTMLElement).innerText.trim()));
+    lis.map((li) => (li.textContent ?? '').trim()));
   expect(zeilen[0].startsWith('27')).toBe(true);
   for (const nr of ['25', '26', '27', '28']) {
     expect(zeilen.some((z) => z.startsWith(nr)), `Chronologie nennt fn ${nr}`).toBe(true);
@@ -207,7 +218,10 @@ test('«als Chronologie»: A-Einträge chronologisch am Artikelfuss, Verweise bl
   await page.locator('#art-4').scrollIntoViewIfNeeded();
   await expect(page.locator('#art-4 [data-fn-apparat]')).toBeVisible();
   await expect(apparatZeile(page, '4', '13')).toBeVisible();
-  const chrono4 = await page.locator('#art-4 [data-hist-chrono]').innerText();
+  // Ebenfalls `textContent`: mit `innerText` wäre diese Negativ-Zusicherung schon
+  // durch einen leeren String erfüllt (content-visibility) und damit wertlos.
+  const chrono4 = (await page.locator('#art-4 [data-hist-chrono]').textContent()) ?? '';
+  expect(chrono4.length, 'Chronologie von Art. 4 ist nicht leer (sonst prüft die Zeile unten nichts)').toBeGreaterThan(10);
   expect(chrono4).not.toContain('0.142.112.681');
 });
 
