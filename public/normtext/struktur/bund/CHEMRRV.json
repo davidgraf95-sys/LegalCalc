@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "814.81",
   "titel": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen",
@@ -156,7 +156,13 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 41,
+      "l": 42
+     }
     },
     {
      "nr": "10",
@@ -181,7 +187,13 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 32,
+      "l": 67
+     }
     },
     {
      "nr": "12",
@@ -194,7 +206,13 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 34,
+      "l": 126
+     }
     },
     {
      "nr": "13",
@@ -233,7 +251,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 96,
+      "l": 96
+     }
     }
    ]
   },
@@ -338,7 +361,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 208,
+      "l": 208
+     }
     },
     {
      "nr": "21",
@@ -350,7 +378,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 78,
+      "l": 78
+     }
     }
    ]
   },
@@ -424,7 +458,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 170,
+      "l": 170
+     }
     }
    ]
   },
@@ -455,7 +494,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 222,
+      "l": 222
+     }
     },
     {
      "nr": "26",
@@ -467,7 +511,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 314,
+      "l": 314
+     }
     },
     {
      "nr": "27",
@@ -479,7 +528,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 241,
+      "l": 241
+     }
     }
    ]
   },
@@ -572,7 +626,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 262,
+      "l": 262
+     }
     }
    ]
   },
@@ -603,7 +662,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 292,
+      "l": 292
+     }
     },
     {
      "nr": "35",
@@ -615,7 +679,13 @@
       }
      ],
      "absatz": "6",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 5,
+      "it": 2,
+      "o": 159,
+      "l": 159
+     }
     }
    ]
   },
@@ -692,7 +762,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 101,
+      "l": 102
+     }
     },
     {
      "nr": "39",
@@ -705,7 +780,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 182,
+      "l": 204
+     }
     },
     {
      "nr": "40",
@@ -717,7 +797,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 204,
+      "l": 204
+     }
     },
     {
      "nr": "41",
@@ -730,7 +815,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 84,
+      "l": 96
+     }
     },
     {
      "nr": "42",
@@ -742,7 +832,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 96,
+      "l": 96
+     }
     }
    ]
   },
@@ -768,7 +863,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 164,
+      "l": 164
+     }
     }
    ]
   },
@@ -794,7 +894,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 499,
+      "l": 499
+     }
     },
     {
      "nr": "45",
@@ -806,7 +911,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 434,
+      "l": 434
+     }
     }
    ]
   },
@@ -884,7 +994,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 140,
+      "l": 141
+     }
     }
    ]
   },
@@ -912,7 +1027,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 190,
+      "l": 191
+     }
     }
    ]
   },
@@ -1042,7 +1162,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 73,
+      "l": 142
+     }
     }
    ]
   },
@@ -1128,7 +1253,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 270,
+      "l": 368
+     }
     }
    ]
   },
@@ -1233,7 +1363,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 205,
+      "l": 499
+     }
     },
     {
      "nr": "30",
@@ -1246,7 +1381,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 416,
+      "l": 499
+     }
     }
    ]
   },

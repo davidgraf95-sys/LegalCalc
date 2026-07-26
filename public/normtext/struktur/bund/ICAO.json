@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.748.0",
   "titel": "Übereinkommen über die internationale Zivilluftfahrt",
@@ -514,7 +514,13 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 211,
+      "l": 401
+     }
     }
    ]
   },
@@ -1082,7 +1088,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 437,
+      "l": 437
+     }
     }
    ]
   },
@@ -1281,7 +1292,13 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 162,
+      "l": 311
+     }
     }
    ]
   },
@@ -1603,7 +1620,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 663,
+      "l": 818
+     }
     }
    ]
   },
@@ -1636,7 +1658,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 186,
+      "l": 1388
+     }
     }
    ]
   },
@@ -1871,7 +1898,13 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 389,
+      "l": 438
+     }
     }
    ]
   },

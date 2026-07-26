@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "814.318.142.1",
   "titel": "Luftreinhalte-Verordnung",
@@ -86,7 +86,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 347,
+      "l": 347
+     }
     }
    ]
   },
@@ -194,7 +199,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 154,
+      "l": 154
+     }
     }
    ]
   },
@@ -242,7 +252,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 205,
+      "l": 205
+     }
     }
    ]
   },
@@ -350,7 +365,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 243,
+      "l": 243
+     }
     },
     {
      "nr": "10",
@@ -374,7 +394,13 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 40,
+      "l": 40
+     }
     }
    ]
   },
@@ -406,7 +432,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 307,
+      "l": 392
+     }
     },
     {
      "nr": "14",
@@ -418,7 +449,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 392,
+      "l": 392
+     }
     }
    ]
   },
@@ -478,7 +514,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 297,
+      "l": 297
+     }
     }
    ]
   },
@@ -922,7 +963,13 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 93,
+      "l": 93
+     }
     },
     {
      "nr": "40",
@@ -934,7 +981,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 338,
+      "l": 338
+     }
     },
     {
      "nr": "41",
@@ -946,7 +998,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 77,
+      "l": 151
+     }
     },
     {
      "nr": "42",
@@ -958,7 +1015,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 132,
+      "l": 132
+     }
     }
    ]
   },
@@ -1013,7 +1075,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 214,
+      "l": 214
+     }
     },
     {
      "nr": "46",
@@ -1056,7 +1123,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 212,
+      "l": 212
+     }
     },
     {
      "nr": "48",
@@ -1068,7 +1140,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 94,
+      "l": 94
+     }
     },
     {
      "nr": "49",
@@ -1080,7 +1157,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 124,
+      "l": 124
+     }
     },
     {
      "nr": "50",
@@ -1092,7 +1174,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 300,
+      "l": 300
+     }
     }
    ]
   },
@@ -1170,7 +1257,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 36,
+      "l": 98
+     }
     }
    ]
   },
@@ -1262,7 +1354,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     }
     },
     {
      "nr": "19",
@@ -1274,7 +1371,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 215,
+      "l": 215
+     }
     },
     {
      "nr": "17",
@@ -1319,14 +1421,25 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 108,
+      "l": 290
+     }
     },
     {
      "nr": "21",
      "text": "Verordnung (EU) Nr. 2016/1628 des Europäischen Parlaments und des Rates vom 14. September 2016 über die Anforderungen in Bezug auf die Emissionsgrenzwerte für gasförmige Schadstoffe und luftverunreinigende Partikel und die Typgenehmigung für Verbrennungsmotoren für nicht für den Strassenverkehr bestimmte mobile Maschinen und Geräte, Fassung gemäss ABl. L 252 vom 16.09.2016, S. 53; ergänzt durch: Delegierte Verordnung (EU) 2017/654 der Kommission vom 19. Dezember 2016, ABl. L 102 vom 13.04.2017, S. 1; Delegierte Verordnung (EU) 2017/655 der Kommission vom 19. Dezember 2016, ABl. L 102 vom 13.04.2017, S. 334; Durchführungsverordnung (EU) 2017/656 der Kommission vom 19. Dezember 2016, ABl. L 102 vom 13.04.2017, S. 364.",
      "links": [],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 90,
+      "l": 290
+     }
     },
     {
      "nr": "22",
@@ -1338,7 +1451,12 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 290,
+      "l": 290
+     }
     },
     {
      "nr": "23",
@@ -1350,7 +1468,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 209,
+      "l": 209
+     }
     }
    ]
   },
@@ -1445,7 +1568,13 @@
      "text": "Siehe Fussnote zu Art. 19<i>b</i> Abs. 1.",
      "links": [],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 154,
+      "l": 159
+     }
     },
     {
      "nr": "28",
@@ -1458,7 +1587,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 117,
+      "l": 435
+     }
     }
    ]
   },
@@ -1611,7 +1745,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 183,
+      "l": 225
+     }
     }
    ]
   },

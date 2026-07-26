@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "834.11",
   "titel": "Erwerbsersatzverordnung",
@@ -156,7 +156,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 311,
+      "l": 311
+     }
     },
     {
      "nr": "6",
@@ -181,7 +186,13 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 73,
+      "l": 151
+     }
     },
     {
      "nr": "8",
@@ -233,7 +244,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 294,
+      "l": 294
+     }
     },
     {
      "nr": "12",
@@ -245,7 +261,12 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 510,
+      "l": 510
+     }
     },
     {
      "nr": "13",
@@ -258,7 +279,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 237,
+      "l": 303
+     }
     }
    ]
   },
@@ -350,7 +376,13 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 48,
+      "l": 116
+     }
     },
     {
      "nr": "17",
@@ -362,7 +394,13 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 91,
+      "l": 91
+     }
     },
     {
      "nr": "18",
@@ -374,7 +412,12 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 137,
+      "l": 137
+     }
     },
     {
      "nr": "19",
@@ -387,7 +430,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 84,
+      "l": 310
+     }
     }
    ]
   },
@@ -519,7 +567,13 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 148,
+      "l": 289
+     }
     }
    ]
   },
@@ -550,7 +604,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 189,
+      "l": 189
+     }
     },
     {
      "nr": "22",
@@ -562,14 +621,25 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 38,
+      "l": 114
+     }
     },
     {
      "nr": "23",
      "text": "Seit 1.1.2019: Bundesamt für Zivildienst.",
      "links": [],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 49,
+      "l": 83
+     }
     },
     {
      "nr": "24",
@@ -581,7 +651,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 179,
+      "l": 179
+     }
     },
     {
      "nr": "25",
@@ -593,7 +668,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 186,
+      "l": 186
+     }
     }
    ]
   },
@@ -619,7 +699,12 @@
      "text": "Seit 1.1.2019: Bundesamt für Zivildienst.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 49,
+      "l": 131
+     }
     },
     {
      "nr": "27",
@@ -631,7 +716,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 475,
+      "l": 475
+     }
     }
    ]
   },
@@ -693,7 +783,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 364,
+      "l": 364
+     }
     }
    ]
   },
@@ -724,7 +819,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 114,
+      "l": 114
+     }
     }
    ]
   },
@@ -773,7 +873,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 196,
+      "l": 197
+     }
     },
     {
      "nr": "34",
@@ -785,7 +890,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 197,
+      "l": 197
+     }
     }
    ]
   },
@@ -817,7 +927,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 172,
+      "l": 255
+     }
     }
    ]
   },
@@ -979,7 +1094,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 290,
+      "l": 290
+     }
     },
     {
      "nr": "43",
@@ -992,21 +1112,39 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 38,
+      "l": 293
+     }
     },
     {
      "nr": "44",
      "text": "Verordnung (EWG) Nr. 574/72 des Rates vom 21. März 1972 über die Durchführung der Verordnung (EWG) Nr. 1408/71, ABl Nr. L 74 vom 27. März 1972, S. 1 (ebenfalls kodifiziert durch die Verordnung [EG] Nr. 118/97 des Rates vom 2. Dez. 1996, ABl Nr. L 28 vom 30. Jan. 1997, S. 1); zuletzt geändert durch Verordnung (EG) Nr. 307/1999 des Rates vom 8. Febr. 1999, ABl Nr. L 38 vom 12. Febr. 1999, S. 1.",
      "links": [],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 256,
+      "l": 293
+     }
     },
     {
      "nr": "45",
      "text": "Eine provisorische, konsolidierte Fassung des Textes der Verordnungen (EWG) Nr. 1408/71 und Nr. 574/72 mit den zuletzt durch die Verordnung (EG) des Rates Nr. 307/1999 erfolgten Änderungen kann beim Bundesamt für Sozialversicherungen, 3003 Bern bezogen werden. Massgeblich ist hingegen allein die im Amtsblatt der EG publizierte Fassung.",
      "links": [],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 285,
+      "l": 293
+     }
     }
    ]
   },
@@ -1050,7 +1188,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 154,
+      "l": 154
+     }
     }
    ]
   },
@@ -1094,7 +1237,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 260,
+      "l": 260
+     }
     },
     {
      "nr": "50",
@@ -1107,21 +1255,39 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 38,
+      "l": 291
+     }
     },
     {
      "nr": "51",
      "text": "Verordnung (EWG) Nr. 574/72 des Rates vom 21. März 1972 über die Durchführung der Verordnung (EWG) Nr. 1408/71, ABl Nr. L 74 vom 27. März 1972, S. 1 (ebenfalls kodifiziert durch die Verordnung [EG] Nr. 118/97 des Rates vom 2. Dez. 1996, ABl Nr. L 28 vom 30. Jan. 1997, S. 1); zuletzt geändert durch Verordnung (EG) Nr. 307/1999 des Rates vom 8. Febr. 1999, ABl Nr. L 38 vom 12. Febr. 1999, S. 1.",
      "links": [],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 254,
+      "l": 291
+     }
     },
     {
      "nr": "52",
      "text": "Eine provisorische, konsolidierte Fassung des Textes der Verordnungen (EWG) Nr. 1408/71 und Nr. 574/72 mit den zuletzt durch die Verordnung (EG) des Rates Nr. 307/1999 erfolgten Änderungen kann beim Bundesamt für Sozialversicherungen, 3003 Bern, bezogen werden. Massgeblich ist hingegen allein die im Amtsblatt der EG publizierte Fassung.",
      "links": [],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 283,
+      "l": 291
+     }
     }
    ]
   },
@@ -1165,7 +1331,13 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 110,
+      "l": 147
+     }
     },
     {
      "nr": "56",
@@ -1177,7 +1349,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 40,
+      "l": 40
+     }
     },
     {
      "nr": "57",
@@ -1189,7 +1367,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 235,
+      "l": 235
+     }
     },
     {
      "nr": "58",
@@ -1201,7 +1384,13 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 190,
+      "l": 190
+     }
     },
     {
      "nr": "59",
@@ -1213,7 +1402,13 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 47,
+      "l": 47
+     }
     }
    ]
   },
@@ -1269,7 +1464,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 305,
+      "l": 305
+     }
     }
    ]
   },
@@ -1312,7 +1512,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 288,
+      "l": 288
+     }
     },
     {
      "nr": "65",
@@ -1337,7 +1542,13 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 48,
+      "l": 126
+     }
     },
     {
      "nr": "67",
@@ -1386,7 +1597,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 90,
+      "l": 90
+     }
     },
     {
      "nr": "71",
@@ -1399,7 +1615,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 2
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 48,
+      "l": 48
+     }
     }
    ]
   },
@@ -1523,7 +1744,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 300,
+      "l": 300
+     }
     },
     {
      "nr": "78",
@@ -1535,7 +1761,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 268,
+      "l": 268
+     }
     },
     {
      "nr": "79",
@@ -1549,7 +1780,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 3
+     "absatzIndex": 3,
+     "pos": {
+      "b": 3,
+      "o": 96,
+      "l": 97
+     }
     },
     {
      "nr": "80",
@@ -1562,7 +1798,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 3
+     "absatzIndex": 3,
+     "pos": {
+      "b": 3,
+      "o": 97,
+      "l": 97
+     }
     },
     {
      "nr": "81",
@@ -1575,7 +1816,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 4
+     "absatzIndex": 4,
+     "pos": {
+      "b": 4,
+      "o": 82,
+      "l": 82
+     }
     }
    ]
   },
@@ -1614,7 +1860,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 105,
+      "l": 146
+     }
     }
    ]
   },
@@ -1641,7 +1892,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 168,
+      "l": 289
+     }
     },
     {
      "nr": "102",
@@ -1654,7 +1910,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 20,
+      "l": 217
+     }
     },
     {
      "nr": "103",
@@ -1667,7 +1928,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 140,
+      "l": 217
+     }
     },
     {
      "nr": "104",
@@ -1679,7 +1945,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 217,
+      "l": 217
+     }
     }
    ]
   },
@@ -1706,7 +1977,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 20,
+      "l": 260
+     }
     },
     {
      "nr": "106",
@@ -1719,7 +1995,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 140,
+      "l": 260
+     }
     },
     {
      "nr": "107",
@@ -1731,7 +2012,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 260,
+      "l": 260
+     }
     }
    ]
   },
@@ -1771,7 +2057,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 59,
+      "l": 70
+     }
     }
    ]
   },
@@ -1823,7 +2114,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 181,
+      "l": 193
+     }
     }
    ]
   },
@@ -1939,7 +2235,13 @@
       }
      ],
      "absatz": null,
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 32,
+      "l": 63
+     }
     },
     {
      "nr": "113",
@@ -1951,7 +2253,13 @@
       }
      ],
      "absatz": null,
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 28,
+      "l": 118
+     }
     }
    ]
   },
@@ -1978,7 +2286,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -2211,7 +2524,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 305,
+      "l": 305
+     }
     }
    ]
   },
@@ -2348,7 +2666,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 222,
+      "l": 222
+     }
     }
    ]
   },
@@ -2409,7 +2732,13 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 48,
+      "l": 126
+     }
     },
     {
      "nr": "89",
@@ -2573,7 +2902,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 154,
+      "l": 155
+     }
     }
    ]
   },
@@ -2666,7 +3000,13 @@
       }
      ],
      "absatz": "1",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 48,
+      "l": 126
+     }
     }
    ]
   },
@@ -2766,7 +3106,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 94,
+      "l": 95
+     }
     }
    ]
   }

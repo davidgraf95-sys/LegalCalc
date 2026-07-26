@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "642.118.1",
   "titel": "Verordnung des EFD über den Abzug der Berufskosten unselbstständig Erwerbstätiger bei der direkten Bundessteuer",
@@ -144,7 +144,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 161,
+      "l": 161
+     }
     }
    ]
   },
@@ -164,7 +169,13 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 44,
+      "l": 44
+     }
     },
     {
      "nr": "10",
@@ -176,7 +187,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 250,
+      "l": 250
+     }
     },
     {
      "nr": "11",
@@ -188,7 +204,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 115,
+      "l": 115
+     }
     }
    ]
   },
@@ -208,7 +229,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 365,
+      "l": 365
+     }
     }
    ]
   },
@@ -246,7 +272,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 237,
+      "l": 237
+     }
     }
    ]
   },
@@ -286,7 +317,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 69,
+      "l": 150
+     }
     }
    ]
   },

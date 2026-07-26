@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.232.04",
   "titel": "Pariser Übereinkunft zum Schutz des gewerblichen Eigentums revidiert in Stockholm am 14. Juli 1967",
@@ -137,7 +137,13 @@
       }
      ],
      "absatz": null,
-     "item": "i"
+     "item": "i",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 196,
+      "l": 444
+     }
     },
     {
      "nr": "5",
@@ -149,7 +155,13 @@
       }
      ],
      "absatz": null,
-     "item": "v"
+     "item": "v",
+     "pos": {
+      "b": 0,
+      "it": 9,
+      "o": 64,
+      "l": 117
+     }
     },
     {
      "nr": "6",
@@ -161,7 +173,13 @@
       }
      ],
      "absatz": null,
-     "item": "7"
+     "item": "7",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 83,
+      "l": 264
+     }
     }
    ]
   },
@@ -181,7 +199,13 @@
       }
      ],
      "absatz": null,
-     "item": "i"
+     "item": "i",
+     "pos": {
+      "b": 2,
+      "it": 5,
+      "o": 138,
+      "l": 153
+     }
     },
     {
      "nr": "8",
@@ -213,7 +237,13 @@
       }
      ],
      "absatz": null,
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 208,
+      "l": 247
+     }
     }
    ]
   },
@@ -263,7 +293,13 @@
       }
      ],
      "absatz": null,
-     "item": "i"
+     "item": "i",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 216,
+      "l": 226
+     }
     }
    ]
   },
@@ -309,7 +345,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 205,
+      "l": 266
+     }
     },
     {
      "nr": "12",
@@ -317,7 +358,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 265,
+      "l": 266
+     }
     },
     {
      "nr": "13",
@@ -329,7 +375,13 @@
       }
      ],
      "absatz": null,
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 147,
+      "l": 318
+     }
     },
     {
      "nr": "14",
@@ -341,7 +393,13 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 176,
+      "l": 310
+     }
     },
     {
      "nr": "15",
@@ -353,7 +411,13 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 205,
+      "l": 339
+     }
     }
    ]
   },
@@ -374,7 +438,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 278,
+      "l": 598
+     }
     }
    ]
   },
@@ -401,7 +470,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 238,
+      "l": 640
+     }
     }
    ]
   },

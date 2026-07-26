@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.311.35",
   "titel": "Übereinkommen des Europarats zur Verhütung und Bekämpfung von Gewalt gegen Frauen und häuslicher Gewalt",
@@ -1010,7 +1010,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 298,
+      "l": 390
+     }
     }
    ]
   },
@@ -1085,7 +1090,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 203,
+      "l": 230
+     }
     }
    ]
   },
@@ -1231,7 +1241,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 411,
+      "l": 563
+     }
     }
    ]
   },

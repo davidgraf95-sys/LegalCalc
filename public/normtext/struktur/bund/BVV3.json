@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "831.461.3",
   "titel": "Verordnung über die steuerliche Abzugsberechtigung für Beiträge an anerkannte Vorsorgeformen",
@@ -87,7 +87,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 222,
+      "l": 222
+     }
     }
    ]
   },
@@ -137,7 +142,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 176,
+      "l": 176
+     }
     },
     {
      "nr": "8",
@@ -149,7 +159,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 155,
+      "l": 155
+     }
     }
    ]
   },
@@ -175,7 +190,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 360,
+      "l": 360
+     }
     },
     {
      "nr": "11",
@@ -212,7 +232,13 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 92,
+      "l": 128
+     }
     },
     {
      "nr": "14",
@@ -228,7 +254,13 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 35,
+      "l": 35
+     }
     },
     {
      "nr": "15",
@@ -240,7 +272,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 68,
+      "l": 68
+     }
     },
     {
      "nr": "16",
@@ -253,7 +290,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 126,
+      "l": 196
+     }
     },
     {
      "nr": "17",
@@ -265,7 +307,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 196,
+      "l": 196
+     }
     },
     {
      "nr": "18",
@@ -277,7 +324,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 419,
+      "l": 419
+     }
     }
    ]
   },
@@ -303,7 +355,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 102,
+      "l": 102
+     }
     },
     {
      "nr": "23",
@@ -316,7 +373,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 189,
+      "l": 326
+     }
     },
     {
      "nr": "24",
@@ -329,7 +391,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 245,
+      "l": 326
+     }
     },
     {
      "nr": "25",
@@ -341,7 +408,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 326,
+      "l": 326
+     }
     },
     {
      "nr": "26",
@@ -353,7 +425,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 412,
+      "l": 412
+     }
     },
     {
      "nr": "27",
@@ -366,7 +443,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 316,
+      "l": 318
+     }
     },
     {
      "nr": "28",
@@ -378,7 +460,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 318,
+      "l": 318
+     }
     }
    ]
   },
@@ -417,7 +504,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 130,
+      "l": 276
+     }
     },
     {
      "nr": "31",
@@ -430,7 +522,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 146,
+      "l": 511
+     }
     },
     {
      "nr": "32",
@@ -442,7 +539,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 511,
+      "l": 511
+     }
     }
    ]
   },
@@ -480,7 +582,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 203,
+      "l": 203
+     }
     },
     {
      "nr": "34",
@@ -492,7 +599,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 194,
+      "l": 194
+     }
     },
     {
      "nr": "35",
@@ -508,7 +620,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 121,
+      "l": 121
+     }
     },
     {
      "nr": "36",
@@ -524,7 +641,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 91,
+      "l": 91
+     }
     }
    ]
   },
@@ -550,7 +672,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 143,
+      "l": 143
+     }
     }
    ]
   },
@@ -624,7 +751,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 302,
+      "l": 302
+     }
     },
     {
      "nr": "21",
@@ -636,7 +768,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 176,
+      "l": 176
+     }
     }
    ]
   },

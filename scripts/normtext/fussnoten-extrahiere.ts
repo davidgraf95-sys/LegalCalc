@@ -14,6 +14,7 @@
  */
 
 import { findeDlEnde, findeDdEnde, ankerZuToken, parseArtikelInner } from './extrahiere-fedlex';
+import { berechneFnPositionen, type FnPos } from './fussnoten-offsets';
 
 export interface FnLink {
   label: string;
@@ -40,6 +41,12 @@ export interface Fussnote {
    *  0-basierte Index in die Snapshot-Bloecke (`e.bloecke`) verortet den Marker
    *  eindeutig im Fliesstext statt auf der Artikelebene. Nur gesetzt, wenn n\u00f6tig. */
   absatzIndex?: number;
+  /** FN-5/M14: wortgenaue Marker-Position \u2014 Block-Index `b` in `e.bloecke`,
+   *  optional Item-Index `it`, Zeichen-Offset `o` im finalen Text. Nur gesetzt,
+   *  wenn die Platzhalter-Ausrichtung ZEICHENGENAU bewiesen ist
+   *  (fussnoten-offsets.ts); fehlt `pos`, gilt das bisherige Verhalten
+   *  (Marker am Absatz-/Item-Ende). */
+  pos?: FnPos;
 }
 
 // G15: Hervorhebungen (fett/kursiv) im Fussnotentext bleiben erhalten \u2014 Fedlex
@@ -193,6 +200,9 @@ export function extrahiereFussnoten(html: string): Record<string, Fussnote[]> {
       .replace(/<div\s+class="footnotes">[\s\S]*$/i, '')
       .replace(/<h6\b[^>]*>[\s\S]*?<\/h6>/gi, '');
     const { bloecke: sbBloecke, quellen: sbQuellen } = parseArtikelInner(innerRoh);
+    // FN-5/M14: wortgenaue Marker-Positionen aus dem Platzhalter-Parse — nur
+    // zeichengenau bewiesene Offsets (sonst Fallback Absatz-/Item-Ende).
+    const fnPos = berechneFnPositionen(innerRoh, { bloecke: sbBloecke });
     const blockFuerMarker = (id: string): { absatz: string | null; index: number } | null => {
       for (let i = 0; i < sbBloecke.length; i++) {
         const q = sbQuellen[i];
@@ -227,6 +237,8 @@ export function extrahiereFussnoten(html: string): Record<string, Fussnote[]> {
       }
       const fn: Fussnote = { ...def, absatz, item };
       if (absatzIndex != null) fn.absatzIndex = absatzIndex;
+      const p = fnPos.get(id);
+      if (p) fn.pos = p;
       liste.push(fn);
     }
     if (liste.length) perArtikel[token] = liste;

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "958.111",
   "titel": "Verordnung der Eidgenössischen Finanzmarktaufsicht über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel",
@@ -104,7 +104,12 @@
      "text": "Weil es sich bei den <i>Teilnehmern</i> überwiegend um juristische Personen handelt, wird hier auf die Paarform verzichtet.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 85,
+      "l": 382
+     }
     },
     {
      "nr": "8",
@@ -116,7 +121,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 382,
+      "l": 382
+     }
     }
    ]
   },
@@ -216,7 +226,13 @@
       }
      ],
      "absatz": "1",
-     "item": "i"
+     "item": "i",
+     "pos": {
+      "b": 0,
+      "it": 8,
+      "o": 74,
+      "l": 155
+     }
     },
     {
      "nr": "16",
@@ -228,7 +244,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 225,
+      "l": 225
+     }
     }
    ]
   },
@@ -266,7 +287,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 348,
+      "l": 348
+     }
     }
    ]
   },
@@ -316,7 +342,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 88,
+      "l": 242
+     }
     }
    ]
   },
@@ -359,7 +390,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 526,
+      "l": 526
+     }
     }
    ]
   },
@@ -487,7 +523,13 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 147,
+      "l": 157
+     }
     }
    ]
   },
@@ -535,14 +577,24 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 172,
+      "l": 347
+     }
     },
     {
      "nr": "23",
      "text": "Weil es sich bei den <i>Bewilligungsträgern</i> überwiegend um Gesellschaften handelt, wird hier auf die Paarform verzichtet.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 201,
+      "l": 347
+     }
     },
     {
      "nr": "24",
@@ -554,7 +606,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 347,
+      "l": 347
+     }
     },
     {
      "nr": "25",
@@ -566,7 +623,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 286,
+      "l": 286
+     }
     },
     {
      "nr": "26",
@@ -578,7 +640,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 201,
+      "l": 201
+     }
     }
    ]
   },
@@ -609,14 +676,24 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 246,
+      "l": 246
+     }
     },
     {
      "nr": "28",
      "text": "Weil es sich bei den <i>Emittenten</i> überwiegend um juristische Personen handelt, wird hier auf die Paarform verzichtet.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 177,
+      "l": 278
+     }
     },
     {
      "nr": "29",
@@ -628,7 +705,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 144,
+      "l": 144
+     }
     }
    ]
   },
@@ -654,7 +736,13 @@
      "text": "Weil es sich bei den <i>Anbietern</i> überwiegend um juristische Personen handelt, wird hier auf die Paarform verzichtet.",
      "links": [],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 12,
+      "l": 13
+     }
     }
    ]
   },

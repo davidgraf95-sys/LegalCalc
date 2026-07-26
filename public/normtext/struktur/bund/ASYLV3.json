@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "142.314",
   "titel": "Asylverordnung 3 über die Bearbeitung von Personendaten",
@@ -114,7 +114,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 229,
+      "l": 279
+     }
     }
    ]
   },
@@ -159,7 +164,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 89,
+      "l": 279
+     }
     }
    ]
   },
@@ -204,7 +214,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 104,
+      "l": 104
+     }
     },
     {
      "nr": "43",
@@ -216,7 +231,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -293,7 +313,13 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 7,
+      "l": 8
+     }
     },
     {
      "nr": "80",
@@ -318,7 +344,13 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 58,
+      "l": 59
+     }
     },
     {
      "nr": "82",
@@ -356,7 +388,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -395,7 +432,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 197,
+      "l": 224
+     }
     },
     {
      "nr": "57",
@@ -408,7 +450,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 102,
+      "l": 188
+     }
     }
    ]
   },
@@ -561,7 +608,13 @@
       }
      ],
      "absatz": "2",
-     "item": "k"
+     "item": "k",
+     "pos": {
+      "b": 1,
+      "it": 10,
+      "o": 110,
+      "l": 124
+     }
     }
    ]
   },
@@ -642,7 +695,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 81,
+      "l": 82
+     }
     }
    ]
   },
@@ -673,7 +731,12 @@
      "text": "Siehe Fussnote zu Art. 6<i>d</i> Abs. 2 Bst. a.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 156,
+      "l": 157
+     }
     }
    ]
   },
@@ -700,7 +763,12 @@
      "text": "Siehe Fussnote zu Art. 6<i>d</i> Abs. 2 Bst. a.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 136,
+      "l": 220
+     }
     }
    ]
   },
@@ -727,7 +795,12 @@
      "text": "Siehe Fussnote zu Art. 6<i>b </i>Abs. 3.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 75,
+      "l": 82
+     }
     }
    ]
   },
@@ -755,7 +828,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 287,
+      "l": 475
+     }
     },
     {
      "nr": "86",
@@ -769,7 +847,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 463,
+      "l": 475
+     }
     }
    ]
   },
@@ -819,7 +902,13 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 91,
+      "l": 92
+     }
     },
     {
      "nr": "6",
@@ -832,7 +921,13 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 77,
+      "l": 173
+     }
     }
    ]
   },
@@ -876,7 +971,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 111,
+      "l": 111
+     }
     },
     {
      "nr": "10",
@@ -888,7 +988,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 68,
+      "l": 206
+     }
     },
     {
      "nr": "11",
@@ -900,7 +1005,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 116,
+      "l": 116
+     }
     }
    ]
   },
@@ -979,7 +1089,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 213,
+      "l": 378
+     }
     },
     {
      "nr": "16",
@@ -992,7 +1107,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 298,
+      "l": 378
+     }
     },
     {
      "nr": "17",
@@ -1004,7 +1124,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 378,
+      "l": 378
+     }
     },
     {
      "nr": "18",
@@ -1016,7 +1141,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 704,
+      "l": 704
+     }
     },
     {
      "nr": "19",
@@ -1028,7 +1158,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 165,
+      "l": 165
+     }
     }
    ]
   },
@@ -1166,7 +1301,13 @@
       }
      ],
      "absatz": "2bis",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 2,
+      "it": 3,
+      "o": 43,
+      "l": 43
+     }
     },
     {
      "nr": "28",
@@ -1304,7 +1445,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 212,
+      "l": 228
+     }
     }
    ]
   },
@@ -1335,14 +1481,24 @@
      "text": "Durchführungsverordnung (EU) 2025/2055 der Kommission vom 2. Oktober 2025 mit Durchführungsbestimmungen zur Verordnung (EU) 2024/1351 des europäischen Parlaments und des Rates über Asyl- und Migrationsmanagement und zur Aufhebung der Verordnung (EG) Nr. 1560/2003 der Kommission, Fassung gemäss ABl. L, 2025/2055, 12.11.2025.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 176,
+      "l": 272
+     }
     },
     {
      "nr": "49",
      "text": "Verordnung (EU) Nr. 2024/1351 des Europäischen Parlaments und des Rates vom 14. Mai 2024 über Asyl- und Migrationsmanagement, zur Änderung der Verordnungen (EU) 2021/1147 und (EU) 2021/1060 und zur Aufhebung der Verordnung (EU) Nr. 604/2013, Fassung gemäss ABl. L, 2024/1351, 22.5.2024.",
      "links": [],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 106,
+      "l": 192
+     }
     }
    ]
   },
@@ -1389,14 +1545,25 @@
      "text": "Verordnung (EU) 2024/1358 des Europäischen Parlaments und des Rates vom 14. Mai 2024 über die Einrichtung von Eurodac für den Abgleich biometrischer Daten zur effektiven Anwendung der Verordnungen (EU) 2024/1351 und (EU) 2024/1350 des Europäischen Parlaments und des Rates und der Richtlinie 2001/55/EG sowie zur Feststellung der Identität illegal aufhältiger Drittstaatsangehöriger oder Staatenloser und über der Gefahrenabwehr und Strafverfolgung dienende Anträge der Gefahrenabwehr- und Strafverfolgungsbehörden der Mitgliedstaaten und Europols auf den Abgleich mit Eurodac-Daten, zur Änderung der Verordnungen (EU) 2018/1240 und (EU) 2019/818 des Europäischen Parlaments und des Rates und zur Aufhebung der Verordnung (EU) Nr. 603/2013 des Europäischen Parlaments und des Rates, Fassung gemäss ABl. L, 2024/1358, 22.5.2024.",
      "links": [],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 77,
+      "l": 95
+     }
     },
     {
      "nr": "53",
      "text": "Siehe Fussnote zu Art. 6<i>b</i> Abs. 3.",
      "links": [],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 293,
+      "l": 309
+     }
     }
    ]
   },

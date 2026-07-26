@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "173.320.1",
   "titel": "Geschäftsreglement für das Bundesverwaltungsgericht",
@@ -252,7 +252,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 121,
+      "l": 121
+     }
     }
    ]
   },
@@ -362,7 +367,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 459,
+      "l": 459
+     }
     },
     {
      "nr": "9",
@@ -374,7 +384,13 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 97,
+      "l": 131
+     }
     }
    ]
   },
@@ -417,7 +433,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 225,
+      "l": 225
+     }
     },
     {
      "nr": "10",
@@ -459,7 +480,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 174,
+      "l": 174
+     }
     }
    ]
   },
@@ -490,7 +516,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 59,
+      "l": 59
+     }
     }
    ]
   },
@@ -584,7 +615,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 144,
+      "l": 144
+     }
     }
    ]
   },
@@ -615,7 +651,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 208,
+      "l": 209
+     }
     },
     {
      "nr": "21",
@@ -627,7 +668,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 209,
+      "l": 209
+     }
     },
     {
      "nr": "22",
@@ -639,7 +685,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 267,
+      "l": 267
+     }
     },
     {
      "nr": "23",
@@ -651,7 +702,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 123,
+      "l": 123
+     }
     },
     {
      "nr": "24",
@@ -663,7 +719,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 111,
+      "l": 111
+     }
     },
     {
      "nr": "25",
@@ -675,7 +736,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 114,
+      "l": 114
+     }
     },
     {
      "nr": "26",
@@ -687,7 +753,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 63,
+      "l": 63
+     }
     }
    ]
   },
@@ -800,7 +871,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 338,
+      "l": 338
+     }
     }
    ]
   },
@@ -886,7 +962,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 108,
+      "l": 108
+     }
     },
     {
      "nr": "32",
@@ -926,7 +1007,13 @@
       }
      ],
      "absatz": "3bis",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 3,
+      "it": 2,
+      "o": 107,
+      "l": 107
+     }
     },
     {
      "nr": "35",
@@ -938,7 +1025,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     }
     },
     {
      "nr": "36",
@@ -950,7 +1042,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 180,
+      "l": 180
+     }
     }
    ]
   },
@@ -1036,7 +1133,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 44,
+      "l": 94
+     }
     },
     {
      "nr": "42",
@@ -1048,7 +1150,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -1075,7 +1182,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 163,
+      "l": 294
+     }
     }
    ]
   },
@@ -1113,7 +1225,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 127,
+      "l": 195
+     }
     }
    ]
   },
@@ -1198,7 +1315,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 77,
+      "l": 460
+     }
     },
     {
      "nr": "15",
@@ -1210,7 +1332,12 @@
       }
      ],
      "absatz": "7",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 76,
+      "l": 159
+     }
     }
    ]
   },
@@ -1279,7 +1406,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 120,
+      "l": 179
+     }
     }
    ]
   },

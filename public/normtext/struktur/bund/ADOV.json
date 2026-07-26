@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "211.221.36",
   "titel": "Verordnung über die Adoption",
@@ -120,7 +120,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 470,
+      "l": 470
+     }
     }
    ]
   },
@@ -177,7 +182,12 @@
      "text": "bis 31.12.2012 «Vormundschaftsbehörde»",
      "links": [],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 60,
+      "l": 214
+     }
     }
    ]
   },
@@ -215,7 +225,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 200,
+      "l": 210
+     }
     }
    ]
   },
@@ -386,7 +401,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 139
+     }
     }
    ]
   },
@@ -432,7 +452,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 132,
+      "l": 214
+     }
     }
    ]
   },

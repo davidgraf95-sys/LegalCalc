@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "232.12",
   "titel": "Bundesgesetz über den Schutz von Design",
@@ -235,7 +235,12 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 147,
+      "l": 147
+     }
     }
    ]
   },
@@ -439,7 +444,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 105,
+      "l": 105
+     }
     },
     {
      "nr": "7",
@@ -455,7 +465,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 18,
+      "l": 108
+     }
     }
    ]
   },
@@ -487,7 +502,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 62,
+      "l": 234
+     }
     }
    ]
   },
@@ -551,7 +571,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 105,
+      "l": 488
+     }
     }
    ]
   },
@@ -705,7 +730,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 248,
+      "l": 441
+     }
     }
    ]
   },
@@ -776,7 +806,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 215,
+      "l": 227
+     }
     }
    ]
   },
@@ -809,7 +844,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 165,
+      "l": 165
+     }
     }
    ]
   },
@@ -912,7 +952,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 57,
+      "l": 196
+     }
     }
    ]
   },
@@ -944,7 +989,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 63,
+      "l": 212
+     }
     }
    ]
   },
@@ -1099,7 +1149,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 171,
+      "l": 171
+     }
     },
     {
      "nr": "22",
@@ -1115,7 +1170,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 127,
+      "l": 127
+     }
     },
     {
      "nr": "23",
@@ -1131,7 +1191,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 127,
+      "l": 127
+     }
     }
    ]
   },
@@ -1164,7 +1229,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 151,
+      "l": 183
+     }
     }
    ]
   },
@@ -1546,7 +1616,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 56,
+      "l": 215
+     }
     }
    ]
   },
@@ -1648,7 +1723,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     }
     },
     {
      "nr": "36",
@@ -1664,7 +1744,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -1706,7 +1791,12 @@
      "text": "Heute: Art. 48 Abs. 3 und 4.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 213,
+      "l": 235
+     }
     }
    ]
   },

@@ -154,6 +154,13 @@ export interface Fussnote {
    *  weil mehrere absatzlose Blöcke alle absatz=null tragen. Marker rendert am
    *  Ende dieses Blocks statt auf der Artikelebene. */
   absatzIndex?: number;
+  /** FN-5/M14: wortgenaue Marker-Position — `b` = Block-Index in `bloecke`,
+   *  optional `it` = Item-Index, `o` = Zeichen-Offset im finalen Text, `l` =
+   *  Textlänge zur Generationszeit (Drift-Riegel: bei Längen-Mismatch verwirft
+   *  der Reader den Offset). Nur vom Generator gesetzt, wenn die Position
+   *  zeichengenau bewiesen ist (fussnoten-offsets.ts); fehlt `pos`, rendert
+   *  der Marker wie bisher am Absatz-/Item-Ende. */
+  pos?: { b: number; it?: number; o: number; l: number };
 }
 export interface ArtikelStruktur {
   /** EID-1 (W2·5d §12): optionale Fedlex-Container-eId je Ebene — reine, bei jeder

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "231.11",
   "titel": "Verordnung über das Urheberrecht und verwandte Schutzrechte",
@@ -152,7 +152,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 176,
+      "l": 177
+     }
     }
    ]
   },
@@ -200,7 +205,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 272,
+      "l": 272
+     }
     },
     {
      "nr": "8",
@@ -216,7 +226,12 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 102,
+      "l": 102
+     }
     }
    ]
   },
@@ -488,7 +503,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 138
+     }
     },
     {
      "nr": "14",
@@ -500,7 +520,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 240,
+      "l": 240
+     }
     },
     {
      "nr": "15",
@@ -512,7 +537,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 106,
+      "l": 106
+     }
     }
    ]
   },
@@ -600,7 +630,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 94,
+      "l": 157
+     }
     },
     {
      "nr": "25",
@@ -613,7 +648,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 128,
+      "l": 143
+     }
     }
    ]
   },
@@ -647,7 +687,13 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 46,
+      "l": 109
+     }
     },
     {
      "nr": "29",
@@ -659,7 +705,13 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 41,
+      "l": 113
+     }
     },
     {
      "nr": "30",
@@ -671,7 +723,13 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 30,
+      "l": 110
+     }
     },
     {
      "nr": "27",
@@ -723,7 +781,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 209,
+      "l": 266
+     }
     },
     {
      "nr": "16",
@@ -803,7 +866,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 139
+     }
     }
    ]
   },
@@ -868,7 +936,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 51,
+      "l": 51
+     }
     }
    ]
   },

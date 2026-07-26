@@ -698,16 +698,15 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
   - **A25** (C-1+C-2+C-3): Farbe nur Referenzschicht (Chips/Badges/Kopf),
     Normtext-Körper farbfrei. V2 §2 F5. Bau-Go David 10.7. «go zu allem».
     - [x] **C-1 ✅ 10.7.2026 · C-2 ✅ 11.7.2026 (#201) · C-3 ✅ 11.7.2026 — Farb-Wörterbuch KOMPLETT** (DESIGN-REGLEMENT §4b-B Abschluss). Wortlaut → `ROADMAP-CHRONIK.md` → W2·5d/A19–A25 (26.7.2026). V2 §2 F5.
-  - [ ] **FN-5/M14** wortgenaue Fussnoten-Marker (XL). V2 §2 F1. **BAU-AUFTRAG STEHT
-    (David 25.7.2026, wörtlich: «vermerke 3 im bauplan, dass nächste session es am
-    richtigen ort macht»)** — das frühere separate David-Go ist erteilt, die
-    Sequenz-Vorbedingungen (QS-PERF, U-POSITION) sind erfüllt. **Nächste Bau-Session
-    nimmt FN-5 als EIGENE Einheit** (nicht nebenbei): Extraktor-Offset/Platzhalter im
-    Haupt-Snapshot = Risikopfad `scripts/normtext` mit grossem deklariertem §6.3-
-    Snapshot-Diff ⇒ volle adversariale Gegenprüfung (Skill »gegenpruefung«), Differ-
-    Beweis (nur Marker-Positions-Felder, kein Textverlust), Wortlaut-Stichproben je
-    Defektklasse gegen den Fedlex-Cache, Reader-Render (FnRef am Wort-Offset) + CLS.
-    Bis dahin bleibt der Marker am Absatz-/Item-Ende (ausgewiesene Rest-Ungenauigkeit).
+  - [x] **FN-5/M14** wortgenaue Fussnoten-Marker — **✅ GEBAUT 26.7.2026** als
+    SIDECAR-Variante nach M14-Spec (`FAHRPLAN-NORMTEXT-DARSTELLUNG.md` §M14) statt
+    Haupt-Snapshot-Diff: Snapshots byte-unverändert (§7-Abweichung von der hier
+    früher angenommenen Snapshot-Diff-Mechanik offengelegt). `pos{b,it,o,l}` je
+    Marker im Struktur-Sidecar, 16'894 Marker wortgenau (97.7 % der text-verorteten;
+    `<dt>`-Marken/Kopf/Sektion ausgewiesen ohne Textstelle), Differ-Beweis nur
+    erzeugt+pos, Gegenprüfung, Wächter `e2e/fn5-wortposition.e2e.ts` + Unit-Negativfälle.
+    Dossier `bibliothek/normen/fn5-wortgenaue-marker-2026-07-26.md`; Bau-Auftrags-
+    Wortlaut → `ROADMAP-CHRONIK.md` → W2·5d/FN-5 (26.7.2026). V2 §2 F1.
 
   **Nachzug-Welle A29–A40 (David 16.7.2026 — BAU-GO in derselben Session: «run till
   dry» + «und dann wie immer alles mit opus bauen»):** eingeordnet in

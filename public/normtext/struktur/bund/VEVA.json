@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "814.610",
   "titel": "Verordnung über den Verkehr mit Abfällen",
@@ -110,7 +110,13 @@
       }
      ],
      "absatz": "3",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 2,
+      "it": 3,
+      "o": 65,
+      "l": 116
+     }
     },
     {
      "nr": "7",
@@ -155,7 +161,12 @@
      "text": "Entscheidung 2000/532/EG der Kommission vom 3. Mai 2000 zur Ersetzung der Entscheidung 94/3/EG über ein Abfallverzeichnis gemäss Art. 1 Bst. a) der Richtlinie 75/442/EWG des Rates über Abfälle und der Entscheidung 94/904/EG des Rates über ein Verzeichnis gefährlicher Abfälle im Sinne von Artikel 1 Absatz 4 der Richtlinie 91/689/EWG über gefährliche Abfälle, ABl. L 226 vom 6.9.2000, S. 3; zuletzt geändert durch Beschluss 2014/955/EU, ABl. L 370 vom 30.12.2014, S. 44.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 274,
+      "l": 305
+     }
     },
     {
      "nr": "10",
@@ -167,7 +178,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 305,
+      "l": 305
+     }
     },
     {
      "nr": "11",
@@ -251,7 +267,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 139,
+      "l": 140
+     }
     },
     {
      "nr": "14",
@@ -263,7 +284,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 140,
+      "l": 140
+     }
     }
    ]
   },
@@ -306,7 +332,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 205,
+      "l": 205
+     }
     }
    ]
   },
@@ -354,7 +385,13 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 178,
+      "l": 265
+     }
     },
     {
      "nr": "18",
@@ -414,7 +451,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 126,
+      "l": 126
+     }
     }
    ]
   },
@@ -457,7 +499,13 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 70,
+      "l": 70
+     }
     },
     {
      "nr": "22",
@@ -469,7 +517,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 306,
+      "l": 306
+     }
     },
     {
      "nr": "23",
@@ -485,7 +538,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 452,
+      "l": 452
+     }
     }
    ]
   },
@@ -528,7 +586,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 359,
+      "l": 359
+     }
     },
     {
      "nr": "26",
@@ -540,7 +603,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 227,
+      "l": 227
+     }
     },
     {
      "nr": "27",
@@ -552,7 +620,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 367,
+      "l": 367
+     }
     }
    ]
   },
@@ -581,7 +654,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 180,
+      "l": 180
+     }
     },
     {
      "nr": "28",
@@ -666,7 +744,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 57,
+      "l": 57
+     }
     },
     {
      "nr": "33",
@@ -678,7 +761,12 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 331,
+      "l": 331
+     }
     },
     {
      "nr": "34",
@@ -690,7 +778,13 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 3,
+      "o": 284,
+      "l": 284
+     }
     }
    ]
   },
@@ -891,7 +985,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 8,
+      "l": 58
+     }
     },
     {
      "nr": "47",
@@ -903,7 +1002,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 207,
+      "l": 207
+     }
     }
    ]
   },
@@ -999,7 +1103,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 180,
+      "l": 180
+     }
     },
     {
      "nr": "50",
@@ -1011,7 +1120,13 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 285,
+      "l": 285
+     }
     }
    ]
   },
@@ -1184,7 +1299,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 271,
+      "l": 271
+     }
     },
     {
      "nr": "55",
@@ -1200,7 +1320,13 @@
       }
      ],
      "absatz": "1bis",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 218,
+      "l": 218
+     }
     }
    ]
   },
@@ -1260,7 +1386,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 182,
+      "l": 182
+     }
     },
     {
      "nr": "59",
@@ -1291,7 +1422,13 @@
      "text": "Verordnung(EG) Nr. 1013/2006 des Europäischen Parlaments und des Rates vom 14. Juni 2006 über die Verbringung von Abfällen, ABI. L 190 vom 12.7.2006, S. 1; zuletzt geändert durch Delegierte Verordnung (EU) 2020/2174, ABl. L 433 vom 22.12.2020, S. 19.",
      "links": [],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 50,
+      "l": 51
+     }
     },
     {
      "nr": "62",
@@ -1303,7 +1440,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 163,
+      "l": 163
+     }
     },
     {
      "nr": "63",
@@ -1315,7 +1457,13 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 156,
+      "l": 156
+     }
     },
     {
      "nr": "64",
@@ -1327,7 +1475,13 @@
       }
      ],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 91,
+      "l": 91
+     }
     },
     {
      "nr": "65",
@@ -1339,7 +1493,12 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 139,
+      "l": 139
+     }
     },
     {
      "nr": "66",
@@ -1351,7 +1510,13 @@
       }
      ],
      "absatz": "5",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 5,
+      "it": 3,
+      "o": 101,
+      "l": 101
+     }
     },
     {
      "nr": "67",
@@ -1363,7 +1528,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 107,
+      "l": 172
+     }
     },
     {
      "nr": "68",
@@ -1375,7 +1545,13 @@
       }
      ],
      "absatz": "7",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 7,
+      "it": 2,
+      "o": 74,
+      "l": 74
+     }
     },
     {
      "nr": "69",
@@ -1387,7 +1563,12 @@
       }
      ],
      "absatz": "8",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 8,
+      "o": 183,
+      "l": 183
+     }
     },
     {
      "nr": "57",
@@ -1559,7 +1740,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 258,
+      "l": 258
+     }
     },
     {
      "nr": "73",
@@ -1571,7 +1757,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 87,
+      "l": 87
+     }
     },
     {
      "nr": "74",
@@ -1583,7 +1774,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 166,
+      "l": 166
+     }
     },
     {
      "nr": "75",
@@ -1595,7 +1791,13 @@
       }
      ],
      "absatz": "5",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 4,
+      "it": 1,
+      "o": 220,
+      "l": 220
+     }
     }
    ]
   },
@@ -1621,7 +1823,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 145,
+      "l": 145
+     }
     },
     {
      "nr": "77",
@@ -1633,7 +1840,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     }
     },
     {
      "nr": "78",
@@ -1645,7 +1857,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 80,
+      "l": 80
+     }
     }
    ]
   },
@@ -1695,7 +1912,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 155,
+      "l": 155
+     }
     },
     {
      "nr": "81",
@@ -1707,7 +1929,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 15,
+      "l": 15
+     }
     },
     {
      "nr": "82",
@@ -1719,7 +1946,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 169,
+      "l": 169
+     }
     },
     {
      "nr": "83",
@@ -1731,7 +1963,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -1773,7 +2010,13 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 66,
+      "l": 103
+     }
     },
     {
      "nr": "85",
@@ -1785,7 +2028,13 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 63,
+      "l": 155
+     }
     }
    ]
   },

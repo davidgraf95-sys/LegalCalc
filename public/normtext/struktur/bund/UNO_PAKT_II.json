@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.103.2",
   "titel": "Internationaler Pakt über bürgerliche und politische Rechte",
@@ -298,7 +298,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 2
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 135,
+      "l": 346
+     }
     }
    ]
   },
@@ -574,7 +579,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 194,
+      "l": 347
+     }
     }
    ]
   },

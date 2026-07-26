@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "831.441.1",
   "titel": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge",
@@ -103,7 +103,13 @@
       }
      ],
      "absatz": "5",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 4,
+      "it": 1,
+      "o": 199,
+      "l": 199
+     }
     },
     {
      "nr": "5",
@@ -164,7 +170,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 97,
+      "l": 245
+     }
     }
    ]
   },
@@ -225,7 +236,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 63,
+      "l": 266
+     }
     }
    ]
   },
@@ -299,7 +315,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 159,
+      "l": 350
+     }
     }
    ]
   },
@@ -400,7 +421,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 142,
+      "l": 142
+     }
     },
     {
      "nr": "30",
@@ -412,7 +438,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 194,
+      "l": 194
+     }
     },
     {
      "nr": "31",
@@ -424,7 +455,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 354,
+      "l": 381
+     }
     },
     {
      "nr": "32",
@@ -440,7 +476,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 381,
+      "l": 381
+     }
     }
    ]
   },
@@ -752,7 +793,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 235,
+      "l": 235
+     }
     }
    ]
   },
@@ -799,7 +845,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 224,
+      "l": 224
+     }
     }
    ]
   },
@@ -842,7 +893,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 278,
+      "l": 382
+     }
     }
    ]
   },
@@ -1010,7 +1066,13 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 235,
+      "l": 255
+     }
     }
    ]
   },
@@ -1065,7 +1127,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 179,
+      "l": 179
+     }
     },
     {
      "nr": "74",
@@ -1077,7 +1144,13 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 133,
+      "l": 178
+     }
     },
     {
      "nr": "70",
@@ -1157,7 +1230,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     }
     },
     {
      "nr": "86",
@@ -1169,7 +1247,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 264,
+      "l": 516
+     }
     },
     {
      "nr": "87",
@@ -1181,7 +1264,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 383,
+      "l": 516
+     }
     },
     {
      "nr": "88",
@@ -1193,7 +1281,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 468,
+      "l": 516
+     }
     },
     {
      "nr": "89",
@@ -1209,7 +1302,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 516,
+      "l": 516
+     }
     },
     {
      "nr": "90",
@@ -1225,7 +1323,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -1507,7 +1610,13 @@
       }
      ],
      "absatz": "3",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 2,
+      "it": 2,
+      "o": 73,
+      "l": 89
+     }
     }
    ]
   },
@@ -1776,7 +1885,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 302,
+      "l": 302
+     }
     }
    ]
   },
@@ -1891,14 +2005,24 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 432,
+      "l": 432
+     }
     },
     {
      "nr": "149",
      "text": "Siehe www.fer.ch/inhalt/home/home/news.html; Bezugsquelle der Publikation: Verlag SKV, Hans-Huber-Strasse 4, 8002 Zürich (www.verlagskv.ch).",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 114,
+      "l": 308
+     }
     },
     {
      "nr": "150",
@@ -1910,7 +2034,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 308,
+      "l": 308
+     }
     },
     {
      "nr": "151",
@@ -1922,7 +2051,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 104,
+      "l": 140
+     }
     },
     {
      "nr": "152",
@@ -1934,7 +2068,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 140,
+      "l": 140
+     }
     },
     {
      "nr": "145",
@@ -2021,7 +2160,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 98,
+      "l": 98
+     }
     }
    ]
   },
@@ -2064,7 +2208,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 304,
+      "l": 304
+     }
     },
     {
      "nr": "181",
@@ -2076,7 +2225,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 230,
+      "l": 230
+     }
     },
     {
      "nr": "182",
@@ -2092,7 +2246,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 400,
+      "l": 400
+     }
     },
     {
      "nr": "183",
@@ -2104,7 +2263,12 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 441,
+      "l": 441
+     }
     },
     {
      "nr": "184",
@@ -2120,7 +2284,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 232,
+      "l": 232
+     }
     },
     {
      "nr": "185",
@@ -2132,7 +2301,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 179,
+      "l": 179
+     }
     }
    ]
   },
@@ -2249,7 +2423,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 367,
+      "l": 367
+     }
     },
     {
      "nr": "191",
@@ -2261,7 +2440,12 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 192,
+      "l": 192
+     }
     },
     {
      "nr": "192",
@@ -2273,7 +2457,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 125,
+      "l": 125
+     }
     },
     {
      "nr": "193",
@@ -2297,7 +2486,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 100,
+      "l": 245
+     }
     }
    ]
   },
@@ -2438,7 +2632,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 200,
+      "l": 200
+     }
     },
     {
      "nr": "207",
@@ -2462,7 +2661,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 306,
+      "l": 306
+     }
     }
    ]
   },
@@ -2505,7 +2709,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 159,
+      "l": 159
+     }
     },
     {
      "nr": "213",
@@ -2517,7 +2726,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 110,
+      "l": 110
+     }
     }
    ]
   },
@@ -2572,7 +2786,13 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 103,
+      "l": 222
+     }
     },
     {
      "nr": "217",
@@ -2596,7 +2816,13 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 209,
+      "l": 209
+     }
     }
    ]
   },
@@ -2639,7 +2865,13 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 74,
+      "l": 75
+     }
     }
    ]
   },
@@ -2700,7 +2932,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 35,
+      "l": 108
+     }
     },
     {
      "nr": "241",
@@ -2713,7 +2950,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -2887,7 +3129,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 535,
+      "l": 536
+     }
     },
     {
      "nr": "58",
@@ -2899,7 +3146,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 210,
+      "l": 229
+     }
     },
     {
      "nr": "56",
@@ -3125,7 +3377,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 344,
+      "l": 577
+     }
     }
    ]
   },
@@ -3385,7 +3642,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 146,
+      "l": 146
+     }
     },
     {
      "nr": "78",
@@ -3397,7 +3659,13 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 50,
+      "l": 85
+     }
     },
     {
      "nr": "79",
@@ -3409,7 +3677,13 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 50,
+      "l": 91
+     }
     },
     {
      "nr": "80",
@@ -3421,7 +3695,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 282,
+      "l": 282
+     }
     },
     {
      "nr": "81",
@@ -3433,7 +3712,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 302,
+      "l": 302
+     }
     }
    ]
   },
@@ -3488,7 +3772,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 289,
+      "l": 289
+     }
     }
    ]
   },
@@ -3543,7 +3832,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 253,
+      "l": 253
+     }
     }
    ]
   },
@@ -3622,7 +3916,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 350,
+      "l": 350
+     }
     },
     {
      "nr": "102",
@@ -3634,7 +3933,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 179,
+      "l": 179
+     }
     }
    ]
   },
@@ -3666,7 +3970,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 160,
+      "l": 272
+     }
     }
    ]
   },
@@ -3710,7 +4019,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 106,
+      "l": 292
+     }
     }
    ]
   },
@@ -3782,7 +4096,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 218,
+      "l": 218
+     }
     },
     {
      "nr": "110",
@@ -3798,7 +4117,12 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 376,
+      "l": 376
+     }
     },
     {
      "nr": "111",
@@ -3810,7 +4134,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 222,
+      "l": 222
+     }
     },
     {
      "nr": "106",
@@ -3858,7 +4187,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 650,
+      "l": 650
+     }
     },
     {
      "nr": "113",
@@ -3870,7 +4204,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 247,
+      "l": 247
+     }
     }
    ]
   },
@@ -3901,7 +4240,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 249,
+      "l": 249
+     }
     },
     {
      "nr": "116",
@@ -4031,7 +4375,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 250,
+      "l": 250
+     }
     },
     {
      "nr": "125",
@@ -4043,7 +4392,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 55,
+      "l": 55
+     }
     }
    ]
   },
@@ -4090,7 +4444,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 242,
+      "l": 242
+     }
     }
    ]
   },
@@ -4307,7 +4666,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 535,
+      "l": 535
+     }
     }
    ]
   },
@@ -4489,7 +4853,13 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 3,
+      "it": 3,
+      "o": 49,
+      "l": 50
+     }
     },
     {
      "nr": "167",
@@ -4513,7 +4883,13 @@
       }
      ],
      "absatz": "4",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 3,
+      "it": 4,
+      "o": 78,
+      "l": 87
+     }
     },
     {
      "nr": "169",
@@ -4537,7 +4913,13 @@
       }
      ],
      "absatz": "4",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 3,
+      "it": 6,
+      "o": 84,
+      "l": 85
+     }
     },
     {
      "nr": "171",
@@ -4574,7 +4956,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 4
+     "absatzIndex": 4,
+     "pos": {
+      "b": 4,
+      "o": 5,
+      "l": 5
+     }
     },
     {
      "nr": "164",
@@ -4626,7 +5013,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 286,
+      "l": 333
+     }
     }
    ]
   },
@@ -4859,7 +5251,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 149,
+      "l": 149
+     }
     },
     {
      "nr": "200",
@@ -4871,7 +5268,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 135,
+      "l": 135
+     }
     }
    ]
   },
@@ -4914,7 +5316,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 121,
+      "l": 121
+     }
     }
    ]
   },
@@ -4957,7 +5364,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 116,
+      "l": 116
+     }
     }
    ]
   },
@@ -4983,7 +5395,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 204,
+      "l": 480
+     }
     },
     {
      "nr": "226",
@@ -4995,7 +5412,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 302,
+      "l": 302
+     }
     },
     {
      "nr": "227",
@@ -5007,7 +5429,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 285,
+      "l": 285
+     }
     },
     {
      "nr": "224",
@@ -5124,7 +5551,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 288,
+      "l": 368
+     }
     },
     {
      "nr": "229",
@@ -5210,7 +5642,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 35,
+      "l": 171
+     }
     },
     {
      "nr": "238",
@@ -5222,7 +5659,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 35,
+      "l": 114
+     }
     },
     {
      "nr": "239",
@@ -5238,7 +5680,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 114,
+      "l": 114
+     }
     },
     {
      "nr": "234",
@@ -5376,7 +5823,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 94,
+      "l": 253
+     }
     },
     {
      "nr": "247",
@@ -5389,7 +5841,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 135,
+      "l": 253
+     }
     },
     {
      "nr": "245",

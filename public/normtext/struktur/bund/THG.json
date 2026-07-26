@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "946.51",
   "titel": "Bundesgesetz über die technischen Handelshemmnisse",
@@ -162,7 +162,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 277,
+      "l": 277
+     }
     }
    ]
   },
@@ -302,7 +307,13 @@
       }
      ],
      "absatz": "5",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 4,
+      "it": 2,
+      "o": 124,
+      "l": 124
+     }
     },
     {
      "nr": "16",
@@ -318,7 +329,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 162,
+      "l": 162
+     }
     }
    ]
   },
@@ -364,7 +380,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 218,
+      "l": 218
+     }
     }
    ]
   },
@@ -478,7 +499,13 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 164,
+      "l": 164
+     }
     }
    ]
   },
@@ -512,7 +539,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 175,
+      "l": 175
+     }
     },
     {
      "nr": "24",
@@ -609,7 +641,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 209,
+      "l": 209
+     }
     },
     {
      "nr": "27",
@@ -625,7 +662,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 81,
+      "l": 81
+     }
     }
    ]
   },
@@ -660,7 +702,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 276,
+      "l": 276
+     }
     }
    ]
   },
@@ -693,7 +740,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 49,
+      "l": 49
+     }
     }
    ]
   },
@@ -744,7 +796,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 92,
+      "l": 92
+     }
     }
    ]
   },
@@ -779,7 +836,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 34,
+      "l": 517
+     }
     }
    ]
   },
@@ -810,7 +872,12 @@
       }
      ],
      "absatz": "8",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 7,
+      "o": 38,
+      "l": 83
+     }
     },
     {
      "nr": "38",
@@ -858,7 +925,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 188,
+      "l": 285
+     }
     }
    ]
   },
@@ -928,7 +1000,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 278,
+      "l": 278
+     }
     },
     {
      "nr": "44",
@@ -944,7 +1021,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 260,
+      "l": 260
+     }
     }
    ]
   },
@@ -971,7 +1053,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 105,
+      "l": 105
+     }
     }
    ]
   },
@@ -998,7 +1085,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 105,
+      "l": 105
+     }
     }
    ]
   },
@@ -1025,7 +1117,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 98,
+      "l": 98
+     }
     }
    ]
   },
@@ -1052,7 +1149,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 105,
+      "l": 105
+     }
     }
    ]
   },
@@ -1109,7 +1211,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 105,
+      "l": 105
+     }
     },
     {
      "nr": "51",
@@ -1152,7 +1259,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 162,
+      "l": 181
+     }
     },
     {
      "nr": "54",
@@ -1165,7 +1277,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 181,
+      "l": 181
+     }
     }
    ]
   },
@@ -1313,7 +1430,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 238,
+      "l": 239
+     }
     }
    ]
   },
@@ -1387,7 +1509,13 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 132,
+      "l": 133
+     }
     }
    ]
   },
@@ -1456,7 +1584,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 156,
+      "l": 156
+     }
     }
    ]
   },

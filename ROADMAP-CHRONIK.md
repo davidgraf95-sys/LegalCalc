@@ -962,6 +962,23 @@ Aus `ROADMAP.md` Schritt 12 (Kopfzeile, `@meta`, ABGESCHLOSSEN-Einzeiler und die
   Nachzug via `normen-monitor`-Drift (`check:pdf-netz` wird rot) bzw. gezielte Regeneration,
   Detail `FAHRPLAN-TARIF-TABELLEN-STUFE2.md` §SG-2935-Reparatur.
 
+## W2·5d / FN-5 — Bau-Auftrags-Wortlaut des erledigten Postens *(erledigt 26.7.2026; Wortlaut wörtlich verschoben 26.7.2026)*
+
+- [ ] **FN-5/M14** wortgenaue Fussnoten-Marker (XL). V2 §2 F1. **BAU-AUFTRAG STEHT
+  (David 25.7.2026, wörtlich: «vermerke 3 im bauplan, dass nächste session es am
+  richtigen ort macht»)** — das frühere separate David-Go ist erteilt, die
+  Sequenz-Vorbedingungen (QS-PERF, U-POSITION) sind erfüllt. **Nächste Bau-Session
+  nimmt FN-5 als EIGENE Einheit** (nicht nebenbei): Extraktor-Offset/Platzhalter im
+  Haupt-Snapshot = Risikopfad `scripts/normtext` mit grossem deklariertem §6.3-
+  Snapshot-Diff ⇒ volle adversariale Gegenprüfung (Skill »gegenpruefung«), Differ-
+  Beweis (nur Marker-Positions-Felder, kein Textverlust), Wortlaut-Stichproben je
+  Defektklasse gegen den Fedlex-Cache, Reader-Render (FnRef am Wort-Offset) + CLS.
+  Bis dahin bleibt der Marker am Absatz-/Item-Ende (ausgewiesene Rest-Ungenauigkeit).
+
+*(Umsetzungs-Anm. 26.7.2026: gebaut wurde die SIDECAR-Variante der M14-Spec —
+Haupt-Snapshots byte-unverändert statt des hier angenommenen grossen
+Snapshot-Diffs; §7-Abweichung im ROADMAP-Einzeiler und im PR offengelegt.)*
+
 ## QS-CURRENCY — Gesetze-Currency & Coverage: Paket 1 *(done; Wortlaut wörtlich verschoben 26.7.2026)*
 
 **Stand 5.7.2026:

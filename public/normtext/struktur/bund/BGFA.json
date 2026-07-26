@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "935.61",
   "titel": "Bundesgesetz über die Freizügigkeit der Anwältinnen und Anwälte",
@@ -100,7 +100,13 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 139,
+      "l": 433
+     }
     },
     {
      "nr": "5",
@@ -129,7 +135,13 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 44,
+      "l": 218
+     }
     },
     {
      "nr": "7",
@@ -145,7 +157,13 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 218,
+      "l": 218
+     }
     },
     {
      "nr": "8",
@@ -161,7 +179,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 204,
+      "l": 215
+     }
     },
     {
      "nr": "9",
@@ -185,7 +208,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 291,
+      "l": 291
+     }
     }
    ]
   },
@@ -306,7 +334,13 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 251,
+      "l": 252
+     }
     }
    ]
   },
@@ -679,7 +713,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -718,7 +757,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 206,
+      "l": 372
+     }
     },
     {
      "nr": "20",
@@ -730,7 +774,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 226,
+      "l": 437
+     }
     },
     {
      "nr": "21",
@@ -746,7 +795,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 437,
+      "l": 437
+     }
     }
    ]
   },
@@ -790,7 +844,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 140,
+      "l": 250
+     }
     }
    ]
   },

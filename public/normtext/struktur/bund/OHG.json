@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "312.5",
   "titel": "Bundesgesetz über die Hilfe an Opfer von Straftaten",
@@ -89,7 +89,13 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -152,21 +158,36 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 311,
+      "l": 417
+     }
     },
     {
      "nr": "5",
      "text": "Siehe Art. 49 (Koordination mit dem ELG)",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 417,
+      "l": 417
+     }
     },
     {
      "nr": "6",
      "text": "Siehe Art. 49 (Koordination mit dem ELG)",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 164,
+      "l": 164
+     }
     }
    ]
   },
@@ -274,7 +295,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 258,
+      "l": 259
+     }
     },
     {
      "nr": "10",
@@ -290,7 +316,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 259,
+      "l": 259
+     }
     },
     {
      "nr": "11",
@@ -306,7 +337,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 293,
+      "l": 293
+     }
     }
    ]
   },
@@ -341,7 +377,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 139,
+      "l": 139
+     }
     }
    ]
   },
@@ -480,7 +521,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 131,
+      "l": 184
+     }
     }
    ]
   },
@@ -506,7 +552,13 @@
      "text": "Siehe Art. 49 (Koordination mit dem ELG)",
      "links": [],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 222,
+      "l": 222
+     }
     },
     {
      "nr": "16",
@@ -518,7 +570,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 140,
+      "l": 140
+     }
     }
    ]
   },
@@ -567,7 +624,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 167,
+      "l": 194
+     }
     }
    ]
   },
@@ -598,7 +660,13 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 30,
+      "l": 30
+     }
     }
    ]
   },
@@ -647,7 +715,13 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 61,
+      "l": 129
+     }
     },
     {
      "nr": "20",
@@ -660,7 +734,13 @@
       }
      ],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 128,
+      "l": 129
+     }
     }
    ]
   },
@@ -801,7 +881,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 246,
+      "l": 339
+     }
     }
    ]
   },
@@ -840,7 +925,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 40,
+      "l": 57
+     }
     }
    ]
   },

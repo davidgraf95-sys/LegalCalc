@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "748.131.1",
   "titel": "Verordnung über die Infrastruktur der Luftfahrt",
@@ -75,7 +75,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 202,
+      "l": 232
+     }
     }
    ]
   },
@@ -138,7 +143,13 @@
       }
      ],
      "absatz": null,
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 122,
+      "l": 239
+     }
     },
     {
      "nr": "8",
@@ -175,7 +186,13 @@
       }
      ],
      "absatz": null,
-     "item": "m"
+     "item": "m",
+     "pos": {
+      "b": 0,
+      "it": 10,
+      "o": 146,
+      "l": 252
+     }
     },
     {
      "nr": "11",
@@ -238,14 +255,24 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 273,
+      "l": 508
+     }
     },
     {
      "nr": "15",
      "text": "Diese Dokumente können bei der ICAO bestellt oder abonniert werden.",
      "links": [],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 272,
+      "l": 272
+     }
     }
    ]
   },
@@ -420,7 +447,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 197,
+      "l": 197
+     }
     },
     {
      "nr": "23",
@@ -432,7 +464,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 444,
+      "l": 453
+     }
     },
     {
      "nr": "24",
@@ -444,7 +481,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 453,
+      "l": 453
+     }
     }
    ]
   },
@@ -502,7 +544,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 134,
+      "l": 220
+     }
     },
     {
      "nr": "27",
@@ -628,7 +675,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 118,
+      "l": 118
+     }
     }
    ]
   },
@@ -847,7 +899,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 98,
+      "l": 98
+     }
     },
     {
      "nr": "33",
@@ -908,7 +965,13 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 174,
+      "l": 193
+     }
     }
    ]
   },
@@ -996,7 +1059,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 63,
+      "l": 63
+     }
     }
    ]
   },
@@ -1090,7 +1158,13 @@
       }
      ],
      "absatz": "2",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 1,
+      "it": 1,
+      "o": 75,
+      "l": 75
+     }
     },
     {
      "nr": "65",
@@ -1102,7 +1176,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 97,
+      "l": 97
+     }
     },
     {
      "nr": "66",
@@ -1118,7 +1197,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 259,
+      "l": 259
+     }
     },
     {
      "nr": "67",
@@ -1130,7 +1214,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 115,
+      "l": 115
+     }
     },
     {
      "nr": "68",
@@ -1142,7 +1231,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 210,
+      "l": 210
+     }
     }
    ]
   },
@@ -1190,7 +1284,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 185,
+      "l": 185
+     }
     }
    ]
   },
@@ -1233,7 +1332,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 399,
+      "l": 399
+     }
     },
     {
      "nr": "81",
@@ -1419,7 +1523,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 67,
+      "l": 68
+     }
     }
    ]
   },
@@ -1457,7 +1566,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 269,
+      "l": 269
+     }
     },
     {
      "nr": "105",
@@ -1469,7 +1583,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 53,
+      "l": 53
+     }
     }
    ]
   },
@@ -1598,7 +1717,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 73,
+      "l": 73
+     }
     }
    ]
   },
@@ -1713,7 +1837,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 144,
+      "l": 144
+     }
     }
    ]
   },
@@ -1824,7 +1953,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 282,
+      "l": 282
+     }
     }
    ]
   },
@@ -2037,7 +2171,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -2102,14 +2241,24 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 53,
+      "l": 240
+     }
     },
     {
      "nr": "36",
      "text": "Verordnung (EU) Nr. 139/2014 der Kommission vom 12. Februar 2014 zur Festlegung von Anforderungen und Verwaltungsverfahren in Bezug auf Flugplätze gemäss der Verordnung (EG) Nr. 216/2008 des Europäischen Parlaments und des Rates, , in der für die Schweiz gemäss Anhang Ziff. 3 des Luftverkehrsabkommens jeweils verbindlichen Fassung.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 145,
+      "l": 240
+     }
     }
    ]
   },
@@ -2165,7 +2314,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 181,
+      "l": 477
+     }
     }
    ]
   },
@@ -2208,7 +2362,12 @@
      "text": "Verordnung (EU) Nr. 139/2014 der Kommission vom 12. Februar 2014 zur Festlegung von Anforderungen und Verwaltungsverfahren in Bezug auf Flugplätze gemäss der Verordnung (EG) Nr. 216/2008 des Europäischen Parlaments und des Rates, in der für die Schweiz gemäss Anhang Ziff. 3 des Luftverkehrsabkommens jeweils verbindlichen Fassung.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 354,
+      "l": 447
+     }
     }
    ]
   },
@@ -2324,7 +2483,13 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 0,
+      "it": 8,
+      "o": 174,
+      "l": 193
+     }
     },
     {
      "nr": "54",
@@ -2349,7 +2514,13 @@
       }
      ],
      "absatz": "1",
-     "item": "l"
+     "item": "l",
+     "pos": {
+      "b": 0,
+      "it": 14,
+      "o": 185,
+      "l": 311
+     }
     },
     {
      "nr": "56",
@@ -2361,7 +2532,13 @@
       }
      ],
      "absatz": "1",
-     "item": "l"
+     "item": "l",
+     "pos": {
+      "b": 0,
+      "it": 14,
+      "o": 311,
+      "l": 311
+     }
     },
     {
      "nr": "57",
@@ -2374,7 +2551,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 132,
+      "l": 145
+     }
     },
     {
      "nr": "58",
@@ -2386,7 +2568,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 145,
+      "l": 145
+     }
     }
    ]
   },
@@ -2497,7 +2684,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 348,
+      "l": 363
+     }
     }
    ]
   },
@@ -2613,7 +2805,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 230,
+      "l": 230
+     }
     }
    ]
   },
@@ -2707,7 +2904,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 112,
+      "l": 113
+     }
     },
     {
      "nr": "71",
@@ -2751,7 +2953,12 @@
      "text": "Siehe Fussnote zur Art. 29<i>a.</i>",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 143,
+      "l": 220
+     }
     },
     {
      "nr": "75",
@@ -2763,7 +2970,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 220,
+      "l": 220
+     }
     }
    ]
   },
@@ -2799,7 +3011,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 161,
+      "l": 161
+     }
     },
     {
      "nr": "76",
@@ -2916,7 +3133,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 4
+     "absatzIndex": 4,
+     "pos": {
+      "b": 4,
+      "o": 434,
+      "l": 435
+     }
     },
     {
      "nr": "79",
@@ -2929,7 +3151,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 4
+     "absatzIndex": 4,
+     "pos": {
+      "b": 4,
+      "o": 435,
+      "l": 435
+     }
     }
    ]
   },
@@ -2988,7 +3215,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 82,
+      "l": 136
+     }
     }
    ]
   },
@@ -3226,7 +3458,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 233,
+      "l": 234
+     }
     }
    ]
   },
@@ -3274,7 +3511,12 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     }
     },
     {
      "nr": "96",
@@ -3286,7 +3528,13 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 137,
+      "l": 137
+     }
     },
     {
      "nr": "97",
@@ -3298,7 +3546,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 116,
+      "l": 116
+     }
     }
    ]
   },
@@ -3366,7 +3619,12 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 266,
+      "l": 266
+     }
     },
     {
      "nr": "19",
@@ -3407,7 +3665,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 119,
+      "l": 223
+     }
     }
    ]
   },
@@ -3929,7 +4192,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 135,
+      "l": 280
+     }
     }
    ]
   },

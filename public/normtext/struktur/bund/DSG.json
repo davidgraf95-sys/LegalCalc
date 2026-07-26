@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "235.1",
   "titel": "Bundesgesetz über den Datenschutz",
@@ -86,7 +86,13 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 134,
+      "l": 199
+     }
     }
    ]
   },
@@ -113,7 +119,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 74,
+      "l": 207
+     }
     },
     {
      "nr": "5",
@@ -126,7 +137,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 206,
+      "l": 207
+     }
     }
    ]
   },
@@ -427,7 +443,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 260,
+      "l": 350
+     }
     }
    ]
   },
@@ -489,7 +510,12 @@
       }
      ],
      "absatz": "5bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 346,
+      "l": 346
+     }
     }
    ]
   },
@@ -600,7 +626,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 110,
+      "l": 166
+     }
     }
    ]
   },
@@ -663,7 +694,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 192,
+      "l": 212
+     }
     }
    ]
   },
@@ -702,7 +738,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 64,
+      "l": 166
+     }
     }
    ]
   },
@@ -753,7 +794,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 40,
+      "l": 108
+     }
     }
    ]
   },
@@ -781,7 +827,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 152,
+      "l": 380
+     }
     }
    ]
   },
@@ -813,7 +864,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 155,
+      "l": 692
+     }
     },
     {
      "nr": "14",
@@ -833,7 +889,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 692,
+      "l": 692
+     }
     },
     {
      "nr": "15",
@@ -853,7 +914,12 @@
       }
      ],
      "absatz": "3bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 131,
+      "l": 131
+     }
     }
    ]
   },
@@ -892,7 +958,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 300,
+      "l": 300
+     }
     }
    ]
   },
@@ -965,7 +1036,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 217,
+      "l": 252
+     }
     }
    ]
   },
@@ -1014,7 +1090,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 240,
+      "l": 319
+     }
     }
    ]
   },
@@ -1080,7 +1161,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 99,
+      "l": 100
+     }
     }
    ]
   },
@@ -1179,7 +1265,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 117,
+      "l": 117
+     }
     }
    ]
   },
@@ -1211,7 +1302,13 @@
       }
      ],
      "absatz": "1",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 70,
+      "l": 124
+     }
     }
    ]
   },
@@ -1301,7 +1398,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 103,
+      "l": 153
+     }
     }
    ]
   },
@@ -1399,7 +1501,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 425,
+      "l": 543
+     }
     }
    ]
   },
@@ -1433,7 +1540,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 237,
+      "l": 237
+     }
     }
    ]
   },

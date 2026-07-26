@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "312.1",
   "titel": "Schweizerische Jugendstrafprozessordnung",
@@ -106,7 +106,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 102,
+      "l": 307
+     }
     }
    ]
   },
@@ -144,7 +149,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 116,
+      "l": 134
+     }
     }
    ]
   },
@@ -182,7 +192,13 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 64,
+      "l": 206
+     }
     },
     {
      "nr": "8",
@@ -194,7 +210,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 41,
+      "l": 52
+     }
     }
    ]
   },
@@ -220,7 +241,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 174,
+      "l": 188
+     }
     }
    ]
   },
@@ -286,7 +312,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 309,
+      "l": 309
+     }
     },
     {
      "nr": "11",
@@ -318,7 +349,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 121,
+      "l": 121
+     }
     },
     {
      "nr": "13",
@@ -330,7 +366,13 @@
       }
      ],
      "absatz": "4",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 3,
+      "it": 2,
+      "o": 87,
+      "l": 114
+     }
     }
    ]
   },
@@ -416,7 +458,13 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 103,
+      "l": 119
+     }
     }
    ]
   },
@@ -442,7 +490,13 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 48,
+      "l": 68
+     }
     }
    ]
   },
@@ -542,7 +596,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 153,
+      "l": 175
+     }
     }
    ]
   },
@@ -607,7 +666,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 79,
+      "l": 216
+     }
     }
    ]
   },
@@ -633,7 +697,13 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 60,
+      "l": 115
+     }
     },
     {
      "nr": "19",
@@ -661,7 +731,13 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 71,
+      "l": 72
+     }
     }
    ]
   },
@@ -687,7 +763,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 329,
+      "l": 330
+     }
     }
    ]
   },
@@ -725,7 +806,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 105,
+      "l": 127
+     }
     }
    ]
   },
@@ -756,7 +842,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 79,
+      "l": 140
+     }
     }
    ]
   },
@@ -822,7 +913,12 @@
       }
      ],
      "absatz": "5bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 5,
+      "o": 104,
+      "l": 104
+     }
     },
     {
      "nr": "26",
@@ -834,7 +930,12 @@
       }
      ],
      "absatz": "6",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 6,
+      "o": 68,
+      "l": 69
+     }
     }
    ]
   },
@@ -943,7 +1044,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 31,
+      "l": 42
+     }
     }
    ]
   },
@@ -970,7 +1076,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 93,
+      "l": 94
+     }
     }
    ]
   },
@@ -1044,7 +1155,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 42,
+      "l": 54
+     }
     }
    ]
   },
@@ -1170,7 +1286,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 40,
+      "l": 51
+     }
     }
    ]
   },
