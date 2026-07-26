@@ -6,9 +6,10 @@ vorbestehende Text-Artefakte in Bund-Snapshots, deren Herkunft (amtliche Quelle
 vs. eigener Extraktions-Randfall) zu klären war (§7: verifizieren, nicht
 vertrauen; §1: Wortlaut nie stillschweigend «korrigieren»).
 
-**Status:** ERSTRECHERCHE (empirisch an 4 Manifestationen je Fall reproduziert;
-kein unabhängiger adversarialer Zweitdurchgang — reine Verifikation ohne
-Code-/Datenänderung, kein Risiko-Pfad-Diff)
+**Status:** ERSTRECHERCHE (Artefakt je Fall in 2 Manifestationen reproduziert —
+DE-Filestore-HTML + DE-AKN-XML; dazu FR-Quervergleich sauber und für ArGV 5 der
+AS-2007-PDF-Mechanismus-Beleg. §9-Bug-Check 26.7.2026: Code-Lupe + Repro-Agent
+haben Roh-HTML-Zitate, Pins und Snapshot-Stellen unabhängig nachgeprüft)
 
 **Quellen** (alle abgerufen 26.7.2026, Pins = `scripts/fedlex-cache.sh`):
 
@@ -77,8 +78,8 @@ id="fnbck-d7e2207">90</a></sup>an der Erbschaft ein Anspruch …
 ```
 
 Das Leerzeichen **fehlt in der Quelle**: Die Fussnote 90 («Ausdruck gemäss
-Ziff. I der V vom 3. Febr. 2021, AS 2021 77») sitzt exakt an der Stelle, wo das
-Leerzeichen stehen müsste — Text-Nodes sind «…seines Anteils» + `<sup>` +
+Ziff. I der V vom 3. Febr. 2021, in Kraft seit 1. Jan. 2022 (AS 2021 77).»)
+sitzt exakt an der Stelle, wo das Leerzeichen stehen müsste — Text-Nodes sind «…seines Anteils» + `<sup>` +
 «an der Erbschaft…». **AKN-XML identisch:**
 `Anteils<authorialNote>…</authorialNote>an` (kein Whitespace zwischen Note-Ende
 und «an»). Auf fedlex.admin.ch rendert die Stelle als «Anteils⁹⁰an».
