@@ -238,8 +238,12 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
       // so einen Block würde den Marker ersatzlos verschlucken (DBG 22 fn57,
       // STHG 7 fn27: <dl> hängt an einem Formelbild-Block). Dann NICHT inline
       // routen, sondern unten den bewährten absatz-/item-Fallback nehmen.
-      const bb = blk as { bild?: unknown; bildKacheln?: unknown; titel?: unknown };
-      const blockRendertMarker = bb.bild == null && bb.bildKacheln == null && bb.titel == null;
+      // Spiegelbildlich zu den Early-Return-Bedingungen in ArtikelBody
+      // (`b.titel !== undefined`, `bb.bildKacheln && length>0`, `bb.bild`) —
+      // Gegenprüfung R2: `titel == null` liesse ein `titel: null` durch,
+      // das ArtikelBody trotzdem früh zurückgibt.
+      const bb = blk as { bild?: unknown; bildKacheln?: unknown[]; titel?: unknown };
+      const blockRendertMarker = !bb.bild && !(bb.bildKacheln && bb.bildKacheln.length > 0) && bb.titel === undefined;
       if (!blockRendertMarker) {
         // pos verwerfen → Legacy-Routing unten (Marker am sichtbaren Block).
       } else if (p.it != null) {

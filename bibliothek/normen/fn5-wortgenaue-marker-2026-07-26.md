@@ -28,14 +28,16 @@ Snapshot nicht aus demselben Lauf stammen.
 
 | Klasse | n | pos? | Begründung |
 |---|--:|---|---|
-| Kopf-/Marginalien-Fussnoten (Artikelebene) | 8'848 | nein | Marker sitzt amtlich auf `<h6>`-Kopf — keine Textstelle |
+| Kopf-/Marginalien-Fussnoten (Artikelebene) | 8'871 | nein | Marker sitzt amtlich auf `<h6>`-Kopf — keine Textstelle |
 | Sektions-/Randtitel-Fussnoten (G11) | 1'582 | nein | Marker am Sektions-Kopf — keine Textstelle |
 | Marker **mit** Wortposition (gesamt) | **16'894** | **ja** | 13'895 Absatz- + 2'999 Item-Positionen; alle 16'894 in der Gegenprüfung unabhängig gegen die gepinnten HTMLs nachgerechnet, 0 unerklärte Abweichungen |
-| Block-verortete ohne pos (Fallback) | 3'822 | nein | s. Ziff. 3 |
+| Block-verortete ohne pos (Fallback) | 3'799 | nein | s. Ziff. 3 |
 
-Abdeckungs-Nenner ehrlich: von den block-verorteten Markern tragen **81.5 %**
-eine Wortposition; rechnet man die bewusst ausgenommenen `<dt>`-Marken-Fussnoten
-heraus, sind es **97.7 %** der text-verorteten Marker (Zählung Gegenprüfung).
+(Summe 31'146; Klassengrenzen nach dem tatsächlichen Reader-Routing gezählt —
+Gegenprüfung R2.) Abdeckungs-Nenner ehrlich: von den block-verorteten Markern
+tragen **81.6 %** eine Wortposition; rechnet man die bewusst ausgenommenen
+`<dt>`-Marken-Fussnoten heraus, sind es **97.7 %** der text-verorteten Marker
+(16'894/17'291, Zählung Gegenprüfung).
 
 Differ-Beweis der Regeneration: alle 227 Sidecars unterscheiden sich von den
 Vorfassungen **nur** durch `erzeugt` + hinzugefügte `pos`-Felder (Skript-Lauf
