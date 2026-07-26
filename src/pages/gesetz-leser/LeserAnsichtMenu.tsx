@@ -19,8 +19,8 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { useDialogFokus } from '../../components/layout/useDialogFokus';
 import {
-  setzeOption, setzeZeitraum, useLeserOptionen, useLeitfallZeitraum,
-  type OptFeld, type LeitfallZeitraum,
+  setzeOption, setzeZeitraum, setzeHistAnsicht, useLeserOptionen, useLeitfallZeitraum, useHistAnsicht,
+  type OptFeld, type LeitfallZeitraum, type HistAnsicht,
 } from './leserOptionen';
 
 function OptSwitch({ feld, an, label, titel, ariaLabel, zusatz }: {
@@ -91,6 +91,51 @@ function ZeitraumWahl() {
   );
 }
 
+/**
+ * W2·5i-HIST-ANSICHT: dreiwertige Wahl «Änderungshistorie: aus · als Fussnoten ·
+ * als Chronologie». Bedienmuster = `ZeitraumWahl` (role="group" + `aria-pressed`,
+ * KEIN `role=radiogroup` — das verspräche eine Pfeiltasten-Bedienung, die es hier
+ * nicht gibt; dieselbe Ehrlichkeits-Lehre wie beim Dropdown selbst).
+ *
+ * Was «aus» ausblendet, ist bewusst ENG (H0-Auflage 1, `bibliothek/normen/
+ * hist-ansicht-h0-trennbarkeit.md`): NUR die build-seitig als Änderungsvermerk
+ * klassifizierten Fussnoten (`kl:'A'`). Echte Verweise, die Grauzone, reine
+ * Publikationsnachweise, Unklares UND jede Fussnote ohne Klasse (alle Kanton-
+ * Sidecars) bleiben in JEDER Ansicht sichtbar — die Sicherheitsrichtung ist
+ * einseitig: nie amtliche Substanz verstecken (§1/§8).
+ */
+function HistAnsichtWahl() {
+  const hist = useHistAnsicht();
+  const stufen: readonly [HistAnsicht, string, string][] = [
+    ['aus', 'aus', 'Änderungsvermerke ausblenden — echte Verweise, Grauzone und Publikationsnachweise bleiben sichtbar'],
+    ['fussnoten', 'Fussnoten', 'Änderungsvermerke wie bisher im Fussnoten-Apparat am Artikelfuss (Grundeinstellung)'],
+    ['chronologie', 'Chronologie', 'Änderungsvermerke stattdessen als zeitlich sortierte Liste am Artikelfuss'],
+  ];
+  return (
+    <div role="group" aria-label="Darstellung der Änderungshistorie" className="flex flex-wrap items-center gap-1 px-2.5 pt-1.5 pb-0.5">
+      <span className="lc-overline mr-1">Änderungshistorie</span>
+      {stufen.map(([wert, label, titel]) => {
+        const aktiv = hist === wert;
+        return (
+          <button
+            key={wert}
+            type="button"
+            aria-pressed={aktiv}
+            data-hist-wahl={wert}
+            onClick={() => setzeHistAnsicht(wert)}
+            title={titel}
+            className={`rounded px-1.5 py-0.5 text-xs transition-colors ${
+              aktiv ? 'bg-brass-100/60 font-medium text-ink-900' : 'text-ink-500 hover:bg-brass-100/40'
+            }`}
+          >
+            {label}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
 /** Das «Ansicht»-Dropdown. `zeigeLinien` blendet den Linien-Schalter aus, wo es
  *  keine Gliederungs-Sektion mit Guide gibt (flache Artikelliste) — er wäre sonst
  *  wirkungslos (§2.2④). `linienAutoAn` = ob im AUFBAU-abhängigen Default-Zustand
@@ -139,7 +184,7 @@ export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenA
         aria-controls={panelId}
         aria-label="Ansicht"
         className="lc-chip inline-flex items-center gap-1 hover:text-brass-700"
-        title="Darstellung: Linien, Fussnoten, Verweise, Entscheide (mit Zeitraum)"
+        title="Darstellung: Linien, Fussnoten (mit Änderungshistorie), Verweise, Entscheide (mit Zeitraum)"
       >
         {/* Enger Platz in der Sticky-Positionsleiste (@390): Label nur ≥sm, sonst
             reines Icon (Accessible-Name bleibt über aria-label «Ansicht» erhalten). */}
@@ -181,6 +226,14 @@ export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenA
               : undefined}
             titel="Fussnoten ein- oder ausblenden — AUS lässt Marker und Apparat verschwinden (der Normtext bleibt durchsuchbar)"
           />
+          {/* W2·5i-HIST-ANSICHT (§14-Intake David 20.7.2026): die dreiwertige
+              Historie-Wahl sitzt UNTER dem Fussnoten-Schalter, weil sie ihn
+              verfeinert — im OR sind ~83 % der Fussnoten Änderungsvermerke, hier
+              trennt man sie von den echten Verweisen. Nur sichtbar, wenn Fussnoten
+              überhaupt AN sind: bei «Fussnoten aus» ist der ganze Apparat weg, die
+              Wahl also wirkungslos → kein totes Steuerelement (§13 F4, gleiches
+              Muster wie ZeitraumWahl unter «Entscheide»). */}
+          {opt.fussnoten === 'an' && <HistAnsichtWahl />}
           <OptSwitch
             feld="verweise"
             an={opt.verweise === 'an'}

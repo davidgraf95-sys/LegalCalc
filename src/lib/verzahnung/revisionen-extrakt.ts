@@ -84,6 +84,40 @@ const AS_RE = /AS\s*(?:<[^>]*>\s*)*(\d{4})(?:\s*<[^>]*>)*\s+(\d+)/;
 const DATUM_FENSTER = 24;
 
 /**
+ * Spätester datierter Textänderungs-Beleg in EINER Fussnote (+ AS-Fundstelle aus
+ * derselben Klausel). Kein datierter Beleg → null.
+ *
+ * W2·5i: als eigene Funktion herausgezogen, weil die Chronologie-Ansicht des
+ * Gesetz-Lesers das Datum JE FUSSNOTE braucht (Sortierschlüssel), nicht nur das
+ * Maximum je Artikel. Ein zweiter Datums-Parser daneben wäre eine zweite Wahrheit
+ * (§5) — die Trigger-/Datums-/AS-Muster und das Trigger-Fenster leben weiterhin
+ * genau hier. `extrahiereArtikelRevision` ist danach das Maximum über die
+ * Fussnoten und verhält sich unverändert (gleiche Vergleichs- und Tie-Break-
+ * Semantik: `>` behält bei Gleichstand den ERSTEN Fund).
+ */
+export function extrahiereFussnotenRevision(text: string): ArtikelRevision | null {
+  let best: ArtikelRevision | null = null;
+  TRIGGER_RE.lastIndex = 0;
+  let tm: RegExpExecArray | null;
+  while ((tm = TRIGGER_RE.exec(text)) !== null) {
+    const nachTrigger = tm.index + tm[0].length;
+    const dm = DATUM_RE.exec(text.slice(nachTrigger));
+    if (!dm || dm.index > DATUM_FENSTER) continue;   // Datum gehört nicht zu diesem Trigger
+    const iso = parseDeutschesRevisionsdatum(dm[1], dm[2], dm[3]);
+    if (!iso) continue;
+    if (!best || iso > best.iso) {
+      // AS-Fundstelle NACH dem Datum, innerhalb DERSELBEN Fussnote: eine
+      // Enactment-AS gilt für die ganze Fassung — auch wenn eine Fussnote
+      // gestaffelte In-Kraft-Daten trägt (BVG Art. 64, OR Art. 732/927) und die
+      // AS erst hinter dem zweiten Datum steht.
+      const am = AS_RE.exec(text.slice(nachTrigger + dm.index + dm[0].length));
+      best = { iso, as: am ? `AS ${am[1]} ${am[2]}` : '' };
+    }
+  }
+  return best;
+}
+
+/**
  * Max «in Kraft seit»/«mit Wirkung seit»-Datum über ALLE Fussnoten eines Artikels
  * → das Datum der letzten Textänderung + zugehörige AS-Fundstelle (aus DERSELBEN
  * Klausel). Kein datierter Beleg (Urfassung / nur SR-Verweis-Fussnote) → null.
@@ -93,24 +127,8 @@ export function extrahiereArtikelRevision(
 ): ArtikelRevision | null {
   let best: ArtikelRevision | null = null;
   for (const fn of fussnoten ?? []) {
-    const text = fn.text ?? '';
-    TRIGGER_RE.lastIndex = 0;
-    let tm: RegExpExecArray | null;
-    while ((tm = TRIGGER_RE.exec(text)) !== null) {
-      const nachTrigger = tm.index + tm[0].length;
-      const dm = DATUM_RE.exec(text.slice(nachTrigger));
-      if (!dm || dm.index > DATUM_FENSTER) continue;   // Datum gehört nicht zu diesem Trigger
-      const iso = parseDeutschesRevisionsdatum(dm[1], dm[2], dm[3]);
-      if (!iso) continue;
-      if (!best || iso > best.iso) {
-        // AS-Fundstelle NACH dem Datum, innerhalb DERSELBEN Fussnote: eine
-        // Enactment-AS gilt für die ganze Fassung — auch wenn eine Fussnote
-        // gestaffelte In-Kraft-Daten trägt (BVG Art. 64, OR Art. 732/927) und die
-        // AS erst hinter dem zweiten Datum steht.
-        const am = AS_RE.exec(text.slice(nachTrigger + dm.index + dm[0].length));
-        best = { iso, as: am ? `AS ${am[1]} ${am[2]}` : '' };
-      }
-    }
+    const kandidat = extrahiereFussnotenRevision(fn.text ?? '');
+    if (kandidat && (!best || kandidat.iso > best.iso)) best = kandidat;
   }
   return best;
 }

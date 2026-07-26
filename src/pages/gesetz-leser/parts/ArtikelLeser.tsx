@@ -18,8 +18,9 @@ import type { NormSnapshot } from '../../../lib/normtext/typen';
 import { verifizierLinkArtikel } from '../../../lib/normtext/verifikationslink';
 import type { ArtikelHistorie } from '../../../lib/normtext/historie-laden';
 import { ArtikelHistorieZeile } from './ArtikelHistorie';
+import { extrahiereFussnotenRevision } from '../../../lib/verzahnung/revisionen-extrakt';
 import { margStufeStil, fnTextMitLinks, baueZitat, margLabel } from '../helpers';
-import { zitatMitAusweis, heuteIso } from '../../../lib/format';
+import { zitatMitAusweis, heuteIso, fmtDatumLang } from '../../../lib/format';
 import { schaetzeArtikelHoehe } from '../berechnungen';
 import { setzeZeitraum, useLeitfallZeitraum } from '../leserOptionen';
 import { filtereLeitfaelleNachZeitraum, zeitraumLabel } from '../leitfallFilter';
@@ -227,6 +228,34 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // auf die bisherigen Block-Ende-Pfade zurück (§1: nie eine geratene Position).
   const fnInlineAbsatz: Record<number, Array<{ nr: string; o: number }>> = {};
   const fnInlineItem: Record<string, Array<{ nr: string; o: number }>> = {};
+  // W2·5i-HIST-ANSICHT: Fussnoten-Nr → build-seitige Klasse (`kl`). EINE Abbildung
+  // für alle Marker-Pfade (ArtikelBody-Prop) und den Apparat hier. Fehlt `kl`
+  // (Kanton-Sidecars, Extraktions-Fallback aus dem Wortlaut-Block), bleibt der
+  // Eintrag leer → kein data-fn-klasse → in JEDER Ansicht sichtbar (§8).
+  const fnKlasse: Record<string, string> = {};
+  for (const f of fussAnzeige) if (f.nr && f.kl) fnKlasse[f.nr] = f.kl;
+  // W2·5i: Chronologie-Reihung der ÄNDERUNGSVERMERKE dieses Artikels. Keine neue
+  // Datenquelle und kein neuer Parser — reiner Render über `fussAnzeige` (die
+  // Sidecar-Fussnoten, die sowieso schon geladen sind) mit dem BESTEHENDEN
+  // Datums-Extraktor aus dem Revisions-Extrakt (§5: das «in Kraft seit …»-Muster,
+  // das Datums-Fenster und der deutsche Monats-Parser leben genau dort, nicht hier).
+  //
+  // Deterministisch (§2): aufsteigend nach ISO-Datum; UNDATIERTE ans Ende; bei
+  // gleichem Datum (und unter den Undatierten) entscheidet die Fussnoten-Nummer —
+  // also nie die Eingabe-Reihenfolge, sondern eine total geordnete Relation. Kein
+  // `new Date`, kein Locale-Vergleich (ISO-Strings sind lexikografisch sortierbar).
+  const chronologie: Array<{ fn: Fussnote; iso: string | null }> = fussAnzeige
+    .filter((f) => f.kl === 'A')
+    .map((f) => ({ fn: f, iso: extrahiereFussnotenRevision(f.text ?? '')?.iso ?? null }))
+    .sort((a, b) => {
+      if (a.iso !== b.iso) {
+        if (a.iso == null) return 1;      // undatiert immer ans Ende
+        if (b.iso == null) return -1;
+        return a.iso < b.iso ? -1 : 1;
+      }
+      const ka = fnNrKey(a.fn.nr), kb = fnNrKey(b.fn.nr);
+      return ka[0] - kb[0] || ka[1].localeCompare(kb[1]);
+    });
   for (const f of fussAnzeige) {
     if (!f.nr) continue;
     if (f.sektion) { (fnProSektion[f.sektion] ??= []).push(f.nr); continue; }
@@ -283,9 +312,12 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // Artikelnummer (kein Abstand). Darum KEIN `ml-0.5` mehr und der Marker sitzt im
   // selben Inline-Kontext wie das «Art. N»-Label (unten in whitespace-nowrap
   // gewickelt), nicht als eigenes flex-Kind mit gap-x-2.
+  // W2·5i: `data-fn-klasse` sitzt am PER-NR-Wrapper, nicht (nur) am FnRef — sonst
+  // bliebe beim Ausblenden eines A-Markers dessen Trenn-Komma stehen. Der Wrapper
+  // trägt Komma UND Marker, verschwindet also als Ganzes.
   const fnMarker = artOffen && fnArtikelEbene.length > 0
     ? <span data-fn-marker>{fnArtikelEbene.map((nr, i) => (
-        <span key={nr}>{i > 0 && <span className="align-super text-[0.62em] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
+        <span key={nr} data-fn-klasse={fnKlasse[nr]}>{i > 0 && <span className="align-super text-[0.62em] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
       ))}</span>
     : null;
   // VERWEISE: im Artikel genannte, auflösbare (Bund-)Normverweise als Chips am
@@ -363,7 +395,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                       A31: Wort-Verbinder (U+2060) klebt den Marker DIREKT an die
                       Marginalie (kein Abstand, kein Umbruch auf eine eigene Zeile). */}
                   {artOffen && fnProSektion[m]?.map((nr, j) => (
-                    <span key={nr} data-fn-marker>{WJ}{j > 0 && <span className="align-super text-[0.62em] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
+                    <span key={nr} data-fn-marker data-fn-klasse={fnKlasse[nr]}>{WJ}{j > 0 && <span className="align-super text-[0.62em] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
                   ))}
                 </div>
               ))}
@@ -453,6 +485,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
             zitierKontext={{ artikelLabel: label, kuerzel: erlass.kuerzel, fassung: erlass.stand, permalinkBasis: `${basisPfad}#art-${e.artikel}` }}
             fnProAbsatz={fnProAbsatz} fnProItem={fnProItem}
             fnInlineAbsatz={fnInlineAbsatz} fnInlineItem={fnInlineItem}
+            fnKlasse={fnKlasse}
             intern={intern}
             className="space-y-3.5 font-serif text-body-l leading-[1.65] text-ink-800" />
           {/* VERWEISE: auflösbare Normverweise des Artikels als Chips (Referenz David). */}
@@ -485,7 +518,8 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           {fussAnzeige.length > 0 && (
             <div data-fn-apparat className="mt-3 border-t border-rule-artikel pt-2 space-y-1">
               {fussAnzeige.map((fn, i) => (
-                <p key={i} id={fn.nr ? `fn-${e.artikel}-${fn.nr}` : undefined} className="nt-anker text-xs leading-normal text-ink-500 target:bg-brass-100">
+                <p key={i} id={fn.nr ? `fn-${e.artikel}-${fn.nr}` : undefined} data-fn-klasse={fn.kl}
+                  className="nt-anker text-xs leading-normal text-ink-500 target:bg-brass-100">
                   {/* WCAG-AA (§13): Fussnoten-Nummer ist semantischer Text (kein aria-hidden),
                       darum ink-500 statt ink-300 — ink-300 ist ein Deko-Token (~2.3:1, axe serious).
                       ink-500 ≥4.8:1 hell / ≥5.2:1 dunkel auf allen Reader-Flächen, deckt den
@@ -496,6 +530,28 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                 </p>
               ))}
             </div>
+          )}
+          {/* W2·5i-HIST-ANSICHT: dieselben Änderungsvermerke, chronologisch geordnet.
+              Liegt IMMER im DOM (wie Apparat und Leitfall-Zeilen) und wird allein per
+              `data-histansicht`-CSS ein-/ausgeblendet: das Umschalten ist damit ein
+              reiner Attribut-Wechsel am <html> — kein React-Re-Render der Artikelliste
+              (§15) und kein Nachladen. Mengenmässig sind das die A-Fussnoten GENAU
+              DIESES Artikels (im Schnitt ~0.7 je Artikel), also keine relevante
+              DOM-Last; sichtbar ist zu jedem Zeitpunkt nur EINE der beiden Listen. */}
+          {chronologie.length > 0 && (
+            <ol data-hist-chrono className="mt-3 border-t border-rule-artikel pt-2 space-y-1">
+              {chronologie.map((fn, i) => (
+                <li key={i} className="text-xs leading-normal text-ink-500">
+                  {/* Das Datum ist der SORTIERSCHLÜSSEL — es sichtbar zu machen ist
+                      §8-Ehrlichkeit: der Leser sieht, wonach geordnet wurde, und dass
+                      undatierte Vermerke am Ende stehen (kein stilles Rateergebnis). */}
+                  <span className="num mr-1.5 tabular-nums text-ink-600">
+                    {fn.iso ? fmtDatumLang(fn.iso) : 'ohne Datum'}
+                  </span>
+                  {fnTextMitLinks(fn.fn)}
+                </li>
+              ))}
+            </ol>
           )}
         </div>
         )}
