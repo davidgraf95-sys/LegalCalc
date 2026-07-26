@@ -28,11 +28,14 @@ Snapshot nicht aus demselben Lauf stammen.
 
 | Klasse | n | pos? | Begründung |
 |---|--:|---|---|
-| Kopf-/Marginalien-Fussnoten (Artikelebene) | 8'861 | nein | Marker sitzt amtlich auf `<h6>`-Kopf — keine Textstelle |
+| Kopf-/Marginalien-Fussnoten (Artikelebene) | 8'848 | nein | Marker sitzt amtlich auf `<h6>`-Kopf — keine Textstelle |
 | Sektions-/Randtitel-Fussnoten (G11) | 1'582 | nein | Marker am Sektions-Kopf — keine Textstelle |
-| Block-verortete Marker **mit** Wortposition | **16'881** | **ja** | zeichengenau bewiesen (81.5 % der block-verorteten) |
+| Marker **mit** Wortposition (gesamt) | **16'894** | **ja** | 13'895 Absatz- + 2'999 Item-Positionen; alle 16'894 in der Gegenprüfung unabhängig gegen die gepinnten HTMLs nachgerechnet, 0 unerklärte Abweichungen |
 | Block-verortete ohne pos (Fallback) | 3'822 | nein | s. Ziff. 3 |
-| Item-Positionen (Teilmenge von «mit») | 2'999 | ja | Offset in `items[j].text` |
+
+Abdeckungs-Nenner ehrlich: von den block-verorteten Markern tragen **81.5 %**
+eine Wortposition; rechnet man die bewusst ausgenommenen `<dt>`-Marken-Fussnoten
+heraus, sind es **97.7 %** der text-verorteten Marker (Zählung Gegenprüfung).
 
 Differ-Beweis der Regeneration: alle 227 Sidecars unterscheiden sich von den
 Vorfassungen **nur** durch `erzeugt` + hinzugefügte `pos`-Felder (Skript-Lauf
@@ -58,8 +61,21 @@ Deterministische Stichprobe (jede 80. pos-Fussnote, n=212) gegen den gepinnten
 Cache: Wort unmittelbar vor dem Marker im HTML ↔ Wort am Offset im Snapshot.
 176 direkt bestätigt, 29 nicht auswertbar (Regex-Grenzen der Probe, nicht der
 Pipeline), 7 Auffälligkeiten einzeln aufgeklärt (alle = Klasse Ziff. 3.3 bzw.
-Artefakte der Proben-Regex; kein Positionsfehler). Unabhängige Re-Derivation:
-adversariale Gegenprüfung (eigener Agent, frischer Kontext, anderes Modell).
+Artefakte der Proben-Regex; kein Positionsfehler).
+
+**Adversariale Gegenprüfung (Opus, frischer Kontext, 26.7.2026):** 14 unabhängige
+Re-Derivationen (Wort aus dem HTML notiert VOR dem Vergleich) — 14/14 korrekt;
+korpusweite Kreuzprüfung aller 16'894 pos — 0 unerklärte Abweichungen; Off-by-one/
+falscher Block/Sidecar-Drift/o==l-Klassen alle widerlegt. **Runde 1: `widerlegt`
+wegen Befund B1** (Reader verlor Marker, deren pos auf einen Bild-/Titel-Block
+zeigt — DBG 22 fn57, STHG 7 fn27; Early-Return im Renderer) → gefixt via
+Routing-Riegel im ArtikelLeser (pos verwerfen ⇒ bewährter absatz-/item-Fallback),
+Wächter im e2e. B2 (JSX-Reihenfolge-Kopplung) als Invarianten-Kommentar verankert;
+B3 (Zahlen) hier korrigiert. **B4 (vorbestehend, NICHT FN-5):** zwei
+Quell-/Snapshot-Artefakte im amtlichen HTML selbst — ARGV5 Art. 22 («…Mai 20006…»,
+verirrte «6» auch auf Fedlex) und VSTV Art. 58 («Anteilsan», fehlendes Leerzeichen
+im amtlichen HTML); pos jeweils quelltreu. Kosmetik-Einzelfall: VZV Art. 3 fn23
+(o=0, Marker amtlich als erstes Element im `<dd>`).
 
 ## 5 · Pflegebedarf
 

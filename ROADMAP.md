@@ -714,7 +714,7 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
     SIDECAR-Variante nach M14-Spec (`FAHRPLAN-NORMTEXT-DARSTELLUNG.md` §M14) statt
     Haupt-Snapshot-Diff: Snapshots byte-unverändert (§7-Abweichung von der hier
     früher angenommenen Snapshot-Diff-Mechanik offengelegt). `pos{b,it,o,l}` je
-    Marker im Struktur-Sidecar, 16'881 Marker wortgenau (81.5 % der block-verorteten;
+    Marker im Struktur-Sidecar, 16'894 Marker wortgenau (97.7 % der text-verorteten;
     `<dt>`-Marken/Kopf/Sektion ausgewiesen ohne Textstelle), Differ-Beweis nur
     erzeugt+pos, Gegenprüfung, Wächter `e2e/fn5-wortposition.e2e.ts` + Unit-Negativfälle.
     Dossier `bibliothek/normen/fn5-wortgenaue-marker-2026-07-26.md`; Bau-Auftrags-

@@ -233,7 +233,16 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
     const p = f.pos;
     if (p != null && p.b >= 0 && p.b < e.bloecke.length) {
       const blk = e.bloecke[p.b];
-      if (p.it != null) {
+      // B1-Riegel (Gegenprüfungs-Befund 26.7.): Bild-/Kachel-/Titel-Blöcke
+      // rendert ArtikelBody per Early-Return OHNE Marker-Slots — eine pos auf
+      // so einen Block würde den Marker ersatzlos verschlucken (DBG 22 fn57,
+      // STHG 7 fn27: <dl> hängt an einem Formelbild-Block). Dann NICHT inline
+      // routen, sondern unten den bewährten absatz-/item-Fallback nehmen.
+      const bb = blk as { bild?: unknown; bildKacheln?: unknown; titel?: unknown };
+      const blockRendertMarker = bb.bild == null && bb.bildKacheln == null && bb.titel == null;
+      if (!blockRendertMarker) {
+        // pos verwerfen → Legacy-Routing unten (Marker am sichtbaren Block).
+      } else if (p.it != null) {
         const its = blk.items ?? [];
         const zt = p.it >= 0 && p.it < its.length ? its[p.it].text : null;
         if (zt != null && p.l === zt.length && p.o >= 0 && p.o <= zt.length) {

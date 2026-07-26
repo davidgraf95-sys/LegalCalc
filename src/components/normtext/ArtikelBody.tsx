@@ -533,6 +533,10 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
         // Der Text-Pfad unten setzt platzierbare Marker inline und trägt sie in
         // `inlineGesetzt` ein; nicht platzierte Kandidaten (Tarif-/Staffel-Pfad,
         // Offset im abgetrennten Historie-Teil) rendern wie bisher am Absatz-Ende.
+        // INVARIANTE (Gegenprüfung 26.7., B2): der Text-Pfad muss VOR dem
+        // End-Marker-Fragment ausgewertet werden (JSX-Kinder in Quelltext-
+        // Reihenfolge) — sonst rendern inline gesetzte Marker doppelt. Bei
+        // einer Umsortierung der Kinder diese Kopplung zuerst auflösen.
         const inlineKandidaten = zk ? (fnInlineAbsatz?.[i] ?? []) : [];
         const inlineGesetzt = new Set<string>();
         // Segment-Splitter: Text an den Marker-Offsets teilen, jedes Segment durch
