@@ -79,6 +79,23 @@ verirrte «6» auch auf Fedlex) und VSTV Art. 58 («Anteilsan», fehlendes Leerz
 im amtlichen HTML); pos jeweils quelltreu. Kosmetik-Einzelfall: VZV Art. 3 fn23
 (o=0, Marker amtlich als erstes Element im `<dd>`).
 
+**Nachtrag 26.7.2026 (PR #372, S8-Korrektur am B1-Riegel):** Der dem B1-Fix
+zugrunde liegende Render-Defekt (Bild-Blöcke verschluckten ihre `items`) ist in
+PR #372 behoben — Bild-/Kachel-Blöcke rendern items über den geteilten Item-Pfad
+(`itemListe` in ArtikelBody, inkl. fnInlineItem-/fnProItem-Slots). Der Riegel ist
+darum **nach Slot getrennt gelockert**: pos mit `it` auf Bild-Blöcken routet
+wieder wortgenau inline (DBG 22 fn57 → Rendite-Item Block 4, STHG 7 fn27 analog —
+das Legacy-Fallback legte fn57 via `absatz='3'` ans Ende des Abs.-3-Fliesstexts,
+zwei Blöcke über der Zielstelle: richtiger Absatz, unpräzise Stelle, kein
+Verlust); Absatz-Text-pos auf Bild-Blöcken und titel-Blöcke bleiben verworfen.
+Wächter erweitert: `e2e/bild-block-items.e2e.ts` (Item-Sichtbarkeit + fn57/fn27
+genau einmal im Rendite-Item). **Zitier-Marken auf Bild-Block-Items unterdrückt**
+(Gegenprüfung Befund 3): die lit.-/Abs.-Kette dieser Fortsetzungs-Items liegt in
+anderen Blöcken; das lokal gebaute Zitat wäre falsch (beide «Ziff. 2» ergäben
+identisch «Art. 22 Ziff. 2 DBG»). §1: keine Kopier-Marke statt einer falschen,
+bis blockübergreifende Kette + `tiefe`-Extraktion stehen (korpus-werkstatt;
+Extraktions-Lücke: `tiefe` fehlt bei Fortsetzungs-Ziffern, Befund 6).
+
 ## 5 · Pflegebedarf
 
 - Regeneration der Sidecars (`npm run normtext:struktur`) berechnet `pos` bei

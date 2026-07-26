@@ -257,18 +257,26 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
     const p = f.pos;
     if (p != null && p.b >= 0 && p.b < e.bloecke.length) {
       const blk = e.bloecke[p.b];
-      // B1-Riegel (Gegenprüfungs-Befund 26.7.): Bild-/Kachel-/Titel-Blöcke
-      // rendert ArtikelBody per Early-Return OHNE Marker-Slots — eine pos auf
-      // so einen Block würde den Marker ersatzlos verschlucken (DBG 22 fn57,
-      // STHG 7 fn27: <dl> hängt an einem Formelbild-Block). Dann NICHT inline
-      // routen, sondern unten den bewährten absatz-/item-Fallback nehmen.
-      // Spiegelbildlich zu den Early-Return-Bedingungen in ArtikelBody
-      // (`b.titel !== undefined`, `bb.bildKacheln && length>0`, `bb.bild`) —
-      // Gegenprüfung R2: `titel == null` liesse ein `titel: null` durch,
-      // das ArtikelBody trotzdem früh zurückgibt.
+      // B1-Riegel (Gegenprüfungs-Befund 26.7.): eine pos darf nur inline
+      // routen, wenn ArtikelBody für die Zielstelle wirklich einen Marker-Slot
+      // rendert — sonst wird der Marker ersatzlos verschluckt. Spiegelbildlich
+      // zu ArtikelBody, seit PR #372 (Bild-Blöcke rendern ihre items über die
+      // geteilte itemListe) nach Slot getrennt:
+      // - titel-Block (`titel !== undefined`; Gegenprüfung R2: `== null`
+      //   liesse `titel: null` durch): rendert weder Text noch items → JEDE
+      //   pos verwerfen, Legacy-Fallback unten.
+      // - Bild-/Kachel-Block: Item-Slot existiert (itemListe), Text-<p>
+      //   weiterhin nicht → Item-pos inline erlaubt (DBG 22 fn57, STHG 7
+      //   fn27: <dl> am Formelbild), Absatz-pos verwerfen.
+      // - Prosa-Block: beide Slots wie bisher.
       const bb = blk as { bild?: unknown; bildKacheln?: unknown[]; titel?: unknown };
-      const blockRendertMarker = !bb.bild && !(bb.bildKacheln && bb.bildKacheln.length > 0) && bb.titel === undefined;
-      if (!blockRendertMarker) {
+      const istTitel = bb.titel !== undefined;
+      const istBild = Boolean(bb.bild) || Boolean(bb.bildKacheln && bb.bildKacheln.length > 0);
+      const itemSlotDa = !istTitel;
+      const textSlotDa = !istTitel && !istBild;
+      if (p.it != null && !itemSlotDa) {
+        // pos verwerfen → Legacy-Routing unten (Marker am sichtbaren Block).
+      } else if (p.it == null && !textSlotDa) {
         // pos verwerfen → Legacy-Routing unten (Marker am sichtbaren Block).
       } else if (p.it != null) {
         const its = blk.items ?? [];

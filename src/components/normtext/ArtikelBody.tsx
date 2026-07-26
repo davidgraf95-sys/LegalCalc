@@ -480,6 +480,196 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
     ? { fassung: zk.fassung, permalinkBasis: zk.permalinkBasis }
     : undefined;
 
+  // FN-5: Segment-Splitter — Text an den Marker-Offsets teilen, jedes Segment
+  // durch die bestehende Anzeige-Pipeline (`renderSeg`), Marker per Wort-
+  // Verbinder (WJ) ans vorausgehende Segment geklebt — wie die End-Marker (A31).
+  // Komponenten-Ebene, weil Absatz-Pfad UND Item-Pfad (itemListe) ihn teilen.
+  const segmentiert = (
+    text: string,
+    marker: Array<{ nr: string; o: number }>,
+    renderSeg: (s: string) => React.ReactNode,
+  ): React.ReactNode => {
+    const sortiert = [...marker].sort((a, b2) => a.o - b2.o);
+    const teile: React.ReactNode[] = [];
+    let von = 0;
+    sortiert.forEach((p, k) => {
+      if (p.o > von) teile.push(<React.Fragment key={`s${k}`}>{renderSeg(text.slice(von, p.o))}</React.Fragment>);
+      // W2·5i H1: kl-Klassifikation an den Marker durchreichen (wie End-Marker).
+      teile.push(<React.Fragment key={`f${p.nr}`}>{WJ}<FnRef artikel={artikel} nr={p.nr} kl={fnKlasse?.[p.nr]} /></React.Fragment>);
+      von = p.o;
+    });
+    if (von < text.length) teile.push(<React.Fragment key="rest">{renderSeg(text.slice(von))}</React.Fragment>);
+    return <>{teile}</>;
+  };
+
+  // Geteilter Item-Renderpfad (lit./Ziff.-Aufzählung eines Blocks) — EINE Stelle
+  // für Prosa- UND Bild-Blöcke (§5). Bild-/Kachel-Blöcke können im Datenformat
+  // ebenfalls `items` tragen (DBG Art. 22 / STHG Art. 7: die <dl> hängt am
+  // Formelbild-Block); der frühere Early-Return verschluckte sie — amtliche
+  // Substanz fehlte im Reader (§1/§8, FN-5-Gegenprüfung 26.7.2026). Liefert
+  // null, wenn der Block keine items trägt.
+  // `ohneZitierMarke` (Gegenprüfung 26.7., Befund 3): Items an absatz-losen
+  // Bild-Blöcken sind Fortsetzungen des Vorgänger-Absatzes — ihre lit.-/Abs.-
+  // Kette liegt in ANDEREN Blöcken. Das lokal gebaute Zitat wäre falsch
+  // (DBG 22: beide «Ziff. 2» ergäben identisch «Art. 22 Ziff. 2 DBG», eine
+  // Fundstelle, die es amtlich nicht gibt). §1: lieber keine Kopier-Marke als
+  // eine falsche — bis die blockübergreifende Kette samt `tiefe`-Extraktion
+  // steht (korpus-werkstatt).
+  const itemListe = (b: NormSnapshot['bloecke'][number], i: number, absMarke: string | null, ohneZitierMarke = false) => {
+    if (b.items == null || b.items.length === 0) return null;
+    // M6: erklärt dieser Absatz die Bestimmungen eines Fremdgesetzes für
+    // anwendbar, zitieren seine Items bloße Fremd-Artikel → bare-Ref-Linking
+    // dort unterdrücken (kein falscher Self-Link, §1). `pruefeBlock`-Kontext = b.text.
+    // M6-D (W2·5b): steht das Zielgesetz des Chapeaus DETERMINISTISCH fest
+    // (chapeauZielFremdgesetz), werden die bare Item-Verweise TATSÄCHLICH auf
+    // jenes Fremdgesetz aufgelöst (NormChip → In-Reader-Popover/Fedlex) statt nur
+    // unterdrückt. Ist das Ziel mehrdeutig/unbekannt, bleibt es bei der reinen
+    // M6-Unterdrückung (verlinktFremd, kein Self-Link) — §1: lieber kein Link.
+    const fremdKey = autolink ? chapeauZielFremdgesetz(b.text, zk?.kuerzel) : null;
+    const fremdItems = autolink && etabliertFremdgesetz(b.text, zk?.kuerzel);
+    const fremdIntern: InternRefs | undefined = fremdKey
+      ? { tokenMap: FREMD_LEER, basisPfad: '', springeZu: NOOP, fremdKuerzel: fremdKey }
+      : undefined;
+    const verlinkeItem = (s: string) =>
+      fremdKey
+        ? <NormText text={glaetteInterpunktion(s)} intern={fremdIntern} />
+        : fremdItems ? verlinktFremd(s) : verlinkt(s);
+    // Verschachtelungsstufe je Item bestimmen. PRIMÄR aus der EXPLIZITEN
+    // `tiefe` des Snapshots (M6, §1): liefert Fedlex die Stufe mit, wird
+    // sie NICHT mehr aus dem Markentyp geraten — das Raten erzeugte
+    // falsche Zitate, wenn die Reihenfolge umgekehrt ist (Ziff. → lit.
+    // statt lit. → Ziff.). FALLBACK-Heuristik nur für Daten OHNE tiefe
+    // (Kanton-Snapshots, noch nicht re-segnete Bund-Erlasse): Bst (a,b,c)
+    // = Stufe 0; Ziff (1,2,3) NACH einem Bst = Stufe 1, sonst 0;
+    // Gedankenstrich = eine Stufe tiefer als das vorausgehende Item.
+    const hatTiefe = b.items!.some((it) => typeof it.tiefe === 'number');
+    const typ = (m: string) => /^[–—-]$/.test(m.trim()) ? 'strich' : /^\d/.test(m.trim()) ? 'ziff' : 'lit';
+    const stufen: number[] = [];
+    if (hatTiefe) {
+      for (const it of b.items!) stufen.push(it.tiefe ?? 0);
+    } else {
+      let sahLit = false, letzteNichtStrich = 0;
+      for (const it of b.items!) {
+        const t = typ(it.marke);
+        let lv: number;
+        if (t === 'strich') lv = letzteNichtStrich + 1;
+        else if (t === 'ziff') { lv = sahLit ? 1 : 0; letzteNichtStrich = lv; }
+        else { lv = 0; sahLit = true; letzteNichtStrich = 0; }
+        stufen.push(lv);
+      }
+    }
+    return (
+      <ul className={`mt-1.5 space-y-1 ${zk ? 'pl-8' : 'pl-1'}`}>
+        {b.items!.map((it, j) => {
+          // GENAU der eine global bestimmte (Block,Item)-Treffer (B1):
+          // bei gleicher Marke in mehreren Blöcken nur der erste.
+          const istItemZitiert = zielItemKey != null
+            && zielItemKey.bi === i
+            && zielItemKey.ji === j;
+          // Gedankenstrich: ohne Punkt («–» statt «–.»).
+          const istStrich = /^[–—-]$/.test(it.marke.trim());
+          // FN-5: im Text-Pfad inline gesetzte Marker dieses Items —
+          // erscheinen nicht mehr zusätzlich am Item-Ende.
+          // INVARIANTE (wie im Absatz-Pfad, Gegenprüfung 26.7., B2/B5): der
+          // Item-Text-Pfad unten muss VOR dem End-Marker-Fragment ausgewertet
+          // werden (JSX-Kinder in Quelltext-Reihenfolge) — sonst rendern
+          // inline gesetzte Marker doppelt. Bei einer Umsortierung der
+          // <span>-Kinder diese Kopplung zuerst auflösen.
+          const itemInlineGesetzt = new Set<string>();
+          const markeAnzeige = istStrich ? '–' : `${it.marke}.`;
+          // Präzises Zitat inkl. Verschachtelung: eine Ziff. unter einer
+          // Bst. wird «… lit. X Ziff. Y …». Eltern-Kette über die Stufen
+          // rückwärts aufbauen (nächster Vorfahre je flacherer Stufe).
+          const itemZitat = zk ? (() => {
+            const seg: string[] = [];
+            let lvl = stufen[j];
+            for (let k = j; k >= 0 && lvl >= 0; k--) {
+              if (stufen[k] === lvl && !/^[–—-]$/.test(b.items![k].marke.trim())) {
+                const m2 = b.items![k].marke;
+                seg.unshift(`${litZiff(m2)} ${m2}`);
+                lvl--;
+              }
+            }
+            // Dieselbe normalisierte Absatzmarke wie das Absatz-Zitat
+            // (absMarke aus absatzMarke/normalisiereAbsatzNummer) statt des
+            // rohen b.absatz — sonst weichen die zwei Zitierknöpfe desselben
+            // Absatzes bei Suffixen/Ziff.-Resten voneinander ab.
+            return `${zk.artikelLabel}${absMarke != null ? ` Abs. ${absMarke}` : ''} ${seg.join(' ')} ${zk.kuerzel}`;
+          })() : '';
+          return (
+            <li
+              key={j}
+              ref={istItemZitiert ? (passusRef as React.Ref<HTMLLIElement>) : undefined}
+              {...(istItemZitiert ? { 'data-passus-item': 'true' } : {})}
+              style={stufen[j] > 0 ? { marginLeft: `${stufen[j] * (zk ? 1.6 : 1.1)}rem` } : undefined}
+              className={`flex items-baseline gap-2 rounded-md px-2 py-1 ${zk ? 'transition hover:-translate-y-0.5 hover:bg-brass-200/60' : ''} ${
+                istItemZitiert
+                  ? 'border-l-4 border-brass-500 bg-brass-100 text-ink-900'
+                  : 'text-ink-700'
+              }`}
+            >
+              {istStrich
+                ? <span className="shrink-0 select-none text-ink-500">{markeAnzeige}</span>
+                : zk && !ohneZitierMarke
+                  ? <ZitierMarke klasse="shrink-0 w-6 text-right !font-medium !text-ink-500 text-body-s" zitat={itemZitat} ausweis={ausweisBasis}>{markeAnzeige}</ZitierMarke>
+                  : zk
+                    ? <span className="num shrink-0 w-6 text-right font-medium text-ink-500 text-body-s">{markeAnzeige}</span>
+                    : <span className="num shrink-0 font-semibold text-ink-500">{markeAnzeige}</span>}
+              <span className="min-w-0 [overflow-wrap:anywhere] hyphens-manual">
+                {/* S13 (BS-Audit 23.6.2026): lange Komposita in Aufzählungen
+                    sprengten auf schmalem Viewport (~390px) den Reader (≈25px
+                    H-Overflow im Steuergesetz). min-w-0 lässt das Text-Span im
+                    flex-Item schrumpfen, overflow-wrap/hyphens brechen das
+                    Kompositum statt es überlaufen zu lassen. Reine Darstellung (§3). */}
+                {/* S3 (BS-Audit 23.6.2026): aufgehobene lit. werden mit Marke
+                    und LEEREM Text gespeichert (kein fabrizierter «Aufgehoben.»-
+                    Text, §7). Leeren Item-Text wie eine Aufhebung gedämpft
+                    zeigen — die Marke bleibt links sichtbar (Lücke geschlossen). */}
+                {it.text.trim() === '' || istAufgehoben(it.text)
+                  ? <span className="italic text-ink-500">aufgehoben</span>
+                  : (() => {
+                      // Tarif-Staffel auch in Items als Tabelle (viele
+                      // Notariats-/Grundbuchtarife stehen als lit./Ziff.).
+                      // NUR wenn staffelZeilen matcht → Nicht-Tarif-Items
+                      // bleiben byte-gleich (golden, §6).
+                      const sz = staffelZeilen(it.text);
+                      // Geld-Kontext-Tausender auch in Items (§3, FIX 2 — 22.6.2026).
+                      // M6: in Fremdgesetz-Chapeau-Items ohne bare-Self-Link (verlinkeItem).
+                      if (!sz) {
+                        // FN-5/M14: Marker an der Wortstelle im Item-Text —
+                        // Offsets beziehen sich direkt auf it.text (kein
+                        // Marken-Delta); Segmentierung wie im Absatz-Pfad.
+                        const kand = zk ? (fnInlineItem?.[`${i}|${j}`] ?? []) : [];
+                        const platzierbar = kand.filter((k) => k.o >= 0 && k.o <= it.text.length);
+                        if (platzierbar.length > 0) {
+                          for (const p of platzierbar) itemInlineGesetzt.add(p.nr);
+                          return segmentiert(it.text, platzierbar, (s) => verlinkeItem(gruppiereBetraege(s)));
+                        }
+                        return verlinkeItem(gruppiereBetraege(it.text));
+                      }
+                      return <StaffelTabelle zeilen={staffelZeilen(normalisiereTarifText(it.text)) ?? sz} />;
+                    })()}
+                {/* Fussnoten-Marker dieses lit/Ziff-Items (klickbar → Fuss).
+                    A31: Marker klebt via WJ direkt an den Item-Text (kein
+                    Abstand, kein Umbruch auf eine eigene Zeile). FN-5:
+                    inline gesetzte Marker erscheinen hier nicht mehr;
+                    nicht platzierbare Kandidaten fallen hierher zurück. */}
+                {zk && (() => {
+                  const kand = fnInlineItem?.[`${i}|${j}`] ?? [];
+                  const rest = kand.filter((k) => !itemInlineGesetzt.has(k.nr)).map((k) => k.nr);
+                  const alle = [...rest, ...(fnProItem?.[`${i}|${it.marke}`] ?? [])].sort(vglFnNr);
+                  return alle.map((nr) => (
+                    <React.Fragment key={nr}>{WJ}<FnRef artikel={artikel} nr={nr} kl={fnKlasse?.[nr]} /></React.Fragment>
+                  ));
+                })()}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    );
+  };
+
   return (
     <div data-lese={zitierKontext ? '' : undefined}
       className={className ?? 'px-5 py-4 space-y-2.5'}>
@@ -500,22 +690,35 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
           );
         }
         // Bild-/Kachel-Blöcke (neu im Datenformat): eigenständige Abbildung, Formel
-        // oder Signaltafel-Katalog — kein Absatz/Item, keine Zitat-/Tabellen-Logik.
-        // Wie der titel-Block per Early-Return; in der Lesesicht (zk) an die
-        // Prosa-Kante eingerückt (pl-9), das Popover bleibt bündig. Additiv/golden-
-        // neutral, da bestehende Blöcke die Felder nie tragen (§3 reine Darstellung).
+        // oder Signaltafel-Katalog — kein Absatz, keine Zitat-/Tabellen-Logik.
+        // In der Lesesicht (zk) an die Prosa-Kante eingerückt (pl-9), das Popover
+        // bleibt bündig (§3 reine Darstellung). Trägt der Block zusätzlich `items`
+        // (DBG Art. 22 / STHG Art. 7: <dl> am Formelbild), rendern sie NACH dem
+        // Bild über den geteilten Item-Pfad — der frühere Early-Return verschluckte
+        // sie (amtliche Substanz fehlte im Reader, §1/§8; Fix 26.7.2026).
         const bb = b as BildBlock;
-        if (bb.bildKacheln && bb.bildKacheln.length > 0) {
+        if ((bb.bildKacheln && bb.bildKacheln.length > 0) || bb.bild) {
+          const figur = bb.bildKacheln && bb.bildKacheln.length > 0
+            ? <BildKacheln kacheln={bb.bildKacheln} />
+            : <BildFigur bild={bb.bild!} />;
+          // Zitier-Marke nur unterdrücken, wenn der Bild-Block wirklich
+          // absatz-los ist (Bedingung spiegelt die Begründung — Gegenprüfung
+          // 26.7., Hinweis zu B3): ein künftiger Bild-Block MIT eigener
+          // Absatznummer trüge ein korrektes «Abs.»-Zitat und behält die Marke.
+          const bildAbsMarke = absatzMarke(b.absatz, b.text).marke;
+          const items = itemListe(b, i, bildAbsMarke, bildAbsMarke == null);
+          // Itemloser Bild-Block: Markup exakt wie bisher (DOM-identisch).
+          if (items == null) {
+            return (
+              <div key={i} className={zk ? 'pl-9 [text-indent:0]' : undefined}>
+                {figur}
+              </div>
+            );
+          }
           return (
-            <div key={i} className={zk ? 'pl-9 [text-indent:0]' : undefined}>
-              <BildKacheln kacheln={bb.bildKacheln} />
-            </div>
-          );
-        }
-        if (bb.bild) {
-          return (
-            <div key={i} className={zk ? 'pl-9 [text-indent:0]' : undefined}>
-              <BildFigur bild={bb.bild} />
+            <div key={i}>
+              <div className={zk ? 'pl-9 [text-indent:0]' : undefined}>{figur}</div>
+              {items}
             </div>
           );
         }
@@ -527,23 +730,6 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
         const blockDezent = istAbsatzZitiert && passusMarke != null;
         // Absatznummern mit lat. Suffix («1bis», «2ter») hängend darstellen (§3).
         const { marke: absMarke, rest: rohtext } = absatzMarke(b.absatz, b.text);
-        // M6: erklärt dieser Absatz die Bestimmungen eines Fremdgesetzes für
-        // anwendbar, zitieren seine Items bloße Fremd-Artikel → bare-Ref-Linking
-        // dort unterdrücken (kein falscher Self-Link, §1). `pruefeBlock`-Kontext = b.text.
-        // M6-D (W2·5b): steht das Zielgesetz des Chapeaus DETERMINISTISCH fest
-        // (chapeauZielFremdgesetz), werden die bare Item-Verweise TATSÄCHLICH auf
-        // jenes Fremdgesetz aufgelöst (NormChip → In-Reader-Popover/Fedlex) statt nur
-        // unterdrückt. Ist das Ziel mehrdeutig/unbekannt, bleibt es bei der reinen
-        // M6-Unterdrückung (verlinktFremd, kein Self-Link) — §1: lieber kein Link.
-        const fremdKey = autolink ? chapeauZielFremdgesetz(b.text, zk?.kuerzel) : null;
-        const fremdItems = autolink && etabliertFremdgesetz(b.text, zk?.kuerzel);
-        const fremdIntern: InternRefs | undefined = fremdKey
-          ? { tokenMap: FREMD_LEER, basisPfad: '', springeZu: NOOP, fremdKuerzel: fremdKey }
-          : undefined;
-        const verlinkeItem = (s: string) =>
-          fremdKey
-            ? <NormText text={glaetteInterpunktion(s)} intern={fremdIntern} />
-            : fremdItems ? verlinktFremd(s) : verlinkt(s);
         // FN-5/M14: wortgenau positionierbare Marker dieses Blocks (nur Lesesicht).
         // Der Text-Pfad unten setzt platzierbare Marker inline und trägt sie in
         // `inlineGesetzt` ein; nicht platzierte Kandidaten (Tarif-/Staffel-Pfad,
@@ -554,25 +740,6 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
         // einer Umsortierung der Kinder diese Kopplung zuerst auflösen.
         const inlineKandidaten = zk ? (fnInlineAbsatz?.[i] ?? []) : [];
         const inlineGesetzt = new Set<string>();
-        // Segment-Splitter: Text an den Marker-Offsets teilen, jedes Segment durch
-        // die bestehende Anzeige-Pipeline (`renderSeg`), Marker per Wort-Verbinder
-        // (WJ) ans vorausgehende Segment geklebt — wie die End-Marker (A31).
-        const segmentiert = (
-          text: string,
-          marker: Array<{ nr: string; o: number }>,
-          renderSeg: (s: string) => React.ReactNode,
-        ): React.ReactNode => {
-          const sortiert = [...marker].sort((a, b2) => a.o - b2.o);
-          const teile: React.ReactNode[] = [];
-          let von = 0;
-          sortiert.forEach((p, k) => {
-            if (p.o > von) teile.push(<React.Fragment key={`s${k}`}>{renderSeg(text.slice(von, p.o))}</React.Fragment>);
-            teile.push(<React.Fragment key={`f${p.nr}`}>{WJ}<FnRef artikel={artikel} nr={p.nr} kl={fnKlasse?.[p.nr]} /></React.Fragment>);
-            von = p.o;
-          });
-          if (von < text.length) teile.push(<React.Fragment key="rest">{renderSeg(text.slice(von))}</React.Fragment>);
-          return <>{teile}</>;
-        };
         return (
           <div
             key={i}
@@ -677,136 +844,10 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
             </p>
             {/* Aufzählungs-Items (lit. bei Bund, Ziff. bei Kanton). EINHEITLICH:
                 identisches Markup/Styling, nur die Marke unterscheidet sich
-                (Daten). Das zitierte Item wird stark hervorgehoben. */}
-            {b.items != null && b.items.length > 0 && (() => {
-              // Verschachtelungsstufe je Item bestimmen. PRIMÄR aus der EXPLIZITEN
-              // `tiefe` des Snapshots (M6, §1): liefert Fedlex die Stufe mit, wird
-              // sie NICHT mehr aus dem Markentyp geraten — das Raten erzeugte
-              // falsche Zitate, wenn die Reihenfolge umgekehrt ist (Ziff. → lit.
-              // statt lit. → Ziff.). FALLBACK-Heuristik nur für Daten OHNE tiefe
-              // (Kanton-Snapshots, noch nicht re-segnete Bund-Erlasse): Bst (a,b,c)
-              // = Stufe 0; Ziff (1,2,3) NACH einem Bst = Stufe 1, sonst 0;
-              // Gedankenstrich = eine Stufe tiefer als das vorausgehende Item.
-              const hatTiefe = b.items!.some((it) => typeof it.tiefe === 'number');
-              const typ = (m: string) => /^[–—-]$/.test(m.trim()) ? 'strich' : /^\d/.test(m.trim()) ? 'ziff' : 'lit';
-              const stufen: number[] = [];
-              if (hatTiefe) {
-                for (const it of b.items!) stufen.push(it.tiefe ?? 0);
-              } else {
-                let sahLit = false, letzteNichtStrich = 0;
-                for (const it of b.items!) {
-                  const t = typ(it.marke);
-                  let lv: number;
-                  if (t === 'strich') lv = letzteNichtStrich + 1;
-                  else if (t === 'ziff') { lv = sahLit ? 1 : 0; letzteNichtStrich = lv; }
-                  else { lv = 0; sahLit = true; letzteNichtStrich = 0; }
-                  stufen.push(lv);
-                }
-              }
-              return (
-              <ul className={`mt-1.5 space-y-1 ${zk ? 'pl-8' : 'pl-1'}`}>
-                {b.items!.map((it, j) => {
-                  // GENAU der eine global bestimmte (Block,Item)-Treffer (B1):
-                  // bei gleicher Marke in mehreren Blöcken nur der erste.
-                  const istItemZitiert = zielItemKey != null
-                    && zielItemKey.bi === i
-                    && zielItemKey.ji === j;
-                  // Gedankenstrich: ohne Punkt («–» statt «–.»).
-                  const istStrich = /^[–—-]$/.test(it.marke.trim());
-                  // FN-5: im Text-Pfad inline gesetzte Marker dieses Items —
-                  // erscheinen nicht mehr zusätzlich am Item-Ende.
-                  const itemInlineGesetzt = new Set<string>();
-                  const markeAnzeige = istStrich ? '–' : `${it.marke}.`;
-                  // Präzises Zitat inkl. Verschachtelung: eine Ziff. unter einer
-                  // Bst. wird «… lit. X Ziff. Y …». Eltern-Kette über die Stufen
-                  // rückwärts aufbauen (nächster Vorfahre je flacherer Stufe).
-                  const itemZitat = zk ? (() => {
-                    const seg: string[] = [];
-                    let lvl = stufen[j];
-                    for (let k = j; k >= 0 && lvl >= 0; k--) {
-                      if (stufen[k] === lvl && !/^[–—-]$/.test(b.items![k].marke.trim())) {
-                        const m2 = b.items![k].marke;
-                        seg.unshift(`${litZiff(m2)} ${m2}`);
-                        lvl--;
-                      }
-                    }
-                    // Dieselbe normalisierte Absatzmarke wie das Absatz-Zitat
-                    // (absMarke aus absatzMarke/normalisiereAbsatzNummer) statt des
-                    // rohen b.absatz — sonst weichen die zwei Zitierknöpfe desselben
-                    // Absatzes bei Suffixen/Ziff.-Resten voneinander ab.
-                    return `${zk.artikelLabel}${absMarke != null ? ` Abs. ${absMarke}` : ''} ${seg.join(' ')} ${zk.kuerzel}`;
-                  })() : '';
-                  return (
-                    <li
-                      key={j}
-                      ref={istItemZitiert ? (passusRef as React.Ref<HTMLLIElement>) : undefined}
-                      {...(istItemZitiert ? { 'data-passus-item': 'true' } : {})}
-                      style={stufen[j] > 0 ? { marginLeft: `${stufen[j] * (zk ? 1.6 : 1.1)}rem` } : undefined}
-                      className={`flex items-baseline gap-2 rounded-md px-2 py-1 ${zk ? 'transition hover:-translate-y-0.5 hover:bg-brass-200/60' : ''} ${
-                        istItemZitiert
-                          ? 'border-l-4 border-brass-500 bg-brass-100 text-ink-900'
-                          : 'text-ink-700'
-                      }`}
-                    >
-                      {istStrich
-                        ? <span className="shrink-0 select-none text-ink-500">{markeAnzeige}</span>
-                        : zk
-                          ? <ZitierMarke klasse="shrink-0 w-6 text-right !font-medium !text-ink-500 text-body-s" zitat={itemZitat} ausweis={ausweisBasis}>{markeAnzeige}</ZitierMarke>
-                          : <span className="num shrink-0 font-semibold text-ink-500">{markeAnzeige}</span>}
-                      <span className="min-w-0 [overflow-wrap:anywhere] hyphens-manual">
-                        {/* S13 (BS-Audit 23.6.2026): lange Komposita in Aufzählungen
-                            sprengten auf schmalem Viewport (~390px) den Reader (≈25px
-                            H-Overflow im Steuergesetz). min-w-0 lässt das Text-Span im
-                            flex-Item schrumpfen, overflow-wrap/hyphens brechen das
-                            Kompositum statt es überlaufen zu lassen. Reine Darstellung (§3). */}
-                        {/* S3 (BS-Audit 23.6.2026): aufgehobene lit. werden mit Marke
-                            und LEEREM Text gespeichert (kein fabrizierter «Aufgehoben.»-
-                            Text, §7). Leeren Item-Text wie eine Aufhebung gedämpft
-                            zeigen — die Marke bleibt links sichtbar (Lücke geschlossen). */}
-                        {it.text.trim() === '' || istAufgehoben(it.text)
-                          ? <span className="italic text-ink-500">aufgehoben</span>
-                          : (() => {
-                              // Tarif-Staffel auch in Items als Tabelle (viele
-                              // Notariats-/Grundbuchtarife stehen als lit./Ziff.).
-                              // NUR wenn staffelZeilen matcht → Nicht-Tarif-Items
-                              // bleiben byte-gleich (golden, §6).
-                              const sz = staffelZeilen(it.text);
-                              // Geld-Kontext-Tausender auch in Items (§3, FIX 2 — 22.6.2026).
-                              // M6: in Fremdgesetz-Chapeau-Items ohne bare-Self-Link (verlinkeItem).
-                              if (!sz) {
-                                // FN-5/M14: Marker an der Wortstelle im Item-Text —
-                                // Offsets beziehen sich direkt auf it.text (kein
-                                // Marken-Delta); Segmentierung wie im Absatz-Pfad.
-                                const kand = zk ? (fnInlineItem?.[`${i}|${j}`] ?? []) : [];
-                                const platzierbar = kand.filter((k) => k.o >= 0 && k.o <= it.text.length);
-                                if (platzierbar.length > 0) {
-                                  for (const p of platzierbar) itemInlineGesetzt.add(p.nr);
-                                  return segmentiert(it.text, platzierbar, (s) => verlinkeItem(gruppiereBetraege(s)));
-                                }
-                                return verlinkeItem(gruppiereBetraege(it.text));
-                              }
-                              return <StaffelTabelle zeilen={staffelZeilen(normalisiereTarifText(it.text)) ?? sz} />;
-                            })()}
-                        {/* Fussnoten-Marker dieses lit/Ziff-Items (klickbar → Fuss).
-                            A31: Marker klebt via WJ direkt an den Item-Text (kein
-                            Abstand, kein Umbruch auf eine eigene Zeile). FN-5:
-                            inline gesetzte Marker erscheinen hier nicht mehr;
-                            nicht platzierbare Kandidaten fallen hierher zurück. */}
-                        {zk && (() => {
-                          const kand = fnInlineItem?.[`${i}|${j}`] ?? [];
-                          const rest = kand.filter((k) => !itemInlineGesetzt.has(k.nr)).map((k) => k.nr);
-                          const alle = [...rest, ...(fnProItem?.[`${i}|${it.marke}`] ?? [])].sort(vglFnNr);
-                          return alle.map((nr) => (
-                            <React.Fragment key={nr}>{WJ}<FnRef artikel={artikel} nr={nr} kl={fnKlasse?.[nr]} /></React.Fragment>
-                          ));
-                        })()}
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-              );
-            })()}
+                (Daten). Das zitierte Item wird stark hervorgehoben. Rendert über
+                den geteilten Item-Pfad (itemListe, §5) — derselbe wie bei
+                Bild-Blöcken mit items. */}
+            {itemListe(b, i, absMarke)}
           </div>
         );
       })}
