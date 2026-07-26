@@ -35,7 +35,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -51,7 +52,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "A"
    },
    {
     "nr": "3",
@@ -63,7 +65,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -107,7 +110,8 @@
       "b": 0,
       "o": 68,
       "l": 159
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -195,7 +199,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "3. Abschnitt: Besondere Bestimmungen für Arbeitsverhältnisse nach Obligationenrecht"
+     "sektion": "3. Abschnitt: Besondere Bestimmungen für Arbeitsverhältnisse nach Obligationenrecht",
+     "kl": "V"
     }
    ]
   },
@@ -228,7 +233,8 @@
       "b": 0,
       "o": 121,
       "l": 132
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -260,7 +266,8 @@
       "b": 3,
       "o": 202,
       "l": 218
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -322,7 +329,8 @@
       "b": 0,
       "o": 239,
       "l": 240
-     }
+     },
+     "kl": "Z"
     },
     {
      "nr": "10",
@@ -340,7 +348,8 @@
       "b": 2,
       "o": 116,
       "l": 254
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "11",
@@ -361,7 +370,8 @@
       "b": 2,
       "o": 254,
       "l": 254
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "12",
@@ -382,7 +392,8 @@
       "b": 3,
       "o": 1,
       "l": 1
-     }
+     },
+     "kl": "A"
     },
     {
      "nr": "13",
@@ -400,7 +411,8 @@
       "b": 4,
       "o": 197,
       "l": 198
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "14",
@@ -421,7 +433,8 @@
       "b": 4,
       "o": 198,
       "l": 198
-     }
+     },
+     "kl": "A"
     }
    ]
   },
@@ -488,7 +501,8 @@
      "text": "BRB vom 25. Okt. 1995",
      "links": [],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -516,7 +530,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -547,7 +562,8 @@
      ],
      "absatz": null,
      "item": null,
-     "sektion": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung"
+     "sektion": "4a. Abschnitt: Lohngleichheitsanalyse und Überprüfung",
+     "kl": "A"
     }
    ]
   },
@@ -603,7 +619,8 @@
       "b": 0,
       "o": 59,
       "l": 183
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "17",
@@ -622,7 +639,8 @@
       "it": 0,
       "o": 102,
       "l": 108
-     }
+     },
+     "kl": "V"
     },
     {
      "nr": "18",
@@ -641,7 +659,8 @@
       "it": 1,
       "o": 118,
       "l": 119
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -710,7 +729,8 @@
       "b": 0,
       "o": 191,
       "l": 193
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -752,7 +772,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },
@@ -782,7 +803,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "A"
     }
    ]
   },

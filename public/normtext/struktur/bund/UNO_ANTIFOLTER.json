@@ -48,7 +48,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -61,7 +62,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
@@ -362,7 +364,8 @@
       "b": 0,
       "o": 2,
       "l": 209
-     }
+     },
+     "kl": "Z"
     }
    ]
   },

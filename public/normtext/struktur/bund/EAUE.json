@@ -41,7 +41,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    },
    {
     "nr": "2",
@@ -53,7 +54,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    }
   ]
  },
@@ -86,7 +88,8 @@
       "b": 1,
       "o": 426,
       "l": 426
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -106,7 +109,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     }
    ]
   },
@@ -132,7 +136,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     }
    ]
   },
@@ -170,7 +175,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     }
    ]
   },
@@ -190,7 +196,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     }
    ]
   },
@@ -216,7 +223,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     },
     {
      "nr": "9",
@@ -234,7 +242,8 @@
       "b": 0,
       "o": 183,
       "l": 183
-     }
+     },
+     "kl": "V"
     }
    ]
   },
@@ -260,7 +269,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     }
    ]
   },
@@ -280,7 +290,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     }
    ]
   },
@@ -330,7 +341,8 @@
       }
      ],
      "absatz": null,
-     "item": null
+     "item": null,
+     "kl": "V"
     }
    ]
   },
@@ -381,7 +393,8 @@
       "b": 1,
       "o": 55,
       "l": 224
-     }
+     },
+     "kl": "U"
     },
     {
      "nr": "14",
@@ -403,7 +416,8 @@
       "b": 3,
       "o": 332,
       "l": 332
-     }
+     },
+     "kl": "V"
     }
    ]
   },

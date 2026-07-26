@@ -60,7 +60,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "Z"
    },
    {
     "nr": "2",
@@ -73,7 +74,8 @@
      }
     ],
     "absatz": null,
-    "item": null
+    "item": null,
+    "kl": "V"
    }
   ]
  },
