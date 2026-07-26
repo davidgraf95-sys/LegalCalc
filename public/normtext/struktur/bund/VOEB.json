@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "172.056.11",
   "titel": "Verordnung über das öffentliche Beschaffungswesen",
@@ -54,7 +54,12 @@
      "text": "www.simap.ch",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 110,
+      "l": 126
+     }
     }
    ]
   },
@@ -284,7 +289,13 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 94,
+      "l": 179
+     }
     },
     {
      "nr": "4",
@@ -296,7 +307,13 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 145,
+      "l": 204
+     }
     }
    ]
   },
@@ -370,7 +387,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 481,
+      "l": 500
+     }
     },
     {
      "nr": "6",
@@ -382,7 +404,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 500,
+      "l": 500
+     }
     }
    ]
   },
@@ -444,7 +471,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 102,
+      "l": 174
+     }
     }
    ]
   },
@@ -506,7 +538,13 @@
       }
      ],
      "absatz": "1",
-     "item": "1"
+     "item": "1",
+     "pos": {
+      "b": 3,
+      "it": 0,
+      "o": 32,
+      "l": 72
+     }
     },
     {
      "nr": "9",
@@ -526,7 +564,13 @@
       }
      ],
      "absatz": "1",
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 37,
+      "l": 106
+     }
     },
     {
      "nr": "10",
@@ -538,7 +582,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },

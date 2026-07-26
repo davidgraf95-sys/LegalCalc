@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "152.3",
   "titel": "Bundesgesetz über das Öffentlichkeitsprinzip der Verwaltung",
@@ -84,7 +84,13 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 223,
+      "l": 293
+     }
     },
     {
      "nr": "4",
@@ -100,7 +106,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 101,
+      "l": 101
+     }
     }
    ]
   },
@@ -126,7 +137,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 171,
+      "l": 178
+     }
     },
     {
      "nr": "6",
@@ -142,7 +158,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 178,
+      "l": 178
+     }
     }
    ]
   },
@@ -244,7 +265,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 138,
+      "l": 341
+     }
     },
     {
      "nr": "9",
@@ -256,7 +282,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 262,
+      "l": 341
+     }
     }
    ]
   },
@@ -328,7 +359,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 326,
+      "l": 326
+     }
     },
     {
      "nr": "12",
@@ -344,7 +380,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 193,
+      "l": 193
+     }
     }
    ]
   },
@@ -365,7 +406,12 @@
      "text": "Die Berichtigung vom 30. Sept. 2022, veröffentlicht am 25. Sept. 2023 betrifft nur den italienischen Text (AS 2023 538).",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 50,
+      "l": 50
+     }
     },
     {
      "nr": "14",
@@ -381,7 +427,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 254,
+      "l": 254
+     }
     }
    ]
   },
@@ -412,7 +463,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 50,
+      "l": 178
+     }
     }
    ]
   },
@@ -438,7 +494,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 219,
+      "l": 230
+     }
     },
     {
      "nr": "17",
@@ -542,7 +603,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 82,
+      "l": 82
+     }
     },
     {
      "nr": "21",
@@ -562,7 +628,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 370,
+      "l": 370
+     }
     },
     {
      "nr": "22",
@@ -582,7 +653,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 125,
+      "l": 125
+     }
     }
    ]
   },
@@ -613,7 +689,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 89,
+      "l": 89
+     }
     },
     {
      "nr": "24",
@@ -703,7 +784,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 153,
+      "l": 153
+     }
     }
    ]
   },

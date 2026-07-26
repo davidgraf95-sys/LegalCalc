@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "836.2",
   "titel": "Bundesgesetz über die Familienzulagen und Finanzhilfen an Familienorganisationen",
@@ -144,7 +144,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 55,
+      "l": 310
+     }
     },
     {
      "nr": "9",
@@ -160,7 +165,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 310,
+      "l": 310
+     }
     },
     {
      "nr": "10",
@@ -176,7 +186,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 94,
+      "l": 94
+     }
     }
    ]
   },
@@ -215,7 +230,13 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 348,
+      "l": 453
+     }
     },
     {
      "nr": "12",
@@ -231,7 +252,13 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 546,
+      "l": 546
+     }
     },
     {
      "nr": "13",
@@ -244,7 +271,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 377,
+      "l": 378
+     }
     },
     {
      "nr": "14",
@@ -260,7 +292,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 378,
+      "l": 378
+     }
     }
    ]
   },
@@ -287,7 +324,13 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 68,
+      "l": 77
+     }
     }
    ]
   },
@@ -313,7 +356,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 47,
+      "l": 58
+     }
     },
     {
      "nr": "17",
@@ -325,7 +373,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 52,
+      "l": 63
+     }
     }
    ]
   },
@@ -438,7 +491,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 239,
+      "l": 291
+     }
     }
    ]
   },
@@ -482,7 +540,13 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 77,
+      "l": 156
+     }
     },
     {
      "nr": "23",
@@ -574,7 +638,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 327,
+      "l": 327
+     }
     },
     {
      "nr": "25",
@@ -598,7 +667,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 367,
+      "l": 367
+     }
     }
    ]
   },
@@ -641,7 +715,12 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 302,
+      "l": 302
+     }
     },
     {
      "nr": "27",
@@ -742,7 +821,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 232,
+      "l": 232
+     }
     },
     {
      "nr": "29",
@@ -766,7 +850,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 184,
+      "l": 184
+     }
     }
    ]
   },
@@ -832,7 +921,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 195,
+      "l": 243
+     }
     }
    ]
   },
@@ -875,7 +969,12 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 239,
+      "l": 239
+     }
     },
     {
      "nr": "33",
@@ -888,7 +987,12 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 120,
+      "l": 233
+     }
     },
     {
      "nr": "34",
@@ -904,7 +1008,12 @@
       }
      ],
      "absatz": "1ter",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 233,
+      "l": 233
+     }
     }
    ]
   },
@@ -936,7 +1045,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 192,
+      "l": 205
+     }
     }
    ]
   },
@@ -981,7 +1095,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 124,
+      "l": 207
+     }
     }
    ]
   },
@@ -1009,7 +1128,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 22,
+      "l": 161
+     }
     }
    ]
   },
@@ -1050,7 +1174,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 573,
+      "l": 763
+     }
     },
     {
      "nr": "50",
@@ -1063,7 +1192,13 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 28,
+      "l": 29
+     }
     },
     {
      "nr": "51",
@@ -1076,21 +1211,39 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 28,
+      "l": 29
+     }
     },
     {
      "nr": "52",
      "text": "Verordnung (EWG) Nr. 1408/71 des Rates vom 14. Juni 1971 zur Anwendung der Systeme der sozialen Sicherheit auf Arbeitnehmer und Selbstständige sowie deren Familienangehörige, die innerhalb der Gemeinschaft zu- und abwandern.",
      "links": [],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 28,
+      "l": 29
+     }
     },
     {
      "nr": "53",
      "text": "Verordnung (EWG) Nr. 574/72 des Rates vom 21. März 1972 über die Durchführung der Verordnung (EWG) Nr. 1408/71 zur Anwendung der Systeme der sozialen Sicherheit auf Arbeitnehmer und Selbstständige sowie deren Familienangehörige, die innerhalb der Gemeinschaft zu- und abwandern.",
      "links": [],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 27,
+      "l": 28
+     }
     },
     {
      "nr": "54",
@@ -1103,7 +1256,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 624,
+      "l": 711
+     }
     }
    ]
   },
@@ -1131,7 +1289,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 81,
+      "l": 104
+     }
     },
     {
      "nr": "56",
@@ -1160,7 +1323,13 @@
       }
      ],
      "absatz": null,
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 78,
+      "l": 80
+     }
     },
     {
      "nr": "58",
@@ -1287,7 +1456,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 78,
+      "l": 223
+     }
     },
     {
      "nr": "64",
@@ -1303,7 +1477,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 223,
+      "l": 223
+     }
     },
     {
      "nr": "65",
@@ -1316,7 +1495,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 115,
+      "l": 159
+     }
     },
     {
      "nr": "66",
@@ -1332,7 +1516,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 159,
+      "l": 159
+     }
     }
    ]
   },
@@ -1442,7 +1631,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 174,
+      "l": 321
+     }
     }
    ]
   },
@@ -1469,7 +1663,13 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 106,
+      "l": 107
+     }
     },
     {
      "nr": "40",
@@ -1482,7 +1682,13 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 110,
+      "l": 255
+     }
     },
     {
      "nr": "41",
@@ -1495,7 +1701,13 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 223,
+      "l": 255
+     }
     }
    ]
   },
@@ -1562,7 +1774,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 162,
+      "l": 266
+     }
     }
    ]
   },
@@ -1647,7 +1864,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 51,
+      "l": 51
+     }
     }
    ]
   },

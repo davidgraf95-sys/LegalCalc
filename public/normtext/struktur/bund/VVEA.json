@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "814.600",
   "titel": "Verordnung über die Vermeidung und die Entsorgung von Abfällen",
@@ -124,7 +124,13 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 101,
+      "l": 189
+     }
     },
     {
      "nr": "6",
@@ -149,7 +155,13 @@
       }
      ],
      "absatz": null,
-     "item": "2"
+     "item": "2",
+     "pos": {
+      "b": 0,
+      "it": 11,
+      "o": 268,
+      "l": 300
+     }
     },
     {
      "nr": "8",
@@ -223,7 +235,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 191,
+      "l": 191
+     }
     }
    ]
   },
@@ -261,7 +278,13 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 49,
+      "l": 88
+     }
     },
     {
      "nr": "14",
@@ -285,7 +308,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 108,
+      "l": 159
+     }
     }
    ]
   },
@@ -526,7 +554,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 142,
+      "l": 142
+     }
     }
    ]
   },
@@ -558,7 +591,13 @@
       }
      ],
      "absatz": "1",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 1,
+      "o": 72,
+      "l": 120
+     }
     }
    ]
   },
@@ -614,7 +653,13 @@
       }
      ],
      "absatz": "2",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 227,
+      "l": 236
+     }
     },
     {
      "nr": "28",
@@ -626,7 +671,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 298,
+      "l": 298
+     }
     },
     {
      "nr": "29",
@@ -681,7 +731,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 219,
+      "l": 219
+     }
     },
     {
      "nr": "32",
@@ -693,7 +748,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -771,7 +831,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 90,
+      "l": 90
+     }
     }
    ]
   },
@@ -802,7 +867,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 624,
+      "l": 624
+     }
     }
    ]
   },
@@ -984,7 +1054,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 152,
+      "l": 152
+     }
     },
     {
      "nr": "43",
@@ -996,7 +1071,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 225,
+      "l": 225
+     }
     },
     {
      "nr": "44",
@@ -1008,7 +1088,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -1040,7 +1125,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 160,
+      "l": 160
+     }
     },
     {
      "nr": "46",
@@ -1252,7 +1342,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 363,
+      "l": 519
+     }
     },
     {
      "nr": "53",
@@ -1265,7 +1360,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 58,
+      "l": 89
+     }
     }
    ]
   },
@@ -1468,7 +1568,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 183,
+      "l": 225
+     }
     }
    ]
   },
@@ -1569,7 +1674,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 47,
+      "l": 77
+     }
     }
    ]
   },
@@ -1648,7 +1758,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 140,
+      "l": 140
+     }
     },
     {
      "nr": "59",
@@ -1660,7 +1775,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 138,
+      "l": 138
+     }
     }
    ]
   },
@@ -1692,7 +1812,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 292,
+      "l": 306
+     }
     }
    ]
   },
@@ -1723,7 +1848,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 408,
+      "l": 408
+     }
     },
     {
      "nr": "65",
@@ -1735,7 +1865,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 222,
+      "l": 475
+     }
     },
     {
      "nr": "66",
@@ -1747,7 +1882,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 475,
+      "l": 475
+     }
     }
    ]
   },
@@ -1995,7 +2135,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 159,
+      "l": 305
+     }
     }
    ]
   },
@@ -2070,7 +2215,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },

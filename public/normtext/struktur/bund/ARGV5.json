@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "822.115",
   "titel": "Verordnung 5 zum Arbeitsgesetz",
@@ -83,7 +83,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 193,
+      "l": 226
+     }
     }
    ]
   },
@@ -135,7 +140,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 506,
+      "l": 535
+     }
     },
     {
      "nr": "10",
@@ -147,7 +157,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 535,
+      "l": 535
+     }
     }
    ]
   },
@@ -210,7 +225,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 769,
+      "l": 798
+     }
     }
    ]
   },
@@ -306,7 +326,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 89,
+      "l": 272
+     }
     }
    ]
   },
@@ -388,7 +413,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 258,
+      "l": 258
+     }
     }
    ]
   },
@@ -415,7 +445,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 33,
+      "l": 77
+     }
     },
     {
      "nr": "16",
@@ -428,7 +463,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -506,7 +546,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 670,
+      "l": 750
+     }
     },
     {
      "nr": "6",
@@ -518,7 +563,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 203,
+      "l": 312
+     }
     }
    ]
   },
@@ -556,7 +606,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 321,
+      "l": 387
+     }
     }
    ]
   }

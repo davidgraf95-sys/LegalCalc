@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "221.301",
   "titel": "Bundesgesetz über Fusion, Spaltung, Umwandlung und Vermögensübertragung",
@@ -80,7 +80,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 264,
+      "l": 264
+     }
     },
     {
      "nr": "4",
@@ -92,7 +97,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 56,
+      "l": 138
+     }
     }
    ]
   },
@@ -150,7 +160,13 @@
       }
      ],
      "absatz": null,
-     "item": "i"
+     "item": "i",
+     "pos": {
+      "b": 0,
+      "it": 11,
+      "o": 113,
+      "l": 254
+     }
     }
    ]
   },
@@ -240,7 +256,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 450,
+      "l": 450
+     }
     },
     {
      "nr": "9",
@@ -260,7 +281,12 @@
       }
      ],
      "absatz": "1bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 397,
+      "l": 397
+     }
     },
     {
      "nr": "10",
@@ -280,7 +306,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 234,
+      "l": 234
+     }
     }
    ]
   },
@@ -345,7 +376,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 44,
+      "l": 187
+     }
     },
     {
      "nr": "13",
@@ -365,7 +401,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 187,
+      "l": 187
+     }
     },
     {
      "nr": "11",
@@ -418,7 +459,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 119,
+      "l": 331
+     }
     },
     {
      "nr": "15",
@@ -431,7 +477,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 136,
+      "l": 331
+     }
     }
    ]
   },
@@ -470,7 +521,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -560,7 +616,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 440,
+      "l": 440
+     }
     },
     {
      "nr": "18",
@@ -580,7 +641,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 139,
+      "l": 139
+     }
     },
     {
      "nr": "19",
@@ -600,7 +666,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 96,
+      "l": 96
+     }
     }
    ]
   },
@@ -738,7 +809,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 217,
+      "l": 235
+     }
     }
    ]
   },
@@ -769,7 +845,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 262,
+      "l": 282
+     }
     }
    ]
   },
@@ -842,7 +923,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 431,
+      "l": 431
+     }
     }
    ]
   },
@@ -873,7 +959,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 313,
+      "l": 314
+     }
     }
    ]
   },
@@ -904,7 +995,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 100,
+      "l": 111
+     }
     }
    ]
   },
@@ -935,7 +1031,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 149
+     }
     }
    ]
   },
@@ -1036,7 +1137,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 122,
+      "l": 139
+     }
     }
    ]
   },
@@ -1067,7 +1173,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 23,
+      "l": 168
+     }
     },
     {
      "nr": "30",
@@ -1087,7 +1198,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 168,
+      "l": 168
+     }
     }
    ]
   },
@@ -1119,7 +1235,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 94,
+      "l": 289
+     }
     }
    ]
   },
@@ -1158,7 +1279,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -1410,7 +1536,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 66,
+      "l": 77
+     }
     }
    ]
   },
@@ -1476,7 +1607,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 261,
+      "l": 281
+     }
     }
    ]
   },
@@ -1541,7 +1677,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 121,
+      "l": 141
+     }
     },
     {
      "nr": "36",
@@ -1561,7 +1702,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 141,
+      "l": 141
+     }
     }
    ]
   },
@@ -1610,7 +1756,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 50,
+      "l": 279
+     }
     },
     {
      "nr": "38",
@@ -1623,7 +1774,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 61,
+      "l": 279
+     }
     }
    ]
   },
@@ -1662,7 +1818,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -1752,7 +1913,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 212,
+      "l": 212
+     }
     },
     {
      "nr": "41",
@@ -1772,7 +1938,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 123,
+      "l": 123
+     }
     },
     {
      "nr": "42",
@@ -1792,7 +1963,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 231,
+      "l": 231
+     }
     }
    ]
   },
@@ -1947,7 +2123,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 318,
+      "l": 490
+     }
     }
    ]
   },
@@ -1986,7 +2167,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 317,
+      "l": 417
+     }
     }
    ]
   },
@@ -2049,7 +2235,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 271,
+      "l": 291
+     }
     }
    ]
   },
@@ -2112,7 +2303,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 101,
+      "l": 112
+     }
     }
    ]
   },
@@ -2143,7 +2339,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 140,
+      "l": 151
+     }
     }
    ]
   },
@@ -2174,7 +2375,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 325,
+      "l": 336
+     }
     }
    ]
   },
@@ -2247,7 +2453,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 139,
+      "l": 139
+     }
     }
    ]
   },
@@ -2303,7 +2514,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 452,
+      "l": 452
+     }
     }
    ]
   },
@@ -2381,7 +2597,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 400,
+      "l": 400
+     }
     }
    ]
   },
@@ -2446,7 +2667,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 53,
+      "l": 87
+     }
     },
     {
      "nr": "55",
@@ -2458,7 +2684,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 66,
+      "l": 87
+     }
     }
    ]
   },
@@ -2627,7 +2858,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 61,
+      "l": 61
+     }
     }
    ]
   },
@@ -2688,7 +2924,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 690,
+      "l": 690
+     }
     },
     {
      "nr": "58",
@@ -2708,7 +2949,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 576,
+      "l": 576
+     }
     }
    ]
   },
@@ -2765,7 +3011,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 200,
+      "l": 332
+     }
     }
    ]
   },
@@ -2858,7 +3109,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 35,
+      "l": 196
+     }
     }
    ]
   },

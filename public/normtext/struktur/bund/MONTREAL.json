@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "0.748.411",
   "titel": "Übereinkommen zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
@@ -344,7 +344,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 83,
+      "l": 186
+     }
     },
     {
      "nr": "5",
@@ -356,7 +361,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 124,
+      "l": 162
+     }
     }
    ]
   },
@@ -382,7 +392,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 177,
+      "l": 178
+     }
     },
     {
      "nr": "7",
@@ -394,7 +409,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 186,
+      "l": 654
+     }
     },
     {
      "nr": "8",
@@ -406,7 +426,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 183,
+      "l": 638
+     }
     }
    ]
   },
@@ -817,7 +842,13 @@
       }
      ],
      "absatz": null,
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 215,
+      "l": 265
+     }
     },
     {
      "nr": "10",
@@ -830,7 +861,13 @@
       }
      ],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 244,
+      "l": 302
+     }
     },
     {
      "nr": "11",
@@ -853,7 +890,13 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 5,
+      "o": 291,
+      "l": 352
+     }
     }
    ]
   },

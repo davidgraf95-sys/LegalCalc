@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "241",
   "titel": "Bundesgesetz gegen den unlauteren Wettbewerb",
@@ -384,7 +384,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 221,
+      "l": 221
+     }
     }
    ]
   },
@@ -573,7 +578,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 54,
+      "l": 200
+     }
     },
     {
      "nr": "27",
@@ -661,7 +671,13 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 140,
+      "l": 140
+     }
     },
     {
      "nr": "33",
@@ -677,7 +693,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 267,
+      "l": 267
+     }
     },
     {
      "nr": "34",
@@ -690,7 +711,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 104,
+      "l": 161
+     }
     },
     {
      "nr": "35",
@@ -706,7 +732,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 161,
+      "l": 161
+     }
     }
    ]
   },
@@ -753,7 +784,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     }
     },
     {
      "nr": "40",
@@ -821,7 +857,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 98,
+      "l": 134
+     }
     },
     {
      "nr": "44",
@@ -834,7 +875,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 60,
+      "l": 146
+     }
     },
     {
      "nr": "45",
@@ -850,7 +896,12 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 146,
+      "l": 146
+     }
     }
    ]
   },
@@ -920,7 +971,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 256,
+      "l": 267
+     }
     },
     {
      "nr": "48",
@@ -936,7 +992,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 267,
+      "l": 267
+     }
     }
    ]
   },
@@ -982,7 +1043,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 154,
+      "l": 154
+     }
     },
     {
      "nr": "51",
@@ -998,7 +1064,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 57,
+      "l": 57
+     }
     }
    ]
   },
@@ -1061,7 +1132,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 1
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 46,
+      "l": 46
+     }
     }
    ]
   },
@@ -1117,7 +1193,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 154,
+      "l": 165
+     }
     }
    ]
   },
@@ -1143,7 +1224,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 247,
+      "l": 252
+     }
     },
     {
      "nr": "59",
@@ -1159,7 +1245,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 252,
+      "l": 252
+     }
     }
    ]
   },
@@ -1190,7 +1281,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 39,
+      "l": 87
+     }
     }
    ]
   },
@@ -1295,7 +1391,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-25",
+ "erzeugt": "2026-07-26",
  "kopf": {
   "srNummer": "142.204",
   "titel": "Verordnung über die Einreise und die Visumerteilung",
@@ -74,7 +74,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 241,
+      "l": 241
+     }
     },
     {
      "nr": "4",
@@ -86,21 +91,38 @@
       }
      ],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 156,
+      "l": 156
+     }
     },
     {
      "nr": "5",
      "text": "Verordnung (EU) Nr. 514/2014 des Europäischen Parlaments und des Rates vom 16. April 2014 zur Festlegung allgemeiner Bestimmungen für den Asyl-, Migrations- und Integrationsfonds und das Instrument für die finanzielle Unterstützung der polizeilichen Zusammenarbeit, der Kriminalprävention und Kriminalitätsbekämpfung und des Krisenmanagements, Fassung gemäss ABl. L 150 vom 20.5.2014, S. 112.",
      "links": [],
      "absatz": "4",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 3,
+      "it": 0,
+      "o": 28,
+      "l": 29
+     }
     },
     {
      "nr": "6",
      "text": "Verordnung (EU) Nr. 515/2014 des Europäischen Parlaments und des Rates vom 16. April 2014 zur Schaffung eines Instruments für die finanzielle Unterstützung für Aussengrenzen und Visa im Rahmen des Fonds für die innere Sicherheit und zur Aufhebung der Entscheidung Nr. 574/2007/EG, Fassung gemäss ABl. L 150 vom 20.5.2014, S. 143.",
      "links": [],
      "absatz": "4",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 3,
+      "it": 1,
+      "o": 28,
+      "l": 29
+     }
     },
     {
      "nr": "7",
@@ -123,7 +145,13 @@
      "text": "Verordnung (EU) 2017/2226 des Europäischen Parlaments und des Rates vom 30. November 2017 über ein Einreise-/Ausreisesystem (EES) zur Erfassung der Ein- und Ausreisedaten sowie der Einreiseverweigerungsdaten von Drittstaatsangehörigen an den Aussengrenzen der Mitgliedstaaten und zur Festlegung der Bedingungen für den Zugang zum EES zu Gefahrenabwehr- und Strafverfolgungszwecken und zur Änderung des zur Durchführung des Übereinkommens von Schengen sowie der Verordnungen (EG) Nr. 767/2008 und (EU) Nr. 1077/2011, ABl. L 327 vom 9.12.2017, S. 20; zuletzt geändert durch Verordnung (EU) 2021/1134, ABl. L 248 vom 13.7.2021, S. 11.",
      "links": [],
      "absatz": "4",
-     "item": "bbis"
+     "item": "bbis",
+     "pos": {
+      "b": 3,
+      "it": 2,
+      "o": 25,
+      "l": 26
+     }
     },
     {
      "nr": "9",
@@ -142,7 +170,13 @@
      "text": "Verordnung (EU) 2018/1240 des Europäischen Parlaments und des Rates vom 12. September 2018 über die Einrichtung eines Europäischen Reiseinformations- und ‑genehmigungssystems (ETIAS) und zur Änderung der Verordnungen (EU) Nr. 1077/2011, (EU) Nr. 515/2014, (EU) 2016/399, (EU) 2016/1624 und (EU) 2017/2226, ABl. L 236 vom 19.9.2018, S. 1; zuletzt geändert durch Verordnung (EU) 2021/1152, ABl. L 249 vom 14.7.2021, S. 15.",
      "links": [],
      "absatz": "4",
-     "item": "bter"
+     "item": "bter",
+     "pos": {
+      "b": 3,
+      "it": 3,
+      "o": 25,
+      "l": 26
+     }
     },
     {
      "nr": "11",
@@ -161,7 +195,13 @@
      "text": "Verordnung (EG) Nr. 810/2009 des Europäischen Parlaments und des Rates vom 13. Juli 2009 über einen Visakodex der Gemeinschaft (Visakodex), ABl. L 243 vom 15.9.2009, S. 1; zuletzt geändert durch Verordnung (EU) 2024/1415, ABl. L, 2024/1415, 22.05.2024.",
      "links": [],
      "absatz": "4",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 3,
+      "it": 4,
+      "o": 28,
+      "l": 41
+     }
     },
     {
      "nr": "13",
@@ -184,7 +224,13 @@
      "text": "Verordnung (EU) 2019/817 des Europäischen Parlaments und des Rates vom 20. Mai 2019 zur Errichtung eines Rahmens für die Interoperabilität zwischen EU-Informationssystemen in den Bereichen Grenzen und Visa und zur Änderung der Verordnungen (EG) Nr. 767/2008, (EU) 2016/399, (EU) 2017/2226, (EU) 2018/240, (EU) 2018/1726 und (EU) 2018/1861 des Europäischen Parlaments und des Rates, der Entscheidung 2004/512/EG des Rates und des Beschlusses 2008/633/JI des Rates, ABl. L 135 vom 22.5.2019, S. 27; zuletzt geändert durch Verordnung (EU) 2021/1152, ABl. L 249 vom 14.7.2021, S. 15.",
      "links": [],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 3,
+      "it": 5,
+      "o": 24,
+      "l": 25
+     }
     },
     {
      "nr": "15",
@@ -207,7 +253,13 @@
      "text": "Verordnung (EU) 2019/818 des Europäischen Parlaments und des Rates vom 20. Mai 2019 zur Errichtung eines Rahmens für die Interoperabilität zwischen EU-Informationssystemen (polizeiliche und justizielle Zusammenarbeit, Asyl und Migration) und zur Änderung der Verordnungen (EU) 2018/1726, (EU) 2018/1862 und (EU) 2019/816, ABl. L 135 vom 22.5.2019, S. 85; zuletzt geändert durch Verordnung (EU) 2021/1150, ABl. L 249 vom 14.7.2021, S. 1.",
      "links": [],
      "absatz": "4",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 3,
+      "it": 6,
+      "o": 24,
+      "l": 25
+     }
     },
     {
      "nr": "17",
@@ -230,7 +282,13 @@
      "text": "Verordnung (EG) Nr. 1683/95 des Rates vom 29. Mai 1995 über eine einheitliche Visagestaltung, ABl. L 164 vom 14.7.1995, S. 1; zuletzt geändert durch Verordnung (EU) 2023/2685, ABl. L, 2023/2685, 7.12.2023.",
      "links": [],
      "absatz": "4",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 3,
+      "it": 7,
+      "o": 27,
+      "l": 28
+     }
     },
     {
      "nr": "19",
@@ -249,7 +307,13 @@
      "text": "Verordnung (EG) Nr. 1030/2002 des Rates vom 13. Juni 2002 zur einheitlichen Gestaltung des Aufenthaltstitels für Drittstaatenangehörige, ABl. L 157 vom 15.6.2002, S. 1; zuletzt geändert durch Verordnung (EU) 2017/1954, ABl. L 286 vom 1.11.2017, S. 9.",
      "links": [],
      "absatz": "4",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 3,
+      "it": 8,
+      "o": 29,
+      "l": 30
+     }
     },
     {
      "nr": "21",
@@ -272,7 +336,13 @@
      "text": "Verordnung (EG) Nr. 767/2008 des Europäischen Parlaments und des Rates vom 9. Juli 2008 über das Visa-Informationssystem (VIS) und den Datenaustausch zwischen den Mitgliedstaaten über Visa für einen kurzfristigen Aufenthalt (VIS-Verordnung), ABl L 218 vom 13.8.2008, S. 60; zuletzt geändert durch Verordnung (EU) 2023/2667, ABl. L, 2023/2667, 7.12.2023.",
      "links": [],
      "absatz": "4",
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 3,
+      "it": 9,
+      "o": 28,
+      "l": 29
+     }
     },
     {
      "nr": "23",
@@ -291,7 +361,13 @@
      "text": "Verordnung (EU) 2021/1148 des Europäischen Parlaments und des Rates vom 7. Juli 2021 zur Schaffung eines Instruments für finanzielle Hilfe im Bereich Grenzverwaltung und Visumpolitik im Rahmen des Fonds für integrierte Grenzverwaltung, ABl. L 251 vom 15.7.2021, S. 48.",
      "links": [],
      "absatz": "4",
-     "item": "i"
+     "item": "i",
+     "pos": {
+      "b": 3,
+      "it": 10,
+      "o": 25,
+      "l": 26
+     }
     },
     {
      "nr": "25",
@@ -310,7 +386,13 @@
      "text": "Verordnung (EU) 2021/1060 des Europäischen Parlaments und des Rates vom 24. Juni 2021 mit gemeinsamen Bestimmungen für den Europäischen Fonds für regionale Entwicklung, den Europäischen Sozialfonds Plus, den Kohäsionsfonds, den Fonds für einen gerechten Übergang und den Europäischen Meeres-, Fischerei- und Aquakulturfonds sowie mit Haushaltsvorschriften für diese Fonds und für den Asyl-, Migrations- und Integrationsfonds, den Fonds für die innere Sicherheit und das Instrument für finanzielle Hilfe im Bereich Grenzverwaltung und Visumpolitik, ABl. L 231 vom 30.6.2021, S. 159.",
      "links": [],
      "absatz": "4",
-     "item": "j"
+     "item": "j",
+     "pos": {
+      "b": 3,
+      "it": 11,
+      "o": 25,
+      "l": 26
+     }
     },
     {
      "nr": "27",
@@ -329,7 +411,13 @@
      "text": "Beschluss Nr. 1105/2011/EU des Europäischen Parlaments und des Rates vom 25. Oktober 2011 über die Liste der visierfähigen Reisedokumente, die den Inhaber zum Überschreiten der Aussengrenzen berechtigen, und über die Schaffung eines Verfahrens zur Aufstellung dieser Liste, ABl. L 287 vom 4.11.2011, S. 9.",
      "links": [],
      "absatz": "4",
-     "item": "k"
+     "item": "k",
+     "pos": {
+      "b": 3,
+      "it": 12,
+      "o": 26,
+      "l": 27
+     }
     },
     {
      "nr": "29",
@@ -348,7 +436,13 @@
      "text": "Verordnung (EG) Nr. 694/2003 des Rates vom 14. April 2003 über einheitliche Formate von Dokumenten für den erleichterten Transit (FTD) und Dokumenten für den erleichterten Transit im Eisenbahnverkehr (FRTD) gemäss der Verordnung (EG) Nr. 693/2003, ABl. L 99 vom 17. April 2003, S. 15; zuletzt geändert durch Verordnung (EU) 2023/2667, ABl. L, 2023/2667, 7.12.2023.",
      "links": [],
      "absatz": "4",
-     "item": "l"
+     "item": "l",
+     "pos": {
+      "b": 3,
+      "it": 13,
+      "o": 28,
+      "l": 29
+     }
     },
     {
      "nr": "31",
@@ -367,7 +461,13 @@
      "text": "Verordnung (EU) 2016/399 des Europäischen Parlaments und des Rates vom 9. März 2016 über einen Gemeinschaftskodex für das Überschreiten der Grenzen durch Personen (Schengener Grenzkodex), ABl. L 77 vom 23.3.2016, S. 1; zuletzt geändert durch Verordnung (EU) 2024/1717, ABl. L, 2024/1717, 20.06.2024.",
      "links": [],
      "absatz": "4",
-     "item": "m"
+     "item": "m",
+     "pos": {
+      "b": 3,
+      "it": 14,
+      "o": 24,
+      "l": 25
+     }
     },
     {
      "nr": "33",
@@ -386,7 +486,13 @@
      "text": "Verordnung (EU) 2024/1356 des Europäischen Parlaments und des Rates vom 14. Mai 2024 zur Einführung der Überprüfung von Drittstaatsangehörigen an den Aussengrenzen und zur Änderung der Verordnungen (EG) Nr. 767/2008, (EU) 2017/2226, (EU) 2018/1240 und (EU) 2019/817, Fassung gemäss ABl. L, 2024/1356, 22.5.2024.",
      "links": [],
      "absatz": "4",
-     "item": "n"
+     "item": "n",
+     "pos": {
+      "b": 3,
+      "it": 15,
+      "o": 25,
+      "l": 26
+     }
     },
     {
      "nr": "35",
@@ -405,7 +511,13 @@
      "text": "Verordnung (EU) 2025/12 des Europäischen Parlaments und des Rates vom 19. Dezember 2024 über die Erhebung und Übermittlung vorab übermittelter Fluggastdaten zur Verbesserung und Erleichterung der Kontrollen an den Aussengrenzen, zur Änderung der Verordnungen (EU) 2018/1726 und (EU) 2019/817 sowie zur Aufhebung der Richtlinie 2004/82/EG des Rates, Fassung gemäss ABl. L, 2025/12, 8.1.2025.",
      "links": [],
      "absatz": "4",
-     "item": "o"
+     "item": "o",
+     "pos": {
+      "b": 3,
+      "it": 16,
+      "o": 23,
+      "l": 24
+     }
     },
     {
      "nr": "37",
@@ -417,7 +529,13 @@
       }
      ],
      "absatz": "4",
-     "item": "o"
+     "item": "o",
+     "pos": {
+      "b": 3,
+      "it": 16,
+      "o": 24,
+      "l": 24
+     }
     }
    ]
   },
@@ -438,7 +556,13 @@
      "text": "Diese Abkommen sind in Anhang 1 aufgeführt.",
      "links": [],
      "absatz": null,
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 118,
+      "l": 152
+     }
     },
     {
      "nr": "39",
@@ -450,7 +574,13 @@
       }
      ],
      "absatz": null,
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 350,
+      "l": 350
+     }
     },
     {
      "nr": "40",
@@ -462,7 +592,13 @@
       }
      ],
      "absatz": null,
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 6,
+      "o": 322,
+      "l": 322
+     }
     },
     {
      "nr": "41",
@@ -519,7 +655,12 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. m.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 110,
+      "l": 111
+     }
     },
     {
      "nr": "45",
@@ -531,14 +672,24 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 111,
+      "l": 111
+     }
     },
     {
      "nr": "46",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "4",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 275,
+      "l": 377
+     }
     }
    ]
   },
@@ -559,7 +710,12 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. m.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 170,
+      "l": 224
+     }
     },
     {
      "nr": "48",
@@ -571,7 +727,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 224,
+      "l": 224
+     }
     }
    ]
   },
@@ -633,7 +794,13 @@
       }
      ],
      "absatz": "3",
-     "item": "b"
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 99,
+      "l": 99
+     }
     },
     {
      "nr": "52",
@@ -646,7 +813,13 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 3,
+      "it": 3,
+      "o": 165,
+      "l": 215
+     }
     }
    ]
   },
@@ -679,7 +852,12 @@
      "text": "Verordnung (EU) 2018/1806 des Europäischen Parlaments und des Rates vom 14. November 2018 zur Aufstellung der Liste der Drittländer, deren Staatsangehörige beim Überschreiten der Aussengrenzen im Besitz eines Visums sein müssen, sowie der Liste der Drittländer, deren Staatsangehörige von dieser Visumpflicht befreit sind, ABl. L 303 vom 28.11.2018, S. 39; zuletzt geändert durch Verordnung (EU) 2025/2441, ABl L, 2025/2441, 10.12.2025.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 75,
+      "l": 151
+     }
     },
     {
      "nr": "54",
@@ -691,7 +869,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 151,
+      "l": 151
+     }
     },
     {
      "nr": "55",
@@ -710,14 +893,26 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. m.",
      "links": [],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 281,
+      "l": 283
+     }
     },
     {
      "nr": "57",
      "text": "Beschluss 94/795/JI des Rates vom 30. November 1994 über die vom Rat aufgrund von Artikel K.3 Absatz 2 Buchstabe b) des Vertrages über die Europäische Union beschlossene gemeinsame Massnahme über Reiseerleichterungen für Schüler von Drittstaaten mit Wohnsitz in einem Mitgliedstaat, Fassung gemäss ABl. L 327 vom 19.12.1994, S. 1.",
      "links": [],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 1,
+      "it": 4,
+      "o": 310,
+      "l": 356
+     }
     },
     {
      "nr": "58",
@@ -742,7 +937,13 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 1,
+      "it": 5,
+      "o": 184,
+      "l": 465
+     }
     },
     {
      "nr": "60",
@@ -755,7 +956,13 @@
       }
      ],
      "absatz": "2",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 1,
+      "it": 5,
+      "o": 363,
+      "l": 465
+     }
     },
     {
      "nr": "61",
@@ -780,7 +987,13 @@
       }
      ],
      "absatz": "2",
-     "item": "g"
+     "item": "g",
+     "pos": {
+      "b": 1,
+      "it": 6,
+      "o": 191,
+      "l": 294
+     }
     },
     {
      "nr": "63",
@@ -805,7 +1018,13 @@
       }
      ],
      "absatz": "2",
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 1,
+      "it": 7,
+      "o": 252,
+      "l": 269
+     }
     },
     {
      "nr": "65",
@@ -817,7 +1036,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 488,
+      "l": 488
+     }
     },
     {
      "nr": "66",
@@ -829,7 +1053,12 @@
       }
      ],
      "absatz": "5",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 326,
+      "l": 326
+     }
     }
    ]
   },
@@ -855,7 +1084,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 316,
+      "l": 316
+     }
     },
     {
      "nr": "68",
@@ -867,7 +1101,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 267,
+      "l": 267
+     }
     }
    ]
   },
@@ -888,7 +1127,13 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 47,
+      "l": 96
+     }
     },
     {
      "nr": "70",
@@ -948,7 +1193,13 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 3,
+      "it": 8,
+      "o": 121,
+      "l": 710
+     }
     },
     {
      "nr": "75",
@@ -961,7 +1212,13 @@
       }
      ],
      "absatz": "4",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 3,
+      "it": 8,
+      "o": 426,
+      "l": 710
+     }
     },
     {
      "nr": "76",
@@ -974,7 +1231,13 @@
       }
      ],
      "absatz": "4",
-     "item": "f"
+     "item": "f",
+     "pos": {
+      "b": 3,
+      "it": 10,
+      "o": 107,
+      "l": 152
+     }
     },
     {
      "nr": "77",
@@ -986,7 +1249,12 @@
       }
      ],
      "absatz": "4bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 4,
+      "o": 207,
+      "l": 207
+     }
     }
    ]
   },
@@ -1033,7 +1301,12 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 198,
+      "l": 199
+     }
     }
    ]
   },
@@ -1060,7 +1333,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 166,
+      "l": 178
+     }
     }
    ]
   },
@@ -1087,7 +1365,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 80,
+      "l": 166
+     }
     }
    ]
   },
@@ -1132,7 +1415,12 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 166,
+      "l": 175
+     }
     },
     {
      "nr": "84",
@@ -1144,7 +1432,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 170,
+      "l": 170
+     }
     }
    ]
   },
@@ -1178,7 +1471,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 158,
+      "l": 227
+     }
     },
     {
      "nr": "86",
@@ -1192,7 +1490,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 215,
+      "l": 227
+     }
     }
    ]
   },
@@ -1243,7 +1546,13 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 82,
+      "l": 163
+     }
     }
    ]
   },
@@ -1269,7 +1578,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 240,
+      "l": 240
+     }
     },
     {
      "nr": "90",
@@ -1281,7 +1595,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 299,
+      "l": 299
+     }
     }
    ]
   },
@@ -1307,7 +1626,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 157,
+      "l": 157
+     }
     }
    ]
   },
@@ -1347,7 +1671,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 108,
+      "l": 117
+     }
     }
    ]
   },
@@ -1380,7 +1709,12 @@
      "text": "Übereinkommen vom 14. Juni 1985 zur Durchführung des Übereinkommens von Schengen zwischen den Regierungen der Staaten der Benelux-Wirtschaftsunion, der Bundesrepublik Deutschland und der Französischen Republik betreffend den schrittweisen Abbau der Kontrollen an den gemeinsamen Grenzen; ABl. L 239 vom 22.9.2000, S. 19.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 98,
+      "l": 444
+     }
     },
     {
      "nr": "94",
@@ -1393,7 +1727,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 290,
+      "l": 444
+     }
     }
    ]
   },
@@ -1415,7 +1754,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 82,
+      "l": 222
+     }
     },
     {
      "nr": "96",
@@ -1428,7 +1772,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 83,
+      "l": 222
+     }
     },
     {
      "nr": "97",
@@ -1442,7 +1791,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 174,
+      "l": 222
+     }
     }
    ]
   },
@@ -1475,7 +1829,12 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. m.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 228,
+      "l": 229
+     }
     }
    ]
   },
@@ -1540,7 +1899,12 @@
       }
      ],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 248,
+      "l": 250
+     }
     }
    ]
   },
@@ -1597,7 +1961,13 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. m.",
      "links": [],
      "absatz": "2",
-     "item": "e"
+     "item": "e",
+     "pos": {
+      "b": 1,
+      "it": 4,
+      "o": 178,
+      "l": 273
+     }
     }
    ]
   },
@@ -1642,7 +2012,12 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 156,
+      "l": 411
+     }
     },
     {
      "nr": "114",
@@ -1655,7 +2030,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 250,
+      "l": 411
+     }
     },
     {
      "nr": "115",
@@ -1667,7 +2047,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 411,
+      "l": 411
+     }
     },
     {
      "nr": "116",
@@ -1727,14 +2112,25 @@
       }
      ],
      "absatz": "1",
-     "item": "h"
+     "item": "h",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 160,
+      "l": 160
+     }
     },
     {
      "nr": "121",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. b.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 378,
+      "l": 500
+     }
     },
     {
      "nr": "122",
@@ -1746,14 +2142,24 @@
       }
      ],
      "absatz": "2bis",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 524,
+      "l": 524
+     }
     },
     {
      "nr": "123",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. a.",
      "links": [],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 186,
+      "l": 296
+     }
     },
     {
      "nr": "124",
@@ -1765,7 +2171,12 @@
       }
      ],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 3,
+      "o": 296,
+      "l": 296
+     }
     },
     {
      "nr": "125",
@@ -1892,7 +2303,13 @@
       }
      ],
      "absatz": "1",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 0,
+      "it": 2,
+      "o": 116,
+      "l": 170
+     }
     }
    ]
   },
@@ -1937,7 +2354,12 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 68,
+      "l": 268
+     }
     }
    ]
   },
@@ -1958,7 +2380,12 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 158,
+      "l": 210
+     }
     }
    ]
   },
@@ -1980,7 +2407,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 124,
+      "l": 125
+     }
     }
    ]
   },
@@ -2179,7 +2611,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 245,
+      "l": 245
+     }
     }
    ]
   },
@@ -2206,7 +2643,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 236,
+      "l": 236
+     }
     }
    ]
   },
@@ -2279,7 +2721,12 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 247,
+      "l": 257
+     }
     }
    ]
   },
@@ -2405,7 +2852,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 35,
+      "l": 93
+     }
     },
     {
      "nr": "204",
@@ -2418,7 +2870,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 2
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 1,
+      "l": 1
+     }
     }
    ]
   },
@@ -2532,14 +2989,24 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 143,
+      "l": 301
+     }
     },
     {
      "nr": "103",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. m.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 291,
+      "l": 301
+     }
     },
     {
      "nr": "104",
@@ -2551,7 +3018,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 301,
+      "l": 301
+     }
     }
    ]
   },
@@ -2584,7 +3056,12 @@
      "text": "Verordnung (EU) 2018/1240 des Europäischen Parlaments und des Rates vom 12. September 2018 über die Einrichtung eines Europäischen Reiseinformations- und ‑genehmigungssystems (ETIAS) und zur Änderung der Verordnungen (EU) Nr. 1077/2011, (EU) Nr. 515/2014, (EU) 2016/399, (EU) 2016/1624 und (EU) 2017/2226, Fassung gemäss ABl. L 236 vom 19.9.2018, S. 1.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 172,
+      "l": 443
+     }
     },
     {
      "nr": "130",
@@ -2597,7 +3074,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 410,
+      "l": 443
+     }
     },
     {
      "nr": "131",
@@ -2678,7 +3160,12 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 156,
+      "l": 411
+     }
     },
     {
      "nr": "137",
@@ -2691,7 +3178,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 250,
+      "l": 411
+     }
     },
     {
      "nr": "138",
@@ -2763,7 +3255,13 @@
       }
      ],
      "absatz": "2",
-     "item": "c"
+     "item": "c",
+     "pos": {
+      "b": 1,
+      "it": 2,
+      "o": 252,
+      "l": 252
+     }
     }
    ]
   },
@@ -2796,14 +3294,24 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. d.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 176,
+      "l": 484
+     }
     },
     {
      "nr": "146",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. e.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 194,
+      "l": 484
+     }
     },
     {
      "nr": "147",
@@ -2816,7 +3324,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 288,
+      "l": 484
+     }
     },
     {
      "nr": "148",
@@ -2873,7 +3386,12 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. f.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 174,
+      "l": 518
+     }
     },
     {
      "nr": "152",
@@ -2886,7 +3404,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 268,
+      "l": 518
+     }
     },
     {
      "nr": "153",
@@ -2898,14 +3421,24 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 518,
+      "l": 518
+     }
     },
     {
      "nr": "154",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. g.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 176,
+      "l": 439
+     }
     }
    ]
   },
@@ -2938,7 +3471,12 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. h.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 175,
+      "l": 458
+     }
     },
     {
      "nr": "157",
@@ -2951,7 +3489,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 425,
+      "l": 458
+     }
     },
     {
      "nr": "158",
@@ -3032,7 +3575,12 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. i.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 172,
+      "l": 464
+     }
     },
     {
      "nr": "164",
@@ -3045,14 +3593,24 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 452,
+      "l": 464
+     }
     },
     {
      "nr": "165",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. j.",
      "links": [],
      "absatz": "3",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 160,
+      "l": 440
+     }
     }
    ]
   },
@@ -3086,7 +3644,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 328,
+      "l": 450
+     }
     },
     {
      "nr": "168",
@@ -3100,7 +3663,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 438,
+      "l": 450
+     }
     }
    ]
   },
@@ -3134,7 +3702,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 175,
+      "l": 595
+     }
     },
     {
      "nr": "171",
@@ -3148,7 +3721,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 269,
+      "l": 595
+     }
     }
    ]
   },
@@ -3181,7 +3759,12 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. m.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 171,
+      "l": 441
+     }
     },
     {
      "nr": "174",
@@ -3194,7 +3777,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 265,
+      "l": 441
+     }
     }
    ]
   },
@@ -3228,7 +3816,12 @@
      "links": [],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 172,
+      "l": 443
+     }
     },
     {
      "nr": "177",
@@ -3242,7 +3835,12 @@
      ],
      "absatz": null,
      "item": null,
-     "absatzIndex": 0
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 266,
+      "l": 443
+     }
     }
    ]
   },
@@ -3275,7 +3873,12 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. o.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 170,
+      "l": 442
+     }
     },
     {
      "nr": "180",
@@ -3288,7 +3891,12 @@
       }
      ],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 264,
+      "l": 442
+     }
     }
    ]
   },
@@ -3321,7 +3929,12 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. c.",
      "links": [],
      "absatz": "2",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 1,
+      "o": 206,
+      "l": 210
+     }
     }
    ]
   },
@@ -3352,7 +3965,13 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. n.",
      "links": [],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 98,
+      "l": 99
+     }
     },
     {
      "nr": "199",
@@ -3365,14 +3984,26 @@
       }
      ],
      "absatz": "1",
-     "item": "d"
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 160,
+      "l": 161
+     }
     },
     {
      "nr": "200",
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. m.",
      "links": [],
      "absatz": "2",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 1,
+      "it": 0,
+      "o": 116,
+      "l": 187
+     }
     },
     {
      "nr": "197",
@@ -3424,7 +4055,13 @@
       }
      ],
      "absatz": "1",
-     "item": "a"
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 140,
+      "l": 238
+     }
     }
    ]
   },
@@ -3445,7 +4082,12 @@
      "text": "Siehe Fussnote zu Art. 1 Abs. 4 Bst. n.",
      "links": [],
      "absatz": "1",
-     "item": null
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 193
+     }
     }
    ]
   },
