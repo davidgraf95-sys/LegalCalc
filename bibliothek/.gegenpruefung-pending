@@ -1,10 +1,15 @@
 {
-  "hash": "23f5f95469da5627a81078e5b8ed485838fca361f77b56d282c66c398378c51f",
+  "hash": "deba270996b65f45c5ec6cdc1e27dd3efcd1ec5404771ef02456e714a0d85d22",
   "verdikt": "bestanden",
-  "quellePin": "fedlex Filestore-Cache gepinnt (8 Erlasse + 4 Staatsvertraege) + Live-ELI-Proben (ZGB abstract 200); currency selbst geprueft",
-  "datum": "2026-07-25",
+  "quellePin": "fedlex dbg 20260101 · sthg 20250101 · rbue 20240606 · hzue 20230612 · vvv 20260101 (HTML-Pins + amtliche PDF-Manifestationen)",
+  "datum": "2026-07-26",
   "dateien": [
-    "src/lib/normtext/browse.ts",
-    "src/lib/normtext/verifikationslink.ts"
+    "daten-manifest.json",
+    "public/normtext/bund/DBG.json",
+    "public/normtext/bund/HZUE.json",
+    "public/normtext/bund/RBUE.json",
+    "public/normtext/bund/STHG.json",
+    "public/normtext/bund/VVV.json",
+    "scripts/normtext/extrahiere-fedlex.ts"
   ]
 }
