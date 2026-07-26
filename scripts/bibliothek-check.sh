@@ -39,8 +39,11 @@ for f in recherche/*.md behoerden/*.md kosten/*.md normen/*.md materialien/*.md 
 done
 
 # ── S4: /tmp nur für Fedlex-Caches + deklarierte Cache-Ableitungen ──────────
-# Whitelist aus fedlex-cache.sh (Gesetzes-Caches) + Norm-Extrakt-Arbeitskopien.
-WHITELIST='or|zgb|zpo|schkg|arg|vmwg|stpo|vwvg|bgg|vvg|hregv|gebv_hreg|gebv_schkg|stg|stgb'
+# Whitelist dynamisch aus fedlex-cache.sh (alle gepinnten Gesetzes-Caches) +
+# Norm-Extrakt-Arbeitskopien. Vorher hart kodiert (15 Ur-Caches) und damit
+# stale gegenüber dem gewachsenen Pin-Bestand (Befund 26.7.2026: argv5/vstv).
+WHITELIST=$(grep -oE '^  "[a-z0-9_]+\|' ../scripts/fedlex-cache.sh | sed -E 's/^  "([a-z0-9_]+)\|/\1/' | paste -sd'|' -)
+[ -n "$WHITELIST" ] || { echo "VERSTOSS [S4] Whitelist leer — fedlex-cache.sh nicht lesbar (Tor darf nicht blind durchwinken)"; exit 1; }
 grep -rnoE '/tmp/[a-zA-Z0-9._-]+' --include="*.md" . | grep -vE "/tmp/(${WHITELIST})\.html" \
   | grep -vE '/tmp/(gruendung|kaperh)[a-z0-9_-]*-extrakt2?\.txt' \
   | grep -v 'muster/' \
