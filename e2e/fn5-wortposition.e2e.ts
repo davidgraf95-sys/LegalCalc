@@ -30,11 +30,13 @@ test('ZGB Art. 798a: fn 667 sitzt nach «1991» mitten im Satz, nicht am Absatze
   expect(text).toMatch(/Oktober 1991\W{0,2}667\W{0,2}über das bäuerliche Bodenrecht/)
 })
 
-test('DBG Art. 22: fn 57 (pos auf Formelbild-Block) rendert via Fallback — kein Marker-Verlust (B1)', async ({ page }) => {
+test('DBG Art. 22: fn 57 (pos auf Formelbild-Block) — kein Marker-Verlust (B1)', async ({ page }) => {
   // Gegenprüfungs-Befund B1 (26.7.2026): pos {b:4,it:0} zeigt auf einen
-  // Bild-Block, den ArtikelBody per Early-Return ohne Marker-Slots rendert.
-  // Der ArtikelLeser-Riegel muss solche pos verwerfen → Marker rendert wie
-  // vor FN-5 am sichtbaren Absatz. Verschwindet er, ist B1 zurück.
+  // Bild-Block. Seit der itemListe-Extraktion (PR #372) rendern Bild-Blöcke
+  // ihre items samt Marker-Slots; der B1-Riegel routet Item-pos darum wieder
+  // inline (Absatz-Text-pos auf Bild-Blöcken bleibt verworfen). Diese
+  // Assertion ist der Verlust-/Doppel-Wächter (genau EIN Marker im Artikel);
+  // die genaue Platzierung im Rendite-Item prüft bild-block-items.e2e.ts.
   await page.goto('/gesetze/bund/DBG#art-22')
   const art = page.locator('#art-22')
   await expect(art).toBeVisible()

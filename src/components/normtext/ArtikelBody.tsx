@@ -492,7 +492,14 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
   // Formelbild-Block); der frühere Early-Return verschluckte sie — amtliche
   // Substanz fehlte im Reader (§1/§8, FN-5-Gegenprüfung 26.7.2026). Liefert
   // null, wenn der Block keine items trägt.
-  const itemListe = (b: NormSnapshot['bloecke'][number], i: number, absMarke: string | null) => {
+  // `ohneZitierMarke` (Gegenprüfung 26.7., Befund 3): Items an absatz-losen
+  // Bild-Blöcken sind Fortsetzungen des Vorgänger-Absatzes — ihre lit.-/Abs.-
+  // Kette liegt in ANDEREN Blöcken. Das lokal gebaute Zitat wäre falsch
+  // (DBG 22: beide «Ziff. 2» ergäben identisch «Art. 22 Ziff. 2 DBG», eine
+  // Fundstelle, die es amtlich nicht gibt). §1: lieber keine Kopier-Marke als
+  // eine falsche — bis die blockübergreifende Kette samt `tiefe`-Extraktion
+  // steht (korpus-werkstatt).
+  const itemListe = (b: NormSnapshot['bloecke'][number], i: number, absMarke: string | null, ohneZitierMarke = false) => {
     if (b.items == null || b.items.length === 0) return null;
     // M6: erklärt dieser Absatz die Bestimmungen eines Fremdgesetzes für
     // anwendbar, zitieren seine Items bloße Fremd-Artikel → bare-Ref-Linking
@@ -547,6 +554,11 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
           const istStrich = /^[–—-]$/.test(it.marke.trim());
           // FN-5: im Text-Pfad inline gesetzte Marker dieses Items —
           // erscheinen nicht mehr zusätzlich am Item-Ende.
+          // INVARIANTE (wie im Absatz-Pfad, Gegenprüfung 26.7., B2/B5): der
+          // Item-Text-Pfad unten muss VOR dem End-Marker-Fragment ausgewertet
+          // werden (JSX-Kinder in Quelltext-Reihenfolge) — sonst rendern
+          // inline gesetzte Marker doppelt. Bei einer Umsortierung der
+          // <span>-Kinder diese Kopplung zuerst auflösen.
           const itemInlineGesetzt = new Set<string>();
           const markeAnzeige = istStrich ? '–' : `${it.marke}.`;
           // Präzises Zitat inkl. Verschachtelung: eine Ziff. unter einer
@@ -582,9 +594,11 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
             >
               {istStrich
                 ? <span className="shrink-0 select-none text-ink-500">{markeAnzeige}</span>
-                : zk
+                : zk && !ohneZitierMarke
                   ? <ZitierMarke klasse="shrink-0 w-6 text-right !font-medium !text-ink-500 text-body-s" zitat={itemZitat} ausweis={ausweisBasis}>{markeAnzeige}</ZitierMarke>
-                  : <span className="num shrink-0 font-semibold text-ink-500">{markeAnzeige}</span>}
+                  : zk
+                    ? <span className="num shrink-0 w-6 text-right font-medium text-ink-500 text-body-s">{markeAnzeige}</span>
+                    : <span className="num shrink-0 font-semibold text-ink-500">{markeAnzeige}</span>}
               <span className="min-w-0 [overflow-wrap:anywhere] hyphens-manual">
                 {/* S13 (BS-Audit 23.6.2026): lange Komposita in Aufzählungen
                     sprengten auf schmalem Viewport (~390px) den Reader (≈25px
@@ -671,7 +685,12 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
           const figur = bb.bildKacheln && bb.bildKacheln.length > 0
             ? <BildKacheln kacheln={bb.bildKacheln} />
             : <BildFigur bild={bb.bild!} />;
-          const items = itemListe(b, i, absatzMarke(b.absatz, b.text).marke);
+          // Zitier-Marke nur unterdrücken, wenn der Bild-Block wirklich
+          // absatz-los ist (Bedingung spiegelt die Begründung — Gegenprüfung
+          // 26.7., Hinweis zu B3): ein künftiger Bild-Block MIT eigener
+          // Absatznummer trüge ein korrektes «Abs.»-Zitat und behält die Marke.
+          const bildAbsMarke = absatzMarke(b.absatz, b.text).marke;
+          const items = itemListe(b, i, bildAbsMarke, bildAbsMarke == null);
           // Itemloser Bild-Block: Markup exakt wie bisher (DOM-identisch).
           if (items == null) {
             return (

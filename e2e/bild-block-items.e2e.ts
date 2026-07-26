@@ -26,6 +26,23 @@ test('DBG 22: Formelbild-Block zeigt Bild UND seine lit./Ziff.-Items', async ({ 
   ).toBeVisible()
 })
 
+test('DBG 22: fn 57 sitzt IM Rendite-Item des Formelbild-Blocks (B1-Riegel-Lockerung)', async ({ page }) => {
+  // Nach der Riegel-Lockerung (Item-Slot existiert seit dem itemListe-Fix auch
+  // auf Bild-Blöcken) routet pos {b:4,it:0,o:79} wieder inline: der Marker
+  // klebt am Rendite-Item selbst — nicht mehr via Legacy-Fallback (absatz='3')
+  // am Ende des Abs.-3-Fliesstexts, zwei Blöcke über der Zielstelle.
+  // Genau EIN Marker im Artikel (kein Doppel-Rendering).
+  await page.goto('/gesetze/bund/DBG#art-22')
+  const art = page.locator('#art-22')
+  await expect(art).toBeVisible()
+  await art.scrollIntoViewIfNeeded()
+  const fn57 = art.getByRole('button', { name: 'Fussnote 57' })
+  await expect(fn57).toHaveCount(1)
+  const renditeItem = art.locator('li', { hasText: 'Ist diese Rendite negativ oder null' })
+  await expect(renditeItem).toHaveCount(1)
+  await expect(renditeItem.getByRole('button', { name: 'Fussnote 57' })).toHaveCount(1)
+})
+
 test('STHG 7: Formelbild-Block zeigt Bild UND seine Items', async ({ page }) => {
   await page.goto('/gesetze/bund/STHG#art-7')
   const art = page.locator('#art-7')
@@ -35,4 +52,11 @@ test('STHG 7: Formelbild-Block zeigt Bild UND seine Items', async ({ page }) => 
   await expect(
     art.getByText('Ist diese Rendite negativ oder null, so beträgt der Ertragsanteil null Prozent.'),
   ).toBeVisible()
+  // fn 27 (pos {b:5,it:0,o:79}) routet nach der Riegel-Lockerung inline ins
+  // Rendite-Item — genau einmal, kein Verlust, kein Doppel.
+  const fn27 = art.getByRole('button', { name: 'Fussnote 27' })
+  await expect(fn27).toHaveCount(1)
+  await expect(
+    art.locator('li', { hasText: 'Ist diese Rendite negativ oder null' }).getByRole('button', { name: 'Fussnote 27' }),
+  ).toHaveCount(1)
 })
