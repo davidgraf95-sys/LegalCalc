@@ -125,3 +125,107 @@ Es existiert im Repo **keine** vorbestehende Fussnoten-Klassifikation
 (weder Feld im Sidecar noch Code); die Intake-Zahl 778/77 war eine
 Ad-hoc-Messung ohne persistierte Regeln. Diese Datei + `scripts/analyse/hist-h0.ts`
 sind jetzt die reproduzierbare Referenz.
+
+*(Der Negativbefund ist mit H1 überholt — siehe Ziff. 7: die Klassifikation ist
+jetzt persistiert. Er bleibt als Zustandsbeschreibung VOR dem Bau stehen.)*
+
+---
+
+## 7 · H1-Nachtrag: Umsetzung der Auflagen (26.7.2026)
+
+**Quelle/Stand:** eigener Korpus `public/normtext/struktur/{bund,kanton}`, gemessen
+26.7.2026 am regenerierten Bestand. **Abnahme-Status:** gebaut + Tore grün;
+**fachliche Abnahme David offen**, adversariale Gegenprüfung des Risiko-Pfads
+offen (Auflage 3, s. u.).
+
+### 7.1 Wo die Regeln jetzt leben (Auflage 3)
+
+Die Regeln sind aus dem Messwerkzeug in die Generator-Schicht **gehoben**, nicht
+kopiert: `scripts/normtext/fussnoten-klassifikation.ts` ist die eine Quelle;
+`scripts/analyse/hist-h0.ts` importiert sie und bleibt reine Messung (§5).
+`scripts/normtext/struktur-run.ts` berechnet die Klasse **einmal build-seitig**
+und schreibt sie als kompaktes Feld `kl` (`'A'|'V'|'G'|'Z'|'U'`) an jede Fussnote
+— kein Client-Regex-Lauf über 37'849 Fussnoten (§15.3).
+
+**Deterministische Regel (Eingabe → Ausgabe):** roher Fussnotentext → Tags
+gestrippt/Whitespace normalisiert → erste greifende Regel in fester Reihenfolge
+gewinnt → Klasse. Gleiche Eingabe ⇒ gleiche Ausgabe, keine Heuristik (§2).
+
+### 7.2 Auflage 2 umgesetzt — und was sie am Bestand bewirkt
+
+| Signal | Ziel-Klasse | Begründung |
+|---|---|---|
+| `unter dem Vorbehalt` | **VERWEIS** | BS-780.100 § 29: Genehmigung unter **Auslegungs**-Vorbehalt = geltende materielle Vorgabe |
+| `eingesehen werden` | **VERWEIS** | BS-953.900 § 93: Bezugsquelle eines nicht abgedruckten Texts = einziger Leserweg |
+| `nicht abgedruckt` | **GRAUZONE** | BS-Familie: Vollständigkeits-Hinweis «hier fehlt Text» — §8-relevant, aber kein Verweis |
+
+Die Riegel stehen **vor** dem Revisionsprosa-Test; sonst gewinnt `REV_START`
+(«Die Änderungen …») und der Fall landet wieder in `A`.
+
+**Abgrenzung (bewusst eng):** `unter dem Vorbehalt` fängt NICHT
+«unter Vorbehalt des unbenützten Ablaufs der Referendumsfrist» (AR-822.41 § 28) —
+das ist reine Inkraftsetzungs-Prosa. Eine weite Fassung hätte massenhaft Historie
+in die nicht-ausblendbaren Klassen verschoben und den Umschalter entwertet.
+
+**Wirkung, gemessen:** genau **13** Fussnoten verlassen AENDERUNG (12× «nicht
+abgedruckt» + 1× «unter dem Vorbehalt»), **alle kantonal**. Korpus-Delta gegen
+Ziff. 2: AENDERUNG 25'367 → **25'354**, Kanton 674 → **661**. Die Bund-Fläche
+(24'693) ist von Auflage 2 **nicht** betroffen.
+
+### 7.3 Regeneriert wurde NUR Bund (bewusst)
+
+227 Bund-Sidecars, 31'786 Fussnoten. Verteilung nach der Regeneration:
+
+| | A | V | G | Z | U |
+|---|---:|---:|---:|---:|---:|
+| Bund (31'786) | 24'693 (77.7 %) | 5'759 (18.1 %) | 292 (0.9 %) | 632 (2.0 %) | 410 (1.3 %) |
+
+Kanton bleibt **ohne** `kl` (1'189 Sidecars): dort sind nur 11.1 % der Fussnoten
+Historie, der Nutzen liegt auf der Bund-Fläche. Eine Fussnote **ohne** `kl` gilt
+im Reader als unklassifiziert und bleibt in **jeder** Ansicht sichtbar — die
+fehlende Klasse blendet also nie etwas aus (konservativ, §8).
+
+**Additivitäts-Beweis** (`scripts/normtext/check-sidecar-differ.ts`, §6): alt↔neu
+strukturell verglichen, erlaubt sind ausschliesslich `erzeugt` und neu
+hinzugefügte `…/fussnoten/N/kl`. Ergebnis: 227 Dateien, 31'786 neue `kl`,
+**0 unerlaubte Abweichungen**, 0 `erzeugt`-Änderungen — alle Bestandsfelder inkl.
+der FN-5/M14-Offsets `pos{b,it,o,l}` unverändert. Gegenprobe im selben Tor: jede
+Fussnote MUSS ein gültiges `kl` tragen (sonst wäre ein No-op-Lauf grün, §6.7);
+einmal rot gezeigt mit verschobenem `pos.o`, geändertem Text und gelöschtem `kl`.
+
+### 7.4 Auflage 1 in der UI: was ausblendbar ist
+
+Ausgeblendet wird ausschliesslich `[data-fn-klasse="A"]` — der Attribut-Selektor
+greift nur bei exakt `A`. V/G/Z/U **und** alles ohne Klasse bleiben in allen drei
+Ansichten sichtbar. `display:none` trifft nur Marker-Ziffern und Apparat-Zeilen,
+nie einen Substanz-Träger; der Normtext ist von keiner Regel erfasst und bleibt
+sichtbar, durchsuchbar und im Ausdruck (R9/§8). Der `<p id="fn-…">`-Quellblock
+bleibt im DOM, weshalb das Marker-Popover auch in der Chronologie-Ansicht trägt.
+
+### 7.5 Auflage 5 (ZITAT) — bleibt David-Entscheid
+
+`Z` (632 Fussnoten im Bund, 2.0 %) ist **sichtbar** gelassen = die Empfehlung aus
+Ziff. 5 (Provenienz). **Nicht** entschieden, nur umgesetzt-wie-empfohlen: der
+finale ZITAT-Entscheid liegt bei David. Umschalten wäre ein Ein-Zeichen-Eingriff
+in `klassifiziere()` (ZITAT → AENDERUNG) plus Regeneration — die Stelle ist im
+Regel-Modul als solche kommentiert.
+
+### 7.6 Pflegebedarf
+
+Ändert Fedlex den Wortlaut seiner Revisionsvermerke, wandern Fälle nach `U`
+(sichtbar, harmlos) — nie automatisch nach `A`. Neue Auflage-2-Fälle gehören in
+`SUBSTANZ_VERWEIS`/`VOLLSTAENDIGKEIT` **mit** Unit-Test-Fixture im amtlichen
+Wortlaut (`src/tests/fussnoten-klassifikation.test.ts`). Nach jeder Regeländerung:
+`npx vite-node scripts/analyse/hist-h0.ts` (Korpuszahlen) + Regeneration +
+Differ-Beweis.
+
+### 7.7 Was offen bleibt
+
+- **Adversariale Gegenprüfung** des Klassifikator-Codes (Auflage 3) — der
+  Bau-Auftrag durfte sie nicht selbst quittieren; `check:gegenpruefung` prüft nur
+  den Working-Tree, nicht den Branch-Diff.
+- **Fachliche Abnahme David** (§7/§8) — inkl. ZITAT-Entscheid (7.5).
+- **Kopf-Fussnoten** folgen der Wahl bewusst nicht (keine Chronologie-Ersatz-
+  darstellung für den Erlass-Kopf; Begründung am Fundort in `ErlassKopfBlock.tsx`).
+- Der **Recall**-Rest aus Ziff. 3 (~96.7 %) ist unverändert: Historie in `V`/`U`
+  bleibt als Komfort-Rauschen sichtbar — kein Treue-Problem.
