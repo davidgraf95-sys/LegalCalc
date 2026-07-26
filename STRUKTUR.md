@@ -21,6 +21,14 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 26.7.2026 (Parallel-Worktree) — Reader-Fix: Bild-Blöcke verschluckten ihre items — amtliche <dl> unsichtbar (DBG 22, STHG 7) (PR #372, offen)
+**Auftrag David:** vorbestehenden main-Defekt aus der FN-5-Gegenprüfung (26.7., Runde 2) reproduzieren, fixen, e2e-Wächter, korpusweit zählen. `ArtikelBody.tsx` kehrte bei `bild`/`bildKacheln` früh zurück und renderte `b.items` nie — die amtliche Aufzählung am Formelbild («Ist diese Rendite negativ oder null, so beträgt der Ertragsanteil null Prozent.») fehlte im Reader (§1/§8).
+- **Repro bewiesen:** neuer Wächter `e2e/bild-block-items.e2e.ts` gegen gebautes dist VOR dem Fix rot gezeigt (§6.7), danach grün; in Shard-Gruppe 1 (Union-Wächter grün).
+- **Fix (§3, reine Darstellung):** Item-Renderpfad als geteilte `itemListe` extrahiert (EINE Stelle, §5; Code unverändert verschoben); Bild-Blöcke rendern Bild UND danach ihre items über genau diesen Pfad. Itemlose Bild-Blöcke DOM-identisch (eigener Zweig, exakt bisheriges Markup).
+- **Korpus-Zählung:** 277 Bild-/Kachel-Blöcke (3318 JSON, alle 21 bild-tragenden Dateien erfasst), genau **4 mit items** — DBG 22 Blöcke 3+4, STHG 7 Blöcke 4+5 (10 Items); 0 titel-Blöcke mit items.
+- **Beweis:** `npm run gate` GRÜN (tsc · vitest 275/4389 · golden byte-gleich · lint · check 37/37 inkl. gegenpruefung) · volle e2e-Suite lokal **309/309 grün** (7.6 min) · Screenshot dist DBG 22. Gegenprüfung n/a — keine Risiko-Pfad-Globs im Diff.
+- **Offen → FN-5-Landung (`feat/fn5-wortgenaue-marker`, hier NICHT berührt, §12):** B1-Riegel `blockRendertMarker` (ArtikelLeser.tsx ~Z. 246) darf den Item-Fall (`p.it != null`) auf Bild-Blöcken nach diesem Fix wieder inline routen; Absatz-Text-Fall und titel-Blöcke bleiben geriegelt. Anpassung mit erneuter Gegenprüfung des Routings (DBG 22 fn 57, STHG 7 fn 27). Detail im PR-Text #372.
+
 ## Session 26.7.2026 (QS-OPT) — CI flüssiger: e2e-Wand geachtelt + Bau/Tore-Split, PR-Lauf ~30 → ~10 min (PR #367, Squash `d2e576b1`)
 **Auftrag David:** «alles zu kompliziert … CI-Checks gehen regelmässig 20 Minuten … muss flüssiger werden … drastischere Änderungen, nur Nötiges.» Befund aus echten Lauf-Daten (Lauf 30175300387, 29.6 min grün): `tore` (5.5 min, alle Node-Checks) lief seriell VOR den Shards; die 3er-Shards waren nach LOKALEN Dauern gepackt, real 11.8/15.5/21.0 min; Perf wartete aufs langsamste Shard. Die 59 check:*-Tore kosten zusammen <6 min und sind NICHT der Engpass.
 - **8 statt 3 Shards**, LPT-gepackt aus CI-GEMESSENEN Spec-Dauern der `playwright-report-gruppe-*`-Artefakte (56 Specs, 44.0 min Gesamttestzeit, Makespan 6.4 min, Rest je 5.4). Union-Wächter unverändert scharf. Reine Verteilung, kein Test/Timeout/Umfang (§6.3).
