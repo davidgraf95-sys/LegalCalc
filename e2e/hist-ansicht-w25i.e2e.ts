@@ -186,9 +186,16 @@ test('«als Chronologie»: A-Einträge chronologisch am Artikelfuss, Verweise bl
   // … ihr Wortlaut bleibt aber im DOM (R9/§8) und das Marker-Popover findet ihn.
   expect((await apparatZeile(page, '9', '27').textContent())?.trim() ?? '').toContain('Eingefügt durch');
 
-  // Gegenprobe auf einem Artikel MIT Verweis: der V-Eintrag bleibt im Apparat sichtbar,
-  // erscheint aber NICHT in der Chronologie (die zeigt nur Änderungsvermerke).
+  // Art. 9 trägt AUSSCHLIESSLICH A-Fussnoten ⇒ der Apparat hätte nur noch unsichtbare
+  // Zeilen. Die `:not(:has(> :not([data-fn-klasse="A"])))`-Regel nimmt dann auch seinen
+  // Rahmen mit, damit keine leere Trennlinie stehen bleibt.
+  await expect(page.locator('#art-9 [data-fn-apparat]')).toBeHidden();
+
+  // Gegenprobe auf einem Artikel MIT Verweis: dort bleibt der Apparat (samt Rahmen)
+  // stehen, weil er eine nicht-A-Zeile trägt — der V-Eintrag ist sichtbar, erscheint
+  // aber NICHT in der Chronologie (die zeigt nur Änderungsvermerke).
   await page.locator('#art-4').scrollIntoViewIfNeeded();
+  await expect(page.locator('#art-4 [data-fn-apparat]')).toBeVisible();
   await expect(apparatZeile(page, '4', '13')).toBeVisible();
   const chrono4 = await page.locator('#art-4 [data-hist-chrono]').innerText();
   expect(chrono4).not.toContain('0.142.112.681');
