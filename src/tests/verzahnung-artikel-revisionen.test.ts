@@ -98,6 +98,54 @@ describe('extrahiereArtikelRevision — max-Datum + AS-Fundstelle', () => {
       { text: 'Fassung gemäss …, in Kraft seit 1. Jan. 2012, mit Ausnahme von Abs. 1 in Kraft seit 1. Aug. 2011 (AS <b>2011</b> 3393; BBl 2007 5669).' },
     ])).toEqual({ iso: '2012-01-01', as: 'AS 2011 3393' });
   });
+
+  // ── H1-Gegenprüfung W2·5i (26.7.2026): befristete Inkraftsetzung «in Kraft vom
+  // X bis zum Y» — dritte amtliche Formulierung einer datierten Textänderung.
+  // Fixtures = amtliche Wortlaute aus den Struktur-Sidecars (§7, empirisch geprüft).
+  it('erkennt befristete Inkraftsetzung «in Kraft vom X bis zum Y» (AHVG Art. 34bis)', () => {
+    expect(extrahiereArtikelRevision([
+      { text: 'Eingefügt durch Ziff. I des BG vom 17. Dez. 2021 (AHV 21), in Kraft vom 1. Jan. 2025 bis zum 31. Dez. 2033 (AS <b>2023</b> 92; BBl <b>2019</b> 6305).' },
+    ])).toEqual({ iso: '2025-01-01', as: 'AS 2023 92' });
+  });
+  it('nimmt bei «in Kraft vom … bis …, ab … unbefristet» das ANFANGS-Datum (VTS Art. 95)', () => {
+    expect(extrahiereArtikelRevision([
+      { text: 'Eingefügt durch Ziff. I der V vom 17. Dez. 2021, in Kraft vom 1. April 2022 bis zum 31. Dez. 2030, ab dem 1. Juli 2026 unbefristet (AS <b>2022</b> 14; <b>2026</b> 226 Ziff. III).' },
+    ])).toEqual({ iso: '2022-04-01', as: 'AS 2022 14' });
+  });
+  it('Jahr-Ellipse «vom 21. März bis zum 20. Sept. 2020»: Jahr vom Enddatum, Tag/Monat vom ANFANG (AHVV Art. 41bis)', () => {
+    expect(extrahiereArtikelRevision([
+      { text: 'Eingefügt durch Ziff. I 1 der V vom 20. März 2020über Massnahmen im Zusammenhang mit dem Coronavirus (COVID-19) zur Kurzarbeitsentschädigung und zur Abrechnung der Sozialversicherungsbeiträge, in Kraft vom 21. März bis zum 20. Sept. 2020 (AS <b>2020</b> 875).' },
+    ])).toEqual({ iso: '2020-03-21', as: 'AS 2020 875' });
+  });
+  // Gegenprüfungs-Befund F1 (Opus, 26.7.2026): Die Klausel «Art. 40c in Kraft
+  // vom …» in der Gliederungstitel-Fussnote (Sidecar-Host: Art. 39) ist FREMD-
+  // adressiert — sie datiert Art. 40c, nie den Host. Für Art. 39 gilt amtlich
+  // «in Kraft seit 1. Jan. 2024» (Fedlex SR 831.10, Fassung 20260101).
+  it('fremd-adressierte Klausel «Art. 40c in Kraft vom …» datiert den Host Art. 39 NICHT (AHVG)', () => {
+    expect(extrahiereArtikelRevision([
+      { text: 'Fassung gemäss Ziff. I des BG vom 17. Dez. 2021 (AHV 21), in Kraft seit 1. Jan. 2024, Art. 40<i>c</i> in Kraft vom 1. Jan. 2025 bis zum 31. Dez. 2033 (AS <b>2023</b> 92; BBl <b>2019</b> 6305).' },
+    ], '39')).toEqual({ iso: '2024-01-01', as: 'AS 2023 92' });
+  });
+  it('dieselbe Klausel ZÄHLT, wenn der genannte Artikel der Host IST (Art. 40c)', () => {
+    expect(extrahiereArtikelRevision([
+      { text: 'Fassung gemäss Ziff. I des BG vom 17. Dez. 2021 (AHV 21), in Kraft seit 1. Jan. 2024, Art. 40<i>c</i> in Kraft vom 1. Jan. 2025 bis zum 31. Dez. 2033 (AS <b>2023</b> 92; BBl <b>2019</b> 6305).' },
+    ], '40c')).toEqual({ iso: '2025-01-01', as: 'AS 2023 92' });
+  });
+  it('ohne Host-Token wird eine Art.-adressierte Klausel konservativ übersprungen', () => {
+    expect(extrahiereArtikelRevision([
+      { text: 'Fassung gemäss Ziff. I des BG vom 17. Dez. 2021 (AHV 21), in Kraft seit 1. Jan. 2024, Art. 40<i>c</i> in Kraft vom 1. Jan. 2025 bis zum 31. Dez. 2033 (AS <b>2023</b> 92; BBl <b>2019</b> 6305).' },
+    ])).toEqual({ iso: '2024-01-01', as: 'AS 2023 92' });
+  });
+  it('Regression OR Art. 732: fremd-adressiertes «Art. 734f in Kraft seit 2021» ändert das Host-Datum 2023 nicht', () => {
+    expect(extrahiereArtikelRevision([
+      { text: 'Fassung gemäss Ziff. I des BG vom 19. Juni 2020 (Aktienrecht), in Kraft seit 1. Jan. 2023, Art. 734<i>f</i> in Kraft seit 1. Jan. 2021 (AS <b>2020</b> 4005; <b>2022</b> 109; BBl <b>2017</b> 399).' },
+    ], '732')).toEqual({ iso: '2023-01-01', as: 'AS 2020 4005' });
+  });
+  it('Negativ: Erlass-Datum «der V vom 8. Mai 2024» OHNE Inkraft-Klausel triggert NICHT', () => {
+    expect(extrahiereArtikelRevision([
+      { text: 'Fassung gemäss Ziff. I der V vom 8. Mai 2024 (AS <b>2024</b> 253).' },
+    ])).toBeNull();
+  });
 });
 
 describe('baueRevisionProArtikel — kanonische Token, Kollision → max', () => {
