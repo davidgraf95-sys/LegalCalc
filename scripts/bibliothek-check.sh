@@ -44,7 +44,7 @@ done
 # stale gegenüber dem gewachsenen Pin-Bestand (Befund 26.7.2026: argv5/vstv).
 WHITELIST=$(grep -oE '^  "[a-z0-9_]+\|' ../scripts/fedlex-cache.sh | sed -E 's/^  "([a-z0-9_]+)\|/\1/' | paste -sd'|' -)
 [ -n "$WHITELIST" ] || { echo "VERSTOSS [S4] Whitelist leer — fedlex-cache.sh nicht lesbar (Tor darf nicht blind durchwinken)"; exit 1; }
-grep -rnoE '/tmp/[a-zA-Z0-9._-]+' --include="*.md" . | grep -vE "/tmp/(${WHITELIST})\.html" \
+grep -rnoE '/tmp/[a-zA-Z0-9._-]+' --include="*.md" . | grep -vE "/tmp/(${WHITELIST})\.html$" \
   | grep -vE '/tmp/(gruendung|kaperh)[a-z0-9_-]*-extrakt2?\.txt' \
   | grep -v 'muster/' \
   | tee /tmp/bibcheck-tmp.txt
