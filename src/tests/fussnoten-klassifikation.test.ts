@@ -130,7 +130,7 @@ describe('§6.7 — das Tor kann scheitern (Sabotage-Probe)', () => {
   // zeigt EINMAL rot, was der Klassifikator NICHT tut: er vergibt 'A' nicht
   // pauschal, und er vergibt 'A' nicht an Verweis-Text.
   it('würde eine «alles ist A»-Sabotage auffallen lassen', () => {
-    const sabotage = (_t: string): 'A' => 'A';
+    const sabotage = (t: string): 'A' => (t.length >= 0 ? 'A' : 'A');
     // Der echte Klassifikator ordnet diesen Verweis NICHT als ausblendbar ein …
     expect(klassifiziereFussnote('SR 311.0')).toBe('V');
     // … eine pauschale 'A'-Implementierung täte es — und fiele hier auf.
