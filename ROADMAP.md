@@ -269,22 +269,10 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
 - **Gesetze-Currency & Coverage** *(QS-CURRENCY, `[OF]`, neu 4.7.2026 — Fedlex-Portfolio Paket 1)*.
   <!-- @meta id: QS-CURRENCY · status: done · of: ja · blocker: null · dep: [] · kollision: [scripts/fedlex-cache.sh, public/normtext/register.json] · worktree: ja · 26x: nein · fahrplan: FAHRPLAN-FEDLEX-PORTFOLIO.md -->
   Kein Bund-Erlass wird veraltet ausgeliefert, keine Currency-Lücke bleibt strukturell
-  unsichtbar. Detailquelle **`FAHRPLAN-FEDLEX-PORTFOLIO.md`** (Paket 1, P1-a…d). **Stand 5.7.2026:
-  P1-a + P1-b gebaut (dieser PR) — Paket 1 damit komplett (P1-c/d schon in main, PR #142).**
-  **P1-b (Monitoring dicht):** Regex-Fix `fedlex-pins.ts` `[a-z_]+`→`[a-z0-9_]+` (11 parser-blinde
-  Ziffern-Pins jetzt überwacht, 207→218) + Parser-Selbsttest + Coverage-Assertion (kein gehosteter
-  Bund-Volltext ohne Pin, rot bei Verstoss) + PDF-Embed-Pins (EMRK/NYÜ) ins `check:fedlex-versionen`.
-  **P1-a (Datenlauf):** 18 überholte Snapshots + 2 PDF-Embeds auf die geltende Fassung gehoben
-  (html-N SPARQL-kanonisch via isExemplifiedBy; klv/vrv=8, ssv=14; Artikel-Diff +85, 9 eId-Renames
-  1:1, 0 Verlust); `check:fedlex-versionen` **Exit 0 (0 stale)**. Nebenbei zwei Mechanik-Bugs gefixt
-  (Golden-`--erlass`-Merge behielt Phantom-Keys; check:pdf-netz notation-Join-Partial-Result).
-  Gegenprüfung bestanden. Trailer `Roadmap: QS-CURRENCY`. **Status: `[✓]` (Paket 1 abgeschlossen).**
-  **Etikett-Korrektur 20.7.2026:** Der Schritt stand trotz dieses `[✓]` noch auf `wip` ⇒ jetzt **`done`**.
-  Geprüft, dass der Schritt-Umfang wirklich nur **Paket 1** ist: `FAHRPLAN-FEDLEX-PORTFOLIO.md` ordnet die
-  Pakete 2/5/3/4 fremden IDs zu (`W2·6`, `W2·6-REV`, `W3·11`, `W3·13`), `W2·14-SIGNAL` hängt nur lose daran —
-  es bleibt also kein Rest unter diesem Etikett liegen. Die laufende **Korpus-Pflege** (`check:fedlex-versionen`,
-  Wiedervorlage-Läufe, z. B. `5b676c3b`) läuft als Automatik weiter und ist **kein** offener Bau-Schritt;
-  die Gesundheit dieser Automatik wird neu von **`QS-AUTOMATIK`** überwacht (dort ist `fedlex-frische.yml` rot).
+  unsichtbar. Detailquelle **`FAHRPLAN-FEDLEX-PORTFOLIO.md`** (Paket 1, P1-a…d). **Paket 1
+  komplett 5.7.2026 (P1-a–d, Gegenprüfung bestanden); Etikett-Korrektur 20.7.2026 ⇒ `done`,
+  kein Rest unter diesem Etikett.** Laufende Korpus-Pflege läuft als Automatik weiter (Gesundheit
+  überwacht `QS-AUTOMATIK`). Wortlaut → `ROADMAP-CHRONIK.md` → QS-CURRENCY (26.7.2026).
 - **Geräte-Last / Performance** *(QS-PERF, `[OF]`, neu 30.6.2026 — Leitprinzip 7 + CLAUDE.md §15)*.
   **§14-Intake 20.7.2026 (David):** TBT-Budget `/gesetze/bund/OR` (#28) — VOR jeder Feature-Zuschreibung Nullprobe + Streuung (Dispatch §0 Ziff. 3): das Budget ist der einzige Job mit Rot im Sample, die Rausch-Rotquote allein erklärt den Grossteil. Lighthouse-Median n≥3 statt Einzelwert gehört in `scripts/perf/` (Worktree `lm-ci`).
   **§14-Intake 24.7.2026 (David, «ja nimm den pfad-filter als intake auf»): CI-Pfad-Filter für
@@ -929,14 +917,9 @@ sichtbar machen. `[OF]`. «Sichtbar» = verhaltensändernd → golden-gegated; b
       gebündelt mit der BS-Tranche darüber: dieselbe Pipeline, dasselbe Datenasset — kein
       Parallel-Schritt, §14.2)*: der amtliche Spruchkörper wird aus dem Rubrum extrahiert und
       korpusweit zu Kanon-Slugs normalisiert, damit die Rechtsprechung nach Richter:in filterbar
-      wird. **Block A (Daten/Risiko, erledigt):** Schnitt `scripts/rechtsprechung/bs-besetzung.ts`
-      (BS-Deckblatt + Signatur, Re-Parse der 3765 aus dem Roh-Golden **ohne Re-Crawl**), reiner
-      Parser/Kanon `src/lib/rechtsprechung/besetzung.ts` (deterministisch, §2), Projektion
-      `BrowseEntscheid.richter[{s,r}]` + neues `public/rechtsprechung/richter.json`
-      (Slug → Anzeigename + Trefferzahl), neues Tor **`check:besetzung`** in der Gate-Kette
-      (Leak/Konsistenz/Determinismus hart, Abdeckung mit Schwelle, Kollisions-Report).
-      Abdeckung BS 98.6 % · Bund 96.1 %, 511 Slugs (208 Richter:innen, 303 Gerichtsschreiber:innen),
-      **Anonymisierungs-Leak-Scan korpusweit 0**. `abschnitte`/`sha` byte-unverändert (§6).
+      wird. **Block A (Daten/Risiko) ✅ erledigt 20.7.2026** — Extraktion + Kanon + `richter.json`
+      + Tor `check:besetzung`; Abdeckung BS 98.6 % / Bund 96.1 %, Leak-Scan korpusweit 0.
+      Wortlaut → `ROADMAP-CHRONIK.md` → R-RICHTER (26.7.2026).
       **Block B (offen, reines UI):** Facette als Autocomplete/Combobox + `?richter`-URL-Achse
       + e2e/axe/perf — bewusst getrennt, um Risiko-Klassen nicht zu mischen (§14.2).
       **Spätere Politur:** Gerichtsschreiber:in als eigene Achse, Spruchkörper-Anzeige im Reader,
