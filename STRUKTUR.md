@@ -21,7 +21,15 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
-## Session 26.7.2026 (Parallel-Worktree) — Reader-Fix: Bild-Blöcke verschluckten ihre items — amtliche <dl> unsichtbar (DBG 22, STHG 7) (PR #372, offen)
+## Session 26.7.2026 (Folge-Einheit, Branch feat/fortsetzungs-tiefe) — Fortsetzungs-Tiefe + blockübergreifende Zitier-Kette (PR #378, Squash `d0cc81b0` — gemergt = deployt)
+**Auftrag (Task-Chip, Befund 6 der Routing-Gegenprüfung):** amtliche Struktur verifizieren, `tiefe`-Extraktion für Fortsetzungs-Ziffern, Kette prüfen, ZitierMarken-Unterdrückung rückbauen.
+- **Amtlich verifiziert (§7, PDF-x-Positionen der Pin-Konsolidierungen):** die vom Formelbild unterbrochenen Ziffern «2.» stehen in DBG 22 (S. 17) und STHG 7 (S. 6/7) auf der Ziffern-Einrückung (tiefe 1 unter lit. a bzw. c). Der neue Scanner fand 4 weitere amtlich falsche Ebenen: RBUE 25 (i–v flach NEBEN «4)» statt darunter — invertiert), RBUE/HZUE annex_u1, VVV annex_4 (alle per PDF belegt).
+- **Extraktor (Risiko-Pfad, TDD rot→grün):** (Form A) anonyme direkte Unter-`<dl>` wird rekursiv eine Stufe tiefer zerlegt; (Form B) enge Fortsetzungsregel nur an Bild-Blöcken (reiner Ziffern-Nachfolger n→n+1, führende Kette). 5 Snapshots inhaltlich geändert, 222 byte-gleich, Sidecars/`pos` byte-stabil, Golden grün.
+- **Renderer (§3):** blockübergreifende Zitier-Kette für Bild-Block-Items (Anker-Absatz + lit. der Vorgängerblöcke) — ZitierMarken rendern wieder, mit präziser Fundstelle («Art. 22 Abs. 3 lit. c Ziff. 2 DBG»); ohne herleitbaren Anker bleibt unterdrückt. `stufenFuer` als geteilte Funktion (§5).
+- **Wissensablage §11:** `bibliothek/normen/fortsetzungs-tiefe-bild-bloecke-2026-07-26.md` (+ INDEX) mit allen 6 PDF-Belegen; FN-5-Dossier-Nachtrag als erledigt markiert.
+- **Beweis:** Unit-Wächter `fortsetzungs-tiefe.test.ts` (rot gezeigt) · e2e-Fundstellen-Wächter (DBG lit. a/c, StHG) · Pflicht-Gegenprüfung (Opus, frischer Kontext): Verdikt im §14.5-Trailer.
+
+## Session 26.7.2026 (Parallel-Worktree) — Reader-Fix: Bild-Blöcke verschluckten ihre items — amtliche <dl> unsichtbar (DBG 22, STHG 7) (PR #372, Squash `9f5c07ad` — gemergt = deployt)
 **Auftrag David:** vorbestehenden main-Defekt aus der FN-5-Gegenprüfung (26.7., Runde 2) reproduzieren, fixen, e2e-Wächter, korpusweit zählen. `ArtikelBody.tsx` kehrte bei `bild`/`bildKacheln` früh zurück und renderte `b.items` nie — die amtliche Aufzählung am Formelbild («Ist diese Rendite negativ oder null, so beträgt der Ertragsanteil null Prozent.») fehlte im Reader (§1/§8).
 - **Repro bewiesen:** neuer Wächter `e2e/bild-block-items.e2e.ts` gegen gebautes dist VOR dem Fix rot gezeigt (§6.7), danach grün; in Shard-Gruppe 1 (Union-Wächter grün).
 - **Fix (§3, reine Darstellung):** Item-Renderpfad als geteilte `itemListe` extrahiert (EINE Stelle, §5; Code unverändert verschoben); Bild-Blöcke rendern Bild UND danach ihre items über genau diesen Pfad. Itemlose Bild-Blöcke DOM-identisch (eigener Zweig, exakt bisheriges Markup).
