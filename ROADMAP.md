@@ -322,6 +322,29 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
     ausgeschlossen — jeder Lauf ist kalt. Vermutung, ungeprüft: Lighthouse wählt je nach Timing ein
     anderes LCP-Element. Der Deckel 13500 liegt ~16 % über dem hohen Modus und ist damit sicher;
     bevor er verschärft wird, muss die Bimodalität verstanden sein (sonst deckelt man sie nur weg, §8).
+  - [ ] **Bimodaler ~48-s-Stall in der ersten gedrosselten Such-Interaktion — Ursache offen**
+    *(neuer Befund 26.7.2026, `bibliothek/betrieb/e2e-flake-forensik-2026-07-26.md` §3)*. Bei der
+    Härtung der drei 2-vCPU-flaky e2e-Tests wurde `norm-sprung` A9 als Flake **widerlegt**: die erste
+    gedrosselte Such-Latte («OR 257d» → «Sprung» sichtbar, direkt nach dem Query-Reset) braucht im
+    CI-Zweig **entweder ~0.4–0.8 s oder ~48–50 s, nichts dazwischen** über 8 Beobachtungen — bei 4×
+    Drossel entsprechen ~48 s etwa **12 s un-gedrosselter Rechenzeit**. Die unmittelbar folgende,
+    IDENTISCHE zweite Latte braucht stets 0.3–0.4 s, die Arbeit fällt also genau einmal an.
+    **Ausgeschlossen (gemessen):** Host-Last/Worker-Contention (alle Läufe `workers=1`) und die
+    Test-Instrumentierung (Gegenprobe mit deaktiviertem rAF-Höhen-Sampler zeigt den Stall unverändert).
+    **Darum NICHT gehärtet** — eine höhere Latte verdeckte genau den Lag, den der A9-Test messen soll
+    (§1); `e2e/norm-sprung.e2e.ts` blieb byte-gleich. **Hypothese, ungeprüft (§8):** dieselbe Wurzel wie
+    der Posten «OR-LCP ist bimodal» direkt darüber — gleiche Signatur (streng bimodal, hoher Modus
+    ~11–12 s un-gedrosselt, geschwindigkeits-unabhängig), hier aber **lokal reproduzierbar**, was für
+    den LCP-Befund bisher nicht gelang. Erster Schritt: Profiling des per `useDeferredValue`
+    entkoppelten ~4-MB-Artikel-Index-Pfads. **Nachgeordnet, erst DANACH:** die Pfeil-Navigations-Latte
+    (`aria-activedescendant`, Deckel 12 s) läuft gemessen bei 56–99 % ihres Budgets und ist ein echter
+    Kalibrier-Kandidat — vor dem Verstehen des Stalls kalibrierte man dieselbe Erscheinung zweimal weg.
+  - [ ] **Dauer-rAF-Sampler in `e2e/helpers/cls.ts` ohne Abschalt-Bedingung** *(Nebenbefund 26.7.2026,
+    Dossier ebd.)*. `clsBeobachtenInstallieren` startet eine unbegrenzte `requestAnimationFrame`-Schleife,
+    die pro Frame `getBoundingClientRect()` auf 13 Elementen aufruft (erzwungenes Layout je Frame) und
+    bis Test-Ende läuft. Als Wachser-Diagnose gebaut (19.7.), belastet sie jede gedrosselte Messung nach
+    ihrer Installation. **Nicht** Ursache des Stalls oben (gegengemessen), aber ein eigener
+    Prüf-Genauigkeits-Posten: eine Abschalt-Bedingung nach dem Auslesen wäre verlustfrei.
   - [ ] **e2e-Shard-Balance gegen GEMESSENE CI-Dauern packen** *(vorbereitet 20.7.2026; CI-Messwerte
     da 21.7.2026 — geparkt, gekoppelt an Davids Merge-Queue-Entscheid)*.
     Die Gruppen in `e2e/shard-gruppen.json` sind gegen LOKALE Dauern gepackt (Spread <0.1 %), die
