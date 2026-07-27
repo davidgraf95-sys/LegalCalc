@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/BeE 786.100/art_1",
@@ -17,7 +17,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "bb78d03e0a1ec66d527ce12621df402da23ee9736625553f6928ae0304a896b6"
     },
@@ -45,7 +45,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "7e15d0493515066569aa2ce4987b1fa35f25fbfa90932bfb28bb74eac6f156ce"
     },
@@ -73,7 +73,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "3e1121d56f994e302140841777009cdc21e58a3f11201b73df09602b4987ae3d"
     },
@@ -93,7 +93,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "c8546dd11fcbefed395e2313b1d5919d99ada63b8bfbd0469f90448264c044c7"
     },
@@ -104,6 +104,7 @@
       "erlass": "Ordnung der Abfallbehandlung in der Gemeinde Bettingen, Abfallordnung (BeE 786.100)",
       "artikel": "5",
       "artikelLabel": "§ 5",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -112,7 +113,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -146,7 +147,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "5a17f0970596e8df6b40997615fd718a98f16ef77d92109ff5cf995e46ed4b54"
     },
@@ -170,7 +171,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "6613e43b8477a8d014099dccc245cf8575c216fb95c3473c7f2be3c531671192"
     },
@@ -194,7 +195,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "050551f9b1ff24856737071e40d65bb1cdb0f59cafb8eb71fdba1b375911341d"
     },
@@ -248,7 +249,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "af2dd5a5876c3f0f8a3554da6117cc3d521dc7a32e7d48395868dbd192dd7da2"
     },
@@ -268,7 +269,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "4f91b6c309532e01394f022c9c3540097a31cc92b14bde9aa9178fa8ddd8d1e8"
     },
@@ -288,7 +289,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "1e7f949f7274ca71a9474b0c3dc5a469f5a7d5d6435c99edb49c3f30e68424da"
     },
@@ -312,7 +313,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "23f23af032697a75ed3583cadfe9dfd871c0209e4803deb93b8e9e662ac40645"
     },
@@ -366,7 +367,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "237cefb708c062fad0381b1978406eb4d1f3b3a351a7631fb85e7df6b93bdc99"
     },
@@ -408,7 +409,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "a7d3b5e8bfa77d15de6b845437e65b1db9d03a4a95541076fd1108f7ba4da3d9"
     },
@@ -432,7 +433,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "b24519810c3f126bba30d8ba9fac35c59624cc5ceff32b605ed180eaedd1cf8a"
     },
@@ -470,7 +471,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "b3b2befdd722a283a20cecd66eb5400975484247fd569323ea9f9c771e9f30e3"
     },
@@ -493,7 +494,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "9b4fb8f265956c3d7e53bf11d6dfea9e988f61e0af63015a0ae0fcde38b37812"
     },
@@ -513,7 +514,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "e9c803e68a99152daa819cab6c242e7750ac3b95e86fa4e661305dcb8a23fc8f"
     },
@@ -541,7 +542,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "60d6e99a7baeb2cb5b25065551862c8f6872086537a9511cac6cab52571cc7fb"
     },
@@ -561,7 +562,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "a2a333d17813c577fc6972d7d79dd64a36c2de0692edd5248a907be27790bff1"
     },
@@ -581,7 +582,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "07a5660bf6d9e2f252c50e72fa886646496f360176a9bedeb5acdc4a1cb85d76"
     },
@@ -605,7 +606,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "c52eeec6f82f3e55cf9bd8b7c3186a7f022f460c6ec3e480ba9cc12a0b03937a"
     },
@@ -625,7 +626,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "f9bc0ffe77c76de06ea75aa954413d83530e814e11a9ecdf4c3691a43fe47ae6"
     },
@@ -653,7 +654,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "9e6c200bd05c959f3bc2544531b46c58fdfd57f5ccc46750297d147960368655"
     },
@@ -680,7 +681,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "6ff10c18966adf3c6d5f54342b32b6b040427dc5351266e5a2c37e9ddac3f310"
     },
@@ -700,7 +701,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "854c6ee6cdab6a44fab60679967780f7ce561c44d1ffeba47bea11ddce34a544"
     },
@@ -727,7 +728,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "156546cf99d3957d41dca6f65bd725722be55ce0feb473555dee270c85023041"
     },
@@ -747,7 +748,7 @@
       ],
       "stand": "2021-07-08",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 786.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "86114ec9db4fe35f73f6821d120aea80",
       "sha": "543dceb44dabf7573fb24fef193b9b5b4175d8f85c08419976ccd5bc3f1d35be"
     }

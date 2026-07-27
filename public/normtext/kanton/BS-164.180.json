@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/164.180/art_1",
@@ -29,7 +29,7 @@
       ],
       "stand": "2021-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.180",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8ab4037d608cd8bcc2b866128653de4e",
       "sha": "12cec678e47a635ebe64b01297d4a87f2c53c380534cbe35fbe8ffb1998f8af1"
     },
@@ -49,7 +49,7 @@
       ],
       "stand": "2021-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.180",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8ab4037d608cd8bcc2b866128653de4e",
       "sha": "0339a0c2b1fcf1220f96caf75613c607c0ae956fa6c0e7ccf51d66744a08149d"
     },
@@ -69,7 +69,7 @@
       ],
       "stand": "2021-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.180",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8ab4037d608cd8bcc2b866128653de4e",
       "sha": "23116da63e5b53df6a6b002604313aa63ee8ef071bf63e1b261ec064efc37214"
     },
@@ -88,7 +88,7 @@
       ],
       "stand": "2021-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.180",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8ab4037d608cd8bcc2b866128653de4e",
       "sha": "cdf25b7e5f5ccc1759fb84a41690c168fc75a1e1547c93a011e69e3ef809f724"
     },
@@ -107,7 +107,7 @@
       ],
       "stand": "2021-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.180",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8ab4037d608cd8bcc2b866128653de4e",
       "sha": "1190a3c96bf34d43b6ef2e9c7e18fbefb7e4e5e6c9730224e1a101269703dd70"
     },
@@ -131,7 +131,7 @@
       ],
       "stand": "2021-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.180",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8ab4037d608cd8bcc2b866128653de4e",
       "sha": "a83c467a26c32fc40b1b8fb3a4b1c9320e60af0e8fcd411a3e307c5e1faa674f"
     },
@@ -159,7 +159,7 @@
       ],
       "stand": "2021-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.180",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8ab4037d608cd8bcc2b866128653de4e",
       "sha": "f5122dc1b93508829397beafd2df7131938b317e93156512337f7126077cf619"
     },
@@ -179,7 +179,7 @@
       ],
       "stand": "2021-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.180",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8ab4037d608cd8bcc2b866128653de4e",
       "sha": "4fbb98be5aec761bf36f909988ddbbba654b10b48e39988ea919eb6ff2c43623"
     },
@@ -198,7 +198,7 @@
       ],
       "stand": "2021-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.180",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8ab4037d608cd8bcc2b866128653de4e",
       "sha": "70eb322433b645daa81f69d5a9517e88d15fe692b2b7093353d2d17c9ac74ddb"
     },
@@ -222,7 +222,7 @@
       ],
       "stand": "2021-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.180",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8ab4037d608cd8bcc2b866128653de4e",
       "sha": "8fa6a133d82a9520aed3d1baa16cf8c139c032b539e03f00bf1e4e6f7d8007da"
     },
@@ -242,7 +242,7 @@
       ],
       "stand": "2021-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.180",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8ab4037d608cd8bcc2b866128653de4e",
       "sha": "37e944a8271d7d99c87f2f0262db0a902a6487f269da47babcf3540b291be6d3"
     },
@@ -253,6 +253,7 @@
       "erlass": "Verordnung betreffend Wahl und Organisation der Begutachtungskommission, BKV (164.180)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -261,7 +262,7 @@
       ],
       "stand": "2021-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.180",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8ab4037d608cd8bcc2b866128653de4e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -272,6 +273,7 @@
       "erlass": "Verordnung betreffend Wahl und Organisation der Begutachtungskommission, BKV (164.180)",
       "artikel": "12",
       "artikelLabel": "§ 12",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -280,7 +282,7 @@
       ],
       "stand": "2021-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.180",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8ab4037d608cd8bcc2b866128653de4e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/160.100/art_1",
@@ -24,7 +24,7 @@
       ],
       "stand": "2008-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/160.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9d6126940252a6ed8c3f96c9514cded5",
       "sha": "21c60f863ace0e25bf6f6b6f4dbbecb4d62464ded2a0020ad75894bba77f0c44"
     },
@@ -43,7 +43,7 @@
       ],
       "stand": "2008-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/160.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9d6126940252a6ed8c3f96c9514cded5",
       "sha": "e5f1a40abf00c9248c697afdecd46258086dfd02b093445c47ff160e032f6eb7"
     },
@@ -62,7 +62,7 @@
       ],
       "stand": "2008-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/160.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9d6126940252a6ed8c3f96c9514cded5",
       "sha": "e7eabc30e9cf61ff1d21d331ca3ff9b8606b0da28d642ca0789a68ff05f13ffd"
     },
@@ -73,6 +73,7 @@
       "erlass": "Verordnung über die Personaldienste des Kantons Basel-Stadt, Human Resources Management-Verordnung (160.100)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -81,7 +82,7 @@
       ],
       "stand": "2008-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/160.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9d6126940252a6ed8c3f96c9514cded5",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -100,7 +101,7 @@
       ],
       "stand": "2008-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/160.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9d6126940252a6ed8c3f96c9514cded5",
       "sha": "dd8f7f7e27752731be42f53294936e2a77be545875b883a9335c29edc32d425c"
     },
@@ -119,7 +120,7 @@
       ],
       "stand": "2008-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/160.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9d6126940252a6ed8c3f96c9514cded5",
       "sha": "310e0109dbf2d67ee4e5be4b44eadb4538a9befccae4897ec302f9a0d32e99d0"
     },
@@ -138,7 +139,7 @@
       ],
       "stand": "2008-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/160.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9d6126940252a6ed8c3f96c9514cded5",
       "sha": "6ebee106586f2c4dea375df95ad7c56fe257eb7cb8030c4f6f39300fbc3d8878"
     },
@@ -161,7 +162,7 @@
       ],
       "stand": "2008-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/160.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9d6126940252a6ed8c3f96c9514cded5",
       "sha": "df25bbae7fc6680eaf31e67e3d916873d60413bff33d9d1286c7e787da8eddf3"
     },
@@ -180,7 +181,7 @@
       ],
       "stand": "2008-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/160.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9d6126940252a6ed8c3f96c9514cded5",
       "sha": "f97a8a97f9b5f8c3eaec047c4bfbaa5a37a64101bf03da54bdd06b374e4fd35e"
     },
@@ -207,7 +208,7 @@
       ],
       "stand": "2008-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/160.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9d6126940252a6ed8c3f96c9514cded5",
       "sha": "2fc889228cb91e5f5cbb5b726105d47247ab45177a1c83a1dc1ce016c3299e89"
     },
@@ -234,7 +235,7 @@
       ],
       "stand": "2008-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/160.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9d6126940252a6ed8c3f96c9514cded5",
       "sha": "111143bfb1e80ec6f87a0138d5c446b5181aa8ece5c176572eebfddd11854351"
     },
@@ -257,7 +258,7 @@
       ],
       "stand": "2008-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/160.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9d6126940252a6ed8c3f96c9514cded5",
       "sha": "477ce633805eca2886407692e65966ab996cd1af8899cf429ffe63795c6471b5"
     },
@@ -280,7 +281,7 @@
       ],
       "stand": "2008-05-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/160.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9d6126940252a6ed8c3f96c9514cded5",
       "sha": "244d24249ee8b6d91df7af99dcd9d7f6556cb7593aae5833fd30dcae13c60059"
     }

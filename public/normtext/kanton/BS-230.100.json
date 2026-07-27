@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/230.100/art_1",
@@ -16,7 +16,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "073a88cacac8af9ddaaf4986eb036cfe56b74f22e8923e8f4d31285caa4caa2e"
     },
@@ -27,6 +27,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "2",
       "artikelLabel": "§ 2",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -35,7 +36,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -46,6 +47,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "3",
       "artikelLabel": "§ 3",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -54,7 +56,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -65,6 +67,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -73,7 +76,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -104,7 +107,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "dce1f3ce5e995e0d9ab61ced16851a11d848354c0822b929b4efe1ac6d5fe202"
     },
@@ -123,7 +126,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e233fe187a5794e252eea16d07a116b3a05f81de13a46fab5da2281971bc1b60"
     },
@@ -134,6 +137,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "7",
       "artikelLabel": "§ 7",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -142,7 +146,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -153,6 +157,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "7_a",
       "artikelLabel": "§ 7a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -161,7 +166,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -172,6 +177,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "7_b",
       "artikelLabel": "§ 7b",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -180,7 +186,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -191,6 +197,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "8",
       "artikelLabel": "§ 8",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -199,7 +206,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -210,6 +217,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "9",
       "artikelLabel": "§ 9",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -218,7 +226,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -229,6 +237,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "10",
       "artikelLabel": "§ 10",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -237,7 +246,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -248,6 +257,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -256,7 +266,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -275,7 +285,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "97da441bb9c7b138465f74cabc0c930cfdfe617556f1bb52caac16b1b221d74b"
     },
@@ -286,6 +296,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "13",
       "artikelLabel": "§ 13",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -294,7 +305,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -305,6 +316,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "14",
       "artikelLabel": "§ 14",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -313,7 +325,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -324,6 +336,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "15",
       "artikelLabel": "§ 15",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -332,7 +345,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -351,7 +364,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "4405da5b2e0e6660303e44b77dfda0a9ab1d51d0d129740564ff7285a754a275"
     },
@@ -370,7 +383,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "1df2621582b891750e03b85b0e31446fc20cf041eec418916f3bdb945176141a"
     },
@@ -381,6 +394,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "18",
       "artikelLabel": "§ 18",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -389,7 +403,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -400,6 +414,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "19",
       "artikelLabel": "§ 19",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -408,7 +423,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -419,6 +434,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "20",
       "artikelLabel": "§ 20",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -427,7 +443,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -460,7 +476,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "15f7dc359b96555f4a9c9dd2d1680e8fc2adac991cfebb1f11349540481adc1c"
     },
@@ -497,7 +513,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "6f3117b48a4d6d8612ccd4e4fd8aedc9e0ba57d49cd97ac7ec8fb31957c34959"
     },
@@ -516,7 +532,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "957da7a9f8c344e9ae4009021154747f8531f2857c6fe12ee49d83bab40cabe2"
     },
@@ -535,7 +551,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "78884fc84284c4090d22ae89a74b79f93f092a1dec5b644c7fa974f1763cd30e"
     },
@@ -554,7 +570,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "1203e99567cc72da926d73c29da80ce212c2b2db82b2b63ed8a0330035d43398"
     },
@@ -565,6 +581,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "26",
       "artikelLabel": "§ 26",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -573,7 +590,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -584,6 +601,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "27",
       "artikelLabel": "§ 27",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -592,7 +610,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -611,7 +629,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -630,7 +648,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -649,7 +667,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -668,7 +686,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -687,7 +705,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -706,7 +724,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -725,7 +743,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -736,6 +754,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "35",
       "artikelLabel": "§ 35",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -744,7 +763,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -755,6 +774,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "36",
       "artikelLabel": "§ 36",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -763,7 +783,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -774,6 +794,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "37",
       "artikelLabel": "§ 37",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -782,7 +803,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -793,6 +814,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "38",
       "artikelLabel": "§ 38",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -801,7 +823,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -812,6 +834,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "39",
       "artikelLabel": "§ 39",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -820,7 +843,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -831,6 +854,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "40",
       "artikelLabel": "§ 40",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -839,7 +863,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -850,6 +874,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs (230.100)",
       "artikel": "41",
       "artikelLabel": "§ 41",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -858,7 +883,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -877,7 +902,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -896,7 +921,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -915,7 +940,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -934,7 +959,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -953,7 +978,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "4910a4d5279567ec69d0ed3c274580e8569bbeccb0455a4b36b078906daa1095"
     },
@@ -972,7 +997,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "50ad097f458038febc2748c8bae8cd5cd14592f50d8eea9d38c40b3ea7aae907"
     },
@@ -991,7 +1016,7 @@
       ],
       "stand": "2024-06-13",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/230.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae7727837d06a3bb4a97041954e6efff",
       "sha": "5beb74f50678825824f6dc9cbbe1bbec366e9fb542a792bd72cc942b96d68f44"
     }

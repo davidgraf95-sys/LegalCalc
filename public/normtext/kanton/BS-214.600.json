@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/214.600/art_1",
@@ -20,7 +20,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "17421e00c050096fab0937f6ace7bd81",
       "sha": "e1f4943e1913ba1e570b51559be9ba57b1875e7bc3e5d5dceb051f0973237fcc"
     },
@@ -39,7 +39,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "17421e00c050096fab0937f6ace7bd81",
       "sha": "432b479ffbd683df3c0798265e7e6a5d9aa9719323fdbb5cf7d00739a2d14c7e"
     },
@@ -50,6 +50,7 @@
       "erlass": "Kantonale Verordnung betreffend die Bewilligungspflicht für den Erwerb von Grundstücken durch Personen im Ausland (214.600)",
       "artikel": "3",
       "artikelLabel": "§ 3",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -58,7 +59,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "17421e00c050096fab0937f6ace7bd81",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -69,6 +70,7 @@
       "erlass": "Kantonale Verordnung betreffend die Bewilligungspflicht für den Erwerb von Grundstücken durch Personen im Ausland (214.600)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -77,7 +79,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "17421e00c050096fab0937f6ace7bd81",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -100,7 +102,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "17421e00c050096fab0937f6ace7bd81",
       "sha": "0ed5cabf8347ac92258d2f63acf7ee366da40ecd52d39da960c566d69d8c771c"
     },
@@ -119,7 +121,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "17421e00c050096fab0937f6ace7bd81",
       "sha": "6a1e4477425a1547f63564ae030f1ec32d01711c42b84d73c22413662b344163"
     },
@@ -142,7 +144,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "17421e00c050096fab0937f6ace7bd81",
       "sha": "a0831f6a05dc4187de8bf228f4d6e0308d25b3aebe27a4b70d7d95492c9a64bb"
     },
@@ -161,7 +163,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "17421e00c050096fab0937f6ace7bd81",
       "sha": "2bf3c274e68b026a847ae10d6d58b632fa7ca54a9f54db06ffecfd3afdb3a511"
     },
@@ -180,7 +182,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/214.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "17421e00c050096fab0937f6ace7bd81",
       "sha": "19856d5afa9c32fac63038482ed5dddafc1d9963ca47c92a99ededb6365739a1"
     }

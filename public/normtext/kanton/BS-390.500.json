@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/390.500/art_1",
@@ -16,7 +16,7 @@
       ],
       "stand": "2021-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/390.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f7a81b93e98dab51768ba054140b92fa",
       "sha": "21edcd1a37cc64714d9a03684ee50d559b8c0fae0a37af15caf370f252d15f70"
     },
@@ -27,6 +27,7 @@
       "erlass": "Verordnung über Gebühren im Bestattungswesen (390.500)",
       "artikel": "1_a",
       "artikelLabel": "§ 1a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -35,7 +36,7 @@
       ],
       "stand": "2021-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/390.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f7a81b93e98dab51768ba054140b92fa",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -46,6 +47,7 @@
       "erlass": "Verordnung über Gebühren im Bestattungswesen (390.500)",
       "artikel": "1_b",
       "artikelLabel": "§ 1b",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -54,7 +56,7 @@
       ],
       "stand": "2021-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/390.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f7a81b93e98dab51768ba054140b92fa",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -65,6 +67,7 @@
       "erlass": "Verordnung über Gebühren im Bestattungswesen (390.500)",
       "artikel": "1_c",
       "artikelLabel": "§ 1c",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -73,7 +76,7 @@
       ],
       "stand": "2021-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/390.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f7a81b93e98dab51768ba054140b92fa",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -107,7 +110,7 @@
       ],
       "stand": "2021-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/390.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f7a81b93e98dab51768ba054140b92fa",
       "sha": "b5cd6f97eb989bc7f50a9cf590ccf6f329e3de8f655ed396001e31981e91e082"
     },
@@ -135,7 +138,7 @@
       ],
       "stand": "2021-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/390.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f7a81b93e98dab51768ba054140b92fa",
       "sha": "20842a503a3d6aa242ba44e3894bfb5eac1a474d7aa636d7286b610aaacd6071"
     },
@@ -167,7 +170,7 @@
       ],
       "stand": "2021-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/390.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f7a81b93e98dab51768ba054140b92fa",
       "sha": "444eb7b7e30d4e3b5496a64898d198f9b3b8a01d1f23298e4e41ae9377d88358"
     },
@@ -209,7 +212,7 @@
       ],
       "stand": "2021-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/390.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f7a81b93e98dab51768ba054140b92fa",
       "sha": "ab5822c5e082810721987a1c51359d51d81d799de84140126da0d1eac564f1eb"
     },
@@ -229,7 +232,7 @@
       ],
       "stand": "2021-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/390.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f7a81b93e98dab51768ba054140b92fa",
       "sha": "80faea29557a536000eb47a1ac6ef1240a62675d4a0add911d96c415ba88a343"
     },
@@ -248,7 +251,7 @@
       ],
       "stand": "2021-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/390.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f7a81b93e98dab51768ba054140b92fa",
       "sha": "da5b323a3798a8ccf70fba02ee1dae1fc45c6bc9044fe5adb3f9f98e33e91e78"
     },
@@ -271,7 +274,7 @@
       ],
       "stand": "2021-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/390.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f7a81b93e98dab51768ba054140b92fa",
       "sha": "f0181426320a724b768b8c24cc0cab0a8383c7cb717e8a9c2a6dd5ef7f78d79b"
     },
@@ -316,7 +319,7 @@
       ],
       "stand": "2021-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/390.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "f7a81b93e98dab51768ba054140b92fa",
       "sha": "8659cc964697c349fe96168df4112d3d4f9d622a37624130dee3df39c93d9f45"
     }

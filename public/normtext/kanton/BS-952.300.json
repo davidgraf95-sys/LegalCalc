@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/952.300/art_1",
@@ -25,7 +25,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d8e2eb3ecfc84862c3b5fc7cb6c7a499",
       "sha": "45e279a4b40eef2550d219ff13bc6216023d6ee2821d2c5f88524bf2b6332e38"
     },
@@ -91,7 +91,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d8e2eb3ecfc84862c3b5fc7cb6c7a499",
       "sha": "e4f57f1a7e068709324c11a283e299783743a32401f1021c0edae77a9e9ebe65"
     },
@@ -185,7 +185,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d8e2eb3ecfc84862c3b5fc7cb6c7a499",
       "sha": "0d4a2405c6a3d9dad339d015a5469759d75c63d121938748d2eb2c604581fc1c"
     },
@@ -221,7 +221,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d8e2eb3ecfc84862c3b5fc7cb6c7a499",
       "sha": "e570d0e6ac1349281eae7257906b39cb0b80fb3a430d77572d30d20810a65703"
     },
@@ -241,7 +241,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d8e2eb3ecfc84862c3b5fc7cb6c7a499",
       "sha": "12a772e865c00673e82c170b73fd9412abb6145cfe74b5e0842866ebc6ef2e55"
     },
@@ -279,7 +279,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d8e2eb3ecfc84862c3b5fc7cb6c7a499",
       "sha": "8c9e21054a191b6fa1612be2d6932bd55b9ceac70b7d0789e75f5f478ef6f26b"
     },
@@ -325,7 +325,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d8e2eb3ecfc84862c3b5fc7cb6c7a499",
       "sha": "62dd4af1d2763b56c396e6c60989db10c1cd8a8e43754df5a1dc8085196ac56d"
     },
@@ -367,7 +367,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d8e2eb3ecfc84862c3b5fc7cb6c7a499",
       "sha": "78bb491f9ef887ab95da84bb7e75192b022bab05197e18978997b1024f853d38"
     },
@@ -378,6 +378,7 @@
       "erlass": "Verordnung betreffend die ausnahmsweise Zufahrt in die Innenstadt, Zufahrtsverordnung (952.300)",
       "artikel": "9",
       "artikelLabel": "§ 9",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -386,7 +387,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d8e2eb3ecfc84862c3b5fc7cb6c7a499",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -410,7 +411,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d8e2eb3ecfc84862c3b5fc7cb6c7a499",
       "sha": "9eb6c735b76d2a5c3d77e67421ac8ea07f5b4a56ab74708cea74045a00605280"
     },
@@ -430,7 +431,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d8e2eb3ecfc84862c3b5fc7cb6c7a499",
       "sha": "4a1a9222e791b378bef478bcc098e23cdb61f69d822bb0ee2b8e603f0c40330f"
     },
@@ -450,7 +451,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d8e2eb3ecfc84862c3b5fc7cb6c7a499",
       "sha": "b46d2be1aaf95188fcd074dff4afefe0bfd25f6d980029eb996071262bb0a840"
     },
@@ -474,7 +475,7 @@
       ],
       "stand": "2023-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/952.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "d8e2eb3ecfc84862c3b5fc7cb6c7a499",
       "sha": "f4899cab19b2ab4df56fea369ee75cce75b76acadfe827029799a7d1fb594452"
     }

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/211.100/art_1",
@@ -20,7 +20,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "397027ac9c7d04f0f778592893d931f2ac6c1fd3f7d6dd6dd9a0f4132cf2045d"
     },
@@ -52,7 +52,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "cf99c299527b18809c3a880bb3907ae78c60895ce2bfb8e2356dc5d595ae2c1b"
     },
@@ -75,7 +75,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "203c52ced13344eeba2f09ac9e252cc9aa4f92cc34b56c8bb167ae49fef76fa7"
     },
@@ -86,6 +86,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -94,7 +95,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -106,6 +107,7 @@
       "artikel": "5",
       "artikelLabel": "§ 5",
       "titel": "1. Namensschutz (ZGB 29)",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -114,7 +116,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -146,7 +148,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "9d8ac7154d388281c65132f7852365f94796d85faab0d3947def9c4c6884eec1"
     },
@@ -158,6 +160,7 @@
       "artikel": "7",
       "artikelLabel": "§ 7",
       "titel": "3. Anfechtung der Namensänderung (ZGB 30 Abs. 3)",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -166,7 +169,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -189,7 +192,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "b6c9692675e3eb0c3d906e9e727a82053acdfcca71d658793eec524e21d63f57"
     },
@@ -209,7 +212,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "c9d5123151086a33e291845ed043998b127fc64eb942c78c0aa8fd59317ba644"
     },
@@ -233,7 +236,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "b32db19a0c743c29ee67862964da27992ea8619a196010958fd16aa56029f3f3"
     },
@@ -252,7 +255,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "574895ce159e01760460eb3261168c7bf6a0aea29916400e8c0dc6cad4eef489"
     },
@@ -263,6 +266,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "12",
       "artikelLabel": "§ 12",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -271,7 +275,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -282,6 +286,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "13",
       "artikelLabel": "§ 13",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -290,7 +295,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -301,6 +306,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "14",
       "artikelLabel": "§ 14",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -309,7 +315,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -328,7 +334,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "391c69c08fd09c07d6eac9b99360b86e15624e722a1b2008c57667b09e6da769"
     },
@@ -339,6 +345,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "16",
       "artikelLabel": "§ 16",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -347,7 +354,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -366,7 +373,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "cc8800cfd80273af9c7d35fdfb27ecd45b4c13851d728e281d072fb78f73015f"
     },
@@ -390,7 +397,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "b2b86a0c92193413be12fc9521a09d27dee2eccf12def689fdfcb83757739142"
     },
@@ -422,7 +429,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "7649e5d14d354afa31bd8c0de42a10040a9463f5192997f07daacb62491331e3"
     },
@@ -441,7 +448,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "784b04e0ca1832d44b589843c85836c619e8aca3a1b48b5a1b5eabb27375aedf"
     },
@@ -464,7 +471,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "12c5ffc099164c1f0558286603650a44018154e7d49a292433afdf2b0ef7731c"
     },
@@ -487,7 +494,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "503768f2403c76440952f4a9d0b2ec6fa52bf73100d8400bd4b1beeefa25e967"
     },
@@ -498,6 +505,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "21",
       "artikelLabel": "§ 21",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -506,7 +514,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -517,6 +525,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "22",
       "artikelLabel": "§ 22",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -525,7 +534,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -536,6 +545,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "23",
       "artikelLabel": "§ 23",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -544,7 +554,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -555,6 +565,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "24",
       "artikelLabel": "§ 24",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -563,7 +574,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -583,7 +594,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "8e3da5d7c7b05772684774a8830e53e06d41b4d5241d26d8200a1119ec8e470c"
     },
@@ -594,6 +605,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "25_a",
       "artikelLabel": "§ 25a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -602,7 +614,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -613,6 +625,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "26",
       "artikelLabel": "§ 26",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -621,7 +634,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -632,6 +645,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "27",
       "artikelLabel": "§ 27",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -640,7 +654,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -651,6 +665,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "28",
       "artikelLabel": "§ 28",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -659,7 +674,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -670,6 +685,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "28_a",
       "artikelLabel": "§ 28a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -678,7 +694,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -689,6 +705,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "28_b",
       "artikelLabel": "§ 28b",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -697,7 +714,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -708,6 +725,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "28_c",
       "artikelLabel": "§ 28c",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -716,7 +734,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -736,7 +754,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "0018d572b54f627a71719a106fd73b992c68afebbf776c0ae22b3845e8959153"
     },
@@ -747,6 +765,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "29",
       "artikelLabel": "§ 29",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -755,7 +774,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -766,6 +785,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "29_a",
       "artikelLabel": "§ 29a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -774,7 +794,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -785,6 +805,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "29_b",
       "artikelLabel": "§ 29b",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -793,7 +814,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -804,6 +825,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "30",
       "artikelLabel": "§ 30",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -812,7 +834,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -823,6 +845,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "31",
       "artikelLabel": "§ 31",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -831,7 +854,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -842,6 +865,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "32",
       "artikelLabel": "§ 32",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -850,7 +874,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -861,6 +885,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "33",
       "artikelLabel": "§ 33",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -869,7 +894,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -889,7 +914,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "1efccbd7bc3b1e4d3283a57789eaa3eb3b99d2c81c5753801353154f1a5fd69a"
     },
@@ -909,7 +934,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "236b831147f7e1f2b7f46ccc7989e0d255aa3f4c23433badcec4e1420cf9b04f"
     },
@@ -921,6 +946,7 @@
       "artikel": "36",
       "artikelLabel": "§ 36",
       "titel": "4. Streitigkeiten über die güterrechtliche Auseinandersetzung: Zuständigkeit (ZGB 194 )",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -929,7 +955,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -940,6 +966,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "37",
       "artikelLabel": "§ 37",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -948,7 +975,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -959,6 +986,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "38",
       "artikelLabel": "§ 38",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -967,7 +995,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -978,6 +1006,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "39",
       "artikelLabel": "§ 39",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -986,7 +1015,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1005,7 +1034,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "1d05cae6388754e995921dfa09e90a8d28500bc3f9356b1dd6ce26424ec45816"
     },
@@ -1029,7 +1058,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "8305a5a252f85a702dfe94568fc678c6b37f95202a4728ec24b7f7ce62101de4"
     },
@@ -1057,7 +1086,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "358b2ccebfe718aef4af71a95611e609600e364450f8fce062f90ab2e07b590c"
     },
@@ -1089,7 +1118,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "9ab8e376dc04f04a30ea5ebdfe2356efd079ddd55b4c925b49f2a9f5e68818fc"
     },
@@ -1113,7 +1142,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "16003b03eb4832c3f71a3f3658d0990a235f1e746aba34c7a4f3ad4c0710cb47"
     },
@@ -1124,6 +1153,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "45",
       "artikelLabel": "§ 45",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1132,7 +1162,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1144,6 +1174,7 @@
       "artikel": "46",
       "artikelLabel": "§ 46",
       "titel": "2. Vorsorgliche Massregeln (ZGB 281-284)",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1152,7 +1183,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1238,7 +1269,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e51b4f561ad90fce5040f1ac6ee41c12e17d93fba290f4586978be3f756f37db"
     },
@@ -1266,7 +1297,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "735c39d502b75972a161ced1ab7a730ed00f65b3aa3e19268c5651dd5575aed8"
     },
@@ -1298,7 +1329,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "c8bbf76e7354a7f48b8b60b399becafef7c878bd33f51b56fe97d52ad0b062c4"
     },
@@ -1318,7 +1349,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "004ab2506d93c754a716d2e9ddad78b1074b2f1407983cdb4685d71d7ffd6d55"
     },
@@ -1329,6 +1360,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "48",
       "artikelLabel": "§ 48",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1337,7 +1369,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1348,6 +1380,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "49",
       "artikelLabel": "§ 49",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1356,7 +1389,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1375,7 +1408,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "5de6800cdde4bddde9fe396bc5305236edd7f632068b9bb4ed81c1d99f1bade6"
     },
@@ -1386,6 +1419,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "51",
       "artikelLabel": "§ 51",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1394,7 +1428,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1405,6 +1439,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "52",
       "artikelLabel": "§ 52",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1413,7 +1448,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1424,6 +1459,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "53",
       "artikelLabel": "§ 53",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1432,7 +1468,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1460,7 +1496,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "8bd742ba26ba8d3d8d6bda55fd59ff21374925f247de120f15d69fbe8465ebd0"
     },
@@ -1471,6 +1507,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "55",
       "artikelLabel": "§ 55",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1479,7 +1516,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1523,7 +1560,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "7b809e7ea0690dbac83e44fe2b4f39247ed00a4b752c31bd19639e523e783eed"
     },
@@ -1543,7 +1580,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "6f6e096ef6b8359dd0f936cbee351654d9e04702c9a17d21191ca0e7a62df688"
     },
@@ -1571,7 +1608,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "42a4254c68f2ed467501832527bcdf721f0f49f0fe03b6002a1715210fecdaef"
     },
@@ -1595,7 +1632,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "df09c807873143b81454a1a6dd9cd095833758d9b71f3e91e2b879a7137c9af3"
     },
@@ -1606,6 +1643,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "60",
       "artikelLabel": "§ 60",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1614,7 +1652,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1625,6 +1663,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "61",
       "artikelLabel": "§ 61",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1633,7 +1672,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1644,6 +1683,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "62",
       "artikelLabel": "§ 62",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1652,7 +1692,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1663,6 +1703,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "63",
       "artikelLabel": "§ 63",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1671,7 +1712,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1682,6 +1723,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "64",
       "artikelLabel": "§ 64",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1690,7 +1732,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1701,6 +1743,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "65",
       "artikelLabel": "§ 65",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1709,7 +1752,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1720,6 +1763,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "66",
       "artikelLabel": "§ 66",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1728,7 +1772,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1739,6 +1783,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "67",
       "artikelLabel": "§ 67",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1747,7 +1792,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1758,6 +1803,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "68",
       "artikelLabel": "§ 68",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1766,7 +1812,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1777,6 +1823,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "69",
       "artikelLabel": "§ 69",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1785,7 +1832,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1797,6 +1844,7 @@
       "artikel": "70",
       "artikelLabel": "§ 70",
       "titel": "2. Unterhalt von Findelkindern (ZGB 330)",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1805,7 +1853,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1824,7 +1872,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "4897322d4f9e412068945989655a09a870da0edcc75ea7a6ecd3e578bf86309a"
     },
@@ -1843,7 +1891,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "71d7f9c589b14777595fee36b8b07a901329603b3b78e8bbceccda73ac87b6ef"
     },
@@ -1854,6 +1902,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "73",
       "artikelLabel": "§ 73",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1862,7 +1911,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1873,6 +1922,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "74",
       "artikelLabel": "§ 74",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1881,7 +1931,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1892,6 +1942,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "75",
       "artikelLabel": "§ 75",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1900,7 +1951,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1911,6 +1962,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "76",
       "artikelLabel": "§ 76",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1919,7 +1971,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1930,6 +1982,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "77",
       "artikelLabel": "§ 77",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1938,7 +1991,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1949,6 +2002,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "78",
       "artikelLabel": "§ 78",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1957,7 +2011,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1968,6 +2022,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "79",
       "artikelLabel": "§ 79",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1976,7 +2031,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1987,6 +2042,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "80",
       "artikelLabel": "§ 80",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1995,7 +2051,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2006,6 +2062,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "81",
       "artikelLabel": "§ 81",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2014,7 +2071,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2025,6 +2082,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "81_a",
       "artikelLabel": "§ 81a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2033,7 +2091,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2044,6 +2102,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "82",
       "artikelLabel": "§ 82",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2052,7 +2111,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2063,6 +2122,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "83",
       "artikelLabel": "§ 83",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2071,7 +2131,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2082,6 +2142,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "84",
       "artikelLabel": "§ 84",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2090,7 +2151,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2101,6 +2162,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "85",
       "artikelLabel": "§ 85",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2109,7 +2171,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2120,6 +2182,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "86",
       "artikelLabel": "§ 86",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2128,7 +2191,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2139,6 +2202,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "87",
       "artikelLabel": "§ 87",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2147,7 +2211,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2158,6 +2222,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "88",
       "artikelLabel": "§ 88",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2166,7 +2231,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2177,6 +2242,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "89",
       "artikelLabel": "§ 89",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2185,7 +2251,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2196,6 +2262,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "90",
       "artikelLabel": "§ 90",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2204,7 +2271,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2215,6 +2282,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "91",
       "artikelLabel": "§ 91",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2223,7 +2291,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2234,6 +2302,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "92",
       "artikelLabel": "§ 92",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2242,7 +2311,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2253,6 +2322,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "93",
       "artikelLabel": "§ 93",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2261,7 +2331,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2272,6 +2342,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "94",
       "artikelLabel": "§ 94",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2280,7 +2351,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2291,6 +2362,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "94_a",
       "artikelLabel": "§ 94a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2299,7 +2371,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2310,6 +2382,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "95",
       "artikelLabel": "§ 95",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2318,7 +2391,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2329,6 +2402,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "96",
       "artikelLabel": "§ 96",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2337,7 +2411,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2348,6 +2422,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "97",
       "artikelLabel": "§ 97",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2356,7 +2431,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2367,6 +2442,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "98",
       "artikelLabel": "§ 98",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2375,7 +2451,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2386,6 +2462,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "99",
       "artikelLabel": "§ 99",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2394,7 +2471,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2405,6 +2482,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "100",
       "artikelLabel": "§ 100",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2413,7 +2491,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2424,6 +2502,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "101",
       "artikelLabel": "§ 101",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2432,7 +2511,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2443,6 +2522,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "102",
       "artikelLabel": "§ 102",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2451,7 +2531,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2462,6 +2542,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "103",
       "artikelLabel": "§ 103",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2470,7 +2551,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2481,6 +2562,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "104",
       "artikelLabel": "§ 104",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2489,7 +2571,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2500,6 +2582,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "105",
       "artikelLabel": "§ 105",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2508,7 +2591,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2519,6 +2602,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "106",
       "artikelLabel": "§ 106",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2527,7 +2611,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2538,6 +2622,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "107",
       "artikelLabel": "§ 107",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2546,7 +2631,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2557,6 +2642,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "108",
       "artikelLabel": "§ 108",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2565,7 +2651,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2576,6 +2662,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "109",
       "artikelLabel": "§ 109",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2584,7 +2671,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2595,6 +2682,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "110",
       "artikelLabel": "§ 110",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2603,7 +2691,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2614,6 +2702,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "111",
       "artikelLabel": "§ 111",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2622,7 +2711,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2633,6 +2722,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "112",
       "artikelLabel": "§ 112",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2641,7 +2731,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2652,6 +2742,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "113",
       "artikelLabel": "§ 113",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2660,7 +2751,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2671,6 +2762,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "114",
       "artikelLabel": "§ 114",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2679,7 +2771,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2690,6 +2782,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "115",
       "artikelLabel": "§ 115",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2698,7 +2791,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2709,6 +2802,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "116",
       "artikelLabel": "§ 116",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2717,7 +2811,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2728,6 +2822,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "117",
       "artikelLabel": "§ 117",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2736,7 +2831,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2747,6 +2842,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "118",
       "artikelLabel": "§ 118",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2755,7 +2851,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2766,6 +2862,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "119",
       "artikelLabel": "§ 119",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2774,7 +2871,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2785,6 +2882,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "120",
       "artikelLabel": "§ 120",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2793,7 +2891,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2804,6 +2902,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "121",
       "artikelLabel": "§ 121",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2812,7 +2911,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2823,6 +2922,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "122",
       "artikelLabel": "§ 122",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2831,7 +2931,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2842,6 +2942,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "123",
       "artikelLabel": "§ 123",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2850,7 +2951,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2861,6 +2962,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "124",
       "artikelLabel": "§ 124",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2869,7 +2971,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2880,6 +2982,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "125",
       "artikelLabel": "§ 125",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2888,7 +2991,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2907,7 +3010,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "0970527c5c1ca06aaf70f9177f85ce23f67d8743a18d4b8d1115d6885f3dbcdf"
     },
@@ -2927,7 +3030,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e48673bea24695131625db802bd48346d9713b8e5d00f65621a095543166dc20"
     },
@@ -2947,7 +3050,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "cdd82e880c44078efb788059f7bdf695ed0735b1edaa4e8a241adb5d440d2c30"
     },
@@ -2971,7 +3074,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "9db1689aa385bf5803155b3944ec02267fc774f26d9bf4d8af4588b78036b69d"
     },
@@ -2991,7 +3094,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "6071b31ccf177bcb403e387c73d7499542a42459c2ed26f7d2b1a52eac12787b"
     },
@@ -3010,7 +3113,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e0e4a49ce2da0abeb2b9df097af6228507fcd57921ae9ba7b7ef79ee82c4bfc6"
     },
@@ -3033,7 +3136,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "8ef585f6b2e08338443c8f0349c875c38f4362756172091d93ebecda9e5c480b"
     },
@@ -3052,7 +3155,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "c1bf32e411bf0d9a157c0bb1566c8b77341e7cb24309f5d66a8ab20837a3bfb2"
     },
@@ -3075,7 +3178,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "381cedb7db4d4413acf4ab0852f8c1892332fce6875297195a35b11717f666e4"
     },
@@ -3094,7 +3197,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "85c3345ceeba0d628cfa8405cb41c5331507a46116796fa0e6fad5daed8d9fe9"
     },
@@ -3122,7 +3225,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "6cc8e03da22bd3682daffd8f6d26f0c4c654349c3620f390025dc7ae48112452"
     },
@@ -3142,7 +3245,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "b07516bbff8537b7b6bbb481a47552ca0b2f4e775dba2c51e32b7131a4b24d8d"
     },
@@ -3174,7 +3277,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "9714073147ea60ca3cf624635220fc5cd0073f1a080483e12413aaa12d50728d"
     },
@@ -3201,7 +3304,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "a67450c3642c43e3875cd0d8bad79da58e122414300e921bf1f5fcf8e1987332"
     },
@@ -3228,7 +3331,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "16c29c84c4194107ff898108bf7d0014b1560b666ab9283330c72d10e6f874af"
     },
@@ -3248,7 +3351,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "28abb34b7dabdec848824739b9c34acd22eab3190862e03b907d032459d26356"
     },
@@ -3268,7 +3371,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "7a0aa446824150de194363ad79a66a343336ffac82d8be7553bba8b07f0c37ba"
     },
@@ -3292,7 +3395,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "8d22f46de71b163ee74b7276ea96a1eaea507687e9363da29700801889604a52"
     },
@@ -3312,7 +3415,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "74c16b9c9320ed207c25bcec71582c45dc77ba2c096ffa534c383a3c1b1f6d90"
     },
@@ -3332,7 +3435,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "77cc5a477b9e389f8c9e5fee9f0ed5e162a667b6e8fc5cf16e0d4573b32645df"
     },
@@ -3352,7 +3455,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "2fb03d8c7f93798745c38c365273deee3d7aa4ecdf088a398005d9efb087a946"
     },
@@ -3380,7 +3483,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "b57ce851c9260eb5f7f0acd979252ae1808bc69e02f629eadbd4c03e819d7a08"
     },
@@ -3400,7 +3503,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "61bcd5c2c2a50f95568265c4a92eb5090ca523d98a82d40d870c877ed9289bd1"
     },
@@ -3420,7 +3523,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "edaf1845cd9dbb7e520d3e4d6796b5050840c94be8160f94665621e4c7c646b6"
     },
@@ -3440,7 +3543,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "592051249b61ff341764cbc58da66e86af1177c7da8fba80f5b9dee751cbbd05"
     },
@@ -3478,7 +3581,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "b4c66ed9fbfa744b71e6a427d4a6626b779d1093d6be9a6a6f4ac5209e5c14f0"
     },
@@ -3502,7 +3605,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "34db304f1ccb4a9346e3dd7128ee9a63417aae4ba0e0cab1abbb11451c1bbdef"
     },
@@ -3513,6 +3616,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "153",
       "artikelLabel": "§ 153",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3521,7 +3625,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -3532,6 +3636,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "154",
       "artikelLabel": "§ 154",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3540,7 +3645,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -3559,7 +3664,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "1104b2753ba5451f057f75619c1234cfe7ba595709b2a9a2591f90e321a8ddb9"
     },
@@ -3582,7 +3687,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "a59b4aedd400f808fc13dcf9ec58ff30f1b67064fe745671a9fde5c5ae055cfd"
     },
@@ -3601,7 +3706,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "8cceb0b8885f54960ccf4b2c4715c12059b3b0cf9787925749452386be08346a"
     },
@@ -3628,7 +3733,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "758c626d2b36d9f2434ed6357cce1941417ab8c0d669b276c34cec83b1bf51f9"
     },
@@ -3652,7 +3757,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "a6d504790fff1fcbde944ae6c91ff1ea8bb507d474c06b3cbd3bbd71a6193c17"
     },
@@ -3672,7 +3777,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "2fd183a9a70e976973049b748b362846e41c8b7e893b4e485e93378dee0c81be"
     },
@@ -3692,7 +3797,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "9ca44320f2fe2cf8ab3865bb89a33e76bd6e377e6f8d81c8429e07115d90fa56"
     },
@@ -3703,6 +3808,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "162",
       "artikelLabel": "§ 162",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3711,7 +3817,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -3722,6 +3828,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "163",
       "artikelLabel": "§ 163",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3730,7 +3837,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -3741,6 +3848,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "164",
       "artikelLabel": "§ 164",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3749,7 +3857,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -3760,6 +3868,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "164_a",
       "artikelLabel": "§ 164a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3768,7 +3877,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -3779,6 +3888,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "164_b",
       "artikelLabel": "§ 164b",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3787,7 +3897,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -3798,6 +3908,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "165",
       "artikelLabel": "§ 165",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3806,7 +3917,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -3817,6 +3928,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "166",
       "artikelLabel": "§ 166",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3825,7 +3937,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -3836,6 +3948,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "167",
       "artikelLabel": "§ 167",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3844,7 +3957,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -3863,7 +3976,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "74c9943089584928e0d67647ca4268e77c7699292dc2024d9db536c25b83437f"
     },
@@ -3874,6 +3987,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "169",
       "artikelLabel": "§ 169",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3882,7 +3996,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -3893,6 +4007,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "170",
       "artikelLabel": "§ 170",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3901,7 +4016,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -3921,7 +4036,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "eff95ce87ab59f5a93431925ff0395ee643897e460f805577065e85b5199090f"
     },
@@ -3932,6 +4047,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "172",
       "artikelLabel": "§ 172",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3940,7 +4056,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -3963,7 +4079,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "98818e6b57ac12f7f7ef5744f6f27cc11529e4656ada52627fbbe216b3cbd5f7"
     },
@@ -3974,6 +4090,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "174",
       "artikelLabel": "§ 174",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3982,7 +4099,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4006,7 +4123,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "ea6cf7538f6648534eb3fd3b147bc16f47c2823e8f1ead8592b5a031f0da4a5d"
     },
@@ -4017,6 +4134,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "176",
       "artikelLabel": "§ 176",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4025,7 +4143,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4036,6 +4154,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "177",
       "artikelLabel": "§ 177",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4044,7 +4163,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4075,7 +4194,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "ab0b15f6d5577a67f7be14fad93971bde5fa2f4105bf1cf41d1731df5fb7caa5"
     },
@@ -4107,7 +4226,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "35cc82159a7d209bea240023d90088dc0e6918abff1b56518b2d7eca62d13054"
     },
@@ -4127,7 +4246,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "c7c24ac7625a8d2d606eeea32fed28865590d18e92e17eaf4b10acb72e924cd7"
     },
@@ -4151,7 +4270,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "f11270fbf847f9cefa25b0705958b67e9febfcf6e8261d296924cd60a4e47dfc"
     },
@@ -4162,6 +4281,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "181",
       "artikelLabel": "§ 181",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4170,7 +4290,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4181,6 +4301,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "182",
       "artikelLabel": "§ 182",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4189,7 +4310,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4209,7 +4330,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "63459bfbfd12c286df3ad565fe89396c21e6f888288e5852df5284c39d008bb9"
     },
@@ -4228,7 +4349,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "da8c7db1e013062984622908c10097ae9fb911248c8aba892d30d1329063e4fc"
     },
@@ -4259,7 +4380,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "d2c989795f98559b3c0ee2ddfbee984873be999644480e1ed08090a7500119fd"
     },
@@ -4270,6 +4391,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "186",
       "artikelLabel": "§ 186",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4278,7 +4400,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4289,6 +4411,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "187",
       "artikelLabel": "§ 187",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4297,7 +4420,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4358,7 +4481,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "0604603b897afe7e3c1bb8998d4048886afbd6c2ba970f1aa8de87134dc9f4da"
     },
@@ -4369,6 +4492,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "189",
       "artikelLabel": "§ 189",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4377,7 +4501,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4388,6 +4512,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "189_a",
       "artikelLabel": "§ 189a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4396,7 +4521,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4415,7 +4540,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "eb73469edf4d5105e6f926f172d79f5a1b0d020f170577bb6a2ab5cc24b458cf"
     },
@@ -4426,6 +4551,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "191",
       "artikelLabel": "§ 191",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4434,7 +4560,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4445,6 +4571,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "192",
       "artikelLabel": "§ 192",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4453,7 +4580,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4464,6 +4591,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "193",
       "artikelLabel": "§ 193",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4472,7 +4600,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4491,7 +4619,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "d91337b6aecf04bb9a447c3b73015f341449c7182134bd4dcd275dcd682e2bfe"
     },
@@ -4502,6 +4630,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "195",
       "artikelLabel": "§ 195",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4510,7 +4639,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4521,6 +4650,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "196",
       "artikelLabel": "§ 196",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4529,7 +4659,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4552,7 +4682,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "dfce27edb9b419261a7581a06c0642bb88545c189be83aa2994e6a8510231499"
     },
@@ -4575,7 +4705,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "27e4b807721ad27876848ede948e4d4b4834a116068d7a920912b320de673597"
     },
@@ -4586,6 +4716,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "199",
       "artikelLabel": "§ 199",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4594,7 +4725,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4605,6 +4736,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "200",
       "artikelLabel": "§ 200",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4613,7 +4745,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4636,7 +4768,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "9e6d382def6704ea4058449297df4b353a27a6ac7f9680c0adc198a2784d483c"
     },
@@ -4655,7 +4787,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "d930743ff35c6216ecb9cc47562ceaa31ebd07909d7e6dd54ba404efe074cc16"
     },
@@ -4666,6 +4798,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "203",
       "artikelLabel": "§ 203",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4674,7 +4807,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4703,7 +4836,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "440b4255c6bd72a4b1bd8a30230c888be93ffe73fee44b0bf5c59a9726c62bc4"
     },
@@ -4723,7 +4856,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "3dd9055e20242a0448a96b8a8403d6e0325ff9fe7ecdf97fc8db41b577cae9a4"
     },
@@ -4755,7 +4888,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "a241b2088590e2776c44a1560801bad89a2e39d983036f7fe5c08334a3575bec"
     },
@@ -4778,7 +4911,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "c42e504ffefc895ace35bd7d9a8771e9323cebaa863cffc541f3ef29b17c4255"
     },
@@ -4801,7 +4934,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "4dae53235a100e26745085d91f5b97f60b66b8e31b9efc3a927eab4c5fdeb5d6"
     },
@@ -4812,6 +4945,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "207",
       "artikelLabel": "§ 207",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4820,7 +4954,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4839,7 +4973,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "fcea109cbe753f13370a426044025db15d97dca7297419e5337e6b598fa1562d"
     },
@@ -4850,6 +4984,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "209",
       "artikelLabel": "§ 209",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4858,7 +4993,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4869,6 +5004,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "209_a",
       "artikelLabel": "§ 209a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4877,7 +5013,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4900,7 +5036,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e7365dab412bd7f1b273aa172b6a640020d52f1b44e17cdc7f5df2b395d3cc9d"
     },
@@ -4919,7 +5055,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "91d21e8e0e3152be3ae78886db26c1c1fc061ec92ae131c020d7244373030bd9"
     },
@@ -4930,6 +5066,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "211",
       "artikelLabel": "§ 211",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4938,7 +5075,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -4961,7 +5098,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "308f8a9e8dd53234c29c4b28b83b0dedfd2f5883af3d62fef2f9c3df2149dac4"
     },
@@ -4980,7 +5117,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "088178530623d442d6ff95bae70334a38843f7db4ff5218ee84f1ccdc2abd7d2"
     },
@@ -5003,7 +5140,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "8dd63b88f3a342644eccc8b38d8c1ea418091a7f1cb53731fcc720d76fc0c3f8"
     },
@@ -5027,7 +5164,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "1ef6b72c2e6222767aed104d1561e0d7d7b02b9983d8b2d35d48daf2bd283f3f"
     },
@@ -5039,6 +5176,7 @@
       "artikel": "214_a",
       "artikelLabel": "§ 214a",
       "titel": "2. Schlichtungsbehörde und Hinterlegungsstelle (OR 274a, 259g)",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5047,7 +5185,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5075,7 +5213,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "2ccfdbf05b9ba9ccce9a1a4cc2bb2feec596a933e41332d0ba3102c05ce6386f"
     },
@@ -5094,7 +5232,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "1cf813045680ee299a1672919813cea2c6c382d3e82b2e9133a15e222df8843e"
     },
@@ -5113,7 +5251,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "c20fc6938e992201311ecd38e1c636469f191c71e2281ea9df46faeda3e088a4"
     },
@@ -5132,7 +5270,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "1160596fd2631bc0a5e40122fee537de9b235147c502ce7ef44ecaa7d4ca7a2d"
     },
@@ -5143,6 +5281,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "216_a",
       "artikelLabel": "§ 216a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5151,7 +5290,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5170,7 +5309,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "4cfe569b4abd5b4c9f3b9dfa0f69b23a71094fc5cbc852e5a9a3cd2e2eaf8fb1"
     },
@@ -5181,6 +5320,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "217_a",
       "artikelLabel": "§ 217a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5189,7 +5329,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5200,6 +5340,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "217_b",
       "artikelLabel": "§ 217b",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5208,7 +5349,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5219,6 +5360,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "217_c",
       "artikelLabel": "§ 217c",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5227,7 +5369,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5238,6 +5380,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "217_d",
       "artikelLabel": "§ 217d",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5246,7 +5389,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5257,6 +5400,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "218",
       "artikelLabel": "§ 218",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5265,7 +5409,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5285,7 +5429,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "0f6e306c029fd52b3943f489453340d3868b386ff5f3414ec6c39966ba9622b6"
     },
@@ -5296,6 +5440,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "220",
       "artikelLabel": "§ 220",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5304,7 +5449,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5315,6 +5460,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "221",
       "artikelLabel": "§ 221",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5323,7 +5469,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5334,6 +5480,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "222",
       "artikelLabel": "§ 222",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5342,7 +5489,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5362,7 +5509,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "be4ce57b11019501eecd1551e0054ca2dd75ca8b8627f3a6b8addd68217c0f3e"
     },
@@ -5390,7 +5537,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "c8ccf2a1c1f9a9b01c017bfcb99d7d7b38a0ac5c3a74ccdc08c4a4105b707645"
     },
@@ -5414,7 +5561,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "db9e84f8e3236ae28f30cdbdf14568d5ed9dec9b1073bd530981e30305413dc8"
     },
@@ -5438,7 +5585,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "074c036b6d23acf1c44d1552b069e2b17ae542598e8a776076534e1c32c59367"
     },
@@ -5461,7 +5608,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "d36228a9843ca3ad7584456df0b5b9801fe228b715ff7f97e3783a41a7d6b6e8"
     },
@@ -5480,7 +5627,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "46fe6812d1bdaab97b0e16185cc7c79ff7dba3270cad3089f294476976d69a87"
     },
@@ -5500,7 +5647,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "777a105bfac7177342d3e581f0532e8c373578b058dd28295edca5a3fd63b5bd"
     },
@@ -5520,7 +5667,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "260199bf158ac1dfa1385566c6167663ce9f4a257b53292bb3e6e739d5736b0d"
     },
@@ -5547,7 +5694,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "6d9c7a6880eae2b94df9d1070708d3af7c5b10b1e8a5c928068f68cabfacc5c6"
     },
@@ -5566,7 +5713,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "29b53e0563485a651cdd90dd091340ab6edcbb8e7969158b1a08b3a5f87adafe"
     },
@@ -5602,7 +5749,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "443d20ea70450ed36c7a3f7acc43fd5567139b2059eca85b06475848e7a270ae"
     },
@@ -5622,7 +5769,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "6300b76979ceeb825e7ce45412dac8fd988d10c805e326d501460e361a29d429"
     },
@@ -5633,6 +5780,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "231",
       "artikelLabel": "§ 231",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5641,7 +5789,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5652,6 +5800,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "232",
       "artikelLabel": "§ 232",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5660,7 +5809,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5671,6 +5820,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "233",
       "artikelLabel": "§ 233",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5679,7 +5829,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5690,6 +5840,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "234",
       "artikelLabel": "§ 234",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5698,7 +5849,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5709,6 +5860,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "235",
       "artikelLabel": "§ 235",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5717,7 +5869,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5728,6 +5880,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "236",
       "artikelLabel": "§ 236",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5736,7 +5889,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5747,6 +5900,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "237",
       "artikelLabel": "§ 237",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5755,7 +5909,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5766,6 +5920,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "238",
       "artikelLabel": "§ 238",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5774,7 +5929,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5785,6 +5940,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "239",
       "artikelLabel": "§ 239",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5793,7 +5949,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5804,6 +5960,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "240",
       "artikelLabel": "§ 240",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5812,7 +5969,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5823,6 +5980,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "241",
       "artikelLabel": "§ 241",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5831,7 +5989,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5842,6 +6000,7 @@
       "erlass": "Gesetz betreffend die Einführung des Schweizerischen Zivilgesetzbuches (211.100)",
       "artikel": "242",
       "artikelLabel": "§ 242",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5850,7 +6009,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5873,7 +6032,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "768ab8908a50eb59c53b9688bff3ba432ac5c5f2d56cf6f2d87f61bd371042d8"
     },
@@ -5892,7 +6051,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5911,7 +6070,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5930,7 +6089,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5949,7 +6108,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5968,7 +6127,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -5987,7 +6146,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6006,7 +6165,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6025,7 +6184,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6044,7 +6203,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6063,7 +6222,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6082,7 +6241,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6101,7 +6260,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6120,7 +6279,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6139,7 +6298,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6158,7 +6317,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6177,7 +6336,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6196,7 +6355,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6215,7 +6374,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6234,7 +6393,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6253,7 +6412,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6272,7 +6431,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6291,7 +6450,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6310,7 +6469,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6329,7 +6488,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6348,7 +6507,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6367,7 +6526,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6386,7 +6545,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6405,7 +6564,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6424,7 +6583,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6443,7 +6602,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6462,7 +6621,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6481,7 +6640,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6500,7 +6659,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -6519,7 +6678,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "8ccb0a93b3d28c6894d8e42b2ee4f43c78fc1759b1cf916dd51e8256ca1fb3a6"
     },
@@ -6538,7 +6697,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "50eb73e44b965eb26ce0db70fb288af01f7733aa8c596ee211d3535ffab01ec2"
     },
@@ -6557,7 +6716,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "8b4fa9d283063f3d14456bb7a30c305e7d984e6bf2ac89789c7375878d7cdc99"
     },
@@ -6576,7 +6735,7 @@
       ],
       "stand": "2024-04-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/211.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8a71fb9a8148002011fe871c037df833",
       "sha": "69c90cbd3654113e72677e0a0b68254ed200d4cdfec79bdd6664d6f0fa9df205"
     }

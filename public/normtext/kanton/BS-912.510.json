@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/912.510/art_1",
@@ -17,7 +17,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "8de38efc96f511a12392d9ac2e08879e15e43df4b5f7510e42ac937e1bdbaaf2"
     },
@@ -49,7 +49,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "45711c7d3f5d53c5e1c715fe5f4e36b15f4c163b3ae153efc8d17e57a8ea3243"
     },
@@ -69,7 +69,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "89c24a7bcedcfc1e9c61650c5e3f55c01d84def0e08514c268107170137b43fd"
     },
@@ -93,7 +93,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "17772b23cee41c71f5c22c106e8e7f3f38307a166b304aff05b1ae298339dfc2"
     },
@@ -127,7 +127,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "67fdf2434fc5a59de372db7012a254a0a66ec7c781eba19c8ca6053e87d0c07a"
     },
@@ -205,7 +205,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "11fad3be1bbde62c1fae9aeb1867055bd1d11ffa88cead730a56c792edd5f139"
     },
@@ -237,7 +237,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "b0dc29d345d55520ad97647347d6b759d750e00a2b0b7c3e5e0a0574067a0a1c"
     },
@@ -287,7 +287,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "bd8f7aa5a489ce68553df8e1a949730dc035f579cff508c509f7cd2d2f4755ac"
     },
@@ -327,7 +327,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "5484c8f9b6effd8ca9e051ac878485028f67b943d297f64be5de89b7b3ac03e6"
     },
@@ -338,6 +338,7 @@
       "erlass": "Verordnung über die Fischerei im Kanton Basel-Stadt, Fischereiverordnung (912.510)",
       "artikel": "10",
       "artikelLabel": "§ 10",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -346,7 +347,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -370,7 +371,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "acf7f57acd4406d85a45fa5f4488924ee191d1a863eacea76538cc8d6ef3265f"
     },
@@ -390,7 +391,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "0af43d441d81d2b4b57804a7b8cc50142f71ae65589383ca9dfd923b65b4f934"
     },
@@ -474,7 +475,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "2c891d682e291640d0f4959eaf51e9e85e9a72003499f0d9196c6a32e880e661"
     },
@@ -512,7 +513,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "6114107530a665d7caf3451de2f351f7460cbac3fa5b4f84bedebe1688deafdf"
     },
@@ -544,7 +545,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "c0ce222c7dc709a7bc9eeb00746c2007dc1fda8b3f28ea3d520d9c45be135875"
     },
@@ -576,7 +577,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "1a4561e53db1bfe866560b51c595e0dff7205d23f9a1e5448e3f7f5ef9ca6b76"
     },
@@ -596,7 +597,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "e0dd7f02e871cecb1629d5618eef0c4fe823bb4947fd2b48c813e05d41d15c07"
     },
@@ -620,7 +621,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "ef5b53ab56da75d6dda8968e0708dc7a1adb349bcc8a1cf5c6692a009302faeb"
     },
@@ -662,7 +663,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "2f50fb4e6fee04b4a6674107d3eddcccd0a804bad11603e3ec9e3334941f3a8a"
     },
@@ -698,7 +699,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "4226d277cbccfdb84d37d3c2e95b9d076a71da6d9338151cac9948af7dc39264"
     },
@@ -730,7 +731,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "6018feb9d99d98f58896f11ed7821c9368b19d192233e39fa113ecb8eae4f81b"
     },
@@ -762,7 +763,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "6f03321f8560952118329782caa92b377caf91009a867ed1462b61f875055f68"
     },
@@ -798,7 +799,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "2ad64b9053b1667c747898f83c6946a05dc97e029ddc5dc93cf5aaeb163f3caf"
     },
@@ -860,7 +861,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "c95c77f180cd891545c42946afd540e108d492342f66d217ad7a9c7172034f8b"
     },
@@ -884,7 +885,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "5da013181712f5dfacf5c91d247ffec9644f11e1f90d00fefa511ed00e257fe5"
     },
@@ -895,6 +896,7 @@
       "erlass": "Verordnung über die Fischerei im Kanton Basel-Stadt, Fischereiverordnung (912.510)",
       "artikel": "24",
       "artikelLabel": "§ 24",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -903,7 +905,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -931,7 +933,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "e7b02dc4c479a6a00260e2c4a53e0ad8a9551a0f9e4c7f51b35e213bb3a1ab88"
     },
@@ -967,7 +969,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "ebf7bfd55099e31963255cf5a56f10c0e3b812c9b84544209a2e2f0374b56128"
     },
@@ -995,7 +997,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "83e4c08a2bf47c6b9fccc827639002752fb509f24cb8c14bbbeb5cc795f51489"
     },
@@ -1015,7 +1017,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "81e7306a88da2934ff7ba244a08e56c742959acbf60caf3955df4dd238d7c2ab"
     },
@@ -1039,7 +1041,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "fb09faa7582753a4916e63c27797a7daea421dbfbada63035381573b9d11fd22"
     },
@@ -1059,7 +1061,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "bb869f1b76018169cb5fba304b7d63ddefc8cc91514decc3ccfbd177a9c3345e"
     },
@@ -1079,7 +1081,7 @@
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4be6c7639ee274cb2b69d5b3139952b",
       "sha": "dbeaf0d9ec51056b335bf1e1ea97867f7b9e12eb922c7bccd95e13447f89ec37"
     }

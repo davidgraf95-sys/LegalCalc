@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/832.700/art_1",
@@ -30,7 +30,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "e0f0532023eeebaa26265bf74b84a5b9a59de9d70f675cfd355232581df07584"
     },
@@ -54,7 +54,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "6409d908a2e7c132cab5f764c2f5a7112e0ded681e1cb64c1e6d3ae73b2d20f5"
     },
@@ -65,6 +65,7 @@
       "erlass": "Gesetz über die Einführung des Bundesgesetzes über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung sowie über die Ausrichtung von kantonalen Beihilfen, EG/ELG (832.700)",
       "artikel": "3",
       "artikelLabel": "§ 3",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -73,7 +74,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -113,7 +114,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "012ca9c13f947d7ddd71ad8e6d4b75ef053710bbf8e736edcb2a4af665d24913"
     },
@@ -133,7 +134,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "c9d25ad969fc11f92f45b521e110688c1bc2018877efe0b3d67a7b272a62a01c"
     },
@@ -161,7 +162,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "66e51d0dc9faf0d17e81fc35c8cf6d866489949ce17db2a03ee40eea2b71a5a1"
     },
@@ -185,7 +186,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "5cfe26e9a01665591cacf52c0cd21e7ba51724f1a51dfbb7a5decbb4c0a9a413"
     },
@@ -213,7 +214,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "9128f3ed7e33080337840df74fa3e68db837db1e913a320d1d97843353a9dde3"
     },
@@ -241,7 +242,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "c82fe80d7c85e36675eea2bd077038c5dbe97f2bbdd3d8bb7d33b94595853e39"
     },
@@ -261,7 +262,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "ef9dc5355aee0f030ab2c50ea47cd4c8429a1fc7855750311cb03c6027d559da"
     },
@@ -289,7 +290,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "b1879401a8431d19cc043aea421946ce1587dcd62050d5b9f338aaffd4a03ecc"
     },
@@ -309,7 +310,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "34a11e2eebc8c563d9df48d47c2d80a6e3e31350dc0354cd17a5567a64c0bd72"
     },
@@ -329,7 +330,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "ad0c637fcdc1db378aa21374d6e654ca81748a3f0dfd181bf6b075460a09e491"
     },
@@ -340,6 +341,7 @@
       "erlass": "Gesetz über die Einführung des Bundesgesetzes über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung sowie über die Ausrichtung von kantonalen Beihilfen, EG/ELG (832.700)",
       "artikel": "13",
       "artikelLabel": "§ 13",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -348,7 +350,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -376,7 +378,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "99d2b8057ec1cca7d0e010acc983403b225c3d69f2762e324bc5c2fe636fbbf9"
     },
@@ -400,7 +402,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "da602ec5f117d69f91edaf4f5a4a605061a02499846c92dc1ce07398f49733e9"
     },
@@ -420,7 +422,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "32f7a71a749a8d0db17f8e80d1db4f3dce71f8e369bd4ebfd2d237df8fa6aaf4"
     },
@@ -431,6 +433,7 @@
       "erlass": "Gesetz über die Einführung des Bundesgesetzes über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung sowie über die Ausrichtung von kantonalen Beihilfen, EG/ELG (832.700)",
       "artikel": "17",
       "artikelLabel": "§ 17",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -439,7 +442,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -467,7 +470,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "72d53f9716f38bf2588727b00d4d79f66b8777aa7195162193a248420acccbdb"
     },
@@ -491,7 +494,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "170d1cd32e45b5fa5ce2e0361dc21b9f538d5fa8e556e7c38de3e9eab96270ea"
     },
@@ -514,7 +517,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "0cf71ab359972eab780e9703fe15f505dbd7f38beed28baf31100ac33f1fa17e"
     },
@@ -534,7 +537,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "9c4960d1f6201653f491674668025a06a5200c01aea9d3471123f5bc0d2182dd"
     },
@@ -554,7 +557,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "60e9d2429694c8e0fe54be15f597676f4992638a4590d5a51c98103ea10ce57a"
     },
@@ -586,7 +589,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "5e753a1669a61ee48d385083426b09d8d298c4409e6f784f63e04340e0256ecb"
     },
@@ -597,6 +600,7 @@
       "erlass": "Gesetz über die Einführung des Bundesgesetzes über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung sowie über die Ausrichtung von kantonalen Beihilfen, EG/ELG (832.700)",
       "artikel": "22_a",
       "artikelLabel": "§ 22a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -605,7 +609,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -625,7 +629,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "1c65e206f369fffde03d45b3a3bb1b2a16e3d94eff58ac507ee889620205a268"
     },
@@ -649,7 +653,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "e70480cebf07dac417128957ff8399b03f582a3699ada6698ec34e74c6e314d2"
     },
@@ -669,7 +673,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "54b8b3f4f0631fbb84c0415f95e83989d3541ba5a6e70d9c9e5e3e2039812ec3"
     },
@@ -693,7 +697,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "cce7cfc2e190cd06bbccc29cfa01728fdfa636133a5e89bc935c37e69bb3a9f5"
     },
@@ -704,6 +708,7 @@
       "erlass": "Gesetz über die Einführung des Bundesgesetzes über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung sowie über die Ausrichtung von kantonalen Beihilfen, EG/ELG (832.700)",
       "artikel": "26",
       "artikelLabel": "§ 26",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -712,7 +717,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -732,7 +737,7 @@
       ],
       "stand": "2025-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.700",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "daefe7961d3a5ca18e0497887b7f2d59",
       "sha": "0c9d48dc3337d94ef31ee64a9f94c87a0791cdefade23ae3edb08cb39e5f2824"
     }

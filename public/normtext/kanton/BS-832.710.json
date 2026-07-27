@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/832.710/art_1",
@@ -16,7 +16,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "ab7bf990ad1026d1632aa51d8377ae314054c09e4f895211ca40744f55f5f639"
     },
@@ -27,6 +27,7 @@
       "erlass": "Verordnung betreffend Ergänzungsleistungen und kantonale Beihilfen zur Alters-, Hinterlassenen- und Invalidenversicherung, VELG (832.710)",
       "artikel": "2",
       "artikelLabel": "§ 2",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -35,7 +36,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -46,6 +47,7 @@
       "erlass": "Verordnung betreffend Ergänzungsleistungen und kantonale Beihilfen zur Alters-, Hinterlassenen- und Invalidenversicherung, VELG (832.710)",
       "artikel": "3",
       "artikelLabel": "§ 3",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -54,7 +56,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -85,7 +87,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "f028bb9e5f3b5ab5a1925bdad3b25be7044de8633396275feff8042ac7fedc81"
     },
@@ -130,7 +132,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "dacce971fc781f4cb547488af542f4533fd4e7d6cf08e2f5730f4dbfc2631da4"
     },
@@ -150,7 +152,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "ebe9b68577483e306fb33b3a7e638bc4f235206e6931bb7be7245704fb27b885"
     },
@@ -174,7 +176,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "2f90b46f67581a1abb252f5518afba0aef56014f6051f5e9d5e8c9edd9c29d54"
     },
@@ -198,7 +200,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "ccfd5e35867d0f4d0b3d4f9a1e93ecda67a9f3533a8a605cc4c10d95f9cfe1df"
     },
@@ -209,6 +211,7 @@
       "erlass": "Verordnung betreffend Ergänzungsleistungen und kantonale Beihilfen zur Alters-, Hinterlassenen- und Invalidenversicherung, VELG (832.710)",
       "artikel": "9",
       "artikelLabel": "§ 9",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -217,7 +220,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -236,7 +239,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "5ce11062118af1dd3ea53d2d6db2999282e29153e50bc54fb0282c650e8011f3"
     },
@@ -247,6 +250,7 @@
       "erlass": "Verordnung betreffend Ergänzungsleistungen und kantonale Beihilfen zur Alters-, Hinterlassenen- und Invalidenversicherung, VELG (832.710)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -255,7 +259,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -368,7 +372,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "49e62596ca885ba98f0270b60558cdd3d1603aeab022db566ede5d87a56288bc"
     },
@@ -379,6 +383,7 @@
       "erlass": "Verordnung betreffend Ergänzungsleistungen und kantonale Beihilfen zur Alters-, Hinterlassenen- und Invalidenversicherung, VELG (832.710)",
       "artikel": "13",
       "artikelLabel": "§ 13",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -387,7 +392,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -432,7 +437,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "55517612325dc984d60d02bbb7dfae6e378d8a90e22040ae71b66dd1fe2ae4ac"
     },
@@ -455,7 +460,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "999b71aee1f2b00d066294c8f9ffeef8d893c29a359882701e4e5592e640a814"
     },
@@ -478,7 +483,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "c1bbfcb1d3d358f3a8df6bfc371b448d96d77b808decb7504a81bd061765c266"
     },
@@ -498,7 +503,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "55a75a7c2aa9a5a26b7eb5792fb88a84ca361b8f1070f4ce6ed1843629aea08d"
     },
@@ -522,7 +527,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "e69e6990077f4ee2ebc04d69cab342e2dfd9c5b353459a7549927a5eeb016850"
     },
@@ -550,7 +555,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "7bdc5ec2551c51a0bbf642f91f11e5ce72fe45352de6436d463e5ff24a2071bb"
     },
@@ -561,6 +566,7 @@
       "erlass": "Verordnung betreffend Ergänzungsleistungen und kantonale Beihilfen zur Alters-, Hinterlassenen- und Invalidenversicherung, VELG (832.710)",
       "artikel": "19",
       "artikelLabel": "§ 19",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -569,7 +575,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -589,7 +595,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "1ad4ca2fbca472af466f89c6fb9eba44b4f4a81d965d5f76fbc69ab4e3fa42ff"
     },
@@ -613,7 +619,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "97240ab4b84180123633900d27f72bda27dd75d613469710452c84be58bcc3f3"
     },
@@ -632,7 +638,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "2fda5aaeb0f029e740ee7b9ec73345247fe7ea2ac73441155b2cfb1d2099807b"
     },
@@ -652,7 +658,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "182f9cd31aacabb06fd5dc33e05566c5ba0ceaa4b519bf4d46a3d26370121928"
     },
@@ -672,7 +678,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/832.710",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "233cc193a747e4ee0a5346f82035646e",
       "sha": "e854e1fda19fa11b8695ae1b319afdfb41e08085c480f0b1bbe16313a0b14092"
     }

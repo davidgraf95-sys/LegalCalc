@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/154.800/art_1",
@@ -20,7 +20,7 @@
       ],
       "stand": "2018-07-05",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/154.800",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "0156e468bcf0bf06b9a89155389ac54f",
       "sha": "693930ee67ba812545d740557b6e9e90c2c6f815e07204f2091f67e9c9feee59"
     },
@@ -31,6 +31,7 @@
       "erlass": "Gesetz über die Gerichtsgebühren (154.800)",
       "artikel": "2",
       "artikelLabel": "§ 2",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -39,7 +40,7 @@
       ],
       "stand": "2018-07-05",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/154.800",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "0156e468bcf0bf06b9a89155389ac54f",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -66,7 +67,7 @@
       ],
       "stand": "2018-07-05",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/154.800",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "0156e468bcf0bf06b9a89155389ac54f",
       "sha": "04972faba462324de819116b9e4691f476a022a2731f4f1476885a86e311ddd0"
     },
@@ -105,7 +106,7 @@
       ],
       "stand": "2018-07-05",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/154.800",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "0156e468bcf0bf06b9a89155389ac54f",
       "sha": "2ad330b2d7abb5419b9c6c4dbf33cb9455d09b99fd4ec720cb0bd037e46a7d0d"
     },
@@ -125,7 +126,7 @@
       ],
       "stand": "2018-07-05",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/154.800",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "0156e468bcf0bf06b9a89155389ac54f",
       "sha": "78226409c12015addb66d541e5dea463156294e945aac293376f3a3542fe982d"
     },
@@ -144,7 +145,7 @@
       ],
       "stand": "2018-07-05",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/154.800",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "0156e468bcf0bf06b9a89155389ac54f",
       "sha": "6530b3a092d5c8664b41fff3a222586c5d89e03beafecebb1911ddaff1b9f8e6"
     }

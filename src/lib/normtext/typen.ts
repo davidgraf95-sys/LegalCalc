@@ -20,6 +20,23 @@ export interface NormSnapshot {
    */
   titel?: string;
   /**
+   * G-AUFH-ART (W2·5j) — ARTIKEL-genau aufgehoben (nicht zu verwechseln mit
+   * `ErlassAufhebung`/register-typen.ts, das den GANZEN Erlass betrifft). Vom
+   * LexWork-Adapter NUR gesetzt, wenn das Artikel-Segment nach vollständiger
+   * Extraktion buchstäblich KEINEN Body-Block liefert (kein paragraph, keine
+   * enumeration_item/enumeration_tabular, kein paragraph_post-Inhalt) — ein rein
+   * STRUKTURELLES Signal aus der Quelle (Numerierungs-Slot ohne jeden Wortlaut),
+   * NICHT eine Ableitung aus «Text ist zufällig leer» (§7: Adapter-Regel in
+   * adapter-lexwork.ts, extrahiereAlleLexWorkArtikel/parseSegment). Trägt der
+   * Artikel einen `titel`, bleibt er erhalten (aufgehobene Artikel behalten ihren
+   * amtlichen Randtitel als historische Marginalie, z.B. BS 132.100 §76a/§76b).
+   * Fehlt das Feld, ist NICHTS über den Aufhebungsstatus bekannt (§7: nichts
+   * fabrizieren) — die Lesesicht fällt dann auf die ältere Text-Heuristik
+   * (`artikelGanzAufgehoben`) zurück, die aus dem historischen Bund-Bestand ohne
+   * dieses Feld entstand.
+   */
+  aufgehoben?: true;
+  /**
    * G23 (M8) — Delegationsnorm-Verweis «(Art. N ArG)» aus Fedlex
    * (<p class="man-template-referenz">): das Trägergesetz-Fundament einer
    * Verordnungsbestimmung. Artikel-level Metadatum wie titel (NICHT im Block-sha,

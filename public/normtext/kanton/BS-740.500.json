@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/740.500/art_1",
@@ -16,7 +16,7 @@
       ],
       "stand": "1991-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/740.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c983431eb59a6594a26b6d661f3ecd8c",
       "sha": "0bfae2a52e0170ce74c3516836963b3b154107e32e6a04a8cea33718b40ec860"
     },
@@ -35,7 +35,7 @@
       ],
       "stand": "1991-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/740.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c983431eb59a6594a26b6d661f3ecd8c",
       "sha": "bfdb3f809c0b6d0e1b0a87d5c5beaf353b393fba463dfc45e82bb3e67c045eac"
     },
@@ -46,6 +46,7 @@
       "erlass": "Verordnung betreffend die Entschädigung der Expropriationskommission (740.500)",
       "artikel": "3",
       "artikelLabel": "§ 3",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -54,7 +55,7 @@
       ],
       "stand": "1991-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/740.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c983431eb59a6594a26b6d661f3ecd8c",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -73,7 +74,7 @@
       ],
       "stand": "1991-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/740.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c983431eb59a6594a26b6d661f3ecd8c",
       "sha": "d281ef39cc5b375669d7218bd4cc687f9ab3ff7ba87e474c1934e8a4ef3b8992"
     },
@@ -92,7 +93,7 @@
       ],
       "stand": "1991-09-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/740.500",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "c983431eb59a6594a26b6d661f3ecd8c",
       "sha": "45069e3bc74ec75a9437420fdd218c6186191754ac55804acdc44ed7bc6712d9"
     }

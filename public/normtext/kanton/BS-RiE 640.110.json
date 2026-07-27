@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/RiE 640.110/art_1",
@@ -21,7 +21,7 @@
       ],
       "stand": "2008-03-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "81e224143a975ca12728cd85e147b962",
       "sha": "4ba3c3bbafe1328d9f3d52dd02b2399ef6398adeed5330e4fe532920ebccc61b"
     },
@@ -32,6 +32,7 @@
       "erlass": "Reglement zur Steuerordnung der Gemeinde Riehen, Steuerreglement (RiE 640.110)",
       "artikel": "2",
       "artikelLabel": "§ 2",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -40,7 +41,7 @@
       ],
       "stand": "2008-03-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "81e224143a975ca12728cd85e147b962",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -60,7 +61,7 @@
       ],
       "stand": "2008-03-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "81e224143a975ca12728cd85e147b962",
       "sha": "e00c77f31c0843d23be30c53a8ca61e22f8d9cd7b56b249cc2747366a061dca1"
     },
@@ -84,7 +85,7 @@
       ],
       "stand": "2008-03-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "81e224143a975ca12728cd85e147b962",
       "sha": "36ea99c9641c8ac9fde1696cef25be84d0bdee3b7f0246b3e7d7b2562e894ea1"
     },
@@ -108,7 +109,7 @@
       ],
       "stand": "2008-03-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "81e224143a975ca12728cd85e147b962",
       "sha": "750b3b19af9e34e97d649111a176e3b0585b10928ee9ecfb2e32844edcc11c52"
     },
@@ -128,7 +129,7 @@
       ],
       "stand": "2008-03-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "81e224143a975ca12728cd85e147b962",
       "sha": "7c3d36f18e0787b0ee3b0ce8d122105fc1301d36c946b073e8821687b17e85fa"
     },
@@ -152,7 +153,7 @@
       ],
       "stand": "2008-03-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "81e224143a975ca12728cd85e147b962",
       "sha": "b6ab17407613c1907fc064edcf80cb4515c4331623467fb68a9553b81d091c24"
     },
@@ -172,7 +173,7 @@
       ],
       "stand": "2008-03-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "81e224143a975ca12728cd85e147b962",
       "sha": "00d510e91cb340dd5ae435d6bad74a692857805308a1ffd0c7d140e0d69a95b5"
     },
@@ -192,7 +193,7 @@
       ],
       "stand": "2008-03-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "81e224143a975ca12728cd85e147b962",
       "sha": "8ca42dcd674e95b9c6d9aeb4cdd541d715eb7d80aa70aaf6006d1e5899af4db9"
     },
@@ -216,7 +217,7 @@
       ],
       "stand": "2008-03-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "81e224143a975ca12728cd85e147b962",
       "sha": "ade77a796ec1561e026d6adb8b1bfa585492dbbdc7b4d05d8259cb0de2a6f85b"
     },
@@ -236,7 +237,7 @@
       ],
       "stand": "2008-03-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "81e224143a975ca12728cd85e147b962",
       "sha": "7134ff841647fa1653b9b9bc77a5e9c198078887c5cd6d2122cae9a4fe49b379"
     },
@@ -264,7 +265,7 @@
       ],
       "stand": "2008-03-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "81e224143a975ca12728cd85e147b962",
       "sha": "20abbfc01df3a4df359e54d12b0f30f4769e2205a56d5eacd1c38e08a7c0fd6a"
     },
@@ -284,7 +285,7 @@
       ],
       "stand": "2008-03-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "81e224143a975ca12728cd85e147b962",
       "sha": "e5eea26597baf875d60558ffea991894d77ab17edde16199f36b9d421ec2fb28"
     },
@@ -312,7 +313,7 @@
       ],
       "stand": "2008-03-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "81e224143a975ca12728cd85e147b962",
       "sha": "b1f4d7d08b13fc1068b0fa2db5796cb57d353bd41fd35f6d4ac4305a626e2459"
     },
@@ -340,7 +341,7 @@
       ],
       "stand": "2008-03-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "81e224143a975ca12728cd85e147b962",
       "sha": "47e7bd45779179590d77e46e42fe28d2a2dca64250568f7932e78b2679879455"
     },
@@ -364,7 +365,7 @@
       ],
       "stand": "2008-03-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "81e224143a975ca12728cd85e147b962",
       "sha": "d06ddc855f4131dd7950021570deb975f1fb68449cf8e03ae4389535ead2635b"
     },
@@ -384,7 +385,7 @@
       ],
       "stand": "2008-03-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "81e224143a975ca12728cd85e147b962",
       "sha": "c16816026c5445f739c321bdab0549c144e5000f8b681a68b5003ac54922c94e"
     },
@@ -403,7 +404,7 @@
       ],
       "stand": "2008-03-30",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 640.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "81e224143a975ca12728cd85e147b962",
       "sha": "d495b579e095743eb903c413b9a1192a1307a5d6c63dba55b0f45445eb8c892a"
     }

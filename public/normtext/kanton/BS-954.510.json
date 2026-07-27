@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/954.510/art_1",
@@ -16,7 +16,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "b29e187f1d3f2c6ad7481e9d1e97d2b8e6ed51c08b367d6a86c6f68380c58174"
     },
@@ -35,7 +35,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "3603cced6ccc5a1370730dede662feb9322715ab47f5acfcbecb1e1c1dcab8d1"
     },
@@ -58,7 +58,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "38855baf5171d558d86fdb1d3d9333083ecf5a63aa8c2c99f5878ada601c27ad"
     },
@@ -69,6 +69,7 @@
       "erlass": "Vertrag zwischen der schweizerischen Eidgenossenschaft und dem Grossherzogtum Baden, betreffend die Weiterführung der badischen Eisenbahnen über schweizerisches Gebiet (954.510)",
       "artikel": "4",
       "artikelLabel": "Art. 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -77,7 +78,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -96,7 +97,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "e6a9b06ce44ae89eaeb293d28d37eb63903f276536fa50ad6b787ffa1cd8ebcf"
     },
@@ -119,7 +120,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "1587354c5de4505e48f3dcd5d52ecbe76dd32870b0cb30e6bc7b06372ab3d849"
     },
@@ -146,7 +147,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "e6aace5e9c7698346ee63ee326e59729c34b18a54e14b21e4ecefa2ed78db946"
     },
@@ -165,7 +166,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "a82c70343fea883d251d90a660ac70c7a0c1130f9ec9b1b7a082b85043359816"
     },
@@ -184,7 +185,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "0e4c218d672e063a718d03db218321090aa31e16ef520031e25570c5377b3515"
     },
@@ -203,7 +204,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "724cfae823b607c8163af418c6a6c83613da543a4c67c2f55ec78a22f8bf27b3"
     },
@@ -222,7 +223,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "1278b36940120c3c1b5386bc9786983e6d222e70175753d7e490db4e53c20088"
     },
@@ -241,7 +242,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "97f2ad5cd979d0096ba06fd94078b58c8b575457cff8e7d372d96c33da602e57"
     },
@@ -264,7 +265,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "0bf27505d1c7d8f4954ad28a32b83cc57e02f02170a662fc51d79a7ecf76b0b4"
     },
@@ -283,7 +284,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "23178330a61e7bee8ade0899c706f99ab5d7f5896dfcaad25adb26c3f078fa06"
     },
@@ -302,7 +303,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "4e9def56d75a25f13a4e7880bbd914e9a5937c32bafb105d3d7aaaf281d74218"
     },
@@ -313,6 +314,7 @@
       "erlass": "Vertrag zwischen der schweizerischen Eidgenossenschaft und dem Grossherzogtum Baden, betreffend die Weiterführung der badischen Eisenbahnen über schweizerisches Gebiet (954.510)",
       "artikel": "16",
       "artikelLabel": "Art. 16",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -321,7 +323,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -332,6 +334,7 @@
       "erlass": "Vertrag zwischen der schweizerischen Eidgenossenschaft und dem Grossherzogtum Baden, betreffend die Weiterführung der badischen Eisenbahnen über schweizerisches Gebiet (954.510)",
       "artikel": "17",
       "artikelLabel": "Art. 17",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -340,7 +343,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -351,6 +354,7 @@
       "erlass": "Vertrag zwischen der schweizerischen Eidgenossenschaft und dem Grossherzogtum Baden, betreffend die Weiterführung der badischen Eisenbahnen über schweizerisches Gebiet (954.510)",
       "artikel": "18",
       "artikelLabel": "Art. 18",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -359,7 +363,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -370,6 +374,7 @@
       "erlass": "Vertrag zwischen der schweizerischen Eidgenossenschaft und dem Grossherzogtum Baden, betreffend die Weiterführung der badischen Eisenbahnen über schweizerisches Gebiet (954.510)",
       "artikel": "19",
       "artikelLabel": "Art. 19",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -378,7 +383,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -389,6 +394,7 @@
       "erlass": "Vertrag zwischen der schweizerischen Eidgenossenschaft und dem Grossherzogtum Baden, betreffend die Weiterführung der badischen Eisenbahnen über schweizerisches Gebiet (954.510)",
       "artikel": "20",
       "artikelLabel": "Art. 20",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -397,7 +403,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -416,7 +422,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "67f729fe6adccf4c597318d830f845137826b13fbf201200186a8bdeeb8e8cf4"
     },
@@ -439,7 +445,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "aec3efe9d7bab23e71326e17ab9a710b519021ca9a2c78c89e5a778de12214bb"
     },
@@ -458,7 +464,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "cf00daaf370aafd06f6e00eeef1895afebdb455bef03e5ca605b8ce90a62bfb7"
     },
@@ -477,7 +483,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "c577d3080a1dc740ef5b089c53972082fad423fa3a64d9977ae52c59ab282ba4"
     },
@@ -488,6 +494,7 @@
       "erlass": "Vertrag zwischen der schweizerischen Eidgenossenschaft und dem Grossherzogtum Baden, betreffend die Weiterführung der badischen Eisenbahnen über schweizerisches Gebiet (954.510)",
       "artikel": "25",
       "artikelLabel": "Art. 25",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -496,7 +503,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -523,7 +530,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "a2ad40dfff8cd7e57cc4e3d8164e74a26f0443f6f537c3317994bf26771e2e75"
     },
@@ -542,7 +549,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "77dc456f4cc594b61abcf7cc906a02dcc1dee5770a04a5c3f45ef72b3983d3e2"
     },
@@ -569,7 +576,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "212a6e6aaea06935b91e5b9909027f43af9f7411d382fdea9c474e5d55e55a4e"
     },
@@ -592,7 +599,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "86c64a3036f7cc81f9847b374f12480b40c886433cff1a00892810e871c52cd1"
     },
@@ -611,7 +618,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "39e93c170057acf1922883dce1651febae845bf70577edcf415de4856a3fa247"
     },
@@ -630,7 +637,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "44bc71b7b849a9097bd9fdd2de55625b4838b5f578c86debae7a2f26b2608bb1"
     },
@@ -641,6 +648,7 @@
       "erlass": "Vertrag zwischen der schweizerischen Eidgenossenschaft und dem Grossherzogtum Baden, betreffend die Weiterführung der badischen Eisenbahnen über schweizerisches Gebiet (954.510)",
       "artikel": "32",
       "artikelLabel": "Art. 32",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -649,7 +657,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -672,7 +680,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "580ff3808437dc28c892fd1e24490083c35a78d739431b862958c5ead3b98478"
     },
@@ -707,7 +715,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "681e22c109055e4d37bc7ea7674b31e190fd83695779a9efe0d9d899f8341553"
     },
@@ -726,7 +734,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "11738122b70bd278ca183393cc54fa2fba96c6d74e9372dc0706d7447435030d"
     },
@@ -745,7 +753,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "9ad89ca705d454f2298e3bc0a1c4fa5761c458767acd0bc3d7149fcd24fa7b85"
     },
@@ -764,7 +772,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "a2c69bc0fa969643c7c37935bab469ff40438349542a99c84cfb5bfaf6c5fd2f"
     },
@@ -791,7 +799,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "b85dbc2dea0a1d2d88f08a66a3f0d5a4978ca45bdcd0f7e8ecd1e878c94c92c0"
     },
@@ -802,6 +810,7 @@
       "erlass": "Vertrag zwischen der schweizerischen Eidgenossenschaft und dem Grossherzogtum Baden, betreffend die Weiterführung der badischen Eisenbahnen über schweizerisches Gebiet (954.510)",
       "artikel": "39",
       "artikelLabel": "Art. 39",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -810,7 +819,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -829,7 +838,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "a522caaff17c5766fe96123ae37e935ba4263388b34a2c15b01d80f0d9121c10"
     },
@@ -848,7 +857,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "ff096acf47902a3809002df1efa33311c70a35bee409655df65367262de06624"
     },
@@ -867,7 +876,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "6b89054176b729a0d815ea22f82bb248f83fa61e1b2efe53769313df30923320"
     },
@@ -894,7 +903,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "b7238b659b406910feab2e3a4776afb5",
       "sha": "1cb10a27d20a49392f5619d005d4b20f87fb67216583a21f6c3e0e42df62cf5c"
     }

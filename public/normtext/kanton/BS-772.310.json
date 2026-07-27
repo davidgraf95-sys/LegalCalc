@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/772.310/art_1",
@@ -8,6 +8,7 @@
       "erlass": "Verordnung betreffend Organisation der Energie- und Trinkwasserversorgung (772.310)",
       "artikel": "1",
       "artikelLabel": "§ 1",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -16,7 +17,7 @@
       ],
       "stand": "2010-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/772.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4ed1c8839884765d8d072eb3fdafd27",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -77,7 +78,7 @@
       ],
       "stand": "2010-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/772.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4ed1c8839884765d8d072eb3fdafd27",
       "sha": "e3ad8fc26b8ea7e3ab993b6733beb8b6135953343f3c6b6827c7c7300b2c2194"
     },
@@ -96,7 +97,7 @@
       ],
       "stand": "2010-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/772.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4ed1c8839884765d8d072eb3fdafd27",
       "sha": "83e956a2c5bb5a1b30cb7c569a4fbfb052a532625836dd6d497153d943ca596b"
     },
@@ -107,6 +108,7 @@
       "erlass": "Verordnung betreffend Organisation der Energie- und Trinkwasserversorgung (772.310)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -115,7 +117,7 @@
       ],
       "stand": "2010-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/772.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4ed1c8839884765d8d072eb3fdafd27",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -134,7 +136,7 @@
       ],
       "stand": "2010-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/772.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "a4ed1c8839884765d8d072eb3fdafd27",
       "sha": "1033ac8c505f277651eea9360aa495e0fdc256f3a21f31139ef76de91b2ad6ff"
     }

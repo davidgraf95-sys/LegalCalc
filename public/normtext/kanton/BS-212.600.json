@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/212.600/art_1",
@@ -17,7 +17,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/212.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ee18ffbbf0f9d3497e9e7ffb45f643cb",
       "sha": "59f52655be184938b7ab5a42dcf2a401b1d750cf3795b66c61532e21556ba0b1"
     },
@@ -28,6 +28,7 @@
       "erlass": "Verordnung betreffend Einführung des Bundesgesetzes über Voraussetzungen und Verfahren bei Sterilisationen (212.600)",
       "artikel": "2",
       "artikelLabel": "§ 2",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -36,7 +37,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/212.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ee18ffbbf0f9d3497e9e7ffb45f643cb",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -56,7 +57,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/212.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ee18ffbbf0f9d3497e9e7ffb45f643cb",
       "sha": "f9de6545b8ac8fff5d0388e0261534e482414d0e7fa41957206e3cea44ac7b40"
     },
@@ -67,6 +68,7 @@
       "erlass": "Verordnung betreffend Einführung des Bundesgesetzes über Voraussetzungen und Verfahren bei Sterilisationen (212.600)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -75,7 +77,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/212.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ee18ffbbf0f9d3497e9e7ffb45f643cb",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -95,7 +97,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/212.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ee18ffbbf0f9d3497e9e7ffb45f643cb",
       "sha": "8b3b855a6897f882ee9f8b5433cbaa83b3d4b9f52c95261fd3344158371f485a"
     }

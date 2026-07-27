@@ -2,23 +2,23 @@
   "normtext.db": {
     "artikel": {
       "zeilen": 56112,
-      "sha": "50b99d402dac4709df1205ea331961d56fe8e5a6d688aa366c297e12c30e2ce0"
+      "sha": "d97b2bad045016d8098065cbc14a5bf84df2178fbad3fab9b6240f21ecbe8a54"
     },
     "datei": {
       "zeilen": 1458,
-      "sha": "4c415f4b8e70267fb3e1f4d9298cce4fb3809e5491ca9e895fb6c59534f55d4a"
+      "sha": "bb42663304ac4aa59bedf54c918cc7dcb025ece36941cf09db3149802a77bed1"
     },
     "dokument": {
       "zeilen": 1649,
-      "sha": "c2e1b5179089f0fce9ca8640a5b0c838013d12cf41c693b418a289c6b3bc4df6"
+      "sha": "237c87d044b8fd751e6d3f9cc3f03c557efdb9b70552d436eaeefd8648e88524"
     },
     "eintrag": {
       "zeilen": 56112,
-      "sha": "f5bf769f94967f5aa9eec095e792f80fd5d1b3f13cb6c855f06134d0729f2667"
+      "sha": "2cd30beea6a6990ba5d6f8410aa52607345c81053346221a86bc4fbf315e5e6f"
     },
     "erlass_fassungen": {
       "zeilen": 1458,
-      "sha": "0085c1bbe4ed73cb79573483a3c575cbfb39b2280015744631a7dafff5a12e59"
+      "sha": "25437f2e1fa74a1cc2ad24f6a75c1430b3de053d86952aef3432339d5c7e7159"
     },
     "erlasse": {
       "zeilen": 1458,

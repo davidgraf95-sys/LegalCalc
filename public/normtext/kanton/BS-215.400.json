@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/215.400/art_1",
@@ -20,7 +20,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "f6ecbbbd8edc45f2ee1c2f938dc5d4ea6fc9435529dd6087d6966e396ce4a511"
     },
@@ -47,7 +47,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "366d16554f6395d8c6f7166d89434a5a886d22ada7c511dee53f77358b37d5de"
     },
@@ -78,7 +78,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "f4658cafdba321a5c44bfd07d601ab4c8b5254b2266a03b0095192112cb8ce30"
     },
@@ -101,7 +101,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "da5bbc5e8b56343f50e830e7be8b3f32f1b2096e4f519fc35014e501e3b0506c"
     },
@@ -120,7 +120,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "4af6a28330effe32248a294dad768e0d370c69b82ed8eea2f0a83ecd2c5e9a8f"
     },
@@ -139,7 +139,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "a74b09ef22168308d79fab1c9f1e36941f17ab5aaf8f30f355e4210de2f65984"
     },
@@ -150,6 +150,7 @@
       "erlass": "Gesetz über die Staatliche Schlichtungsstelle für Mietstreitigkeiten, Schlichtungsstellengesetz (215.400)",
       "artikel": "7",
       "artikelLabel": "§ 7",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -158,7 +159,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -169,6 +170,7 @@
       "erlass": "Gesetz über die Staatliche Schlichtungsstelle für Mietstreitigkeiten, Schlichtungsstellengesetz (215.400)",
       "artikel": "8",
       "artikelLabel": "§ 8",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -177,7 +179,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -188,6 +190,7 @@
       "erlass": "Gesetz über die Staatliche Schlichtungsstelle für Mietstreitigkeiten, Schlichtungsstellengesetz (215.400)",
       "artikel": "9",
       "artikelLabel": "§ 9",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -196,7 +199,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -207,6 +210,7 @@
       "erlass": "Gesetz über die Staatliche Schlichtungsstelle für Mietstreitigkeiten, Schlichtungsstellengesetz (215.400)",
       "artikel": "10",
       "artikelLabel": "§ 10",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -215,7 +219,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -226,6 +230,7 @@
       "erlass": "Gesetz über die Staatliche Schlichtungsstelle für Mietstreitigkeiten, Schlichtungsstellengesetz (215.400)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -234,7 +239,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -245,6 +250,7 @@
       "erlass": "Gesetz über die Staatliche Schlichtungsstelle für Mietstreitigkeiten, Schlichtungsstellengesetz (215.400)",
       "artikel": "12",
       "artikelLabel": "§ 12",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -253,7 +259,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -264,6 +270,7 @@
       "erlass": "Gesetz über die Staatliche Schlichtungsstelle für Mietstreitigkeiten, Schlichtungsstellengesetz (215.400)",
       "artikel": "13",
       "artikelLabel": "§ 13",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -272,7 +279,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -283,6 +290,7 @@
       "erlass": "Gesetz über die Staatliche Schlichtungsstelle für Mietstreitigkeiten, Schlichtungsstellengesetz (215.400)",
       "artikel": "14",
       "artikelLabel": "§ 14",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -291,7 +299,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -302,6 +310,7 @@
       "erlass": "Gesetz über die Staatliche Schlichtungsstelle für Mietstreitigkeiten, Schlichtungsstellengesetz (215.400)",
       "artikel": "15",
       "artikelLabel": "§ 15",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -310,7 +319,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -321,6 +330,7 @@
       "erlass": "Gesetz über die Staatliche Schlichtungsstelle für Mietstreitigkeiten, Schlichtungsstellengesetz (215.400)",
       "artikel": "16",
       "artikelLabel": "§ 16",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -329,7 +339,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -340,6 +350,7 @@
       "erlass": "Gesetz über die Staatliche Schlichtungsstelle für Mietstreitigkeiten, Schlichtungsstellengesetz (215.400)",
       "artikel": "17",
       "artikelLabel": "§ 17",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -348,7 +359,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -359,6 +370,7 @@
       "erlass": "Gesetz über die Staatliche Schlichtungsstelle für Mietstreitigkeiten, Schlichtungsstellengesetz (215.400)",
       "artikel": "18",
       "artikelLabel": "§ 18",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -367,7 +379,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -378,6 +390,7 @@
       "erlass": "Gesetz über die Staatliche Schlichtungsstelle für Mietstreitigkeiten, Schlichtungsstellengesetz (215.400)",
       "artikel": "19",
       "artikelLabel": "§ 19",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -386,7 +399,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -397,6 +410,7 @@
       "erlass": "Gesetz über die Staatliche Schlichtungsstelle für Mietstreitigkeiten, Schlichtungsstellengesetz (215.400)",
       "artikel": "20",
       "artikelLabel": "§ 20",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -405,7 +419,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -416,6 +430,7 @@
       "erlass": "Gesetz über die Staatliche Schlichtungsstelle für Mietstreitigkeiten, Schlichtungsstellengesetz (215.400)",
       "artikel": "21",
       "artikelLabel": "§ 21",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -424,7 +439,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -443,7 +458,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "705c847ec85fd3e37d56298373904d6fff269491f11bdea0dd2abccfba0e5647"
     },
@@ -467,7 +482,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "c177a209e9f9c2ca0781a895de77cc02841fcb36b5c8ecf81cf872560c02df39"
     },
@@ -490,7 +505,7 @@
       ],
       "stand": "2016-11-06",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/215.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5857635aee30a39e23d78c6da02f1d72",
       "sha": "8559e80ff435a114ad21c5edab1304c5ed1b639704e60fb58b37e470a6db89e7"
     }

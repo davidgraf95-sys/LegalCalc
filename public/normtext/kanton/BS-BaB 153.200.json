@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/BaB 153.200/art_1",
@@ -42,7 +42,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "d31b9ca4c0c9514b4619b670a58a590b3349cd656cf5c07c691935d87bb8cdba"
     },
@@ -61,7 +61,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "440eade9fbbc087f5cd20b19a596ee520e4ccafa8c8927a55d7c6964663a194c"
     },
@@ -84,7 +84,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "30084ff78aa6f074a99d4110c0d1afbc8f1922de211c692346d4a479514254a6"
     },
@@ -142,7 +142,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "5637fd895ed12086bd2574c5cd82f726fd2dc42c2446cbf962ced2ea9d2b8605"
     },
@@ -188,7 +188,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "b83f19f3ce90c8b5035604623a847a4e78683085a52e5d01489fecc54124755d"
     },
@@ -262,7 +262,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "55300eff2c496aeecbcfe116e89fd37e449ac5cd9509b797ecfc808c43786621"
     },
@@ -336,7 +336,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "50fe965f8d82b68d16fef6756fb28cf84817b7181015b15325dc39b3cf1edde4"
     },
@@ -347,6 +347,7 @@
       "erlass": "Reglement für die Institutionen und die Zentralen Dienste (BaB 153.200)",
       "artikel": "8",
       "artikelLabel": "§ 8",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -355,7 +356,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -391,7 +392,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "7e58ee41dc2457ffc0a374dd670fa978c4cf8f14bf0ef5c482df82752bbd4ed0"
     },
@@ -433,7 +434,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "520233717c4e5194fb4a5b81087942c8d331873061d08beb0a9eb928fba3b240"
     },
@@ -461,7 +462,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "9743e47d69399fbd7990f7da79566d3c6d7d2cd2529582dc1e253df52d26b966"
     },
@@ -497,7 +498,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "452b94f3efdd1183924a82d3738e5f1c5bb727c0f06dca3244dde5d53170441a"
     },
@@ -508,6 +509,7 @@
       "erlass": "Reglement für die Institutionen und die Zentralen Dienste (BaB 153.200)",
       "artikel": "13",
       "artikelLabel": "§ 13",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -516,7 +518,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -536,7 +538,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "6b2e6e4638ce760294c96b2a712361f2110ae21e51a8bcd02ffd9b12aa238e11"
     },
@@ -570,7 +572,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "7626f0491de94b74b2c7c3f04d6a182c338554b3ca50e3d4e94b9f27534300de"
     },
@@ -628,7 +630,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "8b1d744ade5fdf6f2743fead4421754d3c8b6bd15664bfcb330646cfc397bd93"
     },
@@ -656,7 +658,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "45ef692845bcead336985e22de06870a234eab89a8f457dcec8f1cce120f3d04"
     },
@@ -679,7 +681,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "20b2489f5fc919133d26918432bf7b2f879e5723498374bf75d0a6e712593332"
     },
@@ -720,7 +722,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "e84274ee0d617cc38f882458c2d576ab5200c965d822006af96c61afebe76fdd"
     },
@@ -774,7 +776,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "01e94ddd06268e53c8eeb85c7b266e84aa960ede2c51c9fec2739473f49156d9"
     },
@@ -794,7 +796,7 @@
       ],
       "stand": "2022-02-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 153.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "479bbe87a39d3de4fae44c51494c9ff4",
       "sha": "f1d73912e8a0011342431bdf03ee33d97b68d76e52b98a617b95666fd4be8f45"
     }

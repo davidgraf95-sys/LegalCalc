@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/783.400/art_1",
@@ -20,7 +20,7 @@
       ],
       "stand": "2001-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/783.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "214a7667d10ba1ead00715bb2aabbe9c",
       "sha": "b22cc55633e4f04e6e2620a8406a8b7b85ce2901572dc2ae469804894952a02b"
     },
@@ -31,6 +31,7 @@
       "erlass": "Gesetz über Grundwasserschutzzonen (783.400)",
       "artikel": "2",
       "artikelLabel": "§ 2",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -39,7 +40,7 @@
       ],
       "stand": "2001-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/783.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "214a7667d10ba1ead00715bb2aabbe9c",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -50,6 +51,7 @@
       "erlass": "Gesetz über Grundwasserschutzzonen (783.400)",
       "artikel": "3",
       "artikelLabel": "§ 3",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -58,7 +60,7 @@
       ],
       "stand": "2001-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/783.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "214a7667d10ba1ead00715bb2aabbe9c",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -103,7 +105,7 @@
       ],
       "stand": "2001-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/783.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "214a7667d10ba1ead00715bb2aabbe9c",
       "sha": "8f5476904dac55e33aad6e51297a692733d3600feb4e6c7858fd74f4ca602756"
     },
@@ -123,7 +125,7 @@
       ],
       "stand": "2001-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/783.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "214a7667d10ba1ead00715bb2aabbe9c",
       "sha": "a6c9ada59cbe66be206ba96494eb9c7d920ab7b1f629ddb901bc58fc00c7aaf3"
     },
@@ -143,7 +145,7 @@
       ],
       "stand": "2001-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/783.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "214a7667d10ba1ead00715bb2aabbe9c",
       "sha": "59a7d02ceaf2abe8078374e576fbe4c2b7d9d83fa451ce79b978500445dfe1ed"
     },
@@ -167,7 +169,7 @@
       ],
       "stand": "2001-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/783.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "214a7667d10ba1ead00715bb2aabbe9c",
       "sha": "eb9967be3f095b9ac7d79d48e5f997868d5b5f4cc8f986e03e9e1180e14118ef"
     },
@@ -187,7 +189,7 @@
       ],
       "stand": "2001-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/783.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "214a7667d10ba1ead00715bb2aabbe9c",
       "sha": "1d626ce14289b91c2836a78348793691220c6849dceb76a308d4aef68d6ce8c3"
     },
@@ -206,7 +208,7 @@
       ],
       "stand": "2001-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/783.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "214a7667d10ba1ead00715bb2aabbe9c",
       "sha": "4a634205c91f1150e414fcab5cafa32f2d4a23e3043960df1fb22d086cf12649"
     },
@@ -237,7 +239,7 @@
       ],
       "stand": "2001-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/783.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "214a7667d10ba1ead00715bb2aabbe9c",
       "sha": "12488adcae341babdbdec25d3ccd45157623a390a883b1ee35c8292cee2f7fbe"
     },
@@ -260,7 +262,7 @@
       ],
       "stand": "2001-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/783.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "214a7667d10ba1ead00715bb2aabbe9c",
       "sha": "da78d4b446a257f1a97e1bbe96bc2e141b68fd5923fb006d5a4502016e79a199"
     },
@@ -279,7 +281,7 @@
       ],
       "stand": "2001-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/783.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "214a7667d10ba1ead00715bb2aabbe9c",
       "sha": "c566264d088111d7563574a9a31bd0a67b0bfbba0e55649c0cfeb13e3d495e99"
     },
@@ -298,7 +300,7 @@
       ],
       "stand": "2001-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/783.400",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "214a7667d10ba1ead00715bb2aabbe9c",
       "sha": "d4e1c1af6289588fa9804f97a5581a171d01768eb991d3f06ac888df9dd7d863"
     }

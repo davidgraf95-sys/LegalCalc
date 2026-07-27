@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/411.600/art_1",
@@ -16,7 +16,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "33170941d345b954fe48e531ea08fd9cc0884847688f120942550b0c8923907b"
     },
@@ -53,7 +53,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "01befc3d043505ea3207df32a70abb7364ea2504bdd66db2e3e0f17c14867c9f"
     },
@@ -104,7 +104,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "42cf98529043bf4688eacacd158ec5c2ddaba6cb20fc2d0a136e531a0370962c"
     },
@@ -131,7 +131,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "6f6a32a5f80e730e57b4123dee1aa7ea7ee11665a2459f4ce2dfde064d8b5ba4"
     },
@@ -162,7 +162,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "faec87d1cc4f54d2cecfb17340e8668a88235e268d8f73c5de25d980795eb09a"
     },
@@ -173,6 +173,7 @@
       "erlass": "Verordnung betreffend Ferien und Urlaub, die ausserordentliche Entlastung und die Stellvertretung von Lehrpersonen an den vom Kanton geführten Schulen (411.600)",
       "artikel": "6",
       "artikelLabel": "§ 6",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -181,7 +182,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -192,6 +193,7 @@
       "erlass": "Verordnung betreffend Ferien und Urlaub, die ausserordentliche Entlastung und die Stellvertretung von Lehrpersonen an den vom Kanton geführten Schulen (411.600)",
       "artikel": "7",
       "artikelLabel": "§ 7",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -200,7 +202,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -211,6 +213,7 @@
       "erlass": "Verordnung betreffend Ferien und Urlaub, die ausserordentliche Entlastung und die Stellvertretung von Lehrpersonen an den vom Kanton geführten Schulen (411.600)",
       "artikel": "8",
       "artikelLabel": "§ 8",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -219,7 +222,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -230,6 +233,7 @@
       "erlass": "Verordnung betreffend Ferien und Urlaub, die ausserordentliche Entlastung und die Stellvertretung von Lehrpersonen an den vom Kanton geführten Schulen (411.600)",
       "artikel": "9",
       "artikelLabel": "§ 9",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -238,7 +242,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -257,7 +261,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "db9090aba68a6378322b8d51569201be889bf093bbc2d740f325b1cf5546f27a"
     },
@@ -276,7 +280,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "70205417b3b21d6e9853affdf5a8fdeefbc436962acd9cca55d3459265843975"
     },
@@ -295,7 +299,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "1f0dd2edf5b13dfb10c8cb412de893bf13d0380553de67ec49b3be8665dfa9f7"
     },
@@ -314,7 +318,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "11a1f8a7a2191f8eb0112e2ede0666b3d5b5a419cf0b423f579bc54dd8215add"
     },
@@ -341,7 +345,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "f5eded9153c65223e74b3c06621468f6d26b724e027aaeb768d9920f24dd7584"
     },
@@ -360,7 +364,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "f31cb98e55e6aaf7c1c8b826b1b5e20546ada915bb07bc4dbb6bab1412d3c931"
     },
@@ -387,7 +391,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "3a383c6c7698b75a392a127c0f76354ef4635247c87b630cb26bf5a1d75558d7"
     },
@@ -406,7 +410,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "4b7b977ac3c2c8d2bc330bf9d02ccd5bf5333a1072b15c6d0b30424a27776cf7"
     },
@@ -425,7 +429,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "9f0f20531ada803599ad81fbf48402b555d78e626b50c91c4e05ab5200466712"
     },
@@ -462,7 +466,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "c7e42942a166c5353789a3bceef26df226d56f9a82be2e367b56441bf814e180"
     },
@@ -481,7 +485,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "ef1abc8a5967f673ac7d807cb8b11266961b8da6a0de0c1740c345610f31bba0"
     },
@@ -538,7 +542,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "ca85f259496c808127f9f150f54b253fb591c2856003913f13eead031781aac6"
     },
@@ -561,7 +565,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "6c2e58f1061164473714854302f320279f5be264573728b2ceed5cc9d7fdeb77"
     },
@@ -580,7 +584,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "1bef9f20c9f017f9cb04cc49fae1992e7851240551708d7976fdde86d430816f"
     },
@@ -613,7 +617,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/411.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8863b03911650d1ad62578554fe7d604",
       "sha": "7dc64e712b60c0519c7be3d8a4972214245431c24fc5f62fd92d36e423116312"
     }

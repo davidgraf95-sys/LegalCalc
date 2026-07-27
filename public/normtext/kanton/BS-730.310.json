@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/730.310/art_1",
@@ -25,7 +25,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "7b39c1fe65819a83fff3233aa10c80c6a300546a45bba3ec507dbb616269e8ce"
     },
@@ -53,7 +53,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "30cabec5ecc725a714d8987e3e48e5de21710355933e229d3b397a6b9acc5a82"
     },
@@ -81,7 +81,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "b79806d5da6e828180cf8126f3c7c200aa00ee42e0dc67b1facf615b3f5b0a79"
     },
@@ -113,7 +113,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "0b4a9cb49d1595d547dea2ec1891dc73a48fa6aa9438142f209239fcc07fff7d"
     },
@@ -163,7 +163,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "79038eeada0cd3c535efa2c7d9aa6720290a3adf9c9864db2e9ec50a085e557a"
     },
@@ -184,9 +184,15 @@
           "absatz": null,
           "text": "",
           "mehrspaltig": {
-            "kopf": [
-              "Fläche in m² BGF",
-              "Ausgangszahl für Parkplätze"
+            "spalten": [
+              {
+                "typ": "betrag",
+                "titel": "Fläche in m² BGF"
+              },
+              {
+                "typ": "text",
+                "titel": "Ausgangszahl für Parkplätze"
+              }
             ],
             "zeilen": [
               [
@@ -243,9 +249,9 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
-      "sha": "86c184ec590523019b4a152beec6e57d978e6a75bcdaa7eb54d0a6f57bdb3892"
+      "sha": "87779a770546bdf22230f006e0a1bb7a93ca2281f41aa0081238ac063c4a34df"
     },
     {
       "id": "kanton/BS/730.310/art_7",
@@ -267,7 +273,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "3360ba094a5260c8e598d8af8ddf689592764bad439e4abfa600d23090a5bb02"
     },
@@ -291,7 +297,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "b99c1a717c3930986423523fd6a3845f59d18fd5fe7408d3d4c5e73fd98dfaff"
     },
@@ -315,7 +321,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "4ed68230f96ead672348f4e77d0f91686aef29525236c477aae0fb5a987a1c16"
     },
@@ -361,7 +367,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "177b2b634f963286178e81b42ecfb64b1e4cf145ca184041ec976e30048a3873"
     },
@@ -389,7 +395,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "f3a53ef4c46a9f78f79b772030a40d8f3cb4128f8bb45534468e2cbae9303fb0"
     },
@@ -435,7 +441,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "8f93eeff1f9998238e294ff896dbd2efca2c3c89517b00fd7de19cb7638504c7"
     },
@@ -477,7 +483,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "917a5fe46aa86c04b070a4e232420623ea1baf95de6c037aff31512e3b1fd162"
     },
@@ -497,7 +503,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "c5d9f42718e6531ecf3e985eb1d9a43a08a8b16cda9f6c363dac5ad7d9052003"
     },
@@ -517,7 +523,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "64ccadc12b8446fb84ffa99d0a972c95ddca519e7a8f70827c017362b3e9c6c9"
     },
@@ -537,7 +543,16 @@
           "absatz": null,
           "text": "",
           "mehrspaltig": {
-            "kopf": [],
+            "spalten": [
+              {
+                "typ": "text",
+                "titel": ""
+              },
+              {
+                "typ": "text",
+                "titel": ""
+              }
+            ],
             "zeilen": [
               [
                 "Bewohnerinnen und Bewohner",
@@ -581,9 +596,9 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
-      "sha": "d85c16a716bf5daf90a95967db8549d8723aee5488bc65f2075c305a1e3c6d00"
+      "sha": "4c0e6764e55c82f5cd1ce81753b5ac49e7bb08c86ae638ff57ce729407f49e83"
     },
     {
       "id": "kanton/BS/730.310/art_15",
@@ -600,7 +615,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "40fcb76a6f967c47088dbd7a51551c7b17dc90c3f62d9e69e97a581584058738"
     },
@@ -646,7 +661,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "50efbca1520278c17dddc4015cdf9ee92ec9aa6cbd35ae07e111efbf664db4df"
     },
@@ -669,7 +684,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "3995fcd098e996aee73eb48d72d813c0644a47ac2ddf0aa8765eb154d5e1f075"
     },
@@ -680,6 +695,7 @@
       "erlass": "Verordnung über die Erstellung von Parkplätzen für Personenwagen, Parkplatzverordnung, PPV (730.310)",
       "artikel": "18",
       "artikelLabel": "§ 18",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -688,7 +704,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -707,7 +723,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "6fe27fab1673c4855af2ced46477175417e1bf414a3ae00b214e492c94a87d94"
     },
@@ -726,7 +742,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "13d0955511be6986de7d38c380f660835b0e45900c48c7f533abbfcda1c3cba6"
     },
@@ -745,7 +761,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "6cf77e7d89023648cec02d03940326d5092703716f7c8e30c5a06ed8192edd9e"
     },
@@ -764,7 +780,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "e8a806767c96b89643d6152da951df0b950b4ed48ff2c0062fcfe22dd4ae86f7"
     },
@@ -788,7 +804,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "f69f97efb22f20a2edc336fdd0e0cb542f19766fd264670d4d4889a2bce8af2a"
     },
@@ -820,7 +836,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "306ec29aa31966d6d5e8462f769193a135e3b1a1ec47580a0fc7ffcad2839ac3"
     },
@@ -870,7 +886,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "5ff3d273110c4f1eca8a0bec1d62786482869bdf330a96583104e02d5105c809"
     },
@@ -890,7 +906,7 @@
       ],
       "stand": "2022-08-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/730.310",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "e7e18d2eef87fcba63b628a9e4f31263",
       "sha": "96622ba8a07373067a7d91da64718e06ced3b43075267c964ffcfe5f34c68176"
     }

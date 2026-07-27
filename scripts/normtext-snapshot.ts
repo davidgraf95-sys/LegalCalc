@@ -525,6 +525,10 @@ async function erzeugeKantonsSnapshots(
         // N1: amtlicher Randtitel (article_title) aus der LexWork-Extraktion,
         // falls vorhanden (aufgehobene «…»-Titel liefert der Adapter als undefined).
         ...(treffer.titel ? { titel: treffer.titel } : {}),
+        // G-AUFH-ART: ARTIKEL-genau aufgehoben (struktureller Adapter-Befund,
+        // s. LexArtikel.aufgehoben-Doku) — NUR gesetzt, wenn der Adapter das
+        // Signal amtlich trägt; sonst bleibt das Feld weg (§7).
+        ...(treffer.aufgehoben ? { aufgehoben: true as const } : {}),
         bloecke: treffer.bloecke,
         stand: ergebnis.meta.stand,
         // LexWork hat keinen Artikel-Anker → Gesetzes-Seite (originale /app/-URL).

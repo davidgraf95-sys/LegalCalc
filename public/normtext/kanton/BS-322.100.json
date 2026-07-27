@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/322.100/art_1",
@@ -24,7 +24,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "a69c896286b730ae1bb9158bbb47d025a91841e55b1712633d54200c18fe1dd7"
     },
@@ -43,7 +43,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "c844c3867626e80af02de1a55c28be14a729686452861d298fa3bfbe251ab86d"
     },
@@ -66,7 +66,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "48ea6fa4ff3f7f7a133d71a8c4d2499857c8b75a128d3ea2351a9be089082816"
     },
@@ -107,7 +107,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "ba70b13ebd50b91e23d5f7bcd434714bc24715a4e56f10bcd4ab29a4616499cd"
     },
@@ -126,7 +126,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "da3b47091a9617ae6f49ecea44f9bf20c2b20df2d62d8c6739664adce5866af9"
     },
@@ -137,6 +137,7 @@
       "erlass": "Gesetz betreffend Massnahmen gegen den Alkohol- und Medikamentenmissbrauch sowie gegen den Drogenkonsum und betreffend Einführung des revidierten Bundesgesetzes über die Betäubungsmittel vom 20. März 1975, Alkohol- und Drogengesetz (322.100)",
       "artikel": "6",
       "artikelLabel": "§ 6",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -145,7 +146,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -172,7 +173,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "a65380ea6cdf3ddc66e1eae49dd8968215b93a9e4d02d0cf873613efb229d3d6"
     },
@@ -195,7 +196,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "80bc859edecc76afbabe462c3cca272dbe7ad1c49a3f8bad873a057b731bcb14"
     },
@@ -214,7 +215,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "82b593bb9daccbea6c9682ac27b8dfff93cc81fbfec378780927e217d4e0e622"
     },
@@ -233,7 +234,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "f9741792a089ecc853605192fa0048f3445515a101eb1f95656c7b8aab24b89e"
     },
@@ -252,7 +253,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "2d688d0c735cd322f6b3839deb222e97f1df7a0ab0e14a2a8081732686bb9788"
     },
@@ -263,6 +264,7 @@
       "erlass": "Gesetz betreffend Massnahmen gegen den Alkohol- und Medikamentenmissbrauch sowie gegen den Drogenkonsum und betreffend Einführung des revidierten Bundesgesetzes über die Betäubungsmittel vom 20. März 1975, Alkohol- und Drogengesetz (322.100)",
       "artikel": "12",
       "artikelLabel": "§ 12",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -271,7 +273,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -282,6 +284,7 @@
       "erlass": "Gesetz betreffend Massnahmen gegen den Alkohol- und Medikamentenmissbrauch sowie gegen den Drogenkonsum und betreffend Einführung des revidierten Bundesgesetzes über die Betäubungsmittel vom 20. März 1975, Alkohol- und Drogengesetz (322.100)",
       "artikel": "13",
       "artikelLabel": "§ 13",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -290,7 +293,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -301,6 +304,7 @@
       "erlass": "Gesetz betreffend Massnahmen gegen den Alkohol- und Medikamentenmissbrauch sowie gegen den Drogenkonsum und betreffend Einführung des revidierten Bundesgesetzes über die Betäubungsmittel vom 20. März 1975, Alkohol- und Drogengesetz (322.100)",
       "artikel": "14",
       "artikelLabel": "§ 14",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -309,7 +313,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -320,6 +324,7 @@
       "erlass": "Gesetz betreffend Massnahmen gegen den Alkohol- und Medikamentenmissbrauch sowie gegen den Drogenkonsum und betreffend Einführung des revidierten Bundesgesetzes über die Betäubungsmittel vom 20. März 1975, Alkohol- und Drogengesetz (322.100)",
       "artikel": "15",
       "artikelLabel": "§ 15",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -328,7 +333,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -339,6 +344,7 @@
       "erlass": "Gesetz betreffend Massnahmen gegen den Alkohol- und Medikamentenmissbrauch sowie gegen den Drogenkonsum und betreffend Einführung des revidierten Bundesgesetzes über die Betäubungsmittel vom 20. März 1975, Alkohol- und Drogengesetz (322.100)",
       "artikel": "16",
       "artikelLabel": "§ 16",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -347,7 +353,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -358,6 +364,7 @@
       "erlass": "Gesetz betreffend Massnahmen gegen den Alkohol- und Medikamentenmissbrauch sowie gegen den Drogenkonsum und betreffend Einführung des revidierten Bundesgesetzes über die Betäubungsmittel vom 20. März 1975, Alkohol- und Drogengesetz (322.100)",
       "artikel": "17",
       "artikelLabel": "§ 17",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -366,7 +373,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -377,6 +384,7 @@
       "erlass": "Gesetz betreffend Massnahmen gegen den Alkohol- und Medikamentenmissbrauch sowie gegen den Drogenkonsum und betreffend Einführung des revidierten Bundesgesetzes über die Betäubungsmittel vom 20. März 1975, Alkohol- und Drogengesetz (322.100)",
       "artikel": "18",
       "artikelLabel": "§ 18",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -385,7 +393,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -396,6 +404,7 @@
       "erlass": "Gesetz betreffend Massnahmen gegen den Alkohol- und Medikamentenmissbrauch sowie gegen den Drogenkonsum und betreffend Einführung des revidierten Bundesgesetzes über die Betäubungsmittel vom 20. März 1975, Alkohol- und Drogengesetz (322.100)",
       "artikel": "19",
       "artikelLabel": "§ 19",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -404,7 +413,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -415,6 +424,7 @@
       "erlass": "Gesetz betreffend Massnahmen gegen den Alkohol- und Medikamentenmissbrauch sowie gegen den Drogenkonsum und betreffend Einführung des revidierten Bundesgesetzes über die Betäubungsmittel vom 20. März 1975, Alkohol- und Drogengesetz (322.100)",
       "artikel": "20",
       "artikelLabel": "§ 20",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -423,7 +433,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -434,6 +444,7 @@
       "erlass": "Gesetz betreffend Massnahmen gegen den Alkohol- und Medikamentenmissbrauch sowie gegen den Drogenkonsum und betreffend Einführung des revidierten Bundesgesetzes über die Betäubungsmittel vom 20. März 1975, Alkohol- und Drogengesetz (322.100)",
       "artikel": "21",
       "artikelLabel": "§ 21",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -442,7 +453,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -453,6 +464,7 @@
       "erlass": "Gesetz betreffend Massnahmen gegen den Alkohol- und Medikamentenmissbrauch sowie gegen den Drogenkonsum und betreffend Einführung des revidierten Bundesgesetzes über die Betäubungsmittel vom 20. März 1975, Alkohol- und Drogengesetz (322.100)",
       "artikel": "22",
       "artikelLabel": "§ 22",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -461,7 +473,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -480,7 +492,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "481d52cae9a9474bc8e59820f5d2ad58fda259550b8846dcbd6ce129001c28f9"
     },
@@ -499,7 +511,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/322.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "04b884ea5473e0c2fd6d672628fce883",
       "sha": "1ba5f83d6b15d22be4a152838cdbbf1c26b89e8b976c10b5f2321ee9fc185a39"
     }

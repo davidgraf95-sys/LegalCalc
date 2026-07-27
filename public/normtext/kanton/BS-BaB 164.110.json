@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/BaB 164.110/art_1",
@@ -31,7 +31,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "31209d716703236fc932e9ab06aed0480f2448a76cb56d8f0d1c3b7b62492cd1"
     },
@@ -59,7 +59,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "5cad0c56438f3d02bb027a827fe7bbec33a01e55abaeb18b40995602d34fb65c"
     },
@@ -91,7 +91,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "d29e4262559a31874b1d0b21bdc3a0e52227a834cdd1c1009fd37eeea9c184fd"
     },
@@ -102,6 +102,7 @@
       "erlass": "Reglement zur Lohnordnung (BaB 164.110)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -110,7 +111,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -134,7 +135,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "1df8947b13d7ca66f3ef0da4fca31eaffb171446ba41b2112a003392a802cd71"
     },
@@ -204,7 +205,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "b60be90846d0f0813113a97fc7fc75e49230a96c67e68fa50bbf1db2536a550e"
     },
@@ -228,7 +229,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "e98f00e5f55b3be8967dd217eded9a6307c3ff37986945c1a089b34ad928e045"
     },
@@ -248,7 +249,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "a6c10bc938ed21302a9b22d4e907b75afef85b0bcf407b624303c6fcd545a4e5"
     },
@@ -272,7 +273,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "c5d2cf9c53e23f06bb589aa837704a4303e7af22b50333066140a52a66c2af4e"
     },
@@ -308,7 +309,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "37d9d7a8313f9e2ce53dd31d849addd5e6cbe0c52b91152d7977a5d026a19233"
     },
@@ -336,7 +337,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "40c04141838e9e372a010afcd89f20802ef1fcd22a1bef11b91d93a6fb388449"
     },
@@ -356,7 +357,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "09e16d1dd3fb22ed50f201ea1a88276c04da8d8e34a272b89b77282379c2bd74"
     },
@@ -380,7 +381,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "93a4c64d0459ac3edbc7889372cc2777891153e24d702c5a11569b54f7cdf250"
     },
@@ -400,7 +401,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "1d3c6125a299da02acfe5ef01534ce69138704d5deaa04d03019dadd96fbbda2"
     },
@@ -430,7 +431,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "6891a07d63f61f23f02d9566006cf60e84fbdd2bd7f21a00a864b2d2507bd325"
     },
@@ -454,7 +455,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "ec722c4d3c67fc6b7df5d7798b22c5b6c1c7cd90728719d721bd4c35a05a6d9c"
     },
@@ -474,7 +475,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "1b1eebacd42b2973673fb541b3ecadc4bed3a44f1b8e784d76e0cdd9ae99eca0"
     },
@@ -494,7 +495,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "39899d30e3b44fd26472a1885e51e011906980a51af3a1c77fe11433e8b8c09d"
     },
@@ -505,6 +506,7 @@
       "erlass": "Reglement zur Lohnordnung (BaB 164.110)",
       "artikel": "17",
       "artikelLabel": "§ 17",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -513,7 +515,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -525,6 +527,7 @@
       "artikel": "18",
       "artikelLabel": "§ 18",
       "titel": "Zuständigkeit",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -533,7 +536,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -545,6 +548,7 @@
       "artikel": "19",
       "artikelLabel": "§ 19",
       "titel": "Rechtsmittel",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -553,7 +557,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -609,7 +613,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "7bdf0287bf955b582d7d8bbd7482aeb8d78cf6136f3340623c0b3b7418cff1e7"
     },
@@ -647,7 +651,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "8a47342b68624431942fda6608e70378f7a61d5c5357cf3bd10758b1de986619"
     },
@@ -667,7 +671,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "fa1499a03195c6906539c3ac31ae0577e9a5238f493c361365a5bcffa2892455"
     },
@@ -691,7 +695,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "9a6d62e89e809eef24cb1365d46debaaa4ff72ea3e2f3c9d6650137c6ff92748"
     },
@@ -715,7 +719,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "8240a38512d2a0d4108136526e0881c8d6caf8a202df5aafd5c0f76fea6b5073"
     },
@@ -735,7 +739,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "73e3c5d6f53134c72aeaa9f60dcb6b9893a53263e20ef6c38c08b985a21361a3"
     },
@@ -759,7 +763,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "0f5201580ef02ddb69b82a762a718305f40b6cede4457a762b105938a9c366e2"
     },
@@ -779,7 +783,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "29e2becefa3fec45805b496e9a2e40b49b64f6f64020fcfbfecba6fff8709778"
     },
@@ -803,7 +807,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "9adab3b35ecf30a5aec1997944dad853f622cb2c2adabb6057ec05ddcdcb3956"
     },
@@ -841,7 +845,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "c04c664f4b57bc1c407e53378db18449983046986aeaf6782d6d5bab6c3a65fb"
     },
@@ -861,7 +865,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "d917ab6e36eb6f0cee104271c0ca010c0f596b87a382c3669a45fd957ec637ec"
     },
@@ -885,7 +889,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "070b7c69ac29bebff13c57737fa72d8de7691f9a492e9caf8ab14d1f924bf07c"
     },
@@ -905,7 +909,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "891a8d0319dd91b273c16bc25bdc6c7d517457b0d5594d4e516a5f39137e5e66"
     },
@@ -929,7 +933,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "3d6e34881f5233fff9bc1db64bd5906b0163259059d011457116af509635b459"
     },
@@ -953,7 +957,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "208f9cebef9709060e440dc3ef724e2b663d5a3fe8e40ecf6e137440e33067cd"
     },
@@ -965,6 +969,7 @@
       "artikel": "34",
       "artikelLabel": "§ 34",
       "titel": "Sonn- und Feiertagsdienstzulage",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -973,7 +978,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -997,7 +1002,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "8acdc60f74687154b12795487d87b875ebffb205a310edebcb4158a3f3022930"
     },
@@ -1025,7 +1030,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "90f321989b907366d41a89b9b51e5517db074bd815ac134167924953a5b28aaa"
     },
@@ -1037,6 +1042,7 @@
       "artikel": "37",
       "artikelLabel": "§ 37",
       "titel": "Umwandlung von Geldzulagen in Zeitzulagen",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1045,7 +1051,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1069,7 +1075,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "e03e1411cb4c699382af5f7aefa4c80cc3b393923b9adf4c7d4564d411aa3705"
     },
@@ -1089,7 +1095,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "64cbe3d7b1fae0e34561521e32bc36a76401ca338428ce866ca1ce72c5ff1e55"
     },
@@ -1109,7 +1115,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "d0a349035848078271753a4c89d6718777b539823195a1ea2293379712dbf530"
     },
@@ -1149,7 +1155,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "bc329ed7d3fee4fb4be5fc13ff3c010e33ec79891327eff5e9e4b45e6b798589"
     },
@@ -1177,7 +1183,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "d4fd1ed59f4632d7dd48c9bcc863c8fcd18116a27634e82bdf611ce262d3a867"
     },
@@ -1188,6 +1194,7 @@
       "erlass": "Reglement zur Lohnordnung (BaB 164.110)",
       "artikel": "43",
       "artikelLabel": "§ 43",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1196,7 +1203,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1224,7 +1231,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "c6e6eb7d948086cfccbb65dc61ad928e3bfed6119900d27a143ac1178aa7b445"
     },
@@ -1244,7 +1251,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "4b46970091a904cd2240ef950ff2180f929f5b13231db4e9e7625db3cba60167"
     },
@@ -1264,7 +1271,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "752ad0989f277a71d352be5de446ab181fd23046a39261b64567e99bd9a5d71b"
     },
@@ -1288,7 +1295,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "e5d3a22a737c4c800cbee5a1c707bdc88b67c3bb536dfbc908a2a496ea82bbf4"
     },
@@ -1300,6 +1307,7 @@
       "artikel": "48",
       "artikelLabel": "§ 48",
       "titel": "Zuständigkeit",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1308,7 +1316,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1328,7 +1336,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "f095671ad9067c03b9194caf13be7148885921c5562ba79a822a237b4b05721e"
     },
@@ -1356,7 +1364,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "6d2d8a5f07c242b9b2e68dc37409327da6c269d932b202134ed96bf158c689f0"
     },
@@ -1368,6 +1376,7 @@
       "artikel": "51",
       "artikelLabel": "§ 51",
       "titel": "Bahnspesen",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1376,7 +1385,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1408,7 +1417,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "b1624e920ff9f39cf0fa63807a5177100cb641d369ae260aaf192122dcf87b7b"
     },
@@ -1428,7 +1437,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "63b6761d629ee9b0834162429d6c1ac9be1b9d3b3df492f5a1c48066371433c7"
     },
@@ -1452,7 +1461,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "ba48fc0a4acd7de7e0c9e7882f242a12aee08416ebd00d2c860c9da12c2fe2b7"
     },
@@ -1464,6 +1473,7 @@
       "artikel": "55",
       "artikelLabel": "§ 55",
       "titel": "Anpassung der Beiträge",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1472,7 +1482,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1492,7 +1502,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "681b6dccdb14e2bd08be5be01dfd6fc0075631915934379ba6cfa9d0a3b15ed2"
     },
@@ -1516,7 +1526,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "b750682c9ef289102da42b44e4dfdd96f2355e19314206b2b58024525ef98950"
     },
@@ -1540,7 +1550,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "fd112a707a3b914d776a085f59a7b231bf0c1204d909b725227287f6e2cdc9b7"
     },
@@ -1560,7 +1570,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "c7379d067aadbf161c1c8c66aaa4b461a2201fc446df0039581b0d33025387a6"
     },
@@ -1584,7 +1594,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "92ab097c8ea0d2b6c1b9fc18d9ca7ac6f9b784b67a1eb8be1d2c7d932b333e86"
     },
@@ -1596,6 +1606,7 @@
       "artikel": "61",
       "artikelLabel": "§ 61",
       "titel": "Stichtag",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1604,7 +1615,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1624,7 +1635,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "f9e8c27b78a97afd4b4eccf779e31264cefb8595dc9812421032b72727f4d302"
     },
@@ -1644,7 +1655,7 @@
       ],
       "stand": "2025-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BaB 164.110",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "67acf3b9f292d61b9a40573c31ef144e",
       "sha": "1355aa50d48cdd905adae11fa9b93339d37845ed28c2fce53dfcee7145eaae35"
     }

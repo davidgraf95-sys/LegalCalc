@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/RiE 912.510/art_1",
@@ -17,7 +17,7 @@
       ],
       "stand": "2019-03-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "6ad4996fb997cffc205daf246b1c13dc",
       "sha": "0110fd14851d441d4b8c8d861d3b8c7a1728653414e7f8e46a37a9178e3cf26a"
     },
@@ -37,7 +37,7 @@
       ],
       "stand": "2019-03-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "6ad4996fb997cffc205daf246b1c13dc",
       "sha": "4b33bf2ce6fa1acd0a73bada93f9ffdaf5564b599bee33dec1bf6274f6f0246d"
     },
@@ -69,7 +69,7 @@
       ],
       "stand": "2019-03-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "6ad4996fb997cffc205daf246b1c13dc",
       "sha": "d25e652e67ad347516c97de7a548393201643837b1c349989920afc3ff45d9bd"
     },
@@ -80,6 +80,7 @@
       "erlass": "Reglement über die Fischerei in der Gemeinde Riehen, Fischereireglement (RiE 912.510)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -88,7 +89,7 @@
       ],
       "stand": "2019-03-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "6ad4996fb997cffc205daf246b1c13dc",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -122,7 +123,7 @@
       ],
       "stand": "2019-03-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "6ad4996fb997cffc205daf246b1c13dc",
       "sha": "c2b4a123d16e77e6e4e35bf591e4eada4077911a4f68b754a043f61f3ee998c8"
     },
@@ -133,6 +134,7 @@
       "erlass": "Reglement über die Fischerei in der Gemeinde Riehen, Fischereireglement (RiE 912.510)",
       "artikel": "6",
       "artikelLabel": "§ 6",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -141,7 +143,7 @@
       ],
       "stand": "2019-03-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 912.510",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "6ad4996fb997cffc205daf246b1c13dc",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }

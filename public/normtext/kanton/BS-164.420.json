@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/164.420/art_1",
@@ -21,7 +21,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "c9a471b8103d9a1d6c2a68591a1c286e816b6a33018868c1087f6e2d32a34917"
     },
@@ -41,7 +41,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "601869c261f38cfd53838baa58cee941f459cf708a615078feb28a03d3e69c64"
     },
@@ -75,7 +75,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "a688f3b8c270e6c37cd59372080e2892296aa9564747eec364d8fd480553df3b"
     },
@@ -95,7 +95,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "5b32fa6d5489a9d24a75ecd9c56f47a81eb6075a16f0af86f6e3b964ab67a3ea"
     },
@@ -123,7 +123,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "2f7a3a0b6679ee17cdedaee76a8117a8539cd93d90a47061c407ca1298b044c6"
     },
@@ -155,7 +155,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "4306f0c03a3b63f2608c41b471a7d457d90a1214d6647e592ccf32e93c3537f7"
     },
@@ -174,7 +174,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "4c915c3fb2d02c54f5ac0a6a5241c4a74c250bac42851f3428416f491ee76815"
     },
@@ -193,7 +193,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "8dfaa099c695bdac79b1274c3c37ba41e3d67872638d50e1c38812602706ed4a"
     },
@@ -212,7 +212,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "df6586b064f18e0efa36ea1e7e0003541d66ec0af4904613923c90aa07322a58"
     },
@@ -236,7 +236,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "81dcd857814ceb5c235d3c2f11c3920671ace3f1295dac2831ce5e33e048d731"
     },
@@ -247,6 +247,7 @@
       "erlass": "Verordnung über die Ausrichtung von Spesen und Entschädigungen an die Mitarbeitenden des Kantons Basel-Stadt, Spesenverordnung (164.420)",
       "artikel": "10",
       "artikelLabel": "§ 10",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -255,7 +256,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -276,7 +277,20 @@
           "absatz": null,
           "text": "",
           "mehrspaltig": {
-            "kopf": [],
+            "spalten": [
+              {
+                "typ": "text",
+                "titel": ""
+              },
+              {
+                "typ": "text",
+                "titel": ""
+              },
+              {
+                "typ": "text",
+                "titel": ""
+              }
+            ],
             "zeilen": [
               [
                 "a)",
@@ -319,9 +333,9 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
-      "sha": "d582a0422aa26615180cba04c971b6f6b973554c1241834e2f8ce19a1c12b17c"
+      "sha": "3f1fb3e3b833c9bddc872f28d41e380318621e3f97c5964a19bcc7a8602d026d"
     },
     {
       "id": "kanton/BS/164.420/art_11_a",
@@ -343,7 +357,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "49495e3d3a5026a7b4d11de2677c1fc2cd2ce4c81544995e232187503cd5e83b"
     },
@@ -376,7 +390,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "ccc01fdddca9113302a8ef78b8efc3c4c057781d520195defc6afbd3d656a9af"
     },
@@ -404,7 +418,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "999ee8213787cf54344c311b8d5dda16605a95e61919d8c14ffa5080bae73b20"
     },
@@ -416,6 +430,7 @@
       "artikel": "14",
       "artikelLabel": "§ 14",
       "titel": "Verpflegungsentschädigung",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -424,7 +439,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -435,6 +450,7 @@
       "erlass": "Verordnung über die Ausrichtung von Spesen und Entschädigungen an die Mitarbeitenden des Kantons Basel-Stadt, Spesenverordnung (164.420)",
       "artikel": "15",
       "artikelLabel": "§ 15",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -443,7 +459,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -463,7 +479,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "622be142542ae6e266fbf18fe4bf749b206f8eab5cc9764b7af7c5863d9f3232"
     },
@@ -483,7 +499,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "af70997c1accb5095d5c8c3ef830e7bfc7e43f90bbff1457040dfc6a7aad68ac"
     },
@@ -503,7 +519,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "d35fba91ef11636b4518cc08eb5141652d30b5b6fc2c307d7c08fbc923c20fb5"
     },
@@ -522,7 +538,7 @@
       ],
       "stand": "2025-06-26",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/164.420",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3d37c33e9c7785188f5e1987dbd892f2",
       "sha": "a4e71f4aaa9cdad270df79b461d6530ae8ab212409f02cb074f6f96a77accbc8"
     }

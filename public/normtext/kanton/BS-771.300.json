@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/771.300/art_1",
@@ -20,7 +20,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/771.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae14db06804120b9801e4f9ab2a5e150",
       "sha": "70ee8dfaecd291bc75ad4188b3b87b6c7b6be5fb9c5e833943d31751bd720583"
     },
@@ -43,7 +43,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/771.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae14db06804120b9801e4f9ab2a5e150",
       "sha": "5f32349fffdf6841b0e484c914425d054e1a175cba3214e4b72cc31e64c595ad"
     },
@@ -62,7 +62,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/771.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae14db06804120b9801e4f9ab2a5e150",
       "sha": "9f3e2fd9605c3985035bd3f25ecaf2753fde9bcb83cdf0b52afa82c06066662e"
     },
@@ -85,7 +85,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/771.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae14db06804120b9801e4f9ab2a5e150",
       "sha": "d0be2dd48bfa37ae0f1b9c56b9de5c419e47d6c57bc31b2f71f75de6136f6c72"
     },
@@ -96,6 +96,7 @@
       "erlass": "Gesetz betreffend Einführung des Bundesgesetzes über Nutzbarmachung der Wasserkräfte (771.300)",
       "artikel": "5",
       "artikelLabel": "§ 5",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -104,7 +105,7 @@
       ],
       "stand": "2016-07-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/771.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ae14db06804120b9801e4f9ab2a5e150",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }

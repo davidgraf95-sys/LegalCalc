@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/423.100/art_1",
@@ -8,6 +8,7 @@
       "erlass": "Gesetz betreffend die Berufsfachschule Basel (BFS Basel) (423.100)",
       "artikel": "1",
       "artikelLabel": "§ 1",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -16,7 +17,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -40,7 +41,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "66044bf1db49ba0e5be4956fe581bdd24a73e1e52b5ce84087e611eeee0c97a2"
     },
@@ -76,7 +77,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "c97749e1538fdf69c89cd2e8ae4e3d3b82d20f2822af67524ba785fa8b24a59b"
     },
@@ -96,7 +97,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "dce50e6125a23d365b4070159d85a66b4eeec274ba0618d5ddde5ba90697f6ad"
     },
@@ -107,6 +108,7 @@
       "erlass": "Gesetz betreffend die Berufsfachschule Basel (BFS Basel) (423.100)",
       "artikel": "5",
       "artikelLabel": "§ 5",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -115,7 +117,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -135,7 +137,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "2ed17a932466aa26a926057781cbebfeddbd8e5fef10eeae55e0495fce9c528d"
     },
@@ -155,7 +157,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "3804c5f695c4aff5c4dd77d46637cb676bb2ccc6038ba9e4a6dbb82ffd1300bf"
     },
@@ -175,7 +177,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "9084751cd5d8149175d5948d08696fb844b82b1bc790b751ff2648a691705676"
     },
@@ -203,7 +205,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "64f92cd5a6489859335fbae5b74bf4adae7fe27dc0e81b76d46274eb8590bcd5"
     },
@@ -227,7 +229,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "f8a851daa5e62b2dacf1c2f029d89e43caf896afc6e3aa961f1102f6e5164770"
     },
@@ -238,6 +240,7 @@
       "erlass": "Gesetz betreffend die Berufsfachschule Basel (BFS Basel) (423.100)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -246,7 +249,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -266,7 +269,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "6a949404ca7999c97f50117efed5a37ec27ed7079502b7c398609764bb5fbcaa"
     },
@@ -277,6 +280,7 @@
       "erlass": "Gesetz betreffend die Berufsfachschule Basel (BFS Basel) (423.100)",
       "artikel": "13",
       "artikelLabel": "§ 13",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -285,7 +289,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -305,7 +309,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "578d3fb15e5a0ef611f04c6eaf6cae004dd39f80065d2a5e5ee4664833945d9b"
     },
@@ -316,6 +320,7 @@
       "erlass": "Gesetz betreffend die Berufsfachschule Basel (BFS Basel) (423.100)",
       "artikel": "15",
       "artikelLabel": "§ 15",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -324,7 +329,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -335,6 +340,7 @@
       "erlass": "Gesetz betreffend die Berufsfachschule Basel (BFS Basel) (423.100)",
       "artikel": "16",
       "artikelLabel": "§ 16",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -343,7 +349,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -354,6 +360,7 @@
       "erlass": "Gesetz betreffend die Berufsfachschule Basel (BFS Basel) (423.100)",
       "artikel": "17",
       "artikelLabel": "§ 17",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -362,7 +369,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -382,7 +389,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "058180d75bdacfc12c3ce98e9a186085d48a996bd57f01b517e493f587c742f0"
     },
@@ -393,6 +400,7 @@
       "erlass": "Gesetz betreffend die Berufsfachschule Basel (BFS Basel) (423.100)",
       "artikel": "19",
       "artikelLabel": "§ 19",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -401,7 +409,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -429,7 +437,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "b2ae5916b7878e473506c0a6285d22a4e7a1a61e405611bb8bd9913d2cb149dd"
     },
@@ -449,7 +457,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "9fa60f34ae749c06f08f48ec6277184580d0b57cfed1161fe17439909f2a82f6"
     },
@@ -469,7 +477,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "1dd00f930406592492ee1c73715e39f846fc9fe000f6b6be19684ba6b3f08714"
     },
@@ -489,7 +497,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "1030f5446a8cbe3b00e4f6753e43a036e73db488d5278d5253e57ae12a499b0a"
     },
@@ -517,7 +525,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "8ce455c043fa5881f2b5b8b66bcf657346fc3f6301941e03820c24692708f620"
     },
@@ -537,7 +545,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "e45ff283c6f236c6fdfea4bd88502052541fc300438e3959ecdca15a5a058722"
     },
@@ -557,7 +565,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "4e0b77285c4257f1599f599859f289f259254d3203add375b7ed86e0ebe275f6"
     },
@@ -577,7 +585,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "9268aa6526207aeef358877c5eba584eccb0ce68106ea99c8d7567ab72ea28e7"
     },
@@ -597,7 +605,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "a931bb32c0d07309a0e0af66c89cc9e87fc90d98eddc3ead0139487b0f94a857"
     },
@@ -608,6 +616,7 @@
       "erlass": "Gesetz betreffend die Berufsfachschule Basel (BFS Basel) (423.100)",
       "artikel": "29",
       "artikelLabel": "§ 29",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -616,7 +625,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -636,7 +645,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "3c93a9b76e38c3c96c32f8af9f96bede4eafec51ae7b9de507ff7ba9cad7e034"
     },
@@ -664,7 +673,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "1baa4a872d1518c320a5fb4bcabd461cda282d5973aa650957c5afe517a02c7d"
     },
@@ -684,7 +693,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "da9434d3815da019d4b0cb031653e8a94b0b6627dbe8ecc985ab7bf420db02db"
     },
@@ -708,7 +717,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "c4746811f5c841f53aa505382664fe7517e26102c171079e2e3a7bbfba172543"
     },
@@ -719,6 +728,7 @@
       "erlass": "Gesetz betreffend die Berufsfachschule Basel (BFS Basel) (423.100)",
       "artikel": "34",
       "artikelLabel": "§ 34",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -727,7 +737,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -755,7 +765,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "2d5ddd257e542a674997730e70c52928f573e1e111c189daa8eec1bd2e452c17"
     },
@@ -766,6 +776,7 @@
       "erlass": "Gesetz betreffend die Berufsfachschule Basel (BFS Basel) (423.100)",
       "artikel": "36",
       "artikelLabel": "§ 36",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -774,7 +785,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -793,7 +804,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "1defdd795978d9269cfd11dc1d92646797a0f0c1c66f34673677982580abfd22"
     },
@@ -804,6 +815,7 @@
       "erlass": "Gesetz betreffend die Berufsfachschule Basel (BFS Basel) (423.100)",
       "artikel": "38",
       "artikelLabel": "§ 38",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -812,7 +824,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -823,6 +835,7 @@
       "erlass": "Gesetz betreffend die Berufsfachschule Basel (BFS Basel) (423.100)",
       "artikel": "39",
       "artikelLabel": "§ 39",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -831,7 +844,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -842,6 +855,7 @@
       "erlass": "Gesetz betreffend die Berufsfachschule Basel (BFS Basel) (423.100)",
       "artikel": "40",
       "artikelLabel": "§ 40",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -850,7 +864,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/423.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "ef8459d86c34b117a9179314599d9108",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }

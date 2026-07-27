@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/954.540/art_1 - 12",
@@ -8,6 +8,7 @@
       "erlass": "Übereinkunft betreffend die Erweiterung des Badischen Hauptbahnhofs und die Erstellung eines Rangier- und Werkstättenbahnhofs auf dem Gebiete des Kantons Basel-Stadt (954.540)",
       "artikel": "1 - 12",
       "artikelLabel": "Art. 1-12",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -16,7 +17,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.540",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "88ed31c4b4450914904b0fae6a662197",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -27,6 +28,7 @@
       "erlass": "Übereinkunft betreffend die Erweiterung des Badischen Hauptbahnhofs und die Erstellung eines Rangier- und Werkstättenbahnhofs auf dem Gebiete des Kantons Basel-Stadt (954.540)",
       "artikel": "13",
       "artikelLabel": "Art. 13",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -35,7 +37,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.540",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "88ed31c4b4450914904b0fae6a662197",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -54,7 +56,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.540",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "88ed31c4b4450914904b0fae6a662197",
       "sha": "6fed0254e78b7b8e9adec0f3559caef258ec8d6fcfd28720dcb1d4559562610d"
     },
@@ -73,7 +75,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.540",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "88ed31c4b4450914904b0fae6a662197",
       "sha": "deed34c0aa7c4a8ef4b5c323a26c942c8abe24804bcb70d5feb1476877e3fe8a"
     },
@@ -96,7 +98,7 @@
       ],
       "stand": "1985-10-07",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/954.540",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "88ed31c4b4450914904b0fae6a662197",
       "sha": "8ca0f68281945ee56fb38f6b70f7cf04ab91b87a88a1e1a4873709563bfc7e90"
     }

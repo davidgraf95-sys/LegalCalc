@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/RiE 328.610/art_1",
@@ -8,6 +8,7 @@
       "erlass": "Reglement betreffend die Zahnpflege bei Kindern, Zahnpflegereglement (RiE 328.610)",
       "artikel": "1",
       "artikelLabel": "§ 1",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -16,7 +17,7 @@
       ],
       "stand": "2013-10-31",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aa4a2fbc25af99340243f191cd7ead4e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -36,7 +37,7 @@
       ],
       "stand": "2013-10-31",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aa4a2fbc25af99340243f191cd7ead4e",
       "sha": "c593faa5f76da453bab9f2b654a54a07d57c83600a18b303d85ccd1e43032261"
     },
@@ -60,7 +61,7 @@
       ],
       "stand": "2013-10-31",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aa4a2fbc25af99340243f191cd7ead4e",
       "sha": "6c0781197684a905e75ebf8dce0ea361f992a12bfb928e99db5c032bba95d480"
     },
@@ -84,7 +85,7 @@
       ],
       "stand": "2013-10-31",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aa4a2fbc25af99340243f191cd7ead4e",
       "sha": "82aea679f392e35a2b725e5f55faabf137605fb4b2c0bfc15f6003678eb131a1"
     },
@@ -126,7 +127,7 @@
       ],
       "stand": "2013-10-31",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aa4a2fbc25af99340243f191cd7ead4e",
       "sha": "517ab4d9e1b15c1a351f3e05d8cdf2e2e0a8af668b13bf212481a1a5821a22e1"
     },
@@ -137,6 +138,7 @@
       "erlass": "Reglement betreffend die Zahnpflege bei Kindern, Zahnpflegereglement (RiE 328.610)",
       "artikel": "6",
       "artikelLabel": "§ 6",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -145,7 +147,7 @@
       ],
       "stand": "2013-10-31",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aa4a2fbc25af99340243f191cd7ead4e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -157,6 +159,7 @@
       "artikel": "7",
       "artikelLabel": "§ 7",
       "titel": "Behandlungskosten in Fürsorgefällen",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -165,7 +168,7 @@
       ],
       "stand": "2013-10-31",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aa4a2fbc25af99340243f191cd7ead4e",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -185,7 +188,7 @@
       ],
       "stand": "2013-10-31",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 328.610",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "aa4a2fbc25af99340243f191cd7ead4e",
       "sha": "d730827c74cb20cb6d3f84bedeacd4971598070d7514ce5836be84dc44b1a61e"
     }

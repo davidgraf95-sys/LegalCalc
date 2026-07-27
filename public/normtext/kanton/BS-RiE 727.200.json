@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/RiE 727.200/art_1",
@@ -30,7 +30,7 @@
       ],
       "stand": "2013-11-17",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 727.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "82a0d3eef6abea29666cdb000bad5935",
       "sha": "cdf36f2a35be07cee514bf6ee66ca8e0d82127589dcb739d9083555bf7608699"
     },
@@ -49,7 +49,7 @@
       ],
       "stand": "2013-11-17",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 727.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "82a0d3eef6abea29666cdb000bad5935",
       "sha": "dbcc1e7c7dbe805b4cd63d1e40a36bf7cfa94cd58526753016e9f18b34ea4066"
     },
@@ -80,7 +80,7 @@
       ],
       "stand": "2013-11-17",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 727.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "82a0d3eef6abea29666cdb000bad5935",
       "sha": "54ef0aa4cccd8f0c5e4bf63b5c354ed62853ea0af85e1d2c333a9d7659d7f613"
     },
@@ -113,7 +113,7 @@
       ],
       "stand": "2013-11-17",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 727.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "82a0d3eef6abea29666cdb000bad5935",
       "sha": "ae36b3497c5bbea03b6d496b2b110bfb597d75fd1a659629c68fdca6e1d7c007"
     },
@@ -132,7 +132,7 @@
       ],
       "stand": "2013-11-17",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 727.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "82a0d3eef6abea29666cdb000bad5935",
       "sha": "9814e9135e4e4aa8bcaa9ce5deafa20fbb8c88b29a9f4279f2c12021449d0f16"
     },
@@ -143,6 +143,7 @@
       "erlass": "Reglement über die Strassenreinigung in der Gemeinde Riehen (RiE 727.200)",
       "artikel": "6",
       "artikelLabel": "§ 6",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -151,7 +152,7 @@
       ],
       "stand": "2013-11-17",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 727.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "82a0d3eef6abea29666cdb000bad5935",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -162,6 +163,7 @@
       "erlass": "Reglement über die Strassenreinigung in der Gemeinde Riehen (RiE 727.200)",
       "artikel": "7",
       "artikelLabel": "§ 7",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -170,7 +172,7 @@
       ],
       "stand": "2013-11-17",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 727.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "82a0d3eef6abea29666cdb000bad5935",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -189,7 +191,7 @@
       ],
       "stand": "2013-11-17",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 727.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "82a0d3eef6abea29666cdb000bad5935",
       "sha": "c677e11afd01b0e116f307a5d5f4dc248f7467e385a9c458b34139ef82459bed"
     },
@@ -208,7 +210,7 @@
       ],
       "stand": "2013-11-17",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 727.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "82a0d3eef6abea29666cdb000bad5935",
       "sha": "444899b155679079c8b780b4a34581fb8a5f009ed80b10fa3e1f39cb20a6a1a3"
     },
@@ -219,6 +221,7 @@
       "erlass": "Reglement über die Strassenreinigung in der Gemeinde Riehen (RiE 727.200)",
       "artikel": "10",
       "artikelLabel": "§ 10",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -227,7 +230,7 @@
       ],
       "stand": "2013-11-17",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/RiE 727.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "82a0d3eef6abea29666cdb000bad5935",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }

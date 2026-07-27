@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/270.100/art_1",
@@ -24,7 +24,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "f0080a76e5b24781c3d74e7fac3bd02027535f53af81d6c8edbb37577984f282"
     },
@@ -47,7 +47,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "bea764006fda46b7f16fe464e717787454d8c17bce515b3804547c685922d3cf"
     },
@@ -66,7 +66,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "eeec53669c3c0d9e72bbbce9c8390dfc7dc8f11a87893720690fae457ddbc4d4"
     },
@@ -85,7 +85,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "f5396f8f50a7cfb556cd900c0edf4f4932d372c7c59d619ee366198c3c41bae9"
     },
@@ -120,7 +120,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "eedaa0c37b28488348dc0bfffc49833be5201d976f2dfc393e0c8ceb7b032b72"
     },
@@ -139,7 +139,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "8659939182adf1ffa4c72e3e5da3f12f578a2c2c0c0ecf805221d5293eee1a04"
     },
@@ -158,7 +158,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "2c8961eb174a170bf810e72e9239279470e9cbbd5783b329a4669ec04cadab5f"
     },
@@ -177,7 +177,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "18a6876c25f6ddf063e4598fcfaf0d4997cf85f5908997804bf47e54bff4fad7"
     },
@@ -216,7 +216,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "e5be696402b085ae0c01be7cd9efa3a85c3ca5f08857533dbf4a23b1ed962399"
     },
@@ -235,7 +235,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "388a78380fe4395a8ddcf198a4ec21d9222c24256f06c29e5b560e4cd2397a3e"
     },
@@ -262,7 +262,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "73fe96f79b34ef7a70a581fe0c2800f1ee7f383abb1cd21ad7120c4ea28a206d"
     },
@@ -273,6 +273,7 @@
       "erlass": "Gesetz über die Verfassungs- und Verwaltungsrechtspflege, VRPG (270.100)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -281,7 +282,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -300,7 +301,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "35b948253a95f86170f15475bfd546949e12a51a224a2f94f0dd127185183733"
     },
@@ -323,7 +324,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "77cbdb76498c139273577027434584c7155ae830686a9d33ebf12f8ecfdd37b7"
     },
@@ -360,7 +361,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "d537908e8ce8eaa408ef15a913f7489a4085c12967a6b2cbff8cd0de7804606e"
     },
@@ -379,7 +380,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "0ca341b5b7a4cc28a674899d9fa15c5c997d89579b065a7f9b0418c46d579945"
     },
@@ -418,7 +419,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "a1e50f384597505eda2f2fdd9c37ae56db6d146dc9ab44297b8d36f568cfea98"
     },
@@ -441,7 +442,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "098461f1cabca13cc9ecd3c860d0164aae156854b4dff2cd206a93b2c85a13c3"
     },
@@ -460,7 +461,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "6ed50dd0f5e978c7a710a70cf521b7e7a6e542c79e850c7fd46522f2913d7846"
     },
@@ -483,7 +484,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "25b5b66c95f5e11b0aa6d0947b7a3de6a7420b9d5621214d234522fac3e88ce2"
     },
@@ -528,7 +529,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "3630988e3a6e20c0df2b234facd86ae11443260ce7360957278066f1ee0e1219"
     },
@@ -551,7 +552,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "e5614088b9a24099691f34b2b047e99112d64927af3b9abf8da481c5af03ad28"
     },
@@ -570,7 +571,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "e20e3a9fba8097687bb37fb908c12939291cdcb696831fa6d7745d3ecc5acbb5"
     },
@@ -597,7 +598,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "638636bc5994d99a200f6b3ca8160078ce79c46029de13c2d4dd9063c72f25e5"
     },
@@ -616,7 +617,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "a476642f866ae40bb6c62f62270d2bce0da46f714b529fe01cf761889e8493c1"
     },
@@ -643,7 +644,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "0b38c8607826e59a037eff7e94379303af917987b1d19ff2be07957774a00543"
     },
@@ -662,7 +663,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "5dc7d9bb6e34a181a1b51a129c90ef4b1d8d059147ef0d8298cca1dfebc1a94f"
     },
@@ -681,7 +682,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "92941af9e5acc231e0b3bca857c6ce0614b8206bd29c97b32deb90d3aaffc25c"
     },
@@ -708,7 +709,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "441dadbc3842414cfcc1e91b52aac7c2805425e5370592ee377ca2081c0177e9"
     },
@@ -735,7 +736,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "9152ee9f1d837a0c8404d367301af9af6a683fb62ef95e15e9ec13899d5a11df"
     },
@@ -758,7 +759,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "441a6df8d02d263755988f7932d9d02e9ad9691081395623c01043758ee71100"
     },
@@ -778,7 +779,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "884f41c2f1d74ec2831e5c652df5da445065ab83f447f5ab21c71a16add57636"
     },
@@ -820,7 +821,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "5c1aee6f1a0f25e6ee45342bcfa492ad90ba499c9fadbdeaf903572e25ec3326"
     },
@@ -840,7 +841,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "7bd94d8cb31a87c2832a4d28c1a53f474dd9fd192f6c4727ba6b31f49eba7558"
     },
@@ -872,7 +873,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "fc46d86fbf2365e857d1efe6116ff435b1fb35f43d3aed427b6cb3d7b94f3505"
     },
@@ -914,7 +915,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "9560dbed7d5ee0f907daa469a637e0e0d1c874f965c185447d3e07daee183c31"
     },
@@ -982,7 +983,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "f06ba14c533b36045b15d15c3ef5e8eded15f0821a5fc010c3d83ae44c40d37e"
     },
@@ -1012,7 +1013,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "6bad8802819f98aa7aceb94f0790ff8898a06cd20a05e6e89fd77a8d818eb5b4"
     },
@@ -1036,7 +1037,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "15a0bac952f25862aac616434f0ef5a68c794fdf0bc61e9f00930d304840c216"
     },
@@ -1060,7 +1061,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "b0c55f56307bd667b584ae9c12d49b897d406a38e499d59ab0ff06faa05d7b18"
     },
@@ -1084,7 +1085,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "bd82d4e31014672857b17d08d381b5254d064d67e15e2b42c2b6ec59b8b16baa"
     },
@@ -1152,7 +1153,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "47e253c540d9f593c46084010a9cca95b0f9b247210823e5b52bf22ff6046a44"
     },
@@ -1176,7 +1177,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "8c7d2c04339cb904e5b2a0145e0d95b7097b0e998382b547ec7c1a80abcfe5f7"
     },
@@ -1204,7 +1205,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "f84f0e250abb621c926735757b2bd6f4c37945c10a33138b0fed30204af87c4d"
     },
@@ -1228,7 +1229,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "c4b6f0c128f3442e5e233b5d0226aa67d0a9d604774e8a064cf51608c2994b63"
     },
@@ -1239,6 +1240,7 @@
       "erlass": "Gesetz über die Verfassungs- und Verwaltungsrechtspflege, VRPG (270.100)",
       "artikel": "31",
       "artikelLabel": "§ 31",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1247,7 +1249,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1258,6 +1260,7 @@
       "erlass": "Gesetz über die Verfassungs- und Verwaltungsrechtspflege, VRPG (270.100)",
       "artikel": "32",
       "artikelLabel": "§ 32",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1266,7 +1269,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1277,6 +1280,7 @@
       "erlass": "Gesetz über die Verfassungs- und Verwaltungsrechtspflege, VRPG (270.100)",
       "artikel": "33",
       "artikelLabel": "§ 33",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1285,7 +1289,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1296,6 +1300,7 @@
       "erlass": "Gesetz über die Verfassungs- und Verwaltungsrechtspflege, VRPG (270.100)",
       "artikel": "34",
       "artikelLabel": "§ 34",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1304,7 +1309,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1315,6 +1320,7 @@
       "erlass": "Gesetz über die Verfassungs- und Verwaltungsrechtspflege, VRPG (270.100)",
       "artikel": "35",
       "artikelLabel": "§ 35",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1323,7 +1329,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1334,6 +1340,7 @@
       "erlass": "Gesetz über die Verfassungs- und Verwaltungsrechtspflege, VRPG (270.100)",
       "artikel": "36",
       "artikelLabel": "§ 36",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1342,7 +1349,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1353,6 +1360,7 @@
       "erlass": "Gesetz über die Verfassungs- und Verwaltungsrechtspflege, VRPG (270.100)",
       "artikel": "37",
       "artikelLabel": "§ 37",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1361,7 +1369,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1372,6 +1380,7 @@
       "erlass": "Gesetz über die Verfassungs- und Verwaltungsrechtspflege, VRPG (270.100)",
       "artikel": "38",
       "artikelLabel": "§ 38",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1380,7 +1389,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1391,6 +1400,7 @@
       "erlass": "Gesetz über die Verfassungs- und Verwaltungsrechtspflege, VRPG (270.100)",
       "artikel": "39",
       "artikelLabel": "§ 39",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1399,7 +1409,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1410,6 +1420,7 @@
       "erlass": "Gesetz über die Verfassungs- und Verwaltungsrechtspflege, VRPG (270.100)",
       "artikel": "40",
       "artikelLabel": "§ 40",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1418,7 +1429,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1429,6 +1440,7 @@
       "erlass": "Gesetz über die Verfassungs- und Verwaltungsrechtspflege, VRPG (270.100)",
       "artikel": "41",
       "artikelLabel": "§ 41",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1437,7 +1449,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1448,6 +1460,7 @@
       "erlass": "Gesetz über die Verfassungs- und Verwaltungsrechtspflege, VRPG (270.100)",
       "artikel": "42",
       "artikelLabel": "§ 42",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1456,7 +1469,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1489,7 +1502,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "eada147a721bb5d4f3c8c5aae4ec393fcd7099a8697a2faa78ed2dbaab7b240f"
     },
@@ -1509,7 +1522,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "fd0bd6167da8398587cf6597695f9a56acb50a83957de8dd7d55165484cde1a6"
     },
@@ -1533,7 +1546,7 @@
       ],
       "stand": "2021-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/270.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "8e6af3df13c647e013bf75cd510e3231",
       "sha": "ff235bdc7c18d7be52e7e652333f6750a4c88cd20292f866d6d80a930563228d"
     }

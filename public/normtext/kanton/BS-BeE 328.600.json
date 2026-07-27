@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/BeE 328.600/art_1",
@@ -16,7 +16,7 @@
       ],
       "stand": "2017-12-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "6a9d7fb7f6c80f5bbfb3e3df7644b4e6",
       "sha": "3b370f22255bd57eee8de144749b0655df3f10f94867b65b1713cb1b21cb92d4"
     },
@@ -69,7 +69,7 @@
       ],
       "stand": "2017-12-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "6a9d7fb7f6c80f5bbfb3e3df7644b4e6",
       "sha": "fa2e1aea1d9f4728d21b7f73bfde7a88d8f95df5f155ae2ce54973dea54440fc"
     },
@@ -80,6 +80,7 @@
       "erlass": "Ordnung betreffend die Zahnpflege bei Kindern, Zahnpflegeordnung (BeE 328.600)",
       "artikel": "3",
       "artikelLabel": "§ 3",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -88,7 +89,7 @@
       ],
       "stand": "2017-12-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "6a9d7fb7f6c80f5bbfb3e3df7644b4e6",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -99,6 +100,7 @@
       "erlass": "Ordnung betreffend die Zahnpflege bei Kindern, Zahnpflegeordnung (BeE 328.600)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -107,7 +109,7 @@
       ],
       "stand": "2017-12-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "6a9d7fb7f6c80f5bbfb3e3df7644b4e6",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -134,7 +136,7 @@
       ],
       "stand": "2017-12-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "6a9d7fb7f6c80f5bbfb3e3df7644b4e6",
       "sha": "4f557f6b24558429f9082c3483132b16252c6e556ca4880656edf201b26bc30f"
     },
@@ -145,6 +147,7 @@
       "erlass": "Ordnung betreffend die Zahnpflege bei Kindern, Zahnpflegeordnung (BeE 328.600)",
       "artikel": "6",
       "artikelLabel": "§ 6",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -153,7 +156,7 @@
       ],
       "stand": "2017-12-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "6a9d7fb7f6c80f5bbfb3e3df7644b4e6",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -172,7 +175,7 @@
       ],
       "stand": "2017-12-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "6a9d7fb7f6c80f5bbfb3e3df7644b4e6",
       "sha": "4878f1b4ff0b528bc8ade143d0124fcf2f1936bf1d9bb7579c00248f3e359bb6"
     },
@@ -191,7 +194,7 @@
       ],
       "stand": "2017-12-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "6a9d7fb7f6c80f5bbfb3e3df7644b4e6",
       "sha": "93c655eed7fa1f090f14d75d4fdd881c6f30d57b9244d4a03ed4a6e44f26c4b4"
     },
@@ -218,7 +221,7 @@
       ],
       "stand": "2017-12-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "6a9d7fb7f6c80f5bbfb3e3df7644b4e6",
       "sha": "20cb26a709ebbea28398a23ec5d5c707126a75f0c84d984ccb0cf8729b373b78"
     },
@@ -237,7 +240,7 @@
       ],
       "stand": "2017-12-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "6a9d7fb7f6c80f5bbfb3e3df7644b4e6",
       "sha": "2fee9bb291c093b96d68b09bb81c41921bb26e392e79d52f2de9bc6bd3de087e"
     },
@@ -256,7 +259,7 @@
       ],
       "stand": "2017-12-18",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/BeE 328.600",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "6a9d7fb7f6c80f5bbfb3e3df7644b4e6",
       "sha": "ed16a9b21c0ed45fecd3638c9b2d284e254280f6d1e3c29c14271eac590a5737"
     }

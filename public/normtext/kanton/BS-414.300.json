@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/414.300/art_1",
@@ -20,7 +20,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "47db08de872e08a80f7aa451c52cfac4",
       "sha": "a7d2593dc6f1b7f9ca215aba629d2173299df8809f76ad02c96bb86742c4135f"
     },
@@ -39,7 +39,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "47db08de872e08a80f7aa451c52cfac4",
       "sha": "c61b4f1403586a49284bfa64d763adc20b0f108f271b404e23b9e80f94b3be0d"
     },
@@ -80,7 +80,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "47db08de872e08a80f7aa451c52cfac4",
       "sha": "04bf10a4cea50c1138ba36b430cda5b97acc4c366bfe1a0ba4ac03f29e4cb313"
     },
@@ -91,6 +91,7 @@
       "erlass": "Ordnung für das Verfahren bei der Beschaffung von Lehrmitteln (414.300)",
       "artikel": "4.-14",
       "artikelLabel": "Art. 4.-14",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -99,7 +100,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "47db08de872e08a80f7aa451c52cfac4",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -118,7 +119,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.300",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "47db08de872e08a80f7aa451c52cfac4",
       "sha": "c161d13d817636323f95ed623b9478e5eae8d740bca900b112a5ce6df2f86b41"
     }

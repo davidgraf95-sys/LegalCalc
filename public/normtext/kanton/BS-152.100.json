@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/152.100/art_1",
@@ -35,7 +35,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "357e222c45cc00fe4ba3af1c419472dcc993c3e8fbe50ce8c36a666c63ca7fff"
     },
@@ -46,6 +46,7 @@
       "erlass": "Gesetz über die Geschäftsordnung des Grossen Rates, GO (152.100)",
       "artikel": "1_a",
       "artikelLabel": "§ 1a",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -54,7 +55,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -82,7 +83,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "7dbafdbb76d42b777777fbe06ef20e5f8cb4d78bf2b186ae5d85d82f5da6ee4c"
     },
@@ -106,7 +107,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "9e93d8449739b4c3ee0fe6fb7061398bea9a5192aba0df6f64fe4018f44dc3a3"
     },
@@ -134,7 +135,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "1b0e285dab92f31ee8024e266a9444d143bf27e4cb53c7d46cdc41d6d97dd1f1"
     },
@@ -158,7 +159,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "92425352b2bed77242cc7a147943a5419ac88d2eb667ee7f82087690e0efe80c"
     },
@@ -182,7 +183,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "4a46d156739c282711b31f327bd31e6528620a584f04240217c44629dc102f60"
     },
@@ -214,7 +215,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "67edafc385fbb245aad435e380c7ef7eee556c3211d9fd067c5ffd7f58c2dd63"
     },
@@ -238,7 +239,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "c236f27305e385a1ce8557f701493d4f5f4167f4ce1914ea122cccd9dcf47968"
     },
@@ -270,7 +271,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "d87cdc647de8be8bab5de5c9b5626ec6bd4d391525b75f9d55a195153580a6b6"
     },
@@ -306,7 +307,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "9926a1050b4788fda46812b34fae18d42c886bbdd884c590c0b6fed15dfe13e1"
     },
@@ -330,7 +331,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "b93f14f0d09aa68111243db450a04a034d3a3e480148f8cf6f17613b6a53c986"
     },
@@ -354,7 +355,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "862a69e5a63525cca7ae05dd4db4733aad37be39a5e0d122c1d720b811a2aab2"
     },
@@ -365,6 +366,7 @@
       "erlass": "Gesetz über die Geschäftsordnung des Grossen Rates, GO (152.100)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -373,7 +375,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -397,7 +399,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "af641e1eef694f0de4343035fb5c8944a72376bfb29b292330e077c45f80b28c"
     },
@@ -425,7 +427,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "b883dd82614247dcac713a7ad1201b76a64473395c2149cb50a77e7ef8706b52"
     },
@@ -461,7 +463,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "65c615e24f3cc23f91f566c2b1d480fca2829df9f6a9eb2147517812a98f4890"
     },
@@ -485,7 +487,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "9189eb6b0d3885596386d9b33553705bac295a3aa5962fe3bc73bfc5a3fdd3e6"
     },
@@ -513,7 +515,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "53d74af629d5065f41a0fd1501610ce087829d94486b770c7f865353e6894504"
     },
@@ -541,7 +543,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "b75c6945c270c0a3708d079f5f3c715a47224a553b85372514c3a061a07dd5f4"
     },
@@ -619,7 +621,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "1d99289e79b84e21baa0212196fb25ec5e929ac631deda8138b9b849cab687a3"
     },
@@ -651,7 +653,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "aca0d7671c40bad9bb6d6129d6023f2ecfd0898210b9cbd0bab0ffb52113e5e0"
     },
@@ -683,7 +685,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "3cbb0c996e0932cc8609d21f0b00380809ae9057a5da60f3a7198f4fb8cb7cf8"
     },
@@ -723,7 +725,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "4dfc15ec622c793e01a35d9adac5e66351f980aa38093a85ccb9c4dc3b1eda53"
     },
@@ -757,7 +759,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "f83cd99b6c9500b521f6194a32b7c89a95af7d4797a6e0d95fe600ada60b9690"
     },
@@ -781,7 +783,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "be9b875f9056b66afdc8ff9582818bc1e179e67aebcaf73a5d8fa0a8936216e1"
     },
@@ -801,7 +803,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "85479c5bce6eb3acd38787ee8b316d3041753c50a1010f315bdd742d5808a4b6"
     },
@@ -821,7 +823,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "78d1d7b1fd8139ad17d35ed4e753038d277ed336826f988c5678c8cc6fdf75c9"
     },
@@ -841,7 +843,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "711242fd14474481bd24cfb4419ac60f3b8f7fa4b48406f735ee3494d9f09e6d"
     },
@@ -861,7 +863,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "64d0a0142eadc307141617723f311ee8a4a35158b7f0aa7e741e4b20e8d2426d"
     },
@@ -885,7 +887,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "b3421b126badae8ea3abdfd99f1c268c6d436e5ff5086d942659bb80ca09d0f1"
     },
@@ -917,7 +919,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "a380e66774997903905a793e6ff9b4665f0c30a7c51e83bf2fc3a88465e8b8a3"
     },
@@ -953,7 +955,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "4e4484d3469a7747b7982610b6b2658756aac9234189e629ff2646a286333ef5"
     },
@@ -1003,7 +1005,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "68df463ff0460a2b224a00f6089c55addef2bd0343e38405fe363b9dbf623153"
     },
@@ -1035,7 +1037,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "49a760d2cc6275580acf3955c644a444aeeeac2ab78e695eb8f95e5ae6f004f1"
     },
@@ -1046,6 +1048,7 @@
       "erlass": "Gesetz über die Geschäftsordnung des Grossen Rates, GO (152.100)",
       "artikel": "30",
       "artikelLabel": "§ 30",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1054,7 +1057,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1082,7 +1085,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "e84eda8a9851e4da628c645090a77730e253a06c524564a427c609b2dbe89086"
     },
@@ -1106,7 +1109,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "ab8a3567a7e59358b35f418a22732ec64e24b7a7ad768dc7c300e4cc76f582e4"
     },
@@ -1130,7 +1133,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "93cd06979fd729aac267bca5fc50e923b3a05b1afdc0b070280ee91e60dd85e7"
     },
@@ -1150,7 +1153,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "e28099164d7530518e2a0df5675c3332b8f8a5e08144382b5b25e99fc903727a"
     },
@@ -1170,7 +1173,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "a7d0f74efe4915823a41bced256a24e0895562a4130b902d7ed50392a923d406"
     },
@@ -1194,7 +1197,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "d197e7bf2103bdc2f7364559f16f4e112e49004f4613ddb000ceea51bada9aec"
     },
@@ -1218,7 +1221,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "4e12e8176f1602184585e9f14a896ce4df1f8c001c502e907f94074ad393d164"
     },
@@ -1250,7 +1253,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "ad916294a0c62bb597ba8066d19c5e02b1d2d3ae3d978c41b924e4e62756dcd3"
     },
@@ -1270,7 +1273,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "44a4c4f041611a03afbc2e45579da6e4dabb5335e1832b74adb5eed0f76dca90"
     },
@@ -1298,7 +1301,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "e35c1e8e45fb5a733c469636b291188a717031f68acd83b66c83770044f2f53b"
     },
@@ -1318,7 +1321,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "08fb39c186d03430c6f096b55f599291764f030eed80950ff137a52272816ce6"
     },
@@ -1350,7 +1353,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "8520cd31b174633501364ea5a5d6482b713cac76e1aa87cd64f429679a5caff0"
     },
@@ -1390,7 +1393,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "09414607e3e6f218b44dd345b9fb3802013a8dd8705d9754ac8595503bfc056c"
     },
@@ -1410,7 +1413,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "e3da226d8d33d208dc44eefcd6a25a39c13c6fd135ad17914277cd81d21c5199"
     },
@@ -1434,7 +1437,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "f1c07f95014348a963ac77268cf0950f1c2d390cf19d31279c5afea54e2e3c5c"
     },
@@ -1462,7 +1465,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "a9fe6af28e9facca1abb835b1f7b4d3331f6892b1a3cce6f570c7304725eabf2"
     },
@@ -1490,7 +1493,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "6a86bd0786710ccab4d21e3fbfed235063e329ec3b72d16b5be539d1b4985779"
     },
@@ -1501,6 +1504,7 @@
       "erlass": "Gesetz über die Geschäftsordnung des Grossen Rates, GO (152.100)",
       "artikel": "48",
       "artikelLabel": "§ 48",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1509,7 +1513,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -1537,7 +1541,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "b33dad647dbde59fe210985b1532a7e5e9118811f42b8a9de16a98d06ec22e0e"
     },
@@ -1565,7 +1569,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "4e68bf7fec800a793472b1a119ca3df38efa7e48f15b1b1da5d67e89c5087a11"
     },
@@ -1585,7 +1589,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "7dcb957b849c08f09771e096838369b573df576f77d73f0a22ac3e0217164b85"
     },
@@ -1621,7 +1625,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "c7cbcef7d9bf49db10b29d43d434ece5114d84b6dd403b8582985f10351f3ef4"
     },
@@ -1649,7 +1653,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "b7774e76d7e2de17625b2953a33a6a87452ba432155317c7731637181de8a147"
     },
@@ -1669,7 +1673,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "5fbacb2afebfbeb19b65044b213fcf4af767b747bdc492f76f7e858e219e1aaa"
     },
@@ -1689,7 +1693,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "df9d82d616f65943902c30cec96145d7e96ad7142be037b4306add7d65b33734"
     },
@@ -1717,7 +1721,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "8390637232bc7bd73fdd3dc71c86885280568194015da51867f6f04f6723a08d"
     },
@@ -1737,7 +1741,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "c426f8ff61991d07feafbf14536c02146461d601270b28872e30a818e045d84a"
     },
@@ -1757,7 +1761,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "371773caefcb7c8e201743186205ecadb984b8fba8f177a8e5145159fe63810a"
     },
@@ -1781,7 +1785,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "510e2ed5e59c50a113dbd44e5cdc52fefe2ec176501c55e70b848129efdf16f3"
     },
@@ -1813,7 +1817,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "48ee77a40b37c7a70661e1a22d7a231c2819ef5a7e4d22c19e5c45762bc1d9b0"
     },
@@ -1841,7 +1845,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "a584a74b8e75dcc7fd7677e92cb3847aa0fae2df40a6f7458c58d8ab64f7b5d2"
     },
@@ -1861,7 +1865,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "2a1eaa1730d6fb5736d0ed605bf83abd4fb96bba4274499c25b5f303e1c7d0c8"
     },
@@ -1889,7 +1893,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "961dbd81ccf1393428d6e9383dc8c20a5fcf439ce995628eab5fae02b60987fa"
     },
@@ -1923,7 +1927,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "6a2106d59814ae0c7347f4f257bb540950952e3f229dde6033fe2e61f5acb77b"
     },
@@ -1955,7 +1959,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "9c25ec538e35d5efea7de143d111e026b1a76f03be225346c81fc3004c83d5e7"
     },
@@ -1975,7 +1979,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "bd59b2809a00ba47fdf75e391f463e4c016148c0e472e786b37597d24d59b6a2"
     },
@@ -2003,7 +2007,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "28f4b1e339c5086be296ab6f58c0c97fd35937117357a461317e8d90dbe57086"
     },
@@ -2041,7 +2045,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "699baea6772b5101909249bdcd6fc6ff526fffce442a799bc6dcc8351c6cfb63"
     },
@@ -2061,7 +2065,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "128e0d18c38bfe899d511c8bb15ac82aa030bbfb34fc822dfb47cd88c6844843"
     },
@@ -2097,7 +2101,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "569757dffb6f93d10f0885748bcd480fdaeb66fbfbc478e6a3eee77b5b6de16a"
     },
@@ -2117,7 +2121,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "574394ee0f01a6d63dfaa3f5e490ffb8e594130e4b1b6989d0a676782423bd04"
     },
@@ -2151,7 +2155,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "7221f93e909bc63528dae5afcd2e0c8ae82a4ef7ef98118d43c3f77721ce79d2"
     },
@@ -2197,7 +2201,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "ba84a8ba4aeda9642d0ad42c4e7fbcb9cb9d349ef9b1ea84b24c85c02b33c731"
     },
@@ -2217,7 +2221,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "349162a1af72902c9203c830f73e53bc15207f0bd7ae357e9c0aaf750ccf1483"
     },
@@ -2237,7 +2241,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "d71ae19149c1bd3fa6b2d2fad3e40938ede37c6a0b55ada9106df3258eea2a0e"
     },
@@ -2257,7 +2261,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "58fd7724b56c143200ba98255ebc7fd81940a268e7383203e6487b4f377fc975"
     },
@@ -2285,7 +2289,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "a241de9a103029bdb70145ea85eacde53b943d580c2030fbad3b6663780a62e3"
     },
@@ -2305,7 +2309,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "9153d5b1ed96568ab32d6694b3e3c4f107418518733627255fa847a2aa1b7bb8"
     },
@@ -2345,7 +2349,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "677b65133ca384d04d09ed9ddb19a15dd4de4945ec57ce0442a61308df401ea3"
     },
@@ -2373,7 +2377,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "8fa74843e91ae9ec789b1bff843dbcbc344c6429b861c0a1f2b290df9273ee29"
     },
@@ -2401,7 +2405,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "aee2bbdc7c356e9c74fc4bd03040887e0d4428d3f2538b292d820d50f72afe26"
     },
@@ -2429,7 +2433,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "d30d6b7da89f85e8dfd0c38ab812b3134eb24750bd404b09222ff7acb52db056"
     },
@@ -2461,7 +2465,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "12b62cf17171f3aad7a667db22a21e804c76a8bf5f19528e4b565055a2aa4ab1"
     },
@@ -2481,7 +2485,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "93b07ee3161bfe4ba965956d7222bb22d9276958eb42a3f627ea6b0a6c00b02f"
     },
@@ -2505,7 +2509,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "a4e1a0e039cb384cf51d536c8f788818a9018753368ec4e20bae6e1578d80695"
     },
@@ -2525,7 +2529,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "11ad145bec2765f5ecd598bf0d78e56756265b044c383db42949a55f61e67fe0"
     },
@@ -2570,7 +2574,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "4e41af49cb863a6b45fec658b2e34c3cc6af4aa01c0b23a35d18a56666f8749a"
     },
@@ -2593,7 +2597,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "8af6fa96fef6e4fe623e00b91c5161f7db7eb9aa1d0391ceabd4292d580c87d9"
     },
@@ -2626,7 +2630,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "def20958e3c8098429c1b16f022c59ef7b9c7368958ec7e55320b0b2d1225f48"
     },
@@ -2637,6 +2641,7 @@
       "erlass": "Gesetz über die Geschäftsordnung des Grossen Rates, GO (152.100)",
       "artikel": "88",
       "artikelLabel": "§ 88",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2645,7 +2650,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -2665,7 +2670,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "270e2df6cd87bb65152c7953c2fbfb9c3a30b587e27d946ee76e8d4672f2ef09"
     },
@@ -2685,7 +2690,7 @@
       ],
       "stand": "2025-11-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/152.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "5b26b99354fdfcb3511cfb63c5f00513",
       "sha": "e4766fe4b398925b8b927f6e6e5d4b5ac046c7fa7839d82031288e797b12ff4a"
     }

@@ -268,16 +268,33 @@ export function istAufgehoben(text: string): boolean {
 
 /** Ist der GANZE Artikel aufgehoben (kein lebender Wortlaut, keine Items)? Dann
  *  zeigt der Reader ihn dezent + standardmässig eingeklappt (Auftrag David:
- *  aufgehobene Artikel «nicht so präsent», aufklappbar). */
+ *  aufgehobene Artikel «nicht so präsent», aufklappbar).
+ *
+ *  G-AUFH-ART Runde 2 (Gegenprüfung 27.7.2026) — Prioritäten-Reihenfolge FEST:
+ *  (1) Tabelle/Mehrspaltig = LEBENDER Inhalt, IMMER zuerst geprüft und schlägt
+ *      ALLES andere (auch `markiert`). Der Adapter markiert heute nie einen
+ *      Tabellen-tragenden Artikel (keinRealerInhalt in adapter-lexwork.ts
+ *      schliesst das aus), aber diese Funktion darf sich nicht auf diese
+ *      Adapter-Invariante verlassen — sonst kehrt sich die bewusst gesetzte
+ *      Schutzlogik (Bug-Fix 26.6.2026: 389 Tarif-Artikel) im Ernstfall um.
+ *  (2) `markiert` (NormSnapshot.aufgehoben, amtlich VERIFIZIERtes Adapter-
+ *      Signal) entscheidet SOFORT, wenn (1) nicht bereits negativ entschieden
+ *      hat.
+ *  (3) fehlt `markiert` (Bund-Bestand vor diesem Feld, andere Kantone vor
+ *      ihrer Regeneration), fällt die Funktion auf die bisherige TEXT-
+ *      Heuristik zurück — bestehendes Verhalten bleibt unverändert (§6
+ *      Byte-Gleichheit für alle Daten ohne das Feld). */
 export function artikelGanzAufgehoben(
   bloecke: { text: string; items?: { text: string }[]; tabelle?: unknown[]; mehrspaltig?: { zeilen: unknown[] } }[],
+  markiert?: boolean,
 ): boolean {
+  const hatTabelle = bloecke.some(
+    (b) => (b.tabelle?.length ?? 0) > 0 || (b.mehrspaltig?.zeilen.length ?? 0) > 0,
+  );
+  if (hatTabelle) return false;
+  if (markiert) return true;
   if (!bloecke.length) return false;
   return bloecke.every((b) => {
-    // Tabelle/Mehrspaltig = LEBENDER Inhalt (text ist dort konventionsgemäss leer)
-    // → hat Vorrang vor der «aufgehoben»-Heuristik, sonst würden Tarif-Tabellen-
-    //   Artikel fälschlich dezent + eingeklappt (Bug-Fix 26.6., analog ArtikelBody).
-    if ((b.tabelle?.length ?? 0) > 0 || (b.mehrspaltig?.zeilen.length ?? 0) > 0) return false;
     const items = b.items ?? [];
     // Lebender Einleitungstext (Lead) mit nur aufgehobenen Items ist NICHT ganz tot.
     const leadTot = !b.text.trim() || istAufgehoben(b.text);

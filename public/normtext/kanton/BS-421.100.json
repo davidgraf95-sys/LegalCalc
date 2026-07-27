@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/421.100/art_1",
@@ -20,7 +20,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "75256a647e9467bc7d6a93c4fabf86256429e871398e21a50df7afaf93bbda96"
     },
@@ -59,7 +59,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "d7d5ccbbdb8471d980b86c1ec3f0439d632f405f5d70c04fbe031d7904504ca8"
     },
@@ -78,7 +78,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "130783ef76247dd20243a1169764c8a32de0478b4b0c637e70422bd98b33f87b"
     },
@@ -89,6 +89,7 @@
       "erlass": "Gesetz betreffend die Allgemeine Gewerbeschule Basel (AGS Basel) und die Schule für Gestaltung Basel (SfG Basel) (421.100)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -97,7 +98,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -108,6 +109,7 @@
       "erlass": "Gesetz betreffend die Allgemeine Gewerbeschule Basel (AGS Basel) und die Schule für Gestaltung Basel (SfG Basel) (421.100)",
       "artikel": "5",
       "artikelLabel": "§ 5",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -116,7 +118,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -135,7 +137,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "2ed17a932466aa26a926057781cbebfeddbd8e5fef10eeae55e0495fce9c528d"
     },
@@ -146,6 +148,7 @@
       "erlass": "Gesetz betreffend die Allgemeine Gewerbeschule Basel (AGS Basel) und die Schule für Gestaltung Basel (SfG Basel) (421.100)",
       "artikel": "7",
       "artikelLabel": "§ 7",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -154,7 +157,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -173,7 +176,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "f2a321703acbeeaa4ceee2628cff71002ac0df92eca84eda109d9e2092835a82"
     },
@@ -184,6 +187,7 @@
       "erlass": "Gesetz betreffend die Allgemeine Gewerbeschule Basel (AGS Basel) und die Schule für Gestaltung Basel (SfG Basel) (421.100)",
       "artikel": "9",
       "artikelLabel": "§ 9",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -192,7 +196,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -203,6 +207,7 @@
       "erlass": "Gesetz betreffend die Allgemeine Gewerbeschule Basel (AGS Basel) und die Schule für Gestaltung Basel (SfG Basel) (421.100)",
       "artikel": "10",
       "artikelLabel": "§ 10",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -211,7 +216,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -234,7 +239,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "4ccef2c58b49fe0e8c8609fca764e855602c3c55cd4fa018858f1349cd418443"
     },
@@ -253,7 +258,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "ef6ec9c4b60cd042c5b29701e1d065c83d6db8241596b000af3f79fa80ffa5ed"
     },
@@ -272,7 +277,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "5b57d03c103aeeff6f0d52bdf05410ec1ceb8c120d8c979597dd1a8fae3fd369"
     },
@@ -283,6 +288,7 @@
       "erlass": "Gesetz betreffend die Allgemeine Gewerbeschule Basel (AGS Basel) und die Schule für Gestaltung Basel (SfG Basel) (421.100)",
       "artikel": "14",
       "artikelLabel": "§ 14",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -291,7 +297,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -310,7 +316,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "8e5ed7bd923fa1314c8b2fed8693b712e6b5f9e467bbc86ed0eb1d5fc21dfb9e"
     },
@@ -337,7 +343,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "04de05ce7817e9451602790c58727aa4bb1d649f0af3e142849b969a3b440efc"
     },
@@ -356,7 +362,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "6a949404ca7999c97f50117efed5a37ec27ed7079502b7c398609764bb5fbcaa"
     },
@@ -367,6 +373,7 @@
       "erlass": "Gesetz betreffend die Allgemeine Gewerbeschule Basel (AGS Basel) und die Schule für Gestaltung Basel (SfG Basel) (421.100)",
       "artikel": "18",
       "artikelLabel": "§ 18",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -375,7 +382,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -394,7 +401,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "af3ddff6fcc41ae1ce4d647d97fe982f8829ae336e91f2ce490c24cfbd0a3eb5"
     },
@@ -405,6 +412,7 @@
       "erlass": "Gesetz betreffend die Allgemeine Gewerbeschule Basel (AGS Basel) und die Schule für Gestaltung Basel (SfG Basel) (421.100)",
       "artikel": "20",
       "artikelLabel": "§ 20",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -413,7 +421,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -424,6 +432,7 @@
       "erlass": "Gesetz betreffend die Allgemeine Gewerbeschule Basel (AGS Basel) und die Schule für Gestaltung Basel (SfG Basel) (421.100)",
       "artikel": "21",
       "artikelLabel": "§ 21",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -432,7 +441,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -443,6 +452,7 @@
       "erlass": "Gesetz betreffend die Allgemeine Gewerbeschule Basel (AGS Basel) und die Schule für Gestaltung Basel (SfG Basel) (421.100)",
       "artikel": "22",
       "artikelLabel": "§ 22",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -451,7 +461,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -462,6 +472,7 @@
       "erlass": "Gesetz betreffend die Allgemeine Gewerbeschule Basel (AGS Basel) und die Schule für Gestaltung Basel (SfG Basel) (421.100)",
       "artikel": "23",
       "artikelLabel": "§ 23",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -470,7 +481,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -493,7 +504,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "c6ab026d0ffb837e51103450f8ddd0d5efcc97a6ee4673a288d1ae5830b5ee0d"
     },
@@ -520,7 +531,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "4519a3c2ff3ecfc68acc28cf07d1c9d7fe4c36f068cfea5164b6de111bd03582"
     },
@@ -539,7 +550,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "82e85707a4b115627e8feca598bff291e791502faeabdd9b790708ab579100c2"
     },
@@ -562,7 +573,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "f212968fa1f58237bacd262ea941e5055b98a9a19b63170afa354888f8318400"
     },
@@ -589,7 +600,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "b2ae5916b7878e473506c0a6285d22a4e7a1a61e405611bb8bd9913d2cb149dd"
     },
@@ -608,7 +619,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "ecfa7ff63fa82e0736ca5f0c9ec546a4a488d01aefecedcc7b7c2c5cc7c6352b"
     },
@@ -627,7 +638,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "973ffee7dc06f4b19ff791b503c77d3c80bccff77b2928c61799202e816d2326"
     },
@@ -646,7 +657,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "e45ff283c6f236c6fdfea4bd88502052541fc300438e3959ecdca15a5a058722"
     },
@@ -665,7 +676,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "5bbbfa7f85cdec84d751e92b2d0c087cb9f01e49928aa6cf6741f5f672e8c2b0"
     },
@@ -688,7 +699,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "cc655e33396ed6f117666239a95516167b34551b25ac48b81c9b48066d533063"
     },
@@ -707,7 +718,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "c77244b30d5a7f25ccb21977215eafef59482f00a8a0c7eab5783d955e1189b6"
     },
@@ -726,7 +737,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "453e40a95b51504af771d14a07ec95bbc16cc7fbba7adf94227788b370a2998b"
     },
@@ -745,7 +756,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "2297ce7d731d678a779c71ea2c9034f6a93af7c73e120ec06eea8d9578d6f659"
     },
@@ -772,7 +783,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "1e052e706ab7a779cf62d67d4bebd005913504fa548b6dff5871869bb1c3e8bb"
     },
@@ -791,7 +802,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "be020501bfaf7a5ff59bee5ed2b97838f66f6347cebb4f8a1d571ee7270345c5"
     },
@@ -802,6 +813,7 @@
       "erlass": "Gesetz betreffend die Allgemeine Gewerbeschule Basel (AGS Basel) und die Schule für Gestaltung Basel (SfG Basel) (421.100)",
       "artikel": "39",
       "artikelLabel": "§ 39",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -810,7 +822,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -833,7 +845,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "ec274e71449f88e9a525ddadef04fd3e83a466e9fefc1620ab60d16d7bbb63e8"
     },
@@ -844,6 +856,7 @@
       "erlass": "Gesetz betreffend die Allgemeine Gewerbeschule Basel (AGS Basel) und die Schule für Gestaltung Basel (SfG Basel) (421.100)",
       "artikel": "41",
       "artikelLabel": "§ 41",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -852,7 +865,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -871,7 +884,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "1defdd795978d9269cfd11dc1d92646797a0f0c1c66f34673677982580abfd22"
     },
@@ -882,6 +895,7 @@
       "erlass": "Gesetz betreffend die Allgemeine Gewerbeschule Basel (AGS Basel) und die Schule für Gestaltung Basel (SfG Basel) (421.100)",
       "artikel": "43",
       "artikelLabel": "§ 43",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -890,7 +904,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -909,7 +923,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "e6172c51dfdda8280e78bbf1a4df1a0cf333b05ae373d77677dbe419d18c0315"
     },
@@ -928,7 +942,7 @@
       ],
       "stand": "2013-01-01",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/421.100",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "de3776989ba7669d4afb8cad1c93842a",
       "sha": "f8cd0a04187b8eb5f14b8d90f07a1f0be47928cce430396a2909f163955fdb61"
     }

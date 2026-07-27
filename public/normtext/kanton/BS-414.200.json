@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-06-23",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BS/414.200/art_1",
@@ -24,7 +24,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "695f79720b187b2f58614114050b5e81",
       "sha": "4eefe2a7686f18b41dab59021e62b77d2db31194e839bf89fd0f5f982d46b328"
     },
@@ -35,6 +35,7 @@
       "erlass": "Verordnung über die Abgabe von Lehrmitteln und Verbrauchsmaterialien (414.200)",
       "artikel": "2",
       "artikelLabel": "§ 2",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -43,7 +44,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "695f79720b187b2f58614114050b5e81",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -62,7 +63,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "695f79720b187b2f58614114050b5e81",
       "sha": "527c0d495be91e4d1ff68f06315ab51c33a7061b68706ad811edd550d8fecc0e"
     },
@@ -73,6 +74,7 @@
       "erlass": "Verordnung über die Abgabe von Lehrmitteln und Verbrauchsmaterialien (414.200)",
       "artikel": "4",
       "artikelLabel": "§ 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -81,7 +83,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "695f79720b187b2f58614114050b5e81",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -100,7 +102,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "695f79720b187b2f58614114050b5e81",
       "sha": "28da49d90ebc2b7b42c241b4eea89750751df333253ff2cb43174b843f75ac27"
     },
@@ -119,7 +121,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "695f79720b187b2f58614114050b5e81",
       "sha": "b89f4b625d83860159b53e863c9c31676d74da443e5b8a47e0bb44d259c61a18"
     },
@@ -130,6 +132,7 @@
       "erlass": "Verordnung über die Abgabe von Lehrmitteln und Verbrauchsmaterialien (414.200)",
       "artikel": "7",
       "artikelLabel": "§ 7",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -138,7 +141,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "695f79720b187b2f58614114050b5e81",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -157,7 +160,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "695f79720b187b2f58614114050b5e81",
       "sha": "63f9b67f2ba5dd83d808f0369a1025138ac80f2717fac8a7b90dfd558fbf684f"
     },
@@ -176,7 +179,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "695f79720b187b2f58614114050b5e81",
       "sha": "f5014a7ffcdfb4d542e1ab105d9f500e6286d9866229f8a55b536ac28fdcfe7b"
     },
@@ -199,7 +202,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "695f79720b187b2f58614114050b5e81",
       "sha": "6f93583f9cc2057a5fa6a42f98d0cbb1181d1cc3ac737fefc5240e21e5308a77"
     },
@@ -210,6 +213,7 @@
       "erlass": "Verordnung über die Abgabe von Lehrmitteln und Verbrauchsmaterialien (414.200)",
       "artikel": "11",
       "artikelLabel": "§ 11",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -218,7 +222,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "695f79720b187b2f58614114050b5e81",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -241,7 +245,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "695f79720b187b2f58614114050b5e81",
       "sha": "49889447c783a07adf8529d8808f39c981dcf1aeed2f5fe67b829e7e309cf667"
     },
@@ -260,7 +264,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "695f79720b187b2f58614114050b5e81",
       "sha": "36f9b43dfd814b4312c3a3ef6cc2cd97cb18e2f4178a38de2e112c257673b71b"
     },
@@ -279,7 +283,7 @@
       ],
       "stand": "2009-08-10",
       "quelleUrl": "https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/414.200",
-      "abgerufen": "2026-06-23",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "695f79720b187b2f58614114050b5e81",
       "sha": "52b5e93fd45582ee8a3e7a6631ddfc9a33b2fe92ede868ce3edd9a3f514c358e"
     }
