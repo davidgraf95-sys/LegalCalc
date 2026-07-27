@@ -133,6 +133,52 @@ describe('extrahiereStrukturLexWork — Aufhebungs-/Änderungsmarker (§7, A42-G
   });
 });
 
+describe('extrahiereStrukturLexWork — Marginalie mit <sup>-Exponent (N2-Befund, SO-614.11 §11bis)', () => {
+  // Reales Muster (bgs.so.ch/api/de/texts_of_law/614.11 §11bis): der amtliche
+  // Randtitel schreibt den Absatz-Exponenten hochgestellt OHNE Leerzeichen —
+  // «3bis. Übernahme von Verlusten aus dem Ausland». Der Snapshot-Extraktions-
+  // pfad (adapter-lexwork.bereinige, Tag-Strip → '') liest das korrekt; der
+  // Sidecar-Pfad nutzte bislang clean() (Tag-Strip → ' '), was «3 bis.» erzeugte
+  // (Gegenprüfung 27.7., PR #391 Delta-Runde, N2 — 49 betroffene Artikel).
+  const XH = `
+    <div class='article'>
+      <div class='article_number'><span class='article_symbol'>&sect;</span> <span class='number'>11bis</span></div>
+      <div class='article_title'><span class='title_text'>3<sup>bis</sup>. &Uuml;bernahme von Verlusten aus dem Ausland</span></div>
+    </div>
+    <div class='paragraph'><span class='number'>1</span><p><span class='text_content'>x</span></p></div>`;
+
+  it('verbindet den <sup>-Exponenten ohne Leerzeichen («3bis.», nicht «3 bis.»)', () => {
+    const a = extrahiereStrukturLexWork(XH);
+    expect(a['11_bis'].marginalie).toEqual(['3bis. Übernahme von Verlusten aus dem Ausland']);
+  });
+});
+
+describe('extrahiereStrukturLexWork — Marginalie ohne stille Interpunktions-Glättung (Gegenprüfung Runde 2, AR-142.22 §17b / AR-911.1 §9a)', () => {
+  // Reales Muster (ar.clex.ch/api/de/texts_of_law/142.22 §17b): der amtliche
+  // Randtitel enthält ECHT ein Leerzeichen vor der Ellipse — «Teilrevision
+  // vom ...» — kein <sup>, reiner Fliesstext. Die vormalige clean()-Reinigung
+  // hatte NEBEN dem Tag-Strip (F1, oben) eine zweite, unabhängige Eigenschaft:
+  // `.replace(/\s+([.,;:!?])/g, '$1')` glättete das Leerzeichen vor der ersten
+  // Ellipse-Periode STILL weg → «Teilrevision vom...». bereinige() (jetzt
+  // genutzt) hat diesen Glättungsschritt nicht und lässt die Quelle verbatim
+  // stehen (§7 Treue) — Gegenprüfung Runde 2 hat das gegen ar.clex.ch bestätigt:
+  // die Quelle enthält das Leerzeichen tatsächlich, der alte Code korrigierte
+  // damit still (und falsch) amtliche Typographie. Zwei von 56 Bestandsfunden
+  // (AR-142.22 §17b, AR-911.1 §9a) gehören dieser zweiten Ursachen-Klasse an,
+  // nicht der <sup>-Verklebung — beide durch denselben Funktionswechsel behoben.
+  const XH = `
+    <div class='article'>
+      <div class='article_number'><span class='article_symbol'>Art.</span> <span class='number'>17b</span></div>
+      <div class='article_title'><span class='title_text'>Teilrevision vom ...</span></div>
+    </div>
+    <div class='paragraph'><span class='number'>1</span><p><span class='text_content'>x</span></p></div>`;
+
+  it('lässt ein quellen-echtes Leerzeichen vor Interpunktion stehen (keine stille Glättung)', () => {
+    const a = extrahiereStrukturLexWork(XH);
+    expect(a['17_b'].marginalie).toEqual(['Teilrevision vom ...']);
+  });
+});
+
 describe('extrahiereLexWorkSidecar — kombinierter Extrakt, ein Apparat-Parse', () => {
   it('liefert kopf + artikel deckungsgleich zu den Einzel-Extraktoren', () => {
     const { kopf, artikel } = extrahiereLexWorkSidecar(XHTML);

@@ -300,8 +300,17 @@ export function extrahiereStrukturLexWork(
       const roh = bereinige(m[3].match(/<span class='number'>([\s\S]*?)<\/span>/)?.[1] ?? '');
       if (!roh) continue;
       const token = normalisiereArtikelToken(roh);
+      // Marginalie-Reinigung via `bereinige()` (SSoT, §5) — NICHT `clean()`.
+      // `clean()` strippt Tags zu einem LEERZEICHEN, was einen hochgestellten
+      // Absatz-Exponenten aus dem article_title («3<sup>bis</sup>. Übernahme
+      // von Verlusten…», SO-614.11 §11bis) zu «3 bis.» auseinanderreisst statt
+      // «3bis.» — der Snapshot-Pfad (adapter-lexwork, dieselbe bereinige()) las
+      // dasselbe Markup schon immer korrekt. `bereinige()` strippt Tags zu ''
+      // (wie cleanLabel() es für sup im Gliederungs-Label bereits eigens tut,
+      // B4) und trifft damit den amtlichen Randtitel exakt (Gegenprüfung 27.7.,
+      // PR #391 Delta-Runde, N2 — 49 betroffene Kantons-Artikel, BS/SO).
       const sach = m[4] != null
-        ? clean(m[4].match(/<span class='title_text'>([\s\S]*?)<\/span>/)?.[1] ?? m[4])
+        ? bereinige(m[4].match(/<span class='title_text'>([\s\S]*?)<\/span>/)?.[1] ?? m[4])
         : '';
       result[token] = {
         gliederung: gl.filter((g): g is { ebene: number; label: string } => g != null).map((g) => ({ ...g })),
