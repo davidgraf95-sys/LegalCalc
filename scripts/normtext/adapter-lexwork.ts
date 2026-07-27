@@ -84,6 +84,19 @@ export interface LexArtikel {
    * Randtitel (§7). Wird in der Lesesicht als Randtitel angezeigt.
    */
   titel?: string;
+  /**
+   * G-AUFH-ART (W2·5j, BS-132.100-Audit 27.7.2026) — ARTIKEL-genau aufgehoben.
+   * Gesetzt NUR wenn `parseSegment` für das Artikel-Segment buchstäblich KEINEN
+   * Body-Block extrahiert (kein paragraph, keine enumeration_item/_tabular, kein
+   * substantieller paragraph_post) — ein STRUKTURELLES Signal aus der Quelle
+   * (Numerierungs-Slot ohne Wortlaut nach dem Artikelkopf), nicht eine Ableitung
+   * aus «Text ist zufällig leer». Empirisch verifiziert an gesetzessammlung.bs.ch
+   * (132.100 §51/§55: article_title='…' + kein Body; §76a/§76b: ECHTER Randtitel
+   * + kein Body) und gesetze.gl.ch (III-C.1 Art. 3/4/8–11/12–14/19: durchweg
+   * article_title='…' + kein Body) — beide Titel-Varianten sind gleichermassen
+   * aufgehobene Artikel, siehe adapter-lexwork.md-Kommentar bei parseSegment.
+   */
+  aufgehoben?: true;
 }
 
 export interface LexWorkErgebnis {
@@ -556,8 +569,20 @@ function parseSegment(segment: string): LexArtikel {
     if (roh && roh !== '…' && roh !== '...') titel = roh;
   }
 
+  // G-AUFH-ART — ARTIKEL-genau aufgehoben: das Segment lieferte NACH VOLLSTÄNDIGER
+  // Extraktion (paragraph, enumeration_item, enumeration_tabular, paragraph_post —
+  // alle vier oben abgedeckten Body-Formen) buchstäblich KEINEN Block. Das ist ein
+  // STRUKTURELLES Signal aus der Quelle (Artikelkopf ohne jeden Body-Knoten), nicht
+  // «Text ist zufällig leer» — ein Block MIT Inhalt, dessen bereinigter Text leer
+  // wird (z.B. ein einzelnes lit.-item mit «&nbsp;»-Zelle, S3), zählt NICHT: dort
+  // ist bloecke.length > 0 (das Item bleibt MIT leerer Marke erhalten), nur dieser
+  // EINE Fall (gar kein Body-Knoten) löst den Marker aus. Muss VOR dem Caller-
+  // seitigen Synthese-Push geprüft werden (bloecke ist hier noch die echte, aus dem
+  // Segment gelesene Liste). Empirisch verifiziert BS 132.100 §51/§55/§76a/§76b +
+  // GL III-C.1 (5/5) — siehe LexArtikel.aufgehoben-Doku.
   const ergebnis: LexArtikel = { bloecke };
   if (titel) ergebnis.titel = titel;
+  if (bloecke.length === 0) ergebnis.aufgehoben = true;
   return ergebnis;
 }
 
