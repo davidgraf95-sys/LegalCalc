@@ -1,13 +1,14 @@
 {
-  "erzeugt": "2026-06-22",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/BE/169.81/art_1",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "1",
       "artikelLabel": "Art. 1",
+      "titel": "Anwendungsbereich",
       "bloecke": [
         {
           "absatz": "1",
@@ -24,7 +25,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "d66dff016ecec6a5dfefb5a9aecc65d2986d255958c431bf67aea8c6a7d48193"
     },
@@ -32,9 +33,10 @@
       "id": "kanton/BE/169.81/art_1_a",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "1_a",
       "artikelLabel": "Art. 1a",
+      "titel": "Gebührenarten",
       "bloecke": [
         {
           "absatz": "1",
@@ -47,7 +49,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "2f501cf01e7d9ce94a79800e3748ae99f5f938bbd264e1243c75642c892782be"
     },
@@ -55,9 +57,10 @@
       "id": "kanton/BE/169.81/art_2",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "2",
       "artikelLabel": "Art. 2",
+      "titel": "Bemessung und Verbindlichkeit",
       "bloecke": [
         {
           "absatz": "1",
@@ -74,7 +77,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "825fcb1cb2963fe84def882753f92297879ff3a43cc265db238c087f242dbbda"
     },
@@ -82,9 +85,10 @@
       "id": "kanton/BE/169.81/art_3",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "3",
       "artikelLabel": "Art. 3",
+      "titel": "Gebühr nach gestaffeltem Rahmentarif",
       "bloecke": [
         {
           "absatz": "1",
@@ -127,7 +131,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "938d5eb874deefafcf112403ef5718a2bbde0f7e6670ac92aca0e700fdcda017"
     },
@@ -135,9 +139,10 @@
       "id": "kanton/BE/169.81/art_3_a",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "3_a",
       "artikelLabel": "Art. 3a",
+      "titel": "Gebühr nach gebotenem Zeitaufwand",
       "bloecke": [
         {
           "absatz": "1",
@@ -168,7 +173,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "220dbbeda39f8c0ebeabf585b10118ddd961d2496dbc73cf75944327d8a0eae2"
     },
@@ -176,9 +181,10 @@
       "id": "kanton/BE/169.81/art_4",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "4",
       "artikelLabel": "Art. 4",
+      "titel": "Besondere Fälle",
       "bloecke": [
         {
           "absatz": "1",
@@ -195,7 +201,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "f773a5363b07e11adca76d22c66e8aee4646603d1d1e411ff50f14749b17c73b"
     },
@@ -203,9 +209,10 @@
       "id": "kanton/BE/169.81/art_4_a",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "4_a",
       "artikelLabel": "Art. 4a",
+      "titel": "Bedürftige oder gemeinnützige Klientschaft",
       "bloecke": [
         {
           "absatz": "1",
@@ -232,7 +239,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "a10d69548f7c5ce31cf8c8714006fdc5541685e2764fe081da05536abf7ad276"
     },
@@ -240,9 +247,10 @@
       "id": "kanton/BE/169.81/art_5",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "5",
       "artikelLabel": "Art. 5",
+      "titel": "Orientierung der Klientschaft",
       "bloecke": [
         {
           "absatz": "1",
@@ -251,7 +259,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "c46753ad5cc4faf3f070e5ffa1649697d9a152efcfd58265c14d9cc0cb3dc313"
     },
@@ -259,9 +267,10 @@
       "id": "kanton/BE/169.81/art_6",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "6",
       "artikelLabel": "Art. 6",
+      "titel": "Grundsätze für Rechnungsstellung",
       "bloecke": [
         {
           "absatz": "1",
@@ -290,7 +299,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "e8ca56d3c11597b2a5967a670aae50749fedd02bc472f08ffed706713a72c1f4"
     },
@@ -298,9 +307,10 @@
       "id": "kanton/BE/169.81/art_6_a",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "6_a",
       "artikelLabel": "Art. 6a",
+      "titel": "Begründungspflicht bei Rechnungsstellung",
       "bloecke": [
         {
           "absatz": "1",
@@ -341,7 +351,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "717f6dcbcfdef5bf4975da0a94011ae805b32c54ebd5d44d3c9138d0ccf78444"
     },
@@ -349,7 +359,7 @@
       "id": "kanton/BE/169.81/art_7",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "7",
       "artikelLabel": "Art. 7",
       "bloecke": [
@@ -360,7 +370,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "3541314f7ce0d729c6866be691433639fa7a2cff6cc97ddce9b0559b66033347"
     },
@@ -368,7 +378,7 @@
       "id": "kanton/BE/169.81/art_8",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "8",
       "artikelLabel": "Art. 8",
       "bloecke": [
@@ -383,7 +393,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "be107b05830310d2ee07ba034feadbfc8abd85e7ffd6582e20a9a9e21af198ab"
     },
@@ -391,9 +401,10 @@
       "id": "kanton/BE/169.81/art_8_a",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "8_a",
       "artikelLabel": "Art. 8a",
+      "titel": "Vorsorgeauftrag",
       "bloecke": [
         {
           "absatz": "1",
@@ -402,7 +413,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "f88bf53c1b3382cab637ee22686b6dddd4148db066bc33d329deeb60377f631b"
     },
@@ -410,9 +421,10 @@
       "id": "kanton/BE/169.81/art_9",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "9",
       "artikelLabel": "Art. 9",
+      "titel": "Verfügungen von Todes wegen",
       "bloecke": [
         {
           "absatz": "1",
@@ -421,7 +433,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "24e74548a8c0f511e231f35f887585c889b477eff0331fbee9fdef39f96eea4b"
     },
@@ -429,9 +441,10 @@
       "id": "kanton/BE/169.81/art_10",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "10",
       "artikelLabel": "Art. 10",
+      "titel": "Inventar",
       "bloecke": [
         {
           "absatz": "1",
@@ -444,7 +457,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "1a7f2e1447a5541e44dd8a4ba68c3863ce0fbb9f0ddfe43b456601ff8a8c09c8"
     },
@@ -452,9 +465,10 @@
       "id": "kanton/BE/169.81/art_11",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "11",
       "artikelLabel": "Art. 11",
+      "titel": "Eröffnung einer Verfügung von Todes wegen",
       "bloecke": [
         {
           "absatz": "1",
@@ -463,7 +477,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "162c890b6e68d85400cd9713b09672b944d6ad61863cff409e7f4e7df70b8738"
     },
@@ -471,9 +485,10 @@
       "id": "kanton/BE/169.81/art_12",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "12",
       "artikelLabel": "Art. 12",
+      "titel": "Erbenschein",
       "bloecke": [
         {
           "absatz": "1",
@@ -486,7 +501,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "24583f0b20720b8cfd5e29a22b71b2ff56ec319df3f6625560ce4fdc6c07155b"
     },
@@ -494,9 +509,10 @@
       "id": "kanton/BE/169.81/art_13",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "13",
       "artikelLabel": "Art. 13",
+      "titel": "Grundstücke",
       "bloecke": [
         {
           "absatz": "1",
@@ -509,7 +525,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "46cf111a2a42d499cfc5d37cba07cbdd42e358c9b6fdafc7da569154ef8c98c0"
     },
@@ -517,9 +533,10 @@
       "id": "kanton/BE/169.81/art_14",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "14",
       "artikelLabel": "Art. 14",
+      "titel": "Planänderung",
       "bloecke": [
         {
           "absatz": "1",
@@ -528,7 +545,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "79d71bef742858114f614309166b63c821283b541244549d321411c190d7ca2e"
     },
@@ -536,9 +553,10 @@
       "id": "kanton/BE/169.81/art_15",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "15",
       "artikelLabel": "Art. 15",
+      "titel": "Beurkundung im vereinfachten Verfahren",
       "bloecke": [
         {
           "absatz": "1",
@@ -547,7 +565,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "873e2613ef2ba65e0601cd0f43a146b82f0629997722d17b745ab29829a67f23"
     },
@@ -555,9 +573,10 @@
       "id": "kanton/BE/169.81/art_15_a",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "15_a",
       "artikelLabel": "Art. 15a",
+      "titel": "Miteigentum und Gesamteigentum",
       "bloecke": [
         {
           "absatz": "1",
@@ -566,7 +585,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "ac8d53eea4ae0b1be1f36b08e3a1d801580f04083152caa8cd6c588ab4de4919"
     },
@@ -574,9 +593,10 @@
       "id": "kanton/BE/169.81/art_16",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "16",
       "artikelLabel": "Art. 16",
+      "titel": "Stockwerkeigentum",
       "bloecke": [
         {
           "absatz": "1",
@@ -589,7 +609,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "1b3ed41886db467a4524501785a5756b67cd6e689ed7e7666757f1f86f8b5e5d"
     },
@@ -597,9 +617,10 @@
       "id": "kanton/BE/169.81/art_17",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "17",
       "artikelLabel": "Art. 17",
+      "titel": "Dienstbarkeit, Grundlast, Aufhebung und Änderung einer Eigentumsbeschränkung",
       "bloecke": [
         {
           "absatz": "1",
@@ -608,7 +629,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "18bea26b02554c5815f57dcced31c23fc9ba3e472f22ad522ed948b473f9e09c"
     },
@@ -616,9 +637,10 @@
       "id": "kanton/BE/169.81/art_18",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "18",
       "artikelLabel": "Art. 18",
+      "titel": "Grundpfandrechte",
       "bloecke": [
         {
           "absatz": "1",
@@ -639,7 +661,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "2d5b74891adbe51f713d027e6681446316d2975fd22c5835aa4b499b702b454b"
     },
@@ -647,9 +669,10 @@
       "id": "kanton/BE/169.81/art_19",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "19",
       "artikelLabel": "Art. 19",
+      "titel": "Bürgschaft",
       "bloecke": [
         {
           "absatz": "1",
@@ -658,7 +681,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "39313f78068de47141d0a6bd78bf15e64bf023d2defd749a2af44472c8bda962"
     },
@@ -666,9 +689,10 @@
       "id": "kanton/BE/169.81/art_20",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "20",
       "artikelLabel": "Art. 20",
+      "titel": "Verpfründung",
       "bloecke": [
         {
           "absatz": "1",
@@ -677,7 +701,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "690e1f9ea339cc97044f451a5a9679803e49ea77e569b8b565b927fcb26beda7"
     },
@@ -685,9 +709,10 @@
       "id": "kanton/BE/169.81/art_21",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "21",
       "artikelLabel": "Art. 21",
+      "titel": "Gesellschaften",
       "bloecke": [
         {
           "absatz": "1",
@@ -716,7 +741,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "7948e732cfa42ab9e8e9a98762eb20fa569a00c7c2757c77b809a1c22aa7f6ab"
     },
@@ -724,9 +749,10 @@
       "id": "kanton/BE/169.81/art_22",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "22",
       "artikelLabel": "Art. 22",
+      "titel": "Abtretung eines Gesellschaftsanteils",
       "bloecke": [
         {
           "absatz": "1",
@@ -735,7 +761,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "4f972ae9264ae9e0d6818e086a0becd892eaf59c0db6bbc9f76e093952b6de77"
     },
@@ -743,9 +769,10 @@
       "id": "kanton/BE/169.81/art_23",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "23",
       "artikelLabel": "Art. 23",
+      "titel": "Wechselprotest",
       "bloecke": [
         {
           "absatz": "1",
@@ -754,7 +781,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "05be7d5ac83dabbcaef0308d3592e633d30b1618394d0d7ace7713995814f41c"
     },
@@ -762,9 +789,10 @@
       "id": "kanton/BE/169.81/art_24",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "24",
       "artikelLabel": "Art. 24",
+      "titel": "Fusion, Spaltung, Umwandlung, Vermögensübertragung",
       "bloecke": [
         {
           "absatz": "1",
@@ -789,7 +817,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "4acad4cea1d67679bd48beccf6fa32871354a2d5ddf38c8033163bf8427dc459"
     },
@@ -797,9 +825,10 @@
       "id": "kanton/BE/169.81/art_25",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "25",
       "artikelLabel": "Art. 25",
+      "titel": "Grundstücke",
       "bloecke": [
         {
           "absatz": "1",
@@ -808,7 +837,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "6922df1eaeb773377c56d9bdb63b067e44c4bab4568ecef720fc27a8fb4e824b"
     },
@@ -816,9 +845,10 @@
       "id": "kanton/BE/169.81/art_26",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "26",
       "artikelLabel": "Art. 26",
+      "titel": "Übrige Feststellungsurkunden",
       "bloecke": [
         {
           "absatz": "1",
@@ -827,7 +857,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "85ad329ddd9146ef712635e15617e6cfa98dd5495b09545c72f7c0992f2f25f0"
     },
@@ -835,9 +865,10 @@
       "id": "kanton/BE/169.81/art_27",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "27",
       "artikelLabel": "Art. 27",
+      "titel": "Beglaubigungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -850,7 +881,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "fd5def4fc54b69dd831cf93223e7fd5e334697284e08153b46cfa857d4062e51"
     },
@@ -858,9 +889,10 @@
       "id": "kanton/BE/169.81/art_28",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "28",
       "artikelLabel": "Art. 28",
+      "titel": "Eidesstattliche Erklärung",
       "bloecke": [
         {
           "absatz": "1",
@@ -869,7 +901,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "5a71789bb54eb26ea58dd4f23dce978ff2093bb55cfc2b25cf6b854f94b0e1ef"
     },
@@ -877,9 +909,10 @@
       "id": "kanton/BE/169.81/art_29",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "29",
       "artikelLabel": "Art. 29",
+      "titel": "Weitere und neue Ausfertigungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -892,7 +925,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "17d553c8e41cc15470babd87d7ea0b942ec5930c9a880e065d8a8ab2a1ecbc06"
     },
@@ -900,9 +933,10 @@
       "id": "kanton/BE/169.81/art_30",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "30",
       "artikelLabel": "Art. 30",
+      "titel": "Weitere öffentliche Beurkundungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -915,7 +949,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "0dd2e32691d5fda020cf79f9a589421424a35ae9d82c6156c341e133f3dafcce"
     },
@@ -923,9 +957,10 @@
       "id": "kanton/BE/169.81/art_31",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "31",
       "artikelLabel": "Art. 31",
+      "titel": "Erfüllung weiterer gesetzlicher Verpflichtungen",
       "bloecke": [
         {
           "absatz": "1",
@@ -934,7 +969,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "ded1702dcaf758ec9cde7b982a2a31cb4f8fdf269a9f1c3729c8e7c09696dc52"
     },
@@ -942,7 +977,7 @@
       "id": "kanton/BE/169.81/art_32",
       "ebene": "kanton",
       "quelle": "BE",
-      "erlass": "GebVN (BSG 169.81)",
+      "erlass": "Verordnung über die Notariatsgebühren, GebVN (BSG 169.81)",
       "artikel": "32",
       "artikelLabel": "Art. 32",
       "bloecke": [
@@ -953,7 +988,7 @@
       ],
       "stand": "2022-03-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/169.81",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "9a0654f8e0fb535d332aba6a6a9e0034",
       "sha": "58ccf003a071d630f29020ca949c0c53512f8fb398ab3d904705187134290bea"
     }

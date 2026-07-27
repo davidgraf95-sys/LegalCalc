@@ -1,13 +1,14 @@
 {
-  "erzeugt": "2026-06-19",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/FR/130.11-fr/art_1",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "1",
       "artikelLabel": "Art. 1",
+      "titel": "Objet",
       "bloecke": [
         {
           "absatz": "1",
@@ -20,7 +21,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "5a55505fdccde9e6f5be2f28cafa777b308959a85ccfbd0dc5134b2e577edf5f"
     },
@@ -28,9 +29,10 @@
       "id": "kanton/FR/130.11-fr/art_2",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "2",
       "artikelLabel": "Art. 2",
+      "titel": "Officiers de police judiciaire (art. 65 LJ)",
       "bloecke": [
         {
           "absatz": "1",
@@ -57,7 +59,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "4ed9883d8f9c8e47d1cee08c4d6a557c64013ebf5cca7e2333d84f6bee70344e"
     },
@@ -65,9 +67,10 @@
       "id": "kanton/FR/130.11-fr/art_3",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "3",
       "artikelLabel": "Art. 3",
+      "titel": "Mesures de protection (art. 146 LJ et 156 CPP)",
       "bloecke": [
         {
           "absatz": "1",
@@ -80,7 +83,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "cc8e31530cb4ad3db08d136509134a0a7c89a2a05b95dafe4b944f985bb34e44"
     },
@@ -88,9 +91,10 @@
       "id": "kanton/FR/130.11-fr/art_4",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "4",
       "artikelLabel": "Art. 4",
+      "titel": "Consultation des données du Service cantonal des contributions (art. 147 LJ et 194 CPP) – Principes",
       "bloecke": [
         {
           "absatz": "1",
@@ -103,7 +107,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "b5b9dd8f0d6f454f42e88951c197e17823b7b2117f00be943af9e5c19cc591fc"
     },
@@ -111,9 +115,10 @@
       "id": "kanton/FR/130.11-fr/art_5",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "5",
       "artikelLabel": "Art. 5",
+      "titel": "Consultation des données du Service cantonal des contributions (art. 147 LJ et 194 CPP) – Consultation des données",
       "bloecke": [
         {
           "absatz": "1",
@@ -126,7 +131,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "215151157a47f4122318c2d2d17d6ec8d2583e84d5c4c17bf8f32d3b6078f18b"
     },
@@ -134,9 +139,10 @@
       "id": "kanton/FR/130.11-fr/art_6",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "6",
       "artikelLabel": "Art. 6",
+      "titel": "Consultation des données du Service cantonal des contributions (art. 147 LJ et 194 CPP) – Règlement d'utilisation",
       "bloecke": [
         {
           "absatz": "1",
@@ -145,7 +151,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "5af8dbb58e5baebbc01b17025226dd006ffc44d8042c61d002d3bd604986da99"
     },
@@ -153,9 +159,10 @@
       "id": "kanton/FR/130.11-fr/art_7",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "7",
       "artikelLabel": "Art. 7",
+      "titel": "Récompenses pour participation du public aux recherches (art. 149 LJ et 211 CPP) – Montant",
       "bloecke": [
         {
           "absatz": "1",
@@ -172,7 +179,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "05929244f61041925df6925dc829f7661538f32df50561dc3cf3c17b861261b8"
     },
@@ -180,9 +187,10 @@
       "id": "kanton/FR/130.11-fr/art_8",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "8",
       "artikelLabel": "Art. 8",
+      "titel": "Récompenses pour participation du public aux recherches (art. 149 LJ et 211 CPP) – Versement",
       "bloecke": [
         {
           "absatz": "1",
@@ -191,7 +199,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "21541591f6ef3c9adc00a2ee2ba97b7eef3445a98f88314d68530ac246c2888b"
     },
@@ -199,9 +207,10 @@
       "id": "kanton/FR/130.11-fr/art_8_a",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "8_a",
       "artikelLabel": "Art. 8a",
+      "titel": "Transmission des jugements et dossiers pénaux (art. 160 LJ et 439 CPP)",
       "bloecke": [
         {
           "absatz": "1",
@@ -228,17 +237,37 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "eae950eb7fc40c20e23409036471477f8c7e44a23f61d193c1f767bbd04e15d7"
+    },
+    {
+      "id": "kanton/FR/130.11-fr/art_9",
+      "ebene": "kanton",
+      "quelle": "FR",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
+      "artikel": "9",
+      "artikelLabel": "Art. 9",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": ""
+        }
+      ],
+      "stand": "2025-12-01",
+      "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "854728daef0b152c366617ce09e282ad",
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/FR/130.11-fr/art_10",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "10",
       "artikelLabel": "Art. 10",
+      "titel": "Objet",
       "bloecke": [
         {
           "absatz": "1",
@@ -277,7 +306,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "c8bae61c2bc6004a2136fe6137dbd299265ca5e955dff423a6c96946ced26a56"
     },
@@ -285,9 +314,10 @@
       "id": "kanton/FR/130.11-fr/art_11",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "11",
       "artikelLabel": "Art. 11",
+      "titel": "Emoluments de justice",
       "bloecke": [
         {
           "absatz": "1",
@@ -304,7 +334,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "6c9f07e5f7a2d973fc3d2523d87cedd7959db29f2035f809e7f80283f56eb8ee"
     },
@@ -312,9 +342,10 @@
       "id": "kanton/FR/130.11-fr/art_12",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "12",
       "artikelLabel": "Art. 12",
+      "titel": "Frais d'administration des preuves",
       "bloecke": [
         {
           "absatz": "1",
@@ -331,7 +362,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "93f6b0c83d50b248a22054d047dfd9e498553e8c09b5f0c92beb741aacad2d1f"
     },
@@ -339,9 +370,10 @@
       "id": "kanton/FR/130.11-fr/art_12_a",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "12_a",
       "artikelLabel": "Art. 12a",
+      "titel": "Frais de représentation de l'enfant",
       "bloecke": [
         {
           "absatz": "1",
@@ -362,7 +394,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "f9f01f246dbc77ec7d6a2a9d178fac868bb69dbd4e18a4fd0557d80e72fc7e66"
     },
@@ -370,9 +402,10 @@
       "id": "kanton/FR/130.11-fr/art_13",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "13",
       "artikelLabel": "Art. 13",
+      "titel": "Liste de frais",
       "bloecke": [
         {
           "absatz": "1",
@@ -385,7 +418,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "9811c54dfe3299f502221fcb2386f74e3e85f9cd00e2cd987622e6e8d9b86197"
     },
@@ -393,9 +426,10 @@
       "id": "kanton/FR/130.11-fr/art_14",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "14",
       "artikelLabel": "Art. 14",
+      "titel": "Procédure",
       "bloecke": [
         {
           "absatz": "1",
@@ -412,7 +446,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "a27936cc55c760b667ba17d85983e6b8e7b1273956aebb76a809866868499bb0"
     },
@@ -420,9 +454,10 @@
       "id": "kanton/FR/130.11-fr/art_15",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "15",
       "artikelLabel": "Art. 15",
+      "titel": "Recours",
       "bloecke": [
         {
           "absatz": "1",
@@ -431,7 +466,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "1a69101c2a7ef28be4b4dfe5a93edca1a53f070add02fa7b854756d910a43bc4"
     },
@@ -439,9 +474,10 @@
       "id": "kanton/FR/130.11-fr/art_16",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "16",
       "artikelLabel": "Art. 16",
+      "titel": "Contrôle par le Tribunal cantonal",
       "bloecke": [
         {
           "absatz": "1",
@@ -454,7 +490,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "846d8becf9c9ef2f9653acbe3c6d1d715809da023e637af678849ed549168197"
     },
@@ -462,9 +498,10 @@
       "id": "kanton/FR/130.11-fr/art_17",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "17",
       "artikelLabel": "Art. 17",
+      "titel": "Emoluments du greffe",
       "bloecke": [
         {
           "absatz": "1",
@@ -491,7 +528,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "83f71b62645ecbba0e58b702929dcf5d298251b9937d81c9bc7590fcd68357c8"
     },
@@ -499,9 +536,10 @@
       "id": "kanton/FR/130.11-fr/art_18",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "18",
       "artikelLabel": "Art. 18",
+      "titel": "Emolument forfaitaire de conciliation",
       "bloecke": [
         {
           "absatz": "1",
@@ -510,7 +548,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "7a05a3ca092019126dddb5cbebe40454253c9ef25709d112c4e1f3624af9444e"
     },
@@ -518,9 +556,10 @@
       "id": "kanton/FR/130.11-fr/art_19",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "19",
       "artikelLabel": "Art. 19",
+      "titel": "Emolument forfaitaire de décision – Tribunal cantonal",
       "bloecke": [
         {
           "absatz": "1",
@@ -533,7 +572,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "8385cf80160e4ef88e8be12b9776aa89e368c6949d5c46deb7316031bd581df8"
     },
@@ -541,9 +580,10 @@
       "id": "kanton/FR/130.11-fr/art_20",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "20",
       "artikelLabel": "Art. 20",
+      "titel": "Emolument forfaitaire de décision – Tribunal civil",
       "bloecke": [
         {
           "absatz": "1",
@@ -556,7 +596,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "fa2756e397d814f79b2e0d32cce29c129764e5375abf8399b46503fdc3df7d7e"
     },
@@ -564,9 +604,10 @@
       "id": "kanton/FR/130.11-fr/art_21",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "21",
       "artikelLabel": "Art. 21",
+      "titel": "Emolument forfaitaire de décision – Echelle des émoluments",
       "bloecke": [
         {
           "absatz": "1",
@@ -575,7 +616,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "c298bb0e5fb3840a952c8c0d1cd1da5fbbb97ae2e9203cc8f8be8556bfc6b1ed"
     },
@@ -583,9 +624,10 @@
       "id": "kanton/FR/130.11-fr/art_22",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "22",
       "artikelLabel": "Art. 22",
+      "titel": "Emolument forfaitaire de décision – Tribunal des prud'hommes",
       "bloecke": [
         {
           "absatz": "1",
@@ -598,7 +640,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "1a7405b36904455aa03467629521310ee86ae0ccfb908b6db7d49cc2b672abef"
     },
@@ -606,9 +648,10 @@
       "id": "kanton/FR/130.11-fr/art_23",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "23",
       "artikelLabel": "Art. 23",
+      "titel": "Emolument forfaitaire de décision – Président ou présidente du tribunal civil",
       "bloecke": [
         {
           "absatz": "1",
@@ -617,7 +660,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "7325429b0667fb604663950ff752134fce867b86362ad175403edcb5e1a30563"
     },
@@ -625,9 +668,10 @@
       "id": "kanton/FR/130.11-fr/art_24",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "24",
       "artikelLabel": "Art. 24",
+      "titel": "Emolument forfaitaire de décision – Consignation",
       "bloecke": [
         {
           "absatz": "1",
@@ -640,7 +684,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "b7ae8313218bd6abd5ec214b962dab48d77c17d5dd16729ae6822295a30e26fb"
     },
@@ -648,9 +692,10 @@
       "id": "kanton/FR/130.11-fr/art_25",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "25",
       "artikelLabel": "Art. 25",
+      "titel": "En général",
       "bloecke": [
         {
           "absatz": "1",
@@ -681,7 +726,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "5f493ac08a8e1e2458ff444dd774745827cfa7a1a451de18326017b25e6114fd"
     },
@@ -689,9 +734,10 @@
       "id": "kanton/FR/130.11-fr/art_26",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "26",
       "artikelLabel": "Art. 26",
+      "titel": "Cas spéciaux",
       "bloecke": [
         {
           "absatz": "1",
@@ -700,7 +746,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "8f788ac7286181aaaaff953b0d9edf20c8bb64c0a4c1f350f58037fe56f72634"
     },
@@ -708,9 +754,10 @@
       "id": "kanton/FR/130.11-fr/art_27",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "27",
       "artikelLabel": "Art. 27",
+      "titel": "Emoluments du ou de la juge de paix",
       "bloecke": [
         {
           "absatz": "1",
@@ -723,7 +770,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "b7a80b356a165e00e42b48af0eb87d3aad8d9d8c9ad93fce6fad59ca8f3406a2"
     },
@@ -731,9 +778,10 @@
       "id": "kanton/FR/130.11-fr/art_28",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "28",
       "artikelLabel": "Art. 28",
+      "titel": "Emoluments de la justice de paix",
       "bloecke": [
         {
           "absatz": "1",
@@ -750,7 +798,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "9403b9a847665ab8b713335cf9b3e88544928bc1e1d1aa4a2a79c4ca5dee454c"
     },
@@ -758,9 +806,10 @@
       "id": "kanton/FR/130.11-fr/art_29",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "29",
       "artikelLabel": "Art. 29",
+      "titel": "Emoluments pour procédures spécifiques",
       "bloecke": [
         {
           "absatz": "1",
@@ -805,7 +854,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "d8e830aec0e33f46893e732f9e7cfc9e8f8b52f2cfece8db6b76b31b647e31f9"
     },
@@ -813,9 +862,10 @@
       "id": "kanton/FR/130.11-fr/art_30",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "30",
       "artikelLabel": "Art. 30",
+      "titel": "Exemption d'émolument",
       "bloecke": [
         {
           "absatz": "1",
@@ -824,7 +874,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "e28136d76174d81a4951be35a47ca0032b14b13d55f326c715ed8a6891c9290c"
     },
@@ -832,9 +882,10 @@
       "id": "kanton/FR/130.11-fr/art_31",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "31",
       "artikelLabel": "Art. 31",
+      "titel": "Emoluments du greffe",
       "bloecke": [
         {
           "absatz": "1",
@@ -869,17 +920,37 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "5c2df944438a640553fd444555e06e2dc958854d777d59b2f90ad1bb11f9bd20"
+    },
+    {
+      "id": "kanton/FR/130.11-fr/art_32",
+      "ebene": "kanton",
+      "quelle": "FR",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
+      "artikel": "32",
+      "artikelLabel": "Art. 32",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": ""
+        }
+      ],
+      "stand": "2025-12-01",
+      "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "854728daef0b152c366617ce09e282ad",
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/FR/130.11-fr/art_33",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "33",
       "artikelLabel": "Art. 33",
+      "titel": "Objet",
       "bloecke": [
         {
           "absatz": "1",
@@ -906,7 +977,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "98ca326945b0fa6e9fda88796dcc9e7e825a28751486c8ddc4921bfdb0d49a20"
     },
@@ -914,9 +985,10 @@
       "id": "kanton/FR/130.11-fr/art_34",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "34",
       "artikelLabel": "Art. 34",
+      "titel": "Emoluments de justice",
       "bloecke": [
         {
           "absatz": "1",
@@ -925,7 +997,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "cd8234c32e012a36dcdd63186d23e465e7202c8bfcdc5f62bed3f9497e5b56b6"
     },
@@ -933,9 +1005,10 @@
       "id": "kanton/FR/130.11-fr/art_35",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "35",
       "artikelLabel": "Art. 35",
+      "titel": "Débours",
       "bloecke": [
         {
           "absatz": "1",
@@ -944,7 +1017,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "762c87c2debc2802d0c5520a2da78977cc9c9e1f399ab730fda7c4a200bde9f0"
     },
@@ -952,9 +1025,10 @@
       "id": "kanton/FR/130.11-fr/art_36",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "36",
       "artikelLabel": "Art. 36",
+      "titel": "Fixation",
       "bloecke": [
         {
           "absatz": "1",
@@ -963,7 +1037,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "d8dead7aa27caa83e4ed84ee49bb75a867250f71e747f4f91dace93314cc2a3e"
     },
@@ -971,9 +1045,10 @@
       "id": "kanton/FR/130.11-fr/art_37",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "37",
       "artikelLabel": "Art. 37",
+      "titel": "Contestation",
       "bloecke": [
         {
           "absatz": "1",
@@ -982,7 +1057,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "368661d2c3662a3226959f3a7436d7484c298b0db8ad1c04abaab0889b9bb849"
     },
@@ -990,9 +1065,10 @@
       "id": "kanton/FR/130.11-fr/art_38",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "38",
       "artikelLabel": "Art. 38",
+      "titel": "Encaissement",
       "bloecke": [
         {
           "absatz": "1",
@@ -1005,7 +1081,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "00e204dee1ba9b59667a7eec37a87ec0cbf6dc4ef525d28c3b534b6ad18ccf32"
     },
@@ -1013,9 +1089,10 @@
       "id": "kanton/FR/130.11-fr/art_39",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "39",
       "artikelLabel": "Art. 39",
+      "titel": "Emoluments du greffe",
       "bloecke": [
         {
           "absatz": "1",
@@ -1038,7 +1115,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "d33cad2008cb2797b1ac435f5dab5f8ec2c6fd1872d77ef20aa213e552282ff6"
     },
@@ -1046,9 +1123,10 @@
       "id": "kanton/FR/130.11-fr/art_40",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "40",
       "artikelLabel": "Art. 40",
+      "titel": "Autorités d'instruction",
       "bloecke": [
         {
           "absatz": "1",
@@ -1067,7 +1145,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "bb3a67d9b6f149a8f089fdd7ee9c04557d63915e924b219c0bd16bebb45dfd26"
     },
@@ -1075,9 +1153,10 @@
       "id": "kanton/FR/130.11-fr/art_41",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "41",
       "artikelLabel": "Art. 41",
+      "titel": "Tribunal des mesures de contrainte",
       "bloecke": [
         {
           "absatz": "1",
@@ -1086,7 +1165,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "79e080cee63d0a3ff2ae5c9a350de83e3c145ac31969120c2c1ea6a393741fb3"
     },
@@ -1094,9 +1173,10 @@
       "id": "kanton/FR/130.11-fr/art_42",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "42",
       "artikelLabel": "Art. 42",
+      "titel": "Autorités de première instance",
       "bloecke": [
         {
           "absatz": "1",
@@ -1127,7 +1207,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "213e1e4a97544ec0f806e39fe990bd6b6427c3e4649453ba9193c227d0bea3a5"
     },
@@ -1135,9 +1215,10 @@
       "id": "kanton/FR/130.11-fr/art_43",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "43",
       "artikelLabel": "Art. 43",
+      "titel": "Tribunal cantonal",
       "bloecke": [
         {
           "absatz": "1",
@@ -1146,7 +1227,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "ebcfb46b5e441cda0dd3b8ed896d736eb2630bb79710f7ddd3838843806228fb"
     },
@@ -1154,9 +1235,10 @@
       "id": "kanton/FR/130.11-fr/art_44",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "44",
       "artikelLabel": "Art. 44",
+      "titel": "Augmentation de l'émolument",
       "bloecke": [
         {
           "absatz": "1",
@@ -1179,7 +1261,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "d7a3896b68c4329ccbabdb551f927618540afbdb69d40a72d131261e13d4c188"
     },
@@ -1187,9 +1269,10 @@
       "id": "kanton/FR/130.11-fr/art_45",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "45",
       "artikelLabel": "Art. 45",
+      "titel": "Equitable indemnité",
       "bloecke": [
         {
           "absatz": "1",
@@ -1206,7 +1289,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "1514ea8ca3a38561f15264c3ee23ab0721b9c0c56c3b4ca7305f04a6a6f67bab"
     },
@@ -1214,9 +1297,10 @@
       "id": "kanton/FR/130.11-fr/art_46",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "46",
       "artikelLabel": "Art. 46",
+      "titel": "Police judiciaire",
       "bloecke": [
         {
           "absatz": "1",
@@ -1225,7 +1309,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "ef2bc4b41156e69a806006010eeebf26fa52e020e44b51bab8e7115837f2d724"
     },
@@ -1233,9 +1317,10 @@
       "id": "kanton/FR/130.11-fr/art_47",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "47",
       "artikelLabel": "Art. 47",
+      "titel": "Indemnités de transport et de subsistance",
       "bloecke": [
         {
           "absatz": "1",
@@ -1266,7 +1351,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "fd0fe7498acf246c755387e4c6846c0384978184fe65ab152b9c3b52f2b012cb"
     },
@@ -1274,9 +1359,10 @@
       "id": "kanton/FR/130.11-fr/art_48",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "48",
       "artikelLabel": "Art. 48",
+      "titel": "Frais effectifs",
       "bloecke": [
         {
           "absatz": "1",
@@ -1285,7 +1371,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "93e465fa2d1def3a70352e4faf4cc1cd9b0dc918be67281fed82f2dd3c5e053c"
     },
@@ -1293,9 +1379,10 @@
       "id": "kanton/FR/130.11-fr/art_49",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "49",
       "artikelLabel": "Art. 49",
+      "titel": "Autorité de fixation",
       "bloecke": [
         {
           "absatz": "1",
@@ -1304,7 +1391,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "e175c4b6867a2c75e5ecd1a576956773a7439baef9ee24ac976e1106eeda9a0d"
     },
@@ -1312,9 +1399,10 @@
       "id": "kanton/FR/130.11-fr/art_50",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "50",
       "artikelLabel": "Art. 50",
+      "titel": "Défense d'office",
       "bloecke": [
         {
           "absatz": "1",
@@ -1323,7 +1411,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "bade4cdd1d258c2e9fb92e51f4a32a0c281dc6ac9e8fec13e74b7dcea3fa4828"
     },
@@ -1331,7 +1419,7 @@
       "id": "kanton/FR/130.11-fr/art_51",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "51",
       "artikelLabel": "Art. 51",
       "bloecke": [
@@ -1360,17 +1448,94 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "9815f2734ffc9f1f91a1183914ea829203c03045a975629225db7c46fc7fe141"
+    },
+    {
+      "id": "kanton/FR/130.11-fr/art_52",
+      "ebene": "kanton",
+      "quelle": "FR",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
+      "artikel": "52",
+      "artikelLabel": "Art. 52",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": ""
+        }
+      ],
+      "stand": "2025-12-01",
+      "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "854728daef0b152c366617ce09e282ad",
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "kanton/FR/130.11-fr/art_53",
+      "ebene": "kanton",
+      "quelle": "FR",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
+      "artikel": "53",
+      "artikelLabel": "Art. 53",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": ""
+        }
+      ],
+      "stand": "2025-12-01",
+      "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "854728daef0b152c366617ce09e282ad",
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "kanton/FR/130.11-fr/art_54",
+      "ebene": "kanton",
+      "quelle": "FR",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
+      "artikel": "54",
+      "artikelLabel": "Art. 54",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": ""
+        }
+      ],
+      "stand": "2025-12-01",
+      "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "854728daef0b152c366617ce09e282ad",
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "kanton/FR/130.11-fr/art_55",
+      "ebene": "kanton",
+      "quelle": "FR",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
+      "artikel": "55",
+      "artikelLabel": "Art. 55",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": ""
+        }
+      ],
+      "stand": "2025-12-01",
+      "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "854728daef0b152c366617ce09e282ad",
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/FR/130.11-fr/art_56",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "56",
       "artikelLabel": "Art. 56",
+      "titel": "Objet",
       "bloecke": [
         {
           "absatz": "1",
@@ -1383,7 +1548,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "c640daed03accd2e884db10abd0da7e3d4f62626351b55ffb63caeb62fe5ac63"
     },
@@ -1391,9 +1556,10 @@
       "id": "kanton/FR/130.11-fr/art_57",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "57",
       "artikelLabel": "Art. 57",
+      "titel": "Equitable indemnité",
       "bloecke": [
         {
           "absatz": "1",
@@ -1410,7 +1576,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "a227f91dd5dda237c814202e7d8ca3ab7c082aba4e6654565026dd4aee25b432"
     },
@@ -1418,9 +1584,10 @@
       "id": "kanton/FR/130.11-fr/art_58",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "58",
       "artikelLabel": "Art. 58",
+      "titel": "Débours",
       "bloecke": [
         {
           "absatz": "1",
@@ -1437,7 +1604,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "29e369a979c718a41ce30e19df8b423c9d0b7270e0c99d9b0b34878cf5a73797"
     },
@@ -1445,9 +1612,10 @@
       "id": "kanton/FR/130.11-fr/art_59",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "59",
       "artikelLabel": "Art. 59",
+      "titel": "Remboursement (art. 123 al. 3 LJ)",
       "bloecke": [
         {
           "absatz": "1",
@@ -1464,7 +1632,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "3c2cfe3ad4a163d4cd849ea9458c00332233ca0cc4ef239771655ccaab4e4b11"
     },
@@ -1472,9 +1640,10 @@
       "id": "kanton/FR/130.11-fr/art_60",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "60",
       "artikelLabel": "Art. 60",
+      "titel": "Permanence (art. 144 LJ)",
       "bloecke": [
         {
           "absatz": "1",
@@ -1487,7 +1656,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "8f716660112295af9daf549f94c1c0453f69dbd8ada469b7745a5ccc5b88b291"
     },
@@ -1495,9 +1664,10 @@
       "id": "kanton/FR/130.11-fr/art_61",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "61",
       "artikelLabel": "Art. 61",
+      "titel": "Equitable indemnité en matière de LAVI",
       "bloecke": [
         {
           "absatz": "1",
@@ -1510,7 +1680,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "8cc36c06926b898460ff021d5d760471af9349489834dbe01ce532b8976c8c52"
     },
@@ -1518,9 +1688,10 @@
       "id": "kanton/FR/130.11-fr/art_61_a",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "61_a",
       "artikelLabel": "Art. 61a",
+      "titel": "Recours",
       "bloecke": [
         {
           "absatz": "1",
@@ -1529,7 +1700,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "46b01b8b5b9420ac52872f5a295fbc4891304f912473a9bf3c87f959888cbda1"
     },
@@ -1537,7 +1708,7 @@
       "id": "kanton/FR/130.11-fr/art_62",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "62",
       "artikelLabel": "Art. 62",
       "bloecke": [
@@ -1556,7 +1727,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "5e86d4d254772958b9b3cbb47f9b1ea2d2276e0152983d00068ae6075ac79ad3"
     },
@@ -1564,9 +1735,10 @@
       "id": "kanton/FR/130.11-fr/art_63",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "63",
       "artikelLabel": "Art. 63",
+      "titel": "En général",
       "bloecke": [
         {
           "absatz": "1",
@@ -1587,7 +1759,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "24113b9392d88d7aba1666cf5ad1c2d290bd48f4b4fd84f5a8b1b78bca033be6"
     },
@@ -1595,9 +1767,10 @@
       "id": "kanton/FR/130.11-fr/art_64",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "64",
       "artikelLabel": "Art. 64",
+      "titel": "Fixation globale",
       "bloecke": [
         {
           "absatz": "1",
@@ -1618,6 +1791,14 @@
             {
               "marke": "d",
               "text": "l'intervention civile au procès pénal:"
+            },
+            {
+              "marke": "1",
+              "text": "pour la phase d'instruction et de première instance, une indemnité maximale de 15'000 francs,"
+            },
+            {
+              "marke": "2",
+              "text": "pour la phase de recours contre un jugement pénal sur les prétentions civiles, une indemnité maximale de 7500 francs;"
             },
             {
               "marke": "e",
@@ -1644,17 +1825,18 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
-      "sha": "52cb342f214c12c70e18096d63853f441cedd416cf7060e56fdd61f5fd12d936"
+      "sha": "a0bda531698060b0b0b181dcc4e05d216a4450b6836eb6c121a40f686f6662b2"
     },
     {
       "id": "kanton/FR/130.11-fr/art_65",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "65",
       "artikelLabel": "Art. 65",
+      "titel": "Fixation détaillée – Base",
       "bloecke": [
         {
           "absatz": "1",
@@ -1663,7 +1845,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "a3d9d32b159d28b5835011b3d5c3ce0fcd9cb65f345b9506a5a920017d856faa"
     },
@@ -1671,9 +1853,10 @@
       "id": "kanton/FR/130.11-fr/art_66",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "66",
       "artikelLabel": "Art. 66",
+      "titel": "Fixation détaillée – Supplément",
       "bloecke": [
         {
           "absatz": "1",
@@ -1724,7 +1907,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "003bc27dcbbbf91a122d94e76ce13e05f48ac01d678cb95f53d1a9f62de20f58"
     },
@@ -1732,9 +1915,10 @@
       "id": "kanton/FR/130.11-fr/art_67",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "67",
       "artikelLabel": "Art. 67",
+      "titel": "Fixation détaillée – Correspondance",
       "bloecke": [
         {
           "absatz": "1",
@@ -1747,7 +1931,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "f77e26ea3beec179dbedc3393b48f0452457ad3c0a6712e7968c0b3fbdb4b133"
     },
@@ -1755,7 +1939,7 @@
       "id": "kanton/FR/130.11-fr/art_68",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "68",
       "artikelLabel": "Art. 68",
       "bloecke": [
@@ -1778,7 +1962,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "0dd5cd658fd305ada2a9cf4187580be2e6914c8797b0960c16c661c0f505ecb9"
     },
@@ -1786,9 +1970,10 @@
       "id": "kanton/FR/130.11-fr/art_69",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "69",
       "artikelLabel": "Art. 69",
+      "titel": "Présentation de la liste – Généralités",
       "bloecke": [
         {
           "absatz": "1",
@@ -1801,7 +1986,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "8dd6904219fac5fd221212be685c29bf073fcd128668c46e20f734f102ce9eb6"
     },
@@ -1809,9 +1994,10 @@
       "id": "kanton/FR/130.11-fr/art_70",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "70",
       "artikelLabel": "Art. 70",
+      "titel": "Présentation de la liste – Liste",
       "bloecke": [
         {
           "absatz": "1",
@@ -1828,7 +2014,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "20672723ce4211a4ef3a5fab16984ab1a13354a1356206636622a18a9d2ab23b"
     },
@@ -1836,9 +2022,10 @@
       "id": "kanton/FR/130.11-fr/art_71",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "71",
       "artikelLabel": "Art. 71",
+      "titel": "Présentation de la liste – Délai de production",
       "bloecke": [
         {
           "absatz": "1",
@@ -1851,7 +2038,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "3201f96887af63168e938f8d36bbf7ab187e5cb91fa7adb5fcdc9c68df11d0ba"
     },
@@ -1859,9 +2046,10 @@
       "id": "kanton/FR/130.11-fr/art_72",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "72",
       "artikelLabel": "Art. 72",
+      "titel": "Fixation – Autorité",
       "bloecke": [
         {
           "absatz": "1",
@@ -1870,7 +2058,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "a64089e9175b179c3dcaaa39ef5c0d1f5ba8fef47a89409b37a1f10e707c542d"
     },
@@ -1878,9 +2066,10 @@
       "id": "kanton/FR/130.11-fr/art_73",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "73",
       "artikelLabel": "Art. 73",
+      "titel": "Fixation – Décision",
       "bloecke": [
         {
           "absatz": "1",
@@ -1901,17 +2090,37 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "e178b89e6cce3cc284b63868ad0fc174d732dd1a9a2d047414782385468d1f44"
+    },
+    {
+      "id": "kanton/FR/130.11-fr/art_74",
+      "ebene": "kanton",
+      "quelle": "FR",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
+      "artikel": "74",
+      "artikelLabel": "Art. 74",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": ""
+        }
+      ],
+      "stand": "2025-12-01",
+      "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "854728daef0b152c366617ce09e282ad",
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/FR/130.11-fr/art_75",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "75",
       "artikelLabel": "Art. 75",
+      "titel": "Fixation – Procédure",
       "bloecke": [
         {
           "absatz": "1",
@@ -1920,7 +2129,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "a4c59deed3ca9a70f1209c1c0cca40fffab6ed812d1cdfa2908b23e776915843"
     },
@@ -1928,7 +2137,7 @@
       "id": "kanton/FR/130.11-fr/art_75_a",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "75_a",
       "artikelLabel": "Art. 75a",
       "bloecke": [
@@ -1943,7 +2152,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "85ed1614c1ee050332bf24d512d18661515b835c14d7d7a6d034952309fafb8c"
     },
@@ -1951,9 +2160,10 @@
       "id": "kanton/FR/130.11-fr/art_76",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "76",
       "artikelLabel": "Art. 76",
+      "titel": "Objet",
       "bloecke": [
         {
           "absatz": "1",
@@ -1962,7 +2172,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "72a2d26b5fd7a418ef428f26997c67c4b74cd34bc907eda36b2ee604dc50bd0e"
     },
@@ -1970,9 +2180,10 @@
       "id": "kanton/FR/130.11-fr/art_77",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "77",
       "artikelLabel": "Art. 77",
+      "titel": "Déplacements",
       "bloecke": [
         {
           "absatz": "1",
@@ -1993,7 +2204,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "c4f27bb3f22f459c6c3b22f7e86f34b1da8ffd106f1547909870d6df37f8fdde"
     },
@@ -2001,9 +2212,10 @@
       "id": "kanton/FR/130.11-fr/art_78",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "78",
       "artikelLabel": "Art. 78",
+      "titel": "En cas d'assistance judiciaire",
       "bloecke": [
         {
           "absatz": "1",
@@ -2016,7 +2228,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "c8eea8f03cf8b1cf1854be1e885b1c9d500a526380ae1c772d8fa1d4491850c9"
     },
@@ -2024,9 +2236,10 @@
       "id": "kanton/FR/130.11-fr/art_79",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "79",
       "artikelLabel": "Art. 79",
+      "titel": "Avocats ou avocates domiciliés hors du canton",
       "bloecke": [
         {
           "absatz": "1",
@@ -2039,7 +2252,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "d8c00eb5047759d24749870eb8c5b1bac1d4eca2a032edb30c4714fd8af72272"
     },
@@ -2047,9 +2260,10 @@
       "id": "kanton/FR/130.11-fr/art_79_a",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "79_a",
       "artikelLabel": "Art. 79a",
+      "titel": "Indemnités de séance – Membres non permanents",
       "bloecke": [
         {
           "absatz": "1",
@@ -2066,7 +2280,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "50b0e43494f9ac153b683104ce9b24ac01d876810f55f563a0e591c372c175df"
     },
@@ -2074,9 +2288,10 @@
       "id": "kanton/FR/130.11-fr/art_79_b",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "79_b",
       "artikelLabel": "Art. 79b",
+      "titel": "Indemnités de séance – Juges suppléants du Tribunal cantonal et juges arbitres en assurances sociales",
       "bloecke": [
         {
           "absatz": "1",
@@ -2089,7 +2304,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "f64e73e8c0f66a5006f88f1eca809ab5bdb52f1a58b3531660e5bae571332dfd"
     },
@@ -2097,9 +2312,10 @@
       "id": "kanton/FR/130.11-fr/art_79_c",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "79_c",
       "artikelLabel": "Art. 79c",
+      "titel": "Indemnités de séance – Membres permanents",
       "bloecke": [
         {
           "absatz": "1",
@@ -2116,7 +2332,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "899766fd62cadb7ea540775c6fb49d0fefd6f3809a04f12762540187ce20b607"
     },
@@ -2124,9 +2340,10 @@
       "id": "kanton/FR/130.11-fr/art_79_d",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "79_d",
       "artikelLabel": "Art. 79d",
+      "titel": "Autres indemnités",
       "bloecke": [
         {
           "absatz": "1",
@@ -2139,7 +2356,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "ab388f66b8fd7045fc829c29c58cc5d6625eed1e79f68a6552edfed0ae7e4efd"
     },
@@ -2147,9 +2364,10 @@
       "id": "kanton/FR/130.11-fr/art_79_e",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "79_e",
       "artikelLabel": "Art. 79e",
+      "titel": "Versement et adaptations périodiques",
       "bloecke": [
         {
           "absatz": "1",
@@ -2162,7 +2380,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "77ad06ea0bbefb2187fe279ebcf5204530b8d62d0b96d19d6bb6fa75a3090f9e"
     },
@@ -2170,9 +2388,10 @@
       "id": "kanton/FR/130.11-fr/art_80",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "80",
       "artikelLabel": "Art. 80",
+      "titel": "Disposition transitoire",
       "bloecke": [
         {
           "absatz": "1",
@@ -2181,7 +2400,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "0fd7849787409a2137f49e999d916660dbf8c8e57201bd23eb21a9599672b3e8"
     },
@@ -2189,9 +2408,10 @@
       "id": "kanton/FR/130.11-fr/art_81",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "81",
       "artikelLabel": "Art. 81",
+      "titel": "Abrogations",
       "bloecke": [
         {
           "absatz": "1",
@@ -2258,7 +2478,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "a94c76dfe744586aab99b5825b843265b6c7480ca12909b06f2f4d9170c43fca"
     },
@@ -2266,9 +2486,10 @@
       "id": "kanton/FR/130.11-fr/art_82",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "82",
       "artikelLabel": "Art. 82",
+      "titel": "Modifications",
       "bloecke": [
         {
           "absatz": "1",
@@ -2416,7 +2637,7 @@
             },
             {
               "marke": "36",
-              "text": "le règlement du 14 novembre 1966 d'exécution de la loi du 6 mai 1965 sur l'assurance des b&acirc;timents contre l'incendie et les autres dommages (RSF 732.1.11);"
+              "text": "le règlement du 14 novembre 1966 d'exécution de la loi du 6 mai 1965 sur l'assurance des bâtiments contre l'incendie et les autres dommages (RSF 732.1.11);"
             },
             {
               "marke": "37",
@@ -2472,7 +2693,7 @@
             },
             {
               "marke": "50",
-              "text": "le règlement du 27 novembre 1978 d'exécution de la loi du 15 novembre 1977 sur les cinémas et les thé&acirc;tres (RSF 953.11)."
+              "text": "le règlement du 27 novembre 1978 d'exécution de la loi du 15 novembre 1977 sur les cinémas et les théâtres (RSF 953.11)."
             }
           ]
         },
@@ -2483,17 +2704,18 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
-      "sha": "96d1fc02660ee9dab5a817d4e6e12ea61d5523562ef34d64158993b53e1b0693"
+      "sha": "9b61f9464bb17a782c329b91193f691dfaff87d14b27cb1633e902060ec0095a"
     },
     {
       "id": "kanton/FR/130.11-fr/art_83",
       "ebene": "kanton",
       "quelle": "FR",
-      "erlass": "RJ (RSF 130.11)",
+      "erlass": "Règlement sur la justice, RJ (RSF 130.11)",
       "artikel": "83",
       "artikelLabel": "Art. 83",
+      "titel": "Entrée en vigueur",
       "bloecke": [
         {
           "absatz": "1",
@@ -2502,7 +2724,7 @@
       ],
       "stand": "2025-12-01",
       "quelleUrl": "https://bdlf.fr.ch/app/fr/texts_of_law/130.11",
-      "abgerufen": "2026-06-19",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "854728daef0b152c366617ce09e282ad",
       "sha": "b218972de40686363623bb81783f20ce8a778e2ea8b431b14f7366c0d660a3c8"
     }

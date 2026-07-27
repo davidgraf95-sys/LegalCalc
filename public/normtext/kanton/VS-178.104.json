@@ -1,11 +1,11 @@
 {
-  "erzeugt": "2026-06-22",
+  "erzeugt": "2026-07-27",
   "eintraege": [
     {
       "id": "kanton/VS/178.104/art_1",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "1",
       "artikelLabel": "Art. 1",
       "bloecke": [
@@ -20,7 +20,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "07adbfa295457ce66d915f2ccda99ce677cc2f46bf257980080613fc3de8a1ca"
     },
@@ -28,9 +28,10 @@
       "id": "kanton/VS/178.104/art_2",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "2",
       "artikelLabel": "Art. 2",
+      "titel": "Acte non instrumenté",
       "bloecke": [
         {
           "absatz": "1",
@@ -43,7 +44,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "9ca589349a6cd741451c685bc6bb65f22a9df17ac15473100caae8ec6af79326"
     },
@@ -51,9 +52,10 @@
       "id": "kanton/VS/178.104/art_3",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "3",
       "artikelLabel": "Art. 3",
+      "titel": "Partage de l'émolument avec un autre notaire",
       "bloecke": [
         {
           "absatz": "1",
@@ -66,7 +68,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "9bcd8d95b421a99475b0c89ab1381fb0c4d1644eac501b7adc3c9e5132906490"
     },
@@ -74,9 +76,10 @@
       "id": "kanton/VS/178.104/art_4",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "4",
       "artikelLabel": "Art. 4",
+      "titel": "Pluralité d'opérations notariales",
       "bloecke": [
         {
           "absatz": "1",
@@ -85,7 +88,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "785d57a25dfee951d5fed0d23dc1e60f377ee53170405dce450c293f1a93a465"
     },
@@ -93,9 +96,10 @@
       "id": "kanton/VS/178.104/art_5",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "5",
       "artikelLabel": "Art. 5",
+      "titel": "Addition des valeurs de référence",
       "bloecke": [
         {
           "absatz": "1",
@@ -104,7 +108,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "843bc05b592ceea7a0d7b3ce36d29d977d4eea66fc9c6b26636d14b9c843491e"
     },
@@ -112,9 +116,10 @@
       "id": "kanton/VS/178.104/art_6",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "6",
       "artikelLabel": "Art. 6",
+      "titel": "Emolument conventionnel",
       "bloecke": [
         {
           "absatz": "1",
@@ -123,7 +128,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "c8e76e381e05718cd0453933a731ed2ce5dea67f7f35784becbb1939a2bf4ee8"
     },
@@ -131,9 +136,10 @@
       "id": "kanton/VS/178.104/art_7",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "7",
       "artikelLabel": "Art. 7",
+      "titel": "Opération notariale non tarifée",
       "bloecke": [
         {
           "absatz": "1",
@@ -142,7 +148,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "2fe131a39a7d554efb160bff505969c4a165243c07bbebbd3261a0b0e4605af0"
     },
@@ -150,9 +156,10 @@
       "id": "kanton/VS/178.104/art_8",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "8",
       "artikelLabel": "Art. 8",
+      "titel": "Démarches incluses dans l'émolument",
       "bloecke": [
         {
           "absatz": "1",
@@ -229,7 +236,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "83c8dbbd9aaa2e811cc3902648a5c5ce1d9270d458059de18d7bbe7cbb7b201d"
     },
@@ -237,9 +244,10 @@
       "id": "kanton/VS/178.104/art_9",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "9",
       "artikelLabel": "Art. 9",
+      "titel": "Remise de l'émolument",
       "bloecke": [
         {
           "absatz": "1",
@@ -258,7 +266,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "35a0e8ae35820dc799c178e0b9dd961fc82c8a21878190f3f02037063d1d1c43"
     },
@@ -266,9 +274,10 @@
       "id": "kanton/VS/178.104/art_10",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "10",
       "artikelLabel": "Art. 10",
+      "titel": "TVA",
       "bloecke": [
         {
           "absatz": "1",
@@ -277,7 +286,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "8edc5efc0634dfb4504004628597ca3711752d801edfeee14d33ca6117948c4f"
     },
@@ -285,9 +294,10 @@
       "id": "kanton/VS/178.104/art_11",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "11",
       "artikelLabel": "Art. 11",
+      "titel": "Actes assujettis à l'émolument proportionnel",
       "bloecke": [
         {
           "absatz": "1",
@@ -430,7 +440,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "459d230c86f32ec46d6c6dc24a81d4b6f1ed6c1238603e89be64158f470b50d5"
     },
@@ -438,9 +448,10 @@
       "id": "kanton/VS/178.104/art_12",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "12",
       "artikelLabel": "Art. 12",
+      "titel": "Valeur de référence",
       "bloecke": [
         {
           "absatz": "1",
@@ -460,11 +471,11 @@
             },
             {
               "marke": "1",
-              "text": "la valeur cadastrale de l'immeuble si le b&acirc;timent est déjà taxé,"
+              "text": "la valeur cadastrale de l'immeuble si le bâtiment est déjà taxé,"
             },
             {
               "marke": "2",
-              "text": "à défaut de taxation, la valeur cadastrale du bien-fonds augmenté du coût de construction du b&acirc;timent;"
+              "text": "à défaut de taxation, la valeur cadastrale du bien-fonds augmenté du coût de construction du bâtiment;"
             },
             {
               "marke": "c",
@@ -495,17 +506,18 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
-      "sha": "a681b6ed80793b5bf2e943f41d0ecc98a3dfdf4e74f1cc10edc8be9d8072da2b"
+      "sha": "ca0fd4baac50873df26b18e9b50f34c6eca68edab22fd10020e5abf265b0e6c7"
     },
     {
       "id": "kanton/VS/178.104/art_13",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "13",
       "artikelLabel": "Art. 13",
+      "titel": "Echelle de l'émolument proportionnel",
       "bloecke": [
         {
           "absatz": "1",
@@ -574,7 +586,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "30b0b09509dd5d8201979ec35b790a5b69f7f801a0b71b7af728b1cc8cf66696"
     },
@@ -582,9 +594,10 @@
       "id": "kanton/VS/178.104/art_14",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "14",
       "artikelLabel": "Art. 14",
+      "titel": "Dérogations à l'émolument proportionnel",
       "bloecke": [
         {
           "absatz": "1",
@@ -611,7 +624,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "db8098ea88ea899c85af3511c35667ddd6fefddaa389fd92622b9dcccc2a8818"
     },
@@ -619,9 +632,10 @@
       "id": "kanton/VS/178.104/art_15",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "15",
       "artikelLabel": "Art. 15",
+      "titel": "Acte sans valeur de référence",
       "bloecke": [
         {
           "absatz": "1",
@@ -630,7 +644,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "e1f0631d41c8788b04885a1ecbde0614cd6bec0df1518945882ce92de4535069"
     },
@@ -638,9 +652,10 @@
       "id": "kanton/VS/178.104/art_16",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "16",
       "artikelLabel": "Art. 16",
+      "titel": "Actes assujettis à l'émolument fixe",
       "bloecke": [
         {
           "absatz": "1",
@@ -871,7 +886,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "4c909923bba5481a5f68b52655aa6c0f17e9fc6680dfa2d5293a240f3b75893c"
     },
@@ -879,9 +894,10 @@
       "id": "kanton/VS/178.104/art_17",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "17",
       "artikelLabel": "Art. 17",
+      "titel": "Calcul de l'émolument fixe",
       "bloecke": [
         {
           "absatz": "1",
@@ -890,7 +906,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "9e735492bb650045ee5b90e15905d6e9026ffa641517c1fc6a50b2fd1bf5f87a"
     },
@@ -898,7 +914,7 @@
       "id": "kanton/VS/178.104/art_18",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "18",
       "artikelLabel": "Art. 18",
       "bloecke": [
@@ -913,7 +929,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "7e78976d3dfec5c35fc7f293e5087aa670e93c5bee56a86f04dbc7fa420e4bdb"
     },
@@ -921,9 +937,10 @@
       "id": "kanton/VS/178.104/art_19",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "19",
       "artikelLabel": "Art. 19",
+      "titel": "Principes",
       "bloecke": [
         {
           "absatz": "1",
@@ -944,7 +961,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "c8ebe4bd70132a0a1b7bde93f077ee6f3315b5d2a56228adf763a6cd989a46a9"
     },
@@ -952,9 +969,10 @@
       "id": "kanton/VS/178.104/art_20",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "20",
       "artikelLabel": "Art. 20",
+      "titel": "Copies",
       "bloecke": [
         {
           "absatz": "1",
@@ -963,7 +981,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "c80f88b2147bce5c5233c238dab1f5c0da8ff8d0761a76a8b3eacdd4af069afa"
     },
@@ -971,9 +989,10 @@
       "id": "kanton/VS/178.104/art_21",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "21",
       "artikelLabel": "Art. 21",
+      "titel": "Indemnité kilométrique",
       "bloecke": [
         {
           "absatz": "1",
@@ -982,7 +1001,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "398943252aa081e7e53cf0e3b9a0921bb9e873f46f592e348509dd1a08b07f76"
     },
@@ -990,9 +1009,10 @@
       "id": "kanton/VS/178.104/art_22",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "22",
       "artikelLabel": "Art. 22",
+      "titel": "Traduction",
       "bloecke": [
         {
           "absatz": "1",
@@ -1001,17 +1021,37 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "cabd9633b1a081c0c6698fa13f9707e50141b9aefc91ae92be37a2e7456eee98"
+    },
+    {
+      "id": "kanton/VS/178.104/art_23",
+      "ebene": "kanton",
+      "quelle": "VS",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
+      "artikel": "23",
+      "artikelLabel": "Art. 23",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": ""
+        }
+      ],
+      "stand": "2009-01-01",
+      "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
+      "abgerufen": "2026-07-27",
+      "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
+      "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "kanton/VS/178.104/art_24",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "24",
       "artikelLabel": "Art. 24",
+      "titel": "Enregistrement de l'émolument",
       "bloecke": [
         {
           "absatz": "1",
@@ -1020,7 +1060,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "c4fa0845a284af2237b978a32a2a28ab46fe8dd3e36547fafb3b0c7134cf9844"
     },
@@ -1028,9 +1068,10 @@
       "id": "kanton/VS/178.104/art_25",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "25",
       "artikelLabel": "Art. 25",
+      "titel": "Modification et abrogations",
       "bloecke": [
         {
           "absatz": "1",
@@ -1057,7 +1098,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "2c10d3cf793f5631c0e1134131cd46ce9acf85b5275fcc23cef63bfc01a20b93"
     },
@@ -1065,9 +1106,10 @@
       "id": "kanton/VS/178.104/art_26",
       "ebene": "kanton",
       "quelle": "VS",
-      "erlass": "Tarif des émoluments des notaires (RS 178.104)",
+      "erlass": "Règlement fixant le tarif des émoluments et des débours des notaires (RS 178.104)",
       "artikel": "26",
       "artikelLabel": "Art. 26",
+      "titel": "Entrée en vigueur et droit transitoire",
       "bloecke": [
         {
           "absatz": "1",
@@ -1080,7 +1122,7 @@
       ],
       "stand": "2009-01-01",
       "quelleUrl": "https://lex.vs.ch/app/fr/texts_of_law/178.104",
-      "abgerufen": "2026-06-22",
+      "abgerufen": "2026-07-27",
       "fassungsToken": "3e2491ca13e5dec80ba18ffcbad640ae",
       "sha": "87e260bf7ef30b5b25e9b343aed0b53859c85b4132eefa13242f58936aa3f016"
     }
